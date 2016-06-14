@@ -35,4 +35,19 @@ class CommessageController extends Controller
             
         return $this->render('show.html',array('arr'=>$arr));
     }
+    /**
+     * [actionAdd 企业信息添加]
+     * @return [type] [description]
+     */
+    public function actionAdd()
+    {
+        $request = Yii::$app->request;
+        if ($request->post('name')) {
+            echo "2";
+        } else {
+            echo "1";
+        }
+        
+        
+    }
 }
