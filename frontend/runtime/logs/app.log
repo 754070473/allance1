@@ -12501,3 +12501,2694 @@ $_SERVER = [
     'REQUEST_TIME_FLOAT' => 1465865192.954
     'REQUEST_TIME' => 1465865192
 ]
+2016-06-14 09:21:45 [127.0.0.1][-][-][error][yii\base\ErrorException:2] exception 'yii\base\ErrorException' with message 'extract() expects parameter 1 to be array, integer given' in D:\test1\allance1\vendor\yiisoft\yii2\base\View.php:324
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleError(2, 'extract() expec...', 'D:\\test1\\allanc...', 324, Array)
+#1 D:\test1\allance1\vendor\yiisoft\yii2\base\View.php(324): extract('<span class="nu...', 0)
+#2 D:\test1\allance1\vendor\yiisoft\yii2\base\View.php(247): yii\base\View->renderPhpFile('D:\\test1\\allanc...', 560425)
+#3 D:\test1\allance1\vendor\yiisoft\yii2\base\View.php(149): yii\base\View->renderFile('D:\\test1\\allanc...', 560425, Object(frontend\controllers\AdminController))
+#4 D:\test1\allance1\vendor\yiisoft\yii2\base\Controller.php(371): yii\base\View->render('zhang.html', 560425, Object(frontend\controllers\AdminController))
+#5 D:\test1\allance1\frontend\controllers\AdminController.php(42): yii\base\Controller->render('zhang.html', 560425)
+#6 [internal function]: frontend\controllers\AdminController->actionAdd()
+#7 D:\test1\allance1\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#8 D:\test1\allance1\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#9 D:\test1\allance1\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('add', Array)
+#10 D:\test1\allance1\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('admin/add', Array)
+#11 D:\test1\allance1\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#12 D:\test1\allance1\frontend\web\index.php(18): yii\base\Application->run()
+#13 {main}
+2016-06-14 09:21:45 [127.0.0.1][-][-][info][application] $_GET = [
+    'r' => 'admin/add'
+]
+
+$_POST = [
+    'a_name' => '张三'
+    'a_pwd' => 'qwerty'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'www.bbb.com'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:47.0) Gecko/20100101 Firefox/47.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://www.bbb.com/allance1/frontend/web/index.php?r=admin/add'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'CONTENT_LENGTH' => '38'
+    'PATH' => 'C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;D:\\wamp\\php\\;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;D:\\Program Files\\TortoiseSVN\\bin;D:\\Program Files\\VisualSVN Server\\bin;D:\\wamp\\mysql\\bin;D:\\New git\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e PHP/5.5.30'
+    'SERVER_NAME' => 'www.bbb.com'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'D:/test1'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/test1'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'SCRIPT_FILENAME' => 'D:/test1/allance1/frontend/web/index.php'
+    'REMOTE_PORT' => '13279'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => 'r=admin/add'
+    'REQUEST_URI' => '/allance1/frontend/web/index.php?r=admin/add'
+    'SCRIPT_NAME' => '/allance1/frontend/web/index.php'
+    'PHP_SELF' => '/allance1/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1465867305.727
+    'REQUEST_TIME' => 1465867305
+]
+2016-06-14 09:21:45 [127.0.0.1][-][-][warning][yii\log\Dispatcher::dispatch] Unable to send log via yii\debug\LogTarget: Exception 'Exception' with message 'Serialization of 'Closure' is not allowed' 
+
+in D:\test1\allance1\vendor\yiisoft\yii2-debug\LogTarget.php:58
+
+Stack trace:
+#0 D:\test1\allance1\vendor\yiisoft\yii2-debug\LogTarget.php(58): serialize(Array)
+#1 D:\test1\allance1\vendor\yiisoft\yii2-debug\LogTarget.php(112): yii\debug\LogTarget->export(Array)
+#2 D:\test1\allance1\vendor\yiisoft\yii2\log\Dispatcher.php(183): yii\debug\LogTarget->collect(Array, true)
+#3 D:\test1\allance1\vendor\yiisoft\yii2\log\Logger.php(173): yii\log\Dispatcher->dispatch(Array, true)
+#4 D:\test1\allance1\vendor\yiisoft\yii2\base\ErrorHandler.php(111): yii\log\Logger->flush(true)
+#5 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\base\ErrorException))
+#6 {main}
+2016-06-14 09:21:45 [127.0.0.1][-][-][info][application] $_GET = [
+    'r' => 'admin/add'
+]
+
+$_POST = [
+    'a_name' => '张三'
+    'a_pwd' => 'qwerty'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'www.bbb.com'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:47.0) Gecko/20100101 Firefox/47.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://www.bbb.com/allance1/frontend/web/index.php?r=admin/add'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'CONTENT_LENGTH' => '38'
+    'PATH' => 'C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;D:\\wamp\\php\\;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;D:\\Program Files\\TortoiseSVN\\bin;D:\\Program Files\\VisualSVN Server\\bin;D:\\wamp\\mysql\\bin;D:\\New git\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e PHP/5.5.30'
+    'SERVER_NAME' => 'www.bbb.com'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'D:/test1'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/test1'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'SCRIPT_FILENAME' => 'D:/test1/allance1/frontend/web/index.php'
+    'REMOTE_PORT' => '13279'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => 'r=admin/add'
+    'REQUEST_URI' => '/allance1/frontend/web/index.php?r=admin/add'
+    'SCRIPT_NAME' => '/allance1/frontend/web/index.php'
+    'PHP_SELF' => '/allance1/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1465867305.727
+    'REQUEST_TIME' => 1465867305
+]
+2016-06-14 09:25:31 [127.0.0.1][-][-][error][yii\base\ErrorException:2] exception 'yii\base\ErrorException' with message 'extract() expects parameter 1 to be array, string given' in D:\test1\allance1\vendor\yiisoft\yii2\base\View.php:324
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleError(2, 'extract() expec...', 'D:\\test1\\allanc...', 324, Array)
+#1 D:\test1\allance1\vendor\yiisoft\yii2\base\View.php(324): extract('<span class="st...', 0)
+#2 D:\test1\allance1\vendor\yiisoft\yii2\base\View.php(247): yii\base\View->renderPhpFile('D:\\test1\\allanc...', 'qq=209900')
+#3 D:\test1\allance1\vendor\yiisoft\yii2\base\View.php(149): yii\base\View->renderFile('D:\\test1\\allanc...', 'qq=209900', Object(frontend\controllers\AdminController))
+#4 D:\test1\allance1\vendor\yiisoft\yii2\base\Controller.php(371): yii\base\View->render('zhang.html', 'qq=209900', Object(frontend\controllers\AdminController))
+#5 D:\test1\allance1\frontend\controllers\AdminController.php(43): yii\base\Controller->render('zhang.html', 'qq=209900')
+#6 [internal function]: frontend\controllers\AdminController->actionAdd()
+#7 D:\test1\allance1\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#8 D:\test1\allance1\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#9 D:\test1\allance1\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('add', Array)
+#10 D:\test1\allance1\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('admin/add', Array)
+#11 D:\test1\allance1\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#12 D:\test1\allance1\frontend\web\index.php(18): yii\base\Application->run()
+#13 {main}
+2016-06-14 09:25:31 [127.0.0.1][-][-][info][application] $_GET = [
+    'r' => 'admin/add'
+]
+
+$_POST = [
+    'a_name' => '张三'
+    'a_pwd' => 'qwqqqwqwq'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'www.bbb.com'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:47.0) Gecko/20100101 Firefox/47.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://www.bbb.com/allance1/frontend/web/index.php?r=admin/add'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'CONTENT_LENGTH' => '41'
+    'PATH' => 'C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;D:\\wamp\\php\\;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;D:\\Program Files\\TortoiseSVN\\bin;D:\\Program Files\\VisualSVN Server\\bin;D:\\wamp\\mysql\\bin;D:\\New git\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e PHP/5.5.30'
+    'SERVER_NAME' => 'www.bbb.com'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'D:/test1'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/test1'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'SCRIPT_FILENAME' => 'D:/test1/allance1/frontend/web/index.php'
+    'REMOTE_PORT' => '13413'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => 'r=admin/add'
+    'REQUEST_URI' => '/allance1/frontend/web/index.php?r=admin/add'
+    'SCRIPT_NAME' => '/allance1/frontend/web/index.php'
+    'PHP_SELF' => '/allance1/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1465867531.562
+    'REQUEST_TIME' => 1465867531
+]
+2016-06-14 09:25:31 [127.0.0.1][-][-][warning][yii\log\Dispatcher::dispatch] Unable to send log via yii\debug\LogTarget: Exception 'Exception' with message 'Serialization of 'Closure' is not allowed' 
+
+in D:\test1\allance1\vendor\yiisoft\yii2-debug\LogTarget.php:58
+
+Stack trace:
+#0 D:\test1\allance1\vendor\yiisoft\yii2-debug\LogTarget.php(58): serialize(Array)
+#1 D:\test1\allance1\vendor\yiisoft\yii2-debug\LogTarget.php(112): yii\debug\LogTarget->export(Array)
+#2 D:\test1\allance1\vendor\yiisoft\yii2\log\Dispatcher.php(183): yii\debug\LogTarget->collect(Array, true)
+#3 D:\test1\allance1\vendor\yiisoft\yii2\log\Logger.php(173): yii\log\Dispatcher->dispatch(Array, true)
+#4 D:\test1\allance1\vendor\yiisoft\yii2\base\ErrorHandler.php(111): yii\log\Logger->flush(true)
+#5 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\base\ErrorException))
+#6 {main}
+2016-06-14 09:25:31 [127.0.0.1][-][-][info][application] $_GET = [
+    'r' => 'admin/add'
+]
+
+$_POST = [
+    'a_name' => '张三'
+    'a_pwd' => 'qwqqqwqwq'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'www.bbb.com'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:47.0) Gecko/20100101 Firefox/47.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://www.bbb.com/allance1/frontend/web/index.php?r=admin/add'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'CONTENT_LENGTH' => '41'
+    'PATH' => 'C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;D:\\wamp\\php\\;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;D:\\Program Files\\TortoiseSVN\\bin;D:\\Program Files\\VisualSVN Server\\bin;D:\\wamp\\mysql\\bin;D:\\New git\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e PHP/5.5.30'
+    'SERVER_NAME' => 'www.bbb.com'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'D:/test1'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/test1'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'SCRIPT_FILENAME' => 'D:/test1/allance1/frontend/web/index.php'
+    'REMOTE_PORT' => '13413'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => 'r=admin/add'
+    'REQUEST_URI' => '/allance1/frontend/web/index.php?r=admin/add'
+    'SCRIPT_NAME' => '/allance1/frontend/web/index.php'
+    'PHP_SELF' => '/allance1/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1465867531.562
+    'REQUEST_TIME' => 1465867531
+]
+2016-06-14 09:25:54 [127.0.0.1][-][-][error][yii\base\ErrorException:2] exception 'yii\base\ErrorException' with message 'extract() expects parameter 1 to be array, string given' in D:\test1\allance1\vendor\yiisoft\yii2\base\View.php:324
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleError(2, 'extract() expec...', 'D:\\test1\\allanc...', 324, Array)
+#1 D:\test1\allance1\vendor\yiisoft\yii2\base\View.php(324): extract('<span class="st...', 0)
+#2 D:\test1\allance1\vendor\yiisoft\yii2\base\View.php(247): yii\base\View->renderPhpFile('D:\\test1\\allanc...', 'qq=416535')
+#3 D:\test1\allance1\vendor\yiisoft\yii2\base\View.php(149): yii\base\View->renderFile('D:\\test1\\allanc...', 'qq=416535', Object(frontend\controllers\AdminController))
+#4 D:\test1\allance1\vendor\yiisoft\yii2\base\Controller.php(371): yii\base\View->render('zhang.html', 'qq=416535', Object(frontend\controllers\AdminController))
+#5 D:\test1\allance1\frontend\controllers\AdminController.php(43): yii\base\Controller->render('zhang.html', 'qq=416535')
+#6 [internal function]: frontend\controllers\AdminController->actionAdd()
+#7 D:\test1\allance1\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#8 D:\test1\allance1\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#9 D:\test1\allance1\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('add', Array)
+#10 D:\test1\allance1\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('admin/add', Array)
+#11 D:\test1\allance1\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#12 D:\test1\allance1\frontend\web\index.php(18): yii\base\Application->run()
+#13 {main}
+2016-06-14 09:25:54 [127.0.0.1][-][-][info][application] $_GET = [
+    'r' => 'admin/add'
+]
+
+$_POST = [
+    'a_name' => '张三'
+    'a_pwd' => 'qwedwq'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'www.bbb.com'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:47.0) Gecko/20100101 Firefox/47.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://www.bbb.com/allance1/frontend/web/index.php?r=admin/add'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'CONTENT_LENGTH' => '38'
+    'PATH' => 'C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;D:\\wamp\\php\\;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;D:\\Program Files\\TortoiseSVN\\bin;D:\\Program Files\\VisualSVN Server\\bin;D:\\wamp\\mysql\\bin;D:\\New git\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e PHP/5.5.30'
+    'SERVER_NAME' => 'www.bbb.com'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'D:/test1'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/test1'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'SCRIPT_FILENAME' => 'D:/test1/allance1/frontend/web/index.php'
+    'REMOTE_PORT' => '13422'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => 'r=admin/add'
+    'REQUEST_URI' => '/allance1/frontend/web/index.php?r=admin/add'
+    'SCRIPT_NAME' => '/allance1/frontend/web/index.php'
+    'PHP_SELF' => '/allance1/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1465867554.055
+    'REQUEST_TIME' => 1465867554
+]
+2016-06-14 09:25:54 [127.0.0.1][-][-][warning][yii\log\Dispatcher::dispatch] Unable to send log via yii\debug\LogTarget: Exception 'Exception' with message 'Serialization of 'Closure' is not allowed' 
+
+in D:\test1\allance1\vendor\yiisoft\yii2-debug\LogTarget.php:58
+
+Stack trace:
+#0 D:\test1\allance1\vendor\yiisoft\yii2-debug\LogTarget.php(58): serialize(Array)
+#1 D:\test1\allance1\vendor\yiisoft\yii2-debug\LogTarget.php(112): yii\debug\LogTarget->export(Array)
+#2 D:\test1\allance1\vendor\yiisoft\yii2\log\Dispatcher.php(183): yii\debug\LogTarget->collect(Array, true)
+#3 D:\test1\allance1\vendor\yiisoft\yii2\log\Logger.php(173): yii\log\Dispatcher->dispatch(Array, true)
+#4 D:\test1\allance1\vendor\yiisoft\yii2\base\ErrorHandler.php(111): yii\log\Logger->flush(true)
+#5 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\base\ErrorException))
+#6 {main}
+2016-06-14 09:25:54 [127.0.0.1][-][-][info][application] $_GET = [
+    'r' => 'admin/add'
+]
+
+$_POST = [
+    'a_name' => '张三'
+    'a_pwd' => 'qwedwq'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'www.bbb.com'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:47.0) Gecko/20100101 Firefox/47.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://www.bbb.com/allance1/frontend/web/index.php?r=admin/add'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'CONTENT_LENGTH' => '38'
+    'PATH' => 'C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;D:\\wamp\\php\\;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;D:\\Program Files\\TortoiseSVN\\bin;D:\\Program Files\\VisualSVN Server\\bin;D:\\wamp\\mysql\\bin;D:\\New git\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e PHP/5.5.30'
+    'SERVER_NAME' => 'www.bbb.com'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'D:/test1'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/test1'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'SCRIPT_FILENAME' => 'D:/test1/allance1/frontend/web/index.php'
+    'REMOTE_PORT' => '13422'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => 'r=admin/add'
+    'REQUEST_URI' => '/allance1/frontend/web/index.php?r=admin/add'
+    'SCRIPT_NAME' => '/allance1/frontend/web/index.php'
+    'PHP_SELF' => '/allance1/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1465867554.055
+    'REQUEST_TIME' => 1465867554
+]
+2016-06-14 09:26:31 [127.0.0.1][-][-][error][yii\base\ErrorException:2] exception 'yii\base\ErrorException' with message 'extract() expects parameter 1 to be array, integer given' in D:\test1\allance1\vendor\yiisoft\yii2\base\View.php:324
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleError(2, 'extract() expec...', 'D:\\test1\\allanc...', 324, Array)
+#1 D:\test1\allance1\vendor\yiisoft\yii2\base\View.php(324): extract('<span class="nu...', 0)
+#2 D:\test1\allance1\vendor\yiisoft\yii2\base\View.php(247): yii\base\View->renderPhpFile('D:\\test1\\allanc...', 537079)
+#3 D:\test1\allance1\vendor\yiisoft\yii2\base\View.php(149): yii\base\View->renderFile('D:\\test1\\allanc...', 537079, Object(frontend\controllers\AdminController))
+#4 D:\test1\allance1\vendor\yiisoft\yii2\base\Controller.php(371): yii\base\View->render('zhang.html', 537079, Object(frontend\controllers\AdminController))
+#5 D:\test1\allance1\frontend\controllers\AdminController.php(43): yii\base\Controller->render('zhang.html', 537079)
+#6 [internal function]: frontend\controllers\AdminController->actionAdd()
+#7 D:\test1\allance1\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#8 D:\test1\allance1\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#9 D:\test1\allance1\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('add', Array)
+#10 D:\test1\allance1\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('admin/add', Array)
+#11 D:\test1\allance1\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#12 D:\test1\allance1\frontend\web\index.php(18): yii\base\Application->run()
+#13 {main}
+2016-06-14 09:26:30 [127.0.0.1][-][-][info][application] $_GET = [
+    'r' => 'admin/add'
+]
+
+$_POST = [
+    'a_name' => '张三'
+    'a_pwd' => 'ewqwwqe'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'www.bbb.com'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:47.0) Gecko/20100101 Firefox/47.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://www.bbb.com/allance1/frontend/web/index.php?r=admin/add'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'CONTENT_LENGTH' => '39'
+    'PATH' => 'C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;D:\\wamp\\php\\;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;D:\\Program Files\\TortoiseSVN\\bin;D:\\Program Files\\VisualSVN Server\\bin;D:\\wamp\\mysql\\bin;D:\\New git\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e PHP/5.5.30'
+    'SERVER_NAME' => 'www.bbb.com'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'D:/test1'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/test1'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'SCRIPT_FILENAME' => 'D:/test1/allance1/frontend/web/index.php'
+    'REMOTE_PORT' => '13455'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => 'r=admin/add'
+    'REQUEST_URI' => '/allance1/frontend/web/index.php?r=admin/add'
+    'SCRIPT_NAME' => '/allance1/frontend/web/index.php'
+    'PHP_SELF' => '/allance1/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1465867590.861
+    'REQUEST_TIME' => 1465867590
+]
+2016-06-14 09:26:31 [127.0.0.1][-][-][warning][yii\log\Dispatcher::dispatch] Unable to send log via yii\debug\LogTarget: Exception 'Exception' with message 'Serialization of 'Closure' is not allowed' 
+
+in D:\test1\allance1\vendor\yiisoft\yii2-debug\LogTarget.php:58
+
+Stack trace:
+#0 D:\test1\allance1\vendor\yiisoft\yii2-debug\LogTarget.php(58): serialize(Array)
+#1 D:\test1\allance1\vendor\yiisoft\yii2-debug\LogTarget.php(112): yii\debug\LogTarget->export(Array)
+#2 D:\test1\allance1\vendor\yiisoft\yii2\log\Dispatcher.php(183): yii\debug\LogTarget->collect(Array, true)
+#3 D:\test1\allance1\vendor\yiisoft\yii2\log\Logger.php(173): yii\log\Dispatcher->dispatch(Array, true)
+#4 D:\test1\allance1\vendor\yiisoft\yii2\base\ErrorHandler.php(111): yii\log\Logger->flush(true)
+#5 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\base\ErrorException))
+#6 {main}
+2016-06-14 09:26:30 [127.0.0.1][-][-][info][application] $_GET = [
+    'r' => 'admin/add'
+]
+
+$_POST = [
+    'a_name' => '张三'
+    'a_pwd' => 'ewqwwqe'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'www.bbb.com'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:47.0) Gecko/20100101 Firefox/47.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://www.bbb.com/allance1/frontend/web/index.php?r=admin/add'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'CONTENT_LENGTH' => '39'
+    'PATH' => 'C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;D:\\wamp\\php\\;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;D:\\Program Files\\TortoiseSVN\\bin;D:\\Program Files\\VisualSVN Server\\bin;D:\\wamp\\mysql\\bin;D:\\New git\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e PHP/5.5.30'
+    'SERVER_NAME' => 'www.bbb.com'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'D:/test1'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/test1'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'SCRIPT_FILENAME' => 'D:/test1/allance1/frontend/web/index.php'
+    'REMOTE_PORT' => '13455'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => 'r=admin/add'
+    'REQUEST_URI' => '/allance1/frontend/web/index.php?r=admin/add'
+    'SCRIPT_NAME' => '/allance1/frontend/web/index.php'
+    'PHP_SELF' => '/allance1/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1465867590.861
+    'REQUEST_TIME' => 1465867590
+]
+2016-06-14 09:27:00 [127.0.0.1][-][-][error][yii\base\ErrorException:8] exception 'yii\base\ErrorException' with message 'Undefined variable: qq' in D:\test1\allance1\frontend\views\admin\zhang.html:26
+Stack trace:
+#0 D:\test1\allance1\frontend\views\admin\zhang.html(26): yii\base\ErrorHandler->handleError(8, 'Undefined varia...', 'D:\\test1\\allanc...', 26, Array)
+#1 D:\test1\allance1\vendor\yiisoft\yii2\base\View.php(325): require('D:\\test1\\allanc...')
+#2 D:\test1\allance1\vendor\yiisoft\yii2\base\View.php(247): yii\base\View->renderPhpFile('D:\\test1\\allanc...', Array)
+#3 D:\test1\allance1\vendor\yiisoft\yii2\base\View.php(149): yii\base\View->renderFile('D:\\test1\\allanc...', Array, Object(frontend\controllers\AdminController))
+#4 D:\test1\allance1\vendor\yiisoft\yii2\base\Controller.php(371): yii\base\View->render('zhang.html', Array, Object(frontend\controllers\AdminController))
+#5 D:\test1\allance1\frontend\controllers\AdminController.php(43): yii\base\Controller->render('zhang.html')
+#6 [internal function]: frontend\controllers\AdminController->actionAdd()
+#7 D:\test1\allance1\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#8 D:\test1\allance1\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#9 D:\test1\allance1\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('add', Array)
+#10 D:\test1\allance1\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('admin/add', Array)
+#11 D:\test1\allance1\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#12 D:\test1\allance1\frontend\web\index.php(18): yii\base\Application->run()
+#13 {main}
+2016-06-14 09:27:00 [127.0.0.1][-][-][info][application] $_GET = [
+    'r' => 'admin/add'
+]
+
+$_POST = [
+    'a_name' => '张三'
+    'a_pwd' => 'ewqwqeqwe'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'www.bbb.com'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:47.0) Gecko/20100101 Firefox/47.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://www.bbb.com/allance1/frontend/web/index.php?r=admin/add'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'CONTENT_LENGTH' => '41'
+    'PATH' => 'C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;D:\\wamp\\php\\;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;D:\\Program Files\\TortoiseSVN\\bin;D:\\Program Files\\VisualSVN Server\\bin;D:\\wamp\\mysql\\bin;D:\\New git\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e PHP/5.5.30'
+    'SERVER_NAME' => 'www.bbb.com'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'D:/test1'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/test1'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'SCRIPT_FILENAME' => 'D:/test1/allance1/frontend/web/index.php'
+    'REMOTE_PORT' => '13468'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => 'r=admin/add'
+    'REQUEST_URI' => '/allance1/frontend/web/index.php?r=admin/add'
+    'SCRIPT_NAME' => '/allance1/frontend/web/index.php'
+    'PHP_SELF' => '/allance1/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1465867620.369
+    'REQUEST_TIME' => 1465867620
+]
+2016-06-14 09:27:00 [127.0.0.1][-][-][warning][yii\log\Dispatcher::dispatch] Unable to send log via yii\debug\LogTarget: Exception 'Exception' with message 'Serialization of 'Closure' is not allowed' 
+
+in D:\test1\allance1\vendor\yiisoft\yii2-debug\LogTarget.php:58
+
+Stack trace:
+#0 D:\test1\allance1\vendor\yiisoft\yii2-debug\LogTarget.php(58): serialize(Array)
+#1 D:\test1\allance1\vendor\yiisoft\yii2-debug\LogTarget.php(112): yii\debug\LogTarget->export(Array)
+#2 D:\test1\allance1\vendor\yiisoft\yii2\log\Dispatcher.php(183): yii\debug\LogTarget->collect(Array, true)
+#3 D:\test1\allance1\vendor\yiisoft\yii2\log\Logger.php(173): yii\log\Dispatcher->dispatch(Array, true)
+#4 D:\test1\allance1\vendor\yiisoft\yii2\base\ErrorHandler.php(111): yii\log\Logger->flush(true)
+#5 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\base\ErrorException))
+#6 {main}
+2016-06-14 09:27:00 [127.0.0.1][-][-][info][application] $_GET = [
+    'r' => 'admin/add'
+]
+
+$_POST = [
+    'a_name' => '张三'
+    'a_pwd' => 'ewqwqeqwe'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'www.bbb.com'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:47.0) Gecko/20100101 Firefox/47.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://www.bbb.com/allance1/frontend/web/index.php?r=admin/add'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'CONTENT_LENGTH' => '41'
+    'PATH' => 'C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;D:\\wamp\\php\\;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;D:\\Program Files\\TortoiseSVN\\bin;D:\\Program Files\\VisualSVN Server\\bin;D:\\wamp\\mysql\\bin;D:\\New git\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e PHP/5.5.30'
+    'SERVER_NAME' => 'www.bbb.com'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'D:/test1'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/test1'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'SCRIPT_FILENAME' => 'D:/test1/allance1/frontend/web/index.php'
+    'REMOTE_PORT' => '13468'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => 'r=admin/add'
+    'REQUEST_URI' => '/allance1/frontend/web/index.php?r=admin/add'
+    'SCRIPT_NAME' => '/allance1/frontend/web/index.php'
+    'PHP_SELF' => '/allance1/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1465867620.369
+    'REQUEST_TIME' => 1465867620
+]
+2016-06-14 09:56:10 [127.0.0.1][-][-][error][yii\db\Exception] exception 'PDOException' with message 'SQLSTATE[42S02]: Base table or view not found: 1146 Table 'allance.user' doesn't exist' in D:\test1\allance1\vendor\yiisoft\yii2\db\Command.php:781
+Stack trace:
+#0 D:\test1\allance1\vendor\yiisoft\yii2\db\Command.php(781): PDOStatement->execute()
+#1 D:\test1\allance1\frontend\controllers\AdminController.php(54): yii\db\Command->execute()
+#2 [internal function]: frontend\controllers\AdminController->actionAdd()
+#3 D:\test1\allance1\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array('[<span class="t...', '[]')
+#4 D:\test1\allance1\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams('[<span class="s...')
+#5 D:\test1\allance1\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('<span class="st...', '[<span class="s...')
+#6 D:\test1\allance1\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('<span class="st...', '[<span class="s...')
+#7 D:\test1\allance1\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#8 D:\test1\allance1\frontend\web\index.php(18): yii\base\Application->run()
+#9 {main}
+
+Next exception 'yii\db\Exception' with message 'SQLSTATE[42S02]: Base table or view not found: 1146 Table 'allance.user' doesn't exist
+The SQL being executed was: INSERT INTO `user` (`a_accout`, `a_name`, `a_pwd`, `a_addtime`) VALUES (224530, '张三', 'fdbf76971fcbd307c155cd25d6f5bb4b', '2016-06-14,09:56:10')' in D:\test1\allance1\vendor\yiisoft\yii2\db\Schema.php:628
+Stack trace:
+#0 D:\test1\allance1\vendor\yiisoft\yii2\db\Command.php(791): yii\db\Schema->convertException(Object(PDOException), 'INSERT INTO `us...')
+#1 D:\test1\allance1\frontend\controllers\AdminController.php(54): yii\db\Command->execute()
+#2 [internal function]: frontend\controllers\AdminController->actionAdd()
+#3 D:\test1\allance1\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array('[<span class="t...', '[]')
+#4 D:\test1\allance1\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams('[<span class="s...')
+#5 D:\test1\allance1\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('<span class="st...', '[<span class="s...')
+#6 D:\test1\allance1\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('<span class="st...', '[<span class="s...')
+#7 D:\test1\allance1\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#8 D:\test1\allance1\frontend\web\index.php(18): yii\base\Application->run()
+#9 {main}
+Additional Information:
+Array
+(
+    [0] => 42S02
+    [1] => 1146
+    [2] => Table 'allance.user' doesn't exist
+)
+
+2016-06-14 09:56:10 [127.0.0.1][-][-][info][application] $_GET = [
+    'r' => 'admin/add'
+]
+
+$_POST = [
+    'a_name' => '张三'
+    'a_pwd' => 'asasdasd'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'www.bbb.com'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:47.0) Gecko/20100101 Firefox/47.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://www.bbb.com/allance1/frontend/web/index.php?r=admin/add'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'CONTENT_LENGTH' => '40'
+    'PATH' => 'C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;D:\\wamp\\php\\;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;D:\\Program Files\\TortoiseSVN\\bin;D:\\Program Files\\VisualSVN Server\\bin;D:\\wamp\\mysql\\bin;D:\\New git\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e PHP/5.5.30'
+    'SERVER_NAME' => 'www.bbb.com'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'D:/test1'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/test1'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'SCRIPT_FILENAME' => 'D:/test1/allance1/frontend/web/index.php'
+    'REMOTE_PORT' => '1575'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => 'r=admin/add'
+    'REQUEST_URI' => '/allance1/frontend/web/index.php?r=admin/add'
+    'SCRIPT_NAME' => '/allance1/frontend/web/index.php'
+    'PHP_SELF' => '/allance1/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1465869370.028
+    'REQUEST_TIME' => 1465869370
+]
+2016-06-14 09:57:37 [127.0.0.1][-][-][error][yii\db\Exception] exception 'PDOException' with message 'SQLSTATE[42S02]: Base table or view not found: 1146 Table 'allance.user' doesn't exist' in D:\test1\allance1\vendor\yiisoft\yii2\db\Command.php:781
+Stack trace:
+#0 D:\test1\allance1\vendor\yiisoft\yii2\db\Command.php(781): PDOStatement->execute()
+#1 D:\test1\allance1\frontend\controllers\AdminController.php(54): yii\db\Command->execute()
+#2 [internal function]: frontend\controllers\AdminController->actionAdd()
+#3 D:\test1\allance1\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array('[<span class="t...', '[]')
+#4 D:\test1\allance1\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams('[<span class="s...')
+#5 D:\test1\allance1\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('<span class="st...', '[<span class="s...')
+#6 D:\test1\allance1\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('<span class="st...', '[<span class="s...')
+#7 D:\test1\allance1\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#8 D:\test1\allance1\frontend\web\index.php(18): yii\base\Application->run()
+#9 {main}
+
+Next exception 'yii\db\Exception' with message 'SQLSTATE[42S02]: Base table or view not found: 1146 Table 'allance.user' doesn't exist
+The SQL being executed was: INSERT INTO `user` (`a_account`, `a_name`, `a_pwd`, `a_addtime`) VALUES (378530, '张三', 'ce9e15551dcef8f03d22b9f331b0417f', '2016-06-14,09:57:37')' in D:\test1\allance1\vendor\yiisoft\yii2\db\Schema.php:628
+Stack trace:
+#0 D:\test1\allance1\vendor\yiisoft\yii2\db\Command.php(791): yii\db\Schema->convertException(Object(PDOException), 'INSERT INTO `us...')
+#1 D:\test1\allance1\frontend\controllers\AdminController.php(54): yii\db\Command->execute()
+#2 [internal function]: frontend\controllers\AdminController->actionAdd()
+#3 D:\test1\allance1\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array('[<span class="t...', '[]')
+#4 D:\test1\allance1\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams('[<span class="s...')
+#5 D:\test1\allance1\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('<span class="st...', '[<span class="s...')
+#6 D:\test1\allance1\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('<span class="st...', '[<span class="s...')
+#7 D:\test1\allance1\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#8 D:\test1\allance1\frontend\web\index.php(18): yii\base\Application->run()
+#9 {main}
+Additional Information:
+Array
+(
+    [0] => 42S02
+    [1] => 1146
+    [2] => Table 'allance.user' doesn't exist
+)
+
+2016-06-14 09:57:37 [127.0.0.1][-][-][info][application] $_GET = [
+    'r' => 'admin/add'
+]
+
+$_POST = [
+    'a_name' => '张三'
+    'a_pwd' => 'adasdasd'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'www.bbb.com'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:47.0) Gecko/20100101 Firefox/47.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://www.bbb.com/allance1/frontend/web/index.php?r=admin/add'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'CONTENT_LENGTH' => '40'
+    'PATH' => 'C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;D:\\wamp\\php\\;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;D:\\Program Files\\TortoiseSVN\\bin;D:\\Program Files\\VisualSVN Server\\bin;D:\\wamp\\mysql\\bin;D:\\New git\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e PHP/5.5.30'
+    'SERVER_NAME' => 'www.bbb.com'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'D:/test1'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/test1'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'SCRIPT_FILENAME' => 'D:/test1/allance1/frontend/web/index.php'
+    'REMOTE_PORT' => '1590'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => 'r=admin/add'
+    'REQUEST_URI' => '/allance1/frontend/web/index.php?r=admin/add'
+    'SCRIPT_NAME' => '/allance1/frontend/web/index.php'
+    'PHP_SELF' => '/allance1/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1465869457.057
+    'REQUEST_TIME' => 1465869457
+]
+2016-06-14 10:11:33 [127.0.0.1][-][9bl8po8ib63obrs9d7o73kgmk1][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request "Admin/show".' in D:\test1\allance1\vendor\yiisoft\yii2\base\Module.php:461
+Stack trace:
+#0 D:\test1\allance1\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('Admin/show', Array)
+#1 D:\test1\allance1\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 D:\test1\allance1\frontend\web\index.php(18): yii\base\Application->run()
+#3 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in D:\test1\allance1\vendor\yiisoft\yii2\web\Application.php:96
+Stack trace:
+#0 D:\test1\allance1\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 D:\test1\allance1\frontend\web\index.php(18): yii\base\Application->run()
+#2 {main}
+2016-06-14 10:11:33 [127.0.0.1][-][9bl8po8ib63obrs9d7o73kgmk1][info][application] $_GET = [
+    'r' => 'Admin/show'
+]
+
+$_COOKIE = [
+    '_csrf' => '0528dbe0acd7b3b709d311f19324825ab6e5ff0224869fadf2c0bfaf20c00dc6a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"xST0uYxYo15gb6FFco4U63nhqPMNq0GB\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'www.bbb.com'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:47.0) Gecko/20100101 Firefox/47.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://www.bbb.com/allance1/frontend/web/index.php?r=admin/add'
+    'HTTP_COOKIE' => '_csrf=0528dbe0acd7b3b709d311f19324825ab6e5ff0224869fadf2c0bfaf20c00dc6a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22xST0uYxYo15gb6FFco4U63nhqPMNq0GB%22%3B%7D'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'PATH' => 'C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;D:\\wamp\\php\\;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;D:\\Program Files\\TortoiseSVN\\bin;D:\\Program Files\\VisualSVN Server\\bin;D:\\wamp\\mysql\\bin;D:\\New git\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e PHP/5.5.30'
+    'SERVER_NAME' => 'www.bbb.com'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'D:/test1'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/test1'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'SCRIPT_FILENAME' => 'D:/test1/allance1/frontend/web/index.php'
+    'REMOTE_PORT' => '1786'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=Admin%2Fshow'
+    'REQUEST_URI' => '/allance1/frontend/web/index.php?r=Admin%2Fshow'
+    'SCRIPT_NAME' => '/allance1/frontend/web/index.php'
+    'PHP_SELF' => '/allance1/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1465870293.71
+    'REQUEST_TIME' => 1465870293
+]
+2016-06-14 10:12:50 [127.0.0.1][-][-][error][yii\base\ErrorException:8] exception 'yii\base\ErrorException' with message 'Undefined variable: v' in D:\test1\allance1\frontend\views\admin\zhang.html:28
+Stack trace:
+#0 D:\test1\allance1\frontend\views\admin\zhang.html(28): yii\base\ErrorHandler->handleError(8, 'Undefined varia...', 'D:\\test1\\allanc...', 28, Array)
+#1 D:\test1\allance1\vendor\yiisoft\yii2\base\View.php(325): require('D:\\test1\\allanc...')
+#2 D:\test1\allance1\vendor\yiisoft\yii2\base\View.php(247): yii\base\View->renderPhpFile('D:\\test1\\allanc...', Array)
+#3 D:\test1\allance1\vendor\yiisoft\yii2\base\View.php(149): yii\base\View->renderFile('D:\\test1\\allanc...', Array, Object(frontend\controllers\AdminController))
+#4 D:\test1\allance1\vendor\yiisoft\yii2\base\Controller.php(371): yii\base\View->render('zhang.html', Array, Object(frontend\controllers\AdminController))
+#5 D:\test1\allance1\frontend\controllers\AdminController.php(38): yii\base\Controller->render('zhang.html', Array)
+#6 [internal function]: frontend\controllers\AdminController->actionShow()
+#7 D:\test1\allance1\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#8 D:\test1\allance1\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#9 D:\test1\allance1\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('show', Array)
+#10 D:\test1\allance1\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('admin/show', Array)
+#11 D:\test1\allance1\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#12 D:\test1\allance1\frontend\web\index.php(18): yii\base\Application->run()
+#13 {main}
+2016-06-14 10:12:49 [127.0.0.1][-][-][info][application] $_GET = [
+    'r' => 'admin/show'
+]
+
+$_COOKIE = [
+    '_csrf' => '0528dbe0acd7b3b709d311f19324825ab6e5ff0224869fadf2c0bfaf20c00dc6a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"xST0uYxYo15gb6FFco4U63nhqPMNq0GB\";}'
+    'PHPSESSID' => '9bl8po8ib63obrs9d7o73kgmk1'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'www.bbb.com'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:47.0) Gecko/20100101 Firefox/47.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://www.bbb.com/allance1/frontend/web/index.php?r=public/left'
+    'HTTP_COOKIE' => '_csrf=0528dbe0acd7b3b709d311f19324825ab6e5ff0224869fadf2c0bfaf20c00dc6a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22xST0uYxYo15gb6FFco4U63nhqPMNq0GB%22%3B%7D; PHPSESSID=9bl8po8ib63obrs9d7o73kgmk1'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'PATH' => 'C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;D:\\wamp\\php\\;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;D:\\Program Files\\TortoiseSVN\\bin;D:\\Program Files\\VisualSVN Server\\bin;D:\\wamp\\mysql\\bin;D:\\New git\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e PHP/5.5.30'
+    'SERVER_NAME' => 'www.bbb.com'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'D:/test1'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/test1'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'SCRIPT_FILENAME' => 'D:/test1/allance1/frontend/web/index.php'
+    'REMOTE_PORT' => '1798'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=admin/show'
+    'REQUEST_URI' => '/allance1/frontend/web/index.php?r=admin/show'
+    'SCRIPT_NAME' => '/allance1/frontend/web/index.php'
+    'PHP_SELF' => '/allance1/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1465870369.982
+    'REQUEST_TIME' => 1465870369
+]
+2016-06-14 10:12:50 [127.0.0.1][-][-][warning][yii\log\Dispatcher::dispatch] Unable to send log via yii\debug\LogTarget: Exception 'PDOException' with message 'You cannot serialize or unserialize PDO instances' 
+
+in D:\test1\allance1\vendor\yiisoft\yii2-debug\LogTarget.php:58
+
+Stack trace:
+#0 [internal function]: PDO->__sleep()
+#1 D:\test1\allance1\vendor\yiisoft\yii2-debug\LogTarget.php(58): serialize(Array)
+#2 D:\test1\allance1\vendor\yiisoft\yii2-debug\LogTarget.php(112): yii\debug\LogTarget->export(Array)
+#3 D:\test1\allance1\vendor\yiisoft\yii2\log\Dispatcher.php(183): yii\debug\LogTarget->collect(Array, true)
+#4 D:\test1\allance1\vendor\yiisoft\yii2\log\Logger.php(173): yii\log\Dispatcher->dispatch(Array, true)
+#5 D:\test1\allance1\vendor\yiisoft\yii2\base\ErrorHandler.php(111): yii\log\Logger->flush(true)
+#6 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\base\ErrorException))
+#7 {main}
+2016-06-14 10:12:49 [127.0.0.1][-][-][info][application] $_GET = [
+    'r' => 'admin/show'
+]
+
+$_COOKIE = [
+    '_csrf' => '0528dbe0acd7b3b709d311f19324825ab6e5ff0224869fadf2c0bfaf20c00dc6a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"xST0uYxYo15gb6FFco4U63nhqPMNq0GB\";}'
+    'PHPSESSID' => '9bl8po8ib63obrs9d7o73kgmk1'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'www.bbb.com'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:47.0) Gecko/20100101 Firefox/47.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://www.bbb.com/allance1/frontend/web/index.php?r=public/left'
+    'HTTP_COOKIE' => '_csrf=0528dbe0acd7b3b709d311f19324825ab6e5ff0224869fadf2c0bfaf20c00dc6a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22xST0uYxYo15gb6FFco4U63nhqPMNq0GB%22%3B%7D; PHPSESSID=9bl8po8ib63obrs9d7o73kgmk1'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'PATH' => 'C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;D:\\wamp\\php\\;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;D:\\Program Files\\TortoiseSVN\\bin;D:\\Program Files\\VisualSVN Server\\bin;D:\\wamp\\mysql\\bin;D:\\New git\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e PHP/5.5.30'
+    'SERVER_NAME' => 'www.bbb.com'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'D:/test1'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/test1'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'SCRIPT_FILENAME' => 'D:/test1/allance1/frontend/web/index.php'
+    'REMOTE_PORT' => '1798'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=admin/show'
+    'REQUEST_URI' => '/allance1/frontend/web/index.php?r=admin/show'
+    'SCRIPT_NAME' => '/allance1/frontend/web/index.php'
+    'PHP_SELF' => '/allance1/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1465870369.982
+    'REQUEST_TIME' => 1465870369
+]
+2016-06-14 10:12:52 [127.0.0.1][-][-][error][yii\base\ErrorException:8] exception 'yii\base\ErrorException' with message 'Undefined variable: v' in D:\test1\allance1\frontend\views\admin\zhang.html:28
+Stack trace:
+#0 D:\test1\allance1\frontend\views\admin\zhang.html(28): yii\base\ErrorHandler->handleError(8, 'Undefined varia...', 'D:\\test1\\allanc...', 28, Array)
+#1 D:\test1\allance1\vendor\yiisoft\yii2\base\View.php(325): require('D:\\test1\\allanc...')
+#2 D:\test1\allance1\vendor\yiisoft\yii2\base\View.php(247): yii\base\View->renderPhpFile('D:\\test1\\allanc...', Array)
+#3 D:\test1\allance1\vendor\yiisoft\yii2\base\View.php(149): yii\base\View->renderFile('D:\\test1\\allanc...', Array, Object(frontend\controllers\AdminController))
+#4 D:\test1\allance1\vendor\yiisoft\yii2\base\Controller.php(371): yii\base\View->render('zhang.html', Array, Object(frontend\controllers\AdminController))
+#5 D:\test1\allance1\frontend\controllers\AdminController.php(38): yii\base\Controller->render('zhang.html', Array)
+#6 [internal function]: frontend\controllers\AdminController->actionShow()
+#7 D:\test1\allance1\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#8 D:\test1\allance1\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#9 D:\test1\allance1\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('show', Array)
+#10 D:\test1\allance1\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('admin/show', Array)
+#11 D:\test1\allance1\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#12 D:\test1\allance1\frontend\web\index.php(18): yii\base\Application->run()
+#13 {main}
+2016-06-14 10:12:52 [127.0.0.1][-][-][info][application] $_GET = [
+    'r' => 'admin/show'
+]
+
+$_COOKIE = [
+    '_csrf' => '0528dbe0acd7b3b709d311f19324825ab6e5ff0224869fadf2c0bfaf20c00dc6a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"xST0uYxYo15gb6FFco4U63nhqPMNq0GB\";}'
+    'PHPSESSID' => '9bl8po8ib63obrs9d7o73kgmk1'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'www.bbb.com'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:47.0) Gecko/20100101 Firefox/47.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://www.bbb.com/allance1/frontend/web/index.php?r=public/left'
+    'HTTP_COOKIE' => '_csrf=0528dbe0acd7b3b709d311f19324825ab6e5ff0224869fadf2c0bfaf20c00dc6a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22xST0uYxYo15gb6FFco4U63nhqPMNq0GB%22%3B%7D; PHPSESSID=9bl8po8ib63obrs9d7o73kgmk1'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'PATH' => 'C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;D:\\wamp\\php\\;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;D:\\Program Files\\TortoiseSVN\\bin;D:\\Program Files\\VisualSVN Server\\bin;D:\\wamp\\mysql\\bin;D:\\New git\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e PHP/5.5.30'
+    'SERVER_NAME' => 'www.bbb.com'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'D:/test1'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/test1'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'SCRIPT_FILENAME' => 'D:/test1/allance1/frontend/web/index.php'
+    'REMOTE_PORT' => '1801'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=admin/show'
+    'REQUEST_URI' => '/allance1/frontend/web/index.php?r=admin/show'
+    'SCRIPT_NAME' => '/allance1/frontend/web/index.php'
+    'PHP_SELF' => '/allance1/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1465870372.405
+    'REQUEST_TIME' => 1465870372
+]
+2016-06-14 10:12:52 [127.0.0.1][-][-][warning][yii\log\Dispatcher::dispatch] Unable to send log via yii\debug\LogTarget: Exception 'PDOException' with message 'You cannot serialize or unserialize PDO instances' 
+
+in D:\test1\allance1\vendor\yiisoft\yii2-debug\LogTarget.php:58
+
+Stack trace:
+#0 [internal function]: PDO->__sleep()
+#1 D:\test1\allance1\vendor\yiisoft\yii2-debug\LogTarget.php(58): serialize(Array)
+#2 D:\test1\allance1\vendor\yiisoft\yii2-debug\LogTarget.php(112): yii\debug\LogTarget->export(Array)
+#3 D:\test1\allance1\vendor\yiisoft\yii2\log\Dispatcher.php(183): yii\debug\LogTarget->collect(Array, true)
+#4 D:\test1\allance1\vendor\yiisoft\yii2\log\Logger.php(173): yii\log\Dispatcher->dispatch(Array, true)
+#5 D:\test1\allance1\vendor\yiisoft\yii2\base\ErrorHandler.php(111): yii\log\Logger->flush(true)
+#6 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\base\ErrorException))
+#7 {main}
+2016-06-14 10:12:52 [127.0.0.1][-][-][info][application] $_GET = [
+    'r' => 'admin/show'
+]
+
+$_COOKIE = [
+    '_csrf' => '0528dbe0acd7b3b709d311f19324825ab6e5ff0224869fadf2c0bfaf20c00dc6a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"xST0uYxYo15gb6FFco4U63nhqPMNq0GB\";}'
+    'PHPSESSID' => '9bl8po8ib63obrs9d7o73kgmk1'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'www.bbb.com'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:47.0) Gecko/20100101 Firefox/47.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://www.bbb.com/allance1/frontend/web/index.php?r=public/left'
+    'HTTP_COOKIE' => '_csrf=0528dbe0acd7b3b709d311f19324825ab6e5ff0224869fadf2c0bfaf20c00dc6a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22xST0uYxYo15gb6FFco4U63nhqPMNq0GB%22%3B%7D; PHPSESSID=9bl8po8ib63obrs9d7o73kgmk1'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'PATH' => 'C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;D:\\wamp\\php\\;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;D:\\Program Files\\TortoiseSVN\\bin;D:\\Program Files\\VisualSVN Server\\bin;D:\\wamp\\mysql\\bin;D:\\New git\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e PHP/5.5.30'
+    'SERVER_NAME' => 'www.bbb.com'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'D:/test1'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/test1'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'SCRIPT_FILENAME' => 'D:/test1/allance1/frontend/web/index.php'
+    'REMOTE_PORT' => '1801'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=admin/show'
+    'REQUEST_URI' => '/allance1/frontend/web/index.php?r=admin/show'
+    'SCRIPT_NAME' => '/allance1/frontend/web/index.php'
+    'PHP_SELF' => '/allance1/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1465870372.405
+    'REQUEST_TIME' => 1465870372
+]
+2016-06-14 10:13:09 [127.0.0.1][-][9bl8po8ib63obrs9d7o73kgmk1][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request "Admin/show".' in D:\test1\allance1\vendor\yiisoft\yii2\base\Module.php:461
+Stack trace:
+#0 D:\test1\allance1\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('Admin/show', Array)
+#1 D:\test1\allance1\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 D:\test1\allance1\frontend\web\index.php(18): yii\base\Application->run()
+#3 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in D:\test1\allance1\vendor\yiisoft\yii2\web\Application.php:96
+Stack trace:
+#0 D:\test1\allance1\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 D:\test1\allance1\frontend\web\index.php(18): yii\base\Application->run()
+#2 {main}
+2016-06-14 10:13:09 [127.0.0.1][-][9bl8po8ib63obrs9d7o73kgmk1][info][application] $_GET = [
+    'r' => 'Admin/show'
+]
+
+$_COOKIE = [
+    '_csrf' => '0528dbe0acd7b3b709d311f19324825ab6e5ff0224869fadf2c0bfaf20c00dc6a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"xST0uYxYo15gb6FFco4U63nhqPMNq0GB\";}'
+    'PHPSESSID' => '9bl8po8ib63obrs9d7o73kgmk1'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'www.bbb.com'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:47.0) Gecko/20100101 Firefox/47.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://www.bbb.com/allance1/frontend/web/index.php?r=admin/add'
+    'HTTP_COOKIE' => '_csrf=0528dbe0acd7b3b709d311f19324825ab6e5ff0224869fadf2c0bfaf20c00dc6a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22xST0uYxYo15gb6FFco4U63nhqPMNq0GB%22%3B%7D; PHPSESSID=9bl8po8ib63obrs9d7o73kgmk1'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'PATH' => 'C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;D:\\wamp\\php\\;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;D:\\Program Files\\TortoiseSVN\\bin;D:\\Program Files\\VisualSVN Server\\bin;D:\\wamp\\mysql\\bin;D:\\New git\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e PHP/5.5.30'
+    'SERVER_NAME' => 'www.bbb.com'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'D:/test1'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/test1'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'SCRIPT_FILENAME' => 'D:/test1/allance1/frontend/web/index.php'
+    'REMOTE_PORT' => '1805'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=Admin%2Fshow'
+    'REQUEST_URI' => '/allance1/frontend/web/index.php?r=Admin%2Fshow'
+    'SCRIPT_NAME' => '/allance1/frontend/web/index.php'
+    'PHP_SELF' => '/allance1/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1465870389.298
+    'REQUEST_TIME' => 1465870389
+]
+2016-06-14 10:19:02 [127.0.0.1][-][-][error][yii\base\ErrorException:8] exception 'yii\base\ErrorException' with message 'Undefined index: id' in D:\test1\allance1\frontend\views\admin\zhang.html:25
+Stack trace:
+#0 D:\test1\allance1\frontend\views\admin\zhang.html(25): yii\base\ErrorHandler->handleError(8, 'Undefined index...', 'D:\\test1\\allanc...', 25, Array)
+#1 D:\test1\allance1\vendor\yiisoft\yii2\base\View.php(325): require('D:\\test1\\allanc...')
+#2 D:\test1\allance1\vendor\yiisoft\yii2\base\View.php(247): yii\base\View->renderPhpFile('D:\\test1\\allanc...', Array)
+#3 D:\test1\allance1\vendor\yiisoft\yii2\base\View.php(149): yii\base\View->renderFile('D:\\test1\\allanc...', Array, Object(frontend\controllers\AdminController))
+#4 D:\test1\allance1\vendor\yiisoft\yii2\base\Controller.php(371): yii\base\View->render('zhang.html', Array, Object(frontend\controllers\AdminController))
+#5 D:\test1\allance1\frontend\controllers\AdminController.php(38): yii\base\Controller->render('zhang.html', Array)
+#6 [internal function]: frontend\controllers\AdminController->actionShow()
+#7 D:\test1\allance1\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#8 D:\test1\allance1\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#9 D:\test1\allance1\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('show', Array)
+#10 D:\test1\allance1\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('admin/show', Array)
+#11 D:\test1\allance1\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#12 D:\test1\allance1\frontend\web\index.php(18): yii\base\Application->run()
+#13 {main}
+2016-06-14 10:19:02 [127.0.0.1][-][-][info][application] $_GET = [
+    'r' => 'admin/show'
+]
+
+$_COOKIE = [
+    '_csrf' => '0528dbe0acd7b3b709d311f19324825ab6e5ff0224869fadf2c0bfaf20c00dc6a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"xST0uYxYo15gb6FFco4U63nhqPMNq0GB\";}'
+    'PHPSESSID' => '9bl8po8ib63obrs9d7o73kgmk1'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'www.bbb.com'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:47.0) Gecko/20100101 Firefox/47.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://www.bbb.com/allance1/frontend/web/index.php?r=public/left'
+    'HTTP_COOKIE' => '_csrf=0528dbe0acd7b3b709d311f19324825ab6e5ff0224869fadf2c0bfaf20c00dc6a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22xST0uYxYo15gb6FFco4U63nhqPMNq0GB%22%3B%7D; PHPSESSID=9bl8po8ib63obrs9d7o73kgmk1'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'PATH' => 'C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;D:\\wamp\\php\\;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;D:\\Program Files\\TortoiseSVN\\bin;D:\\Program Files\\VisualSVN Server\\bin;D:\\wamp\\mysql\\bin;D:\\New git\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e PHP/5.5.30'
+    'SERVER_NAME' => 'www.bbb.com'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'D:/test1'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/test1'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'SCRIPT_FILENAME' => 'D:/test1/allance1/frontend/web/index.php'
+    'REMOTE_PORT' => '1916'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=admin/show'
+    'REQUEST_URI' => '/allance1/frontend/web/index.php?r=admin/show'
+    'SCRIPT_NAME' => '/allance1/frontend/web/index.php'
+    'PHP_SELF' => '/allance1/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1465870742.131
+    'REQUEST_TIME' => 1465870742
+]
+2016-06-14 10:19:02 [127.0.0.1][-][-][warning][yii\log\Dispatcher::dispatch] Unable to send log via yii\debug\LogTarget: Exception 'PDOException' with message 'You cannot serialize or unserialize PDO instances' 
+
+in D:\test1\allance1\vendor\yiisoft\yii2-debug\LogTarget.php:58
+
+Stack trace:
+#0 [internal function]: PDO->__sleep()
+#1 D:\test1\allance1\vendor\yiisoft\yii2-debug\LogTarget.php(58): serialize(Array)
+#2 D:\test1\allance1\vendor\yiisoft\yii2-debug\LogTarget.php(112): yii\debug\LogTarget->export(Array)
+#3 D:\test1\allance1\vendor\yiisoft\yii2\log\Dispatcher.php(183): yii\debug\LogTarget->collect(Array, true)
+#4 D:\test1\allance1\vendor\yiisoft\yii2\log\Logger.php(173): yii\log\Dispatcher->dispatch(Array, true)
+#5 D:\test1\allance1\vendor\yiisoft\yii2\base\ErrorHandler.php(111): yii\log\Logger->flush(true)
+#6 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\base\ErrorException))
+#7 {main}
+2016-06-14 10:19:02 [127.0.0.1][-][-][info][application] $_GET = [
+    'r' => 'admin/show'
+]
+
+$_COOKIE = [
+    '_csrf' => '0528dbe0acd7b3b709d311f19324825ab6e5ff0224869fadf2c0bfaf20c00dc6a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"xST0uYxYo15gb6FFco4U63nhqPMNq0GB\";}'
+    'PHPSESSID' => '9bl8po8ib63obrs9d7o73kgmk1'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'www.bbb.com'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:47.0) Gecko/20100101 Firefox/47.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://www.bbb.com/allance1/frontend/web/index.php?r=public/left'
+    'HTTP_COOKIE' => '_csrf=0528dbe0acd7b3b709d311f19324825ab6e5ff0224869fadf2c0bfaf20c00dc6a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22xST0uYxYo15gb6FFco4U63nhqPMNq0GB%22%3B%7D; PHPSESSID=9bl8po8ib63obrs9d7o73kgmk1'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'PATH' => 'C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;D:\\wamp\\php\\;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;D:\\Program Files\\TortoiseSVN\\bin;D:\\Program Files\\VisualSVN Server\\bin;D:\\wamp\\mysql\\bin;D:\\New git\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e PHP/5.5.30'
+    'SERVER_NAME' => 'www.bbb.com'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'D:/test1'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/test1'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'SCRIPT_FILENAME' => 'D:/test1/allance1/frontend/web/index.php'
+    'REMOTE_PORT' => '1916'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=admin/show'
+    'REQUEST_URI' => '/allance1/frontend/web/index.php?r=admin/show'
+    'SCRIPT_NAME' => '/allance1/frontend/web/index.php'
+    'PHP_SELF' => '/allance1/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1465870742.131
+    'REQUEST_TIME' => 1465870742
+]
+2016-06-14 10:25:25 [127.0.0.1][-][9bl8po8ib63obrs9d7o73kgmk1][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request "Admin/show".' in D:\test1\allance1\vendor\yiisoft\yii2\base\Module.php:461
+Stack trace:
+#0 D:\test1\allance1\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('Admin/show', Array)
+#1 D:\test1\allance1\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 D:\test1\allance1\frontend\web\index.php(18): yii\base\Application->run()
+#3 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in D:\test1\allance1\vendor\yiisoft\yii2\web\Application.php:96
+Stack trace:
+#0 D:\test1\allance1\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 D:\test1\allance1\frontend\web\index.php(18): yii\base\Application->run()
+#2 {main}
+2016-06-14 10:25:25 [127.0.0.1][-][9bl8po8ib63obrs9d7o73kgmk1][info][application] $_GET = [
+    'r' => 'Admin/show'
+]
+
+$_COOKIE = [
+    '_csrf' => '0528dbe0acd7b3b709d311f19324825ab6e5ff0224869fadf2c0bfaf20c00dc6a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"xST0uYxYo15gb6FFco4U63nhqPMNq0GB\";}'
+    'PHPSESSID' => '9bl8po8ib63obrs9d7o73kgmk1'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'www.bbb.com'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:47.0) Gecko/20100101 Firefox/47.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://www.bbb.com/allance1/frontend/web/index.php?r=admin/add'
+    'HTTP_COOKIE' => '_csrf=0528dbe0acd7b3b709d311f19324825ab6e5ff0224869fadf2c0bfaf20c00dc6a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22xST0uYxYo15gb6FFco4U63nhqPMNq0GB%22%3B%7D; PHPSESSID=9bl8po8ib63obrs9d7o73kgmk1'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'PATH' => 'C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;D:\\wamp\\php\\;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;D:\\Program Files\\TortoiseSVN\\bin;D:\\Program Files\\VisualSVN Server\\bin;D:\\wamp\\mysql\\bin;D:\\New git\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e PHP/5.5.30'
+    'SERVER_NAME' => 'www.bbb.com'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'D:/test1'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/test1'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'SCRIPT_FILENAME' => 'D:/test1/allance1/frontend/web/index.php'
+    'REMOTE_PORT' => '2053'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=Admin%2Fshow'
+    'REQUEST_URI' => '/allance1/frontend/web/index.php?r=Admin%2Fshow'
+    'SCRIPT_NAME' => '/allance1/frontend/web/index.php'
+    'PHP_SELF' => '/allance1/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1465871125.594
+    'REQUEST_TIME' => 1465871125
+]
+2016-06-14 10:28:09 [127.0.0.1][-][9bl8po8ib63obrs9d7o73kgmk1][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request "Admin/show".' in D:\test1\allance1\vendor\yiisoft\yii2\base\Module.php:461
+Stack trace:
+#0 D:\test1\allance1\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('Admin/show', Array)
+#1 D:\test1\allance1\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 D:\test1\allance1\frontend\web\index.php(18): yii\base\Application->run()
+#3 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in D:\test1\allance1\vendor\yiisoft\yii2\web\Application.php:96
+Stack trace:
+#0 D:\test1\allance1\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 D:\test1\allance1\frontend\web\index.php(18): yii\base\Application->run()
+#2 {main}
+2016-06-14 10:28:09 [127.0.0.1][-][9bl8po8ib63obrs9d7o73kgmk1][info][application] $_GET = [
+    'r' => 'Admin/show'
+]
+
+$_COOKIE = [
+    '_csrf' => '0528dbe0acd7b3b709d311f19324825ab6e5ff0224869fadf2c0bfaf20c00dc6a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"xST0uYxYo15gb6FFco4U63nhqPMNq0GB\";}'
+    'PHPSESSID' => '9bl8po8ib63obrs9d7o73kgmk1'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'www.bbb.com'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:47.0) Gecko/20100101 Firefox/47.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://www.bbb.com/allance1/frontend/web/index.php?r=admin/add'
+    'HTTP_COOKIE' => '_csrf=0528dbe0acd7b3b709d311f19324825ab6e5ff0224869fadf2c0bfaf20c00dc6a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22xST0uYxYo15gb6FFco4U63nhqPMNq0GB%22%3B%7D; PHPSESSID=9bl8po8ib63obrs9d7o73kgmk1'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'PATH' => 'C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;D:\\wamp\\php\\;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;D:\\Program Files\\TortoiseSVN\\bin;D:\\Program Files\\VisualSVN Server\\bin;D:\\wamp\\mysql\\bin;D:\\New git\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e PHP/5.5.30'
+    'SERVER_NAME' => 'www.bbb.com'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'D:/test1'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/test1'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'SCRIPT_FILENAME' => 'D:/test1/allance1/frontend/web/index.php'
+    'REMOTE_PORT' => '2150'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=Admin%2Fshow'
+    'REQUEST_URI' => '/allance1/frontend/web/index.php?r=Admin%2Fshow'
+    'SCRIPT_NAME' => '/allance1/frontend/web/index.php'
+    'PHP_SELF' => '/allance1/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1465871289.45
+    'REQUEST_TIME' => 1465871289
+]
+2016-06-14 10:28:10 [127.0.0.1][-][9bl8po8ib63obrs9d7o73kgmk1][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request "Admin/show".' in D:\test1\allance1\vendor\yiisoft\yii2\base\Module.php:461
+Stack trace:
+#0 D:\test1\allance1\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('Admin/show', Array)
+#1 D:\test1\allance1\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 D:\test1\allance1\frontend\web\index.php(18): yii\base\Application->run()
+#3 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in D:\test1\allance1\vendor\yiisoft\yii2\web\Application.php:96
+Stack trace:
+#0 D:\test1\allance1\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 D:\test1\allance1\frontend\web\index.php(18): yii\base\Application->run()
+#2 {main}
+2016-06-14 10:28:09 [127.0.0.1][-][9bl8po8ib63obrs9d7o73kgmk1][info][application] $_GET = [
+    'r' => 'Admin/show'
+]
+
+$_COOKIE = [
+    '_csrf' => '0528dbe0acd7b3b709d311f19324825ab6e5ff0224869fadf2c0bfaf20c00dc6a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"xST0uYxYo15gb6FFco4U63nhqPMNq0GB\";}'
+    'PHPSESSID' => '9bl8po8ib63obrs9d7o73kgmk1'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'www.bbb.com'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:47.0) Gecko/20100101 Firefox/47.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://www.bbb.com/allance1/frontend/web/index.php?r=admin/add'
+    'HTTP_COOKIE' => '_csrf=0528dbe0acd7b3b709d311f19324825ab6e5ff0224869fadf2c0bfaf20c00dc6a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22xST0uYxYo15gb6FFco4U63nhqPMNq0GB%22%3B%7D; PHPSESSID=9bl8po8ib63obrs9d7o73kgmk1'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'PATH' => 'C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;D:\\wamp\\php\\;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;D:\\Program Files\\TortoiseSVN\\bin;D:\\Program Files\\VisualSVN Server\\bin;D:\\wamp\\mysql\\bin;D:\\New git\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e PHP/5.5.30'
+    'SERVER_NAME' => 'www.bbb.com'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'D:/test1'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/test1'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'SCRIPT_FILENAME' => 'D:/test1/allance1/frontend/web/index.php'
+    'REMOTE_PORT' => '2152'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=Admin%2Fshow'
+    'REQUEST_URI' => '/allance1/frontend/web/index.php?r=Admin%2Fshow'
+    'SCRIPT_NAME' => '/allance1/frontend/web/index.php'
+    'PHP_SELF' => '/allance1/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1465871289.89
+    'REQUEST_TIME' => 1465871289
+]
+2016-06-14 10:57:24 [127.0.0.1][-][-][error][yii\base\ErrorException:4] exception 'yii\base\ErrorException' with message 'syntax error, unexpected '$v' (T_VARIABLE)' in D:\test1\allance1\frontend\views\admin\show.html:27
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleFatalError()
+#1 {main}
+2016-06-14 10:57:23 [127.0.0.1][-][-][info][application] $_GET = [
+    'r' => 'admin/add'
+]
+
+$_POST = [
+    'a_name' => '请问'
+    'a_pwd' => 'wqeqwewq'
+]
+
+$_COOKIE = [
+    '_csrf' => '0528dbe0acd7b3b709d311f19324825ab6e5ff0224869fadf2c0bfaf20c00dc6a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"xST0uYxYo15gb6FFco4U63nhqPMNq0GB\";}'
+    'PHPSESSID' => '9bl8po8ib63obrs9d7o73kgmk1'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'www.bbb.com'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:47.0) Gecko/20100101 Firefox/47.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://www.bbb.com/allance1/frontend/web/index.php?r=admin/add'
+    'HTTP_COOKIE' => '_csrf=0528dbe0acd7b3b709d311f19324825ab6e5ff0224869fadf2c0bfaf20c00dc6a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22xST0uYxYo15gb6FFco4U63nhqPMNq0GB%22%3B%7D; PHPSESSID=9bl8po8ib63obrs9d7o73kgmk1'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'CONTENT_LENGTH' => '40'
+    'PATH' => 'C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;D:\\wamp\\php\\;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;D:\\Program Files\\TortoiseSVN\\bin;D:\\Program Files\\VisualSVN Server\\bin;D:\\wamp\\mysql\\bin;D:\\New git\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e PHP/5.5.30'
+    'SERVER_NAME' => 'www.bbb.com'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'D:/test1'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/test1'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'SCRIPT_FILENAME' => 'D:/test1/allance1/frontend/web/index.php'
+    'REMOTE_PORT' => '3115'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => 'r=admin/add'
+    'REQUEST_URI' => '/allance1/frontend/web/index.php?r=admin/add'
+    'SCRIPT_NAME' => '/allance1/frontend/web/index.php'
+    'PHP_SELF' => '/allance1/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1465873043.77
+    'REQUEST_TIME' => 1465873043
+]
+2016-06-14 11:11:33 [127.0.0.1][-][-][error][yii\base\ErrorException:2] exception 'yii\base\ErrorException' with message 'Invalid argument supplied for foreach()' in D:\test1\allance1\frontend\views\admin\show.html:27
+Stack trace:
+#0 D:\test1\allance1\frontend\views\admin\show.html(27): yii\base\ErrorHandler->handleError(2, 'Invalid argumen...', 'D:\\test1\\allanc...', 27, Array)
+#1 D:\test1\allance1\vendor\yiisoft\yii2\base\View.php(325): require('D:\\test1\\allanc...')
+#2 D:\test1\allance1\vendor\yiisoft\yii2\base\View.php(247): yii\base\View->renderPhpFile('D:\\test1\\allanc...', Array)
+#3 D:\test1\allance1\vendor\yiisoft\yii2\base\View.php(149): yii\base\View->renderFile('D:\\test1\\allanc...', Array, Object(frontend\controllers\AdminController))
+#4 D:\test1\allance1\vendor\yiisoft\yii2\base\Controller.php(371): yii\base\View->render('show.html', Array, Object(frontend\controllers\AdminController))
+#5 D:\test1\allance1\frontend\controllers\AdminController.php(63): yii\base\Controller->render('show.html', Array)
+#6 [internal function]: frontend\controllers\AdminController->actionAdd()
+#7 D:\test1\allance1\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#8 D:\test1\allance1\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#9 D:\test1\allance1\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('add', Array)
+#10 D:\test1\allance1\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('admin/add', Array)
+#11 D:\test1\allance1\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#12 D:\test1\allance1\frontend\web\index.php(18): yii\base\Application->run()
+#13 {main}
+2016-06-14 11:11:33 [127.0.0.1][-][-][info][application] $_GET = [
+    'r' => 'admin/add'
+]
+
+$_POST = [
+    'a_name' => '二期'
+    'a_pwd' => 'eqwfdsfsd'
+]
+
+$_COOKIE = [
+    '_csrf' => '0528dbe0acd7b3b709d311f19324825ab6e5ff0224869fadf2c0bfaf20c00dc6a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"xST0uYxYo15gb6FFco4U63nhqPMNq0GB\";}'
+    'PHPSESSID' => '9bl8po8ib63obrs9d7o73kgmk1'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'www.bbb.com'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:47.0) Gecko/20100101 Firefox/47.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://www.bbb.com/allance1/frontend/web/index.php?r=admin/add'
+    'HTTP_COOKIE' => '_csrf=0528dbe0acd7b3b709d311f19324825ab6e5ff0224869fadf2c0bfaf20c00dc6a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22xST0uYxYo15gb6FFco4U63nhqPMNq0GB%22%3B%7D; PHPSESSID=9bl8po8ib63obrs9d7o73kgmk1'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'CONTENT_LENGTH' => '41'
+    'PATH' => 'C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;D:\\wamp\\php\\;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;D:\\Program Files\\TortoiseSVN\\bin;D:\\Program Files\\VisualSVN Server\\bin;D:\\wamp\\mysql\\bin;D:\\New git\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e PHP/5.5.30'
+    'SERVER_NAME' => 'www.bbb.com'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'D:/test1'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/test1'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'SCRIPT_FILENAME' => 'D:/test1/allance1/frontend/web/index.php'
+    'REMOTE_PORT' => '3331'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => 'r=admin/add'
+    'REQUEST_URI' => '/allance1/frontend/web/index.php?r=admin/add'
+    'SCRIPT_NAME' => '/allance1/frontend/web/index.php'
+    'PHP_SELF' => '/allance1/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1465873893.014
+    'REQUEST_TIME' => 1465873893
+]
+2016-06-14 11:11:33 [127.0.0.1][-][-][warning][yii\log\Dispatcher::dispatch] Unable to send log via yii\debug\LogTarget: Exception 'PDOException' with message 'You cannot serialize or unserialize PDO instances' 
+
+in D:\test1\allance1\vendor\yiisoft\yii2-debug\LogTarget.php:58
+
+Stack trace:
+#0 [internal function]: PDO->__sleep()
+#1 D:\test1\allance1\vendor\yiisoft\yii2-debug\LogTarget.php(58): serialize(Array)
+#2 D:\test1\allance1\vendor\yiisoft\yii2-debug\LogTarget.php(112): yii\debug\LogTarget->export(Array)
+#3 D:\test1\allance1\vendor\yiisoft\yii2\log\Dispatcher.php(183): yii\debug\LogTarget->collect(Array, true)
+#4 D:\test1\allance1\vendor\yiisoft\yii2\log\Logger.php(173): yii\log\Dispatcher->dispatch(Array, true)
+#5 D:\test1\allance1\vendor\yiisoft\yii2\base\ErrorHandler.php(111): yii\log\Logger->flush(true)
+#6 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\base\ErrorException))
+#7 {main}
+2016-06-14 11:11:33 [127.0.0.1][-][-][info][application] $_GET = [
+    'r' => 'admin/add'
+]
+
+$_POST = [
+    'a_name' => '二期'
+    'a_pwd' => 'eqwfdsfsd'
+]
+
+$_COOKIE = [
+    '_csrf' => '0528dbe0acd7b3b709d311f19324825ab6e5ff0224869fadf2c0bfaf20c00dc6a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"xST0uYxYo15gb6FFco4U63nhqPMNq0GB\";}'
+    'PHPSESSID' => '9bl8po8ib63obrs9d7o73kgmk1'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'www.bbb.com'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:47.0) Gecko/20100101 Firefox/47.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://www.bbb.com/allance1/frontend/web/index.php?r=admin/add'
+    'HTTP_COOKIE' => '_csrf=0528dbe0acd7b3b709d311f19324825ab6e5ff0224869fadf2c0bfaf20c00dc6a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22xST0uYxYo15gb6FFco4U63nhqPMNq0GB%22%3B%7D; PHPSESSID=9bl8po8ib63obrs9d7o73kgmk1'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'CONTENT_LENGTH' => '41'
+    'PATH' => 'C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;D:\\wamp\\php\\;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;D:\\Program Files\\TortoiseSVN\\bin;D:\\Program Files\\VisualSVN Server\\bin;D:\\wamp\\mysql\\bin;D:\\New git\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e PHP/5.5.30'
+    'SERVER_NAME' => 'www.bbb.com'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'D:/test1'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/test1'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'SCRIPT_FILENAME' => 'D:/test1/allance1/frontend/web/index.php'
+    'REMOTE_PORT' => '3331'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => 'r=admin/add'
+    'REQUEST_URI' => '/allance1/frontend/web/index.php?r=admin/add'
+    'SCRIPT_NAME' => '/allance1/frontend/web/index.php'
+    'PHP_SELF' => '/allance1/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1465873893.014
+    'REQUEST_TIME' => 1465873893
+]
+2016-06-14 15:21:36 [127.0.0.1][-][-][error][yii\base\ErrorException:8] exception 'yii\base\ErrorException' with message 'Undefined index: pwd' in D:\test1\allance1\frontend\views\admin\zhang.html:85
+Stack trace:
+#0 D:\test1\allance1\frontend\views\admin\zhang.html(85): yii\base\ErrorHandler->handleError(8, 'Undefined index...', 'D:\\test1\\allanc...', 85, Array)
+#1 D:\test1\allance1\vendor\yiisoft\yii2\base\View.php(325): require('D:\\test1\\allanc...')
+#2 D:\test1\allance1\vendor\yiisoft\yii2\base\View.php(247): yii\base\View->renderPhpFile('D:\\test1\\allanc...', Array)
+#3 D:\test1\allance1\vendor\yiisoft\yii2\base\View.php(149): yii\base\View->renderFile('D:\\test1\\allanc...', Array, Object(frontend\controllers\AdminController))
+#4 D:\test1\allance1\vendor\yiisoft\yii2\base\Controller.php(371): yii\base\View->render('zhang.html', Array, Object(frontend\controllers\AdminController))
+#5 D:\test1\allance1\frontend\controllers\AdminController.php(38): yii\base\Controller->render('zhang.html', Array)
+#6 [internal function]: frontend\controllers\AdminController->actionShow()
+#7 D:\test1\allance1\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#8 D:\test1\allance1\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#9 D:\test1\allance1\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('show', Array)
+#10 D:\test1\allance1\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('admin/show', Array)
+#11 D:\test1\allance1\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#12 D:\test1\allance1\frontend\web\index.php(18): yii\base\Application->run()
+#13 {main}
+2016-06-14 15:21:36 [127.0.0.1][-][-][info][application] $_GET = [
+    'r' => 'admin/show'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'www.bbb.com'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:47.0) Gecko/20100101 Firefox/47.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://www.bbb.com/allance1/frontend/web/index.php?r=public/left'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'PATH' => 'C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;D:\\wamp\\php\\;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;D:\\Program Files\\TortoiseSVN\\bin;D:\\Program Files\\VisualSVN Server\\bin;D:\\wamp\\mysql\\bin;D:\\New git\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e PHP/5.5.30'
+    'SERVER_NAME' => 'www.bbb.com'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'D:/test1'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/test1'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'SCRIPT_FILENAME' => 'D:/test1/allance1/frontend/web/index.php'
+    'REMOTE_PORT' => '8706'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=admin/show'
+    'REQUEST_URI' => '/allance1/frontend/web/index.php?r=admin/show'
+    'SCRIPT_NAME' => '/allance1/frontend/web/index.php'
+    'PHP_SELF' => '/allance1/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1465888896.161
+    'REQUEST_TIME' => 1465888896
+]
+2016-06-14 15:21:36 [127.0.0.1][-][-][warning][yii\log\Dispatcher::dispatch] Unable to send log via yii\debug\LogTarget: Exception 'PDOException' with message 'You cannot serialize or unserialize PDO instances' 
+
+in D:\test1\allance1\vendor\yiisoft\yii2-debug\LogTarget.php:58
+
+Stack trace:
+#0 [internal function]: PDO->__sleep()
+#1 D:\test1\allance1\vendor\yiisoft\yii2-debug\LogTarget.php(58): serialize(Array)
+#2 D:\test1\allance1\vendor\yiisoft\yii2-debug\LogTarget.php(112): yii\debug\LogTarget->export(Array)
+#3 D:\test1\allance1\vendor\yiisoft\yii2\log\Dispatcher.php(183): yii\debug\LogTarget->collect(Array, true)
+#4 D:\test1\allance1\vendor\yiisoft\yii2\log\Logger.php(173): yii\log\Dispatcher->dispatch(Array, true)
+#5 D:\test1\allance1\vendor\yiisoft\yii2\base\ErrorHandler.php(111): yii\log\Logger->flush(true)
+#6 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\base\ErrorException))
+#7 {main}
+2016-06-14 15:21:36 [127.0.0.1][-][-][info][application] $_GET = [
+    'r' => 'admin/show'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'www.bbb.com'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:47.0) Gecko/20100101 Firefox/47.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://www.bbb.com/allance1/frontend/web/index.php?r=public/left'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'PATH' => 'C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;D:\\wamp\\php\\;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;D:\\Program Files\\TortoiseSVN\\bin;D:\\Program Files\\VisualSVN Server\\bin;D:\\wamp\\mysql\\bin;D:\\New git\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e PHP/5.5.30'
+    'SERVER_NAME' => 'www.bbb.com'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'D:/test1'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/test1'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'SCRIPT_FILENAME' => 'D:/test1/allance1/frontend/web/index.php'
+    'REMOTE_PORT' => '8706'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=admin/show'
+    'REQUEST_URI' => '/allance1/frontend/web/index.php?r=admin/show'
+    'SCRIPT_NAME' => '/allance1/frontend/web/index.php'
+    'PHP_SELF' => '/allance1/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1465888896.161
+    'REQUEST_TIME' => 1465888896
+]
+2016-06-14 16:19:48 [127.0.0.1][-][-][error][yii\base\ErrorException:8] exception 'yii\base\ErrorException' with message 'Undefined index: nav_id' in D:\test1\allance1\frontend\views\admin\zhang.html:70
+Stack trace:
+#0 D:\test1\allance1\frontend\views\admin\zhang.html(70): yii\base\ErrorHandler->handleError(8, 'Undefined index...', 'D:\\test1\\allanc...', 70, Array)
+#1 D:\test1\allance1\vendor\yiisoft\yii2\base\View.php(325): require('D:\\test1\\allanc...')
+#2 D:\test1\allance1\vendor\yiisoft\yii2\base\View.php(247): yii\base\View->renderPhpFile('D:\\test1\\allanc...', Array)
+#3 D:\test1\allance1\vendor\yiisoft\yii2\base\View.php(149): yii\base\View->renderFile('D:\\test1\\allanc...', Array, Object(frontend\controllers\AdminController))
+#4 D:\test1\allance1\vendor\yiisoft\yii2\base\Controller.php(371): yii\base\View->render('zhang.html', Array, Object(frontend\controllers\AdminController))
+#5 D:\test1\allance1\frontend\controllers\AdminController.php(38): yii\base\Controller->render('zhang.html', Array)
+#6 [internal function]: frontend\controllers\AdminController->actionShow()
+#7 D:\test1\allance1\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#8 D:\test1\allance1\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#9 D:\test1\allance1\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('show', Array)
+#10 D:\test1\allance1\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('admin/show', Array)
+#11 D:\test1\allance1\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#12 D:\test1\allance1\frontend\web\index.php(18): yii\base\Application->run()
+#13 {main}
+2016-06-14 16:19:48 [127.0.0.1][-][-][info][application] $_GET = [
+    'r' => 'admin/show'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'www.bbb.com'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:47.0) Gecko/20100101 Firefox/47.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://www.bbb.com/allance1/frontend/web/index.php?r=public/left'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'PATH' => 'C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;D:\\wamp\\php\\;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;D:\\Program Files\\TortoiseSVN\\bin;D:\\Program Files\\VisualSVN Server\\bin;D:\\wamp\\mysql\\bin;D:\\New git\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e PHP/5.5.30'
+    'SERVER_NAME' => 'www.bbb.com'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'D:/test1'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/test1'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'SCRIPT_FILENAME' => 'D:/test1/allance1/frontend/web/index.php'
+    'REMOTE_PORT' => '11494'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=admin/show'
+    'REQUEST_URI' => '/allance1/frontend/web/index.php?r=admin/show'
+    'SCRIPT_NAME' => '/allance1/frontend/web/index.php'
+    'PHP_SELF' => '/allance1/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1465892388.057
+    'REQUEST_TIME' => 1465892388
+]
+2016-06-14 16:19:48 [127.0.0.1][-][-][warning][yii\log\Dispatcher::dispatch] Unable to send log via yii\debug\LogTarget: Exception 'PDOException' with message 'You cannot serialize or unserialize PDO instances' 
+
+in D:\test1\allance1\vendor\yiisoft\yii2-debug\LogTarget.php:58
+
+Stack trace:
+#0 [internal function]: PDO->__sleep()
+#1 D:\test1\allance1\vendor\yiisoft\yii2-debug\LogTarget.php(58): serialize(Array)
+#2 D:\test1\allance1\vendor\yiisoft\yii2-debug\LogTarget.php(112): yii\debug\LogTarget->export(Array)
+#3 D:\test1\allance1\vendor\yiisoft\yii2\log\Dispatcher.php(183): yii\debug\LogTarget->collect(Array, true)
+#4 D:\test1\allance1\vendor\yiisoft\yii2\log\Logger.php(173): yii\log\Dispatcher->dispatch(Array, true)
+#5 D:\test1\allance1\vendor\yiisoft\yii2\base\ErrorHandler.php(111): yii\log\Logger->flush(true)
+#6 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\base\ErrorException))
+#7 {main}
+2016-06-14 16:19:48 [127.0.0.1][-][-][info][application] $_GET = [
+    'r' => 'admin/show'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'www.bbb.com'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:47.0) Gecko/20100101 Firefox/47.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://www.bbb.com/allance1/frontend/web/index.php?r=public/left'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'PATH' => 'C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;D:\\wamp\\php\\;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;D:\\Program Files\\TortoiseSVN\\bin;D:\\Program Files\\VisualSVN Server\\bin;D:\\wamp\\mysql\\bin;D:\\New git\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e PHP/5.5.30'
+    'SERVER_NAME' => 'www.bbb.com'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'D:/test1'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/test1'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'SCRIPT_FILENAME' => 'D:/test1/allance1/frontend/web/index.php'
+    'REMOTE_PORT' => '11494'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=admin/show'
+    'REQUEST_URI' => '/allance1/frontend/web/index.php?r=admin/show'
+    'SCRIPT_NAME' => '/allance1/frontend/web/index.php'
+    'PHP_SELF' => '/allance1/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1465892388.057
+    'REQUEST_TIME' => 1465892388
+]
+2016-06-14 16:31:44 [127.0.0.1][-][-][error][yii\base\ErrorException:8] exception 'yii\base\ErrorException' with message 'Undefined index: nav_id' in D:\test1\allance1\frontend\views\admin\zhang.html:70
+Stack trace:
+#0 D:\test1\allance1\frontend\views\admin\zhang.html(70): yii\base\ErrorHandler->handleError(8, 'Undefined index...', 'D:\\test1\\allanc...', 70, Array)
+#1 D:\test1\allance1\vendor\yiisoft\yii2\base\View.php(325): require('D:\\test1\\allanc...')
+#2 D:\test1\allance1\vendor\yiisoft\yii2\base\View.php(247): yii\base\View->renderPhpFile('D:\\test1\\allanc...', Array)
+#3 D:\test1\allance1\vendor\yiisoft\yii2\base\View.php(149): yii\base\View->renderFile('D:\\test1\\allanc...', Array, Object(frontend\controllers\AdminController))
+#4 D:\test1\allance1\vendor\yiisoft\yii2\base\Controller.php(371): yii\base\View->render('zhang.html', Array, Object(frontend\controllers\AdminController))
+#5 D:\test1\allance1\frontend\controllers\AdminController.php(38): yii\base\Controller->render('zhang.html', Array)
+#6 [internal function]: frontend\controllers\AdminController->actionShow()
+#7 D:\test1\allance1\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#8 D:\test1\allance1\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#9 D:\test1\allance1\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('show', Array)
+#10 D:\test1\allance1\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('admin/show', Array)
+#11 D:\test1\allance1\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#12 D:\test1\allance1\frontend\web\index.php(18): yii\base\Application->run()
+#13 {main}
+2016-06-14 16:31:44 [127.0.0.1][-][-][info][application] $_GET = [
+    'r' => 'admin/show'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'www.bbb.com'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:47.0) Gecko/20100101 Firefox/47.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://www.bbb.com/allance1/frontend/web/index.php?r=public/left'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'PATH' => 'C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;D:\\wamp\\php\\;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;D:\\Program Files\\TortoiseSVN\\bin;D:\\Program Files\\VisualSVN Server\\bin;D:\\wamp\\mysql\\bin;D:\\New git\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e PHP/5.5.30'
+    'SERVER_NAME' => 'www.bbb.com'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'D:/test1'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/test1'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'SCRIPT_FILENAME' => 'D:/test1/allance1/frontend/web/index.php'
+    'REMOTE_PORT' => '11902'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=admin/show'
+    'REQUEST_URI' => '/allance1/frontend/web/index.php?r=admin/show'
+    'SCRIPT_NAME' => '/allance1/frontend/web/index.php'
+    'PHP_SELF' => '/allance1/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1465893104.539
+    'REQUEST_TIME' => 1465893104
+]
+2016-06-14 16:31:44 [127.0.0.1][-][-][warning][yii\log\Dispatcher::dispatch] Unable to send log via yii\debug\LogTarget: Exception 'PDOException' with message 'You cannot serialize or unserialize PDO instances' 
+
+in D:\test1\allance1\vendor\yiisoft\yii2-debug\LogTarget.php:58
+
+Stack trace:
+#0 [internal function]: PDO->__sleep()
+#1 D:\test1\allance1\vendor\yiisoft\yii2-debug\LogTarget.php(58): serialize(Array)
+#2 D:\test1\allance1\vendor\yiisoft\yii2-debug\LogTarget.php(112): yii\debug\LogTarget->export(Array)
+#3 D:\test1\allance1\vendor\yiisoft\yii2\log\Dispatcher.php(183): yii\debug\LogTarget->collect(Array, true)
+#4 D:\test1\allance1\vendor\yiisoft\yii2\log\Logger.php(173): yii\log\Dispatcher->dispatch(Array, true)
+#5 D:\test1\allance1\vendor\yiisoft\yii2\base\ErrorHandler.php(111): yii\log\Logger->flush(true)
+#6 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\base\ErrorException))
+#7 {main}
+2016-06-14 16:31:44 [127.0.0.1][-][-][info][application] $_GET = [
+    'r' => 'admin/show'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'www.bbb.com'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:47.0) Gecko/20100101 Firefox/47.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://www.bbb.com/allance1/frontend/web/index.php?r=public/left'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'PATH' => 'C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;D:\\wamp\\php\\;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;D:\\Program Files\\TortoiseSVN\\bin;D:\\Program Files\\VisualSVN Server\\bin;D:\\wamp\\mysql\\bin;D:\\New git\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e PHP/5.5.30'
+    'SERVER_NAME' => 'www.bbb.com'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'D:/test1'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/test1'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'SCRIPT_FILENAME' => 'D:/test1/allance1/frontend/web/index.php'
+    'REMOTE_PORT' => '11902'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=admin/show'
+    'REQUEST_URI' => '/allance1/frontend/web/index.php?r=admin/show'
+    'SCRIPT_NAME' => '/allance1/frontend/web/index.php'
+    'PHP_SELF' => '/allance1/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1465893104.539
+    'REQUEST_TIME' => 1465893104
+]
+2016-06-14 16:32:22 [127.0.0.1][-][0l98sc76kd4ktii0pc0hqlnbb3][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request "navigation/update".' in D:\test1\allance1\vendor\yiisoft\yii2\base\Module.php:461
+Stack trace:
+#0 D:\test1\allance1\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('navigation/upda...', Array)
+#1 D:\test1\allance1\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 D:\test1\allance1\frontend\web\index.php(18): yii\base\Application->run()
+#3 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in D:\test1\allance1\vendor\yiisoft\yii2\web\Application.php:96
+Stack trace:
+#0 D:\test1\allance1\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 D:\test1\allance1\frontend\web\index.php(18): yii\base\Application->run()
+#2 {main}
+2016-06-14 16:32:22 [127.0.0.1][-][0l98sc76kd4ktii0pc0hqlnbb3][info][application] $_GET = [
+    'r' => 'navigation/update'
+    'id' => '1'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'www.bbb.com'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:47.0) Gecko/20100101 Firefox/47.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://www.bbb.com/allance1/frontend/web/index.php?r=admin/show'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'PATH' => 'C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;D:\\wamp\\php\\;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;D:\\Program Files\\TortoiseSVN\\bin;D:\\Program Files\\VisualSVN Server\\bin;D:\\wamp\\mysql\\bin;D:\\New git\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e PHP/5.5.30'
+    'SERVER_NAME' => 'www.bbb.com'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'D:/test1'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/test1'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'SCRIPT_FILENAME' => 'D:/test1/allance1/frontend/web/index.php'
+    'REMOTE_PORT' => '11950'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=navigation/update&id=1'
+    'REQUEST_URI' => '/allance1/frontend/web/index.php?r=navigation/update&id=1'
+    'SCRIPT_NAME' => '/allance1/frontend/web/index.php'
+    'PHP_SELF' => '/allance1/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1465893142.517
+    'REQUEST_TIME' => 1465893142
+]
+2016-06-14 19:38:22 [127.0.0.1][-][-][error][yii\base\InvalidParamException] exception 'yii\base\InvalidParamException' with message 'Operator 'ADM_ID =>1' requires two operands.' in D:\test1\allance1\vendor\yiisoft\yii2\db\QueryBuilder.php:1279
+Stack trace:
+#0 D:\test1\allance1\vendor\yiisoft\yii2\db\QueryBuilder.php(924): yii\db\QueryBuilder->buildSimpleCondition('ADM_ID =>1', Array, '<span class="st...')
+#1 D:\test1\allance1\vendor\yiisoft\yii2\db\QueryBuilder.php(743): yii\db\QueryBuilder->buildCondition(Array, '<span class="st...')
+#2 D:\test1\allance1\vendor\yiisoft\yii2\db\QueryBuilder.php(96): yii\db\QueryBuilder->buildWhere(Array, '<span class="st...')
+#3 D:\test1\allance1\vendor\yiisoft\yii2\db\Query.php(122): yii\db\QueryBuilder->build(Object(yii\db\Query))
+#4 D:\test1\allance1\vendor\yiisoft\yii2\db\Query.php(206): yii\db\Query->createCommand(NULL)
+#5 D:\test1\allance1\frontend\controllers\AdminController.php(108): yii\db\Query->all()
+#6 [internal function]: frontend\controllers\AdminController->actionUpdate()
+#7 D:\test1\allance1\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#8 D:\test1\allance1\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#9 D:\test1\allance1\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('update', Array)
+#10 D:\test1\allance1\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('admin/update', Array)
+#11 D:\test1\allance1\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#12 D:\test1\allance1\frontend\web\index.php(18): yii\base\Application->run()
+#13 {main}
+2016-06-14 19:38:22 [127.0.0.1][-][-][info][application] $_GET = [
+    'r' => 'admin/update'
+    'id' => '1'
+]
+
+$_COOKIE = [
+    'PHPSESSID' => '0l98sc76kd4ktii0pc0hqlnbb3'
+    '_csrf' => 'b73f5347c56e53ec77e14f77215604f6d6de4573f999520f3c6bead09d4af6eea:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"V3jVG0Wgh2ydSqL62xsKn5Zfq19LLd2F\";}'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'www.bbb.com'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:47.0) Gecko/20100101 Firefox/47.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://www.bbb.com/allance1/frontend/web/index.php?r=admin/show'
+    'HTTP_COOKIE' => 'PHPSESSID=0l98sc76kd4ktii0pc0hqlnbb3; _csrf=b73f5347c56e53ec77e14f77215604f6d6de4573f999520f3c6bead09d4af6eea%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22V3jVG0Wgh2ydSqL62xsKn5Zfq19LLd2F%22%3B%7D'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'PATH' => 'C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;D:\\wamp\\php\\;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;D:\\Program Files\\TortoiseSVN\\bin;D:\\Program Files\\VisualSVN Server\\bin;D:\\wamp\\mysql\\bin;D:\\New git\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e PHP/5.5.30'
+    'SERVER_NAME' => 'www.bbb.com'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'D:/test1'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/test1'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'SCRIPT_FILENAME' => 'D:/test1/allance1/frontend/web/index.php'
+    'REMOTE_PORT' => '1873'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=admin/update&id=1'
+    'REQUEST_URI' => '/allance1/frontend/web/index.php?r=admin/update&id=1'
+    'SCRIPT_NAME' => '/allance1/frontend/web/index.php'
+    'PHP_SELF' => '/allance1/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1465904302.239
+    'REQUEST_TIME' => 1465904302
+]
+2016-06-14 19:38:22 [127.0.0.1][-][-][warning][yii\log\Dispatcher::dispatch] Unable to send log via yii\debug\LogTarget: Exception 'Exception' with message 'Serialization of 'Closure' is not allowed' 
+
+in D:\test1\allance1\vendor\yiisoft\yii2-debug\LogTarget.php:58
+
+Stack trace:
+#0 D:\test1\allance1\vendor\yiisoft\yii2-debug\LogTarget.php(58): serialize(Array)
+#1 D:\test1\allance1\vendor\yiisoft\yii2-debug\LogTarget.php(112): yii\debug\LogTarget->export(Array)
+#2 D:\test1\allance1\vendor\yiisoft\yii2\log\Dispatcher.php(183): yii\debug\LogTarget->collect(Array, true)
+#3 D:\test1\allance1\vendor\yiisoft\yii2\log\Logger.php(173): yii\log\Dispatcher->dispatch(Array, true)
+#4 D:\test1\allance1\vendor\yiisoft\yii2\base\ErrorHandler.php(111): yii\log\Logger->flush(true)
+#5 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\base\InvalidParamException))
+#6 {main}
+2016-06-14 19:38:22 [127.0.0.1][-][-][info][application] $_GET = [
+    'r' => 'admin/update'
+    'id' => '1'
+]
+
+$_COOKIE = [
+    'PHPSESSID' => '0l98sc76kd4ktii0pc0hqlnbb3'
+    '_csrf' => 'b73f5347c56e53ec77e14f77215604f6d6de4573f999520f3c6bead09d4af6eea:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"V3jVG0Wgh2ydSqL62xsKn5Zfq19LLd2F\";}'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'www.bbb.com'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:47.0) Gecko/20100101 Firefox/47.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://www.bbb.com/allance1/frontend/web/index.php?r=admin/show'
+    'HTTP_COOKIE' => 'PHPSESSID=0l98sc76kd4ktii0pc0hqlnbb3; _csrf=b73f5347c56e53ec77e14f77215604f6d6de4573f999520f3c6bead09d4af6eea%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22V3jVG0Wgh2ydSqL62xsKn5Zfq19LLd2F%22%3B%7D'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'PATH' => 'C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;D:\\wamp\\php\\;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;D:\\Program Files\\TortoiseSVN\\bin;D:\\Program Files\\VisualSVN Server\\bin;D:\\wamp\\mysql\\bin;D:\\New git\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e PHP/5.5.30'
+    'SERVER_NAME' => 'www.bbb.com'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'D:/test1'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/test1'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'SCRIPT_FILENAME' => 'D:/test1/allance1/frontend/web/index.php'
+    'REMOTE_PORT' => '1873'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=admin/update&id=1'
+    'REQUEST_URI' => '/allance1/frontend/web/index.php?r=admin/update&id=1'
+    'SCRIPT_NAME' => '/allance1/frontend/web/index.php'
+    'PHP_SELF' => '/allance1/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1465904302.239
+    'REQUEST_TIME' => 1465904302
+]
+2016-06-14 19:38:57 [127.0.0.1][-][-][error][yii\db\Exception] exception 'PDOException' with message 'SQLSTATE[42S22]: Column not found: 1054 Unknown column 'adm_id ' in 'where clause'' in D:\test1\allance1\vendor\yiisoft\yii2\db\Command.php:837
+Stack trace:
+#0 D:\test1\allance1\vendor\yiisoft\yii2\db\Command.php(837): PDOStatement->execute()
+#1 D:\test1\allance1\vendor\yiisoft\yii2\db\Command.php(359): yii\db\Command->queryInternal('<span class="st...', '<span class="ke...')
+#2 D:\test1\allance1\vendor\yiisoft\yii2\db\Query.php(206): yii\db\Command->queryAll()
+#3 D:\test1\allance1\frontend\controllers\AdminController.php(108): yii\db\Query->all()
+#4 [internal function]: frontend\controllers\AdminController->actionUpdate()
+#5 D:\test1\allance1\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array('[<span class="t...', '[]')
+#6 D:\test1\allance1\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams('[<span class="s...')
+#7 D:\test1\allance1\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('<span class="st...', '[<span class="s...')
+#8 D:\test1\allance1\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('<span class="st...', '[<span class="s...')
+#9 D:\test1\allance1\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#10 D:\test1\allance1\frontend\web\index.php(18): yii\base\Application->run()
+#11 {main}
+
+Next exception 'yii\db\Exception' with message 'SQLSTATE[42S22]: Column not found: 1054 Unknown column 'adm_id ' in 'where clause'
+The SQL being executed was: SELECT * FROM `al_admin` WHERE `adm_id `='1'' in D:\test1\allance1\vendor\yiisoft\yii2\db\Schema.php:628
+Stack trace:
+#0 D:\test1\allance1\vendor\yiisoft\yii2\db\Command.php(852): yii\db\Schema->convertException(Object(PDOException), 'SELECT * FROM `...')
+#1 D:\test1\allance1\vendor\yiisoft\yii2\db\Command.php(359): yii\db\Command->queryInternal('<span class="st...', '<span class="ke...')
+#2 D:\test1\allance1\vendor\yiisoft\yii2\db\Query.php(206): yii\db\Command->queryAll()
+#3 D:\test1\allance1\frontend\controllers\AdminController.php(108): yii\db\Query->all()
+#4 [internal function]: frontend\controllers\AdminController->actionUpdate()
+#5 D:\test1\allance1\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array('[<span class="t...', '[]')
+#6 D:\test1\allance1\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams('[<span class="s...')
+#7 D:\test1\allance1\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('<span class="st...', '[<span class="s...')
+#8 D:\test1\allance1\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('<span class="st...', '[<span class="s...')
+#9 D:\test1\allance1\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#10 D:\test1\allance1\frontend\web\index.php(18): yii\base\Application->run()
+#11 {main}
+Additional Information:
+Array
+(
+    [0] => 42S22
+    [1] => 1054
+    [2] => Unknown column 'adm_id ' in 'where clause'
+)
+
+2016-06-14 19:38:57 [127.0.0.1][-][-][info][application] $_GET = [
+    'r' => 'admin/update'
+    'id' => '1'
+]
+
+$_COOKIE = [
+    'PHPSESSID' => '0l98sc76kd4ktii0pc0hqlnbb3'
+    '_csrf' => 'b73f5347c56e53ec77e14f77215604f6d6de4573f999520f3c6bead09d4af6eea:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"V3jVG0Wgh2ydSqL62xsKn5Zfq19LLd2F\";}'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'www.bbb.com'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:47.0) Gecko/20100101 Firefox/47.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://www.bbb.com/allance1/frontend/web/index.php?r=admin/show'
+    'HTTP_COOKIE' => 'PHPSESSID=0l98sc76kd4ktii0pc0hqlnbb3; _csrf=b73f5347c56e53ec77e14f77215604f6d6de4573f999520f3c6bead09d4af6eea%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22V3jVG0Wgh2ydSqL62xsKn5Zfq19LLd2F%22%3B%7D'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'PATH' => 'C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;D:\\wamp\\php\\;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;D:\\Program Files\\TortoiseSVN\\bin;D:\\Program Files\\VisualSVN Server\\bin;D:\\wamp\\mysql\\bin;D:\\New git\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e PHP/5.5.30'
+    'SERVER_NAME' => 'www.bbb.com'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'D:/test1'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/test1'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'SCRIPT_FILENAME' => 'D:/test1/allance1/frontend/web/index.php'
+    'REMOTE_PORT' => '1902'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=admin/update&id=1'
+    'REQUEST_URI' => '/allance1/frontend/web/index.php?r=admin/update&id=1'
+    'SCRIPT_NAME' => '/allance1/frontend/web/index.php'
+    'PHP_SELF' => '/allance1/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1465904337.457
+    'REQUEST_TIME' => 1465904337
+]
+2016-06-14 19:40:59 [127.0.0.1][-][-][error][yii\db\Exception] exception 'PDOException' with message 'SQLSTATE[42S22]: Column not found: 1054 Unknown column 'adm_id ' in 'where clause'' in D:\test1\allance1\vendor\yiisoft\yii2\db\Command.php:837
+Stack trace:
+#0 D:\test1\allance1\vendor\yiisoft\yii2\db\Command.php(837): PDOStatement->execute()
+#1 D:\test1\allance1\vendor\yiisoft\yii2\db\Command.php(359): yii\db\Command->queryInternal('<span class="st...', '<span class="ke...')
+#2 D:\test1\allance1\vendor\yiisoft\yii2\db\Query.php(206): yii\db\Command->queryAll()
+#3 D:\test1\allance1\frontend\controllers\AdminController.php(108): yii\db\Query->all()
+#4 [internal function]: frontend\controllers\AdminController->actionUpdate()
+#5 D:\test1\allance1\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array('[<span class="t...', '[]')
+#6 D:\test1\allance1\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams('[<span class="s...')
+#7 D:\test1\allance1\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('<span class="st...', '[<span class="s...')
+#8 D:\test1\allance1\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('<span class="st...', '[<span class="s...')
+#9 D:\test1\allance1\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#10 D:\test1\allance1\frontend\web\index.php(18): yii\base\Application->run()
+#11 {main}
+
+Next exception 'yii\db\Exception' with message 'SQLSTATE[42S22]: Column not found: 1054 Unknown column 'adm_id ' in 'where clause'
+The SQL being executed was: SELECT * FROM `al_admin` WHERE `adm_id `='1'' in D:\test1\allance1\vendor\yiisoft\yii2\db\Schema.php:628
+Stack trace:
+#0 D:\test1\allance1\vendor\yiisoft\yii2\db\Command.php(852): yii\db\Schema->convertException(Object(PDOException), 'SELECT * FROM `...')
+#1 D:\test1\allance1\vendor\yiisoft\yii2\db\Command.php(359): yii\db\Command->queryInternal('<span class="st...', '<span class="ke...')
+#2 D:\test1\allance1\vendor\yiisoft\yii2\db\Query.php(206): yii\db\Command->queryAll()
+#3 D:\test1\allance1\frontend\controllers\AdminController.php(108): yii\db\Query->all()
+#4 [internal function]: frontend\controllers\AdminController->actionUpdate()
+#5 D:\test1\allance1\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array('[<span class="t...', '[]')
+#6 D:\test1\allance1\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams('[<span class="s...')
+#7 D:\test1\allance1\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('<span class="st...', '[<span class="s...')
+#8 D:\test1\allance1\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('<span class="st...', '[<span class="s...')
+#9 D:\test1\allance1\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#10 D:\test1\allance1\frontend\web\index.php(18): yii\base\Application->run()
+#11 {main}
+Additional Information:
+Array
+(
+    [0] => 42S22
+    [1] => 1054
+    [2] => Unknown column 'adm_id ' in 'where clause'
+)
+
+2016-06-14 19:40:59 [127.0.0.1][-][-][info][application] $_GET = [
+    'r' => 'admin/update'
+    'id' => '1'
+]
+
+$_COOKIE = [
+    'PHPSESSID' => '0l98sc76kd4ktii0pc0hqlnbb3'
+    '_csrf' => 'b73f5347c56e53ec77e14f77215604f6d6de4573f999520f3c6bead09d4af6eea:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"V3jVG0Wgh2ydSqL62xsKn5Zfq19LLd2F\";}'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'www.bbb.com'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:47.0) Gecko/20100101 Firefox/47.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://www.bbb.com/allance1/frontend/web/index.php?r=admin/show'
+    'HTTP_COOKIE' => 'PHPSESSID=0l98sc76kd4ktii0pc0hqlnbb3; _csrf=b73f5347c56e53ec77e14f77215604f6d6de4573f999520f3c6bead09d4af6eea%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22V3jVG0Wgh2ydSqL62xsKn5Zfq19LLd2F%22%3B%7D'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'PATH' => 'C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;D:\\wamp\\php\\;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;D:\\Program Files\\TortoiseSVN\\bin;D:\\Program Files\\VisualSVN Server\\bin;D:\\wamp\\mysql\\bin;D:\\New git\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e PHP/5.5.30'
+    'SERVER_NAME' => 'www.bbb.com'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'D:/test1'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/test1'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'SCRIPT_FILENAME' => 'D:/test1/allance1/frontend/web/index.php'
+    'REMOTE_PORT' => '1916'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=admin/update&id=1'
+    'REQUEST_URI' => '/allance1/frontend/web/index.php?r=admin/update&id=1'
+    'SCRIPT_NAME' => '/allance1/frontend/web/index.php'
+    'PHP_SELF' => '/allance1/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1465904459.483
+    'REQUEST_TIME' => 1465904459
+]
+2016-06-14 19:41:08 [127.0.0.1][-][-][error][yii\db\Exception] exception 'PDOException' with message 'SQLSTATE[42S22]: Column not found: 1054 Unknown column 'adm_id ' in 'where clause'' in D:\test1\allance1\vendor\yiisoft\yii2\db\Command.php:837
+Stack trace:
+#0 D:\test1\allance1\vendor\yiisoft\yii2\db\Command.php(837): PDOStatement->execute()
+#1 D:\test1\allance1\vendor\yiisoft\yii2\db\Command.php(359): yii\db\Command->queryInternal('<span class="st...', '<span class="ke...')
+#2 D:\test1\allance1\vendor\yiisoft\yii2\db\Query.php(206): yii\db\Command->queryAll()
+#3 D:\test1\allance1\frontend\controllers\AdminController.php(108): yii\db\Query->all()
+#4 [internal function]: frontend\controllers\AdminController->actionUpdate()
+#5 D:\test1\allance1\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array('[<span class="t...', '[]')
+#6 D:\test1\allance1\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams('[<span class="s...')
+#7 D:\test1\allance1\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('<span class="st...', '[<span class="s...')
+#8 D:\test1\allance1\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('<span class="st...', '[<span class="s...')
+#9 D:\test1\allance1\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#10 D:\test1\allance1\frontend\web\index.php(18): yii\base\Application->run()
+#11 {main}
+
+Next exception 'yii\db\Exception' with message 'SQLSTATE[42S22]: Column not found: 1054 Unknown column 'adm_id ' in 'where clause'
+The SQL being executed was: SELECT * FROM `al_admin` WHERE `adm_id `='1'' in D:\test1\allance1\vendor\yiisoft\yii2\db\Schema.php:628
+Stack trace:
+#0 D:\test1\allance1\vendor\yiisoft\yii2\db\Command.php(852): yii\db\Schema->convertException(Object(PDOException), 'SELECT * FROM `...')
+#1 D:\test1\allance1\vendor\yiisoft\yii2\db\Command.php(359): yii\db\Command->queryInternal('<span class="st...', '<span class="ke...')
+#2 D:\test1\allance1\vendor\yiisoft\yii2\db\Query.php(206): yii\db\Command->queryAll()
+#3 D:\test1\allance1\frontend\controllers\AdminController.php(108): yii\db\Query->all()
+#4 [internal function]: frontend\controllers\AdminController->actionUpdate()
+#5 D:\test1\allance1\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array('[<span class="t...', '[]')
+#6 D:\test1\allance1\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams('[<span class="s...')
+#7 D:\test1\allance1\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('<span class="st...', '[<span class="s...')
+#8 D:\test1\allance1\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('<span class="st...', '[<span class="s...')
+#9 D:\test1\allance1\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#10 D:\test1\allance1\frontend\web\index.php(18): yii\base\Application->run()
+#11 {main}
+Additional Information:
+Array
+(
+    [0] => 42S22
+    [1] => 1054
+    [2] => Unknown column 'adm_id ' in 'where clause'
+)
+
+2016-06-14 19:41:08 [127.0.0.1][-][-][info][application] $_GET = [
+    'r' => 'admin/update'
+    'id' => '1'
+]
+
+$_COOKIE = [
+    'PHPSESSID' => '0l98sc76kd4ktii0pc0hqlnbb3'
+    '_csrf' => 'b73f5347c56e53ec77e14f77215604f6d6de4573f999520f3c6bead09d4af6eea:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"V3jVG0Wgh2ydSqL62xsKn5Zfq19LLd2F\";}'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'www.bbb.com'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:47.0) Gecko/20100101 Firefox/47.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://www.bbb.com/allance1/frontend/web/index.php?r=admin/show'
+    'HTTP_COOKIE' => 'PHPSESSID=0l98sc76kd4ktii0pc0hqlnbb3; _csrf=b73f5347c56e53ec77e14f77215604f6d6de4573f999520f3c6bead09d4af6eea%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22V3jVG0Wgh2ydSqL62xsKn5Zfq19LLd2F%22%3B%7D'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'PATH' => 'C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;D:\\wamp\\php\\;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;D:\\Program Files\\TortoiseSVN\\bin;D:\\Program Files\\VisualSVN Server\\bin;D:\\wamp\\mysql\\bin;D:\\New git\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e PHP/5.5.30'
+    'SERVER_NAME' => 'www.bbb.com'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'D:/test1'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/test1'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'SCRIPT_FILENAME' => 'D:/test1/allance1/frontend/web/index.php'
+    'REMOTE_PORT' => '1924'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=admin/update&id=1'
+    'REQUEST_URI' => '/allance1/frontend/web/index.php?r=admin/update&id=1'
+    'SCRIPT_NAME' => '/allance1/frontend/web/index.php'
+    'PHP_SELF' => '/allance1/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1465904468.147
+    'REQUEST_TIME' => 1465904468
+]
+2016-06-14 19:41:33 [127.0.0.1][-][-][error][yii\db\Exception] exception 'PDOException' with message 'SQLSTATE[42S22]: Column not found: 1054 Unknown column 'id' in 'field list'' in D:\test1\allance1\vendor\yiisoft\yii2\db\Command.php:837
+Stack trace:
+#0 D:\test1\allance1\vendor\yiisoft\yii2\db\Command.php(837): PDOStatement->execute()
+#1 D:\test1\allance1\vendor\yiisoft\yii2\db\Command.php(359): yii\db\Command->queryInternal('<span class="st...', '<span class="ke...')
+#2 D:\test1\allance1\vendor\yiisoft\yii2\db\Query.php(206): yii\db\Command->queryAll()
+#3 D:\test1\allance1\frontend\controllers\AdminController.php(108): yii\db\Query->all()
+#4 [internal function]: frontend\controllers\AdminController->actionUpdate()
+#5 D:\test1\allance1\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array('[<span class="t...', '[]')
+#6 D:\test1\allance1\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams('[<span class="s...')
+#7 D:\test1\allance1\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('<span class="st...', '[<span class="s...')
+#8 D:\test1\allance1\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('<span class="st...', '[<span class="s...')
+#9 D:\test1\allance1\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#10 D:\test1\allance1\frontend\web\index.php(18): yii\base\Application->run()
+#11 {main}
+
+Next exception 'yii\db\Exception' with message 'SQLSTATE[42S22]: Column not found: 1054 Unknown column 'id' in 'field list'
+The SQL being executed was: SELECT `id` FROM `al_admin` WHERE `adm_id `='1'' in D:\test1\allance1\vendor\yiisoft\yii2\db\Schema.php:628
+Stack trace:
+#0 D:\test1\allance1\vendor\yiisoft\yii2\db\Command.php(852): yii\db\Schema->convertException(Object(PDOException), 'SELECT `id` FRO...')
+#1 D:\test1\allance1\vendor\yiisoft\yii2\db\Command.php(359): yii\db\Command->queryInternal('<span class="st...', '<span class="ke...')
+#2 D:\test1\allance1\vendor\yiisoft\yii2\db\Query.php(206): yii\db\Command->queryAll()
+#3 D:\test1\allance1\frontend\controllers\AdminController.php(108): yii\db\Query->all()
+#4 [internal function]: frontend\controllers\AdminController->actionUpdate()
+#5 D:\test1\allance1\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array('[<span class="t...', '[]')
+#6 D:\test1\allance1\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams('[<span class="s...')
+#7 D:\test1\allance1\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('<span class="st...', '[<span class="s...')
+#8 D:\test1\allance1\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('<span class="st...', '[<span class="s...')
+#9 D:\test1\allance1\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#10 D:\test1\allance1\frontend\web\index.php(18): yii\base\Application->run()
+#11 {main}
+Additional Information:
+Array
+(
+    [0] => 42S22
+    [1] => 1054
+    [2] => Unknown column 'id' in 'field list'
+)
+
+2016-06-14 19:41:33 [127.0.0.1][-][-][info][application] $_GET = [
+    'r' => 'admin/update'
+    'id' => '1'
+]
+
+$_COOKIE = [
+    'PHPSESSID' => '0l98sc76kd4ktii0pc0hqlnbb3'
+    '_csrf' => 'b73f5347c56e53ec77e14f77215604f6d6de4573f999520f3c6bead09d4af6eea:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"V3jVG0Wgh2ydSqL62xsKn5Zfq19LLd2F\";}'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'www.bbb.com'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:47.0) Gecko/20100101 Firefox/47.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://www.bbb.com/allance1/frontend/web/index.php?r=admin/show'
+    'HTTP_COOKIE' => 'PHPSESSID=0l98sc76kd4ktii0pc0hqlnbb3; _csrf=b73f5347c56e53ec77e14f77215604f6d6de4573f999520f3c6bead09d4af6eea%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22V3jVG0Wgh2ydSqL62xsKn5Zfq19LLd2F%22%3B%7D'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'PATH' => 'C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;D:\\wamp\\php\\;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;D:\\Program Files\\TortoiseSVN\\bin;D:\\Program Files\\VisualSVN Server\\bin;D:\\wamp\\mysql\\bin;D:\\New git\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e PHP/5.5.30'
+    'SERVER_NAME' => 'www.bbb.com'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'D:/test1'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/test1'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'SCRIPT_FILENAME' => 'D:/test1/allance1/frontend/web/index.php'
+    'REMOTE_PORT' => '1931'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=admin/update&id=1'
+    'REQUEST_URI' => '/allance1/frontend/web/index.php?r=admin/update&id=1'
+    'SCRIPT_NAME' => '/allance1/frontend/web/index.php'
+    'PHP_SELF' => '/allance1/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1465904493.636
+    'REQUEST_TIME' => 1465904493
+]
+2016-06-14 19:42:15 [127.0.0.1][-][-][error][yii\db\Exception] exception 'PDOException' with message 'SQLSTATE[42S22]: Column not found: 1054 Unknown column 'id' in 'field list'' in D:\test1\allance1\vendor\yiisoft\yii2\db\Command.php:837
+Stack trace:
+#0 D:\test1\allance1\vendor\yiisoft\yii2\db\Command.php(837): PDOStatement->execute()
+#1 D:\test1\allance1\vendor\yiisoft\yii2\db\Command.php(359): yii\db\Command->queryInternal('<span class="st...', '<span class="ke...')
+#2 D:\test1\allance1\vendor\yiisoft\yii2\db\Query.php(206): yii\db\Command->queryAll()
+#3 D:\test1\allance1\frontend\controllers\AdminController.php(107): yii\db\Query->all()
+#4 [internal function]: frontend\controllers\AdminController->actionUpdate()
+#5 D:\test1\allance1\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array('[<span class="t...', '[]')
+#6 D:\test1\allance1\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams('[<span class="s...')
+#7 D:\test1\allance1\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('<span class="st...', '[<span class="s...')
+#8 D:\test1\allance1\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('<span class="st...', '[<span class="s...')
+#9 D:\test1\allance1\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#10 D:\test1\allance1\frontend\web\index.php(18): yii\base\Application->run()
+#11 {main}
+
+Next exception 'yii\db\Exception' with message 'SQLSTATE[42S22]: Column not found: 1054 Unknown column 'id' in 'field list'
+The SQL being executed was: SELECT `id`, `1` FROM `al_admin`' in D:\test1\allance1\vendor\yiisoft\yii2\db\Schema.php:628
+Stack trace:
+#0 D:\test1\allance1\vendor\yiisoft\yii2\db\Command.php(852): yii\db\Schema->convertException(Object(PDOException), 'SELECT `id`, `1...')
+#1 D:\test1\allance1\vendor\yiisoft\yii2\db\Command.php(359): yii\db\Command->queryInternal('<span class="st...', '<span class="ke...')
+#2 D:\test1\allance1\vendor\yiisoft\yii2\db\Query.php(206): yii\db\Command->queryAll()
+#3 D:\test1\allance1\frontend\controllers\AdminController.php(107): yii\db\Query->all()
+#4 [internal function]: frontend\controllers\AdminController->actionUpdate()
+#5 D:\test1\allance1\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array('[<span class="t...', '[]')
+#6 D:\test1\allance1\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams('[<span class="s...')
+#7 D:\test1\allance1\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('<span class="st...', '[<span class="s...')
+#8 D:\test1\allance1\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('<span class="st...', '[<span class="s...')
+#9 D:\test1\allance1\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#10 D:\test1\allance1\frontend\web\index.php(18): yii\base\Application->run()
+#11 {main}
+Additional Information:
+Array
+(
+    [0] => 42S22
+    [1] => 1054
+    [2] => Unknown column 'id' in 'field list'
+)
+
+2016-06-14 19:42:15 [127.0.0.1][-][-][info][application] $_GET = [
+    'r' => 'admin/update'
+    'id' => '1'
+]
+
+$_COOKIE = [
+    'PHPSESSID' => '0l98sc76kd4ktii0pc0hqlnbb3'
+    '_csrf' => 'b73f5347c56e53ec77e14f77215604f6d6de4573f999520f3c6bead09d4af6eea:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"V3jVG0Wgh2ydSqL62xsKn5Zfq19LLd2F\";}'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'www.bbb.com'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:47.0) Gecko/20100101 Firefox/47.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://www.bbb.com/allance1/frontend/web/index.php?r=admin/show'
+    'HTTP_COOKIE' => 'PHPSESSID=0l98sc76kd4ktii0pc0hqlnbb3; _csrf=b73f5347c56e53ec77e14f77215604f6d6de4573f999520f3c6bead09d4af6eea%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22V3jVG0Wgh2ydSqL62xsKn5Zfq19LLd2F%22%3B%7D'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'PATH' => 'C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;D:\\wamp\\php\\;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;D:\\Program Files\\TortoiseSVN\\bin;D:\\Program Files\\VisualSVN Server\\bin;D:\\wamp\\mysql\\bin;D:\\New git\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e PHP/5.5.30'
+    'SERVER_NAME' => 'www.bbb.com'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'D:/test1'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/test1'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'SCRIPT_FILENAME' => 'D:/test1/allance1/frontend/web/index.php'
+    'REMOTE_PORT' => '1944'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=admin/update&id=1'
+    'REQUEST_URI' => '/allance1/frontend/web/index.php?r=admin/update&id=1'
+    'SCRIPT_NAME' => '/allance1/frontend/web/index.php'
+    'PHP_SELF' => '/allance1/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1465904535.74
+    'REQUEST_TIME' => 1465904535
+]
+2016-06-14 20:01:47 [127.0.0.1][-][-][error][yii\base\ErrorException:8] exception 'yii\base\ErrorException' with message 'Undefined offset: 0' in D:\test1\allance1\frontend\views\admin\xiu.html:27
+Stack trace:
+#0 D:\test1\allance1\frontend\views\admin\xiu.html(27): yii\base\ErrorHandler->handleError(8, 'Undefined offse...', 'D:\\test1\\allanc...', 27, Array)
+#1 D:\test1\allance1\vendor\yiisoft\yii2\base\View.php(325): require('D:\\test1\\allanc...')
+#2 D:\test1\allance1\vendor\yiisoft\yii2\base\View.php(247): yii\base\View->renderPhpFile('D:\\test1\\allanc...', Array)
+#3 D:\test1\allance1\vendor\yiisoft\yii2\base\View.php(149): yii\base\View->renderFile('D:\\test1\\allanc...', Array, Object(frontend\controllers\AdminController))
+#4 D:\test1\allance1\vendor\yiisoft\yii2\base\Controller.php(371): yii\base\View->render('xiu.html', Array, Object(frontend\controllers\AdminController))
+#5 D:\test1\allance1\frontend\controllers\AdminController.php(109): yii\base\Controller->render('xiu.html', Array)
+#6 [internal function]: frontend\controllers\AdminController->actionUpdate()
+#7 D:\test1\allance1\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#8 D:\test1\allance1\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#9 D:\test1\allance1\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('update', Array)
+#10 D:\test1\allance1\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('admin/update', Array)
+#11 D:\test1\allance1\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#12 D:\test1\allance1\frontend\web\index.php(18): yii\base\Application->run()
+#13 {main}
+2016-06-14 20:01:47 [127.0.0.1][-][-][info][application] $_GET = [
+    'r' => 'admin/update'
+    'id' => '1'
+]
+
+$_COOKIE = [
+    'PHPSESSID' => '0l98sc76kd4ktii0pc0hqlnbb3'
+    '_csrf' => 'b73f5347c56e53ec77e14f77215604f6d6de4573f999520f3c6bead09d4af6eea:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"V3jVG0Wgh2ydSqL62xsKn5Zfq19LLd2F\";}'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'www.bbb.com'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:47.0) Gecko/20100101 Firefox/47.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://www.bbb.com/allance1/frontend/web/index.php?r=admin/show'
+    'HTTP_COOKIE' => 'PHPSESSID=0l98sc76kd4ktii0pc0hqlnbb3; _csrf=b73f5347c56e53ec77e14f77215604f6d6de4573f999520f3c6bead09d4af6eea%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22V3jVG0Wgh2ydSqL62xsKn5Zfq19LLd2F%22%3B%7D'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'PATH' => 'C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;D:\\wamp\\php\\;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;D:\\Program Files\\TortoiseSVN\\bin;D:\\Program Files\\VisualSVN Server\\bin;D:\\wamp\\mysql\\bin;D:\\New git\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e PHP/5.5.30'
+    'SERVER_NAME' => 'www.bbb.com'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'D:/test1'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/test1'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'SCRIPT_FILENAME' => 'D:/test1/allance1/frontend/web/index.php'
+    'REMOTE_PORT' => '2416'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=admin/update&id=1'
+    'REQUEST_URI' => '/allance1/frontend/web/index.php?r=admin/update&id=1'
+    'SCRIPT_NAME' => '/allance1/frontend/web/index.php'
+    'PHP_SELF' => '/allance1/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1465905707.695
+    'REQUEST_TIME' => 1465905707
+]
+2016-06-14 20:01:48 [127.0.0.1][-][-][warning][yii\log\Dispatcher::dispatch] Unable to send log via yii\debug\LogTarget: Exception 'PDOException' with message 'You cannot serialize or unserialize PDO instances' 
+
+in D:\test1\allance1\vendor\yiisoft\yii2-debug\LogTarget.php:58
+
+Stack trace:
+#0 [internal function]: PDO->__sleep()
+#1 D:\test1\allance1\vendor\yiisoft\yii2-debug\LogTarget.php(58): serialize(Array)
+#2 D:\test1\allance1\vendor\yiisoft\yii2-debug\LogTarget.php(112): yii\debug\LogTarget->export(Array)
+#3 D:\test1\allance1\vendor\yiisoft\yii2\log\Dispatcher.php(183): yii\debug\LogTarget->collect(Array, true)
+#4 D:\test1\allance1\vendor\yiisoft\yii2\log\Logger.php(173): yii\log\Dispatcher->dispatch(Array, true)
+#5 D:\test1\allance1\vendor\yiisoft\yii2\base\ErrorHandler.php(111): yii\log\Logger->flush(true)
+#6 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\base\ErrorException))
+#7 {main}
+2016-06-14 20:01:47 [127.0.0.1][-][-][info][application] $_GET = [
+    'r' => 'admin/update'
+    'id' => '1'
+]
+
+$_COOKIE = [
+    'PHPSESSID' => '0l98sc76kd4ktii0pc0hqlnbb3'
+    '_csrf' => 'b73f5347c56e53ec77e14f77215604f6d6de4573f999520f3c6bead09d4af6eea:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"V3jVG0Wgh2ydSqL62xsKn5Zfq19LLd2F\";}'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'www.bbb.com'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:47.0) Gecko/20100101 Firefox/47.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://www.bbb.com/allance1/frontend/web/index.php?r=admin/show'
+    'HTTP_COOKIE' => 'PHPSESSID=0l98sc76kd4ktii0pc0hqlnbb3; _csrf=b73f5347c56e53ec77e14f77215604f6d6de4573f999520f3c6bead09d4af6eea%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22V3jVG0Wgh2ydSqL62xsKn5Zfq19LLd2F%22%3B%7D'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'PATH' => 'C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;D:\\wamp\\php\\;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;D:\\Program Files\\TortoiseSVN\\bin;D:\\Program Files\\VisualSVN Server\\bin;D:\\wamp\\mysql\\bin;D:\\New git\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e PHP/5.5.30'
+    'SERVER_NAME' => 'www.bbb.com'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'D:/test1'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/test1'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'SCRIPT_FILENAME' => 'D:/test1/allance1/frontend/web/index.php'
+    'REMOTE_PORT' => '2416'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=admin/update&id=1'
+    'REQUEST_URI' => '/allance1/frontend/web/index.php?r=admin/update&id=1'
+    'SCRIPT_NAME' => '/allance1/frontend/web/index.php'
+    'PHP_SELF' => '/allance1/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1465905707.695
+    'REQUEST_TIME' => 1465905707
+]
