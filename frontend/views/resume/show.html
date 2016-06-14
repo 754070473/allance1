@@ -1,118 +1,306 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html>
+
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>广告-有点</title>
-<link rel="stylesheet" type="text/css" href="css/css.css" />
-<script type="text/javascript" src="js/jquery.min.js"></script>
-<!-- <script type="text/javascript" src="js/page.js" ></script> -->
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="renderer" content="webkit">
+
+    <title>素材火www.sucaihuo.com - 数据表格</title>
+    <meta name="keywords" content="H+后台主题,后台bootstrap框架,会员中心主题,后台HTML,响应式后台">
+    <meta name="description" content="H+是一个完全响应式，基于Bootstrap3最新版本开发的扁平化主题，她采用了主流的左右两栏式布局，使用了Html5+CSS3等现代技术">
+
+    <link href="css/bootstrap.min.css?v=3.4.0" rel="stylesheet">
+    <link href="font-awesome/css/font-awesome.css?v=4.3.0" rel="stylesheet">
+
+    <!-- Data Tables -->
+    <link href="css/plugins/dataTables/dataTables.bootstrap.css" rel="stylesheet">
+
+    <link href="css/animate.css" rel="stylesheet">
+    <link href="css/style.css?v=2.2.0" rel="stylesheet">
+
 </head>
 
-<body>
-	<div id="pageAll">
-		<div class="pageTop">
-			<div class="page">
-				<img src="img/coin02.png" /><span><a href="#">首页</a>&nbsp;-&nbsp;<a
-					href="#">公共管理</a>&nbsp;-</span>&nbsp;意见管理
-			</div>
-		</div>
-		<div class="page">
-			<!-- banner页面样式 -->
-			<div class="banner">
-				<div class="add">
-					<a class="addA" href="banneradd.html">上传广告&nbsp;&nbsp;+</a>
-				</div>
-				<!-- banner 表格 显示 -->
-				<div class="banShow">
-					<table border="1" cellspacing="0" cellpadding="0">
-						<tr>
-							<td width="66px" class="tdColor tdC">序号</td>
-							<td width="315px" class="tdColor">图片</td>
-							<td width="308px" class="tdColor">名称</td>
-							<td width="450px" class="tdColor">链接</td>
-							<td width="215px" class="tdColor">是否显示</td>
-							<td width="180px" class="tdColor">排序</td>
-							<td width="125px" class="tdColor">操作</td>
-						</tr>
-						<tr>
-							<td>1</td>
-							<td><div class="bsImg">
-									<img src="img/banimg.png">
-								</div></td>
-							<td>双十一连天购</td>
-							<td><a class="bsA" href="#">http://www.sdfsdfsdfds.com</a></td>
-							<td>是</td>
-							<td>1</td>
-							<td><a href="banneradd.html"><img class="operation"
-									src="img/update.png"></a> <img class="operation delban"
-								src="img/delete.png"></td>
-						</tr>
-						<tr>
-							<td>1</td>
-							<td><div class="bsImg">
-									<img src="img/banimg.png">
-								</div></td>
-							<td>双十一连天购</td>
-							<td><a class="bsA" href="#">http://www.sdfsdfsdfds.com</a></td>
-							<td>是</td>
-							<td>1</td>
-							<td><a href="banneradd.html"><img class="operation"
-									src="img/update.png"></a> <img class="operation delban"
-								src="img/delete.png"></td>
-						</tr>
-					</table>
-					<div class="paging">此处是分页</div>
-				</div>
-				<!-- banner 表格 显示 end-->
-			</div>
-			<!-- banner页面样式end -->
-		</div>
+<body style="background-color:#blue;">
+    <div id="wrapper">
 
-	</div>
+            <div class="row wrapper border-bottom white-bg page-heading">
+                <div class="col-lg-10">
+                    <h2>数据表格</h2>
+                    <ol class="breadcrumb">
+                        <li>
+                            <a href="index.html">个人</a>
+                        </li>
+                        <li>
+                            <a>简历列表</a>
+                        </li>
+                    </ol>
+                </div>
+                <div class="col-lg-2">
+
+                </div>
+            </div>
+            <div class="wrapper wrapper-content animated fadeInRight">
+               
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="ibox float-e-margins">
+                            <div class="ibox-title">
+                                <h5>简历列表</h5>
+                                <div class="ibox-tools">
+                                    <a class="collapse-link">
+                                        <i class="fa fa-chevron-up"></i>
+                                    </a>
+                                    <a class="dropdown-toggle" data-toggle="dropdown" href="table_data_tables.html#">
+                                        <i class="fa fa-wrench"></i>
+                                    </a>
+                                    <a class="close-link">
+                                        <i class="fa fa-times"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="ibox-content">
+                                <div class="">
+                                    <a onclick="fnClickAddRow();" href="javascript:void(0);" class="btn btn-primary ">添加</a>
+                                </div>
+                               <!--  <table class="table table-striped table-bordered table-hover " id="editable"> -->
+
+                             <table class="table table-striped table-bordered table-hover dataTables-example">
+                                    <thead>
+                                        <tr>
+                            <th>序号</th>
+                            <th>简历头像</th>
+                            <th>姓名</th>
+                            <th>性别</th>
+                            <th>出生年份</th>
+                            <th>电话</th>
+                            <th>现居住地</th>
+                            <th>最高学历</th>
+                            <th>专业id</th>
+                            <th>工作经验</th>
+                            <th>邮箱</th>
+                            <th>籍贯</th>
+                            <th>婚姻状况</th>
+                            <th>目前状况</th>
+                            <th>期望职位</th>
+                            <th>工作地区</th>
+                            <th>工作性质</th>
+                            <th>期望薪资</th>
+                            <th>政治面貌</th>
+                            <th>个人简历</th>
+                            <th>时间</th>
+                            <th>是否显示</th>
+                        </tr>
+                                    </thead>
+                                    <tbody>
+                                       <?php foreach($arr as $k=>$v){?>
+                        <tr class="gradeX">
+                            <td><?php echo $v['res_id']?></td>
+                            <td><?php ?></td>
+                            <td><?php echo $v['r_name']?></td>
+                            <td>
+                                <?php if ($v['r_name']==1) {
+                                echo"女";
+                                          }else{
+                                          echo "男";
+                                          } ?>
+                                     </td>
+                            <td><?php echo $v['r_year']?></td>
+                            <td><?php echo $v['r_phone']?></td>
+                            <td><?php echo $v['r_hotel']?></td>
+                            <td>
+                                   <?php if($v['t_edu']==0){
+                                                                                                                  echo "初中";
+                                 }else if($v['t_edu']==1){
+                                                                                                                   echo "高中";
+                                 }else if($v['t_edu']==2){
+                                                                                                                   echo "中技";
+                                 }else if($v['t_edu']==3){
+                                                                                                                   echo "中专";
+                                 }else if($v['t_edu']==4){
+                                                                                                                   echo "大专";
+                                 }else if($v['t_edu']==5){
+                                                                                                                   echo "本科";
+                                 }else if($v['t_edu']==6){
+                                                                                                                   echo "硕士";
+                                 }else if($v['t_edu']==7){
+                                                                                                                   echo "博士";
+                                 }else if($v['t_edu']==8){
+                                                                                                                   echo "博后";
+                                 }
+
+                        ?></td>
+                             <td><?php echo $v['post_pid']?></td>
+                             <td>
+                                <?php
+                                if($v['r_suffer']==0){
+                                                                                                      echo"应届生"; 
+                                }else if($v['r_suffer']==1){
+                                         echo "无经验";
+                                }else if($v['r_suffer']==2){
+                                         echo "一年以下";
+                                }else if($v['r_suffer']==3){
+                                         echo "1-3年";
+                                }else if($v['r_suffer']==4){
+                                         echo "3-5年";
+                                }else if($v['r_suffer']==5){
+                                         echo "5-10年";
+                                }else if($v['r_suffer']==6){
+                                         echo "10年以上";
+                                }
+                                         
+                                ?>
+                             </td>
+                             <td><?php echo $v['r_email']?></td>
+                             <td><?php echo $v['r_native']?></td>
+                             <td>
+                                <?php 
+                                if($v['r_mantal']==0){
+                                                                                                         echo "未婚";
+                                }else if($v['r_mantal']==1){
+                                                                                                           echo "已婚";
+                                }
+                                
+                                ?>
+                             </td>
+                             <td>
+                                <?php 
+                                if($v['r_status']==0){
+                                                                                                           echo"我目前已离职，可快速到岗"; 
+                                }else if($v['r_status']==1){
+                                    echo "为我目前在职，但考虑换个新环境";
+                                }else if($v['r_status']==2){
+                                    echo "为观望有好的机会再考虑";
+                                }else if($v['r_status']==3){
+                                    echo "为目前暂无跳槽打算";
+                                }else if($v['r_status']==4){
+                                    echo "为应届毕业生";
+                                }
+                                
+                                ?>
+                             </td>
+                              <td><?php echo $v['post_id2']?></td>
+                               <td><?php echo $v['pla_id2']?></td>
+                                <td>
+                                    <?php 
+                                    if($v['r_nature']==0){
+                                                                                                         echo"全职"; 
+                                    }else if($v['r_nature']==1){
+                                                                                                         echo"兼职"; 
+                                    }else if($v['r_nature']==2){
+                                                                                                         echo"实习"; 
+                                    }
+                                    
+                                    ?>
+                                </td>
+                                <td><?php echo $v['r_pay']?></td>
+                                <td>
+                                    <?php 
+                                    if($v['r_politics']==0){
+                                                                                                        echo "群众";
+                                    }else if($v['r_politics']==1){
+                                                                                                        echo "团员";
+                                    }else if($v['r_politics']==2){
+                                                                                                        echo "党员";
+                                    }
+                                    
+                                    ?>
+                                </td>
+                                <td><?php echo $v['r_ind']?></td>
+                                         <td><?php echo $v['r_addtime']?></td>
+                                          <td>
+                                            <?php 
+                                            if($v['r_show']==0){
+                                                  echo "显示";
+                                            }else if($v['r_show']==1){
+                                                  echo "不显示";
+                                            }
+                                          
+                                            ?>
+                                          </td>
+                        </tr>
+                        <?php 
+                                                                                        }
+                        ?>
+                                    </tbody>
+                                
+                                </table>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </div>
 
 
-	<!-- 删除弹出框 -->
-	<div class="banDel">
-		<div class="delete">
-			<div class="close">
-				<a><img src="img/shanchu.png" /></a>
-			</div>
-			<p class="delP1">你确定要删除此条记录吗？</p>
-			<p class="delP2">
-				<a href="#" class="ok yes" onclick="del()">确定</a><a class="ok no">取消</a>
-			</p>
-		</div>
-	</div>
-	<!-- 删除弹出框  end-->
+    </div>
+
+    <!-- Mainly scripts -->
+    <script src="js/jquery-2.1.1.min.js"></script>
+    <script src="js/bootstrap.min.js?v=3.4.0"></script>
+    <script src="js/plugins/metisMenu/jquery.metisMenu.js"></script>
+    <script src="js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+
+    <script src="js/plugins/jeditable/jquery.jeditable.js"></script>
+
+    <!-- Data Tables -->
+    <script src="js/plugins/dataTables/jquery.dataTables.js"></script>
+    <script src="js/plugins/dataTables/dataTables.bootstrap.js"></script>
+
+    <!-- Custom and plugin javascript -->
+    <script src="js/hplus.js?v=2.2.0"></script>
+    <script src="js/plugins/pace/pace.min.js"></script>
+
+    <!-- Page-Level Scripts -->
+    <script>
+        $(document).ready(function () {
+            $('.dataTables-example').dataTable();
+
+            /* Init DataTables */
+            var oTable = $('#editable').dataTable();
+
+            /* Apply the jEditable handlers to the table */
+            oTable.$('td').editable('../example_ajax.php', {
+                "callback": function (sValue, y) {
+                    var aPos = oTable.fnGetPosition(this);
+                    oTable.fnUpdate(sValue, aPos[0], aPos[1]);
+                },
+                "submitdata": function (value, settings) {
+                    return {
+                        "row_id": this.parentNode.getAttribute('id'),
+                        "column": oTable.fnGetPosition(this)[2]
+                    };
+                },
+
+                "width": "90%",
+                "height": "100%"
+            });
+
+
+        });
+
+        function fnClickAddRow() {
+            $('#editable').dataTable().fnAddData([
+                "Custom row",
+                "New row",
+                "New row",
+                "New row",
+                "New row"]);
+
+        }
+
+    </script>
+    <script type="text/javascript">
+    /**
+     * Generate the node required for user display length changing
+     *  @param {object} settings dataTables settings object
+     *  @returns {node} Display length feature node
+     *  @memberof DataTable#oApi
+     */
+  
+    </script>
+    
 </body>
 
-<script type="text/javascript">
-// 广告弹出框
-$(".delban").click(function(){
-  $(".banDel").show();
-});
-$(".close").click(function(){
-  $(".banDel").hide();
-});
-$(".no").click(function(){
-  $(".banDel").hide();
-});
-// 广告弹出框 end
-
-function del(){
-    var input=document.getElementsByName("check[]");
-    for(var i=input.length-1; i>=0;i--){
-       if(input[i].checked==true){
-           //获取td节点
-           var td=input[i].parentNode;
-          //获取tr节点
-          var tr=td.parentNode;
-          //获取table
-          var table=tr.parentNode;
-          //移除子节点
-          table.removeChild(tr);
-        }
-    }     
-}
-</script>
 </html>

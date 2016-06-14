@@ -25,8 +25,19 @@ class ResumeController extends Controller
      * @return [type] [description]
      */
     public function actionShow()
+
     {
-        return $this->render('show.html');
+        //$id=1;
+        $row = (new \yii\db\Query())
+    ->select(['*'])
+    ->from('al_resume')
+     ->all();
+//->where(['per_id'=>$id])
+
+//print_r($row);die;
+   return $this->render('show.html',array('arr'=>$row));
+        
+
     }
     /**
      * [actionAdd 添加]
