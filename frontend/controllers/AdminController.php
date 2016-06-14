@@ -22,6 +22,7 @@ class AdminController extends Controller
 {
 	//public $layout='public';
     public $layout=false;
+    public $enableCsrfValidation = false;
     /**
      * [actionIndex 显示职位列表]
      * @return [type] [description]
@@ -36,6 +37,19 @@ class AdminController extends Controller
      */
     public function actionAdd()
     {
-    	return $this->render('add.html');
+        if (Yii::$app->request->isPost) {
+            $request = Yii::$app->request;
+            $pwd = $request->post('a_name');
+            $name = $request->post('a_pwd');
+                    $re=rand(000001,999999);
+
+          echo $re;
+
+
+
+        }else{
+               return $this->render('useradd.html');
+           }
+
     }
 }
