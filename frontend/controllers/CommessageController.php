@@ -16,26 +16,23 @@ use yii\filters\AccessControl;
 
 
 /**
- *  IntegralController 积分管理
+ *CompanyController 企业信息
  */
-class IntegralController extends Controller
+class CommessageController extends Controller
 {
 	//public $layout='public';
     public $layout=false;
     /**
-     * [actionIndex 显示职位列表]
+     * [actionIndex description]
      * @return [type] [description]
      */
     public function actionShow()
     {
-        return $this->render('show.html');
-    }
-    /**
-     * [actionAdd 添加]
-     * @return [type] [description]
-     */
-    public function actionAdd()
-    {
-    	return $this->render('add.html');
+        $arr = (new \yii\db\Query())
+            ->select(['*'])
+            ->from('al_com_message')
+            ->all();
+            
+        return $this->render('show.html',array('arr'=>$arr));
     }
 }
