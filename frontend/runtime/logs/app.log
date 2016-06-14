@@ -11737,3 +11737,474 @@ $_SERVER = [
     'REQUEST_TIME_FLOAT' => 1465795895.977
     'REQUEST_TIME' => 1465795895
 ]
+2016-06-14 09:10:19 [127.0.0.1][-][-][error][yii\db\Exception] exception 'PDOException' with message 'SQLSTATE[42S02]: Base table or view not found: 1146 Table 'allance.company' doesn't exist' in E:\profect\allance1\vendor\yiisoft\yii2\db\Command.php:837
+Stack trace:
+#0 E:\profect\allance1\vendor\yiisoft\yii2\db\Command.php(837): PDOStatement->execute()
+#1 E:\profect\allance1\vendor\yiisoft\yii2\db\Command.php(359): yii\db\Command->queryInternal('<span class="st...', '<span class="ke...')
+#2 E:\profect\allance1\vendor\yiisoft\yii2\db\Query.php(206): yii\db\Command->queryAll()
+#3 E:\profect\allance1\frontend\controllers\CompanyController.php(34): yii\db\Query->all()
+#4 [internal function]: frontend\controllers\CompanyController->actionShow()
+#5 E:\profect\allance1\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array('[<span class="t...', '[]')
+#6 E:\profect\allance1\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams('[<span class="s...')
+#7 E:\profect\allance1\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('<span class="st...', '[<span class="s...')
+#8 E:\profect\allance1\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('<span class="st...', '[<span class="s...')
+#9 E:\profect\allance1\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#10 E:\profect\allance1\frontend\web\index.php(18): yii\base\Application->run()
+#11 {main}
+
+Next exception 'yii\db\Exception' with message 'SQLSTATE[42S02]: Base table or view not found: 1146 Table 'allance.company' doesn't exist
+The SQL being executed was: SELECT * FROM `company`' in E:\profect\allance1\vendor\yiisoft\yii2\db\Schema.php:628
+Stack trace:
+#0 E:\profect\allance1\vendor\yiisoft\yii2\db\Command.php(852): yii\db\Schema->convertException(Object(PDOException), 'SELECT * FROM `...')
+#1 E:\profect\allance1\vendor\yiisoft\yii2\db\Command.php(359): yii\db\Command->queryInternal('<span class="st...', '<span class="ke...')
+#2 E:\profect\allance1\vendor\yiisoft\yii2\db\Query.php(206): yii\db\Command->queryAll()
+#3 E:\profect\allance1\frontend\controllers\CompanyController.php(34): yii\db\Query->all()
+#4 [internal function]: frontend\controllers\CompanyController->actionShow()
+#5 E:\profect\allance1\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array('[<span class="t...', '[]')
+#6 E:\profect\allance1\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams('[<span class="s...')
+#7 E:\profect\allance1\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('<span class="st...', '[<span class="s...')
+#8 E:\profect\allance1\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('<span class="st...', '[<span class="s...')
+#9 E:\profect\allance1\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#10 E:\profect\allance1\frontend\web\index.php(18): yii\base\Application->run()
+#11 {main}
+Additional Information:
+Array
+(
+    [0] => 42S02
+    [1] => 1146
+    [2] => Table 'allance.company' doesn't exist
+)
+
+2016-06-14 09:10:18 [127.0.0.1][-][-][info][application] $_GET = [
+    'r' => 'company/show'
+]
+
+$_COOKIE = [
+    'CNZZDATA155540' => 'cnzz_eid=330539671-1465129570-http%3A%2F%2Fwww.profect.com%2F&ntime=1465735531'
+    'pgv_pvi' => '4598060032'
+    'PHPSESSID' => 'np9ar8edui3kimsstfn3t1svd7'
+    'pgv_si' => 's8476324864'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'www.profect.com'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; rv:47.0) Gecko/20100101 Firefox/47.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://www.profect.com/allance1/frontend/web/index.php?r=public/left'
+    'HTTP_COOKIE' => 'CNZZDATA155540=cnzz_eid%3D330539671-1465129570-http%253A%252F%252Fwww.profect.com%252F%26ntime%3D1465735531; pgv_pvi=4598060032; PHPSESSID=np9ar8edui3kimsstfn3t1svd7; pgv_si=s8476324864'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;E:\\git\\tortisegit\\bin;'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e PHP/5.5.30'
+    'SERVER_NAME' => 'www.profect.com'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'E:/profect'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'E:/profect'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'SCRIPT_FILENAME' => 'E:/profect/allance1/frontend/web/index.php'
+    'REMOTE_PORT' => '50997'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=company/show'
+    'REQUEST_URI' => '/allance1/frontend/web/index.php?r=company/show'
+    'SCRIPT_NAME' => '/allance1/frontend/web/index.php'
+    'PHP_SELF' => '/allance1/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1465866618.402
+    'REQUEST_TIME' => 1465866618
+]
+2016-06-14 09:12:23 [127.0.0.1][-][-][error][yii\base\ErrorException:8] exception 'yii\base\ErrorException' with message 'Undefined variable: row' in E:\profect\allance1\frontend\controllers\CompanyController.php:35
+Stack trace:
+#0 E:\profect\allance1\frontend\controllers\CompanyController.php(35): yii\base\ErrorHandler->handleError(8, 'Undefined varia...', 'E:\\profect\\alla...', 35, Array)
+#1 [internal function]: frontend\controllers\CompanyController->actionShow()
+#2 E:\profect\allance1\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#3 E:\profect\allance1\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#4 E:\profect\allance1\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('show', Array)
+#5 E:\profect\allance1\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('company/show', Array)
+#6 E:\profect\allance1\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#7 E:\profect\allance1\frontend\web\index.php(18): yii\base\Application->run()
+#8 {main}
+2016-06-14 09:12:23 [127.0.0.1][-][-][info][application] $_GET = [
+    'r' => 'company/show'
+]
+
+$_COOKIE = [
+    'CNZZDATA155540' => 'cnzz_eid=330539671-1465129570-http%3A%2F%2Fwww.profect.com%2F&ntime=1465735531'
+    'pgv_pvi' => '4598060032'
+    'PHPSESSID' => 'np9ar8edui3kimsstfn3t1svd7'
+    'pgv_si' => 's8476324864'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'www.profect.com'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; rv:47.0) Gecko/20100101 Firefox/47.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://www.profect.com/allance1/frontend/web/index.php?r=public/left'
+    'HTTP_COOKIE' => 'CNZZDATA155540=cnzz_eid%3D330539671-1465129570-http%253A%252F%252Fwww.profect.com%252F%26ntime%3D1465735531; pgv_pvi=4598060032; PHPSESSID=np9ar8edui3kimsstfn3t1svd7; pgv_si=s8476324864'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;E:\\git\\tortisegit\\bin;'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e PHP/5.5.30'
+    'SERVER_NAME' => 'www.profect.com'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'E:/profect'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'E:/profect'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'SCRIPT_FILENAME' => 'E:/profect/allance1/frontend/web/index.php'
+    'REMOTE_PORT' => '51058'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=company/show'
+    'REQUEST_URI' => '/allance1/frontend/web/index.php?r=company/show'
+    'SCRIPT_NAME' => '/allance1/frontend/web/index.php'
+    'PHP_SELF' => '/allance1/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1465866743.913
+    'REQUEST_TIME' => 1465866743
+]
+2016-06-14 09:12:24 [127.0.0.1][-][-][warning][yii\log\Dispatcher::dispatch] Unable to send log via yii\debug\LogTarget: Exception 'PDOException' with message 'You cannot serialize or unserialize PDO instances' 
+
+in E:\profect\allance1\vendor\yiisoft\yii2-debug\LogTarget.php:58
+
+Stack trace:
+#0 [internal function]: PDO->__sleep()
+#1 E:\profect\allance1\vendor\yiisoft\yii2-debug\LogTarget.php(58): serialize(Array)
+#2 E:\profect\allance1\vendor\yiisoft\yii2-debug\LogTarget.php(112): yii\debug\LogTarget->export(Array)
+#3 E:\profect\allance1\vendor\yiisoft\yii2\log\Dispatcher.php(183): yii\debug\LogTarget->collect(Array, true)
+#4 E:\profect\allance1\vendor\yiisoft\yii2\log\Logger.php(173): yii\log\Dispatcher->dispatch(Array, true)
+#5 E:\profect\allance1\vendor\yiisoft\yii2\base\ErrorHandler.php(111): yii\log\Logger->flush(true)
+#6 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\base\ErrorException))
+#7 {main}
+2016-06-14 09:12:23 [127.0.0.1][-][-][info][application] $_GET = [
+    'r' => 'company/show'
+]
+
+$_COOKIE = [
+    'CNZZDATA155540' => 'cnzz_eid=330539671-1465129570-http%3A%2F%2Fwww.profect.com%2F&ntime=1465735531'
+    'pgv_pvi' => '4598060032'
+    'PHPSESSID' => 'np9ar8edui3kimsstfn3t1svd7'
+    'pgv_si' => 's8476324864'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'www.profect.com'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; rv:47.0) Gecko/20100101 Firefox/47.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://www.profect.com/allance1/frontend/web/index.php?r=public/left'
+    'HTTP_COOKIE' => 'CNZZDATA155540=cnzz_eid%3D330539671-1465129570-http%253A%252F%252Fwww.profect.com%252F%26ntime%3D1465735531; pgv_pvi=4598060032; PHPSESSID=np9ar8edui3kimsstfn3t1svd7; pgv_si=s8476324864'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;E:\\git\\tortisegit\\bin;'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e PHP/5.5.30'
+    'SERVER_NAME' => 'www.profect.com'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'E:/profect'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'E:/profect'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'SCRIPT_FILENAME' => 'E:/profect/allance1/frontend/web/index.php'
+    'REMOTE_PORT' => '51058'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=company/show'
+    'REQUEST_URI' => '/allance1/frontend/web/index.php?r=company/show'
+    'SCRIPT_NAME' => '/allance1/frontend/web/index.php'
+    'PHP_SELF' => '/allance1/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1465866743.913
+    'REQUEST_TIME' => 1465866743
+]
+2016-06-14 09:13:59 [127.0.0.1][-][-][error][yii\base\ErrorException:8] exception 'yii\base\ErrorException' with message 'Undefined variable: row' in E:\profect\allance1\frontend\controllers\CompanyController.php:35
+Stack trace:
+#0 E:\profect\allance1\frontend\controllers\CompanyController.php(35): yii\base\ErrorHandler->handleError(8, 'Undefined varia...', 'E:\\profect\\alla...', 35, Array)
+#1 [internal function]: frontend\controllers\CompanyController->actionShow()
+#2 E:\profect\allance1\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#3 E:\profect\allance1\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#4 E:\profect\allance1\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('show', Array)
+#5 E:\profect\allance1\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('company/show', Array)
+#6 E:\profect\allance1\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#7 E:\profect\allance1\frontend\web\index.php(18): yii\base\Application->run()
+#8 {main}
+2016-06-14 09:13:59 [127.0.0.1][-][-][info][application] $_GET = [
+    'r' => 'company/show'
+]
+
+$_COOKIE = [
+    'CNZZDATA155540' => 'cnzz_eid=330539671-1465129570-http%3A%2F%2Fwww.profect.com%2F&ntime=1465735531'
+    'pgv_pvi' => '4598060032'
+    'PHPSESSID' => 'np9ar8edui3kimsstfn3t1svd7'
+    'pgv_si' => 's8476324864'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'www.profect.com'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; rv:47.0) Gecko/20100101 Firefox/47.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://www.profect.com/allance1/frontend/web/index.php?r=public/left'
+    'HTTP_COOKIE' => 'CNZZDATA155540=cnzz_eid%3D330539671-1465129570-http%253A%252F%252Fwww.profect.com%252F%26ntime%3D1465735531; pgv_pvi=4598060032; PHPSESSID=np9ar8edui3kimsstfn3t1svd7; pgv_si=s8476324864'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;E:\\git\\tortisegit\\bin;'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e PHP/5.5.30'
+    'SERVER_NAME' => 'www.profect.com'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'E:/profect'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'E:/profect'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'SCRIPT_FILENAME' => 'E:/profect/allance1/frontend/web/index.php'
+    'REMOTE_PORT' => '51089'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=company/show'
+    'REQUEST_URI' => '/allance1/frontend/web/index.php?r=company/show'
+    'SCRIPT_NAME' => '/allance1/frontend/web/index.php'
+    'PHP_SELF' => '/allance1/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1465866839.078
+    'REQUEST_TIME' => 1465866839
+]
+2016-06-14 09:13:59 [127.0.0.1][-][-][warning][yii\log\Dispatcher::dispatch] Unable to send log via yii\debug\LogTarget: Exception 'PDOException' with message 'You cannot serialize or unserialize PDO instances' 
+
+in E:\profect\allance1\vendor\yiisoft\yii2-debug\LogTarget.php:58
+
+Stack trace:
+#0 [internal function]: PDO->__sleep()
+#1 E:\profect\allance1\vendor\yiisoft\yii2-debug\LogTarget.php(58): serialize(Array)
+#2 E:\profect\allance1\vendor\yiisoft\yii2-debug\LogTarget.php(112): yii\debug\LogTarget->export(Array)
+#3 E:\profect\allance1\vendor\yiisoft\yii2\log\Dispatcher.php(183): yii\debug\LogTarget->collect(Array, true)
+#4 E:\profect\allance1\vendor\yiisoft\yii2\log\Logger.php(173): yii\log\Dispatcher->dispatch(Array, true)
+#5 E:\profect\allance1\vendor\yiisoft\yii2\base\ErrorHandler.php(111): yii\log\Logger->flush(true)
+#6 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\base\ErrorException))
+#7 {main}
+2016-06-14 09:13:59 [127.0.0.1][-][-][info][application] $_GET = [
+    'r' => 'company/show'
+]
+
+$_COOKIE = [
+    'CNZZDATA155540' => 'cnzz_eid=330539671-1465129570-http%3A%2F%2Fwww.profect.com%2F&ntime=1465735531'
+    'pgv_pvi' => '4598060032'
+    'PHPSESSID' => 'np9ar8edui3kimsstfn3t1svd7'
+    'pgv_si' => 's8476324864'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'www.profect.com'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; rv:47.0) Gecko/20100101 Firefox/47.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://www.profect.com/allance1/frontend/web/index.php?r=public/left'
+    'HTTP_COOKIE' => 'CNZZDATA155540=cnzz_eid%3D330539671-1465129570-http%253A%252F%252Fwww.profect.com%252F%26ntime%3D1465735531; pgv_pvi=4598060032; PHPSESSID=np9ar8edui3kimsstfn3t1svd7; pgv_si=s8476324864'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;E:\\git\\tortisegit\\bin;'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e PHP/5.5.30'
+    'SERVER_NAME' => 'www.profect.com'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'E:/profect'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'E:/profect'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'SCRIPT_FILENAME' => 'E:/profect/allance1/frontend/web/index.php'
+    'REMOTE_PORT' => '51089'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=company/show'
+    'REQUEST_URI' => '/allance1/frontend/web/index.php?r=company/show'
+    'SCRIPT_NAME' => '/allance1/frontend/web/index.php'
+    'PHP_SELF' => '/allance1/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1465866839.078
+    'REQUEST_TIME' => 1465866839
+]
+2016-06-14 09:17:23 [127.0.0.1][-][-][error][yii\db\Exception] exception 'PDOException' with message 'SQLSTATE[42S02]: Base table or view not found: 1146 Table 'allance.company' doesn't exist' in E:\profect\allance1\vendor\yiisoft\yii2\db\Command.php:837
+Stack trace:
+#0 E:\profect\allance1\vendor\yiisoft\yii2\db\Command.php(837): PDOStatement->execute()
+#1 E:\profect\allance1\vendor\yiisoft\yii2\db\Command.php(359): yii\db\Command->queryInternal('<span class="st...', '<span class="ke...')
+#2 E:\profect\allance1\vendor\yiisoft\yii2\db\Query.php(206): yii\db\Command->queryAll()
+#3 E:\profect\allance1\frontend\controllers\CompanyController.php(34): yii\db\Query->all()
+#4 [internal function]: frontend\controllers\CompanyController->actionShow()
+#5 E:\profect\allance1\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array('[<span class="t...', '[]')
+#6 E:\profect\allance1\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams('[<span class="s...')
+#7 E:\profect\allance1\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('<span class="st...', '[<span class="s...')
+#8 E:\profect\allance1\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('<span class="st...', '[<span class="s...')
+#9 E:\profect\allance1\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#10 E:\profect\allance1\frontend\web\index.php(18): yii\base\Application->run()
+#11 {main}
+
+Next exception 'yii\db\Exception' with message 'SQLSTATE[42S02]: Base table or view not found: 1146 Table 'allance.company' doesn't exist
+The SQL being executed was: SELECT * FROM `company`' in E:\profect\allance1\vendor\yiisoft\yii2\db\Schema.php:628
+Stack trace:
+#0 E:\profect\allance1\vendor\yiisoft\yii2\db\Command.php(852): yii\db\Schema->convertException(Object(PDOException), 'SELECT * FROM `...')
+#1 E:\profect\allance1\vendor\yiisoft\yii2\db\Command.php(359): yii\db\Command->queryInternal('<span class="st...', '<span class="ke...')
+#2 E:\profect\allance1\vendor\yiisoft\yii2\db\Query.php(206): yii\db\Command->queryAll()
+#3 E:\profect\allance1\frontend\controllers\CompanyController.php(34): yii\db\Query->all()
+#4 [internal function]: frontend\controllers\CompanyController->actionShow()
+#5 E:\profect\allance1\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array('[<span class="t...', '[]')
+#6 E:\profect\allance1\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams('[<span class="s...')
+#7 E:\profect\allance1\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('<span class="st...', '[<span class="s...')
+#8 E:\profect\allance1\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('<span class="st...', '[<span class="s...')
+#9 E:\profect\allance1\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#10 E:\profect\allance1\frontend\web\index.php(18): yii\base\Application->run()
+#11 {main}
+Additional Information:
+Array
+(
+    [0] => 42S02
+    [1] => 1146
+    [2] => Table 'allance.company' doesn't exist
+)
+
+2016-06-14 09:17:23 [127.0.0.1][-][-][info][application] $_GET = [
+    'r' => 'company/show'
+]
+
+$_COOKIE = [
+    'CNZZDATA155540' => 'cnzz_eid=330539671-1465129570-http%3A%2F%2Fwww.profect.com%2F&ntime=1465735531'
+    'pgv_pvi' => '4598060032'
+    'PHPSESSID' => 'np9ar8edui3kimsstfn3t1svd7'
+    'pgv_si' => 's8476324864'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'www.profect.com'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; rv:47.0) Gecko/20100101 Firefox/47.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://www.profect.com/allance1/frontend/web/index.php?r=public/left'
+    'HTTP_COOKIE' => 'CNZZDATA155540=cnzz_eid%3D330539671-1465129570-http%253A%252F%252Fwww.profect.com%252F%26ntime%3D1465735531; pgv_pvi=4598060032; PHPSESSID=np9ar8edui3kimsstfn3t1svd7; pgv_si=s8476324864'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;E:\\git\\tortisegit\\bin;'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e PHP/5.5.30'
+    'SERVER_NAME' => 'www.profect.com'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'E:/profect'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'E:/profect'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'SCRIPT_FILENAME' => 'E:/profect/allance1/frontend/web/index.php'
+    'REMOTE_PORT' => '51188'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=company/show'
+    'REQUEST_URI' => '/allance1/frontend/web/index.php?r=company/show'
+    'SCRIPT_NAME' => '/allance1/frontend/web/index.php'
+    'PHP_SELF' => '/allance1/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1465867043.771
+    'REQUEST_TIME' => 1465867043
+]
+2016-06-14 09:22:18 [127.0.0.1][-][-][error][yii\base\UnknownClassException] exception 'yii\base\UnknownClassException' with message 'Unable to find 'frontend\controllers\CommessageController' in file: E:\profect\allance1/frontend/controllers/CommessageController.php. Namespace missing?' in E:\profect\allance1\vendor\yiisoft\yii2\BaseYii.php:291
+Stack trace:
+#0 [internal function]: yii\BaseYii::autoload('frontend\\contro...')
+#1 [internal function]: spl_autoload_call('frontend\\contro...')
+#2 E:\profect\allance1\vendor\yiisoft\yii2\base\Module.php(563): class_exists('frontend\\contro...')
+#3 E:\profect\allance1\vendor\yiisoft\yii2\base\Module.php(521): yii\base\Module->createControllerByID('commessage')
+#4 E:\profect\allance1\vendor\yiisoft\yii2\base\Module.php(449): yii\base\Module->createController('commessage/show')
+#5 E:\profect\allance1\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('commessage/show', Array)
+#6 E:\profect\allance1\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#7 E:\profect\allance1\frontend\web\index.php(18): yii\base\Application->run()
+#8 {main}
+2016-06-14 09:22:18 [127.0.0.1][-][-][info][application] $_GET = [
+    'r' => 'commessage/show'
+]
+
+$_COOKIE = [
+    'CNZZDATA155540' => 'cnzz_eid=330539671-1465129570-http%3A%2F%2Fwww.profect.com%2F&ntime=1465735531'
+    'pgv_pvi' => '4598060032'
+    'PHPSESSID' => 'np9ar8edui3kimsstfn3t1svd7'
+    'pgv_si' => 's8476324864'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'www.profect.com'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; rv:47.0) Gecko/20100101 Firefox/47.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://www.profect.com/allance1/frontend/web/index.php?r=public/left'
+    'HTTP_COOKIE' => 'CNZZDATA155540=cnzz_eid%3D330539671-1465129570-http%253A%252F%252Fwww.profect.com%252F%26ntime%3D1465735531; pgv_pvi=4598060032; PHPSESSID=np9ar8edui3kimsstfn3t1svd7; pgv_si=s8476324864'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;E:\\git\\tortisegit\\bin;'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e PHP/5.5.30'
+    'SERVER_NAME' => 'www.profect.com'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'E:/profect'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'E:/profect'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'SCRIPT_FILENAME' => 'E:/profect/allance1/frontend/web/index.php'
+    'REMOTE_PORT' => '51361'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=commessage/show'
+    'REQUEST_URI' => '/allance1/frontend/web/index.php?r=commessage/show'
+    'SCRIPT_NAME' => '/allance1/frontend/web/index.php'
+    'PHP_SELF' => '/allance1/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1465867338.864
+    'REQUEST_TIME' => 1465867338
+]
