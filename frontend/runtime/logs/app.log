@@ -11737,6 +11737,7 @@ $_SERVER = [
     'REQUEST_TIME_FLOAT' => 1465795895.977
     'REQUEST_TIME' => 1465795895
 ]
+<<<<<<< HEAD
 2016-06-14 09:10:19 [127.0.0.1][-][-][error][yii\db\Exception] exception 'PDOException' with message 'SQLSTATE[42S02]: Base table or view not found: 1146 Table 'allance.company' doesn't exist' in E:\profect\allance1\vendor\yiisoft\yii2\db\Command.php:837
 Stack trace:
 #0 E:\profect\allance1\vendor\yiisoft\yii2\db\Command.php(837): PDOStatement->execute()
@@ -11796,12 +11797,114 @@ $_SERVER = [
     'HTTP_COOKIE' => 'CNZZDATA155540=cnzz_eid%3D330539671-1465129570-http%253A%252F%252Fwww.profect.com%252F%26ntime%3D1465735531; pgv_pvi=4598060032; PHPSESSID=np9ar8edui3kimsstfn3t1svd7; pgv_si=s8476324864'
     'HTTP_CONNECTION' => 'keep-alive'
     'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;E:\\git\\tortisegit\\bin;'
+=======
+2016-06-13 21:46:37 [127.0.0.1][-][fa9il4g5ubfartq3tes92gp8b5][error][yii\web\HttpException:400] exception 'yii\web\BadRequestHttpException' with message 'Unable to verify your data submission.' in D:\test1\allance1\vendor\yiisoft\yii2\web\Controller.php:110
+Stack trace:
+#0 D:\test1\allance1\vendor\yiisoft\yii2\base\Controller.php(149): yii\web\Controller->beforeAction(Object(yii\base\InlineAction))
+#1 D:\test1\allance1\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('add', Array)
+#2 D:\test1\allance1\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('admin/add', Array)
+#3 D:\test1\allance1\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#4 D:\test1\allance1\frontend\web\index.php(18): yii\base\Application->run()
+#5 {main}
+2016-06-13 21:46:37 [127.0.0.1][-][fa9il4g5ubfartq3tes92gp8b5][info][application] $_GET = [
+    'r' => 'admin/add'
+]
+
+$_COOKIE = [
+    'ECS' => [
+        'visit_times' => '4'
+    ]
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'www.qqq.com'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:47.0) Gecko/20100101 Firefox/47.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://www.qqq.com/allance1/frontend/web/index.php?r=admin/add'
+    'HTTP_COOKIE' => 'ECS[visit_times]=4'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'CONTENT_LENGTH' => '0'
+    'PATH' => 'C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;D:\\wamp\\php\\;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;D:\\Program Files\\TortoiseSVN\\bin;D:\\Program Files\\VisualSVN Server\\bin;D:\\wamp\\mysql\\bin;D:\\New git\\bin'
     'SystemRoot' => 'C:\\Windows'
     'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
     'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
     'WINDIR' => 'C:\\Windows'
     'SERVER_SIGNATURE' => ''
     'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e PHP/5.5.30'
+    'SERVER_NAME' => 'www.qqq.com'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'D:/test1'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/test1'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'SCRIPT_FILENAME' => 'D:/test1/allance1/frontend/web/index.php'
+    'REMOTE_PORT' => '4239'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => 'r=admin/add'
+    'REQUEST_URI' => '/allance1/frontend/web/index.php?r=admin/add'
+    'SCRIPT_NAME' => '/allance1/frontend/web/index.php'
+    'PHP_SELF' => '/allance1/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1465825597.315
+    'REQUEST_TIME' => 1465825597
+]
+2016-06-13 21:46:41 [127.0.0.1][-][fa9il4g5ubfartq3tes92gp8b5][warning][yii\log\Dispatcher::dispatch] Unable to send log via yii\debug\LogTarget: Exception 'Exception' with message 'Serialization of 'Closure' is not allowed' 
+
+in D:\test1\allance1\vendor\yiisoft\yii2-debug\LogTarget.php:58
+
+Stack trace:
+#0 D:\test1\allance1\vendor\yiisoft\yii2-debug\LogTarget.php(58): serialize(Array)
+#1 D:\test1\allance1\vendor\yiisoft\yii2-debug\LogTarget.php(112): yii\debug\LogTarget->export(Array)
+#2 D:\test1\allance1\vendor\yiisoft\yii2\log\Dispatcher.php(183): yii\debug\LogTarget->collect(Array, true)
+#3 D:\test1\allance1\vendor\yiisoft\yii2\log\Logger.php(173): yii\log\Dispatcher->dispatch(Array, true)
+#4 D:\test1\allance1\vendor\yiisoft\yii2\base\ErrorHandler.php(111): yii\log\Logger->flush(true)
+#5 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\web\BadRequestHttpException))
+#6 {main}
+2016-06-13 21:46:37 [127.0.0.1][-][fa9il4g5ubfartq3tes92gp8b5][info][application] $_GET = [
+    'r' => 'admin/add'
+]
+
+$_COOKIE = [
+    'ECS' => [
+        'visit_times' => '4'
+    ]
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'www.qqq.com'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:47.0) Gecko/20100101 Firefox/47.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://www.qqq.com/allance1/frontend/web/index.php?r=admin/add'
+    'HTTP_COOKIE' => 'ECS[visit_times]=4'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'CONTENT_LENGTH' => '0'
+    'PATH' => 'C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;D:\\wamp\\php\\;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;D:\\Program Files\\TortoiseSVN\\bin;D:\\Program Files\\VisualSVN Server\\bin;D:\\wamp\\mysql\\bin;D:\\New git\\bin'
+>>>>>>> e7cdeb71a4e250086caac8f7b79541abf9854ce8
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e PHP/5.5.30'
+<<<<<<< HEAD
     'SERVER_NAME' => 'www.profect.com'
     'SERVER_ADDR' => '127.0.0.1'
     'SERVER_PORT' => '80'
@@ -11855,12 +11958,72 @@ $_SERVER = [
     'HTTP_COOKIE' => 'CNZZDATA155540=cnzz_eid%3D330539671-1465129570-http%253A%252F%252Fwww.profect.com%252F%26ntime%3D1465735531; pgv_pvi=4598060032; PHPSESSID=np9ar8edui3kimsstfn3t1svd7; pgv_si=s8476324864'
     'HTTP_CONNECTION' => 'keep-alive'
     'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;E:\\git\\tortisegit\\bin;'
+=======
+    'SERVER_NAME' => 'www.qqq.com'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'D:/test1'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/test1'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'SCRIPT_FILENAME' => 'D:/test1/allance1/frontend/web/index.php'
+    'REMOTE_PORT' => '4239'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => 'r=admin/add'
+    'REQUEST_URI' => '/allance1/frontend/web/index.php?r=admin/add'
+    'SCRIPT_NAME' => '/allance1/frontend/web/index.php'
+    'PHP_SELF' => '/allance1/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1465825597.315
+    'REQUEST_TIME' => 1465825597
+]
+2016-06-13 21:48:58 [127.0.0.1][-][fa9il4g5ubfartq3tes92gp8b5][error][yii\web\HttpException:400] exception 'yii\web\BadRequestHttpException' with message 'Unable to verify your data submission.' in D:\test1\allance1\vendor\yiisoft\yii2\web\Controller.php:110
+Stack trace:
+#0 D:\test1\allance1\vendor\yiisoft\yii2\base\Controller.php(149): yii\web\Controller->beforeAction(Object(yii\base\InlineAction))
+#1 D:\test1\allance1\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('add', Array)
+#2 D:\test1\allance1\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('admin/add', Array)
+#3 D:\test1\allance1\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#4 D:\test1\allance1\frontend\web\index.php(18): yii\base\Application->run()
+#5 {main}
+2016-06-13 21:48:57 [127.0.0.1][-][fa9il4g5ubfartq3tes92gp8b5][info][application] $_GET = [
+    'r' => 'admin/add'
+]
+
+$_COOKIE = [
+    'ECS' => [
+        'visit_times' => '4'
+    ]
+    'PHPSESSID' => 'fa9il4g5ubfartq3tes92gp8b5'
+    '_csrf' => '684f394edf080028b775a88f29d8930636c589cdde091b0acbd85f420f7a4ec9a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"esnmwEhoosPjLP8Z3VPU1HYn9G13l9VQ\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'www.qqq.com'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:47.0) Gecko/20100101 Firefox/47.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://www.qqq.com/allance1/frontend/web/index.php?r=admin/add'
+    'HTTP_COOKIE' => 'ECS[visit_times]=4; PHPSESSID=fa9il4g5ubfartq3tes92gp8b5; _csrf=684f394edf080028b775a88f29d8930636c589cdde091b0acbd85f420f7a4ec9a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22esnmwEhoosPjLP8Z3VPU1HYn9G13l9VQ%22%3B%7D'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'CONTENT_LENGTH' => '0'
+    'PATH' => 'C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;D:\\wamp\\php\\;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;D:\\Program Files\\TortoiseSVN\\bin;D:\\Program Files\\VisualSVN Server\\bin;D:\\wamp\\mysql\\bin;D:\\New git\\bin'
+>>>>>>> e7cdeb71a4e250086caac8f7b79541abf9854ce8
     'SystemRoot' => 'C:\\Windows'
     'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
     'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
     'WINDIR' => 'C:\\Windows'
     'SERVER_SIGNATURE' => ''
     'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e PHP/5.5.30'
+<<<<<<< HEAD
     'SERVER_NAME' => 'www.profect.com'
     'SERVER_ADDR' => '127.0.0.1'
     'SERVER_PORT' => '80'
@@ -11916,12 +12079,76 @@ $_SERVER = [
     'HTTP_COOKIE' => 'CNZZDATA155540=cnzz_eid%3D330539671-1465129570-http%253A%252F%252Fwww.profect.com%252F%26ntime%3D1465735531; pgv_pvi=4598060032; PHPSESSID=np9ar8edui3kimsstfn3t1svd7; pgv_si=s8476324864'
     'HTTP_CONNECTION' => 'keep-alive'
     'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;E:\\git\\tortisegit\\bin;'
+=======
+    'SERVER_NAME' => 'www.qqq.com'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'D:/test1'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/test1'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'SCRIPT_FILENAME' => 'D:/test1/allance1/frontend/web/index.php'
+    'REMOTE_PORT' => '11201'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => 'r=admin/add'
+    'REQUEST_URI' => '/allance1/frontend/web/index.php?r=admin/add'
+    'SCRIPT_NAME' => '/allance1/frontend/web/index.php'
+    'PHP_SELF' => '/allance1/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1465825737.852
+    'REQUEST_TIME' => 1465825737
+]
+2016-06-13 21:48:58 [127.0.0.1][-][fa9il4g5ubfartq3tes92gp8b5][warning][yii\log\Dispatcher::dispatch] Unable to send log via yii\debug\LogTarget: Exception 'Exception' with message 'Serialization of 'Closure' is not allowed' 
+
+in D:\test1\allance1\vendor\yiisoft\yii2-debug\LogTarget.php:58
+
+Stack trace:
+#0 D:\test1\allance1\vendor\yiisoft\yii2-debug\LogTarget.php(58): serialize(Array)
+#1 D:\test1\allance1\vendor\yiisoft\yii2-debug\LogTarget.php(112): yii\debug\LogTarget->export(Array)
+#2 D:\test1\allance1\vendor\yiisoft\yii2\log\Dispatcher.php(183): yii\debug\LogTarget->collect(Array, true)
+#3 D:\test1\allance1\vendor\yiisoft\yii2\log\Logger.php(173): yii\log\Dispatcher->dispatch(Array, true)
+#4 D:\test1\allance1\vendor\yiisoft\yii2\base\ErrorHandler.php(111): yii\log\Logger->flush(true)
+#5 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\web\BadRequestHttpException))
+#6 {main}
+2016-06-13 21:48:57 [127.0.0.1][-][fa9il4g5ubfartq3tes92gp8b5][info][application] $_GET = [
+    'r' => 'admin/add'
+]
+
+$_COOKIE = [
+    'ECS' => [
+        'visit_times' => '4'
+    ]
+    'PHPSESSID' => 'fa9il4g5ubfartq3tes92gp8b5'
+    '_csrf' => '684f394edf080028b775a88f29d8930636c589cdde091b0acbd85f420f7a4ec9a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"esnmwEhoosPjLP8Z3VPU1HYn9G13l9VQ\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'www.qqq.com'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:47.0) Gecko/20100101 Firefox/47.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://www.qqq.com/allance1/frontend/web/index.php?r=admin/add'
+    'HTTP_COOKIE' => 'ECS[visit_times]=4; PHPSESSID=fa9il4g5ubfartq3tes92gp8b5; _csrf=684f394edf080028b775a88f29d8930636c589cdde091b0acbd85f420f7a4ec9a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22esnmwEhoosPjLP8Z3VPU1HYn9G13l9VQ%22%3B%7D'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'CONTENT_LENGTH' => '0'
+    'PATH' => 'C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;D:\\wamp\\php\\;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;D:\\Program Files\\TortoiseSVN\\bin;D:\\Program Files\\VisualSVN Server\\bin;D:\\wamp\\mysql\\bin;D:\\New git\\bin'
+>>>>>>> e7cdeb71a4e250086caac8f7b79541abf9854ce8
     'SystemRoot' => 'C:\\Windows'
     'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
     'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
     'WINDIR' => 'C:\\Windows'
     'SERVER_SIGNATURE' => ''
     'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e PHP/5.5.30'
+<<<<<<< HEAD
     'SERVER_NAME' => 'www.profect.com'
     'SERVER_ADDR' => '127.0.0.1'
     'SERVER_PORT' => '80'
@@ -11975,12 +12202,72 @@ $_SERVER = [
     'HTTP_COOKIE' => 'CNZZDATA155540=cnzz_eid%3D330539671-1465129570-http%253A%252F%252Fwww.profect.com%252F%26ntime%3D1465735531; pgv_pvi=4598060032; PHPSESSID=np9ar8edui3kimsstfn3t1svd7; pgv_si=s8476324864'
     'HTTP_CONNECTION' => 'keep-alive'
     'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;E:\\git\\tortisegit\\bin;'
+=======
+    'SERVER_NAME' => 'www.qqq.com'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'D:/test1'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/test1'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'SCRIPT_FILENAME' => 'D:/test1/allance1/frontend/web/index.php'
+    'REMOTE_PORT' => '11201'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => 'r=admin/add'
+    'REQUEST_URI' => '/allance1/frontend/web/index.php?r=admin/add'
+    'SCRIPT_NAME' => '/allance1/frontend/web/index.php'
+    'PHP_SELF' => '/allance1/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1465825737.852
+    'REQUEST_TIME' => 1465825737
+]
+2016-06-13 21:50:33 [127.0.0.1][-][fa9il4g5ubfartq3tes92gp8b5][error][yii\web\HttpException:400] exception 'yii\web\BadRequestHttpException' with message 'Unable to verify your data submission.' in D:\test1\allance1\vendor\yiisoft\yii2\web\Controller.php:110
+Stack trace:
+#0 D:\test1\allance1\vendor\yiisoft\yii2\base\Controller.php(149): yii\web\Controller->beforeAction(Object(yii\base\InlineAction))
+#1 D:\test1\allance1\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('add', Array)
+#2 D:\test1\allance1\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('admin/add', Array)
+#3 D:\test1\allance1\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#4 D:\test1\allance1\frontend\web\index.php(18): yii\base\Application->run()
+#5 {main}
+2016-06-13 21:50:33 [127.0.0.1][-][fa9il4g5ubfartq3tes92gp8b5][info][application] $_GET = [
+    'r' => 'admin/add'
+]
+
+$_COOKIE = [
+    'ECS' => [
+        'visit_times' => '4'
+    ]
+    'PHPSESSID' => 'fa9il4g5ubfartq3tes92gp8b5'
+    '_csrf' => '684f394edf080028b775a88f29d8930636c589cdde091b0acbd85f420f7a4ec9a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"esnmwEhoosPjLP8Z3VPU1HYn9G13l9VQ\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'www.qqq.com'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:47.0) Gecko/20100101 Firefox/47.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://www.qqq.com/allance1/frontend/web/index.php?r=admin/add'
+    'HTTP_COOKIE' => 'ECS[visit_times]=4; PHPSESSID=fa9il4g5ubfartq3tes92gp8b5; _csrf=684f394edf080028b775a88f29d8930636c589cdde091b0acbd85f420f7a4ec9a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22esnmwEhoosPjLP8Z3VPU1HYn9G13l9VQ%22%3B%7D'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'CONTENT_LENGTH' => '0'
+    'PATH' => 'C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;D:\\wamp\\php\\;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;D:\\Program Files\\TortoiseSVN\\bin;D:\\Program Files\\VisualSVN Server\\bin;D:\\wamp\\mysql\\bin;D:\\New git\\bin'
+>>>>>>> e7cdeb71a4e250086caac8f7b79541abf9854ce8
     'SystemRoot' => 'C:\\Windows'
     'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
     'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
     'WINDIR' => 'C:\\Windows'
     'SERVER_SIGNATURE' => ''
     'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e PHP/5.5.30'
+<<<<<<< HEAD
     'SERVER_NAME' => 'www.profect.com'
     'SERVER_ADDR' => '127.0.0.1'
     'SERVER_PORT' => '80'
@@ -12036,12 +12323,139 @@ $_SERVER = [
     'HTTP_COOKIE' => 'CNZZDATA155540=cnzz_eid%3D330539671-1465129570-http%253A%252F%252Fwww.profect.com%252F%26ntime%3D1465735531; pgv_pvi=4598060032; PHPSESSID=np9ar8edui3kimsstfn3t1svd7; pgv_si=s8476324864'
     'HTTP_CONNECTION' => 'keep-alive'
     'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;E:\\git\\tortisegit\\bin;'
+=======
+    'SERVER_NAME' => 'www.qqq.com'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'D:/test1'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/test1'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'SCRIPT_FILENAME' => 'D:/test1/allance1/frontend/web/index.php'
+    'REMOTE_PORT' => '11756'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => 'r=admin/add'
+    'REQUEST_URI' => '/allance1/frontend/web/index.php?r=admin/add'
+    'SCRIPT_NAME' => '/allance1/frontend/web/index.php'
+    'PHP_SELF' => '/allance1/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1465825833.655
+    'REQUEST_TIME' => 1465825833
+]
+2016-06-13 21:50:33 [127.0.0.1][-][fa9il4g5ubfartq3tes92gp8b5][warning][yii\log\Dispatcher::dispatch] Unable to send log via yii\debug\LogTarget: Exception 'Exception' with message 'Serialization of 'Closure' is not allowed' 
+
+in D:\test1\allance1\vendor\yiisoft\yii2-debug\LogTarget.php:58
+
+Stack trace:
+#0 D:\test1\allance1\vendor\yiisoft\yii2-debug\LogTarget.php(58): serialize(Array)
+#1 D:\test1\allance1\vendor\yiisoft\yii2-debug\LogTarget.php(112): yii\debug\LogTarget->export(Array)
+#2 D:\test1\allance1\vendor\yiisoft\yii2\log\Dispatcher.php(183): yii\debug\LogTarget->collect(Array, true)
+#3 D:\test1\allance1\vendor\yiisoft\yii2\log\Logger.php(173): yii\log\Dispatcher->dispatch(Array, true)
+#4 D:\test1\allance1\vendor\yiisoft\yii2\base\ErrorHandler.php(111): yii\log\Logger->flush(true)
+#5 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\web\BadRequestHttpException))
+#6 {main}
+2016-06-13 21:50:33 [127.0.0.1][-][fa9il4g5ubfartq3tes92gp8b5][info][application] $_GET = [
+    'r' => 'admin/add'
+]
+
+$_COOKIE = [
+    'ECS' => [
+        'visit_times' => '4'
+    ]
+    'PHPSESSID' => 'fa9il4g5ubfartq3tes92gp8b5'
+    '_csrf' => '684f394edf080028b775a88f29d8930636c589cdde091b0acbd85f420f7a4ec9a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"esnmwEhoosPjLP8Z3VPU1HYn9G13l9VQ\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'www.qqq.com'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:47.0) Gecko/20100101 Firefox/47.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://www.qqq.com/allance1/frontend/web/index.php?r=admin/add'
+    'HTTP_COOKIE' => 'ECS[visit_times]=4; PHPSESSID=fa9il4g5ubfartq3tes92gp8b5; _csrf=684f394edf080028b775a88f29d8930636c589cdde091b0acbd85f420f7a4ec9a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22esnmwEhoosPjLP8Z3VPU1HYn9G13l9VQ%22%3B%7D'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'CONTENT_LENGTH' => '0'
+    'PATH' => 'C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;D:\\wamp\\php\\;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;D:\\Program Files\\TortoiseSVN\\bin;D:\\Program Files\\VisualSVN Server\\bin;D:\\wamp\\mysql\\bin;D:\\New git\\bin'
     'SystemRoot' => 'C:\\Windows'
     'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
     'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
     'WINDIR' => 'C:\\Windows'
     'SERVER_SIGNATURE' => ''
     'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e PHP/5.5.30'
+    'SERVER_NAME' => 'www.qqq.com'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'D:/test1'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/test1'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'SCRIPT_FILENAME' => 'D:/test1/allance1/frontend/web/index.php'
+    'REMOTE_PORT' => '11756'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => 'r=admin/add'
+    'REQUEST_URI' => '/allance1/frontend/web/index.php?r=admin/add'
+    'SCRIPT_NAME' => '/allance1/frontend/web/index.php'
+    'PHP_SELF' => '/allance1/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1465825833.655
+    'REQUEST_TIME' => 1465825833
+]
+2016-06-13 21:53:58 [127.0.0.1][-][fa9il4g5ubfartq3tes92gp8b5][error][yii\web\HttpException:400] exception 'yii\web\BadRequestHttpException' with message 'Unable to verify your data submission.' in D:\test1\allance1\vendor\yiisoft\yii2\web\Controller.php:110
+Stack trace:
+#0 D:\test1\allance1\vendor\yiisoft\yii2\base\Controller.php(149): yii\web\Controller->beforeAction(Object(yii\base\InlineAction))
+#1 D:\test1\allance1\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('add', Array)
+#2 D:\test1\allance1\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('admin/add', Array)
+#3 D:\test1\allance1\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#4 D:\test1\allance1\frontend\web\index.php(18): yii\base\Application->run()
+#5 {main}
+2016-06-13 21:53:57 [127.0.0.1][-][fa9il4g5ubfartq3tes92gp8b5][info][application] $_GET = [
+    'r' => 'admin/add'
+]
+
+$_COOKIE = [
+    'ECS' => [
+        'visit_times' => '4'
+    ]
+    'PHPSESSID' => 'fa9il4g5ubfartq3tes92gp8b5'
+    '_csrf' => '684f394edf080028b775a88f29d8930636c589cdde091b0acbd85f420f7a4ec9a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"esnmwEhoosPjLP8Z3VPU1HYn9G13l9VQ\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'www.qqq.com'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:47.0) Gecko/20100101 Firefox/47.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://www.qqq.com/allance1/frontend/web/index.php?r=admin/add'
+    'HTTP_COOKIE' => 'ECS[visit_times]=4; PHPSESSID=fa9il4g5ubfartq3tes92gp8b5; _csrf=684f394edf080028b775a88f29d8930636c589cdde091b0acbd85f420f7a4ec9a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22esnmwEhoosPjLP8Z3VPU1HYn9G13l9VQ%22%3B%7D'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'CONTENT_LENGTH' => '0'
+    'PATH' => 'C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;D:\\wamp\\php\\;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;D:\\Program Files\\TortoiseSVN\\bin;D:\\Program Files\\VisualSVN Server\\bin;D:\\wamp\\mysql\\bin;D:\\New git\\bin'
+>>>>>>> e7cdeb71a4e250086caac8f7b79541abf9854ce8
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e PHP/5.5.30'
+<<<<<<< HEAD
     'SERVER_NAME' => 'www.profect.com'
     'SERVER_ADDR' => '127.0.0.1'
     'SERVER_PORT' => '80'
@@ -12122,12 +12536,139 @@ $_SERVER = [
     'HTTP_COOKIE' => 'CNZZDATA155540=cnzz_eid%3D330539671-1465129570-http%253A%252F%252Fwww.profect.com%252F%26ntime%3D1465735531; pgv_pvi=4598060032; PHPSESSID=np9ar8edui3kimsstfn3t1svd7; pgv_si=s8476324864'
     'HTTP_CONNECTION' => 'keep-alive'
     'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;E:\\git\\tortisegit\\bin;'
+=======
+    'SERVER_NAME' => 'www.qqq.com'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'D:/test1'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/test1'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'SCRIPT_FILENAME' => 'D:/test1/allance1/frontend/web/index.php'
+    'REMOTE_PORT' => '12975'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => 'r=admin/add'
+    'REQUEST_URI' => '/allance1/frontend/web/index.php?r=admin/add'
+    'SCRIPT_NAME' => '/allance1/frontend/web/index.php'
+    'PHP_SELF' => '/allance1/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1465826037.941
+    'REQUEST_TIME' => 1465826037
+]
+2016-06-13 21:54:00 [127.0.0.1][-][fa9il4g5ubfartq3tes92gp8b5][warning][yii\log\Dispatcher::dispatch] Unable to send log via yii\debug\LogTarget: Exception 'Exception' with message 'Serialization of 'Closure' is not allowed' 
+
+in D:\test1\allance1\vendor\yiisoft\yii2-debug\LogTarget.php:58
+
+Stack trace:
+#0 D:\test1\allance1\vendor\yiisoft\yii2-debug\LogTarget.php(58): serialize(Array)
+#1 D:\test1\allance1\vendor\yiisoft\yii2-debug\LogTarget.php(112): yii\debug\LogTarget->export(Array)
+#2 D:\test1\allance1\vendor\yiisoft\yii2\log\Dispatcher.php(183): yii\debug\LogTarget->collect(Array, true)
+#3 D:\test1\allance1\vendor\yiisoft\yii2\log\Logger.php(173): yii\log\Dispatcher->dispatch(Array, true)
+#4 D:\test1\allance1\vendor\yiisoft\yii2\base\ErrorHandler.php(111): yii\log\Logger->flush(true)
+#5 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\web\BadRequestHttpException))
+#6 {main}
+2016-06-13 21:53:57 [127.0.0.1][-][fa9il4g5ubfartq3tes92gp8b5][info][application] $_GET = [
+    'r' => 'admin/add'
+]
+
+$_COOKIE = [
+    'ECS' => [
+        'visit_times' => '4'
+    ]
+    'PHPSESSID' => 'fa9il4g5ubfartq3tes92gp8b5'
+    '_csrf' => '684f394edf080028b775a88f29d8930636c589cdde091b0acbd85f420f7a4ec9a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"esnmwEhoosPjLP8Z3VPU1HYn9G13l9VQ\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'www.qqq.com'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:47.0) Gecko/20100101 Firefox/47.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://www.qqq.com/allance1/frontend/web/index.php?r=admin/add'
+    'HTTP_COOKIE' => 'ECS[visit_times]=4; PHPSESSID=fa9il4g5ubfartq3tes92gp8b5; _csrf=684f394edf080028b775a88f29d8930636c589cdde091b0acbd85f420f7a4ec9a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22esnmwEhoosPjLP8Z3VPU1HYn9G13l9VQ%22%3B%7D'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'CONTENT_LENGTH' => '0'
+    'PATH' => 'C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;D:\\wamp\\php\\;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;D:\\Program Files\\TortoiseSVN\\bin;D:\\Program Files\\VisualSVN Server\\bin;D:\\wamp\\mysql\\bin;D:\\New git\\bin'
     'SystemRoot' => 'C:\\Windows'
     'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
     'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
     'WINDIR' => 'C:\\Windows'
     'SERVER_SIGNATURE' => ''
     'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e PHP/5.5.30'
+    'SERVER_NAME' => 'www.qqq.com'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'D:/test1'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/test1'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'SCRIPT_FILENAME' => 'D:/test1/allance1/frontend/web/index.php'
+    'REMOTE_PORT' => '12975'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => 'r=admin/add'
+    'REQUEST_URI' => '/allance1/frontend/web/index.php?r=admin/add'
+    'SCRIPT_NAME' => '/allance1/frontend/web/index.php'
+    'PHP_SELF' => '/allance1/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1465826037.941
+    'REQUEST_TIME' => 1465826037
+]
+2016-06-13 21:57:47 [127.0.0.1][-][fa9il4g5ubfartq3tes92gp8b5][error][yii\web\HttpException:400] exception 'yii\web\BadRequestHttpException' with message 'Unable to verify your data submission.' in D:\test1\allance1\vendor\yiisoft\yii2\web\Controller.php:110
+Stack trace:
+#0 D:\test1\allance1\vendor\yiisoft\yii2\base\Controller.php(149): yii\web\Controller->beforeAction(Object(yii\base\InlineAction))
+#1 D:\test1\allance1\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('add', Array)
+#2 D:\test1\allance1\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('admin/add', Array)
+#3 D:\test1\allance1\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#4 D:\test1\allance1\frontend\web\index.php(18): yii\base\Application->run()
+#5 {main}
+2016-06-13 21:57:46 [127.0.0.1][-][fa9il4g5ubfartq3tes92gp8b5][info][application] $_GET = [
+    'r' => 'admin/add'
+]
+
+$_COOKIE = [
+    'ECS' => [
+        'visit_times' => '4'
+    ]
+    'PHPSESSID' => 'fa9il4g5ubfartq3tes92gp8b5'
+    '_csrf' => '684f394edf080028b775a88f29d8930636c589cdde091b0acbd85f420f7a4ec9a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"esnmwEhoosPjLP8Z3VPU1HYn9G13l9VQ\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'www.qqq.com'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:47.0) Gecko/20100101 Firefox/47.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://www.qqq.com/allance1/frontend/web/index.php?r=admin/add'
+    'HTTP_COOKIE' => 'ECS[visit_times]=4; PHPSESSID=fa9il4g5ubfartq3tes92gp8b5; _csrf=684f394edf080028b775a88f29d8930636c589cdde091b0acbd85f420f7a4ec9a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22esnmwEhoosPjLP8Z3VPU1HYn9G13l9VQ%22%3B%7D'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'CONTENT_LENGTH' => '0'
+    'PATH' => 'C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;D:\\wamp\\php\\;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;D:\\Program Files\\TortoiseSVN\\bin;D:\\Program Files\\VisualSVN Server\\bin;D:\\wamp\\mysql\\bin;D:\\New git\\bin'
+>>>>>>> e7cdeb71a4e250086caac8f7b79541abf9854ce8
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e PHP/5.5.30'
+<<<<<<< HEAD
     'SERVER_NAME' => 'www.profect.com'
     'SERVER_ADDR' => '127.0.0.1'
     'SERVER_PORT' => '80'
@@ -12181,12 +12722,194 @@ $_SERVER = [
     'HTTP_COOKIE' => 'CNZZDATA155540=cnzz_eid%3D330539671-1465129570-http%253A%252F%252Fwww.profect.com%252F%26ntime%3D1465735531; pgv_pvi=4598060032; PHPSESSID=np9ar8edui3kimsstfn3t1svd7; pgv_si=s8476324864'
     'HTTP_CONNECTION' => 'keep-alive'
     'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;E:\\git\\tortisegit\\bin;'
+=======
+    'SERVER_NAME' => 'www.qqq.com'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'D:/test1'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/test1'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'SCRIPT_FILENAME' => 'D:/test1/allance1/frontend/web/index.php'
+    'REMOTE_PORT' => '14616'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => 'r=admin/add'
+    'REQUEST_URI' => '/allance1/frontend/web/index.php?r=admin/add'
+    'SCRIPT_NAME' => '/allance1/frontend/web/index.php'
+    'PHP_SELF' => '/allance1/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1465826266.355
+    'REQUEST_TIME' => 1465826266
+]
+2016-06-13 21:57:48 [127.0.0.1][-][fa9il4g5ubfartq3tes92gp8b5][warning][yii\log\Dispatcher::dispatch] Unable to send log via yii\debug\LogTarget: Exception 'Exception' with message 'Serialization of 'Closure' is not allowed' 
+
+in D:\test1\allance1\vendor\yiisoft\yii2-debug\LogTarget.php:58
+
+Stack trace:
+#0 D:\test1\allance1\vendor\yiisoft\yii2-debug\LogTarget.php(58): serialize(Array)
+#1 D:\test1\allance1\vendor\yiisoft\yii2-debug\LogTarget.php(112): yii\debug\LogTarget->export(Array)
+#2 D:\test1\allance1\vendor\yiisoft\yii2\log\Dispatcher.php(183): yii\debug\LogTarget->collect(Array, true)
+#3 D:\test1\allance1\vendor\yiisoft\yii2\log\Logger.php(173): yii\log\Dispatcher->dispatch(Array, true)
+#4 D:\test1\allance1\vendor\yiisoft\yii2\base\ErrorHandler.php(111): yii\log\Logger->flush(true)
+#5 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\web\BadRequestHttpException))
+#6 {main}
+2016-06-13 21:57:46 [127.0.0.1][-][fa9il4g5ubfartq3tes92gp8b5][info][application] $_GET = [
+    'r' => 'admin/add'
+]
+
+$_COOKIE = [
+    'ECS' => [
+        'visit_times' => '4'
+    ]
+    'PHPSESSID' => 'fa9il4g5ubfartq3tes92gp8b5'
+    '_csrf' => '684f394edf080028b775a88f29d8930636c589cdde091b0acbd85f420f7a4ec9a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"esnmwEhoosPjLP8Z3VPU1HYn9G13l9VQ\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'www.qqq.com'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:47.0) Gecko/20100101 Firefox/47.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://www.qqq.com/allance1/frontend/web/index.php?r=admin/add'
+    'HTTP_COOKIE' => 'ECS[visit_times]=4; PHPSESSID=fa9il4g5ubfartq3tes92gp8b5; _csrf=684f394edf080028b775a88f29d8930636c589cdde091b0acbd85f420f7a4ec9a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22esnmwEhoosPjLP8Z3VPU1HYn9G13l9VQ%22%3B%7D'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'CONTENT_LENGTH' => '0'
+    'PATH' => 'C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;D:\\wamp\\php\\;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;D:\\Program Files\\TortoiseSVN\\bin;D:\\Program Files\\VisualSVN Server\\bin;D:\\wamp\\mysql\\bin;D:\\New git\\bin'
     'SystemRoot' => 'C:\\Windows'
     'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
     'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
     'WINDIR' => 'C:\\Windows'
     'SERVER_SIGNATURE' => ''
     'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e PHP/5.5.30'
+    'SERVER_NAME' => 'www.qqq.com'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'D:/test1'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/test1'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'SCRIPT_FILENAME' => 'D:/test1/allance1/frontend/web/index.php'
+    'REMOTE_PORT' => '14616'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => 'r=admin/add'
+    'REQUEST_URI' => '/allance1/frontend/web/index.php?r=admin/add'
+    'SCRIPT_NAME' => '/allance1/frontend/web/index.php'
+    'PHP_SELF' => '/allance1/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1465826266.355
+    'REQUEST_TIME' => 1465826266
+]
+2016-06-14 08:46:33 [127.0.0.1][-][-][error][yii\base\ErrorException:2] exception 'yii\base\ErrorException' with message 'rand() expects exactly 2 parameters, 1 given' in D:\test1\allance1\frontend\controllers\AdminController.php:44
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleError(2, 'rand() expects ...', 'D:\\test1\\allanc...', 44, Array)
+#1 D:\test1\allance1\frontend\controllers\AdminController.php(44): rand(6)
+#2 [internal function]: frontend\controllers\AdminController->actionAdd()
+#3 D:\test1\allance1\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#4 D:\test1\allance1\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#5 D:\test1\allance1\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('add', Array)
+#6 D:\test1\allance1\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('admin/add', Array)
+#7 D:\test1\allance1\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#8 D:\test1\allance1\frontend\web\index.php(18): yii\base\Application->run()
+#9 {main}
+2016-06-14 08:46:32 [127.0.0.1][-][-][info][application] $_GET = [
+    'r' => 'admin/add'
+]
+
+$_POST = [
+    'a_name' => '张三'
+    'a_pwd' => 'wqeqwewq'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'www.bbb.com'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:47.0) Gecko/20100101 Firefox/47.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://www.bbb.com/allance1/frontend/web/index.php?r=admin/add'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'CONTENT_LENGTH' => '40'
+    'PATH' => 'C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;D:\\wamp\\php\\;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;D:\\Program Files\\TortoiseSVN\\bin;D:\\Program Files\\VisualSVN Server\\bin;D:\\wamp\\mysql\\bin;D:\\New git\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e PHP/5.5.30'
+    'SERVER_NAME' => 'www.bbb.com'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'D:/test1'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/test1'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'SCRIPT_FILENAME' => 'D:/test1/allance1/frontend/web/index.php'
+    'REMOTE_PORT' => '12108'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => 'r=admin/add'
+    'REQUEST_URI' => '/allance1/frontend/web/index.php?r=admin/add'
+    'SCRIPT_NAME' => '/allance1/frontend/web/index.php'
+    'PHP_SELF' => '/allance1/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1465865192.954
+    'REQUEST_TIME' => 1465865192
+]
+2016-06-14 08:46:33 [127.0.0.1][-][-][warning][yii\log\Dispatcher::dispatch] Unable to send log via yii\debug\LogTarget: Exception 'Exception' with message 'Serialization of 'Closure' is not allowed' 
+
+in D:\test1\allance1\vendor\yiisoft\yii2-debug\LogTarget.php:58
+
+Stack trace:
+#0 D:\test1\allance1\vendor\yiisoft\yii2-debug\LogTarget.php(58): serialize(Array)
+#1 D:\test1\allance1\vendor\yiisoft\yii2-debug\LogTarget.php(112): yii\debug\LogTarget->export(Array)
+#2 D:\test1\allance1\vendor\yiisoft\yii2\log\Dispatcher.php(183): yii\debug\LogTarget->collect(Array, true)
+#3 D:\test1\allance1\vendor\yiisoft\yii2\log\Logger.php(173): yii\log\Dispatcher->dispatch(Array, true)
+#4 D:\test1\allance1\vendor\yiisoft\yii2\base\ErrorHandler.php(111): yii\log\Logger->flush(true)
+#5 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\base\ErrorException))
+#6 {main}
+2016-06-14 08:46:32 [127.0.0.1][-][-][info][application] $_GET = [
+    'r' => 'admin/add'
+]
+
+$_POST = [
+    'a_name' => '张三'
+    'a_pwd' => 'wqeqwewq'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'www.bbb.com'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:47.0) Gecko/20100101 Firefox/47.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://www.bbb.com/allance1/frontend/web/index.php?r=admin/add'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'CONTENT_LENGTH' => '40'
+    'PATH' => 'C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;D:\\wamp\\php\\;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;D:\\Program Files\\TortoiseSVN\\bin;D:\\Program Files\\VisualSVN Server\\bin;D:\\wamp\\mysql\\bin;D:\\New git\\bin'
+>>>>>>> e7cdeb71a4e250086caac8f7b79541abf9854ce8
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e PHP/5.5.30'
+<<<<<<< HEAD
     'SERVER_NAME' => 'www.profect.com'
     'SERVER_ADDR' => '127.0.0.1'
     'SERVER_PORT' => '80'
@@ -12207,4 +12930,26 @@ $_SERVER = [
     'PHP_SELF' => '/allance1/frontend/web/index.php'
     'REQUEST_TIME_FLOAT' => 1465867338.864
     'REQUEST_TIME' => 1465867338
+=======
+    'SERVER_NAME' => 'www.bbb.com'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'D:/test1'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/test1'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'SCRIPT_FILENAME' => 'D:/test1/allance1/frontend/web/index.php'
+    'REMOTE_PORT' => '12108'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => 'r=admin/add'
+    'REQUEST_URI' => '/allance1/frontend/web/index.php?r=admin/add'
+    'SCRIPT_NAME' => '/allance1/frontend/web/index.php'
+    'PHP_SELF' => '/allance1/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1465865192.954
+    'REQUEST_TIME' => 1465865192
+>>>>>>> e7cdeb71a4e250086caac8f7b79541abf9854ce8
 ]
