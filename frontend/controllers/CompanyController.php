@@ -16,7 +16,7 @@ use yii\filters\AccessControl;
 
 
 /**
- *CompanyController 企业管理
+ *CompanyController 企业账号
  */
 class CompanyController extends Controller
 {
@@ -28,6 +28,11 @@ class CompanyController extends Controller
      */
     public function actionShow()
     {
-        return $this->render('show.html');
+        $arr = (new \yii\db\Query())
+            ->select(['*'])
+            ->from('al_company')
+            ->all();
+            print_r($arr);die;
+        return $this->render('show.html',array('arr'=>$arr));
     }
 }
