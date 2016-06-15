@@ -1,0 +1,82 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>添加用户-有点</title>
+<link rel="stylesheet" type="text/css" href="css/css.css" />
+<script type="text/javascript" src="js/jquery.min.js"></script>
+</head>
+<body>
+	<div id="pageAll">
+		<div class="pageTop">
+			<div class="page">
+				<img src="img/coin02.png" /><span><a href="index.php?r=admin/add">首页</a>&nbsp;-&nbsp;<a
+					href="#">管理员管理</a>&nbsp;-</span>&nbsp;管理员添加
+			</div>
+		</div>
+		<div class="page ">
+			<!-- 会员注册页面样式 -->
+			<div class="banneradd bor">
+				<div class="baTopNo">
+					<span>管理员添加</span>
+				</div>
+				<div class="baBody">
+                    <form action="index.php?r=admin/add"   method="post" onsubmit="return  sad()">
+					<div class="bbD">
+						&nbsp;&nbsp;&nbsp;&nbsp;姓名：<input type="text"
+					  id="s1"		class="input3"  onblur="fun()"   name="a_name"/>
+                        <span id="s2"></span>
+					</div>
+					<div class="bbD">
+                        &nbsp;&nbsp;&nbsp;&nbsp;密码：<input type="password"  id="p1" class="input3" onblur="pwd()" name="a_pwd" />
+                        <span id="p2"></span>
+					</div>
+					<div class="bbD">
+						<p class="bbDP">
+							<button type="submit" class="btn_ok btn_yes" href="" >提交</button>
+							<a class="btn_ok btn_no" href="index.php?r=admin/add">取消</a>
+						</p>
+					</div>
+                    </form>
+				</div>
+			</div>
+
+			<!-- 会员注册页面样式end -->
+		</div>
+	</div>
+</body>
+</html>
+<script>
+   //正则验证
+    function fun(){
+       var re=$("#s1").val();
+       qq=/^[\u4e00-\u9fa5]{2,}$/;
+        yy=qq.test(re);
+        if(yy){
+            document.getElementById('s2').innerHTML="<img src='img/ok.png' />";
+            return true;
+        }else{
+            document.getElementById('s2').innerHTML="<img src='img/no.png' />";
+            return false;
+        }
+    }
+   function pwd(){
+       var re=$("#p1").val();
+       qq=/^\w{6,}$/;
+       yy=qq.test(re);
+       if(yy){
+           document.getElementById('p2').innerHTML="<img src='img/ok.png' />";
+           return true;
+       }else{
+           document.getElementById('p2').innerHTML="<img src='img/no.png' />";
+           return false;
+       }
+   }
+  function  sad(){
+      if(fun()&&pwd()){
+         return  true;
+      }else{
+          return  false;
+      }
+  }
+</script>
