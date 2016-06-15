@@ -114,12 +114,4 @@ class IntegralController extends Controller
             echo 0;
         }
     }
-    public function actionInteshow(){
-        $request = Yii::$app->request;
-        $p = $request->post('p')?$request->post('p'):1;
-        $where = 1;
-        $order = 'inte_id desc';
-        $data = ControlController::ajaxPage('al_integral',5,$p,$where,$order);
-        return $this->render('inteshow.html',array('arr'=>$data));
-    }
 }
