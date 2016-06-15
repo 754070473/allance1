@@ -1,3 +1,7 @@
+<?php
+use yii\helpers\Html;
+use yii\widgets\ActiveForm;
+?>
 <!DOCTYPE html>
 <html>
 
@@ -53,21 +57,30 @@
                                 <h2>
                                 企业信息添加
                             </h2>
+                                <?php $form = ActiveForm::begin([
+                                   'method'=>'post',
+                                   'action'=>['commessage/add'],
+                                   'options'=>['enctype'=>'multipart/form-data']    
+                                ])?>
 
-                                <form role="form" id="form" action="index.php?r=commessage/add" method="post" enctype="multipart/form-data">
-                                    <div class="form-group">
+                                    
+
+                                
+                                
+                                     <div class="form-group">
                                         <label>企业名称</label>
                                         <input type="text" placeholder="请输入企业名称" name="m_name" class="form-control" required>
                                     </div> 
                                     <div class="form-group">
                                         <label>企业logo</label>
-                                        <input type="file" placeholder="请输入企业logo" name="m_logo" class="form-control" required>
+                                        <!-- <input type="file" placeholder="请输入企业logo" name="m_logo" class="form-control" required> -->
+                                        <?= $form->field($model, 'm_logo')->fileInput(['multiple' => true]) ?>
                                     </div>
-                                    <div class="form-group">
+                                    <!-- <div class="form-group">
                                         <label>发展历程</label>
                                         <textarea name="m_course" placeholder="请输入发展历程" class="form-control" required></textarea>
                                     </div>
-
+                                    
                                     <div class="form-group">
                                         <label class="col-sm-3 control-label">公司福利</label>
                                         
@@ -100,7 +113,7 @@
                                      <div class="form-group">
                                         <label>企业网址</label>
                                         <input type="text" placeholder="请输入企业网址" class="form-control" name="m_url">
-                                    </div>
+                                    </div> -->
 
                                     <!-- <div class="form-group">
                                         <label>Email</label>
@@ -130,7 +143,8 @@
                                         <button class="btn btn-sm btn-primary m-t-n-xs" type="submit"><strong>提交</strong>
                                         </button>
                                     </div>
-                                </form>
+                                    <?php ActiveForm::end() ?>
+                                
                             </div>
                         </div>
 
