@@ -20,6 +20,7 @@ header("content-type:text/html;charset=utf-8");
  */
 class IntegralController extends Controller
 {
+     use ControlController;
     public $enableCsrfValidation = false;
 	//public $layout='public';
     public $layout=false;

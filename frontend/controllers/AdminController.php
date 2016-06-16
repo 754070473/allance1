@@ -175,4 +175,65 @@ class AdminController extends Controller
 
 
     }
+    public function actionUpdate1(){
+//设置session变量：Yii::app()->session['var']='value';
+//$id=Yii::app()->session['com_id'];
+//移除：unset(Yii::app()->session['var']);
+
+        // $row = (new \yii\db\Query())
+        //                 ->select(['*'])
+        //                 ->from('al_company')
+        //                 ->where(['id' =>1])
+                       
+        //                ->all();
+
+                          return $this->render('update.html');
+    }
+    //修改管理员密码中的查询当前登录的管理员的旧密码
+     public function actionSelect1(){
+       // echo "111111111";
+// 设置session变量：Yii::app()->session['var']='value';
+// $id=Yii::app()->session['com_id'];
+// 移除：unset(Yii::app()->session['var']);
+         $connection = \Yii::$app->db;
+        $request = Yii::$app->request;
+                        $user= $request->post('user'); 
+                        //print_r($user);die;
+                         //打开session
+                       $session = Yii::$app->session;
+                         //取出session
+                        $adm_id= $session['adm_id'];
+                        //echo $adm_id;die;
+        $row = (new \yii\db\Query())
+                        ->select(['a_pwd'])
+                        ->from('al_admin')
+                        ->where(['adm_id' =>$adm_id])  
+                       ->all();
+                       //print_r($row['0']['a_pwd']);die;
+       if($row['0']['a_pwd']==$user){
+                     echo 1;
+                     //return $this->render('update.html');
+       }
+                          
+    }
+    //修改管理员密码
+    public function actionUpdatepwd(){
+                          //echo "1111111";die;
+                         $connection = \Yii::$app->db;
+                         $request = Yii::$app->request;
+                          // $id=Yii::app()->session['com_id'];
+                         //打开session
+                       $session = Yii::$app->session;
+                           //取出session
+                        $adm_id= $session['adm_id'];     
+                        $pwd= $request->post('pwd'); 
+                        //print_r($pwd);die;
+        $aa=$connection->createCommand()->update('al_admin', ['a_pwd'=>"$pwd"], "adm_id=$adm_id")->execute();
+        if($aa){
+                         echo "<script>alert('修改成功');location.href='index.php?r=admin/update1'</script>";
+
+                          //return $this->render('');
+                       }
+    }
+    
 }
