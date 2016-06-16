@@ -19173,3 +19173,471 @@ $_SERVER = [
     'REQUEST_TIME_FLOAT' => 1466047417.048
     'REQUEST_TIME' => 1466047417
 ]
+2016-06-16 14:26:19 [::1][-][-][error][yii\base\ErrorException:1] exception 'yii\base\ErrorException' with message 'Call to a member function getUniqueId() on a non-object' in F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\base\Controller.php:318
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleFatalError()
+#1 {main}
+2016-06-16 14:26:18 [::1][-][-][info][application] $_GET = [
+    'r' => 'admin/show'
+]
+
+$_COOKIE = [
+    '__gads' => 'ID=958cf7cb6afa7cad:T=1460978978:S=ALNI_Mb2TnEoFXLJ87eaP3y14ps-v80dlw'
+    'bdshare_firstime' => '1460978979566'
+    'g' => '89642_1461225954402'
+    'CNZZDATA2192707' => 'cnzz_eid=16655850-1461223841-&ntime=1461330789'
+    'Hm_lvt_dfa5478034171cc641b1639b2a5b717d' => '1461225955,1461244135,1461331760'
+    '_ga' => 'GA1.1.1275183857.1461225955'
+    'pgv_pvi' => '7869699072'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:47.0) Gecko/20100101 Firefox/47.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://localhost/php_9/allance1/frontend/web/index.php?r=public/left'
+    'HTTP_COOKIE' => '__gads=ID=958cf7cb6afa7cad:T=1460978978:S=ALNI_Mb2TnEoFXLJ87eaP3y14ps-v80dlw; bdshare_firstime=1460978979566; g=89642_1461225954402; CNZZDATA2192707=cnzz_eid%3D16655850-1461223841-%26ntime%3D1461330789; Hm_lvt_dfa5478034171cc641b1639b2a5b717d=1461225955,1461244135,1461331760; _ga=GA1.1.1275183857.1461225955; pgv_pvi=7869699072'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'PATH' => 'F:\\phpStudy\\php55;D:\\Program Files\\Git\\cmd;C:\\Program Files\\TortoiseGit\\bin;'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e PHP/5.5.30'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'F:/phpStudy/WWW'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'F:/phpStudy/WWW'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'SCRIPT_FILENAME' => 'F:/phpStudy/WWW/php_9/allance1/frontend/web/index.php'
+    'REMOTE_PORT' => '58989'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=admin/show'
+    'REQUEST_URI' => '/php_9/allance1/frontend/web/index.php?r=admin/show'
+    'SCRIPT_NAME' => '/php_9/allance1/frontend/web/index.php'
+    'PHP_SELF' => '/php_9/allance1/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1466058378.992
+    'REQUEST_TIME' => 1466058378
+]
+2016-06-16 14:31:24 [::1][-][-][error][yii\base\ErrorException:1] exception 'yii\base\ErrorException' with message 'Call to a member function getUniqueId() on a non-object' in F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\base\Controller.php:318
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleFatalError()
+#1 {main}
+2016-06-16 14:31:24 [::1][-][-][info][application] $_GET = [
+    'r' => 'integral/show'
+]
+
+$_COOKIE = [
+    '__gads' => 'ID=958cf7cb6afa7cad:T=1460978978:S=ALNI_Mb2TnEoFXLJ87eaP3y14ps-v80dlw'
+    'bdshare_firstime' => '1460978979566'
+    'g' => '89642_1461225954402'
+    'CNZZDATA2192707' => 'cnzz_eid=16655850-1461223841-&ntime=1461330789'
+    'Hm_lvt_dfa5478034171cc641b1639b2a5b717d' => '1461225955,1461244135,1461331760'
+    '_ga' => 'GA1.1.1275183857.1461225955'
+    'pgv_pvi' => '7869699072'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:47.0) Gecko/20100101 Firefox/47.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://localhost/php_9/allance1/frontend/web/index.php?r=public/left'
+    'HTTP_COOKIE' => '__gads=ID=958cf7cb6afa7cad:T=1460978978:S=ALNI_Mb2TnEoFXLJ87eaP3y14ps-v80dlw; bdshare_firstime=1460978979566; g=89642_1461225954402; CNZZDATA2192707=cnzz_eid%3D16655850-1461223841-%26ntime%3D1461330789; Hm_lvt_dfa5478034171cc641b1639b2a5b717d=1461225955,1461244135,1461331760; _ga=GA1.1.1275183857.1461225955; pgv_pvi=7869699072'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'PATH' => 'F:\\phpStudy\\php55;D:\\Program Files\\Git\\cmd;C:\\Program Files\\TortoiseGit\\bin;'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e PHP/5.5.30'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'F:/phpStudy/WWW'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'F:/phpStudy/WWW'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'SCRIPT_FILENAME' => 'F:/phpStudy/WWW/php_9/allance1/frontend/web/index.php'
+    'REMOTE_PORT' => '60551'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=integral/show'
+    'REQUEST_URI' => '/php_9/allance1/frontend/web/index.php?r=integral/show'
+    'SCRIPT_NAME' => '/php_9/allance1/frontend/web/index.php'
+    'PHP_SELF' => '/php_9/allance1/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1466058684.448
+    'REQUEST_TIME' => 1466058684
+]
+2016-06-16 14:31:47 [::1][-][-][error][yii\base\ErrorException:1] exception 'yii\base\ErrorException' with message 'Call to a member function getUniqueId() on a non-object' in F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\base\Controller.php:318
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleFatalError()
+#1 {main}
+2016-06-16 14:31:47 [::1][-][-][info][application] $_GET = [
+    'r' => 'integral/show'
+]
+
+$_COOKIE = [
+    '__gads' => 'ID=958cf7cb6afa7cad:T=1460978978:S=ALNI_Mb2TnEoFXLJ87eaP3y14ps-v80dlw'
+    'bdshare_firstime' => '1460978979566'
+    'g' => '89642_1461225954402'
+    'CNZZDATA2192707' => 'cnzz_eid=16655850-1461223841-&ntime=1461330789'
+    'Hm_lvt_dfa5478034171cc641b1639b2a5b717d' => '1461225955,1461244135,1461331760'
+    '_ga' => 'GA1.1.1275183857.1461225955'
+    'pgv_pvi' => '7869699072'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:47.0) Gecko/20100101 Firefox/47.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://localhost/php_9/allance1/frontend/web/index.php?r=public/left'
+    'HTTP_COOKIE' => '__gads=ID=958cf7cb6afa7cad:T=1460978978:S=ALNI_Mb2TnEoFXLJ87eaP3y14ps-v80dlw; bdshare_firstime=1460978979566; g=89642_1461225954402; CNZZDATA2192707=cnzz_eid%3D16655850-1461223841-%26ntime%3D1461330789; Hm_lvt_dfa5478034171cc641b1639b2a5b717d=1461225955,1461244135,1461331760; _ga=GA1.1.1275183857.1461225955; pgv_pvi=7869699072'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'PATH' => 'F:\\phpStudy\\php55;D:\\Program Files\\Git\\cmd;C:\\Program Files\\TortoiseGit\\bin;'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e PHP/5.5.30'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'F:/phpStudy/WWW'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'F:/phpStudy/WWW'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'SCRIPT_FILENAME' => 'F:/phpStudy/WWW/php_9/allance1/frontend/web/index.php'
+    'REMOTE_PORT' => '60634'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=integral/show'
+    'REQUEST_URI' => '/php_9/allance1/frontend/web/index.php?r=integral/show'
+    'SCRIPT_NAME' => '/php_9/allance1/frontend/web/index.php'
+    'PHP_SELF' => '/php_9/allance1/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1466058707.22
+    'REQUEST_TIME' => 1466058707
+]
+2016-06-16 14:34:23 [::1][-][-][error][yii\base\ErrorException:2] exception 'yii\base\ErrorException' with message 'Missing argument 1 for yii\base\Controller::__construct(), called in F:\phpStudy\WWW\php_9\allance1\frontend\controllers\ControlController.php on line 12 and defined' in F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\base\Controller.php:77
+Stack trace:
+#0 F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\base\Controller.php(77): yii\base\ErrorHandler->handleError(2, 'Missing argumen...', 'F:\\phpStudy\\WWW...', 77, Array)
+#1 F:\phpStudy\WWW\php_9\allance1\frontend\controllers\ControlController.php(12): yii\base\Controller->__construct()
+#2 [internal function]: frontend\controllers\IntegralController->__construct('integral', Object(yii\web\Application))
+#3 F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\di\Container.php(366): ReflectionClass->newInstanceArgs(Array)
+#4 F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\di\Container.php(151): yii\di\Container->build('frontend\\contro...', Array, Array)
+#5 F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\BaseYii.php(340): yii\di\Container->get('frontend\\contro...', Array)
+#6 F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\base\Module.php(568): yii\BaseYii::createObject('frontend\\contro...', Array)
+#7 F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\base\Module.php(521): yii\base\Module->createControllerByID('integral')
+#8 F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\base\Module.php(449): yii\base\Module->createController('integral/show')
+#9 F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('integral/show', Array)
+#10 F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#11 F:\phpStudy\WWW\php_9\allance1\frontend\web\index.php(18): yii\base\Application->run()
+#12 {main}
+2016-06-16 14:34:23 [::1][-][-][info][application] $_GET = [
+    'r' => 'integral/show'
+]
+
+$_COOKIE = [
+    '__gads' => 'ID=958cf7cb6afa7cad:T=1460978978:S=ALNI_Mb2TnEoFXLJ87eaP3y14ps-v80dlw'
+    'bdshare_firstime' => '1460978979566'
+    'g' => '89642_1461225954402'
+    'CNZZDATA2192707' => 'cnzz_eid=16655850-1461223841-&ntime=1461330789'
+    'Hm_lvt_dfa5478034171cc641b1639b2a5b717d' => '1461225955,1461244135,1461331760'
+    '_ga' => 'GA1.1.1275183857.1461225955'
+    'pgv_pvi' => '7869699072'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:47.0) Gecko/20100101 Firefox/47.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://localhost/php_9/allance1/frontend/web/index.php?r=public/left'
+    'HTTP_COOKIE' => '__gads=ID=958cf7cb6afa7cad:T=1460978978:S=ALNI_Mb2TnEoFXLJ87eaP3y14ps-v80dlw; bdshare_firstime=1460978979566; g=89642_1461225954402; CNZZDATA2192707=cnzz_eid%3D16655850-1461223841-%26ntime%3D1461330789; Hm_lvt_dfa5478034171cc641b1639b2a5b717d=1461225955,1461244135,1461331760; _ga=GA1.1.1275183857.1461225955; pgv_pvi=7869699072'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'PATH' => 'F:\\phpStudy\\php55;D:\\Program Files\\Git\\cmd;C:\\Program Files\\TortoiseGit\\bin;'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e PHP/5.5.30'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'F:/phpStudy/WWW'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'F:/phpStudy/WWW'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'SCRIPT_FILENAME' => 'F:/phpStudy/WWW/php_9/allance1/frontend/web/index.php'
+    'REMOTE_PORT' => '61383'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=integral/show'
+    'REQUEST_URI' => '/php_9/allance1/frontend/web/index.php?r=integral/show'
+    'SCRIPT_NAME' => '/php_9/allance1/frontend/web/index.php'
+    'PHP_SELF' => '/php_9/allance1/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1466058863.654
+    'REQUEST_TIME' => 1466058863
+]
+2016-06-16 14:34:23 [::1][-][-][warning][yii\log\Dispatcher::dispatch] Unable to send log via yii\debug\LogTarget: Exception 'Exception' with message 'Serialization of 'Closure' is not allowed' 
+
+in F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2-debug\LogTarget.php:58
+
+Stack trace:
+#0 F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2-debug\LogTarget.php(58): serialize(Array)
+#1 F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2-debug\LogTarget.php(112): yii\debug\LogTarget->export(Array)
+#2 F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\log\Dispatcher.php(183): yii\debug\LogTarget->collect(Array, true)
+#3 F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\log\Logger.php(173): yii\log\Dispatcher->dispatch(Array, true)
+#4 F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\base\ErrorHandler.php(111): yii\log\Logger->flush(true)
+#5 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\base\ErrorException))
+#6 {main}
+2016-06-16 14:34:23 [::1][-][-][info][application] $_GET = [
+    'r' => 'integral/show'
+]
+
+$_COOKIE = [
+    '__gads' => 'ID=958cf7cb6afa7cad:T=1460978978:S=ALNI_Mb2TnEoFXLJ87eaP3y14ps-v80dlw'
+    'bdshare_firstime' => '1460978979566'
+    'g' => '89642_1461225954402'
+    'CNZZDATA2192707' => 'cnzz_eid=16655850-1461223841-&ntime=1461330789'
+    'Hm_lvt_dfa5478034171cc641b1639b2a5b717d' => '1461225955,1461244135,1461331760'
+    '_ga' => 'GA1.1.1275183857.1461225955'
+    'pgv_pvi' => '7869699072'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:47.0) Gecko/20100101 Firefox/47.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://localhost/php_9/allance1/frontend/web/index.php?r=public/left'
+    'HTTP_COOKIE' => '__gads=ID=958cf7cb6afa7cad:T=1460978978:S=ALNI_Mb2TnEoFXLJ87eaP3y14ps-v80dlw; bdshare_firstime=1460978979566; g=89642_1461225954402; CNZZDATA2192707=cnzz_eid%3D16655850-1461223841-%26ntime%3D1461330789; Hm_lvt_dfa5478034171cc641b1639b2a5b717d=1461225955,1461244135,1461331760; _ga=GA1.1.1275183857.1461225955; pgv_pvi=7869699072'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'PATH' => 'F:\\phpStudy\\php55;D:\\Program Files\\Git\\cmd;C:\\Program Files\\TortoiseGit\\bin;'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e PHP/5.5.30'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'F:/phpStudy/WWW'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'F:/phpStudy/WWW'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'SCRIPT_FILENAME' => 'F:/phpStudy/WWW/php_9/allance1/frontend/web/index.php'
+    'REMOTE_PORT' => '61383'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=integral/show'
+    'REQUEST_URI' => '/php_9/allance1/frontend/web/index.php?r=integral/show'
+    'SCRIPT_NAME' => '/php_9/allance1/frontend/web/index.php'
+    'PHP_SELF' => '/php_9/allance1/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1466058863.654
+    'REQUEST_TIME' => 1466058863
+]
+2016-06-16 14:39:35 [::1][-][-][error][yii\base\ErrorException:1] exception 'yii\base\ErrorException' with message 'Call to a member function getUniqueId() on a non-object' in F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\base\Controller.php:318
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleFatalError()
+#1 {main}
+2016-06-16 14:39:35 [::1][-][-][info][application] $_GET = [
+    'r' => 'integral/show'
+]
+
+$_COOKIE = [
+    '__gads' => 'ID=958cf7cb6afa7cad:T=1460978978:S=ALNI_Mb2TnEoFXLJ87eaP3y14ps-v80dlw'
+    'bdshare_firstime' => '1460978979566'
+    'g' => '89642_1461225954402'
+    'CNZZDATA2192707' => 'cnzz_eid=16655850-1461223841-&ntime=1461330789'
+    'Hm_lvt_dfa5478034171cc641b1639b2a5b717d' => '1461225955,1461244135,1461331760'
+    '_ga' => 'GA1.1.1275183857.1461225955'
+    'pgv_pvi' => '7869699072'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:47.0) Gecko/20100101 Firefox/47.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://localhost/php_9/allance1/frontend/web/index.php?r=public/left'
+    'HTTP_COOKIE' => '__gads=ID=958cf7cb6afa7cad:T=1460978978:S=ALNI_Mb2TnEoFXLJ87eaP3y14ps-v80dlw; bdshare_firstime=1460978979566; g=89642_1461225954402; CNZZDATA2192707=cnzz_eid%3D16655850-1461223841-%26ntime%3D1461330789; Hm_lvt_dfa5478034171cc641b1639b2a5b717d=1461225955,1461244135,1461331760; _ga=GA1.1.1275183857.1461225955; pgv_pvi=7869699072'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'PATH' => 'F:\\phpStudy\\php55;D:\\Program Files\\Git\\cmd;C:\\Program Files\\TortoiseGit\\bin;'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e PHP/5.5.30'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'F:/phpStudy/WWW'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'F:/phpStudy/WWW'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'SCRIPT_FILENAME' => 'F:/phpStudy/WWW/php_9/allance1/frontend/web/index.php'
+    'REMOTE_PORT' => '63082'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=integral/show'
+    'REQUEST_URI' => '/php_9/allance1/frontend/web/index.php?r=integral/show'
+    'SCRIPT_NAME' => '/php_9/allance1/frontend/web/index.php'
+    'PHP_SELF' => '/php_9/allance1/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1466059175.668
+    'REQUEST_TIME' => 1466059175
+]
+2016-06-16 14:54:13 [::1][-][js6uqgcj6clh72t1rl5gdgvd06][error][yii\base\ErrorException:1] exception 'yii\base\ErrorException' with message 'Call to undefined function frontend\controllers\redirect()' in F:\phpStudy\WWW\php_9\allance1\frontend\controllers\ControlController.php:16
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleFatalError()
+#1 {main}
+2016-06-16 14:54:13 [::1][-][js6uqgcj6clh72t1rl5gdgvd06][info][application] $_GET = [
+    'r' => 'integral/show'
+]
+
+$_COOKIE = [
+    '__gads' => 'ID=958cf7cb6afa7cad:T=1460978978:S=ALNI_Mb2TnEoFXLJ87eaP3y14ps-v80dlw'
+    'bdshare_firstime' => '1460978979566'
+    'g' => '89642_1461225954402'
+    'CNZZDATA2192707' => 'cnzz_eid=16655850-1461223841-&ntime=1461330789'
+    'Hm_lvt_dfa5478034171cc641b1639b2a5b717d' => '1461225955,1461244135,1461331760'
+    '_ga' => 'GA1.1.1275183857.1461225955'
+    'pgv_pvi' => '7869699072'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:47.0) Gecko/20100101 Firefox/47.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://localhost/php_9/allance1/frontend/web/index.php?r=public/left'
+    'HTTP_COOKIE' => '__gads=ID=958cf7cb6afa7cad:T=1460978978:S=ALNI_Mb2TnEoFXLJ87eaP3y14ps-v80dlw; bdshare_firstime=1460978979566; g=89642_1461225954402; CNZZDATA2192707=cnzz_eid%3D16655850-1461223841-%26ntime%3D1461330789; Hm_lvt_dfa5478034171cc641b1639b2a5b717d=1461225955,1461244135,1461331760; _ga=GA1.1.1275183857.1461225955; pgv_pvi=7869699072'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'PATH' => 'F:\\phpStudy\\php55;D:\\Program Files\\Git\\cmd;C:\\Program Files\\TortoiseGit\\bin;'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e PHP/5.5.30'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'F:/phpStudy/WWW'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'F:/phpStudy/WWW'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'SCRIPT_FILENAME' => 'F:/phpStudy/WWW/php_9/allance1/frontend/web/index.php'
+    'REMOTE_PORT' => '52664'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=integral/show'
+    'REQUEST_URI' => '/php_9/allance1/frontend/web/index.php?r=integral/show'
+    'SCRIPT_NAME' => '/php_9/allance1/frontend/web/index.php'
+    'PHP_SELF' => '/php_9/allance1/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1466060053.363
+    'REQUEST_TIME' => 1466060053
+]
+2016-06-16 14:55:58 [::1][-][js6uqgcj6clh72t1rl5gdgvd06][error][yii\base\ErrorException:1] exception 'yii\base\ErrorException' with message 'Call to undefined function frontend\controllers\http_redirect()' in F:\phpStudy\WWW\php_9\allance1\frontend\controllers\ControlController.php:16
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleFatalError()
+#1 {main}
+2016-06-16 14:55:58 [::1][-][js6uqgcj6clh72t1rl5gdgvd06][info][application] $_GET = [
+    'r' => 'integral/show'
+]
+
+$_COOKIE = [
+    '__gads' => 'ID=958cf7cb6afa7cad:T=1460978978:S=ALNI_Mb2TnEoFXLJ87eaP3y14ps-v80dlw'
+    'bdshare_firstime' => '1460978979566'
+    'g' => '89642_1461225954402'
+    'CNZZDATA2192707' => 'cnzz_eid=16655850-1461223841-&ntime=1461330789'
+    'Hm_lvt_dfa5478034171cc641b1639b2a5b717d' => '1461225955,1461244135,1461331760'
+    '_ga' => 'GA1.1.1275183857.1461225955'
+    'pgv_pvi' => '7869699072'
+    'PHPSESSID' => 'js6uqgcj6clh72t1rl5gdgvd06'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:47.0) Gecko/20100101 Firefox/47.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://localhost/php_9/allance1/frontend/web/index.php?r=public/left'
+    'HTTP_COOKIE' => '__gads=ID=958cf7cb6afa7cad:T=1460978978:S=ALNI_Mb2TnEoFXLJ87eaP3y14ps-v80dlw; bdshare_firstime=1460978979566; g=89642_1461225954402; CNZZDATA2192707=cnzz_eid%3D16655850-1461223841-%26ntime%3D1461330789; Hm_lvt_dfa5478034171cc641b1639b2a5b717d=1461225955,1461244135,1461331760; _ga=GA1.1.1275183857.1461225955; pgv_pvi=7869699072; PHPSESSID=js6uqgcj6clh72t1rl5gdgvd06'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'PATH' => 'F:\\phpStudy\\php55;D:\\Program Files\\Git\\cmd;C:\\Program Files\\TortoiseGit\\bin;'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e PHP/5.5.30'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'F:/phpStudy/WWW'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'F:/phpStudy/WWW'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'SCRIPT_FILENAME' => 'F:/phpStudy/WWW/php_9/allance1/frontend/web/index.php'
+    'REMOTE_PORT' => '53222'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=integral/show'
+    'REQUEST_URI' => '/php_9/allance1/frontend/web/index.php?r=integral/show'
+    'SCRIPT_NAME' => '/php_9/allance1/frontend/web/index.php'
+    'PHP_SELF' => '/php_9/allance1/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1466060158.557
+    'REQUEST_TIME' => 1466060158
+]
