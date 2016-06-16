@@ -1,0 +1,130 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>分类管理</title>
+<link rel="stylesheet" type="text/css" href="css/css.css" />
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<!-- <script type="text/javascript" src="js/page.js" ></script> -->
+</head>
+
+<body>
+    <div id="pageAll">
+        <div class="pageTop">
+            <div class="page">
+                <img src="img/coin02.png" /><span><a href="#">首页</a>&nbsp;-&nbsp;<a
+                    href="#">分类管理</a>&nbsp;-</span>&nbsp;地区列表
+            </div>
+        </div>
+        <div class="page">
+            <!-- banner页面样式 -->
+            <div class="banner">
+                <div class="add">
+                    <a class="addA" href="index.php?r=category/add">添加地区&nbsp;&nbsp;+</a>
+                </div>
+                <!-- banner 表格 显示 -->
+                <div class="banShow" >
+                    <table border="1" cellspacing="0" cellpadding="0">
+                        <tr>
+                            <td width="166px"  class="tdColor tdC">地区</td>
+                            <td width="315px" class="tdColor">父级id</td>
+                            <td width="308px" class="tdColor">添加时间</td>
+                            <td width="250px" class="tdColor">操作</td>
+                        </tr>
+                        <?php foreach($arr as $key=>$val) {?>
+                        <tr id="a_<?php echo $val['pla_id'] ?>">
+                            <td>
+                                <?php 
+                                if($val['level']==0)
+                                {
+                                    echo "<a href=''>+</a>".$val['i_name'];
+                                }
+                                elseif($val['level']==1)
+                                {
+                                    echo str_repeat('&nbsp;&nbsp;&nbsp;&nbsp;', $val['level']).'+'.'|--'.$val['i_name'];
+                                }
+                                elseif($val['level']==2)
+                                {
+                                    echo str_repeat('&nbsp;&nbsp;&nbsp;&nbsp;', $val['level']).'|--'.$val['i_name'];
+                                }
+                                ?>
+                            </td>
+                            <td><?php echo $val['p_pid'] ?></td>
+                            <td><?php echo $val['i_addtime'] ?></td>
+                            <td>
+                                <a href="banneradd.html">
+                                    <img class="operation"
+                                    src="img/update.png">
+                                </a> 
+                                    <img class="operation delban" onclick="delban(<?php echo $val['pla_id'] ?>)"
+                                src="img/delete.png"></td>
+                        </tr>
+                        <?php } ?>
+                       
+                    </table>
+                    <div class="paging">
+                        
+                    </div>
+                </div>
+                <!-- banner 表格 显示 end-->
+            </div>
+            <!-- banner页面样式end -->
+        </div>
+
+    </div>
+
+
+    <!-- 删除弹出框 -->
+    <div class="banDel">
+        <div class="delete">
+            <div class="close">
+                <a><img src="img/shanchu.png" /></a>
+            </div>
+            <p class="delP1">你确定要删除此条记录吗？</p>
+            <p class="delP2">
+                <a href="#" class="ok yes" id='shan' onclick="del()">确定</a><a class="ok no">取消</a>
+            </p>
+        </div>
+    </div>
+    <!-- 删除弹出框  end-->
+</body>
+
+<script type="text/javascript">
+// 广告弹出框
+function delban(id)
+{      
+    $(".banDel").show();
+    $('#shan').attr('onclick',"del("+id+")");
+}
+
+$(".close").click(function(){
+  $(".banDel").hide();
+});
+$(".no").click(function(){
+  $(".banDel").hide();
+});
+// 广告弹出框 end
+function del(id){
+    $.ajax({
+        type:"post",
+        url:"index.php?r=category/del",
+        data:"id="+id,
+        success:function(e)
+        {
+            if(e==1)
+            {
+               $('#a_'+id).remove();
+                
+                $(".banDel").hide();
+            }
+            else
+            {
+                $(".banDel").hide();
+                alert(e);
+            }
+        }
+    })
+    
+}
+</script>
+</html>
