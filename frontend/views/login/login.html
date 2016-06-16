@@ -8,6 +8,7 @@
 <script type="text/javascript" src="js/jquery.min.js"></script>
 <script type="text/javascript" src="js/public.js"></script>
 </head>
+<form action="index.php?r=login/login1" method="post">
 <body>
 
     <!-- 登录页面头部 -->
@@ -28,20 +29,15 @@
             <!-- 输入框 -->
             <div class="lgD">
                 <img class="img1" src="img/logName.png" /><input type="text"
-                    placeholder="输入用户名" />
+                  id="name1"  name="name1" placeholder="输入用户名" onblur="names()" /><span id="nname"></span>
             </div>
             <div class="lgD">
-                <img class="img1" src="img/logPwd.png" /><input type="text"
-                    placeholder="输入用户密码" />
+                <img class="img1" src="img/logPwd.png" /><input type="password"
+                  id="pwd1"  name="pwd1" placeholder="输入用户密码" onblur="pwds()" /><span id="npwd"></span>
             </div>
-            <div class="lgD logD2">
-                <input class="getYZM" type="text" />
-                <div class="logYZM">
-                    <img class="yzm" src="img/logYZM.png" />
-                </div>
-            </div>
+           
             <div class="logC">
-                <button>登 录</button>
+                <button type="submit" >登录</button>
             </div>
         </div>
     </div>
@@ -54,4 +50,60 @@
     </div>
     <!-- 登录页面底部end -->
 </body>
+</form>
 </html>
+<script type="text/javascript">
+var str=false;
+function names(){
+
+var user = document.getElementById('name1').value.trim();   
+ //alert(user);
+ if (user.length =="0") {
+  document.getElementById("nname").innerHTML="<font color='red'>用户名不能为空</font>";
+   str=false;
+ }
+ else{
+    document.getElementById("nname").innerHTML="<font color='red'></font>";
+    str=true;
+ }
+}
+function pwds(){
+var name= document.getElementById('name1').value.trim();
+var pwd = document.getElementById('pwd1').value.trim();
+ if (pwd.length =="0") {
+  document.getElementById("npwd").innerHTML="<font color='red'>密码不能为空</font>";
+ str=false;
+ }else{
+$.ajax({
+                    type: "POST",  
+                    url: "index.php?r=login/select1",    
+                    data: 'name='+name+'&pwd='+pwd,       
+                    success: function (msg) {                       //成功回传值后触发的方法
+                        //alert(msg);
+                        if (msg != 1 ) {   
+                             //如果回传的json不为null或json中的IS键
+                          document.getElementById("npwd").innerHTML="<font color='red'>密码或账号错误</font>";
+                           str=false;
+                              
+                }else{
+                     document.getElementById("npwd").innerHTML="<font color='red'></font>";
+                       str=true;
+                }
+                }
+                })
+
+  
+
+ }
+}
+$('form').submit(function(){
+           if(str==true)
+           {
+              return true;
+           }
+           else
+           { 
+               return false;
+           }
+    }); 
+ </script>

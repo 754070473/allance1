@@ -1,4 +1,5 @@
 <?php
+
 namespace frontend\controllers;
 
 use Yii;
@@ -8,6 +9,20 @@ use common\models\LoginForm;
  * @package frontend\controllers
  */
 trait ControlController {
+     use ControlController;
+    public function init(){
+        session_start();
+        //取出session
+        if(empty($_SESSION['adm_id'])){
+            $url = 'http://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
+            $url = substr($url,0,strpos($url,'=')+1);
+            $url = $url."login/login";
+            //重定向浏览器
+            header("Location: $url");
+            //确保重定向后，后续代码不会被执行
+            exit;
+        }
+    }
     //添加日志
     public function adminLog($content){
         mysql_connect('127.0.0.1','root','root')or die('连接失败');
@@ -37,9 +52,15 @@ trait ControlController {
         $count = mysql_num_rows($re);
         if($count == 0){
             $data['arr'] = "";
+            //搜索样式
+            $sel='<div class="cfD" style="float: right;margin-top: 42px;">
+                    <input class="addUser" type="text" id="search" value="" placeholder="请输入要搜索的内容" />
+                    <input class="button" type="button" onclick="ck_page(1)"  value="搜索"/>
+                </div>';
             $str = '';
             $str.="<div class='pagin'><div class='message'>共<i class='blue'>$count</i>条记录<ul class='paginList'></div>";
             $data['page'] = $str;
+            $data['sel'] = $sel;
             return $data;
         }else{
             //计算总页数
@@ -56,6 +77,11 @@ trait ControlController {
             $last=($p-1)<1?1:$p-1;
             //下一页
             $next=($p+1)>$page?$page:$p+1;
+            //搜索样式
+            $sel='<div class="cfD" style="float: right;margin-top: 42px;">
+                    <input class="addUser" type="text" id="search" value="" placeholder="请输入要搜索的内容" />
+                    <input class="button" type="button" onclick="ck_page(1)"  value="搜索"/>
+                </div>';
             //分页样式
             $str='<link rel="stylesheet" type="text/css" href="css/page/page.css"/>
             <script src="js/page/page.js"></script>
@@ -78,6 +104,7 @@ trait ControlController {
             }
             $str.="<li class='paginItem'><a href='javascript:;' onclick='ck_page($page)'><span class='pagenxt'>>></span></a></li></ul></div>";
             $data['page']=$str;
+            $data['sel']=$sel;
             $data['pageNum']=$page;
             $data['count']=$count;
             $data['p']=$p;

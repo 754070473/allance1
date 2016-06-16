@@ -20,6 +20,7 @@ use yii\filters\AccessControl;
  */
 class MemberController extends Controller
 {
+     use ControlController;
 	//public $layout='public';
     public $layout=false;
     /**

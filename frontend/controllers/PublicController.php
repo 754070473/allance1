@@ -20,9 +20,10 @@ use yii\filters\AccessControl;
  */
 class PublicController extends Controller
 {
-	
+	 use ControlController;
 	//public $layout='public';
     public $layout=false;
+    public $enableCsrfValidation=false;
 	/**
      * [actionLeft 主界面]
      * @return [type] [description]
@@ -37,8 +38,10 @@ class PublicController extends Controller
      */
     public function actionTop()
     {
+
         return $this->render('top.html');
     }
+   
     /**
      * [actionLeft 左侧菜单栏]
      * @return [type] [description]
