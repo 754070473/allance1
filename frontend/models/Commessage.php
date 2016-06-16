@@ -47,15 +47,15 @@ class Commessage extends \yii\db\ActiveRecord
         ];
     }
 
-    public function upload()
-    {
-        if ($this->validate()) {
-            $this->m_logo->saveAs('uploads/' . $this->m_logo->baseName . '.' . $this->m_logo->extension);
-            return true;
-        } else {
-            return false;
-        }
-    }
+    // public function upload()
+    // {
+    //     if ($this->validate()) {
+    //         $this->m_logo->saveAs('uploads/' . $this->m_logo->baseName . '.' . $this->m_logo->extension);
+    //         return true;
+    //     } else {
+    //         return false;
+    //     }
+    // }
     /**
      * @inheritdoc
      */

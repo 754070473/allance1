@@ -61,7 +61,8 @@
                             </div>
                             <div class="ibox-content">
                                 <div class="">
-                                    <a onclick="fnClickAddRow();" href="index.php?r=commessage/add" class="btn btn-primary ">添加</a>
+                                    <a onclick="fnClickAddRow();" href="index.php?r=commessage/add" class="btn btn-primary ">企业信息添加</a>
+                                <a onclick="delAll();" href="javascript:void(0)" class="btn btn-primary ">批量删除</a>
                                 </div>
                                <!--  <table class="table table-striped table-bordered table-hover " id="editable"> -->
 
@@ -83,18 +84,28 @@
                                     </thead>
                                     <tbody>
                                         <?php foreach ($arr as $key => $val): ?>
-                                        <tr class="gradeX">
-                                            <td><?php echo $val['mes_id']; ?></td>
-                                            <td><?php echo $val['m_name']; ?></td>
-                                            <td><?php echo $val['m_logo']; ?></td>
-                                            <td><?php echo $val['m_course']; ?></td>
-                                            <td><?php echo $val['m_welfare']; ?></td>
-                                            <td><?php echo $val['m_place']; ?></td>
-                                            <td><?php echo $val['pro_intro']; ?></td>
-                                            <td><?php echo $val['m_culture']; ?></td>
-                                            <td><?php echo $val['m_qq']; ?></td>
-                                            <td><?php echo $val['m_url']; ?></td>
-                                            <td class="center">删除</td>
+                                        <tr id="<?php echo $val['mes_id']?>">
+                                            <td>
+                                                <input type="checkbox" value="<?php echo $val['mes_id']; ?>">
+                                                <?php echo $val['mes_id']; ?>
+                                            </td>
+                                            <td class="up" ziduan="m_name"><?php echo $val['m_name']; ?></td>
+                                            <td><img src="<?=Yii::$app->request->baseUrl?>/uploads/<?php echo $val['m_logo']; ?>" alt="" width="50px;" height="50px;"> </td>
+                                            <td class="up" ziduan="m_course"><?php echo $val['m_course']; ?></td>
+                                            <td class="up" ziduan="m_welfare"><?php echo $val['m_welfare']; ?></td>
+                                            <td class="up" ziduan="m_place"><?php echo $val['m_place']; ?></td>
+                                            <td class="up" ziduan="pro_intro"><?php echo $val['pro_intro']; ?></td>
+                                            <td class="up" ziduan="m_culture"><?php echo $val['m_culture']; ?></td>
+                                            <td class="up" ziduan="m_qq"><?php echo $val['m_qq']; ?></td>
+                                            <td class="up" ziduan="m_url"><?php echo $val['m_url']; ?></td>
+                                            <td class="center">
+                                            <a href="index.php?r=commessage/update&mes_id=<?php echo $val['mes_id']; ?>">
+                                                <img class="operation" src="img/update.png">
+                                            </a> 
+                                            <a href="index.php?r=commessage/delete&mes_id=<?php echo $val['mes_id']; ?>">
+                                                <img class="operation delban" src="img/delete.png">
+                                            </a>
+                                            </td>
                                         </tr>
                                         <?php endforeach ?>
                                     </tbody>
@@ -110,6 +121,9 @@
 
 
     </div>
+
+
+
 
     <!-- Mainly scripts -->
     <script src="js/jquery-2.1.1.min.js"></script>
@@ -154,19 +168,92 @@
 
 
         });
-
-    /*    function fnClickAddRow() {
-            $('#editable').dataTable().fnAddData([
-                "Custom row",
-                "New row",
-                "New row",
-                "New row",
-                "New row"]);
-
-        }*/
-
     </script>
+<script type="text/javascript">
+//即点即改
+$(document).on('click','.up',function () {
+    var td=$(this);
+    var old_val=$(this).text();
+    var id=$(this).parent().attr('id');
     
+    var input=$("<input type='text'/>");
+    $(this).html(input);
+    input.focus().val($.trim(old_val));
+    input.click(function(){
+        return  false;
+    })
+    input.blur(function(){
+        var new_val=$(this).val();
+        var ziduan=$(this).parent().attr('ziduan');
+        if(new_val!=old_val){
+            $.ajax({
+            type: "post", 
+            url: "index.php?r=commessage/oneupdate", 
+            data: "mes_id="+id+"&value="+new_val+"&ziduan="+ziduan,
+                success: function(msg)
+                {
+                    if(msg==1){ 
+                        td.text(new_val); 
+                    }
+                    else{ 
+                        td.text(old_val); 
+                    } 
+                } 
+            });
+        }else{
+            td.text(old_val); 
+        }
+    });
+});
+/**批量删除*/
+function delAll(){
+    // 首先获取当前页最后一个tr的第二个td间的值,作为要查询的条件
+    var obj=$(":checkbox");
+    var arr=Array();
+    for (var i = 0; i < obj.length; i++) {
+        if(obj[i].checked==true){
+            arr.push(obj[i].value);
+        }
+    }
+    var id=arr.join(',');
+    //var last_id=$("tr:last td:nth-child(2)").html();
+    var last_id = $('tr:last').attr('id');
+    $.ajax({
+        type:'post',
+        url:"index.php?r=commessage/delete",
+        data:'mes_id='+id+'&last_id='+last_id,
+        success:function(msg)
+        {
+            var data=eval("("+msg+")");
+            var str="";
+            for(i=0;i<data.length;i++)
+            {
+                str+="<tr id='"+data[i].mes_id+"'>";
+                    str+="<td>"+"<input type='checkbox' value='"+data[i].mes_id+"'>"+data[i].mes_id+"</td>";
+                    str+="<td class='up' ziduan='m_name'>"+data[i].m_name+"</td>";
+                    str+="<td>"+"<img src='"+'uploads/'+data[i].m_logo+"'  width='50px;' height='50px;'>"+"</td>";
+                    str+="<td class='up' ziduan='m_course'>"+data[i].m_course+"</td>";
+                    str+="<td class='up' ziduan='m_welfare'>"+data[i].m_welfare+"</td>";
+                    str+="<td class='up' ziduan='m_place'>"+data[i].m_place+"</td>";
+                    str+="<td class='up' ziduan='pro_intro'>"+data[i].pro_intro+"</td>";
+                    str+="<td class='up' ziduan='m_culture'>"+data[i].m_culture+"</td>";
+                    str+="<td class='up' ziduan='m_qq'>"+data[i].m_qq+"</td>";
+                    str+="<td class='up' ziduan='m_url'>"+data[i].m_url+"</td>";
+                    str+="<td>";
+                        str+="<a href='index.php?r=commessage/update&mes_id="+data[i].mes_id+"'>"+"<img class='operation' src=img/update.png >"+"</a>";
+                        str+="<a href='index.php?r=commessage/delete&mes_id="+data[i].mes_id+"'>"+"<img class='operation' src=img/delete.png >"+"</a>";
+                    str+="</td>";
+                str+="</tr>";
+            }
+            $("#"+last_id).after(str);
+            for (var i = 0; i < arr.length; i++) {
+                $("#"+arr[i]).remove();
+            }
+        }
+    })
+
+} 
+</script>
 </body>
 
 </html>
