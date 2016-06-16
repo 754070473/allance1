@@ -32,7 +32,12 @@ class IntegralController extends Controller
     {
         $request = Yii::$app->request;
         $p = $request->post('p')?$request->post('p'):1;
-        $where = 1;
+        $search = $request->post('search')?$request->post('search'):"";
+        if($search==""){
+            $where = 1;
+        }else{
+            $where = "i_name like '%$search%'";
+        }
         $order = 'inte_id desc';
         $data = ControlController::ajaxPage('al_integral',5,$p,$where,$order);
 //        print_r($data);die;
