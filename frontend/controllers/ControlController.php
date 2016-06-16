@@ -85,6 +85,36 @@ trait ControlController {
         }
 
     }
+
+    /**
+     * 无限极分类数组处理
+     * @param $table
+     * @param $pid_name
+     * @param int $pid
+     * @return array
+     */
+    public function classify($table,$pid_name,$pid=0){
+        mysql_connect('127.0.0.1','root','root')or die('连接失败');
+        mysql_select_db('allance')or die('选择失败');
+        mysql_query("SET NAMES `UTF8`");
+        //查询表中根分类
+        $sql = "select * from $table where $pid_name=$pid";
+        $re = mysql_query($sql);
+        $num=mysql_num_rows($re);
+        if($num>0){
+            while($new_arr = mysql_fetch_assoc($re)){
+                $arr[] = $new_arr;
+            }
+        }else{
+            $arr = array();
+        }
+        //查询子分类
+//        return $arr;die;
+        foreach($arr as $key=>$val){
+            $arr[$key]['son']=$this->classify($table,$pid_name,$pid=$val['pri_id']);
+        }
+        return $arr;
+    }
     /*public function integral(){
         $url = $_SERVER['REQUEST_URI'];
         $url = substr($url,strpos($url,'=')+1);
