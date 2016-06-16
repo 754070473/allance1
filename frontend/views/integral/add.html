@@ -1,0 +1,130 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>添加用户-有点</title>
+<link rel="stylesheet" type="text/css" href="css/css.css" />
+<script type="text/javascript" src="js/jquery.min.js"></script>
+</head>
+<body>
+	<div id="pageAll">
+		<div class="pageTop">
+			<div class="page">
+				<img src="img/coin02.png" /><span><a href="index.php?r=index/index">首页</a>&nbsp;-&nbsp;<a
+					href="#">积分管理</a>&nbsp;-</span>&nbsp;积分项添加
+			</div>
+		</div>
+		<div class="page ">
+			<!-- 会员注册页面样式 -->
+			<div class="banneradd bor">
+				<div class="baTopNo">
+					<span>积分项添加</span>
+				</div>
+				<div class="baBody">
+                    <form action="index.php?r=integral/info"   method="post" onsubmit="return  sad()" >
+					<div class="bbD">
+						&nbsp;&nbsp;积分项名称：<input type="text" id="i_name" class="input3"  onblur="ckName()"   name="i_name" onclick="ckName1()" placeholder="请输入10个以内的字符"/>
+                        <span id="i_name1"></span>
+					</div>
+                        <div class="bbD">
+                            &nbsp;&nbsp;控制器名&nbsp;&nbsp;&nbsp;：<input type="text" id="i_controller" class="input3" onblur="ckCon()" name="i_controller" placeholder="请输入正确的控制器名称" onclick="ckCon1()" />
+                            <span id="i_controller1"></span>
+                        </div>
+                        <div class="bbD">
+                            &nbsp;&nbsp;方法名&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;：<input type="text" id="i_function" class="input3" onblur="ckFun()" name="i_function" placeholder="请输入正确的方法名称" onclick="ckFun1()" />
+                            <span id="i_function1"></span>
+                        </div>
+                        <div class="bbD">
+                            &nbsp;&nbsp;积分数&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;：<input type="text" id="i_num" class="input3" onblur="ckNum()" name="i_num" placeholder="请输入正整数" onclick="ckNum1()" />
+                            <span id="i_num1"></span>
+                        </div>
+					<div class="bbD">
+						<p class="bbDP">
+							<button type="submit" class="btn_ok btn_yes" />提交</button>
+                            <input type="reset" value="取消" class="btn_ok btn_no"/>
+						</p>
+					</div>
+                    </form>
+				</div>
+			</div>
+
+			<!-- 会员注册页面样式end -->
+		</div>
+	</div>
+</body>
+</html>
+<script>
+   //验证积分项名称
+    function ckName(){
+       var re = $("#i_name").val();
+        if(re == ""){
+            document.getElementById('i_name1').innerHTML = "<img src='img/no.png' /><font color='red'>积分项名称不能为空</font>";
+            return false;
+        }else{
+            if(re.length <= 10){
+                document.getElementById('i_name1').innerHTML = "<img src='img/ok.png' />";
+                return true;
+            }else{
+                document.getElementById('i_name1').innerHTML="<img src='img/no.png' /><font color='red'>长度不能大于10个字符</font>";
+                return false;
+            }
+        }
+    }
+   function ckName1(){
+       document.getElementById('i_name1').innerHTML = "";
+   }
+   //验证控制器名称
+   function ckCon(){
+       var re=$("#i_controller").val();
+       if(re == ""){
+           document.getElementById('i_controller1').innerHTML="<img src='img/no.png' />控制器名称不能为空";
+           return false;
+       }else{
+           document.getElementById('i_controller1').innerHTML="<img src='img/ok.png' />";
+           return true;
+       }
+   }
+   function ckCon1(){
+       document.getElementById('i_controller1').innerHTML = "";
+   }
+   //验证方法名称
+   function ckFun(){
+       var re = $("#i_function").val();
+       if(re == ""){
+           document.getElementById('i_function1').innerHTML="<img src='img/no.png' />方法名称不能为空";
+           return false;
+       }else{
+           document.getElementById('i_function1').innerHTML="<img src='img/ok.png' />";
+           return true;
+       }
+   }
+   function ckFun1(){
+       document.getElementById('i_function1').innerHTML = "";
+   }
+   //验证积分
+   function ckNum(){
+       var re = $('#i_num').val();
+       if(re == ""){
+           document.getElementById('i_num1').innerHTML = "<img src='img/no.png' />积分不能为空";
+           return false;
+       }else{
+           var pre = /^[0-9]+$/;
+           if(pre.test(re)){
+               document.getElementById('i_num1').innerHTML="<img src='img/ok.png' />";
+               return true;
+           }else{
+               document.getElementById('i_num1').innerHTML="<img src='img/no.png' />积分必须为正整数";
+           }
+       }
+   }
+   function ckNum1(){
+       document.getElementById('i_num1').innerHTML = "";
+   }
+  function  sad(){
+      if(ckCon()&&ckFun()&&ckName()&&ckNum()){
+         return  true;
+      }else{
+          return  false;
+      }
+  }
+</script>

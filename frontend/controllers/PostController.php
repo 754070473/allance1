@@ -28,6 +28,8 @@ class PostController extends Controller
      */
     public function actionShow()
     {
+        
+        
         return $this->render('show.html');
     }
     /**

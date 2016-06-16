@@ -20,14 +20,48 @@ class ResumeController extends Controller
 {
 	//public $layout='public';
     public $layout=false;
+
+    public $enableCsrfValidation=false;
     /**
      * [actionIndex 显示简历列表]
      * @return [type] [description]
      */
     public function actionShow()
+
     {
-        return $this->render('show.html');
+        //$id=1;
+        $row = (new \yii\db\Query())
+    ->select(['*'])
+    ->from('al_resume')
+     ->all();
+//->where(['per_id'=>$id])
+
+//print_r($row);die;
+   return $this->render('show.html',array('arr'=>$row));
+        
+
     }
+
+    //审核简历
+    public function actionUpdate(){
+                 $connection = \Yii::$app->db;
+        $request = Yii::$app->request;
+                        $id= $request->get('id'); 
+                        $aa=$connection->createCommand()->update('al_resume', ['r_type'=>"1"], "res_id= $id")->execute();
+        if($aa){
+                          return $this->redirect('index.php?r=resume/show');
+                       }
+    }
+    public function actionUpdate2(){
+                 $connection = \Yii::$app->db;
+        $request = Yii::$app->request;
+                        $id= $request->get('id'); 
+                        $aa=$connection->createCommand()->update('al_resume', ['r_type'=>"0"], "res_id= $id")->execute();
+        if($aa){
+                          return $this->redirect('index.php?r=resume/show');
+                       }
+    }
+    
     /**
      * [actionAdd 添加]
      * @return [type] [description]
@@ -42,6 +76,30 @@ class ResumeController extends Controller
      */
     public function actionPhoto()
     {
-    	return $this->render('photo.html');
+        $row=(new\yii\db\Query())
+        ->select(['*'])
+        ->from('al_resume')
+        ->all();
+
+    	return $this->render('photo.html',array('arr'=>$row));
+    }
+     //审核头像
+    public function actionUpdate3(){
+                 $connection = \Yii::$app->db;
+        $request = Yii::$app->request;
+                        $id= $request->get('id'); 
+                        $aa=$connection->createCommand()->update('al_resume', ['if_img'=>"1"], "res_id= $id")->execute();
+        if($aa){
+                          return $this->redirect('index.php?r=resume/photo');
+                       }
+    }
+    public function actionUpdate4(){
+                 $connection = \Yii::$app->db;
+        $request = Yii::$app->request;
+                        $id= $request->get('id'); 
+                        $aa=$connection->createCommand()->update('al_resume', ['if_img'=>"0"], "res_id= $id")->execute();
+        if($aa){
+                          return $this->redirect('index.php?r=resume/photo');
+                       }
     }
 }

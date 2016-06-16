@@ -15,12 +15,13 @@ use yii\filters\AccessControl;
 
 
 /**
- *  PostController 职位管理
+ *  IndentController 订单管理
  */
 class IndentController extends Controller
 {
 	//public $layout='public';
     public $layout=false;
+    public $enableCsrfValidation = false;
     /**
      * [actionIndex 显示职位列表]
      * @return [type] [description]
