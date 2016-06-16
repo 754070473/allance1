@@ -21,7 +21,7 @@
 
 </head>
 
-<body style="background-color:#blue;">
+<body style="background-color:#fff;">
     <div id="wrapper">
 
             <div class="row wrapper border-bottom white-bg page-heading">
@@ -29,10 +29,10 @@
                     <h2>数据表格</h2>
                     <ol class="breadcrumb">
                         <li>
-                            <a href="index.html">企业</a>
+                            <a href="index.html">企业信息</a>
                         </li>
                         <li>
-                            <a>企业列表</a>
+                            <a>企业信息列表</a>
                         </li>
                     </ol>
                 </div>
@@ -61,31 +61,43 @@
                             </div>
                             <div class="ibox-content">
                                 <div class="">
-                                    <a onclick="fnClickAddRow();" href="javascript:void(0);" class="btn btn-primary ">添加行</a>
+                                    <a onclick="fnClickAddRow();" href="index.php?r=commessage/add" class="btn btn-primary ">企业信息添加</a>
+                                <a onclick="delAll();" href="javascript:void(0)" class="btn btn-primary ">批量删除</a>
                                 </div>
                                <!--  <table class="table table-striped table-bordered table-hover " id="editable"> -->
 
                              <table class="table table-striped table-bordered table-hover dataTables-example">
                                     <thead>
                                         <tr>
-                                            <th>企业编号</th>
-                                            <th>企业电话</th>
+                                            <th>企业账号编号</th>
+                                            <th>所属企业</th>
+                                            <th>手机号</th>
                                             <th>邮箱</th>
-                                            <th>密码</th>
-                                            <th>CSS等级</th>
+                                            <th>积分</th>
                                             <th>操作</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr class="gradeX">
-                                            <td>Trident</td>
-                                            <td>Internet Explorer 4.0
+                                        <?php foreach ($arr as $key => $val): ?>
+                                        <tr id="<?php echo $val['com_id']?>">
+                                            <td>
+                                                <input type="checkbox" value="<?php echo $val['com_id']; ?>">
+                                                <?php echo $val['com_id']; ?>
                                             </td>
-                                            <td>Win 95+</td>
-                                            <td class="center">4</td>
-                                            <td class="center">X</td>
-                                            <td class="center">删除</td>
+                                            <td><?php echo $val['m_name']; ?></td>
+                                            <td><?php echo $val['c_phone']; ?></td>
+                                            <td><?php echo $val['c_email']; ?></td>
+                                            <td><?php echo $val['c_integarl']; ?></td>
+                                            <td class="center">
+                                            <a href="index.php?r=company/update&com_id=<?php echo $val['com_id']; ?>">
+                                                <img class="operation" src="img/update.png">
+                                            </a> 
+                                            <a href="index.php?r=company/delete&com_id=<?php echo $val['com_id']; ?>">
+                                                <img class="operation delban" src="img/delete.png">
+                                            </a>
+                                            </td>
                                         </tr>
+                                        <?php endforeach ?>
                                     </tbody>
                                 
                                 </table>
@@ -99,6 +111,9 @@
 
 
     </div>
+
+
+
 
     <!-- Mainly scripts -->
     <script src="js/jquery-2.1.1.min.js"></script>
@@ -143,28 +158,92 @@
 
 
         });
-
-        function fnClickAddRow() {
-            $('#editable').dataTable().fnAddData([
-                "Custom row",
-                "New row",
-                "New row",
-                "New row",
-                "New row"]);
-
-        }
-
     </script>
-    <script type="text/javascript">
-    /**
-     * Generate the node required for user display length changing
-     *  @param {object} settings dataTables settings object
-     *  @returns {node} Display length feature node
-     *  @memberof DataTable#oApi
-     */
-  
-    </script>
+<script type="text/javascript">
+//即点即改
+$(document).on('click','.up',function () {
+    var td=$(this);
+    var old_val=$(this).text();
+    var id=$(this).parent().attr('id');
     
+    var input=$("<input type='text'/>");
+    $(this).html(input);
+    input.focus().val($.trim(old_val));
+    input.click(function(){
+        return  false;
+    })
+    input.blur(function(){
+        var new_val=$(this).val();
+        var ziduan=$(this).parent().attr('ziduan');
+        if(new_val!=old_val){
+            $.ajax({
+            type: "post", 
+            url: "index.php?r=commessage/oneupdate", 
+            data: "mes_id="+id+"&value="+new_val+"&ziduan="+ziduan,
+                success: function(msg)
+                {
+                    if(msg==1){ 
+                        td.text(new_val); 
+                    }
+                    else{ 
+                        td.text(old_val); 
+                    } 
+                } 
+            });
+        }else{
+            td.text(old_val); 
+        }
+    });
+});
+/**批量删除*/
+function delAll(){
+    // 首先获取当前页最后一个tr的第二个td间的值,作为要查询的条件
+    var obj=$(":checkbox");
+    var arr=Array();
+    for (var i = 0; i < obj.length; i++) {
+        if(obj[i].checked==true){
+            arr.push(obj[i].value);
+        }
+    }
+    var id=arr.join(',');
+    //var last_id=$("tr:last td:nth-child(2)").html();
+    var last_id = $('tr:last').attr('id');
+    $.ajax({
+        type:'post',
+        url:"index.php?r=commessage/delete",
+        data:'mes_id='+id+'&last_id='+last_id,
+        success:function(msg)
+        {
+            var data=eval("("+msg+")");
+            var str="";
+            for(i=0;i<data.length;i++)
+            {
+                str+="<tr id='"+data[i].mes_id+"'>";
+                    str+="<td>"+"<input type='checkbox' value='"+data[i].mes_id+"'>"+data[i].mes_id+"</td>";
+                    str+="<td class='up' ziduan='m_name'>"+data[i].m_name+"</td>";
+                    str+="<td>"+"<img src='"+'uploads/'+data[i].m_logo+"'  width='50px;' height='50px;'>"+"</td>";
+                    str+="<td class='up' ziduan='m_course'>"+data[i].m_course+"</td>";
+                    str+="<td class='up' ziduan='m_welfare'>"+data[i].m_welfare+"</td>";
+                    str+="<td class='up' ziduan='m_place'>"+data[i].m_place+"</td>";
+                    str+="<td class='up' ziduan='pro_intro'>"+data[i].pro_intro+"</td>";
+                    str+="<td class='up' ziduan='m_culture'>"+data[i].m_culture+"</td>";
+                    str+="<td class='up' ziduan='m_qq'>"+data[i].m_qq+"</td>";
+                    str+="<td class='up' ziduan='m_url'>"+data[i].m_url+"</td>";
+                    str+="<td>";
+                        str+="<a href='index.php?r=commessage/update&mes_id="+data[i].mes_id+"'>"+"<img class='operation' src=img/update.png >"+"</a>";
+                        str+="<a href='index.php?r=commessage/delete&mes_id="+data[i].mes_id+"'>"+"<img class='operation' src=img/delete.png >"+"</a>";
+                    str+="</td>";
+                str+="</tr>";
+            }
+            $("#"+last_id).after(str);
+            for (var i = 0; i < arr.length; i++) {
+                $("#"+arr[i]).remove();
+            }
+        }
+    })
+
+} 
+</script>
 </body>
 
 </html>

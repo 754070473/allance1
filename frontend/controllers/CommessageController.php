@@ -27,8 +27,61 @@ class CommessageController extends Controller
     public $enableCsrfValidation=false;
 	//public $layout='public';
     public $layout=false;
+     /**
+     * [actionAdd 企业信息添加]
+     * @return [type] [description]
+     */
+    public function actionAdd()
+    {
+        $model = new Commessage();
+        $request= Yii::$app->request;
+
+        if (Yii::$app->request->isPost) {
+            $m_logo = UploadedFile::getInstances($model, 'm_logo');
+                // 文件上传成功
+                if($m_logo && $model->validate())
+                {
+                     foreach ($m_logo as $file) 
+                     {
+                        $file->saveAs('uploads/' . $file->baseName . '.' . $file->extension);
+                        //图片路径
+                        $m_logo = $file->baseName . '.' . $file->extension;
+                    }
+                }
+                $m_welfare=$request->post('m_welfare');
+                $m_welfare=implode(',',$m_welfare);
+                //获取元素值
+                $data['m_name']=$request->post('m_name');
+                $data['m_logo']=$m_logo;
+                $data['m_course']=$request->post('m_course');
+                $data['m_welfare']=$m_welfare;
+                $data['m_place']=$request->post('m_place');
+                $data['point_x']=$request->post('point_x');
+                $data['point_y']=$request->post('point_y');
+                $data['pro_intro']=$request->post('pro_intro');
+                $data['m_culture']=$request->post('m_culture');
+                $data['m_qq']=$request->post('m_qq');
+                $data['m_url']=$request->post('m_url');
+                //开始入库
+                $connection = \Yii::$app->db;
+                $re = $connection->createCommand()->insert("al_com_message",$data)->execute();
+                //判断是否添加成功
+                if($re)
+                {
+                    return $this->redirect('?r=commessage/show');
+                }else{
+                    return $this->render('add.html');
+                }
+            
+        }
+        else
+        {
+
+            return $this->render('add.html',['model' => $model]);
+        }
+    }
     /**
-     * [actionIndex description]
+     * [actionIndex 显示企业查询]
      * @return [type] [description]
      */
     public function actionShow()
@@ -37,132 +90,124 @@ class CommessageController extends Controller
             ->select(['*'])
             ->from('al_com_message')
             ->all();
-            
         return $this->render('show.html',array('arr'=>$arr));
     }
     /**
-     * [actionAdd 企业信息添加]
+     * [actionUpdate 修改]
      * @return [type] [description]
      */
-    public function actionAdd()
+    public function actionUpdate()
     {
-        $model = new Commessage();
+        $model = new Commessage();//加载上传类
+        $request= Yii::$app->request;
 
-        if (Yii::$app->request->isPost) {
-            //$photo_url = UploadedFile::getInstances($model,'photo_url');
+        if(Yii::$app->request->isPost){
+
             $m_logo = UploadedFile::getInstances($model, 'm_logo');
-            //print_r($m_logo);
-            //var_dump($model->upload());die;
-            // if ($model->upload()) {
-
                 // 文件上传成功
-                //return;
                 if($m_logo && $model->validate())
                 {
-                     foreach ($m_logo as $file) {
+                     foreach ($m_logo as $file) 
+                     {
                         $file->saveAs('uploads/' . $file->baseName . '.' . $file->extension);
                         //图片路径
                         $m_logo = $file->baseName . '.' . $file->extension;
-                        print_r($m_logo);
-                           
                     }
-                           
-                    
-                    
                 }
-            // }
+                $m_welfare=$request->post('m_welfare');
+                $m_welfare=implode(',',$m_welfare);
+                //获取元素值
+                $mes_id=$request->post('mes_id');
+
+                $data['m_name']=$request->post('m_name');
+                $data['m_logo']=$m_logo;
+                $data['m_course']=$request->post('m_course');
+                $data['m_welfare']=$m_welfare;
+                $data['m_place']=$request->post('m_place');
+                $data['point_x']=$request->post('point_x');
+                $data['point_y']=$request->post('point_y');
+                $data['pro_intro']=$request->post('pro_intro');
+                $data['m_culture']=$request->post('m_culture');
+                $data['m_qq']=$request->post('m_qq');
+                $data['m_url']=$request->post('m_url');
+                //开始入库
+                $connection = \Yii::$app->db;
+                $re = $connection->createCommand()->update('al_com_message', $data, "mes_id=$mes_id")->execute();
+
+                //判断是否添加成功
+                if($re)
+                {
+                    return $this->redirect('?r=commessage/show');
+                }else{
+                    return $this->render('update.html');
+                }
+
+        }else{
+            $mes_id=$request->get('mes_id');
+            $arr = (new \yii\db\Query())
+                ->select(['*'])
+                ->from('al_com_message')
+                ->where("mes_id=$mes_id")
+                ->one();
+
+            return $this->render('update.html',['mes_id' => $mes_id,'arr'=>$arr,'model'=>$model]);
         }
 
-        return $this->render('add.html',['model' => $model]);
-
-
-       /* $model = new UploadForm();
-
-        $request = Yii::$app->request;
-        if ($request->isPost) {
-
-            $model->imageFile = UploadedFile::getInstance($model, 'm_logo');
-            if ($model->upload()) {
-                //echo "上传成功";
-                // 文件上传成功
-                return;
-            }
-            
-            //return $this->render('upload', ['model' => $model]);
-
-
-           print_r($request->post());
-           echo "<pre>";
-           print_r($model);
-           echo "<pre>";
-
-        } else {
-           return $this->render('add.html',['model' => $model]);
-        }*/
-        
-        
     }
-
-    public function actionForm()
+    public function actionOneupdate()
     {
-        $model=new Photo();
         $request= Yii::$app->request;
-        if($request->isPost)
-        {
-                    
-            
+        $mes_id=$request->post('mes_id');
+        $ziduan=$request->post('ziduan');
+        $value=$request->post('value');
 
-            
-          
-                                
-                //接受图片的信息
-                $photo_title=$request->post('photo_title');
-                $is_display=$request->post('is_display');
-                $is_lunbo=$request->post('is_lunbo');
-                //图片上传
-                $photo_url = UploadedFile::getInstances($model,'photo_url');
-//                          var_dump($photo_url);die;
-                if($photo_url && $model->validate())
-                {
-                    foreach ($photo_url as $file) {
-                        $file->saveAs('img/' . $file->baseName . '.' . $file->extension);
-                        //图片路径
-                        $photo_urls = $file->baseName . '.' . $file->extension;
-                         
-                        $photo_url = "http://www.selfyii2.com/img/".$photo_urls;
-                        
-                        //图片表入库
-                        $photoSql = $connection->createCommand()->insert('photo',
-                                ['house_id'=>$house_id,
-                                'photo_url'=>$photo_url,
-                                'photo_title'=>$photo_title,
-                                'is_display'=>$is_display,
-                                'is_lunbo'=>$is_lunbo])->execute();         
-                    }
-                    
-                }
-
-                    
-                if($photoSql)
-                {
-                    //展示列表
-                    $this->redirect('index.php?r=house/show');
-                }
-                else 
-                {
-                    exit('添加失败');
-                }
-                
-          
-            
-        }
-        else
-        {
-            //获取房屋类型
-            $arr=(new \yii\db\Query())
-                 ->from('class')
-                 ->all();
-            return $this->render('house_add',['model'=>$model,'arr'=>$arr]);
+        $connection = \Yii::$app->db;
+        $res = $connection->createCommand()->update('al_com_message', ["$ziduan"=>$value], "mes_id=$mes_id")->execute();
+        if($res){
+            echo '1';
+        }else{
+            echo '2';
         }
     }
+    /**
+     * [actionDelete 删除]
+     * @param  string $value [description]
+     * @return [type]        [description]
+     */
+    public function actionDelete()
+    {
+       
+        $request= Yii::$app->request;
+        if(Yii::$app->request->isPost){
+                //批量删除
+                $mes_id=$request->post('mes_id');
+                $last_id=$request->post('last_id');
+                $connection = \Yii::$app->db;
+                $num=$connection->createCommand()->delete('al_com_message', "mes_id in ($mes_id)")->execute();
+                  if($num)
+                  {
+                    // 此时删除成功,许查询出部分数据进行填补
+                    $arr = (new \yii\db\Query())
+                    ->select(['*'])
+                    ->from('al_com_message')
+                    ->where("mes_id>$last_id")
+                    ->limit($num)
+                    ->all();
+                    echo $json=json_encode($arr);die;
+                  }else{
+                    echo '0';
+                  }
+        }else{
+            //单删
+            $mes_id=$request->get('mes_id');
+            $connection = \Yii::$app->db;
+            $delete=$connection->createCommand()->delete('al_com_message', "mes_id in ($mes_id)")->execute();
+            if($delete){
+                return $this->redirect('?r=commessage/show');
+            }
+        }
+
+    }
+
+
 }

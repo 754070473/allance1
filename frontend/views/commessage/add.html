@@ -63,20 +63,15 @@ use yii\widgets\ActiveForm;
                                    'options'=>['enctype'=>'multipart/form-data']    
                                 ])?>
 
-                                    
-
-                                
                                 
                                      <div class="form-group">
                                         <label>企业名称</label>
                                         <input type="text" placeholder="请输入企业名称" name="m_name" class="form-control" required>
                                     </div> 
                                     <div class="form-group">
-                                        <label>企业logo</label>
-                                        <!-- <input type="file" placeholder="请输入企业logo" name="m_logo" class="form-control" required> -->
                                         <?= $form->field($model, 'm_logo')->fileInput(['multiple' => true]) ?>
                                     </div>
-                                    <!-- <div class="form-group">
+                                    <div class="form-group">
                                         <label>发展历程</label>
                                         <textarea name="m_course" placeholder="请输入发展历程" class="form-control" required></textarea>
                                     </div>
@@ -90,55 +85,34 @@ use yii\widgets\ActiveForm;
                                     
                                         <input name="m_welfare[]" value="车补" id="inlineCheckbox3" type="checkbox">车补
                                     </div>
+                                   <div class="form-group">
+                                       <label>公司地址</label>
+                                       <input type="text" placeholder="请输入公司地址" name="m_place" class="form-control" required>
+                                   </div>
+                                   <div class="form-group">
+                                       <label>公司坐标x</label>
+                                       <input type="text" placeholder="请输入公司坐标x" name="point_x" class="form-control" required>
+                                   </div>
+                                   <div class="form-group">
+                                       <label>公司坐标y</label>
+                                       <input type="text" placeholder="请输入公司坐标y" name="point_y" class="form-control" required>
+                                   </div>
+                                   <div class="form-group">
+                                       <label>产品简介</label>
+                                       <textarea name="pro_intro" placeholder="请输入产品简介" class="form-control" required></textarea>
+                                   </div>
+                                   <div class="form-group">
+                                       <label>联系QQ号</label>
+                                       <input type="text" placeholder="请输入联系QQ号" name="m_qq" class="form-control" required>
+                                   </div>
                                     <div class="form-group">
-                                        <label>公司地址</label>
-                                        <input type="text" placeholder="请输入公司地址" name="m_place" class="form-control" required>
-                                    </div>
+                                       <label>企业网址</label>
+                                       <input type="text" placeholder="请输入企业网址" class="form-control" name="m_url">
+                                   </div>    
                                     <div class="form-group">
-                                        <label>公司坐标x</label>
-                                        <input type="text" placeholder="请输入公司坐标x" name="point_x" class="form-control" required>
-                                    </div>
-                                    <div class="form-group">
-                                        <label>公司坐标y</label>
-                                        <input type="text" placeholder="请输入公司坐标y" name="point_y" class="form-control" required>
-                                    </div>
-                                    <div class="form-group">
-                                        <label>产品简介</label>
-                                        <input type="text" placeholder="请输入产品简介" name="pro_intro" class="form-control" required>
-                                    </div>
-                                    <div class="form-group">
-                                        <label>联系QQ号</label>
-                                        <input type="text" placeholder="请输入联系QQ号" name="m_qq" class="form-control" required>
-                                    </div>
-                                     <div class="form-group">
-                                        <label>企业网址</label>
-                                        <input type="text" placeholder="请输入企业网址" class="form-control" name="m_url">
-                                    </div> -->
-
-                                    <!-- <div class="form-group">
-                                        <label>Email</label>
-                                        <input type="email" placeholder="请输入Email" class="form-control" required>
-                                    </div>
-                                    <div class="form-group">
-                                        <label>密码</label>
-                                        <input type="password" placeholder="请输入密码" class="form-control" name="password">
-                                    </div>
-                                    <div class="form-group">
-                                        <label>Url</label>
-                                        <input type="text" placeholder="请输入Url" class="form-control" name="url">
-                                    </div>
-                                    <div class="form-group">
-                                        <label>数字</label>
-                                        <input type="text" placeholder="请输入数字" class="form-control" name="number">
-                                    </div>
-                                    <div class="form-group">
-                                        <label>最小长度</label>
-                                        <input type="text" placeholder="请输入Email" class="form-control" name="min">
-                                    </div>
-                                    <div class="form-group">
-                                        <label>最大长度</label>
-                                        <input type="text" placeholder="请输入Email" class="form-control" name="max">
-                                    </div> -->
+                                        <label>企业文化</label>
+                                        <textarea name="m_culture" placeholder="请输入企业文化" class="form-control" required></textarea>
+                                    </div>          
                                     <div>
                                         <button class="btn btn-sm btn-primary m-t-n-xs" type="submit"><strong>提交</strong>
                                         </button>

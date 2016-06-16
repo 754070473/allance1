@@ -5,7 +5,7 @@ return [
             'class' => 'yii\db\Connection',
             'dsn' => 'mysql:host=localhost;dbname=allance',
             'username' => 'root',
-            'password' => 'root',
+            'password' => '147542',
             'charset' => 'utf8',
             'tablePrefix' => 'al_',
         ],
