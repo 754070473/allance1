@@ -1,0 +1,129 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<div id="list">
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>广告-有点</title>
+    <link rel="stylesheet" type="text/css" href="css/css.css" />
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <!-- <script type="text/javascript" src="js/page.js" ></script> -->
+</head>
+
+<body>
+<div id="pageAll">
+    <div class="pageTop">
+        <div class="page">
+            <img src="img/coin02.png" /><span><a href="#">首页</a>&nbsp;-&nbsp;<a
+                href="#">积分管理</a>&nbsp;-</span>&nbsp;积分项列表
+        </div>
+    </div>
+    <div class="page">
+        <!-- banner页面样式 -->
+        <div class="banner">
+            <div class="add">
+                <a class="addA" href="index.php?r=integral/add">添加积分项&nbsp;&nbsp;+</a>
+            </div>
+            <!-- banner 表格 显示 -->
+            <div class="banShow">
+                <table border="1" cellspacing="0" cellpadding="0">
+                    <tr>
+                        <td width="66px" class="tdColor tdC">序号</td>
+                        <td width="315px" class="tdColor">积分项名称</td>
+                        <td width="308px" class="tdColor">积分</td>
+                        <td width="450px" class="tdColor">控制器</td>
+                        <td width="215px" class="tdColor">方法</td>
+                        <td width="180px" class="tdColor">最近操作时间</td>
+                        <td width="125px" class="tdColor">操作</td>
+                    </tr>
+                    <?php
+                    if($arr['arr'] == ""){
+                        echo '<tr class="gradeX"><td colspan="7" valign="top">没有数据</td></tr>';
+                    }else{
+                    foreach($arr['arr'] as $key=>$val)
+                    {?>
+                    <tr class="gradeX" id="tr<?php echo $val['inte_id']?>" style="height: 50px">
+                        <td><?php echo $key+1?></td>
+                        <td>
+                            <span id="name<?php echo $val['inte_id']?>" dian="name" onclick="ckUpd(<?php echo $val['inte_id']?>,'name')"><?php echo $val['i_name']?></span>
+                        </td>
+                        <td>
+                            <span id="num<?php echo $val['inte_id']?>" dian="num" onclick="ckUpd(<?php echo $val['inte_id']?>,'num')"><?php echo $val['i_num']?></span>
+                        </td>
+                        <td class="center">
+                            <span id="con<?php echo $val['inte_id']?>" dian="con" onclick="ckUpd(<?php echo $val['inte_id']?>,'con')"><?php echo $val['i_controller']?></span>
+                        </td>
+                        <td class="center">
+                            <span id="fun<?php echo $val['inte_id']?>" dian="fun" onclick="ckUpd(<?php echo $val['inte_id']?>,'fun')"><?php echo $val['i_function']?></span>
+                        </td>
+                        <td class="center" id="time<?php echo $val['inte_id']?>">
+                            <?php echo $val['i_addtime']?>
+                        </td>
+                        <td class="center">
+                            <a href="javascript:void(0);" onclick="ckDel(<?php echo $val['inte_id']?>)">
+                                <img src="img/delete.png" />
+                            </a>
+                        </td>
+                    </tr>
+                    <?php }}?>
+                </table>
+                <?php echo $arr['page']?>
+            </div>
+            <!-- banner 表格 显示 end-->
+        </div>
+        <!-- banner页面样式end -->
+    </div>
+
+</div>
+
+
+<!-- 删除弹出框  end-->
+</body>
+
+<script type="text/javascript">
+    //删除
+    function ckDel(id){
+        var inte_id = id;
+        $.ajax({
+            type : 'POST',
+            url : 'index.php?r=integral/delet',
+            data :'inte_id='+inte_id,
+            success : function(msg){
+                if(msg){
+                    $('#list').html(msg);
+                }else{
+                    alert('删除失败');
+                }
+            }
+        })
+    }
+    //即点即改
+    function ckUpd(id,name){
+        var idd = name+id;
+        var value = $('#'+idd).html();
+        $("#"+idd).parent().html('<input type="text" value="'+value+'" id="'+idd+'1" onblur="ckUpd1('+"'"+id+"','"+name+"'"+')"/>');
+        $('#'+idd+"1").focus();
+    }
+    function ckUpd1(id,name){
+        var idd = name+id+'1';
+        var value = $('#'+idd).val();
+        if(value == ""){
+            alert('请输入正确的值');
+        }else {
+            $.ajax({
+                type: 'POST',
+                url: 'index.php?r=integral/upd',
+                data: 'id=' + id + '&name=' + name + '&value=' + value,
+                success: function (msg) {
+                    if (msg) {
+                        $('#' + idd).parent().html('<span id="' + name + id + '">' + value + '</span>');
+                        $('#time' + id).html(msg);
+                    } else {
+                        alert('修改失败，请稍后再试');
+                    }
+                }
+            })
+        }
+    }
+</script>
+</html>
+</div>
