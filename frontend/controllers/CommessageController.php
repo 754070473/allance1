@@ -154,6 +154,10 @@ class CommessageController extends Controller
         }
 
     }
+    /**
+     * [actionOneupdate 几点技改]
+     * @return [type] [description]
+     */
     public function actionOneupdate()
     {
         $request= Yii::$app->request;
