@@ -10992,3 +10992,753 @@ $_SERVER = [
     'REQUEST_TIME_FLOAT' => 1466035389.085
     'REQUEST_TIME' => 1466035389
 ]
+2016-06-16 10:30:52 [127.0.0.1][-][-][error][yii\base\ErrorException:2048] exception 'yii\base\ErrorException' with message 'Non-static method frontend\controllers\ControlController::ajaxPage() should not be called statically, assuming $this from incompatible context' in F:\www\xiao12\allance1\frontend\controllers\IntegralController.php:37
+Stack trace:
+#0 F:\www\xiao12\allance1\frontend\controllers\IntegralController.php(37): yii\base\ErrorHandler->handleError(2048, 'Non-static meth...', 'F:\\www\\xiao12\\a...', 37, Array)
+#1 [internal function]: frontend\controllers\IntegralController->actionShow()
+#2 F:\www\xiao12\allance1\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#3 F:\www\xiao12\allance1\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#4 F:\www\xiao12\allance1\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('show', Array)
+#5 F:\www\xiao12\allance1\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('integral/show', Array)
+#6 F:\www\xiao12\allance1\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#7 F:\www\xiao12\allance1\frontend\web\index.php(18): yii\base\Application->run()
+#8 {main}
+2016-06-16 10:30:52 [127.0.0.1][-][-][info][application] $_GET = [
+    'r' => 'integral/show'
+]
+
+$_COOKIE = [
+    'CNZZDATA155540' => 'cnzz_eid=915211285-1464736308-http%3A%2F%2F127.0.0.1%2F&ntime=1464757923'
+    'PHPSESSID' => 'vvus1uqff02gc4g6nmdnpl4td6'
+]
+
+$_SERVER = [
+    'PATH' => 'C:\\Program Files (x86)\\Intel\\iCLS Client\\;C:\\Program Files\\Intel\\iCLS Client\\;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files (x86)\\ATI Technologies\\ATI.ACE\\Core-Static;C:\\Program Files (x86)\\Common Files\\lenovo\\easyplussdk\\bin;C:\\ProgramData\\Lenovo\\ReadyApps;F:\\phpStudy\\php55n;F:\\TortoiseGit\\bin;C:\\ProgramData\\ComposerSetup\\bin;C:\\Users\\李林波\\AppData\\Roaming\\Composer\\vendor\\bin'
+    'SYSTEMROOT' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'PHP_FCGI_MAX_REQUESTS' => '1000'
+    'PHPRC' => 'F:/phpStudy/php55n'
+    '_FCGI_SHUTDOWN_EVENT_' => '2040'
+    'SCRIPT_NAME' => '/xiao12/allance1/frontend/web/index.php'
+    'REQUEST_URI' => '/xiao12/allance1/frontend/web/index.php?r=integral/show'
+    'QUERY_STRING' => 'r=integral/show'
+    'REQUEST_METHOD' => 'GET'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REMOTE_PORT' => '61607'
+    'SCRIPT_FILENAME' => 'F:/www/xiao12/allance1/frontend/web/index.php'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'CONTEXT_DOCUMENT_ROOT' => 'F:/www'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => 'F:/www'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_NAME' => '127.0.0.1'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/0.9.8zb mod_fcgid/2.3.9'
+    'SERVER_SIGNATURE' => ''
+    'SystemRoot' => 'C:\\WINDOWS'
+    'HTTP_CONNECTION' => 'close'
+    'HTTP_COOKIE' => 'CNZZDATA155540=cnzz_eid%3D915211285-1464736308-http%253A%252F%252F127.0.0.1%252F%26ntime%3D1464757923; PHPSESSID=vvus1uqff02gc4g6nmdnpl4td6'
+    'HTTP_REFERER' => 'http://127.0.0.1/xiao12/allance1/frontend/web/index.php?r=public/left'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:47.0) Gecko/20100101 Firefox/47.0'
+    'HTTP_HOST' => '127.0.0.1'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/xiao12/allance1/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1466044252.399
+    'REQUEST_TIME' => 1466044252
+]
+2016-06-16 10:30:52 [127.0.0.1][-][-][warning][yii\log\Dispatcher::dispatch] Unable to send log via yii\debug\LogTarget: Exception 'Exception' with message 'Serialization of 'Closure' is not allowed' 
+
+in F:\www\xiao12\allance1\vendor\yiisoft\yii2-debug\LogTarget.php:58
+
+Stack trace:
+#0 F:\www\xiao12\allance1\vendor\yiisoft\yii2-debug\LogTarget.php(58): serialize(Array)
+#1 F:\www\xiao12\allance1\vendor\yiisoft\yii2-debug\LogTarget.php(112): yii\debug\LogTarget->export(Array)
+#2 F:\www\xiao12\allance1\vendor\yiisoft\yii2\log\Dispatcher.php(183): yii\debug\LogTarget->collect(Array, true)
+#3 F:\www\xiao12\allance1\vendor\yiisoft\yii2\log\Logger.php(173): yii\log\Dispatcher->dispatch(Array, true)
+#4 F:\www\xiao12\allance1\vendor\yiisoft\yii2\base\ErrorHandler.php(111): yii\log\Logger->flush(true)
+#5 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\base\ErrorException))
+#6 {main}
+2016-06-16 10:30:52 [127.0.0.1][-][-][info][application] $_GET = [
+    'r' => 'integral/show'
+]
+
+$_COOKIE = [
+    'CNZZDATA155540' => 'cnzz_eid=915211285-1464736308-http%3A%2F%2F127.0.0.1%2F&ntime=1464757923'
+    'PHPSESSID' => 'vvus1uqff02gc4g6nmdnpl4td6'
+]
+
+$_SERVER = [
+    'PATH' => 'C:\\Program Files (x86)\\Intel\\iCLS Client\\;C:\\Program Files\\Intel\\iCLS Client\\;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files (x86)\\ATI Technologies\\ATI.ACE\\Core-Static;C:\\Program Files (x86)\\Common Files\\lenovo\\easyplussdk\\bin;C:\\ProgramData\\Lenovo\\ReadyApps;F:\\phpStudy\\php55n;F:\\TortoiseGit\\bin;C:\\ProgramData\\ComposerSetup\\bin;C:\\Users\\李林波\\AppData\\Roaming\\Composer\\vendor\\bin'
+    'SYSTEMROOT' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'PHP_FCGI_MAX_REQUESTS' => '1000'
+    'PHPRC' => 'F:/phpStudy/php55n'
+    '_FCGI_SHUTDOWN_EVENT_' => '2040'
+    'SCRIPT_NAME' => '/xiao12/allance1/frontend/web/index.php'
+    'REQUEST_URI' => '/xiao12/allance1/frontend/web/index.php?r=integral/show'
+    'QUERY_STRING' => 'r=integral/show'
+    'REQUEST_METHOD' => 'GET'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REMOTE_PORT' => '61607'
+    'SCRIPT_FILENAME' => 'F:/www/xiao12/allance1/frontend/web/index.php'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'CONTEXT_DOCUMENT_ROOT' => 'F:/www'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => 'F:/www'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_NAME' => '127.0.0.1'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/0.9.8zb mod_fcgid/2.3.9'
+    'SERVER_SIGNATURE' => ''
+    'SystemRoot' => 'C:\\WINDOWS'
+    'HTTP_CONNECTION' => 'close'
+    'HTTP_COOKIE' => 'CNZZDATA155540=cnzz_eid%3D915211285-1464736308-http%253A%252F%252F127.0.0.1%252F%26ntime%3D1464757923; PHPSESSID=vvus1uqff02gc4g6nmdnpl4td6'
+    'HTTP_REFERER' => 'http://127.0.0.1/xiao12/allance1/frontend/web/index.php?r=public/left'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:47.0) Gecko/20100101 Firefox/47.0'
+    'HTTP_HOST' => '127.0.0.1'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/xiao12/allance1/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1466044252.399
+    'REQUEST_TIME' => 1466044252
+]
+2016-06-16 10:30:54 [127.0.0.1][-][-][error][yii\base\ErrorException:2048] exception 'yii\base\ErrorException' with message 'Non-static method frontend\controllers\ControlController::ajaxPage() should not be called statically, assuming $this from incompatible context' in F:\www\xiao12\allance1\frontend\controllers\IntegralController.php:37
+Stack trace:
+#0 F:\www\xiao12\allance1\frontend\controllers\IntegralController.php(37): yii\base\ErrorHandler->handleError(2048, 'Non-static meth...', 'F:\\www\\xiao12\\a...', 37, Array)
+#1 [internal function]: frontend\controllers\IntegralController->actionShow()
+#2 F:\www\xiao12\allance1\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#3 F:\www\xiao12\allance1\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#4 F:\www\xiao12\allance1\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('show', Array)
+#5 F:\www\xiao12\allance1\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('integral/show', Array)
+#6 F:\www\xiao12\allance1\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#7 F:\www\xiao12\allance1\frontend\web\index.php(18): yii\base\Application->run()
+#8 {main}
+2016-06-16 10:30:54 [127.0.0.1][-][-][info][application] $_GET = [
+    'r' => 'integral/show'
+]
+
+$_COOKIE = [
+    'CNZZDATA155540' => 'cnzz_eid=915211285-1464736308-http%3A%2F%2F127.0.0.1%2F&ntime=1464757923'
+    'PHPSESSID' => 'vvus1uqff02gc4g6nmdnpl4td6'
+]
+
+$_SERVER = [
+    'PATH' => 'C:\\Program Files (x86)\\Intel\\iCLS Client\\;C:\\Program Files\\Intel\\iCLS Client\\;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files (x86)\\ATI Technologies\\ATI.ACE\\Core-Static;C:\\Program Files (x86)\\Common Files\\lenovo\\easyplussdk\\bin;C:\\ProgramData\\Lenovo\\ReadyApps;F:\\phpStudy\\php55n;F:\\TortoiseGit\\bin;C:\\ProgramData\\ComposerSetup\\bin;C:\\Users\\李林波\\AppData\\Roaming\\Composer\\vendor\\bin'
+    'SYSTEMROOT' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'PHP_FCGI_MAX_REQUESTS' => '1000'
+    'PHPRC' => 'F:/phpStudy/php55n'
+    '_FCGI_SHUTDOWN_EVENT_' => '2040'
+    'SCRIPT_NAME' => '/xiao12/allance1/frontend/web/index.php'
+    'REQUEST_URI' => '/xiao12/allance1/frontend/web/index.php?r=integral/show'
+    'QUERY_STRING' => 'r=integral/show'
+    'REQUEST_METHOD' => 'GET'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REMOTE_PORT' => '61613'
+    'SCRIPT_FILENAME' => 'F:/www/xiao12/allance1/frontend/web/index.php'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'CONTEXT_DOCUMENT_ROOT' => 'F:/www'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => 'F:/www'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_NAME' => '127.0.0.1'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/0.9.8zb mod_fcgid/2.3.9'
+    'SERVER_SIGNATURE' => ''
+    'SystemRoot' => 'C:\\WINDOWS'
+    'HTTP_CONNECTION' => 'close'
+    'HTTP_COOKIE' => 'CNZZDATA155540=cnzz_eid%3D915211285-1464736308-http%253A%252F%252F127.0.0.1%252F%26ntime%3D1464757923; PHPSESSID=vvus1uqff02gc4g6nmdnpl4td6'
+    'HTTP_REFERER' => 'http://127.0.0.1/xiao12/allance1/frontend/web/index.php?r=public/left'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:47.0) Gecko/20100101 Firefox/47.0'
+    'HTTP_HOST' => '127.0.0.1'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/xiao12/allance1/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1466044254.8443
+    'REQUEST_TIME' => 1466044254
+]
+2016-06-16 10:30:54 [127.0.0.1][-][-][warning][yii\log\Dispatcher::dispatch] Unable to send log via yii\debug\LogTarget: Exception 'Exception' with message 'Serialization of 'Closure' is not allowed' 
+
+in F:\www\xiao12\allance1\vendor\yiisoft\yii2-debug\LogTarget.php:58
+
+Stack trace:
+#0 F:\www\xiao12\allance1\vendor\yiisoft\yii2-debug\LogTarget.php(58): serialize(Array)
+#1 F:\www\xiao12\allance1\vendor\yiisoft\yii2-debug\LogTarget.php(112): yii\debug\LogTarget->export(Array)
+#2 F:\www\xiao12\allance1\vendor\yiisoft\yii2\log\Dispatcher.php(183): yii\debug\LogTarget->collect(Array, true)
+#3 F:\www\xiao12\allance1\vendor\yiisoft\yii2\log\Logger.php(173): yii\log\Dispatcher->dispatch(Array, true)
+#4 F:\www\xiao12\allance1\vendor\yiisoft\yii2\base\ErrorHandler.php(111): yii\log\Logger->flush(true)
+#5 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\base\ErrorException))
+#6 {main}
+2016-06-16 10:30:54 [127.0.0.1][-][-][info][application] $_GET = [
+    'r' => 'integral/show'
+]
+
+$_COOKIE = [
+    'CNZZDATA155540' => 'cnzz_eid=915211285-1464736308-http%3A%2F%2F127.0.0.1%2F&ntime=1464757923'
+    'PHPSESSID' => 'vvus1uqff02gc4g6nmdnpl4td6'
+]
+
+$_SERVER = [
+    'PATH' => 'C:\\Program Files (x86)\\Intel\\iCLS Client\\;C:\\Program Files\\Intel\\iCLS Client\\;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files (x86)\\ATI Technologies\\ATI.ACE\\Core-Static;C:\\Program Files (x86)\\Common Files\\lenovo\\easyplussdk\\bin;C:\\ProgramData\\Lenovo\\ReadyApps;F:\\phpStudy\\php55n;F:\\TortoiseGit\\bin;C:\\ProgramData\\ComposerSetup\\bin;C:\\Users\\李林波\\AppData\\Roaming\\Composer\\vendor\\bin'
+    'SYSTEMROOT' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'PHP_FCGI_MAX_REQUESTS' => '1000'
+    'PHPRC' => 'F:/phpStudy/php55n'
+    '_FCGI_SHUTDOWN_EVENT_' => '2040'
+    'SCRIPT_NAME' => '/xiao12/allance1/frontend/web/index.php'
+    'REQUEST_URI' => '/xiao12/allance1/frontend/web/index.php?r=integral/show'
+    'QUERY_STRING' => 'r=integral/show'
+    'REQUEST_METHOD' => 'GET'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REMOTE_PORT' => '61613'
+    'SCRIPT_FILENAME' => 'F:/www/xiao12/allance1/frontend/web/index.php'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'CONTEXT_DOCUMENT_ROOT' => 'F:/www'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => 'F:/www'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_NAME' => '127.0.0.1'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/0.9.8zb mod_fcgid/2.3.9'
+    'SERVER_SIGNATURE' => ''
+    'SystemRoot' => 'C:\\WINDOWS'
+    'HTTP_CONNECTION' => 'close'
+    'HTTP_COOKIE' => 'CNZZDATA155540=cnzz_eid%3D915211285-1464736308-http%253A%252F%252F127.0.0.1%252F%26ntime%3D1464757923; PHPSESSID=vvus1uqff02gc4g6nmdnpl4td6'
+    'HTTP_REFERER' => 'http://127.0.0.1/xiao12/allance1/frontend/web/index.php?r=public/left'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:47.0) Gecko/20100101 Firefox/47.0'
+    'HTTP_HOST' => '127.0.0.1'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/xiao12/allance1/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1466044254.8443
+    'REQUEST_TIME' => 1466044254
+]
+2016-06-16 10:30:59 [127.0.0.1][-][-][error][yii\base\ErrorException:2048] exception 'yii\base\ErrorException' with message 'Non-static method frontend\controllers\ControlController::ajaxPage() should not be called statically, assuming $this from incompatible context' in F:\www\xiao12\allance1\frontend\controllers\IntegralController.php:37
+Stack trace:
+#0 F:\www\xiao12\allance1\frontend\controllers\IntegralController.php(37): yii\base\ErrorHandler->handleError(2048, 'Non-static meth...', 'F:\\www\\xiao12\\a...', 37, Array)
+#1 [internal function]: frontend\controllers\IntegralController->actionShow()
+#2 F:\www\xiao12\allance1\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#3 F:\www\xiao12\allance1\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#4 F:\www\xiao12\allance1\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('show', Array)
+#5 F:\www\xiao12\allance1\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('integral/show', Array)
+#6 F:\www\xiao12\allance1\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#7 F:\www\xiao12\allance1\frontend\web\index.php(18): yii\base\Application->run()
+#8 {main}
+2016-06-16 10:30:59 [127.0.0.1][-][-][info][application] $_GET = [
+    'r' => 'integral/show'
+]
+
+$_COOKIE = [
+    'CNZZDATA155540' => 'cnzz_eid=915211285-1464736308-http%3A%2F%2F127.0.0.1%2F&ntime=1464757923'
+    'PHPSESSID' => 'vvus1uqff02gc4g6nmdnpl4td6'
+]
+
+$_SERVER = [
+    'PATH' => 'C:\\Program Files (x86)\\Intel\\iCLS Client\\;C:\\Program Files\\Intel\\iCLS Client\\;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files (x86)\\ATI Technologies\\ATI.ACE\\Core-Static;C:\\Program Files (x86)\\Common Files\\lenovo\\easyplussdk\\bin;C:\\ProgramData\\Lenovo\\ReadyApps;F:\\phpStudy\\php55n;F:\\TortoiseGit\\bin;C:\\ProgramData\\ComposerSetup\\bin;C:\\Users\\李林波\\AppData\\Roaming\\Composer\\vendor\\bin'
+    'SYSTEMROOT' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'PHP_FCGI_MAX_REQUESTS' => '1000'
+    'PHPRC' => 'F:/phpStudy/php55n'
+    '_FCGI_SHUTDOWN_EVENT_' => '2040'
+    'SCRIPT_NAME' => '/xiao12/allance1/frontend/web/index.php'
+    'REQUEST_URI' => '/xiao12/allance1/frontend/web/index.php?r=integral/show'
+    'QUERY_STRING' => 'r=integral/show'
+    'REQUEST_METHOD' => 'GET'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REMOTE_PORT' => '61616'
+    'SCRIPT_FILENAME' => 'F:/www/xiao12/allance1/frontend/web/index.php'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'CONTEXT_DOCUMENT_ROOT' => 'F:/www'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => 'F:/www'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_NAME' => '127.0.0.1'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/0.9.8zb mod_fcgid/2.3.9'
+    'SERVER_SIGNATURE' => ''
+    'SystemRoot' => 'C:\\WINDOWS'
+    'HTTP_CONNECTION' => 'close'
+    'HTTP_COOKIE' => 'CNZZDATA155540=cnzz_eid%3D915211285-1464736308-http%253A%252F%252F127.0.0.1%252F%26ntime%3D1464757923; PHPSESSID=vvus1uqff02gc4g6nmdnpl4td6'
+    'HTTP_REFERER' => 'http://127.0.0.1/xiao12/allance1/frontend/web/index.php?r=public/left'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:47.0) Gecko/20100101 Firefox/47.0'
+    'HTTP_HOST' => '127.0.0.1'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/xiao12/allance1/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1466044259.5306
+    'REQUEST_TIME' => 1466044259
+]
+2016-06-16 10:30:59 [127.0.0.1][-][-][warning][yii\log\Dispatcher::dispatch] Unable to send log via yii\debug\LogTarget: Exception 'Exception' with message 'Serialization of 'Closure' is not allowed' 
+
+in F:\www\xiao12\allance1\vendor\yiisoft\yii2-debug\LogTarget.php:58
+
+Stack trace:
+#0 F:\www\xiao12\allance1\vendor\yiisoft\yii2-debug\LogTarget.php(58): serialize(Array)
+#1 F:\www\xiao12\allance1\vendor\yiisoft\yii2-debug\LogTarget.php(112): yii\debug\LogTarget->export(Array)
+#2 F:\www\xiao12\allance1\vendor\yiisoft\yii2\log\Dispatcher.php(183): yii\debug\LogTarget->collect(Array, true)
+#3 F:\www\xiao12\allance1\vendor\yiisoft\yii2\log\Logger.php(173): yii\log\Dispatcher->dispatch(Array, true)
+#4 F:\www\xiao12\allance1\vendor\yiisoft\yii2\base\ErrorHandler.php(111): yii\log\Logger->flush(true)
+#5 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\base\ErrorException))
+#6 {main}
+2016-06-16 10:30:59 [127.0.0.1][-][-][info][application] $_GET = [
+    'r' => 'integral/show'
+]
+
+$_COOKIE = [
+    'CNZZDATA155540' => 'cnzz_eid=915211285-1464736308-http%3A%2F%2F127.0.0.1%2F&ntime=1464757923'
+    'PHPSESSID' => 'vvus1uqff02gc4g6nmdnpl4td6'
+]
+
+$_SERVER = [
+    'PATH' => 'C:\\Program Files (x86)\\Intel\\iCLS Client\\;C:\\Program Files\\Intel\\iCLS Client\\;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files (x86)\\ATI Technologies\\ATI.ACE\\Core-Static;C:\\Program Files (x86)\\Common Files\\lenovo\\easyplussdk\\bin;C:\\ProgramData\\Lenovo\\ReadyApps;F:\\phpStudy\\php55n;F:\\TortoiseGit\\bin;C:\\ProgramData\\ComposerSetup\\bin;C:\\Users\\李林波\\AppData\\Roaming\\Composer\\vendor\\bin'
+    'SYSTEMROOT' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'PHP_FCGI_MAX_REQUESTS' => '1000'
+    'PHPRC' => 'F:/phpStudy/php55n'
+    '_FCGI_SHUTDOWN_EVENT_' => '2040'
+    'SCRIPT_NAME' => '/xiao12/allance1/frontend/web/index.php'
+    'REQUEST_URI' => '/xiao12/allance1/frontend/web/index.php?r=integral/show'
+    'QUERY_STRING' => 'r=integral/show'
+    'REQUEST_METHOD' => 'GET'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REMOTE_PORT' => '61616'
+    'SCRIPT_FILENAME' => 'F:/www/xiao12/allance1/frontend/web/index.php'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'CONTEXT_DOCUMENT_ROOT' => 'F:/www'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => 'F:/www'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_NAME' => '127.0.0.1'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/0.9.8zb mod_fcgid/2.3.9'
+    'SERVER_SIGNATURE' => ''
+    'SystemRoot' => 'C:\\WINDOWS'
+    'HTTP_CONNECTION' => 'close'
+    'HTTP_COOKIE' => 'CNZZDATA155540=cnzz_eid%3D915211285-1464736308-http%253A%252F%252F127.0.0.1%252F%26ntime%3D1464757923; PHPSESSID=vvus1uqff02gc4g6nmdnpl4td6'
+    'HTTP_REFERER' => 'http://127.0.0.1/xiao12/allance1/frontend/web/index.php?r=public/left'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:47.0) Gecko/20100101 Firefox/47.0'
+    'HTTP_HOST' => '127.0.0.1'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/xiao12/allance1/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1466044259.5306
+    'REQUEST_TIME' => 1466044259
+]
+2016-06-16 10:31:02 [127.0.0.1][-][-][error][yii\base\ErrorException:2048] exception 'yii\base\ErrorException' with message 'Non-static method frontend\controllers\ControlController::ajaxPage() should not be called statically, assuming $this from incompatible context' in F:\www\xiao12\allance1\frontend\controllers\IntegralController.php:37
+Stack trace:
+#0 F:\www\xiao12\allance1\frontend\controllers\IntegralController.php(37): yii\base\ErrorHandler->handleError(2048, 'Non-static meth...', 'F:\\www\\xiao12\\a...', 37, Array)
+#1 [internal function]: frontend\controllers\IntegralController->actionShow()
+#2 F:\www\xiao12\allance1\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#3 F:\www\xiao12\allance1\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#4 F:\www\xiao12\allance1\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('show', Array)
+#5 F:\www\xiao12\allance1\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('integral/show', Array)
+#6 F:\www\xiao12\allance1\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#7 F:\www\xiao12\allance1\frontend\web\index.php(18): yii\base\Application->run()
+#8 {main}
+2016-06-16 10:31:01 [127.0.0.1][-][-][info][application] $_GET = [
+    'r' => 'integral/show'
+]
+
+$_COOKIE = [
+    'CNZZDATA155540' => 'cnzz_eid=915211285-1464736308-http%3A%2F%2F127.0.0.1%2F&ntime=1464757923'
+    'PHPSESSID' => 'vvus1uqff02gc4g6nmdnpl4td6'
+]
+
+$_SERVER = [
+    'PATH' => 'C:\\Program Files (x86)\\Intel\\iCLS Client\\;C:\\Program Files\\Intel\\iCLS Client\\;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files (x86)\\ATI Technologies\\ATI.ACE\\Core-Static;C:\\Program Files (x86)\\Common Files\\lenovo\\easyplussdk\\bin;C:\\ProgramData\\Lenovo\\ReadyApps;F:\\phpStudy\\php55n;F:\\TortoiseGit\\bin;C:\\ProgramData\\ComposerSetup\\bin;C:\\Users\\李林波\\AppData\\Roaming\\Composer\\vendor\\bin'
+    'SYSTEMROOT' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'PHP_FCGI_MAX_REQUESTS' => '1000'
+    'PHPRC' => 'F:/phpStudy/php55n'
+    '_FCGI_SHUTDOWN_EVENT_' => '2040'
+    'SCRIPT_NAME' => '/xiao12/allance1/frontend/web/index.php'
+    'REQUEST_URI' => '/xiao12/allance1/frontend/web/index.php?r=integral/show'
+    'QUERY_STRING' => 'r=integral/show'
+    'REQUEST_METHOD' => 'GET'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REMOTE_PORT' => '61618'
+    'SCRIPT_FILENAME' => 'F:/www/xiao12/allance1/frontend/web/index.php'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'CONTEXT_DOCUMENT_ROOT' => 'F:/www'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => 'F:/www'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_NAME' => '127.0.0.1'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/0.9.8zb mod_fcgid/2.3.9'
+    'SERVER_SIGNATURE' => ''
+    'SystemRoot' => 'C:\\WINDOWS'
+    'HTTP_CONNECTION' => 'close'
+    'HTTP_COOKIE' => 'CNZZDATA155540=cnzz_eid%3D915211285-1464736308-http%253A%252F%252F127.0.0.1%252F%26ntime%3D1464757923; PHPSESSID=vvus1uqff02gc4g6nmdnpl4td6'
+    'HTTP_REFERER' => 'http://127.0.0.1/xiao12/allance1/frontend/web/index.php?r=public/left'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:47.0) Gecko/20100101 Firefox/47.0'
+    'HTTP_HOST' => '127.0.0.1'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/xiao12/allance1/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1466044261.9844
+    'REQUEST_TIME' => 1466044261
+]
+2016-06-16 10:31:02 [127.0.0.1][-][-][warning][yii\log\Dispatcher::dispatch] Unable to send log via yii\debug\LogTarget: Exception 'Exception' with message 'Serialization of 'Closure' is not allowed' 
+
+in F:\www\xiao12\allance1\vendor\yiisoft\yii2-debug\LogTarget.php:58
+
+Stack trace:
+#0 F:\www\xiao12\allance1\vendor\yiisoft\yii2-debug\LogTarget.php(58): serialize(Array)
+#1 F:\www\xiao12\allance1\vendor\yiisoft\yii2-debug\LogTarget.php(112): yii\debug\LogTarget->export(Array)
+#2 F:\www\xiao12\allance1\vendor\yiisoft\yii2\log\Dispatcher.php(183): yii\debug\LogTarget->collect(Array, true)
+#3 F:\www\xiao12\allance1\vendor\yiisoft\yii2\log\Logger.php(173): yii\log\Dispatcher->dispatch(Array, true)
+#4 F:\www\xiao12\allance1\vendor\yiisoft\yii2\base\ErrorHandler.php(111): yii\log\Logger->flush(true)
+#5 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\base\ErrorException))
+#6 {main}
+2016-06-16 10:31:01 [127.0.0.1][-][-][info][application] $_GET = [
+    'r' => 'integral/show'
+]
+
+$_COOKIE = [
+    'CNZZDATA155540' => 'cnzz_eid=915211285-1464736308-http%3A%2F%2F127.0.0.1%2F&ntime=1464757923'
+    'PHPSESSID' => 'vvus1uqff02gc4g6nmdnpl4td6'
+]
+
+$_SERVER = [
+    'PATH' => 'C:\\Program Files (x86)\\Intel\\iCLS Client\\;C:\\Program Files\\Intel\\iCLS Client\\;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files (x86)\\ATI Technologies\\ATI.ACE\\Core-Static;C:\\Program Files (x86)\\Common Files\\lenovo\\easyplussdk\\bin;C:\\ProgramData\\Lenovo\\ReadyApps;F:\\phpStudy\\php55n;F:\\TortoiseGit\\bin;C:\\ProgramData\\ComposerSetup\\bin;C:\\Users\\李林波\\AppData\\Roaming\\Composer\\vendor\\bin'
+    'SYSTEMROOT' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'PHP_FCGI_MAX_REQUESTS' => '1000'
+    'PHPRC' => 'F:/phpStudy/php55n'
+    '_FCGI_SHUTDOWN_EVENT_' => '2040'
+    'SCRIPT_NAME' => '/xiao12/allance1/frontend/web/index.php'
+    'REQUEST_URI' => '/xiao12/allance1/frontend/web/index.php?r=integral/show'
+    'QUERY_STRING' => 'r=integral/show'
+    'REQUEST_METHOD' => 'GET'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REMOTE_PORT' => '61618'
+    'SCRIPT_FILENAME' => 'F:/www/xiao12/allance1/frontend/web/index.php'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'CONTEXT_DOCUMENT_ROOT' => 'F:/www'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => 'F:/www'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_NAME' => '127.0.0.1'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/0.9.8zb mod_fcgid/2.3.9'
+    'SERVER_SIGNATURE' => ''
+    'SystemRoot' => 'C:\\WINDOWS'
+    'HTTP_CONNECTION' => 'close'
+    'HTTP_COOKIE' => 'CNZZDATA155540=cnzz_eid%3D915211285-1464736308-http%253A%252F%252F127.0.0.1%252F%26ntime%3D1464757923; PHPSESSID=vvus1uqff02gc4g6nmdnpl4td6'
+    'HTTP_REFERER' => 'http://127.0.0.1/xiao12/allance1/frontend/web/index.php?r=public/left'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:47.0) Gecko/20100101 Firefox/47.0'
+    'HTTP_HOST' => '127.0.0.1'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/xiao12/allance1/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1466044261.9844
+    'REQUEST_TIME' => 1466044261
+]
+2016-06-16 10:31:10 [127.0.0.1][-][-][error][yii\base\ErrorException:2048] exception 'yii\base\ErrorException' with message 'Non-static method frontend\controllers\ControlController::ajaxPage() should not be called statically, assuming $this from incompatible context' in F:\www\xiao12\allance1\frontend\controllers\IntegralController.php:37
+Stack trace:
+#0 F:\www\xiao12\allance1\frontend\controllers\IntegralController.php(37): yii\base\ErrorHandler->handleError(2048, 'Non-static meth...', 'F:\\www\\xiao12\\a...', 37, Array)
+#1 [internal function]: frontend\controllers\IntegralController->actionShow()
+#2 F:\www\xiao12\allance1\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#3 F:\www\xiao12\allance1\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#4 F:\www\xiao12\allance1\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('show', Array)
+#5 F:\www\xiao12\allance1\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('integral/show', Array)
+#6 F:\www\xiao12\allance1\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#7 F:\www\xiao12\allance1\frontend\web\index.php(18): yii\base\Application->run()
+#8 {main}
+2016-06-16 10:31:10 [127.0.0.1][-][-][info][application] $_GET = [
+    'r' => 'integral/show'
+]
+
+$_COOKIE = [
+    'CNZZDATA155540' => 'cnzz_eid=915211285-1464736308-http%3A%2F%2F127.0.0.1%2F&ntime=1464757923'
+    'PHPSESSID' => 'vvus1uqff02gc4g6nmdnpl4td6'
+]
+
+$_SERVER = [
+    'PATH' => 'C:\\Program Files (x86)\\Intel\\iCLS Client\\;C:\\Program Files\\Intel\\iCLS Client\\;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files (x86)\\ATI Technologies\\ATI.ACE\\Core-Static;C:\\Program Files (x86)\\Common Files\\lenovo\\easyplussdk\\bin;C:\\ProgramData\\Lenovo\\ReadyApps;F:\\phpStudy\\php55n;F:\\TortoiseGit\\bin;C:\\ProgramData\\ComposerSetup\\bin;C:\\Users\\李林波\\AppData\\Roaming\\Composer\\vendor\\bin'
+    'SYSTEMROOT' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'PHP_FCGI_MAX_REQUESTS' => '1000'
+    'PHPRC' => 'F:/phpStudy/php55n'
+    '_FCGI_SHUTDOWN_EVENT_' => '2040'
+    'SCRIPT_NAME' => '/xiao12/allance1/frontend/web/index.php'
+    'REQUEST_URI' => '/xiao12/allance1/frontend/web/index.php?r=integral/show'
+    'QUERY_STRING' => 'r=integral/show'
+    'REQUEST_METHOD' => 'GET'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REMOTE_PORT' => '61637'
+    'SCRIPT_FILENAME' => 'F:/www/xiao12/allance1/frontend/web/index.php'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'CONTEXT_DOCUMENT_ROOT' => 'F:/www'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => 'F:/www'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_NAME' => '127.0.0.1'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/0.9.8zb mod_fcgid/2.3.9'
+    'SERVER_SIGNATURE' => ''
+    'SystemRoot' => 'C:\\WINDOWS'
+    'HTTP_CONNECTION' => 'close'
+    'HTTP_COOKIE' => 'CNZZDATA155540=cnzz_eid%3D915211285-1464736308-http%253A%252F%252F127.0.0.1%252F%26ntime%3D1464757923; PHPSESSID=vvus1uqff02gc4g6nmdnpl4td6'
+    'HTTP_REFERER' => 'http://127.0.0.1/xiao12/allance1/frontend/web/index.php?r=public/left'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:47.0) Gecko/20100101 Firefox/47.0'
+    'HTTP_HOST' => '127.0.0.1'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/xiao12/allance1/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1466044270.1185
+    'REQUEST_TIME' => 1466044270
+]
+2016-06-16 10:31:10 [127.0.0.1][-][-][warning][yii\log\Dispatcher::dispatch] Unable to send log via yii\debug\LogTarget: Exception 'Exception' with message 'Serialization of 'Closure' is not allowed' 
+
+in F:\www\xiao12\allance1\vendor\yiisoft\yii2-debug\LogTarget.php:58
+
+Stack trace:
+#0 F:\www\xiao12\allance1\vendor\yiisoft\yii2-debug\LogTarget.php(58): serialize(Array)
+#1 F:\www\xiao12\allance1\vendor\yiisoft\yii2-debug\LogTarget.php(112): yii\debug\LogTarget->export(Array)
+#2 F:\www\xiao12\allance1\vendor\yiisoft\yii2\log\Dispatcher.php(183): yii\debug\LogTarget->collect(Array, true)
+#3 F:\www\xiao12\allance1\vendor\yiisoft\yii2\log\Logger.php(173): yii\log\Dispatcher->dispatch(Array, true)
+#4 F:\www\xiao12\allance1\vendor\yiisoft\yii2\base\ErrorHandler.php(111): yii\log\Logger->flush(true)
+#5 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\base\ErrorException))
+#6 {main}
+2016-06-16 10:31:10 [127.0.0.1][-][-][info][application] $_GET = [
+    'r' => 'integral/show'
+]
+
+$_COOKIE = [
+    'CNZZDATA155540' => 'cnzz_eid=915211285-1464736308-http%3A%2F%2F127.0.0.1%2F&ntime=1464757923'
+    'PHPSESSID' => 'vvus1uqff02gc4g6nmdnpl4td6'
+]
+
+$_SERVER = [
+    'PATH' => 'C:\\Program Files (x86)\\Intel\\iCLS Client\\;C:\\Program Files\\Intel\\iCLS Client\\;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files (x86)\\ATI Technologies\\ATI.ACE\\Core-Static;C:\\Program Files (x86)\\Common Files\\lenovo\\easyplussdk\\bin;C:\\ProgramData\\Lenovo\\ReadyApps;F:\\phpStudy\\php55n;F:\\TortoiseGit\\bin;C:\\ProgramData\\ComposerSetup\\bin;C:\\Users\\李林波\\AppData\\Roaming\\Composer\\vendor\\bin'
+    'SYSTEMROOT' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'PHP_FCGI_MAX_REQUESTS' => '1000'
+    'PHPRC' => 'F:/phpStudy/php55n'
+    '_FCGI_SHUTDOWN_EVENT_' => '2040'
+    'SCRIPT_NAME' => '/xiao12/allance1/frontend/web/index.php'
+    'REQUEST_URI' => '/xiao12/allance1/frontend/web/index.php?r=integral/show'
+    'QUERY_STRING' => 'r=integral/show'
+    'REQUEST_METHOD' => 'GET'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REMOTE_PORT' => '61637'
+    'SCRIPT_FILENAME' => 'F:/www/xiao12/allance1/frontend/web/index.php'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'CONTEXT_DOCUMENT_ROOT' => 'F:/www'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => 'F:/www'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_NAME' => '127.0.0.1'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/0.9.8zb mod_fcgid/2.3.9'
+    'SERVER_SIGNATURE' => ''
+    'SystemRoot' => 'C:\\WINDOWS'
+    'HTTP_CONNECTION' => 'close'
+    'HTTP_COOKIE' => 'CNZZDATA155540=cnzz_eid%3D915211285-1464736308-http%253A%252F%252F127.0.0.1%252F%26ntime%3D1464757923; PHPSESSID=vvus1uqff02gc4g6nmdnpl4td6'
+    'HTTP_REFERER' => 'http://127.0.0.1/xiao12/allance1/frontend/web/index.php?r=public/left'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:47.0) Gecko/20100101 Firefox/47.0'
+    'HTTP_HOST' => '127.0.0.1'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/xiao12/allance1/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1466044270.1185
+    'REQUEST_TIME' => 1466044270
+]
+2016-06-16 10:32:09 [127.0.0.1][-][-][error][yii\base\ErrorException:2048] exception 'yii\base\ErrorException' with message 'Non-static method frontend\controllers\ControlController::ajaxPage() should not be called statically, assuming $this from incompatible context' in F:\www\xiao12\allance1\frontend\controllers\IntegralController.php:37
+Stack trace:
+#0 F:\www\xiao12\allance1\frontend\controllers\IntegralController.php(37): yii\base\ErrorHandler->handleError(2048, 'Non-static meth...', 'F:\\www\\xiao12\\a...', 37, Array)
+#1 [internal function]: frontend\controllers\IntegralController->actionShow()
+#2 F:\www\xiao12\allance1\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#3 F:\www\xiao12\allance1\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#4 F:\www\xiao12\allance1\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('show', Array)
+#5 F:\www\xiao12\allance1\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('integral/show', Array)
+#6 F:\www\xiao12\allance1\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#7 F:\www\xiao12\allance1\frontend\web\index.php(18): yii\base\Application->run()
+#8 {main}
+2016-06-16 10:32:09 [127.0.0.1][-][-][info][application] $_GET = [
+    'r' => 'integral/show'
+]
+
+$_COOKIE = [
+    'CNZZDATA155540' => 'cnzz_eid=915211285-1464736308-http%3A%2F%2F127.0.0.1%2F&ntime=1464757923'
+    'PHPSESSID' => 'vvus1uqff02gc4g6nmdnpl4td6'
+]
+
+$_SERVER = [
+    'PATH' => 'C:\\Program Files (x86)\\Intel\\iCLS Client\\;C:\\Program Files\\Intel\\iCLS Client\\;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files (x86)\\ATI Technologies\\ATI.ACE\\Core-Static;C:\\Program Files (x86)\\Common Files\\lenovo\\easyplussdk\\bin;C:\\ProgramData\\Lenovo\\ReadyApps;F:\\phpStudy\\php55n;F:\\TortoiseGit\\bin;C:\\ProgramData\\ComposerSetup\\bin;C:\\Users\\李林波\\AppData\\Roaming\\Composer\\vendor\\bin'
+    'SYSTEMROOT' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'PHP_FCGI_MAX_REQUESTS' => '1000'
+    'PHPRC' => 'F:/phpStudy/php55n'
+    '_FCGI_SHUTDOWN_EVENT_' => '2040'
+    'SCRIPT_NAME' => '/xiao12/allance1/frontend/web/index.php'
+    'REQUEST_URI' => '/xiao12/allance1/frontend/web/index.php?r=integral/show'
+    'QUERY_STRING' => 'r=integral/show'
+    'REQUEST_METHOD' => 'GET'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REMOTE_PORT' => '61695'
+    'SCRIPT_FILENAME' => 'F:/www/xiao12/allance1/frontend/web/index.php'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'CONTEXT_DOCUMENT_ROOT' => 'F:/www'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => 'F:/www'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_NAME' => '127.0.0.1'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/0.9.8zb mod_fcgid/2.3.9'
+    'SERVER_SIGNATURE' => ''
+    'SystemRoot' => 'C:\\WINDOWS'
+    'HTTP_CONNECTION' => 'close'
+    'HTTP_COOKIE' => 'CNZZDATA155540=cnzz_eid%3D915211285-1464736308-http%253A%252F%252F127.0.0.1%252F%26ntime%3D1464757923; PHPSESSID=vvus1uqff02gc4g6nmdnpl4td6'
+    'HTTP_REFERER' => 'http://127.0.0.1/xiao12/allance1/frontend/web/index.php?r=public/left'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:47.0) Gecko/20100101 Firefox/47.0'
+    'HTTP_HOST' => '127.0.0.1'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/xiao12/allance1/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1466044329.3917
+    'REQUEST_TIME' => 1466044329
+]
+2016-06-16 10:32:09 [127.0.0.1][-][-][warning][yii\log\Dispatcher::dispatch] Unable to send log via yii\debug\LogTarget: Exception 'Exception' with message 'Serialization of 'Closure' is not allowed' 
+
+in F:\www\xiao12\allance1\vendor\yiisoft\yii2-debug\LogTarget.php:58
+
+Stack trace:
+#0 F:\www\xiao12\allance1\vendor\yiisoft\yii2-debug\LogTarget.php(58): serialize(Array)
+#1 F:\www\xiao12\allance1\vendor\yiisoft\yii2-debug\LogTarget.php(112): yii\debug\LogTarget->export(Array)
+#2 F:\www\xiao12\allance1\vendor\yiisoft\yii2\log\Dispatcher.php(183): yii\debug\LogTarget->collect(Array, true)
+#3 F:\www\xiao12\allance1\vendor\yiisoft\yii2\log\Logger.php(173): yii\log\Dispatcher->dispatch(Array, true)
+#4 F:\www\xiao12\allance1\vendor\yiisoft\yii2\base\ErrorHandler.php(111): yii\log\Logger->flush(true)
+#5 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\base\ErrorException))
+#6 {main}
+2016-06-16 10:32:09 [127.0.0.1][-][-][info][application] $_GET = [
+    'r' => 'integral/show'
+]
+
+$_COOKIE = [
+    'CNZZDATA155540' => 'cnzz_eid=915211285-1464736308-http%3A%2F%2F127.0.0.1%2F&ntime=1464757923'
+    'PHPSESSID' => 'vvus1uqff02gc4g6nmdnpl4td6'
+]
+
+$_SERVER = [
+    'PATH' => 'C:\\Program Files (x86)\\Intel\\iCLS Client\\;C:\\Program Files\\Intel\\iCLS Client\\;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files (x86)\\ATI Technologies\\ATI.ACE\\Core-Static;C:\\Program Files (x86)\\Common Files\\lenovo\\easyplussdk\\bin;C:\\ProgramData\\Lenovo\\ReadyApps;F:\\phpStudy\\php55n;F:\\TortoiseGit\\bin;C:\\ProgramData\\ComposerSetup\\bin;C:\\Users\\李林波\\AppData\\Roaming\\Composer\\vendor\\bin'
+    'SYSTEMROOT' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'PHP_FCGI_MAX_REQUESTS' => '1000'
+    'PHPRC' => 'F:/phpStudy/php55n'
+    '_FCGI_SHUTDOWN_EVENT_' => '2040'
+    'SCRIPT_NAME' => '/xiao12/allance1/frontend/web/index.php'
+    'REQUEST_URI' => '/xiao12/allance1/frontend/web/index.php?r=integral/show'
+    'QUERY_STRING' => 'r=integral/show'
+    'REQUEST_METHOD' => 'GET'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REMOTE_PORT' => '61695'
+    'SCRIPT_FILENAME' => 'F:/www/xiao12/allance1/frontend/web/index.php'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'CONTEXT_DOCUMENT_ROOT' => 'F:/www'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => 'F:/www'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_NAME' => '127.0.0.1'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/0.9.8zb mod_fcgid/2.3.9'
+    'SERVER_SIGNATURE' => ''
+    'SystemRoot' => 'C:\\WINDOWS'
+    'HTTP_CONNECTION' => 'close'
+    'HTTP_COOKIE' => 'CNZZDATA155540=cnzz_eid%3D915211285-1464736308-http%253A%252F%252F127.0.0.1%252F%26ntime%3D1464757923; PHPSESSID=vvus1uqff02gc4g6nmdnpl4td6'
+    'HTTP_REFERER' => 'http://127.0.0.1/xiao12/allance1/frontend/web/index.php?r=public/left'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:47.0) Gecko/20100101 Firefox/47.0'
+    'HTTP_HOST' => '127.0.0.1'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/xiao12/allance1/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1466044329.3917
+    'REQUEST_TIME' => 1466044329
+]
