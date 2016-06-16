@@ -19757,3 +19757,117 @@ $_SERVER = [
     'REQUEST_TIME_FLOAT' => 1465998799.033
     'REQUEST_TIME' => 1465998799
 ]
+2016-06-16 10:14:24 [127.0.0.1][-][-][error][yii\base\ErrorException:8] exception 'yii\base\ErrorException' with message 'Undefined index: pri_id' in D:\alliance\allance1\frontend\controllers\ControlController.php:114
+Stack trace:
+#0 D:\alliance\allance1\frontend\controllers\ControlController.php(114): yii\base\ErrorHandler->handleError(8, 'Undefined index...', 'D:\\alliance\\all...', 114, Array)
+#1 D:\alliance\allance1\frontend\controllers\CategoryController.php(189): frontend\controllers\ControlController->classify('al_post', 'p_pid')
+#2 [internal function]: frontend\controllers\CategoryController->actionPostshow()
+#3 D:\alliance\allance1\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#4 D:\alliance\allance1\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#5 D:\alliance\allance1\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('postshow', Array)
+#6 D:\alliance\allance1\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('category/postsh...', Array)
+#7 D:\alliance\allance1\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#8 D:\alliance\allance1\frontend\web\index.php(18): yii\base\Application->run()
+#9 {main}
+2016-06-16 10:14:24 [127.0.0.1][-][-][info][application] $_GET = [
+    'r' => 'category/postshow'
+]
+
+$_COOKIE = [
+    'pgv_pvi' => '1704440832'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'www.alliance.com'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:47.0) Gecko/20100101 Firefox/47.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://www.alliance.com/allance1/frontend/web/index.php?r=public/left'
+    'HTTP_COOKIE' => 'pgv_pvi=1704440832'
+    'HTTP_CONNECTION' => 'Keep-Alive'
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\AMD\\ATI.ACE\\Core-Static;D:\\New Folder\\bin;D:\\phpStudy\\php55;D:\\wugui_git\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e PHP/5.5.30'
+    'SERVER_NAME' => 'www.alliance.com'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'D:/alliance'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/alliance'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'SCRIPT_FILENAME' => 'D:/alliance/allance1/frontend/web/index.php'
+    'REMOTE_PORT' => '53966'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=category/postshow'
+    'REQUEST_URI' => '/allance1/frontend/web/index.php?r=category/postshow'
+    'SCRIPT_NAME' => '/allance1/frontend/web/index.php'
+    'PHP_SELF' => '/allance1/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1466043264.615
+    'REQUEST_TIME' => 1466043264
+]
+2016-06-16 10:14:24 [127.0.0.1][-][-][warning][yii\log\Dispatcher::dispatch] Unable to send log via yii\debug\LogTarget: Exception 'Exception' with message 'Serialization of 'Closure' is not allowed' 
+
+in D:\alliance\allance1\vendor\yiisoft\yii2-debug\LogTarget.php:58
+
+Stack trace:
+#0 D:\alliance\allance1\vendor\yiisoft\yii2-debug\LogTarget.php(58): serialize(Array)
+#1 D:\alliance\allance1\vendor\yiisoft\yii2-debug\LogTarget.php(112): yii\debug\LogTarget->export(Array)
+#2 D:\alliance\allance1\vendor\yiisoft\yii2\log\Dispatcher.php(183): yii\debug\LogTarget->collect(Array, true)
+#3 D:\alliance\allance1\vendor\yiisoft\yii2\log\Logger.php(173): yii\log\Dispatcher->dispatch(Array, true)
+#4 D:\alliance\allance1\vendor\yiisoft\yii2\base\ErrorHandler.php(111): yii\log\Logger->flush(true)
+#5 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\base\ErrorException))
+#6 {main}
+2016-06-16 10:14:24 [127.0.0.1][-][-][info][application] $_GET = [
+    'r' => 'category/postshow'
+]
+
+$_COOKIE = [
+    'pgv_pvi' => '1704440832'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'www.alliance.com'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:47.0) Gecko/20100101 Firefox/47.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://www.alliance.com/allance1/frontend/web/index.php?r=public/left'
+    'HTTP_COOKIE' => 'pgv_pvi=1704440832'
+    'HTTP_CONNECTION' => 'Keep-Alive'
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\AMD\\ATI.ACE\\Core-Static;D:\\New Folder\\bin;D:\\phpStudy\\php55;D:\\wugui_git\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e PHP/5.5.30'
+    'SERVER_NAME' => 'www.alliance.com'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'D:/alliance'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/alliance'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'SCRIPT_FILENAME' => 'D:/alliance/allance1/frontend/web/index.php'
+    'REMOTE_PORT' => '53966'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=category/postshow'
+    'REQUEST_URI' => '/allance1/frontend/web/index.php?r=category/postshow'
+    'SCRIPT_NAME' => '/allance1/frontend/web/index.php'
+    'PHP_SELF' => '/allance1/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1466043264.615
+    'REQUEST_TIME' => 1466043264
+]

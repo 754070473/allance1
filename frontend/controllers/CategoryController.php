@@ -17,11 +17,14 @@ use yii\filters\AccessControl;
 
 
 
+
 /**
  *  CategoryController 分类管理
  */
 class CategoryController extends Controller
 {
+    //应用trait
+    use ControlController;
     public $layout=false;   //去除样式
     public $enableCsrfValidation=false;  //增删改查 传数据用的
 
@@ -183,12 +186,33 @@ class CategoryController extends Controller
     //列表
     public function actionPostshow()
     {
+        $arr = ControlController::classify('al_post','p_pid');
+        print_r($arr);die;
          return $this->render('post_show.html');
     }
     //表单
     public function actionPostadd()
     {
         return $this->render('post_add.html');
+    }
+    //接收表单数据入库
+    public function actionPostinsert()
+    {
+        $connection = Yii::$app->db;
+        $request = Yii::$app->request;
+        $i_name = $request->post('i_name'); 
+        $p_pid = $request->post('p_pid');
+        $p_time = date('Y-m-d H:i:s',time());
+        $command = $connection->createCommand("INSERT INTO al_post(i_name,p_pid,p_time) values('$i_name','$p_pid','$p_time')");
+        $res = $command->execute();
+        if($res)
+        {
+            echo 1;
+        } 
+        else
+        {
+            echo 0;
+        }
     }
 
 }
