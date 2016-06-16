@@ -20,6 +20,7 @@ use yii\filters\AccessControl;
  */
 class UserlogController extends Controller
 {
+     use ControlController;
 	//public $layout='public';
     public $layout=false;
     /**

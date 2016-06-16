@@ -20,6 +20,7 @@ use yii\filters\AccessControl;
  */
 class RoleController extends Controller
 {
+     use ControlController;
 	//public $layout='public';
     public $layout=false;
     /**

@@ -10,6 +10,7 @@ use frontend\models\Keyword;
  */
 class KeywordController extends Controller
 {
+     use ControlController;
     public $layout=false;
     public $enableCsrfValidation=false;
     //渲染添加热词列表

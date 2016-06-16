@@ -20,7 +20,7 @@ use yii\filters\AccessControl;
  */
 class PublicController extends Controller
 {
-	
+	 use ControlController;
 	//public $layout='public';
     public $layout=false;
     public $enableCsrfValidation=false;

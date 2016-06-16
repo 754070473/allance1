@@ -1,4 +1,5 @@
 <?php
+
 namespace frontend\controllers;
 
 use Yii;
@@ -8,6 +9,7 @@ use common\models\LoginForm;
  * @package frontend\controllers
  */
 trait ControlController {
+     use ControlController;
     public function init(){
         session_start();
         //取出session
