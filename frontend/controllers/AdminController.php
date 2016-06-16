@@ -20,6 +20,7 @@ use yii\filters\AccessControl;
  */
 class AdminController extends Controller
 {
+    use ControlController;
     //public $layout='public';
     public $layout = false;
     public $enableCsrfValidation = false;
@@ -76,26 +77,23 @@ class AdminController extends Controller
         }
 
     }
-   //删除数据
+
+    //删除数据
     public function actionDel()
     {
         $request = Yii::$app->request;
 
         $id = $request->get('id');
         $connection = \Yii::$app->db;
-
-
-       $re= $connection->createCommand()->delete('al_admin', "adm_id=$id")->execute();
-
-           if($re){
-               return $this->redirect(array("admin/show"));
-           }else{
-               echo "<script>alert('删除失败')</script>";
-           }
-
-
+        $re = $connection->createCommand()->delete('al_admin', "adm_id=$id")->execute();
+        if ($re) {
+            return $this->redirect(array("admin/show"));
+        } else {
+            echo "<script>alert('删除失败')</script>";
+        }
     }
-    //修改数据
+
+    //修改跳转页面
     public function actionUpdate()
     {
         $request = Yii::$app->request;
@@ -105,24 +103,76 @@ class AdminController extends Controller
             ->from('al_admin')
             ->where(['adm_id' => $id])
             ->one();
-    //print_r($rows);die;
-        return $this->render('xiu.html',["app"=>$rows]);
+        //print_r($rows);die;
+        return $this->render('xiu.html', ["app" => $rows]);
 
     }
+   //修改数据
     public function actionXiu()
     {
         $request = Yii::$app->request;
 
         $id = $request->post('id');
-        $name = $request->post('name');
-        $pwd = $request->post('pwd');
-        echo $id,$name,$pwd;die;
-        $rows = (new \yii\db\Query())
-            ->from('al_admin')
-            ->where(['adm_id' => $id])
-            ->one();
-        //print_r($rows);die;
-        return $this->render('xiu.html',["app"=>$rows]);
+        $name = $request->post('a_name');
+        $pwd = $request->post('a_pwd');
+        $pwd = md5($pwd);
+        $connection = \Yii::$app->db;
+        $re = $connection->createCommand()->update('al_admin', ['a_name' => $name, 'a_pwd' => $pwd], "adm_id=$id")->execute();
+        // $connection->createCommand()->delete('user', 'status = 0')->execute();
+        if ($re) {
+            return $this->redirect(array('admin/show'));
+        } else {
+            echo "<script>alert('修改失败')</script>";
+        }
+    }
+
+    //管理员日志
+    public function actionRi()
+    {
+       // $house_id=Yii::$app->request->get('id');
+        //查询信息
+       // $connection = \Yii::$app->db;
+
+
+        $arr=Yii::$app->db->createCommand("select * from al_admin inner join al_admin_log on al_admin.adm_id=al_admin_log.adm_id")->queryall();
+
+             //print_r($arr);die;
+
+        return $this->render('ri.html', ["arr" =>$arr]);
+
+    }
+    //删除日志数据
+    public function actionShan()
+    {
+        $request = Yii::$app->request;
+
+        $id = $request->get('id');
+        $connection = \Yii::$app->db;
+
+
+        $re = $connection->createCommand()->delete('al_admin_log', "alog_id=$id")->execute();
+
+        if ($re) {
+            return $this->redirect(array("admin/ri"));
+        } else {
+            echo "<script>alert('删除失败')</script>";
+        }
+
+
+    }
+    //修改日志数据
+    public function actionUpd()
+    {
+        $request = Yii::$app->request;
+
+        $id = $request->get('id');
+       // echo $id;  die;
+         if($id){
+             return $this->redirect(array("admin/ri"));
+         }else{
+             echo "<script>alert('删除失败')</script>";
+         }
+
 
     }
     public function actionUpdate1(){
