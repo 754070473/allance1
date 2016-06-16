@@ -114,4 +114,9 @@ class IntegralController extends Controller
             echo 0;
         }
     }
+
+    public function actionTest(){
+        $arr = ControlController::classify('al_privilege','p_pid');
+        print_r($arr);
+    }
 }

@@ -18156,3 +18156,169 @@ $_SERVER = [
     'REQUEST_TIME_FLOAT' => 1466035389.085
     'REQUEST_TIME' => 1466035389
 ]
+2016-06-16 09:30:38 [::1][-][-][error][yii\base\ErrorException:1] exception 'yii\base\ErrorException' with message 'Trait 'frontend\controllers\ControlController\ControlController' not found' in F:\phpStudy\WWW\php_9\allance1\frontend\controllers\IntegralController.php:30
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleFatalError()
+#1 {main}
+2016-06-16 09:30:38 [::1][-][-][info][application] $_GET = [
+    'r' => 'integral/show'
+]
+
+$_COOKIE = [
+    '__gads' => 'ID=958cf7cb6afa7cad:T=1460978978:S=ALNI_Mb2TnEoFXLJ87eaP3y14ps-v80dlw'
+    'bdshare_firstime' => '1460978979566'
+    'g' => '89642_1461225954402'
+    'CNZZDATA2192707' => 'cnzz_eid=16655850-1461223841-&ntime=1461330789'
+    'Hm_lvt_dfa5478034171cc641b1639b2a5b717d' => '1461225955,1461244135,1461331760'
+    '_ga' => 'GA1.1.1275183857.1461225955'
+    'pgv_pvi' => '7869699072'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:47.0) Gecko/20100101 Firefox/47.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://localhost/php_9/allance1/frontend/web/index.php?r=public/left'
+    'HTTP_COOKIE' => '__gads=ID=958cf7cb6afa7cad:T=1460978978:S=ALNI_Mb2TnEoFXLJ87eaP3y14ps-v80dlw; bdshare_firstime=1460978979566; g=89642_1461225954402; CNZZDATA2192707=cnzz_eid%3D16655850-1461223841-%26ntime%3D1461330789; Hm_lvt_dfa5478034171cc641b1639b2a5b717d=1461225955,1461244135,1461331760; _ga=GA1.1.1275183857.1461225955; pgv_pvi=7869699072'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'PATH' => 'F:\\phpStudy\\php55;D:\\Program Files\\Git\\cmd;C:\\Program Files\\TortoiseGit\\bin;'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e PHP/5.5.30'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'F:/phpStudy/WWW'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'F:/phpStudy/WWW'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'SCRIPT_FILENAME' => 'F:/phpStudy/WWW/php_9/allance1/frontend/web/index.php'
+    'REMOTE_PORT' => '65248'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=integral/show'
+    'REQUEST_URI' => '/php_9/allance1/frontend/web/index.php?r=integral/show'
+    'SCRIPT_NAME' => '/php_9/allance1/frontend/web/index.php'
+    'PHP_SELF' => '/php_9/allance1/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1466040638.219
+    'REQUEST_TIME' => 1466040638
+]
+2016-06-16 09:31:41 [::1][-][-][error][yii\db\Exception] exception 'PDOException' with message 'SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)' in F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\db\Connection.php:579
+Stack trace:
+#0 F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\db\Connection.php(579): PDO->__construct('mysql:host=loca...', 'root', '147542', NULL)
+#1 F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\db\Connection.php(529): yii\db\Connection->createPdoInstance()
+#2 F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\db\Connection.php(836): yii\db\Connection->open()
+#3 F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\db\Connection.php(823): yii\db\Connection->getMasterPdo()
+#4 F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\db\Command.php(216): yii\db\Connection->getSlavePdo()
+#5 F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\db\Command.php(831): yii\db\Command->prepare('<span class="ke...')
+#6 F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\db\Command.php(359): yii\db\Command->queryInternal('<span class="st...', '<span class="ke...')
+#7 F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\db\mysql\Schema.php(198): yii\db\Command->queryAll()
+#8 F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\db\mysql\Schema.php(97): yii\db\mysql\Schema->findColumns(Object(yii\db\TableSchema))
+#9 F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\db\Schema.php(146): yii\db\mysql\Schema->loadTableSchema('<span class="st...')
+#10 F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\db\ActiveRecord.php(294): yii\db\Schema->getTableSchema('<span class="st...')
+#11 F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\db\ActiveRecord.php(327): yii\db\ActiveRecord::getTableSchema()
+#12 F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\db\BaseActiveRecord.php(422): yii\db\ActiveRecord->attributes()
+#13 F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\db\BaseActiveRecord.php(264): yii\db\BaseActiveRecord->hasAttribute('<span class="st...')
+#14 F:\phpStudy\WWW\php_9\allance1\frontend\controllers\IntegralController.php(80): yii\db\BaseActiveRecord->__set('<span class="st...', '<span class="st...')
+#15 [internal function]: frontend\controllers\IntegralController->actionInfo()
+#16 F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array('[<span class="t...', '[]')
+#17 F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams('[<span class="s...')
+#18 F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('<span class="st...', '[<span class="s...')
+#19 F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('<span class="st...', '[<span class="s...')
+#20 F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#21 F:\phpStudy\WWW\php_9\allance1\frontend\web\index.php(18): yii\base\Application->run()
+#22 {main}
+
+Next exception 'yii\db\Exception' with message 'SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)' in F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\db\Connection.php:534
+Stack trace:
+#0 F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\db\Connection.php(836): yii\db\Connection->open()
+#1 F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\db\Connection.php(823): yii\db\Connection->getMasterPdo()
+#2 F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\db\Command.php(216): yii\db\Connection->getSlavePdo()
+#3 F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\db\Command.php(831): yii\db\Command->prepare('<span class="ke...')
+#4 F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\db\Command.php(359): yii\db\Command->queryInternal('<span class="st...', '<span class="ke...')
+#5 F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\db\mysql\Schema.php(198): yii\db\Command->queryAll()
+#6 F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\db\mysql\Schema.php(97): yii\db\mysql\Schema->findColumns(Object(yii\db\TableSchema))
+#7 F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\db\Schema.php(146): yii\db\mysql\Schema->loadTableSchema('<span class="st...')
+#8 F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\db\ActiveRecord.php(294): yii\db\Schema->getTableSchema('<span class="st...')
+#9 F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\db\ActiveRecord.php(327): yii\db\ActiveRecord::getTableSchema()
+#10 F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\db\BaseActiveRecord.php(422): yii\db\ActiveRecord->attributes()
+#11 F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\db\BaseActiveRecord.php(264): yii\db\BaseActiveRecord->hasAttribute('<span class="st...')
+#12 F:\phpStudy\WWW\php_9\allance1\frontend\controllers\IntegralController.php(80): yii\db\BaseActiveRecord->__set('<span class="st...', '<span class="st...')
+#13 [internal function]: frontend\controllers\IntegralController->actionInfo()
+#14 F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array('[<span class="t...', '[]')
+#15 F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams('[<span class="s...')
+#16 F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('<span class="st...', '[<span class="s...')
+#17 F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('<span class="st...', '[<span class="s...')
+#18 F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#19 F:\phpStudy\WWW\php_9\allance1\frontend\web\index.php(18): yii\base\Application->run()
+#20 {main}
+Additional Information:
+
+2016-06-16 09:31:40 [::1][-][-][info][application] $_GET = [
+    'r' => 'integral/info'
+]
+
+$_POST = [
+    'i_name' => '放假啦'
+    'i_controller' => 'caljf'
+    'i_function' => 'csdjkf'
+    'i_num' => '11'
+]
+
+$_COOKIE = [
+    '__gads' => 'ID=958cf7cb6afa7cad:T=1460978978:S=ALNI_Mb2TnEoFXLJ87eaP3y14ps-v80dlw'
+    'bdshare_firstime' => '1460978979566'
+    'g' => '89642_1461225954402'
+    'CNZZDATA2192707' => 'cnzz_eid=16655850-1461223841-&ntime=1461330789'
+    'Hm_lvt_dfa5478034171cc641b1639b2a5b717d' => '1461225955,1461244135,1461331760'
+    '_ga' => 'GA1.1.1275183857.1461225955'
+    'pgv_pvi' => '7869699072'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:47.0) Gecko/20100101 Firefox/47.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://localhost/php_9/allance1/frontend/web/index.php?r=integral/add'
+    'HTTP_COOKIE' => '__gads=ID=958cf7cb6afa7cad:T=1460978978:S=ALNI_Mb2TnEoFXLJ87eaP3y14ps-v80dlw; bdshare_firstime=1460978979566; g=89642_1461225954402; CNZZDATA2192707=cnzz_eid%3D16655850-1461223841-%26ntime%3D1461330789; Hm_lvt_dfa5478034171cc641b1639b2a5b717d=1461225955,1461244135,1461331760; _ga=GA1.1.1275183857.1461225955; pgv_pvi=7869699072'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'CONTENT_LENGTH' => '80'
+    'PATH' => 'F:\\phpStudy\\php55;D:\\Program Files\\Git\\cmd;C:\\Program Files\\TortoiseGit\\bin;'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e PHP/5.5.30'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'F:/phpStudy/WWW'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'F:/phpStudy/WWW'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'SCRIPT_FILENAME' => 'F:/phpStudy/WWW/php_9/allance1/frontend/web/index.php'
+    'REMOTE_PORT' => '65313'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => 'r=integral/info'
+    'REQUEST_URI' => '/php_9/allance1/frontend/web/index.php?r=integral/info'
+    'SCRIPT_NAME' => '/php_9/allance1/frontend/web/index.php'
+    'PHP_SELF' => '/php_9/allance1/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1466040700.247
+    'REQUEST_TIME' => 1466040700
+]

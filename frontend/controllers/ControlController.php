@@ -88,8 +88,8 @@ trait ControlController {
 
     /**
      * 无限极分类数组处理
-     * @param $table
-     * @param $pid_name
+     * @param $table  表名
+     * @param $pid_name pid字段名
      * @param int $pid
      * @return array
      */
@@ -101,6 +101,11 @@ trait ControlController {
         $sql = "select * from $table where $pid_name=$pid";
         $re = mysql_query($sql);
         $num=mysql_num_rows($re);
+        $rescolumns = mysql_query("SHOW FULL COLUMNS FROM ".$table) ;
+        while($row = mysql_fetch_array($rescolumns)){
+            $data[] = $row['Field'];
+        }
+        $k = $data[0];
         if($num>0){
             while($new_arr = mysql_fetch_assoc($re)){
                 $arr[] = $new_arr;
@@ -111,7 +116,7 @@ trait ControlController {
         //查询子分类
 //        return $arr;die;
         foreach($arr as $key=>$val){
-            $arr[$key]['son']=$this->classify($table,$pid_name,$pid=$val['pri_id']);
+            $arr[$key]['son']=$this->classify($table,$pid_name,$pid=$val[$k]);
         }
         return $arr;
     }
