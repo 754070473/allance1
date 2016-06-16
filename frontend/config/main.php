@@ -30,5 +30,5 @@ return [
         ],
     ],
     'params' => $params,
-    'defaultRoute' => 'login/login',
+    'defaultRoute' => 'index/index',
 ];
