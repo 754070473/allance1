@@ -29,7 +29,8 @@ class PrivilegeController extends Controller
      */
     public function actionShow()
     {
-        return $this->render('show.html');
+        $arr = ControlController::classify('al_privilege','p_pid');
+        return $this->render('show.html',array('arr'=>$arr));
     }
     /**
      * [actionAdd 添加]

@@ -9,14 +9,17 @@ use common\models\LoginForm;
  * @package frontend\controllers
  */
 trait ControlController {
-     use ControlController;
     public function init(){
         session_start();
         //取出session
         if(empty($_SESSION['adm_id'])){
             $url = 'http://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
-            $url = substr($url,0,strpos($url,'=')+1);
-            $url = $url."login/login";
+            if(strpos($url,'=')){
+                $url = substr($url,0,strpos($url,'=')+1);
+                $url = $url."login/login";
+            }else{
+                $url = $url."index.php?r=login/login";
+            }
             //重定向浏览器
             header("Location: $url");
             //确保重定向后，后续代码不会被执行

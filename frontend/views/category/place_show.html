@@ -33,29 +33,45 @@
                         </tr>
                         <?php foreach($arr as $key=>$val) {?>
                         <tr id="a_<?php echo $val['pla_id'] ?>">
-                            <td>
-                                <?php 
-                                if($val['level']==0)
-                                {
-                                    echo "<a href=''>+</a>".$val['i_name'];
-                                }
-                                elseif($val['level']==1)
-                                {
-                                    echo str_repeat('&nbsp;&nbsp;&nbsp;&nbsp;', $val['level']).'+'.'|--'.$val['i_name'];
-                                }
-                                elseif($val['level']==2)
-                                {
-                                    echo str_repeat('&nbsp;&nbsp;&nbsp;&nbsp;', $val['level']).'|--'.$val['i_name'];
-                                }
-                                ?>
+                            <td  onclick="aa(<?php echo $val['pla_id'] ?>)">
+
+                                <?php if($val['level']==0){ ?>
+                                <span id="d_<?php echo $val['pla_id'] ?>">
+                                <a href=''>+</a>
+                                <span id="b_<?php echo $val['pla_id'] ?>">
+                                    <?php echo $val['i_name'] ?>
+                                </span>
+                                </span>
+                                    <input type='text' value="<?php echo $val['i_name'] ?>" id="c_<?php echo $val['pla_id'] ?>" style="display:none" onblur="bb(<?php echo $val['pla_id'] ?>)" />
+                                <?php }elseif($val['level']==1)
+                                { 
+                                    str_repeat('&nbsp;&nbsp;&nbsp;&nbsp;', $val['level']);
+                                    ?>
+                                    <span id="d_<?php echo $val['pla_id'] ?>">
+                                    <a href=''>+</a>|-- 
+                                    <span id="b_<?php echo $val['pla_id'] ?>">
+                                    <?php echo $val['i_name'] ?>
+                                    </span>
+                                    </span>
+                                    <input type="text" value="<?php echo $val['i_name'] ?>" id="c_<?php echo $val['pla_id'] ?>" style="display:none" onblur="bb(<?php echo $val['pla_id'] ?>)"/>
+                                <?php }elseif($val['level']==2)
+                                { 
+                                    echo str_repeat('&nbsp;&nbsp;&nbsp;&nbsp;', $val['level']);
+                                    ?>
+                                    <span id="d_<?php echo $val['pla_id'] ?>">
+                                    |--
+                                    <span id="b_<?php echo $val['pla_id'] ?>">
+                                    <?php echo $val['i_name']; ?>
+                                    </span>
+                                    </span>
+                                    <input type="text" value="<?php echo $val['i_name'] ?>" id="c_<?php echo $val['pla_id'] ?>" style="display:none" onblur="bb(<?php echo $val['pla_id'] ?>)"/>
+                                <?php } ?>
+                                
                             </td>
                             <td><?php echo $val['p_pid'] ?></td>
                             <td><?php echo $val['i_addtime'] ?></td>
                             <td>
-                                <a href="banneradd.html">
-                                    <img class="operation"
-                                    src="img/update.png">
-                                </a> 
+                                
                                     <img class="operation delban" onclick="delban(<?php echo $val['pla_id'] ?>)"
                                 src="img/delete.png"></td>
                         </tr>
@@ -108,13 +124,12 @@ function del(id){
     $.ajax({
         type:"post",
         url:"index.php?r=category/del",
-        data:"id="+id,
+        data:"id="+id+"&del="+'0',
         success:function(e)
         {
             if(e==1)
             {
                $('#a_'+id).remove();
-                
                 $(".banDel").hide();
             }
             else
@@ -123,7 +138,48 @@ function del(id){
                 alert(e);
             }
         }
-    })
+    })  
+}
+//即点即改
+function aa(pla_id)
+{
+    // alert(pla_id);
+    $('#d_'+pla_id).hide();
+    $('#c_'+pla_id).show();
+    $('#c_'+pla_id).focus();
+}
+function bb(pla_id)
+{
+    var name = $('#b_'+pla_id).html().trim();
+    var i_name = $('#c_'+pla_id).val().trim();
+    if(i_name==name)
+    {
+        $('#d_'+pla_id).show();
+        $('#c_'+pla_id).hide();
+    }
+    else
+    {
+        $.ajax({
+                type:"post",
+                url:"index.php?r=category/diangai",
+                data:"pla_id="+pla_id+"&i_name="+i_name+"&diangai="+'0',
+                success:function(e)
+                {
+                    if(e==1)
+                    {
+                        $('#d_'+pla_id).show();
+                        $('#b_'+pla_id).html(i_name);
+                        $('#c_'+pla_id).hide();
+                    }
+                    else
+                    {
+                        $('#d_'+pla_id).show();
+                        $('#c_'+pla_id).hide();
+                        alert('修改失败')
+                    }
+                }
+            })
+    }
     
 }
 </script>
