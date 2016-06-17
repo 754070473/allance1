@@ -67,10 +67,7 @@ class AdminController extends Controller
             } else {
                 return $this->render('useradd.html');
             }
-
-
             //echo $name,$pwd,$re,$time;
-
 
         } else {
             return $this->render('useradd.html');
