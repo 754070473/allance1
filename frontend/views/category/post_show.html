@@ -31,7 +31,29 @@
                             <td width="308px" class="tdColor">添加时间</td>
                             <td width="250px" class="tdColor">操作</td>
                         </tr>
-                       
+                       <?php foreach($arr as $key=>$val) { if($val['p_pid']==0) {?>
+
+                        
+                        <tr id="a_<?php echo $val['post_id'] ?>">
+                            <td   onclick="aa(<?php echo $val['post_id'] ?>)">
+
+                                <span id="d_<?php echo $val['post_id'] ?>">
+                                <span id="b_<?php echo $val['post_id'] ?>">
+                                    <?php echo $val['i_name'] ?>
+                                </span>
+                                </span>
+                                    <input type='text' value="<?php echo $val['i_name'] ?>" id="c_<?php echo $val['post_id'] ?>" style="display:none" onblur="bb(<?php echo $val['post_id'] ?>)" />
+
+                            </td>   
+                            <td><?php echo $val['p_pid'] ?></td>
+                            <td><?php echo $val['p_time'] ?></td>
+                            <td>
+                                
+                                    <img class="operation delban"
+                                src="img/delete.png" onclick="delban(<?php echo $val['post_id'] ?>)"></td>
+                        </tr>
+                        <?php } ?>
+                       <?php } ?>
                     </table>
                     <div class="paging">
                         
@@ -79,17 +101,64 @@ function del(id){
     $.ajax({
         type:"post",
         url:"index.php?r=category/del",
-        data:"id="+id,
+        data:"id="+id+"&del="+'2',
         success:function(e)
         {
-            if(e!=1)
+            if(e==1)
             {
+                $('#a_'+id).remove();
+                $(".banDel").hide();
+            }
+            else
+            {
+                $(".banDel").hide();
                 alert(e);
             }
         }
     })
-    $('#a_'+id).remove();
-    $(".banDel").hide();
+   
+}
+//即点即改
+function aa(post_id)
+{
+    // alert(post_id);
+    $('#d_'+post_id).hide();
+    $('#c_'+post_id).show();
+    $('#c_'+post_id).focus();
+}
+function bb(post_id)
+{
+    var name = $('#b_'+post_id).html().trim();
+    var i_name = $('#c_'+post_id).val().trim();
+    if(i_name==name)
+    {
+        $('#d_'+post_id).show();
+        $('#c_'+post_id).hide();
+    }
+    else
+    {
+        $.ajax({
+                type:"post",
+                url:"index.php?r=category/diangai",
+                data:"post_id="+post_id+"&i_name="+i_name+"&diangai="+'2',
+                success:function(e)
+                {
+                    if(e==1)
+                    {
+                        $('#d_'+post_id).show();
+                        $('#b_'+post_id).html(i_name);
+                        $('#c_'+post_id).hide();
+                    }
+                    else
+                    {
+                        $('#d_'+post_id).show();
+                        $('#c_'+post_id).hide();
+                        alert('修改失败')
+                    }
+                }
+            })
+    }
+    
 }
 </script>
 </html>
