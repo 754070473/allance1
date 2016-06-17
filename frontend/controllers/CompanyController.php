@@ -30,8 +30,18 @@ class CompanyController extends Controller
     public function actionAdd()
     {
         
-
-        return $this->render('showadd.html');
+        $request= Yii::$app->request;
+        $data['cou_id']=$request->get('cou_id');
+        $com_id=$request->get('com_id');
+        //开始入库
+        $connection = \Yii::$app->db;
+        $re = $connection->createCommand()->update('al_company', $data, "com_id in ($com_id)")->execute();
+        if($re){
+            return $this->redirect('?r=company/show');
+        }else{
+             return $this->redirect('?r=company/show');
+        }
+        
     }
     /**
      * [actionIndex description]
@@ -43,15 +53,10 @@ class CompanyController extends Controller
             ->select(['*'])
             ->from('al_company')
             ->innerJoin('al_com_message', 'al_company.mes_id = al_com_message.mes_id')
+            ->leftJoin('al_counselor', 'al_counselor.cou_id = al_company.cou_id')
             ->all();
         
-        $res = (new \yii\db\Query())
-            ->select(['*'])
-            ->from('al_company')
-            ->innerJoin('al_counselor', 'al_company.cou_id = al_counselor.cou_id')
-            ->all();
-
-        return $this->render('show.html',['arr'=>$arr,'res'=>$res]);
+        return $this->render('show.html',['arr'=>$arr]);
     }
     /**
      * [actionDelete 删除]

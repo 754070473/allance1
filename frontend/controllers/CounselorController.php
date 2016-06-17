@@ -12,8 +12,6 @@ use yii\web\BadRequestHttpException;
 use yii\web\Controller;
 use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
-
-use CommonController;
 /**
  *  CounselorController 顾问
  */
@@ -28,12 +26,17 @@ class CounselorController extends Controller
      */
     public function actionShow()
     {
+        //设置顾问显示顾问列表
+        $request=Yii::$app->request;
+        $gu_id=$request->get('gu_id');
+        $cou_id=$request->get('cou_id');
+        //顾问查询
         $arr = (new \yii\db\Query())
             ->select(['*'])
             ->from('al_counselor')
             ->all();
 
-        return $this->render('show.html',array('arr'=>$arr));
+        echo $this->render('show.html',['cou_id'=>$cou_id,'gu_id'=>$gu_id,'arr'=>$arr]);
     }
     /**
      * [actionAdd 添加]

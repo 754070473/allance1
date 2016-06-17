@@ -32,7 +32,7 @@
                             <a href="index.html">企业账号</a>
                         </li>
                         <li>
-                            <a>企业账号列表</a>
+                            <a>顾问列表</a>
                         </li>
                     </ol>
                 </div>
@@ -87,6 +87,13 @@
                                             <td><?php echo $val['c_addtime']; ?></td>
                                             <td><?php echo $val['c_qq']; ?></td>
                                             <td class="center">
+                                                <?php if ($gu_id==1): ?>
+                                                    <a href="index.php?r=company/add&cou_id=<?php echo $val['cou_id']; ?>&com_id=<?php echo $cou_id; ?>">
+                                                    <img class="operation" src="img/update.png">
+                                                </a> 
+                                                <?php else: ?>
+                                                    
+                                            
                                                 <a href="index.php?r=counselor/update&cou_id=<?php echo $val['cou_id']; ?>">
                                                     <img class="operation" src="img/update.png">
                                                 </a> 
