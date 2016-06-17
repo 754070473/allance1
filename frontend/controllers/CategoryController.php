@@ -9,6 +9,7 @@ use frontend\models\SignupForm;
 use frontend\models\ContactForm;
 use frontend\models\Place;
 use frontend\models\Major;
+use frontend\models\Post;
 use yii\base\InvalidParamException;
 use yii\web\BadRequestHttpException;
 use yii\web\Controller;
@@ -36,18 +37,6 @@ class CategoryController extends Controller
     public function actionShow()
     {
         $customer = new Place();
-        //当前页
-        // $request = Yii::$app->request;
-        // $p = $request->get('p') ? $request->get('p') : 1;
-        // // $p=1;
-        // //每页显示的条数
-        // $num=5;
-        // //偏移量
-        // $limit = ($p-1)*$num;
-        // //上一页
-        // $up = $p-1;
-        // //下一页
-        // $down = $p+1;
         $arr = $customer->show();
         //递归
         $digui = $customer->digui($arr);
@@ -58,12 +47,30 @@ class CategoryController extends Controller
     //即点即改
     public function actionDiangai()
     {
-        $connection = Yii::$app->db;
         $request = Yii::$app->request;
-        $pla_id = $request->post('pla_id');
-        $i_name = $request->post('i_name');
-        $command = $connection->createCommand("UPDATE al_place SET i_name=$i_name WHERE pla_id=$pla_id");
-        $res = $command->execute();
+        $connection = Yii::$app->db;
+        if($request->post('diangai')==0)
+        {
+            $pla_id = $request->post('pla_id');
+            $i_name = $request->post('i_name');
+            $command = $connection->createCommand("UPDATE al_place SET i_name='$i_name' WHERE pla_id=$pla_id");
+            $res = $command->execute();
+        }
+        elseif($request->post('diangai')==1)
+        {
+            $major_id = $request->post('major_id');
+            $m_name = $request->post('m_name');
+            $command = $connection->createCommand("UPDATE al_major SET m_name='$m_name' WHERE major_id=$major_id");
+            $res = $command->execute();
+        }
+         elseif($request->post('diangai')==2)
+        {
+            $post_id = $request->post('post_id');
+            $i_name = $request->post('i_name');
+            $command = $connection->createCommand("UPDATE al_post SET i_name='$i_name' WHERE post_id=$post_id");
+            $res = $command->execute();
+        }
+        
         if($res)
         {
             echo 1;
@@ -81,22 +88,57 @@ class CategoryController extends Controller
      */
     public function actionDel()
     {
-        $model = new Place();
-        $connection = Yii::$app->db;
         $request = Yii::$app->request;
         $id = $request->post('id');
-        // $res = $connection->createCommand("SELECT * FROM al_place WHERE p_pid=$id");
-        $res = Place::find()
-            ->where(['p_pid' => $id])
-            ->all();
+        if($request->post('del')=='0')
+        {
+            $model = new Place();
+            $connection = Yii::$app->db;
+            // $res = $connection->createCommand("SELECT * FROM al_place WHERE p_pid=$id");
+            $res = Place::find()
+                ->where(['p_pid' => $id])
+                ->all();
+        }
+        if($request->post('del')=='1')
+        {
+            $model = new Major();
+            $connection = Yii::$app->db;
+            // $res = $connection->createCommand("SELECT * FROM al_place WHERE p_pid=$id");
+            $res = Major::find()
+                ->where(['m_pid' => $id])
+                ->all();
+        }
+        if($request->post('del')=='2')
+        {
+            $model = new Post();
+            $connection = Yii::$app->db;
+            // $res = $connection->createCommand("SELECT * FROM al_place WHERE p_pid=$id");
+            $res = Post::find()
+                ->where(['p_pid' => $id])
+                ->all();
+        }
+        
         if($res)
         {
-            echo '该地区下有(市/区)不能删除';
+            echo '该地区下有分类不能删除';
         }
         else
         {
-            $customer = Place::findOne($id);
-            $re = $customer->delete();
+            if($request->post('del')=='0')
+            {
+                $customer = Place::findOne($id);
+                $re = $customer->delete();
+            }
+            elseif($request->post('del')=='1')
+            {
+                 $customer = Major::findOne($id);
+                 $re = $customer->delete();
+            }
+            elseif($request->post('del')=='2')
+            {
+                 $customer = Post::findOne($id);
+                 $re = $customer->delete();
+            }
             if($re)
             {
                 echo 1;
@@ -227,11 +269,11 @@ class CategoryController extends Controller
         $res = $command->execute();
         if($res)
         {
-            echo 1;
+             return $this->redirect(['category/postshow']);
         } 
         else
         {
-            echo 0;
+             return $this->redirect(['category/postadd']);
         }
     }
 
