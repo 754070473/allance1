@@ -24,6 +24,7 @@ use yii\web\UploadedFile;
  */
 class CommessageController extends Controller
 {
+     use ControlController;
     public $enableCsrfValidation=false;
 	//public $layout='public';
     public $layout=false;

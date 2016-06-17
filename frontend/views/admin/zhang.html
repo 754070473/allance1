@@ -52,9 +52,9 @@
                         <thead>
                         <tr>
                             <th>序号</th>
-                            <th>导航名称</th>
-                            <th>链接地址</th>
-                            <th>导航类型</th>
+                            <th>管理员账号</th>
+                            <th>管理员姓名</th>
+                            <th>管理员密码</th>
                             <th>添加时间</th>
                             <th>操作</th>
                         </tr>
@@ -68,7 +68,7 @@
                             <td><?= $v['a_pwd']?></td>
                             <td><?= $v['a_addtime']?></td>
                             <td><a href="index.php?r=admin/update&id=<?= $v['adm_id']?>"><img 	src="img/update.png"></a>
-                                <a href="index.php?r=navigation/del&id=<?= $v['adm_id']?>"><img 	src="img/delete.png"></a></td>
+                                <a href="index.php?r=admin/del&id=<?= $v['adm_id']?>"><img 	src="img/delete.png"></a></td>
                         </tr>
                         <?php
                         }?>

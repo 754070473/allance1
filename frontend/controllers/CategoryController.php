@@ -54,6 +54,26 @@ class CategoryController extends Controller
         // print_r($digui);
         return $this->render('place_show.html',['arr'=>$digui]);
     }
+
+    //即点即改
+    public function actionDiangai()
+    {
+        $connection = Yii::$app->db;
+        $request = Yii::$app->request;
+        $pla_id = $request->post('pla_id');
+        $i_name = $request->post('i_name');
+        $command = $connection->createCommand("UPDATE al_place SET i_name=$i_name WHERE pla_id=$pla_id");
+        $res = $command->execute();
+        if($res)
+        {
+            echo 1;
+        }
+        else
+        {
+            echo 0;
+        }
+    }
+
     //public $layout='public';
     /**
      * actiondel 删除
@@ -187,13 +207,13 @@ class CategoryController extends Controller
     public function actionPostshow()
     {
         $arr = ControlController::classify('al_post','p_pid');
-        print_r($arr);die;
-         return $this->render('post_show.html');
+         return $this->render('post_show.html',['arr'=>$arr]);
     }
     //表单
     public function actionPostadd()
     {
-        return $this->render('post_add.html');
+        $arr = ControlController::classify('al_post','p_pid');
+        return $this->render('post_add.html',['arr'=>$arr]);
     }
     //接收表单数据入库
     public function actionPostinsert()
