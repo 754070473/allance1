@@ -78,7 +78,7 @@
                                     </thead>
                                     <tbody>
                                         <?php foreach ($arr as $key => $val): ?>
-                                        <tr id="<?php echo $val['cou_id']?>">
+                                        <tr id="<?php echo $val['cou_id']?>" class="gradeA">
                                             <td>
                                                 <input type="checkbox" value="<?php echo $val['cou_id']; ?>">
                                                 <?php echo $val['cou_id']; ?>
@@ -87,12 +87,12 @@
                                             <td><?php echo $val['c_addtime']; ?></td>
                                             <td><?php echo $val['c_qq']; ?></td>
                                             <td class="center">
-                                            <a href="index.php?r=counselor/update&cou_id=<?php echo $val['cou_id']; ?>">
-                                                <img class="operation" src="img/update.png">
-                                            </a> 
-                                            <a href="index.php?r=counselor/delete&cou_id=<?php echo $val['cou_id']; ?>">
-                                                <img class="operation delban" src="img/delete.png">
-                                            </a>
+                                                <a href="index.php?r=counselor/update&cou_id=<?php echo $val['cou_id']; ?>">
+                                                    <img class="operation" src="img/update.png">
+                                                </a> 
+                                                <a href="index.php?r=counselor/delete&cou_id=<?php echo $val['cou_id']; ?>">
+                                                    <img class="operation delban" src="img/delete.png">
+                                                </a>
                                             </td>
                                         </tr>
                                         <?php endforeach ?>
@@ -219,11 +219,13 @@ function delAll(){
                
                 str+="<tr id='"+data[i].cou_id+"'>";
                     str+="<td>"+"<input type='checkbox' value='"+data[i].cou_id+"'>"+data[i].cou_id+"</td>";
-                    str+="<td>"+data[i].m_name+"</td>";
-                    str+="<td>"+data[i].c_phone+"</td>";
-                    str+="<td>"+data[i].c_email+"</td>";
-                    str+="<td>"+data[i].c_integarl+"</td>";
-                    
+                    str+="<td>"+data[i].c_name+"</td>";
+                    str+="<td>"+data[i].c_addtime+"</td>";
+                    str+="<td>"+data[i].c_qq+"</td>";
+                    str+="<td>";
+                        str+="<a href='index.php?r=counselor/update&cou_id="+data[i].cou_id+"'>"+"<img class='operation' src=img/update.png >"+"</a>";
+                        str+="<a href='index.php?r=counselor/delete&cou_id="+data[i].cou_id+"'>"+"<img class='operation' src=img/delete.png >"+"</a>";
+                    str+="</td>";
                 str+="</tr>";
             }
             $("#"+last_id).after(str);
