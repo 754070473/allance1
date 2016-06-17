@@ -1,4 +1,5 @@
 <?php
+
 namespace frontend\controllers;
 
 use Yii;
@@ -17,6 +18,7 @@ use yii\filters\AccessControl;
  */
 class CounselorController extends Controller
 {
+     use ControlController;
 	//public $layout='public';
     public $layout=false;
     public $enableCsrfValidation=false;
