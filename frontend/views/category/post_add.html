@@ -29,8 +29,18 @@
 					<div class="bbD">
 						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;父级地区：
 						<select class="input3" name='p_pid'>
-							<option value="1">请选择....</option>
-							
+							<option value="0">请选择....</option>
+							<?php foreach($arr as $key=>$val) {?>
+								<option value="<?php echo $val['post_id'] ?>">
+									<?php echo $val['i_name'] ?>
+								</option>
+								<?php foreach($val['son'] as $k=>$v) {?>
+								<option value="<?php echo $v['post_id'] ?>">
+									|--<?php echo $v['i_name'] ?>
+								</option>
+							<?php } ?>
+							<?php } ?>
+
 						</select>
 					</div>
 					<div class="bbD">

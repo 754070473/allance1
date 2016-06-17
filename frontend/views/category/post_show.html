@@ -31,7 +31,69 @@
                             <td width="308px" class="tdColor">添加时间</td>
                             <td width="250px" class="tdColor">操作</td>
                         </tr>
-                       
+                       <?php foreach($arr as $key=>$val) 
+                       {
+                        ?>
+
+                        
+                        <tr id="a_<?php echo $val['post_id'] ?>">
+                            <td   onclick="aa(<?php echo $val['post_id'] ?>)">
+                                <span id="d_<?php echo $val['post_id'] ?>">
+                                <span id="b_<?php echo $val['post_id'] ?>">
+                                    <?php echo $val['i_name'] ?>
+                                </span>
+                                </span>
+                                    <input type='text' value="<?php echo $val['i_name'] ?>" id="c_<?php echo $val['post_id'] ?>" style="display:none" onblur="bb(<?php echo $val['post_id'] ?>)" />
+
+                            </td>   
+                            <td><?php echo $val['p_pid'] ?></td>
+                            <td><?php echo $val['p_time'] ?></td>
+                            <td>
+                                
+                                    <img class="operation delban"
+                                src="img/delete.png" onclick="delban(<?php echo $val['post_id'] ?>)"></td>
+                        </tr>
+                        <?php if(!empty($val['son'])) {?>
+                        <?php foreach($val['son'] as $k=>$v) {?>
+                                <tr id="a_<?php echo $v['post_id'] ?>">
+                                    <td   onclick="aa(<?php echo $v['post_id'] ?>)">
+                                        <span id="d_<?php echo $v['post_id'] ?>">
+                                            |--
+                                        <span id="b_<?php echo $v['post_id'] ?>">
+                                            <?php echo $v['i_name'] ?>
+                                        </span>
+                                        </span>
+                                            <input type='text' value="<?php echo $v['i_name'] ?>" id="c_<?php echo $v['post_id'] ?>" style="display:none" onblur="bb(<?php echo $v['post_id'] ?>)" />
+
+                                    </td>   
+                                    <td><?php echo $v['p_pid'] ?></td>
+                                    <td><?php echo $v['p_time'] ?></td>
+                                    <td>
+                                        
+                                            <img class="operation delban"
+                                        src="img/delete.png" onclick="delban(<?php echo $v['post_id'] ?>)"></td>
+                                </tr> 
+                                <?php if(!empty($val['son'])) {?>
+                        <?php foreach($v['son'] as $a=>$b) {?>
+                                <tr id="a_<?php echo $b['post_id'] ?>">
+                                    <td   onclick="aa(<?php echo $b['post_id'] ?>)">
+                                        <span id="d_<?php echo $b['post_id'] ?>">
+                                            |----
+                                        <span id="b_<?php echo $b['post_id'] ?>">
+                                            <?php echo $b['i_name'] ?>
+                                        </span>
+                                        </span>
+                                            <input type='text' value="<?php echo $b['i_name'] ?>" id="c_<?php echo $b['post_id'] ?>" style="display:none" onblur="bb(<?php echo $b['post_id'] ?>)" />
+
+                                    </td>   
+                                    <td><?php echo $b['p_pid'] ?></td>
+                                    <td><?php echo $b['p_time'] ?></td>
+                                    <td>
+                                        
+                                            <img class="operation delban"
+                                        src="img/delete.png" onclick="delban(<?php echo $b['post_id'] ?>)"></td>
+                                </tr> 
+                       <?php }}}}} ?>
                     </table>
                     <div class="paging">
                         
@@ -79,17 +141,64 @@ function del(id){
     $.ajax({
         type:"post",
         url:"index.php?r=category/del",
-        data:"id="+id,
+        data:"id="+id+"&del="+'2',
         success:function(e)
         {
-            if(e!=1)
+            if(e==1)
             {
+                $('#a_'+id).remove();
+                $(".banDel").hide();
+            }
+            else
+            {
+                $(".banDel").hide();
                 alert(e);
             }
         }
     })
-    $('#a_'+id).remove();
-    $(".banDel").hide();
+   
+}
+//即点即改
+function aa(post_id)
+{
+    // alert(post_id);
+    $('#d_'+post_id).hide();
+    $('#c_'+post_id).show();
+    $('#c_'+post_id).focus();
+}
+function bb(post_id)
+{
+    var name = $('#b_'+post_id).html().trim();
+    var i_name = $('#c_'+post_id).val().trim();
+    if(i_name==name)
+    {
+        $('#d_'+post_id).show();
+        $('#c_'+post_id).hide();
+    }
+    else
+    {
+        $.ajax({
+                type:"post",
+                url:"index.php?r=category/diangai",
+                data:"post_id="+post_id+"&i_name="+i_name+"&diangai="+'2',
+                success:function(e)
+                {
+                    if(e==1)
+                    {
+                        $('#d_'+post_id).show();
+                        $('#b_'+post_id).html(i_name);
+                        $('#c_'+post_id).hide();
+                    }
+                    else
+                    {
+                        $('#d_'+post_id).show();
+                        $('#c_'+post_id).hide();
+                        alert('修改失败')
+                    }
+                }
+            })
+    }
+    
 }
 </script>
 </html>
