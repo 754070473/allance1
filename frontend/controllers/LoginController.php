@@ -13,6 +13,8 @@ use yii\web\Controller;
 use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
 use yii\web\UrlManager;
+
+
 /**
  * Site controller
  */
@@ -28,7 +30,11 @@ class LoginController extends Controller
 
     public function actionLogin()
     {
-
+       // $model = new LoginForm();
+       //      if ($model->load(Yii::$app->request->post()) && $model->validate()){
+       //          return $this->refresh();
+       //      }
+       //      return $this->render('login.html',['model'=>$model]);
        return $this->render('login.html');
     }
     /**
@@ -95,6 +101,8 @@ class LoginController extends Controller
                       return $this->redirect('index.php?r=index/index');
 
     }
+
+
 
 }
 

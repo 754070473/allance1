@@ -28,6 +28,7 @@ class IntegralController extends Controller
      * [actionIndex 显示积分项列表]
      * @return [type] [description]
      */
+
     public function actionShow()
     {
         $request = Yii::$app->request;

@@ -20,9 +20,29 @@ use yii\filters\AccessControl;
  */
 class CompanyController extends Controller
 {
-   use ControlController;
+    public $enableCsrfValidation=false;
 	//public $layout='public';
     public $layout=false;
+    /**
+     * [actionAdd 设置顾问]
+     * @return [type] [description]
+     */
+    public function actionAdd()
+    {
+        
+        $request= Yii::$app->request;
+        $data['cou_id']=$request->get('cou_id');
+        $com_id=$request->get('com_id');
+        //开始入库
+        $connection = \Yii::$app->db;
+        $re = $connection->createCommand()->update('al_company', $data, "com_id in ($com_id)")->execute();
+        if($re){
+            return $this->redirect('?r=company/show');
+        }else{
+             return $this->redirect('?r=company/show');
+        }
+        
+    }
     /**
      * [actionIndex description]
      * @return [type] [description]
@@ -33,11 +53,12 @@ class CompanyController extends Controller
             ->select(['*'])
             ->from('al_company')
             ->innerJoin('al_com_message', 'al_company.mes_id = al_com_message.mes_id')
+            ->leftJoin('al_counselor', 'al_counselor.cou_id = al_company.cou_id')
             ->all();
-
-        return $this->render('show.html',array('arr'=>$arr));
+        
+        return $this->render('show.html',['arr'=>$arr]);
     }
-      /**
+    /**
      * [actionDelete 删除]
      * @param  string $value [description]
      * @return [type]        [description]
@@ -48,17 +69,17 @@ class CompanyController extends Controller
         $request= Yii::$app->request;
         if(Yii::$app->request->isPost){
                 //批量删除
-                $mes_id=$request->post('mes_id');
+                $com_id=$request->post('com_id');
                 $last_id=$request->post('last_id');
                 $connection = \Yii::$app->db;
-                $num=$connection->createCommand()->delete('al_com_message', "mes_id in ($mes_id)")->execute();
+                $num=$connection->createCommand()->delete('al_company', "com_id in ($com_id)")->execute();
                   if($num)
                   {
                     // 此时删除成功,许查询出部分数据进行填补
                     $arr = (new \yii\db\Query())
                     ->select(['*'])
-                    ->from('al_com_message')
-                    ->where("mes_id>$last_id")
+                    ->from('al_company')
+                    ->where("com_id>$last_id")
                     ->limit($num)
                     ->all();
                     echo $json=json_encode($arr);die;
@@ -67,13 +88,77 @@ class CompanyController extends Controller
                   }
         }else{
             //单删
-            $mes_id=$request->get('mes_id');
+            $com_id=$request->get('com_id');
             $connection = \Yii::$app->db;
-            $delete=$connection->createCommand()->delete('al_com_message', "mes_id in ($mes_id)")->execute();
+            $delete=$connection->createCommand()->delete('al_company', "com_id in ($com_id)")->execute();
             if($delete){
-                return $this->redirect('?r=commessage/show');
+                return $this->redirect('?r=company/show');
             }
         }
 
     }
+     /**
+     * [actionUpdate 修改]
+     * @return [type] [description]
+     */
+    public function actionUpdate()
+    {
+       
+        $request= Yii::$app->request;
+
+        if(Yii::$app->request->isPost){
+
+            
+                //获取元素值
+                $com_id=$request->post('com_id');
+
+                $data['c_pwd']=$request->post('c_pwd');
+                //开始入库
+                $connection = \Yii::$app->db;
+                $re = $connection->createCommand()->update('al_company', $data, "com_id=$com_id")->execute();
+
+                //判断是否添加成功
+                if($re)
+                {
+                    return $this->redirect('index.php?r=company/show');
+                }else{
+                    return $this->render('update.html');
+                }
+
+        }else{
+            $com_id=$request->get('com_id');
+            $arr = (new \yii\db\Query())
+                ->select(['*'])
+                ->from('al_company')
+                ->where("com_id=$com_id")
+                ->one();
+
+            return $this->render('update.html',['com_id' => $com_id,'arr'=>$arr]);
+        }
+
+    }
+    /**
+     * [actionPwdone 密码唯一]
+     * @return [type] [description]
+     */
+    public function actionPwdone()
+    {
+        $request= Yii::$app->request;
+        $c_pwd=$request->post('c_pwd');
+        $com_id=$request->post('com_id');
+        $arr = (new \yii\db\Query())
+                ->select(['*'])
+                ->from('al_company')
+                ->where("com_id=$com_id and c_pwd=$c_pwd")
+                ->all();
+                //print_r($arr);
+        if($arr){
+            echo "1";die;
+        }else{
+            echo "0";die;
+        }
+
+    }
+
+
 }
