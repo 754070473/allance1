@@ -23,7 +23,7 @@
         <!-- banner页面样式 -->
         <div class="banner">
             <div class="add">
-                <a class="addA" href="index.php?r=userlog/show2">企业日志&nbsp;&nbsp;+</a>
+                <a class="addA" href="index.php?r=userlog/show">个人日志&nbsp;&nbsp;+</a>
                 <?php echo $arr['sel'];?>
             </div>
             <!-- banner 表格 显示 -->
@@ -45,7 +45,7 @@
                     <tr class="gradeX" id="<?php echo $val['ulog_id']?>" style="height: 50px">
                         <td><?php echo $val['ulog_id'] ?></td>
                         <td>
-                            <?php echo $val['i_name']?>
+                            <?php echo $val['m_name']?>
                         </td>
                          <td>
                             <?php echo $val['u_content']?>
@@ -82,10 +82,10 @@
          //alert(ulog_id);
         $.ajax({
             type : 'POST',
-            url : 'index.php?r=userlog/delete',
+            url : 'index.php?r=userlog/delete2',
             data :'ulog_id='+ulog_id,
             success : function(msg){
-            	//alert(msg);
+                //alert(msg);
                 if(msg){
                     $('#list').html(msg);
                 }else{

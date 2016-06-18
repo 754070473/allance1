@@ -20,6 +20,7 @@ use yii\web\UrlManager;
  */
 class LoginController extends Controller
 {
+  use LogincontrolController;
     //public $layout='public';
     public $layout=false;
     public $enableCsrfValidation=false;
@@ -48,11 +49,21 @@ class LoginController extends Controller
 
     public function actionLogout()
 
-    {
-                        //打开session
+    { 
+      
+                
+                      //打开session
                        $session = Yii::$app->session;
+
                         unset($session['adm_id']);
+                        //取出session
+                        $name= $session['a_name'];
+                        $content = '管理员退出'.$id.$name;
+                        $this->adminLog($content);
                        return $this->redirect('?r=login/login');
+     
+
+                        
     }
     //登录判断账号密码
      public function actionSelect1()
@@ -62,7 +73,7 @@ class LoginController extends Controller
         $connection = \Yii::$app->db;
         $request = Yii::$app->request;
                         $name= $request->post('name'); 
-                         $pwd= $request->post('pwd'); 
+                         $pwd= md5($request->post('pwd')); 
                         //print_r($user);die;
         $row = (new \yii\db\Query())
                         ->select(['*'])
@@ -82,7 +93,7 @@ class LoginController extends Controller
           $connection = \Yii::$app->db;
         $request = Yii::$app->request;
                         $name= $request->post('name1'); 
-                         $pwd= $request->post('pwd1'); 
+                         $pwd= md5($request->post('pwd1')); 
                         //print_r($user);die;
         $row = (new \yii\db\Query())
                         ->select(['*'])
@@ -90,14 +101,23 @@ class LoginController extends Controller
                         ->where(['a_account' =>$name,'a_pwd' =>$pwd])  
                        ->all();
                        $id=$row['0']['adm_id'];
+                        $name=$row['0']['a_name'];
                        //print_r($row['0']['adm_id']);die;
 
                        //打开session
                        $session = Yii::$app->session;
                        //把id存储session
                        $session['adm_id'] =$id;
+                        //把id存储session
+                        $session['a_name'] =$name;
                         //取出session
                         //$adm_id= $session['adm_id'];
+
+                      
+                     
+                       
+                        $content = '管理员登录'.$id.$name;
+                          $this->adminLog($content);
                       return $this->redirect('index.php?r=index/index');
 
     }
