@@ -56,10 +56,10 @@ class LoginController extends Controller
                        $session = Yii::$app->session;
 
                         unset($session['adm_id']);
-                        //取出session
-                        $name= $session['a_name'];
-                        $content = '管理员退出'.$id.$name;
-                        $this->adminLog($content);
+                        // //取出session
+                        // $name= $session['a_name'];
+                        // $content = '管理员退出'.$name;
+                        // $this->adminLog($conten);
                        return $this->redirect('?r=login/login');
      
 
