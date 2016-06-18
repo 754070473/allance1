@@ -63,6 +63,9 @@ class AdminController extends Controller
             ])->execute();
 
             if ($qq) {
+				$id = $connection->getLastInsertID();
+				$content = '添加管理员'.$id.'-'.$name;
+				$this->adminLog($content);
                 return $this->render('show.html', ["arr" => $re]);
             } else {
                 return $this->render('useradd.html');

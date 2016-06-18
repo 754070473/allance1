@@ -19,9 +19,6 @@
         <div class="page">
             <!-- banner页面样式 -->
             <div class="banner">
-                <div class="add">
-                    <a class="addA" href="index.php?r=integral/add">添加积分项&nbsp;&nbsp;+</a>
-                </div>
                 <!-- banner 表格 显示 -->
                 <div class="banShow">
                     <table border="0" cellspacing="0" cellpadding="0">
@@ -36,29 +33,40 @@
                         if(!empty($arr)){
                         foreach($arr as $key=>$val){
                         ?>
-                        <tr>
+                        <tr style="height: 50px;" id="tr<?php echo $val['pri_id']?>">
                             <td>
                                 <span style="float: left">
                                 <input type="checkbox" value="<?php echo $val['pri_id']?>" name="id[]">
+                                    <?php if(!empty($val['son'])){?>
                                 <img class="img_1" border="0" align="absmiddle" src="img/left_e.gif" parent_id="<?php echo $val['pri_id']?>">
                                 <img class="img_2" border="0" align="absmiddle" src="img/left_d.gif" parent_id="<?php echo $val['pri_id']?>" style="display: none;">
+                                    <?php }?>
                                 <span style="color:#0066CC; " class="span"><?php echo $val['i_name']?></span>
                                 <input type="text" parent_name="i_name" parent_id="<?php echo $val['pri_id']?>" class="text" style="color:#0066CC;display: none;" value="<?php echo $val['i_name']?>">
                                 <span style="color:#CCCCCC">(id:1)</span>
                                 </span>
                             </td>
                             <td>
-
+                                <span style="color:#0066CC; " class="span"><?php echo $val['i_controller']?></span>
+                                <input type="text" parent_name="i_controller" parent_id="<?php echo $val['pri_id']?>" class="text" style="color:#0066CC;display: none;" value="<?php echo $val['i_controller']?>">
                             </td>
-                            <td></td>
-                            <td></td>
-							<td></td>
+                            <td>
+                                <span style="color:#0066CC; " class="span"><?php echo $val['i_function']?></span>
+                                <input type="text" parent_name="i_function" parent_id="<?php echo $val['pri_id']?>" class="text" style="color:#0066CC;display: none;" value="<?php echo $val['i_function']?>">
+                            </td>
+                            <td>
+                                <span id="time<?php echo $val['pri_id']?>"><?php echo $val['i_addtime']?></span>
+                            </td>
+							<td>
+                                <a href="javascript:void(0)" onclick="addChildren(<?php echo $val['pri_id']?>,'<?php echo $val['i_controller']?>')">此权限下添加子权限</a>&nbsp;&nbsp;&nbsp;
+                                <a href="javascript:void(0);" onclick="ckDel(<?php echo $val['pri_id']?>)">删除</a>
+                            </td>
                         </tr>
                         <?php
                         if(!empty($val['son'])){
                         foreach($val['son'] as $k=>$v){
                         ?>
-                        <tr style="display: none" class="tr<?php echo $val['pri_id']?>">
+                        <tr style="display: none;height: 50px;" class="tr<?php echo $val['pri_id']?>" par_id="1" id="tr<?php echo $v['pri_id']?>">
                             <td>
                                 <span style="float: left">
                                 <img src="img/cat_left1.gif" border="0"/>
@@ -68,10 +76,18 @@
                                 <span style="color:#CCCCCC">(id:2)</span>
                                 </span>
                             </td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-							<td></td>
+                            <td>
+                                <span style="color:#0066CC;" class="span"><?php echo $v['i_controller']?></span>
+                                <input parent_name="i_controller" parent_id="<?php echo $v['pri_id']?>" type="text" class="text" style="color:#0066CC;display: none" value="<?php echo $v['i_controller']?>">
+                            </td>
+                            <td>
+                                <span style="color:#0066CC;" class="span"><?php echo $v['i_function']?></span>
+                                <input parent_name="i_function" parent_id="<?php echo $v['pri_id']?>" type="text" class="text" style="color:#0066CC;display: none" value="<?php echo $v['i_function']?>">
+                            </td>
+                            <td>
+                                <span id="time<?php echo $v['pri_id']?>"><?php echo $v['i_addtime']?></span>
+                            </td>
+							<td><a href="javascript:void(0);" onclick="ckDel(<?php echo $v['pri_id']?>)">删除</a></td>
                         </tr>
                         <?php }}}}?>
                         </table>
@@ -89,22 +105,22 @@
     <script type="text/javascript">
         $('.img_1').click(function(){
             var id = $(this).attr('parent_id');
-            $('.tr'+id).slideDown('2000');
+            $('.tr'+id).show('slow');
             $(this).hide();
             $(this).next().show();
         });
         $('.img_2').click(function(){
             var id = $(this).attr('parent_id');
-            $('.tr'+id).slideUp('2000');
+            $('.tr'+id).hide('slow');
             $(this).hide();
             $(this).prev().show();
         });
-        $('.span').click(function(){
-            $(this).hide();
+		$(document).on('click','.span',function(){
+			$(this).hide();
 			$(this).next().show().focus();
-        });
-		$('.text').blur(function(){
-            var th = $(this);
+		});
+		$(document).on('blur','.text',function(){
+		var th = $(this);
 			var value = $(this).prev().html().trim();
 			var new_value = $(this).val().trim();
 			if(new_value == value){
@@ -133,12 +149,81 @@
 					url : 'index.php?r=privilege/upd',
 					data : 'id='+pri_id+'&name='+name+'&value='+new_value,
 					success : function(msg){
-						if(msg){
-							
+						if(msg!=0){
+                            th.hide();
+                            th.val(new_value);
+                            th.prev().html(new_value);
+                            th.prev().show();
+                            $('#time'+pri_id).html(msg);
+						}else{
+							alert('服务器繁忙，请稍后再试！');
 						}
 					}
 				});
 			}
-		})
+		});
+        function addChildren(id,controller){
+			var tr = $('.tr'+id);
+			if(tr){
+            tr.show('slow');
+            tr.last().after('<tr id="addChild" style="height: 50px;"><td><input type="text" id="addChild1" placeholder="请输入权限名称"/></td><td><span style="color:#0066CC;" id="addChild3">'+controller+'</span></td><td><input type="text" id="addChild2" placeholder="请输入方法名称"/></td><td></td><td><a href="javascript:void(0);" onclick="addChildren1('+id+')">保存</a>&nbsp;&nbsp;<a href="javascript:void(0);" onclick="addChildren2()">取消</a></td></tr>');
+			}else{
+				$(this).after('<tr id="addChild" style="height: 50px;"><td><input type="text" id="addChild1" placeholder="请输入权限名称"/></td><td><span style="color:#0066CC;" id="addChild3">'+controller+'</span></td><td><input type="text" id="addChild2" placeholder="请输入方法名称"/></td><td></td><td><a href="javascript:void(0);" onclick="addChildren1('+id+')">保存</a>&nbsp;&nbsp;<a href="javascript:void(0);" onclick="addChildren2()">取消</a></td></tr>');
+			}
+        }
+		function addChildren1(id)
+		{
+            var i_controller = $('#addChild3').html().trim();
+			var i_name = $('#addChild1').val();
+			var i_function = $('#addChild2').val();
+			if(i_name == '' || i_function == '')
+			{
+				alert('请输入正确的值！');
+			}
+			else
+			{
+				$.ajax({
+					type : 'POST',
+					url : 'index.php?r=privilege/add',
+					data : 'name='+i_name+'&controller='+i_controller+'&function='+i_function+'&id='+id,
+					success : function(msg){
+						if(msg == 0){
+							alert('系统繁忙，请稍后再试');
+						}else{
+							var num = msg.indexOf(',');
+							var son_id = msg.substr(0,num);
+							var i_addtime = msg.substr(parseInt(num)+1);
+							$('#addChild').after('<tr style="height: 50px;" class="tr'+id+'" par_id="1" id="tr'+son_id+'"><td><span style="float: left"><img src="img/cat_left1.gif" border="0"/><input type="checkbox" value="'+son_id+'" name="id[]">&nbsp;<span style="color:#0066CC;" class="span">'+i_name+'</span><input parent_name="i_name" parent_id="'+son_id+'" type="text" class="text" style="color:#0066CC;display: none" value="'+i_name+'"><span style="color:#CCCCCC">(id:2)</span></span></td><td><span style="color:#0066CC;" class="span">'+i_controller+'</span><input parent_name="i_controller" parent_id="'+son_id+'" type="text" class="text" style="color:#0066CC;display: none" value="'+i_controller+'"></td><td><span style="color:#0066CC;" class="span">'+i_function+'</span><input parent_name="i_function" parent_id="'+son_id+'" type="text" class="text" style="color:#0066CC;display: none" value="'+i_function+'"></td><td><span id="time'+son_id+'">'+i_addtime+'</span></td><td><a href="javascript:void(0);" onclick="ckDel('+son_id+')">删除</a></td></tr>');
+							$('#addChild').remove();
+						}
+					}
+				});
+			}
+		}
+		function addChildren2()
+		{
+			$('#addChild').remove();
+		}
+		//ajax节点删除
+		function ckDel(id)
+		{
+			var tr = $('.tr'+id).eq(0).attr('par_id');
+			if(tr){
+				alert('此分类下有子分类，不能删除！');
+			}else{
+				$.ajax({
+					type : 'POST',
+					url : 'index.php?r=privilege/del',
+					data : 'id='+id,
+					success : function(msg){
+						if(msg==1){
+							$('#tr'+id).remove();
+						}else{
+							alert('系统繁忙，请稍后再试！');
+						}
+					}
+				});
+			}
+		}
     </script>
     </html>
