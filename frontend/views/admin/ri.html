@@ -48,9 +48,11 @@
 
                     <table class="table table-striped table-bordered table-hover dataTables-example">
                         <thead>
+
                         <tr>
+                            <th><input type="checkbox" id="s2" onclick="fun()"></th>
                             <th>序号</th>
-                            <th>管理员id</th>
+                            <th>管理员姓名</th>
                             <th>控制器</th>
 
                             <th>添加时间</th>
@@ -60,8 +62,8 @@
                         <tbody>
                         <?php foreach($arr as $v){?>
                         <tr>
+                            <td><input type="checkbox"  class="s1" value="<?= $v['alog_id']?>"></td>
                             <td><?= $v['alog_id']?></td>
-
                             <td><?= $v['a_name']?></td>
                             <td><?= $v['a_content']?></td>
                             <td><?= $v['a_time']?></td>
@@ -73,6 +75,7 @@
                         </tbody>
 
                     </table>
+                    <input type="button" value="批量删除" onclick="pi()">
 
                 </div>
             </div>
@@ -147,6 +150,45 @@
      *  @memberof DataTable#oApi
      */
 
+      function   pi(){
+       var   re=$(".s1");
+        var str="";
+        for(var i=0;i<re.length;i++){
+            if(re.eq(i).prop('checked') == true){
+              str+=","+re.eq(i).val();
+            }
+        }
+         var qq=str.substr(1);
+        $.ajax({
+            type: "POST",
+            url: "index.php?r=admin/pi",
+            data: "id="+qq,
+            success: function(msg){
+               if(msg==1){
+              location.href="index.php?r=admin/ri";
+               }else{
+                   alert("删除失败")
+               }
+
+            }
+        });
+    }
+      function fun(){
+       var    check=$("#s2").prop('checked')
+        var    re=$(".s1")
+          //alert(re);
+          if(check==true){
+
+              for(i=0;i<re.length;i++){
+                  re.eq(i).prop('checked',true)
+              }
+          }else{
+
+              for(i=0;i<re.length;i++){
+                  re.eq(i).prop('checked',false)
+              }
+          }
+      }
 </script>
 
 </body>

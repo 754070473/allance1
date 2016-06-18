@@ -28,7 +28,7 @@ class IntegralController extends Controller
      * [actionIndex 显示积分项列表]
      * @return [type] [description]
      */
-   
+
     public function actionShow()
     {
         $request = Yii::$app->request;
@@ -40,7 +40,7 @@ class IntegralController extends Controller
             $where = "i_name like '%$search%'";
         }
         $order = 'inte_id desc';
-        $data = ControlController::ajaxPage('al_integral',5,$p,$where,$order);
+        $data = $this->ajaxPage('al_integral',5,$p,$where,$order);
 //        print_r($data);die;
         return $this->render('show.html',array('arr'=>$data));
     }
@@ -58,13 +58,18 @@ class IntegralController extends Controller
     public function actionDelet(){
         $request = Yii::$app->request;
         $id = $request->post('inte_id');
+        $connection = \Yii::$app->db;
+        $command = $connection->createCommand("SELECT i_name FROM al_privilege WHERE pri_id=$id")->queryOne();
+        $old_name = $command['i_name'];
         $re = Integral::findOne($id)->delete();
         if($re){
+            $content = '删除积分项'.$id.'-'.$old_name;
+            $this->adminLog($content);
             $request = Yii::$app->request;
             $p = $request->post('p')?$request->post('p'):1;
             $where = 1;
             $order = 'inte_id desc';
-            $data = ControlController::ajaxPage('al_integral',5,$p,$where,$order);
+            $data = $this->ajaxPage('al_integral',5,$p,$where,$order);
             return $this->render('show.html',array('arr'=>$data));
         }else{
             echo 0;
@@ -90,6 +95,9 @@ class IntegralController extends Controller
         $integral->i_num = $i_num;
         $re = $integral->insert();
         if($re){
+            $id = \Yii::$app->db->getLastInsertID();
+            $content = '添加积分项'.$id.'-'.$i_name;
+            $this->adminLog($content);
             //添加成功  跳转列表页面
             return $this->redirect("index.php?r=integral/show");
         }else{
@@ -103,6 +111,9 @@ class IntegralController extends Controller
         $id = $request->post('id');
         $name = $request->post('name');
         $value = $request->post('value');
+        $connection = \Yii::$app->db;
+        $command = $connection->createCommand("SELECT i_name FROM al_privilege WHERE pri_id=$id")->queryOne();
+        $old_name = $command['i_name'];
         $integral = Integral::findOne($id);
         if($name == 'name'){
             $integral->i_name = $value;
@@ -115,14 +126,11 @@ class IntegralController extends Controller
         }
         $re = $integral->update();
         if($re){
+            $content = '修改权限'.$id.'-'.$name.'->'.$old_name;
+            $this->adminLog($content);
             echo date('Y-m-d H:i:s',time());
         }else{
             echo 0;
         }
-    }
-
-    public function actionTest(){
-        $arr = ControlController::classify('al_privilege','p_pid');
-        print_r($arr);
     }
 }

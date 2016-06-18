@@ -30,6 +30,7 @@ trait ControlController {
     public function adminLog($content){
         mysql_connect('127.0.0.1','root','root')or die('连接失败');
         mysql_select_db('allance')or die('选择失败');
+        mysql_query("SET NAMES `UTF8`");
         $adm_id = $_SESSION['adm_id'];
         $time = date('Y-m-d H:i:s',time());
         $sql = "insert into al_admin_log(adm_id,content,log_addtime) values('$adm_id','$content','$time')";
@@ -46,7 +47,7 @@ trait ControlController {
      * @return mixed        返回    三维数组
      */
     public function ajaxPage($table,$num,$p,$where=1,$order=1){
-        mysql_connect('127.0.0.1','root','root')or die('连接失败');
+        mysql_connect('127.0.0.1','root','147542')or die('连接失败');
         mysql_select_db('allance')or die('选择失败');
         mysql_query("SET NAMES `UTF8`");
         //查询语句
@@ -124,7 +125,7 @@ trait ControlController {
      * @return array
      */
     public function classify($table,$pid_name,$pid=0){
-        mysql_connect('127.0.0.1','root','root')or die('连接失败');
+        mysql_connect('127.0.0.1','root','147542')or die('连接失败');
         mysql_select_db('allance')or die('选择失败');
         mysql_query("SET NAMES `UTF8`");
         //查询表中根分类

@@ -34,7 +34,13 @@
 								<option value="<?php echo $val['post_id'] ?>">
 									<?php echo $val['i_name'] ?>
 								</option>
+								<?php foreach($val['son'] as $k=>$v) {?>
+								<option value="<?php echo $v['post_id'] ?>">
+									|--<?php echo $v['i_name'] ?>
+								</option>
 							<?php } ?>
+							<?php } ?>
+
 						</select>
 					</div>
 					<div class="bbD">
