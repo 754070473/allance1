@@ -62,6 +62,9 @@ class AdminController extends Controller
             ])->execute();
 
             if ($qq) {
+                $id = $connection->getLastInsertID();
+                $content = '添加管理员'.$id.'-'.$name;
+                $this->adminLog($content);
                 return $this->render('show.html', ["arr" => $re]);
             } else {
                 return $this->render('useradd.html');
@@ -84,8 +87,18 @@ class AdminController extends Controller
 
         $id = $request->get('id');
         $connection = \Yii::$app->db;
+        $na = (new \yii\db\Query())
+            ->select(['a_name'])
+            ->from('al_admin')
+            ->where(['adm_id' => $id])
+            ->all();
+        $name=$na['0']['a_name'];
+      // echo $name;die;
         $re = $connection->createCommand()->delete('al_admin', "adm_id=$id")->execute();
         if ($re) {
+            $id = $connection->getLastInsertID();
+            $content = '添加管理员'.$id.'-'.$name;
+            $this->adminLog($content);
             return $this->redirect(array("admin/show"));
         } else {
             echo "<script>alert('删除失败')</script>";
@@ -96,7 +109,6 @@ class AdminController extends Controller
     public function actionUpdate()
     {
         $request = Yii::$app->request;
-
         $id = $request->get('id');
         $rows = (new \yii\db\Query())
             ->from('al_admin')
@@ -119,6 +131,9 @@ class AdminController extends Controller
         $re = $connection->createCommand()->update('al_admin', ['a_name' => $name, 'a_pwd' => $pwd], "adm_id=$id")->execute();
         // $connection->createCommand()->delete('user', 'status = 0')->execute();
         if ($re) {
+            $id = $connection->getLastInsertID();
+            $content = '添加管理员'.$id.'-'.$name;
+            $this->adminLog($content);
             return $this->redirect(array('admin/show'));
         } else {
             echo "<script>alert('修改失败')</script>";
@@ -148,10 +163,21 @@ class AdminController extends Controller
         $id = $request->get('id');
         $connection = \Yii::$app->db;
 
+        $na = (new \yii\db\Query())
+            ->select(['a_name'])
+            ->from('al_admin')
+            ->where(['adm_id' => $id])
+
+            ->all();
+        $name=$na['0']['a_name'];
 
         $re = $connection->createCommand()->delete('al_admin_log', "alog_id=$id")->execute();
 
         if ($re) {
+
+            $id = $connection->getLastInsertID();
+            $content = '添加管理员'.$id.'-'.$name;
+            $this->adminLog($content);
             return $this->redirect(array("admin/ri"));
         } else {
             echo "<script>alert('删除失败')</script>";
@@ -165,12 +191,55 @@ class AdminController extends Controller
         $request = Yii::$app->request;
 
         $id = $request->get('id');
+      //  $connection = \Yii::$app->db;
+
        // echo $id;  die;
          if($id){
+             $connection = \Yii::$app->db;
+
+             $na = (new \yii\db\Query())
+                 ->select(['a_name'])
+                 ->from('al_admin')
+                 ->where(['adm_id' => $id])
+
+                 ->all();
+             $name=$na['0']['a_name'];
+             $id = $connection->getLastInsertID();
+             $content = '添加管理员'.$id.'-'.$name;
+             $this->adminLog($content);
              return $this->redirect(array("admin/ri"));
          }else{
-             echo "<script>alert('删除失败')</script>";
+             echo "<script>alert('修改失败')</script>";
          }
+
+
+    }
+    //批量删除数据
+    public function actionPi()
+    {
+        $request = Yii::$app->request;
+
+        $id = $request->post('id');
+        $connection = \Yii::$app->db;
+    //echo $id;  die;
+        $qq=$connection->createCommand()->delete('al_admin_log',"alog_id in($id)")->execute();
+        if($qq){
+            $connection = \Yii::$app->db;
+
+            $na = (new \yii\db\Query())
+                ->select(['a_name'])
+                ->from('al_admin')
+                ->where(['adm_id' => $id])
+
+                ->all();
+            $name=$na['0']['a_name'];
+            $id = $connection->getLastInsertID();
+            $content = '添加管理员'.$id.'-'.$name;
+            $this->adminLog($content);
+          echo 1;
+        }else{
+            echo  2;
+        }
 
 
     }
