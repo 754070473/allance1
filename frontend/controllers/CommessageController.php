@@ -24,6 +24,7 @@ use yii\web\UploadedFile;
  */
 class CommessageController extends Controller
 {
+     use ControlController;
     public $enableCsrfValidation=false;
 	//public $layout='public';
     public $layout=false;
@@ -154,6 +155,10 @@ class CommessageController extends Controller
         }
 
     }
+    /**
+     * [actionOneupdate 几点技改]
+     * @return [type] [description]
+     */
     public function actionOneupdate()
     {
         $request= Yii::$app->request;

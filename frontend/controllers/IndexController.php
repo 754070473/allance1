@@ -16,6 +16,7 @@ use yii\filters\AccessControl;
  */
 class IndexController extends Controller
 {
+     use ControlController;
 	//public $layout='public';
     public $layout=false;
     /**

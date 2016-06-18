@@ -20,6 +20,7 @@ header("content-type:text/html;charset=utf-8");
  */
 class IntegralController extends Controller
 {
+     use ControlController;
     public $enableCsrfValidation = false;
 	//public $layout='public';
     public $layout=false;
@@ -27,12 +28,17 @@ class IntegralController extends Controller
      * [actionIndex 显示积分项列表]
      * @return [type] [description]
      */
-    use ControlController;
+
     public function actionShow()
     {
         $request = Yii::$app->request;
         $p = $request->post('p')?$request->post('p'):1;
-        $where = 1;
+        $search = $request->post('search')?$request->post('search'):"";
+        if($search==""){
+            $where = 1;
+        }else{
+            $where = "i_name like '%$search%'";
+        }
         $order = 'inte_id desc';
         $data = ControlController::ajaxPage('al_integral',5,$p,$where,$order);
 //        print_r($data);die;

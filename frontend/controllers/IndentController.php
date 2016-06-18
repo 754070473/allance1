@@ -19,6 +19,7 @@ use yii\filters\AccessControl;
  */
 class IndentController extends Controller
 {
+     use ControlController;
 	//public $layout='public';
     public $layout=false;
     public $enableCsrfValidation = false;

@@ -11,6 +11,7 @@ use frontend\models\Navigation;
 */
 class NavigationController extends \yii\web\Controller
 {
+     use ControlController;
 	public $layout=false;
 	public $enableCsrfValidation=false;
     //渲染添加导航列表
