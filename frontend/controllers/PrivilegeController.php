@@ -29,7 +29,7 @@ class PrivilegeController extends Controller
      */
     public function actionShow()
     {
-        $arr = ControlController::classify('al_privilege','p_pid');
+        $arr = $this->classify('al_privilege','p_pid');
         return $this->render('show.html',array('arr'=>$arr));
     }
     /**

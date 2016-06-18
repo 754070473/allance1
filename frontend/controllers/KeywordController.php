@@ -10,7 +10,7 @@ use frontend\models\Keyword;
  */
 class KeywordController extends Controller
 {
-     use ControlController;
+    use ControlController;
     public $layout=false;
     public $enableCsrfValidation=false;
     //渲染添加热词列表
@@ -19,6 +19,7 @@ class KeywordController extends Controller
         $model = new Keyword();   //实例化model
 
         $request = Yii::$app->request;  //实例化请求处理
+        $connection = \Yii::$app->db;   //实例化数据库操作
         if($request->isPost)
         {
             //接受数据
@@ -36,6 +37,9 @@ class KeywordController extends Controller
             //判断
             if($re)
             {
+                $id = $connection->getLastInsertID();
+                $content = '添加热词'.$id.'-'.$k_name;
+                $this->adminLog($content);
                 return $this->redirect(array('keyword/show'));
             }
             else
@@ -67,16 +71,19 @@ class KeywordController extends Controller
         $model = new Keyword();   //实例化model
 
         $request = Yii::$app->request;  //实例化请求处理
-
+        $connection = \Yii::$app->db;   //实例化数据库操作
         //接受id
         $id=$request->get('id');
 
         $model = Keyword::findOne($id);
+        $k_name = $model->k_name;
         $re=$model->delete();
         
         //判断
         if($re)
         {
+            $content = '删除热词'.$id.'-'.$k_name;
+            $this->adminLog($content);
             return $this->redirect(['keyword/show']);
         }
         else
@@ -106,6 +113,7 @@ class KeywordController extends Controller
         $model = new Keyword();   //实例化model
 
         $request = Yii::$app->request;  //实例化请求处理
+        $connection = \Yii::$app->db;   //实例化数据库操作
 
         //接受收据
         $id=$request->post('id');
@@ -115,6 +123,7 @@ class KeywordController extends Controller
         $k_addtime=date('Y-m-d H:i:s',time());
         
         $models = Keyword::findOne($id);
+        $prev_k_name=$models->k_name;     //修改前名称
         $models->k_name=$k_name;
         $models->k_num=$k_num;
         $models->k_addtime=$k_addtime;
@@ -123,6 +132,8 @@ class KeywordController extends Controller
         //判断
         if($re)
         {
+            $content = '修改热词'.$id.'-'.$prev_k_name.'=>'.$k_name;
+            $this->adminLog($content);
             return $this->redirect(['keyword/show']);
         }
         else
@@ -137,17 +148,21 @@ class KeywordController extends Controller
         $model = new Keyword();   //实例化model
 
         $request = Yii::$app->request;  //实例化请求处理
+        $connection = \Yii::$app->db;   //实例化数据库操作
         //接受收据
         $id=$request->post('id');
         $k_num=$request->post('num');
 
         $models = Keyword::findOne($id);
+        $prev_k_num=$models->k_num;    //修改前次数
         $models->k_num=$k_num;
         $re=$models->save();
 
         //判断
         if($re)
         {
+            $content = '修改次数'.$id.'-'.$prev_k_num.'=>'.$k_num;
+            $this->adminLog($content);
             echo 1;
         }
         else
