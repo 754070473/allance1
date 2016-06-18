@@ -41,8 +41,8 @@ class IndentController extends Controller
             ->all();
 
 
-        print_r($rows);die;
-        return $this->render('show.html');
+       // print_r($rows);die;
+        return $this->render('show.html',["arr" => $rows]);
     }
     /**
      * [actionAdd 添加]

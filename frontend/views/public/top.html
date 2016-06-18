@@ -16,7 +16,17 @@
 		</div>
 		<div class="headR">
 			<p class="p1">
-				
+			<?php
+			
+                      //打开session
+                       $session = Yii::$app->session;
+
+                      
+                        //取出session
+                        $name= $session['a_name'];
+                        //echo"$name";
+		echo '欢迎'."$name".'登录';	
+			?>	
 			</p>
 			<p class="p2">
 				<a href="index.php?r=admin/update1" class="resetPWD" target="main">重置密码</a>&nbsp;&nbsp;<a

@@ -63,7 +63,8 @@
                         <?php foreach($arr as $v){?>
                         <tr>
                             <td><?= $v['adm_id']?></td>
-                            <td><?= $v['a_account']?></td>
+                            <td id="s3<?= $v['adm_id']?>" onclick="fun(<?= $v['adm_id']?>)"> <input type="text" id="s1<?= $v['adm_id']?>"   value="<?= $v['a_account'] ?>" style="display: none;">
+                              <span  id="s2<?= $v['adm_id']?>"><?= $v['a_account'] ?></span>  </td>
                             <td><?= $v['a_name']?></td>
                             <td><?= $v['a_pwd']?></td>
                             <td><?= $v['a_addtime']?></td>
@@ -141,6 +142,7 @@
     }
 
 </script>
+<script src="<?= yii\helpers\Url::to('js/jquery-2.1.4.min.js') ?>"></script>
 <script type="text/javascript">
     /**
      * Generate the node required for user display length changing
@@ -148,7 +150,11 @@
      *  @returns {node} Display length feature node
      *  @memberof DataTable#oApi
      */
+    function  fun(id){
+        $('#s1'+id).show().focus();
+        $('#s2'+id).hide();
 
+    }
 </script>
 
 </body>
