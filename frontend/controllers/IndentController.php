@@ -41,7 +41,7 @@ class IndentController extends Controller
             ->all();
 
 
-        print_r($rows);die;
+        //print_r($rows);die;
         return $this->render('show.html');
     }
     /**
