@@ -44058,3 +44058,1588 @@ $_SERVER = [
     'REQUEST_TIME_FLOAT' => 1466210023.652
     'REQUEST_TIME' => 1466210023
 ]
+2016-06-18 10:02:51 [::1][-][-][error][yii\db\Exception] exception 'PDOException' with message 'SQLSTATE[42S22]: Column not found: 1054 Unknown column 'al_company.cou_id' in 'on clause'' in F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\db\Command.php:837
+Stack trace:
+#0 F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\db\Command.php(837): PDOStatement->execute()
+#1 F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\db\Command.php(359): yii\db\Command->queryInternal('<span class="st...', '<span class="ke...')
+#2 F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\db\Query.php(206): yii\db\Command->queryAll()
+#3 F:\phpStudy\WWW\php_9\allance1\frontend\controllers\CompanyController.php(57): yii\db\Query->all()
+#4 [internal function]: frontend\controllers\CompanyController->actionShow()
+#5 F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array('[<span class="t...', '[]')
+#6 F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams('[<span class="s...')
+#7 F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('<span class="st...', '[<span class="s...')
+#8 F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('<span class="st...', '[<span class="s...')
+#9 F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#10 F:\phpStudy\WWW\php_9\allance1\frontend\web\index.php(18): yii\base\Application->run()
+#11 {main}
+
+Next exception 'yii\db\Exception' with message 'SQLSTATE[42S22]: Column not found: 1054 Unknown column 'al_company.cou_id' in 'on clause'
+The SQL being executed was: SELECT * FROM `al_company` INNER JOIN `al_com_message` ON al_company.mes_id = al_com_message.mes_id LEFT JOIN `al_counselor` ON al_counselor.cou_id = al_company.cou_id' in F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\db\Schema.php:628
+Stack trace:
+#0 F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\db\Command.php(852): yii\db\Schema->convertException(Object(PDOException), 'SELECT * FROM `...')
+#1 F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\db\Command.php(359): yii\db\Command->queryInternal('<span class="st...', '<span class="ke...')
+#2 F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\db\Query.php(206): yii\db\Command->queryAll()
+#3 F:\phpStudy\WWW\php_9\allance1\frontend\controllers\CompanyController.php(57): yii\db\Query->all()
+#4 [internal function]: frontend\controllers\CompanyController->actionShow()
+#5 F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array('[<span class="t...', '[]')
+#6 F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams('[<span class="s...')
+#7 F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('<span class="st...', '[<span class="s...')
+#8 F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('<span class="st...', '[<span class="s...')
+#9 F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#10 F:\phpStudy\WWW\php_9\allance1\frontend\web\index.php(18): yii\base\Application->run()
+#11 {main}
+Additional Information:
+Array
+(
+    [0] => 42S22
+    [1] => 1054
+    [2] => Unknown column 'al_company.cou_id' in 'on clause'
+)
+
+2016-06-18 10:02:51 [::1][-][-][info][application] $_GET = [
+    'r' => 'company/show'
+]
+
+$_COOKIE = [
+    '__gads' => 'ID=958cf7cb6afa7cad:T=1460978978:S=ALNI_Mb2TnEoFXLJ87eaP3y14ps-v80dlw'
+    'bdshare_firstime' => '1460978979566'
+    'g' => '89642_1461225954402'
+    'CNZZDATA2192707' => 'cnzz_eid=16655850-1461223841-&ntime=1461330789'
+    'Hm_lvt_dfa5478034171cc641b1639b2a5b717d' => '1461225955,1461244135,1461331760'
+    '_ga' => 'GA1.1.1275183857.1461225955'
+    'pgv_pvi' => '7869699072'
+    'PHPSESSID' => 'bo871pcj75rris9cb9q4ss6ue7'
+    'pgv_si' => 's6540012544'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:47.0) Gecko/20100101 Firefox/47.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://localhost/php_9/allance1/frontend/web/index.php?r=public/left'
+    'HTTP_COOKIE' => '__gads=ID=958cf7cb6afa7cad:T=1460978978:S=ALNI_Mb2TnEoFXLJ87eaP3y14ps-v80dlw; bdshare_firstime=1460978979566; g=89642_1461225954402; CNZZDATA2192707=cnzz_eid%3D16655850-1461223841-%26ntime%3D1461330789; Hm_lvt_dfa5478034171cc641b1639b2a5b717d=1461225955,1461244135,1461331760; _ga=GA1.1.1275183857.1461225955; pgv_pvi=7869699072; PHPSESSID=bo871pcj75rris9cb9q4ss6ue7; pgv_si=s6540012544'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'PATH' => 'F:\\phpStudy\\php55;D:\\Program Files\\Git\\cmd;C:\\Program Files\\TortoiseGit\\bin;'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e PHP/5.5.30'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'F:/phpStudy/WWW'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'F:/phpStudy/WWW'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'SCRIPT_FILENAME' => 'F:/phpStudy/WWW/php_9/allance1/frontend/web/index.php'
+    'REMOTE_PORT' => '54171'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=company/show'
+    'REQUEST_URI' => '/php_9/allance1/frontend/web/index.php?r=company/show'
+    'SCRIPT_NAME' => '/php_9/allance1/frontend/web/index.php'
+    'PHP_SELF' => '/php_9/allance1/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1466215371.005
+    'REQUEST_TIME' => 1466215371
+]
+2016-06-18 10:02:57 [::1][-][-][error][yii\db\Exception] exception 'PDOException' with message 'SQLSTATE[42S22]: Column not found: 1054 Unknown column 'al_post.mes_id' in 'on clause'' in F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\db\Command.php:837
+Stack trace:
+#0 F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\db\Command.php(837): PDOStatement->execute()
+#1 F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\db\Command.php(359): yii\db\Command->queryInternal('<span class="st...', '<span class="ke...')
+#2 F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\db\Query.php(206): yii\db\Command->queryAll()
+#3 F:\phpStudy\WWW\php_9\allance1\frontend\controllers\IndentController.php(41): yii\db\Query->all()
+#4 [internal function]: frontend\controllers\IndentController->actionShow()
+#5 F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array('[<span class="t...', '[]')
+#6 F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams('[<span class="s...')
+#7 F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('<span class="st...', '[<span class="s...')
+#8 F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('<span class="st...', '[<span class="s...')
+#9 F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#10 F:\phpStudy\WWW\php_9\allance1\frontend\web\index.php(18): yii\base\Application->run()
+#11 {main}
+
+Next exception 'yii\db\Exception' with message 'SQLSTATE[42S22]: Column not found: 1054 Unknown column 'al_post.mes_id' in 'on clause'
+The SQL being executed was: SELECT * FROM `al_indent` INNER JOIN `al_recruit` ON al_indent.rec_id=al_recruit.rec_id  INNER JOIN `al_post` ON al_recruit.post_id=al_post.post_id INNER JOIN `al_com_message` ON al_post.mes_id=al_com_message.mes_id' in F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\db\Schema.php:628
+Stack trace:
+#0 F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\db\Command.php(852): yii\db\Schema->convertException(Object(PDOException), 'SELECT * FROM `...')
+#1 F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\db\Command.php(359): yii\db\Command->queryInternal('<span class="st...', '<span class="ke...')
+#2 F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\db\Query.php(206): yii\db\Command->queryAll()
+#3 F:\phpStudy\WWW\php_9\allance1\frontend\controllers\IndentController.php(41): yii\db\Query->all()
+#4 [internal function]: frontend\controllers\IndentController->actionShow()
+#5 F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array('[<span class="t...', '[]')
+#6 F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams('[<span class="s...')
+#7 F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('<span class="st...', '[<span class="s...')
+#8 F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('<span class="st...', '[<span class="s...')
+#9 F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#10 F:\phpStudy\WWW\php_9\allance1\frontend\web\index.php(18): yii\base\Application->run()
+#11 {main}
+Additional Information:
+Array
+(
+    [0] => 42S22
+    [1] => 1054
+    [2] => Unknown column 'al_post.mes_id' in 'on clause'
+)
+
+2016-06-18 10:02:57 [::1][-][-][info][application] $_GET = [
+    'r' => 'indent/show'
+]
+
+$_COOKIE = [
+    '__gads' => 'ID=958cf7cb6afa7cad:T=1460978978:S=ALNI_Mb2TnEoFXLJ87eaP3y14ps-v80dlw'
+    'bdshare_firstime' => '1460978979566'
+    'g' => '89642_1461225954402'
+    'CNZZDATA2192707' => 'cnzz_eid=16655850-1461223841-&ntime=1461330789'
+    'Hm_lvt_dfa5478034171cc641b1639b2a5b717d' => '1461225955,1461244135,1461331760'
+    '_ga' => 'GA1.1.1275183857.1461225955'
+    'pgv_pvi' => '7869699072'
+    'PHPSESSID' => 'bo871pcj75rris9cb9q4ss6ue7'
+    'pgv_si' => 's6540012544'
+]
+
+$_SESSION = [
+    '__flash' => []
+    'adm_id' => '1'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:47.0) Gecko/20100101 Firefox/47.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://localhost/php_9/allance1/frontend/web/index.php?r=public/left'
+    'HTTP_COOKIE' => '__gads=ID=958cf7cb6afa7cad:T=1460978978:S=ALNI_Mb2TnEoFXLJ87eaP3y14ps-v80dlw; bdshare_firstime=1460978979566; g=89642_1461225954402; CNZZDATA2192707=cnzz_eid%3D16655850-1461223841-%26ntime%3D1461330789; Hm_lvt_dfa5478034171cc641b1639b2a5b717d=1461225955,1461244135,1461331760; _ga=GA1.1.1275183857.1461225955; pgv_pvi=7869699072; PHPSESSID=bo871pcj75rris9cb9q4ss6ue7; pgv_si=s6540012544'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'PATH' => 'F:\\phpStudy\\php55;D:\\Program Files\\Git\\cmd;C:\\Program Files\\TortoiseGit\\bin;'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e PHP/5.5.30'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'F:/phpStudy/WWW'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'F:/phpStudy/WWW'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'SCRIPT_FILENAME' => 'F:/phpStudy/WWW/php_9/allance1/frontend/web/index.php'
+    'REMOTE_PORT' => '54230'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=indent/show'
+    'REQUEST_URI' => '/php_9/allance1/frontend/web/index.php?r=indent/show'
+    'SCRIPT_NAME' => '/php_9/allance1/frontend/web/index.php'
+    'PHP_SELF' => '/php_9/allance1/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1466215377.431
+    'REQUEST_TIME' => 1466215377
+]
+2016-06-18 10:03:00 [::1][-][-][error][yii\base\ErrorException:4] exception 'yii\base\ErrorException' with message 'syntax error, unexpected 'endforeach' (T_ENDFOREACH)' in F:\phpStudy\WWW\php_9\allance1\frontend\views\counselor\show.html:105
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleFatalError()
+#1 {main}
+2016-06-18 10:03:00 [::1][-][-][info][application] $_GET = [
+    'r' => 'counselor/show'
+]
+
+$_COOKIE = [
+    '__gads' => 'ID=958cf7cb6afa7cad:T=1460978978:S=ALNI_Mb2TnEoFXLJ87eaP3y14ps-v80dlw'
+    'bdshare_firstime' => '1460978979566'
+    'g' => '89642_1461225954402'
+    'CNZZDATA2192707' => 'cnzz_eid=16655850-1461223841-&ntime=1461330789'
+    'Hm_lvt_dfa5478034171cc641b1639b2a5b717d' => '1461225955,1461244135,1461331760'
+    '_ga' => 'GA1.1.1275183857.1461225955'
+    'pgv_pvi' => '7869699072'
+    'PHPSESSID' => 'bo871pcj75rris9cb9q4ss6ue7'
+    'pgv_si' => 's6540012544'
+]
+
+$_SESSION = [
+    '__flash' => []
+    'adm_id' => '1'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:47.0) Gecko/20100101 Firefox/47.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://localhost/php_9/allance1/frontend/web/index.php?r=public/left'
+    'HTTP_COOKIE' => '__gads=ID=958cf7cb6afa7cad:T=1460978978:S=ALNI_Mb2TnEoFXLJ87eaP3y14ps-v80dlw; bdshare_firstime=1460978979566; g=89642_1461225954402; CNZZDATA2192707=cnzz_eid%3D16655850-1461223841-%26ntime%3D1461330789; Hm_lvt_dfa5478034171cc641b1639b2a5b717d=1461225955,1461244135,1461331760; _ga=GA1.1.1275183857.1461225955; pgv_pvi=7869699072; PHPSESSID=bo871pcj75rris9cb9q4ss6ue7; pgv_si=s6540012544'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'PATH' => 'F:\\phpStudy\\php55;D:\\Program Files\\Git\\cmd;C:\\Program Files\\TortoiseGit\\bin;'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e PHP/5.5.30'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'F:/phpStudy/WWW'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'F:/phpStudy/WWW'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'SCRIPT_FILENAME' => 'F:/phpStudy/WWW/php_9/allance1/frontend/web/index.php'
+    'REMOTE_PORT' => '54250'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=counselor/show'
+    'REQUEST_URI' => '/php_9/allance1/frontend/web/index.php?r=counselor/show'
+    'SCRIPT_NAME' => '/php_9/allance1/frontend/web/index.php'
+    'PHP_SELF' => '/php_9/allance1/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1466215380.016
+    'REQUEST_TIME' => 1466215380
+]
+2016-06-18 13:28:01 [::1][-][-][error][yii\base\ErrorException:2] exception 'yii\base\ErrorException' with message 'mysql_connect(): Access denied for user 'root'@'localhost' (using password: YES)' in F:\phpStudy\WWW\php_9\allance1\frontend\controllers\ControlController.php:128
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleError(2, 'mysql_connect()...', 'F:\\phpStudy\\WWW...', 128, Array)
+#1 F:\phpStudy\WWW\php_9\allance1\frontend\controllers\ControlController.php(128): mysql_connect('127.0.0.1', 'root', '147542')
+#2 F:\phpStudy\WWW\php_9\allance1\frontend\controllers\PrivilegeController.php(33): frontend\controllers\PrivilegeController->classify('al_privilege', 'p_pid')
+#3 [internal function]: frontend\controllers\PrivilegeController->actionShow()
+#4 F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#5 F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#6 F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('show', Array)
+#7 F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('privilege/show', Array)
+#8 F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#9 F:\phpStudy\WWW\php_9\allance1\frontend\web\index.php(18): yii\base\Application->run()
+#10 {main}
+2016-06-18 13:28:01 [::1][-][-][info][application] $_GET = [
+    'r' => 'privilege/show'
+]
+
+$_COOKIE = [
+    '__gads' => 'ID=958cf7cb6afa7cad:T=1460978978:S=ALNI_Mb2TnEoFXLJ87eaP3y14ps-v80dlw'
+    'bdshare_firstime' => '1460978979566'
+    'g' => '89642_1461225954402'
+    'CNZZDATA2192707' => 'cnzz_eid=16655850-1461223841-&ntime=1461330789'
+    'Hm_lvt_dfa5478034171cc641b1639b2a5b717d' => '1461225955,1461244135,1461331760'
+    '_ga' => 'GA1.1.1275183857.1461225955'
+    'pgv_pvi' => '7869699072'
+    'PHPSESSID' => 'bo871pcj75rris9cb9q4ss6ue7'
+    'pgv_si' => 's6540012544'
+]
+
+$_SESSION = [
+    '__flash' => []
+    'adm_id' => '1'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:47.0) Gecko/20100101 Firefox/47.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://localhost/php_9/allance1/frontend/web/index.php?r=public/left'
+    'HTTP_COOKIE' => '__gads=ID=958cf7cb6afa7cad:T=1460978978:S=ALNI_Mb2TnEoFXLJ87eaP3y14ps-v80dlw; bdshare_firstime=1460978979566; g=89642_1461225954402; CNZZDATA2192707=cnzz_eid%3D16655850-1461223841-%26ntime%3D1461330789; Hm_lvt_dfa5478034171cc641b1639b2a5b717d=1461225955,1461244135,1461331760; _ga=GA1.1.1275183857.1461225955; pgv_pvi=7869699072; PHPSESSID=bo871pcj75rris9cb9q4ss6ue7; pgv_si=s6540012544'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'PATH' => 'F:\\phpStudy\\php55;D:\\Program Files\\Git\\cmd;C:\\Program Files\\TortoiseGit\\bin;'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e PHP/5.5.30'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'F:/phpStudy/WWW'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'F:/phpStudy/WWW'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'SCRIPT_FILENAME' => 'F:/phpStudy/WWW/php_9/allance1/frontend/web/index.php'
+    'REMOTE_PORT' => '62699'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=privilege/show'
+    'REQUEST_URI' => '/php_9/allance1/frontend/web/index.php?r=privilege/show'
+    'SCRIPT_NAME' => '/php_9/allance1/frontend/web/index.php'
+    'PHP_SELF' => '/php_9/allance1/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1466227681.339
+    'REQUEST_TIME' => 1466227681
+]
+2016-06-18 13:28:01 [::1][-][-][warning][yii\log\Dispatcher::dispatch] Unable to send log via yii\debug\LogTarget: Exception 'Exception' with message 'Serialization of 'Closure' is not allowed' 
+
+in F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2-debug\LogTarget.php:58
+
+Stack trace:
+#0 F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2-debug\LogTarget.php(58): serialize(Array)
+#1 F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2-debug\LogTarget.php(112): yii\debug\LogTarget->export(Array)
+#2 F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\log\Dispatcher.php(183): yii\debug\LogTarget->collect(Array, true)
+#3 F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\log\Logger.php(173): yii\log\Dispatcher->dispatch(Array, true)
+#4 F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\base\ErrorHandler.php(111): yii\log\Logger->flush(true)
+#5 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\base\ErrorException))
+#6 {main}
+2016-06-18 13:28:01 [::1][-][-][info][application] $_GET = [
+    'r' => 'privilege/show'
+]
+
+$_COOKIE = [
+    '__gads' => 'ID=958cf7cb6afa7cad:T=1460978978:S=ALNI_Mb2TnEoFXLJ87eaP3y14ps-v80dlw'
+    'bdshare_firstime' => '1460978979566'
+    'g' => '89642_1461225954402'
+    'CNZZDATA2192707' => 'cnzz_eid=16655850-1461223841-&ntime=1461330789'
+    'Hm_lvt_dfa5478034171cc641b1639b2a5b717d' => '1461225955,1461244135,1461331760'
+    '_ga' => 'GA1.1.1275183857.1461225955'
+    'pgv_pvi' => '7869699072'
+    'PHPSESSID' => 'bo871pcj75rris9cb9q4ss6ue7'
+    'pgv_si' => 's6540012544'
+]
+
+$_SESSION = [
+    '__flash' => []
+    'adm_id' => '1'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:47.0) Gecko/20100101 Firefox/47.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://localhost/php_9/allance1/frontend/web/index.php?r=public/left'
+    'HTTP_COOKIE' => '__gads=ID=958cf7cb6afa7cad:T=1460978978:S=ALNI_Mb2TnEoFXLJ87eaP3y14ps-v80dlw; bdshare_firstime=1460978979566; g=89642_1461225954402; CNZZDATA2192707=cnzz_eid%3D16655850-1461223841-%26ntime%3D1461330789; Hm_lvt_dfa5478034171cc641b1639b2a5b717d=1461225955,1461244135,1461331760; _ga=GA1.1.1275183857.1461225955; pgv_pvi=7869699072; PHPSESSID=bo871pcj75rris9cb9q4ss6ue7; pgv_si=s6540012544'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'PATH' => 'F:\\phpStudy\\php55;D:\\Program Files\\Git\\cmd;C:\\Program Files\\TortoiseGit\\bin;'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e PHP/5.5.30'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'F:/phpStudy/WWW'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'F:/phpStudy/WWW'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'SCRIPT_FILENAME' => 'F:/phpStudy/WWW/php_9/allance1/frontend/web/index.php'
+    'REMOTE_PORT' => '62699'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=privilege/show'
+    'REQUEST_URI' => '/php_9/allance1/frontend/web/index.php?r=privilege/show'
+    'SCRIPT_NAME' => '/php_9/allance1/frontend/web/index.php'
+    'PHP_SELF' => '/php_9/allance1/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1466227681.339
+    'REQUEST_TIME' => 1466227681
+]
+2016-06-18 15:00:15 [::1][-][-][error][yii\db\Exception] exception 'PDOException' with message 'SQLSTATE[42S22]: Column not found: 1054 Unknown column 'al_company.cou_id' in 'on clause'' in F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\db\Command.php:837
+Stack trace:
+#0 F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\db\Command.php(837): PDOStatement->execute()
+#1 F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\db\Command.php(359): yii\db\Command->queryInternal('<span class="st...', '<span class="ke...')
+#2 F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\db\Query.php(206): yii\db\Command->queryAll()
+#3 F:\phpStudy\WWW\php_9\allance1\frontend\controllers\CompanyController.php(57): yii\db\Query->all()
+#4 [internal function]: frontend\controllers\CompanyController->actionShow()
+#5 F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array('[<span class="t...', '[]')
+#6 F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams('[<span class="s...')
+#7 F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('<span class="st...', '[<span class="s...')
+#8 F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('<span class="st...', '[<span class="s...')
+#9 F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#10 F:\phpStudy\WWW\php_9\allance1\frontend\web\index.php(18): yii\base\Application->run()
+#11 {main}
+
+Next exception 'yii\db\Exception' with message 'SQLSTATE[42S22]: Column not found: 1054 Unknown column 'al_company.cou_id' in 'on clause'
+The SQL being executed was: SELECT * FROM `al_company` INNER JOIN `al_com_message` ON al_company.mes_id = al_com_message.mes_id LEFT JOIN `al_counselor` ON al_counselor.cou_id = al_company.cou_id' in F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\db\Schema.php:628
+Stack trace:
+#0 F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\db\Command.php(852): yii\db\Schema->convertException(Object(PDOException), 'SELECT * FROM `...')
+#1 F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\db\Command.php(359): yii\db\Command->queryInternal('<span class="st...', '<span class="ke...')
+#2 F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\db\Query.php(206): yii\db\Command->queryAll()
+#3 F:\phpStudy\WWW\php_9\allance1\frontend\controllers\CompanyController.php(57): yii\db\Query->all()
+#4 [internal function]: frontend\controllers\CompanyController->actionShow()
+#5 F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array('[<span class="t...', '[]')
+#6 F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams('[<span class="s...')
+#7 F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('<span class="st...', '[<span class="s...')
+#8 F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('<span class="st...', '[<span class="s...')
+#9 F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#10 F:\phpStudy\WWW\php_9\allance1\frontend\web\index.php(18): yii\base\Application->run()
+#11 {main}
+Additional Information:
+Array
+(
+    [0] => 42S22
+    [1] => 1054
+    [2] => Unknown column 'al_company.cou_id' in 'on clause'
+)
+
+2016-06-18 15:00:15 [::1][-][-][info][application] $_GET = [
+    'r' => 'company/show'
+]
+
+$_COOKIE = [
+    '__gads' => 'ID=958cf7cb6afa7cad:T=1460978978:S=ALNI_Mb2TnEoFXLJ87eaP3y14ps-v80dlw'
+    'bdshare_firstime' => '1460978979566'
+    'g' => '89642_1461225954402'
+    'CNZZDATA2192707' => 'cnzz_eid=16655850-1461223841-&ntime=1461330789'
+    'Hm_lvt_dfa5478034171cc641b1639b2a5b717d' => '1461225955,1461244135,1461331760'
+    '_ga' => 'GA1.1.1275183857.1461225955'
+    'pgv_pvi' => '7869699072'
+    'PHPSESSID' => 'bo871pcj75rris9cb9q4ss6ue7'
+    'pgv_si' => 's6540012544'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:47.0) Gecko/20100101 Firefox/47.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://localhost/php_9/allance1/frontend/web/index.php?r=public/left'
+    'HTTP_COOKIE' => '__gads=ID=958cf7cb6afa7cad:T=1460978978:S=ALNI_Mb2TnEoFXLJ87eaP3y14ps-v80dlw; bdshare_firstime=1460978979566; g=89642_1461225954402; CNZZDATA2192707=cnzz_eid%3D16655850-1461223841-%26ntime%3D1461330789; Hm_lvt_dfa5478034171cc641b1639b2a5b717d=1461225955,1461244135,1461331760; _ga=GA1.1.1275183857.1461225955; pgv_pvi=7869699072; PHPSESSID=bo871pcj75rris9cb9q4ss6ue7; pgv_si=s6540012544'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'PATH' => 'F:\\phpStudy\\php55;D:\\Program Files\\Git\\cmd;C:\\Program Files\\TortoiseGit\\bin;'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e PHP/5.5.30'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'F:/phpStudy/WWW'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'F:/phpStudy/WWW'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'SCRIPT_FILENAME' => 'F:/phpStudy/WWW/php_9/allance1/frontend/web/index.php'
+    'REMOTE_PORT' => '50276'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=company/show'
+    'REQUEST_URI' => '/php_9/allance1/frontend/web/index.php?r=company/show'
+    'SCRIPT_NAME' => '/php_9/allance1/frontend/web/index.php'
+    'PHP_SELF' => '/php_9/allance1/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1466233215.12
+    'REQUEST_TIME' => 1466233215
+]
+2016-06-18 15:00:23 [::1][-][-][error][yii\db\Exception] exception 'PDOException' with message 'SQLSTATE[42S22]: Column not found: 1054 Unknown column 'al_post.mes_id' in 'on clause'' in F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\db\Command.php:837
+Stack trace:
+#0 F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\db\Command.php(837): PDOStatement->execute()
+#1 F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\db\Command.php(359): yii\db\Command->queryInternal('<span class="st...', '<span class="ke...')
+#2 F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\db\Query.php(206): yii\db\Command->queryAll()
+#3 F:\phpStudy\WWW\php_9\allance1\frontend\controllers\IndentController.php(41): yii\db\Query->all()
+#4 [internal function]: frontend\controllers\IndentController->actionShow()
+#5 F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array('[<span class="t...', '[]')
+#6 F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams('[<span class="s...')
+#7 F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('<span class="st...', '[<span class="s...')
+#8 F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('<span class="st...', '[<span class="s...')
+#9 F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#10 F:\phpStudy\WWW\php_9\allance1\frontend\web\index.php(18): yii\base\Application->run()
+#11 {main}
+
+Next exception 'yii\db\Exception' with message 'SQLSTATE[42S22]: Column not found: 1054 Unknown column 'al_post.mes_id' in 'on clause'
+The SQL being executed was: SELECT * FROM `al_indent` INNER JOIN `al_recruit` ON al_indent.rec_id=al_recruit.rec_id  INNER JOIN `al_post` ON al_recruit.post_id=al_post.post_id INNER JOIN `al_com_message` ON al_post.mes_id=al_com_message.mes_id' in F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\db\Schema.php:628
+Stack trace:
+#0 F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\db\Command.php(852): yii\db\Schema->convertException(Object(PDOException), 'SELECT * FROM `...')
+#1 F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\db\Command.php(359): yii\db\Command->queryInternal('<span class="st...', '<span class="ke...')
+#2 F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\db\Query.php(206): yii\db\Command->queryAll()
+#3 F:\phpStudy\WWW\php_9\allance1\frontend\controllers\IndentController.php(41): yii\db\Query->all()
+#4 [internal function]: frontend\controllers\IndentController->actionShow()
+#5 F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array('[<span class="t...', '[]')
+#6 F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams('[<span class="s...')
+#7 F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('<span class="st...', '[<span class="s...')
+#8 F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('<span class="st...', '[<span class="s...')
+#9 F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#10 F:\phpStudy\WWW\php_9\allance1\frontend\web\index.php(18): yii\base\Application->run()
+#11 {main}
+Additional Information:
+Array
+(
+    [0] => 42S22
+    [1] => 1054
+    [2] => Unknown column 'al_post.mes_id' in 'on clause'
+)
+
+2016-06-18 15:00:23 [::1][-][-][info][application] $_GET = [
+    'r' => 'indent/show'
+]
+
+$_COOKIE = [
+    '__gads' => 'ID=958cf7cb6afa7cad:T=1460978978:S=ALNI_Mb2TnEoFXLJ87eaP3y14ps-v80dlw'
+    'bdshare_firstime' => '1460978979566'
+    'g' => '89642_1461225954402'
+    'CNZZDATA2192707' => 'cnzz_eid=16655850-1461223841-&ntime=1461330789'
+    'Hm_lvt_dfa5478034171cc641b1639b2a5b717d' => '1461225955,1461244135,1461331760'
+    '_ga' => 'GA1.1.1275183857.1461225955'
+    'pgv_pvi' => '7869699072'
+    'PHPSESSID' => 'bo871pcj75rris9cb9q4ss6ue7'
+    'pgv_si' => 's6540012544'
+]
+
+$_SESSION = [
+    '__flash' => []
+    'adm_id' => '1'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:47.0) Gecko/20100101 Firefox/47.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://localhost/php_9/allance1/frontend/web/index.php?r=public/left'
+    'HTTP_COOKIE' => '__gads=ID=958cf7cb6afa7cad:T=1460978978:S=ALNI_Mb2TnEoFXLJ87eaP3y14ps-v80dlw; bdshare_firstime=1460978979566; g=89642_1461225954402; CNZZDATA2192707=cnzz_eid%3D16655850-1461223841-%26ntime%3D1461330789; Hm_lvt_dfa5478034171cc641b1639b2a5b717d=1461225955,1461244135,1461331760; _ga=GA1.1.1275183857.1461225955; pgv_pvi=7869699072; PHPSESSID=bo871pcj75rris9cb9q4ss6ue7; pgv_si=s6540012544'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'PATH' => 'F:\\phpStudy\\php55;D:\\Program Files\\Git\\cmd;C:\\Program Files\\TortoiseGit\\bin;'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e PHP/5.5.30'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'F:/phpStudy/WWW'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'F:/phpStudy/WWW'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'SCRIPT_FILENAME' => 'F:/phpStudy/WWW/php_9/allance1/frontend/web/index.php'
+    'REMOTE_PORT' => '50302'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=indent/show'
+    'REQUEST_URI' => '/php_9/allance1/frontend/web/index.php?r=indent/show'
+    'SCRIPT_NAME' => '/php_9/allance1/frontend/web/index.php'
+    'PHP_SELF' => '/php_9/allance1/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1466233223.401
+    'REQUEST_TIME' => 1466233223
+]
+2016-06-18 15:00:27 [::1][-][-][error][yii\base\ErrorException:4] exception 'yii\base\ErrorException' with message 'syntax error, unexpected 'endforeach' (T_ENDFOREACH)' in F:\phpStudy\WWW\php_9\allance1\frontend\views\counselor\show.html:105
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleFatalError()
+#1 {main}
+2016-06-18 15:00:27 [::1][-][-][info][application] $_GET = [
+    'r' => 'counselor/show'
+]
+
+$_COOKIE = [
+    '__gads' => 'ID=958cf7cb6afa7cad:T=1460978978:S=ALNI_Mb2TnEoFXLJ87eaP3y14ps-v80dlw'
+    'bdshare_firstime' => '1460978979566'
+    'g' => '89642_1461225954402'
+    'CNZZDATA2192707' => 'cnzz_eid=16655850-1461223841-&ntime=1461330789'
+    'Hm_lvt_dfa5478034171cc641b1639b2a5b717d' => '1461225955,1461244135,1461331760'
+    '_ga' => 'GA1.1.1275183857.1461225955'
+    'pgv_pvi' => '7869699072'
+    'PHPSESSID' => 'bo871pcj75rris9cb9q4ss6ue7'
+    'pgv_si' => 's6540012544'
+]
+
+$_SESSION = [
+    '__flash' => []
+    'adm_id' => '1'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:47.0) Gecko/20100101 Firefox/47.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://localhost/php_9/allance1/frontend/web/index.php?r=public/left'
+    'HTTP_COOKIE' => '__gads=ID=958cf7cb6afa7cad:T=1460978978:S=ALNI_Mb2TnEoFXLJ87eaP3y14ps-v80dlw; bdshare_firstime=1460978979566; g=89642_1461225954402; CNZZDATA2192707=cnzz_eid%3D16655850-1461223841-%26ntime%3D1461330789; Hm_lvt_dfa5478034171cc641b1639b2a5b717d=1461225955,1461244135,1461331760; _ga=GA1.1.1275183857.1461225955; pgv_pvi=7869699072; PHPSESSID=bo871pcj75rris9cb9q4ss6ue7; pgv_si=s6540012544'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'PATH' => 'F:\\phpStudy\\php55;D:\\Program Files\\Git\\cmd;C:\\Program Files\\TortoiseGit\\bin;'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e PHP/5.5.30'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'F:/phpStudy/WWW'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'F:/phpStudy/WWW'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'SCRIPT_FILENAME' => 'F:/phpStudy/WWW/php_9/allance1/frontend/web/index.php'
+    'REMOTE_PORT' => '50410'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=counselor/show'
+    'REQUEST_URI' => '/php_9/allance1/frontend/web/index.php?r=counselor/show'
+    'SCRIPT_NAME' => '/php_9/allance1/frontend/web/index.php'
+    'PHP_SELF' => '/php_9/allance1/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1466233227.821
+    'REQUEST_TIME' => 1466233227
+]
+2016-06-18 15:05:46 [::1][-][-][error][yii\db\Exception] exception 'PDOException' with message 'SQLSTATE[42S22]: Column not found: 1054 Unknown column 'al_company.cou_id' in 'on clause'' in F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\db\Command.php:837
+Stack trace:
+#0 F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\db\Command.php(837): PDOStatement->execute()
+#1 F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\db\Command.php(359): yii\db\Command->queryInternal('<span class="st...', '<span class="ke...')
+#2 F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\db\Query.php(206): yii\db\Command->queryAll()
+#3 F:\phpStudy\WWW\php_9\allance1\frontend\controllers\CompanyController.php(57): yii\db\Query->all()
+#4 [internal function]: frontend\controllers\CompanyController->actionShow()
+#5 F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array('[<span class="t...', '[]')
+#6 F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams('[<span class="s...')
+#7 F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('<span class="st...', '[<span class="s...')
+#8 F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('<span class="st...', '[<span class="s...')
+#9 F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#10 F:\phpStudy\WWW\php_9\allance1\frontend\web\index.php(18): yii\base\Application->run()
+#11 {main}
+
+Next exception 'yii\db\Exception' with message 'SQLSTATE[42S22]: Column not found: 1054 Unknown column 'al_company.cou_id' in 'on clause'
+The SQL being executed was: SELECT * FROM `al_company` INNER JOIN `al_com_message` ON al_company.mes_id = al_com_message.mes_id LEFT JOIN `al_counselor` ON al_counselor.cou_id = al_company.cou_id' in F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\db\Schema.php:628
+Stack trace:
+#0 F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\db\Command.php(852): yii\db\Schema->convertException(Object(PDOException), 'SELECT * FROM `...')
+#1 F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\db\Command.php(359): yii\db\Command->queryInternal('<span class="st...', '<span class="ke...')
+#2 F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\db\Query.php(206): yii\db\Command->queryAll()
+#3 F:\phpStudy\WWW\php_9\allance1\frontend\controllers\CompanyController.php(57): yii\db\Query->all()
+#4 [internal function]: frontend\controllers\CompanyController->actionShow()
+#5 F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array('[<span class="t...', '[]')
+#6 F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams('[<span class="s...')
+#7 F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('<span class="st...', '[<span class="s...')
+#8 F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('<span class="st...', '[<span class="s...')
+#9 F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#10 F:\phpStudy\WWW\php_9\allance1\frontend\web\index.php(18): yii\base\Application->run()
+#11 {main}
+Additional Information:
+Array
+(
+    [0] => 42S22
+    [1] => 1054
+    [2] => Unknown column 'al_company.cou_id' in 'on clause'
+)
+
+2016-06-18 15:05:46 [::1][-][-][info][application] $_GET = [
+    'r' => 'company/show'
+]
+
+$_COOKIE = [
+    '__gads' => 'ID=958cf7cb6afa7cad:T=1460978978:S=ALNI_Mb2TnEoFXLJ87eaP3y14ps-v80dlw'
+    'bdshare_firstime' => '1460978979566'
+    'g' => '89642_1461225954402'
+    'CNZZDATA2192707' => 'cnzz_eid=16655850-1461223841-&ntime=1461330789'
+    'Hm_lvt_dfa5478034171cc641b1639b2a5b717d' => '1461225955,1461244135,1461331760'
+    '_ga' => 'GA1.1.1275183857.1461225955'
+    'pgv_pvi' => '7869699072'
+    'PHPSESSID' => 'bo871pcj75rris9cb9q4ss6ue7'
+    'pgv_si' => 's6540012544'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:47.0) Gecko/20100101 Firefox/47.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://localhost/php_9/allance1/frontend/web/index.php?r=public/left'
+    'HTTP_COOKIE' => '__gads=ID=958cf7cb6afa7cad:T=1460978978:S=ALNI_Mb2TnEoFXLJ87eaP3y14ps-v80dlw; bdshare_firstime=1460978979566; g=89642_1461225954402; CNZZDATA2192707=cnzz_eid%3D16655850-1461223841-%26ntime%3D1461330789; Hm_lvt_dfa5478034171cc641b1639b2a5b717d=1461225955,1461244135,1461331760; _ga=GA1.1.1275183857.1461225955; pgv_pvi=7869699072; PHPSESSID=bo871pcj75rris9cb9q4ss6ue7; pgv_si=s6540012544'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'PATH' => 'F:\\phpStudy\\php55;D:\\Program Files\\Git\\cmd;C:\\Program Files\\TortoiseGit\\bin;'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e PHP/5.5.30'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'F:/phpStudy/WWW'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'F:/phpStudy/WWW'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'SCRIPT_FILENAME' => 'F:/phpStudy/WWW/php_9/allance1/frontend/web/index.php'
+    'REMOTE_PORT' => '53135'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=company/show'
+    'REQUEST_URI' => '/php_9/allance1/frontend/web/index.php?r=company/show'
+    'SCRIPT_NAME' => '/php_9/allance1/frontend/web/index.php'
+    'PHP_SELF' => '/php_9/allance1/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1466233546.517
+    'REQUEST_TIME' => 1466233546
+]
+2016-06-18 15:06:01 [::1][-][-][error][yii\base\ErrorException:4] exception 'yii\base\ErrorException' with message 'syntax error, unexpected 'endforeach' (T_ENDFOREACH)' in F:\phpStudy\WWW\php_9\allance1\frontend\views\counselor\show.html:105
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleFatalError()
+#1 {main}
+2016-06-18 15:06:01 [::1][-][-][info][application] $_GET = [
+    'r' => 'counselor/show'
+]
+
+$_COOKIE = [
+    '__gads' => 'ID=958cf7cb6afa7cad:T=1460978978:S=ALNI_Mb2TnEoFXLJ87eaP3y14ps-v80dlw'
+    'bdshare_firstime' => '1460978979566'
+    'g' => '89642_1461225954402'
+    'CNZZDATA2192707' => 'cnzz_eid=16655850-1461223841-&ntime=1461330789'
+    'Hm_lvt_dfa5478034171cc641b1639b2a5b717d' => '1461225955,1461244135,1461331760'
+    '_ga' => 'GA1.1.1275183857.1461225955'
+    'pgv_pvi' => '7869699072'
+    'PHPSESSID' => 'bo871pcj75rris9cb9q4ss6ue7'
+    'pgv_si' => 's6540012544'
+]
+
+$_SESSION = [
+    '__flash' => []
+    'adm_id' => '1'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:47.0) Gecko/20100101 Firefox/47.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://localhost/php_9/allance1/frontend/web/index.php?r=public/left'
+    'HTTP_COOKIE' => '__gads=ID=958cf7cb6afa7cad:T=1460978978:S=ALNI_Mb2TnEoFXLJ87eaP3y14ps-v80dlw; bdshare_firstime=1460978979566; g=89642_1461225954402; CNZZDATA2192707=cnzz_eid%3D16655850-1461223841-%26ntime%3D1461330789; Hm_lvt_dfa5478034171cc641b1639b2a5b717d=1461225955,1461244135,1461331760; _ga=GA1.1.1275183857.1461225955; pgv_pvi=7869699072; PHPSESSID=bo871pcj75rris9cb9q4ss6ue7; pgv_si=s6540012544'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'PATH' => 'F:\\phpStudy\\php55;D:\\Program Files\\Git\\cmd;C:\\Program Files\\TortoiseGit\\bin;'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e PHP/5.5.30'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'F:/phpStudy/WWW'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'F:/phpStudy/WWW'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'SCRIPT_FILENAME' => 'F:/phpStudy/WWW/php_9/allance1/frontend/web/index.php'
+    'REMOTE_PORT' => '53148'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=counselor/show'
+    'REQUEST_URI' => '/php_9/allance1/frontend/web/index.php?r=counselor/show'
+    'SCRIPT_NAME' => '/php_9/allance1/frontend/web/index.php'
+    'PHP_SELF' => '/php_9/allance1/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1466233561.566
+    'REQUEST_TIME' => 1466233561
+]
+2016-06-18 15:06:47 [::1][-][-][error][yii\base\ErrorException:8] exception 'yii\base\ErrorException' with message 'Undefined index: alog_id' in F:\phpStudy\WWW\php_9\allance1\frontend\views\admin\ri.html:65
+Stack trace:
+#0 F:\phpStudy\WWW\php_9\allance1\frontend\views\admin\ri.html(65): yii\base\ErrorHandler->handleError(8, 'Undefined index...', 'F:\\phpStudy\\WWW...', 65, Array)
+#1 F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\base\View.php(325): require('F:\\phpStudy\\WWW...')
+#2 F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\base\View.php(247): yii\base\View->renderPhpFile('F:\\phpStudy\\WWW...', Array)
+#3 F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\base\View.php(149): yii\base\View->renderFile('F:\\phpStudy\\WWW...', Array, Object(frontend\controllers\AdminController))
+#4 F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\base\Controller.php(371): yii\base\View->render('ri.html', Array, Object(frontend\controllers\AdminController))
+#5 F:\phpStudy\WWW\php_9\allance1\frontend\controllers\AdminController.php(153): yii\base\Controller->render('ri.html', Array)
+#6 [internal function]: frontend\controllers\AdminController->actionRi()
+#7 F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#8 F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#9 F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('ri', Array)
+#10 F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('admin/ri', Array)
+#11 F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#12 F:\phpStudy\WWW\php_9\allance1\frontend\web\index.php(18): yii\base\Application->run()
+#13 {main}
+2016-06-18 15:06:46 [::1][-][-][info][application] $_GET = [
+    'r' => 'admin/ri'
+]
+
+$_COOKIE = [
+    '__gads' => 'ID=958cf7cb6afa7cad:T=1460978978:S=ALNI_Mb2TnEoFXLJ87eaP3y14ps-v80dlw'
+    'bdshare_firstime' => '1460978979566'
+    'g' => '89642_1461225954402'
+    'CNZZDATA2192707' => 'cnzz_eid=16655850-1461223841-&ntime=1461330789'
+    'Hm_lvt_dfa5478034171cc641b1639b2a5b717d' => '1461225955,1461244135,1461331760'
+    '_ga' => 'GA1.1.1275183857.1461225955'
+    'pgv_pvi' => '7869699072'
+    'PHPSESSID' => 'bo871pcj75rris9cb9q4ss6ue7'
+    'pgv_si' => 's6540012544'
+]
+
+$_SESSION = [
+    '__flash' => []
+    'adm_id' => '1'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:47.0) Gecko/20100101 Firefox/47.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://localhost/php_9/allance1/frontend/web/index.php?r=public/left'
+    'HTTP_COOKIE' => '__gads=ID=958cf7cb6afa7cad:T=1460978978:S=ALNI_Mb2TnEoFXLJ87eaP3y14ps-v80dlw; bdshare_firstime=1460978979566; g=89642_1461225954402; CNZZDATA2192707=cnzz_eid%3D16655850-1461223841-%26ntime%3D1461330789; Hm_lvt_dfa5478034171cc641b1639b2a5b717d=1461225955,1461244135,1461331760; _ga=GA1.1.1275183857.1461225955; pgv_pvi=7869699072; PHPSESSID=bo871pcj75rris9cb9q4ss6ue7; pgv_si=s6540012544'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'PATH' => 'F:\\phpStudy\\php55;D:\\Program Files\\Git\\cmd;C:\\Program Files\\TortoiseGit\\bin;'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e PHP/5.5.30'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'F:/phpStudy/WWW'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'F:/phpStudy/WWW'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'SCRIPT_FILENAME' => 'F:/phpStudy/WWW/php_9/allance1/frontend/web/index.php'
+    'REMOTE_PORT' => '53590'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=admin/ri'
+    'REQUEST_URI' => '/php_9/allance1/frontend/web/index.php?r=admin/ri'
+    'SCRIPT_NAME' => '/php_9/allance1/frontend/web/index.php'
+    'PHP_SELF' => '/php_9/allance1/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1466233606.978
+    'REQUEST_TIME' => 1466233606
+]
+2016-06-18 15:06:47 [::1][-][-][warning][yii\log\Dispatcher::dispatch] Unable to send log via yii\debug\LogTarget: Exception 'PDOException' with message 'You cannot serialize or unserialize PDO instances' 
+
+in F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2-debug\LogTarget.php:58
+
+Stack trace:
+#0 [internal function]: PDO->__sleep()
+#1 F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2-debug\LogTarget.php(58): serialize(Array)
+#2 F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2-debug\LogTarget.php(112): yii\debug\LogTarget->export(Array)
+#3 F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\log\Dispatcher.php(183): yii\debug\LogTarget->collect(Array, true)
+#4 F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\log\Logger.php(173): yii\log\Dispatcher->dispatch(Array, true)
+#5 F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\base\ErrorHandler.php(111): yii\log\Logger->flush(true)
+#6 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\base\ErrorException))
+#7 {main}
+2016-06-18 15:06:46 [::1][-][-][info][application] $_GET = [
+    'r' => 'admin/ri'
+]
+
+$_COOKIE = [
+    '__gads' => 'ID=958cf7cb6afa7cad:T=1460978978:S=ALNI_Mb2TnEoFXLJ87eaP3y14ps-v80dlw'
+    'bdshare_firstime' => '1460978979566'
+    'g' => '89642_1461225954402'
+    'CNZZDATA2192707' => 'cnzz_eid=16655850-1461223841-&ntime=1461330789'
+    'Hm_lvt_dfa5478034171cc641b1639b2a5b717d' => '1461225955,1461244135,1461331760'
+    '_ga' => 'GA1.1.1275183857.1461225955'
+    'pgv_pvi' => '7869699072'
+    'PHPSESSID' => 'bo871pcj75rris9cb9q4ss6ue7'
+    'pgv_si' => 's6540012544'
+]
+
+$_SESSION = [
+    '__flash' => []
+    'adm_id' => '1'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:47.0) Gecko/20100101 Firefox/47.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://localhost/php_9/allance1/frontend/web/index.php?r=public/left'
+    'HTTP_COOKIE' => '__gads=ID=958cf7cb6afa7cad:T=1460978978:S=ALNI_Mb2TnEoFXLJ87eaP3y14ps-v80dlw; bdshare_firstime=1460978979566; g=89642_1461225954402; CNZZDATA2192707=cnzz_eid%3D16655850-1461223841-%26ntime%3D1461330789; Hm_lvt_dfa5478034171cc641b1639b2a5b717d=1461225955,1461244135,1461331760; _ga=GA1.1.1275183857.1461225955; pgv_pvi=7869699072; PHPSESSID=bo871pcj75rris9cb9q4ss6ue7; pgv_si=s6540012544'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'PATH' => 'F:\\phpStudy\\php55;D:\\Program Files\\Git\\cmd;C:\\Program Files\\TortoiseGit\\bin;'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e PHP/5.5.30'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'F:/phpStudy/WWW'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'F:/phpStudy/WWW'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'SCRIPT_FILENAME' => 'F:/phpStudy/WWW/php_9/allance1/frontend/web/index.php'
+    'REMOTE_PORT' => '53590'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=admin/ri'
+    'REQUEST_URI' => '/php_9/allance1/frontend/web/index.php?r=admin/ri'
+    'SCRIPT_NAME' => '/php_9/allance1/frontend/web/index.php'
+    'PHP_SELF' => '/php_9/allance1/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1466233606.978
+    'REQUEST_TIME' => 1466233606
+]
+2016-06-19 19:59:02 [::1][-][-][error][yii\db\Exception] exception 'PDOException' with message 'SQLSTATE[42S22]: Column not found: 1054 Unknown column 'al_company.cou_id' in 'on clause'' in F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\db\Command.php:837
+Stack trace:
+#0 F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\db\Command.php(837): PDOStatement->execute()
+#1 F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\db\Command.php(359): yii\db\Command->queryInternal('<span class="st...', '<span class="ke...')
+#2 F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\db\Query.php(206): yii\db\Command->queryAll()
+#3 F:\phpStudy\WWW\php_9\allance1\frontend\controllers\CompanyController.php(57): yii\db\Query->all()
+#4 [internal function]: frontend\controllers\CompanyController->actionShow()
+#5 F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array('[<span class="t...', '[]')
+#6 F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams('[<span class="s...')
+#7 F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('<span class="st...', '[<span class="s...')
+#8 F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('<span class="st...', '[<span class="s...')
+#9 F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#10 F:\phpStudy\WWW\php_9\allance1\frontend\web\index.php(18): yii\base\Application->run()
+#11 {main}
+
+Next exception 'yii\db\Exception' with message 'SQLSTATE[42S22]: Column not found: 1054 Unknown column 'al_company.cou_id' in 'on clause'
+The SQL being executed was: SELECT * FROM `al_company` INNER JOIN `al_com_message` ON al_company.mes_id = al_com_message.mes_id LEFT JOIN `al_counselor` ON al_counselor.cou_id = al_company.cou_id' in F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\db\Schema.php:628
+Stack trace:
+#0 F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\db\Command.php(852): yii\db\Schema->convertException(Object(PDOException), 'SELECT * FROM `...')
+#1 F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\db\Command.php(359): yii\db\Command->queryInternal('<span class="st...', '<span class="ke...')
+#2 F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\db\Query.php(206): yii\db\Command->queryAll()
+#3 F:\phpStudy\WWW\php_9\allance1\frontend\controllers\CompanyController.php(57): yii\db\Query->all()
+#4 [internal function]: frontend\controllers\CompanyController->actionShow()
+#5 F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array('[<span class="t...', '[]')
+#6 F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams('[<span class="s...')
+#7 F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('<span class="st...', '[<span class="s...')
+#8 F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('<span class="st...', '[<span class="s...')
+#9 F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#10 F:\phpStudy\WWW\php_9\allance1\frontend\web\index.php(18): yii\base\Application->run()
+#11 {main}
+Additional Information:
+Array
+(
+    [0] => 42S22
+    [1] => 1054
+    [2] => Unknown column 'al_company.cou_id' in 'on clause'
+)
+
+2016-06-19 19:59:02 [::1][-][-][info][application] $_GET = [
+    'r' => 'company/show'
+]
+
+$_COOKIE = [
+    '__gads' => 'ID=958cf7cb6afa7cad:T=1460978978:S=ALNI_Mb2TnEoFXLJ87eaP3y14ps-v80dlw'
+    'bdshare_firstime' => '1460978979566'
+    'g' => '89642_1461225954402'
+    'CNZZDATA2192707' => 'cnzz_eid=16655850-1461223841-&ntime=1461330789'
+    'Hm_lvt_dfa5478034171cc641b1639b2a5b717d' => '1461225955,1461244135,1461331760'
+    '_ga' => 'GA1.1.1275183857.1461225955'
+    'pgv_pvi' => '7869699072'
+    'PHPSESSID' => 'vusq9t3n72g3l2sr431a84d793'
+    'pgv_si' => 's196015104'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:47.0) Gecko/20100101 Firefox/47.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://localhost/php_9/allance1/frontend/web/index.php?r=public/left'
+    'HTTP_COOKIE' => '__gads=ID=958cf7cb6afa7cad:T=1460978978:S=ALNI_Mb2TnEoFXLJ87eaP3y14ps-v80dlw; bdshare_firstime=1460978979566; g=89642_1461225954402; CNZZDATA2192707=cnzz_eid%3D16655850-1461223841-%26ntime%3D1461330789; Hm_lvt_dfa5478034171cc641b1639b2a5b717d=1461225955,1461244135,1461331760; _ga=GA1.1.1275183857.1461225955; pgv_pvi=7869699072; PHPSESSID=vusq9t3n72g3l2sr431a84d793; pgv_si=s196015104'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'PATH' => 'F:\\phpStudy\\php55;D:\\Program Files\\Git\\cmd;C:\\Program Files\\TortoiseGit\\bin;'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e PHP/5.5.30'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'F:/phpStudy/WWW'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'F:/phpStudy/WWW'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'SCRIPT_FILENAME' => 'F:/phpStudy/WWW/php_9/allance1/frontend/web/index.php'
+    'REMOTE_PORT' => '60840'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=company/show'
+    'REQUEST_URI' => '/php_9/allance1/frontend/web/index.php?r=company/show'
+    'SCRIPT_NAME' => '/php_9/allance1/frontend/web/index.php'
+    'PHP_SELF' => '/php_9/allance1/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1466337542.789
+    'REQUEST_TIME' => 1466337542
+]
+2016-06-19 19:59:39 [::1][-][-][error][yii\db\Exception] exception 'PDOException' with message 'SQLSTATE[42S22]: Column not found: 1054 Unknown column 'al_post.mes_id' in 'on clause'' in F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\db\Command.php:837
+Stack trace:
+#0 F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\db\Command.php(837): PDOStatement->execute()
+#1 F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\db\Command.php(359): yii\db\Command->queryInternal('<span class="st...', '<span class="ke...')
+#2 F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\db\Query.php(206): yii\db\Command->queryAll()
+#3 F:\phpStudy\WWW\php_9\allance1\frontend\controllers\IndentController.php(41): yii\db\Query->all()
+#4 [internal function]: frontend\controllers\IndentController->actionShow()
+#5 F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array('[<span class="t...', '[]')
+#6 F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams('[<span class="s...')
+#7 F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('<span class="st...', '[<span class="s...')
+#8 F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('<span class="st...', '[<span class="s...')
+#9 F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#10 F:\phpStudy\WWW\php_9\allance1\frontend\web\index.php(18): yii\base\Application->run()
+#11 {main}
+
+Next exception 'yii\db\Exception' with message 'SQLSTATE[42S22]: Column not found: 1054 Unknown column 'al_post.mes_id' in 'on clause'
+The SQL being executed was: SELECT * FROM `al_indent` INNER JOIN `al_recruit` ON al_indent.rec_id=al_recruit.rec_id  INNER JOIN `al_post` ON al_recruit.post_id=al_post.post_id INNER JOIN `al_com_message` ON al_post.mes_id=al_com_message.mes_id' in F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\db\Schema.php:628
+Stack trace:
+#0 F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\db\Command.php(852): yii\db\Schema->convertException(Object(PDOException), 'SELECT * FROM `...')
+#1 F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\db\Command.php(359): yii\db\Command->queryInternal('<span class="st...', '<span class="ke...')
+#2 F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\db\Query.php(206): yii\db\Command->queryAll()
+#3 F:\phpStudy\WWW\php_9\allance1\frontend\controllers\IndentController.php(41): yii\db\Query->all()
+#4 [internal function]: frontend\controllers\IndentController->actionShow()
+#5 F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array('[<span class="t...', '[]')
+#6 F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams('[<span class="s...')
+#7 F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('<span class="st...', '[<span class="s...')
+#8 F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('<span class="st...', '[<span class="s...')
+#9 F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#10 F:\phpStudy\WWW\php_9\allance1\frontend\web\index.php(18): yii\base\Application->run()
+#11 {main}
+Additional Information:
+Array
+(
+    [0] => 42S22
+    [1] => 1054
+    [2] => Unknown column 'al_post.mes_id' in 'on clause'
+)
+
+2016-06-19 19:59:39 [::1][-][-][info][application] $_GET = [
+    'r' => 'indent/show'
+]
+
+$_COOKIE = [
+    '__gads' => 'ID=958cf7cb6afa7cad:T=1460978978:S=ALNI_Mb2TnEoFXLJ87eaP3y14ps-v80dlw'
+    'bdshare_firstime' => '1460978979566'
+    'g' => '89642_1461225954402'
+    'CNZZDATA2192707' => 'cnzz_eid=16655850-1461223841-&ntime=1461330789'
+    'Hm_lvt_dfa5478034171cc641b1639b2a5b717d' => '1461225955,1461244135,1461331760'
+    '_ga' => 'GA1.1.1275183857.1461225955'
+    'pgv_pvi' => '7869699072'
+    'PHPSESSID' => 'vusq9t3n72g3l2sr431a84d793'
+    'pgv_si' => 's196015104'
+]
+
+$_SESSION = [
+    '__flash' => []
+    'adm_id' => '1'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:47.0) Gecko/20100101 Firefox/47.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://localhost/php_9/allance1/frontend/web/index.php?r=public/left'
+    'HTTP_COOKIE' => '__gads=ID=958cf7cb6afa7cad:T=1460978978:S=ALNI_Mb2TnEoFXLJ87eaP3y14ps-v80dlw; bdshare_firstime=1460978979566; g=89642_1461225954402; CNZZDATA2192707=cnzz_eid%3D16655850-1461223841-%26ntime%3D1461330789; Hm_lvt_dfa5478034171cc641b1639b2a5b717d=1461225955,1461244135,1461331760; _ga=GA1.1.1275183857.1461225955; pgv_pvi=7869699072; PHPSESSID=vusq9t3n72g3l2sr431a84d793; pgv_si=s196015104'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'PATH' => 'F:\\phpStudy\\php55;D:\\Program Files\\Git\\cmd;C:\\Program Files\\TortoiseGit\\bin;'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e PHP/5.5.30'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'F:/phpStudy/WWW'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'F:/phpStudy/WWW'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'SCRIPT_FILENAME' => 'F:/phpStudy/WWW/php_9/allance1/frontend/web/index.php'
+    'REMOTE_PORT' => '60926'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=indent/show'
+    'REQUEST_URI' => '/php_9/allance1/frontend/web/index.php?r=indent/show'
+    'SCRIPT_NAME' => '/php_9/allance1/frontend/web/index.php'
+    'PHP_SELF' => '/php_9/allance1/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1466337579.51
+    'REQUEST_TIME' => 1466337579
+]
+2016-06-19 19:59:47 [::1][-][-][error][yii\base\ErrorException:4] exception 'yii\base\ErrorException' with message 'syntax error, unexpected 'endforeach' (T_ENDFOREACH)' in F:\phpStudy\WWW\php_9\allance1\frontend\views\counselor\show.html:105
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleFatalError()
+#1 {main}
+2016-06-19 19:59:47 [::1][-][-][info][application] $_GET = [
+    'r' => 'counselor/show'
+]
+
+$_COOKIE = [
+    '__gads' => 'ID=958cf7cb6afa7cad:T=1460978978:S=ALNI_Mb2TnEoFXLJ87eaP3y14ps-v80dlw'
+    'bdshare_firstime' => '1460978979566'
+    'g' => '89642_1461225954402'
+    'CNZZDATA2192707' => 'cnzz_eid=16655850-1461223841-&ntime=1461330789'
+    'Hm_lvt_dfa5478034171cc641b1639b2a5b717d' => '1461225955,1461244135,1461331760'
+    '_ga' => 'GA1.1.1275183857.1461225955'
+    'pgv_pvi' => '7869699072'
+    'PHPSESSID' => 'vusq9t3n72g3l2sr431a84d793'
+    'pgv_si' => 's196015104'
+]
+
+$_SESSION = [
+    '__flash' => []
+    'adm_id' => '1'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:47.0) Gecko/20100101 Firefox/47.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://localhost/php_9/allance1/frontend/web/index.php?r=public/left'
+    'HTTP_COOKIE' => '__gads=ID=958cf7cb6afa7cad:T=1460978978:S=ALNI_Mb2TnEoFXLJ87eaP3y14ps-v80dlw; bdshare_firstime=1460978979566; g=89642_1461225954402; CNZZDATA2192707=cnzz_eid%3D16655850-1461223841-%26ntime%3D1461330789; Hm_lvt_dfa5478034171cc641b1639b2a5b717d=1461225955,1461244135,1461331760; _ga=GA1.1.1275183857.1461225955; pgv_pvi=7869699072; PHPSESSID=vusq9t3n72g3l2sr431a84d793; pgv_si=s196015104'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'PATH' => 'F:\\phpStudy\\php55;D:\\Program Files\\Git\\cmd;C:\\Program Files\\TortoiseGit\\bin;'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e PHP/5.5.30'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'F:/phpStudy/WWW'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'F:/phpStudy/WWW'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'SCRIPT_FILENAME' => 'F:/phpStudy/WWW/php_9/allance1/frontend/web/index.php'
+    'REMOTE_PORT' => '60929'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=counselor/show'
+    'REQUEST_URI' => '/php_9/allance1/frontend/web/index.php?r=counselor/show'
+    'SCRIPT_NAME' => '/php_9/allance1/frontend/web/index.php'
+    'PHP_SELF' => '/php_9/allance1/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1466337587.29
+    'REQUEST_TIME' => 1466337587
+]
+2016-06-19 19:59:51 [::1][-][-][error][yii\base\ErrorException:4] exception 'yii\base\ErrorException' with message 'syntax error, unexpected 'endforeach' (T_ENDFOREACH)' in F:\phpStudy\WWW\php_9\allance1\frontend\views\counselor\show.html:105
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleFatalError()
+#1 {main}
+2016-06-19 19:59:51 [::1][-][-][info][application] $_GET = [
+    'r' => 'counselor/show'
+]
+
+$_COOKIE = [
+    '__gads' => 'ID=958cf7cb6afa7cad:T=1460978978:S=ALNI_Mb2TnEoFXLJ87eaP3y14ps-v80dlw'
+    'bdshare_firstime' => '1460978979566'
+    'g' => '89642_1461225954402'
+    'CNZZDATA2192707' => 'cnzz_eid=16655850-1461223841-&ntime=1461330789'
+    'Hm_lvt_dfa5478034171cc641b1639b2a5b717d' => '1461225955,1461244135,1461331760'
+    '_ga' => 'GA1.1.1275183857.1461225955'
+    'pgv_pvi' => '7869699072'
+    'PHPSESSID' => 'vusq9t3n72g3l2sr431a84d793'
+    'pgv_si' => 's196015104'
+]
+
+$_SESSION = [
+    '__flash' => []
+    'adm_id' => '1'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:47.0) Gecko/20100101 Firefox/47.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://localhost/php_9/allance1/frontend/web/index.php?r=public/left'
+    'HTTP_COOKIE' => '__gads=ID=958cf7cb6afa7cad:T=1460978978:S=ALNI_Mb2TnEoFXLJ87eaP3y14ps-v80dlw; bdshare_firstime=1460978979566; g=89642_1461225954402; CNZZDATA2192707=cnzz_eid%3D16655850-1461223841-%26ntime%3D1461330789; Hm_lvt_dfa5478034171cc641b1639b2a5b717d=1461225955,1461244135,1461331760; _ga=GA1.1.1275183857.1461225955; pgv_pvi=7869699072; PHPSESSID=vusq9t3n72g3l2sr431a84d793; pgv_si=s196015104'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'PATH' => 'F:\\phpStudy\\php55;D:\\Program Files\\Git\\cmd;C:\\Program Files\\TortoiseGit\\bin;'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e PHP/5.5.30'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'F:/phpStudy/WWW'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'F:/phpStudy/WWW'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'SCRIPT_FILENAME' => 'F:/phpStudy/WWW/php_9/allance1/frontend/web/index.php'
+    'REMOTE_PORT' => '60947'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=counselor/show'
+    'REQUEST_URI' => '/php_9/allance1/frontend/web/index.php?r=counselor/show'
+    'SCRIPT_NAME' => '/php_9/allance1/frontend/web/index.php'
+    'PHP_SELF' => '/php_9/allance1/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1466337591.493
+    'REQUEST_TIME' => 1466337591
+]
+2016-06-19 20:00:16 [::1][-][-][error][yii\db\Exception] exception 'PDOException' with message 'SQLSTATE[42S02]: Base table or view not found: 1146 Table 'allance.al_major' doesn't exist' in F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\db\Command.php:837
+Stack trace:
+#0 F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\db\Command.php(837): PDOStatement->execute()
+#1 F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\db\Command.php(359): yii\db\Command->queryInternal('<span class="st...', '<span class="ke...')
+#2 F:\phpStudy\WWW\php_9\allance1\frontend\models\Major.php(56): yii\db\Command->queryAll()
+#3 F:\phpStudy\WWW\php_9\allance1\frontend\controllers\CategoryController.php(199): frontend\models\Major->majorshow()
+#4 [internal function]: frontend\controllers\CategoryController->actionMajorshow()
+#5 F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array('[<span class="t...', '[]')
+#6 F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams('[<span class="s...')
+#7 F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('<span class="st...', '[<span class="s...')
+#8 F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('<span class="st...', '[<span class="s...')
+#9 F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#10 F:\phpStudy\WWW\php_9\allance1\frontend\web\index.php(18): yii\base\Application->run()
+#11 {main}
+
+Next exception 'yii\db\Exception' with message 'SQLSTATE[42S02]: Base table or view not found: 1146 Table 'allance.al_major' doesn't exist
+The SQL being executed was: SELECT * FROM al_major ' in F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\db\Schema.php:628
+Stack trace:
+#0 F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\db\Command.php(852): yii\db\Schema->convertException(Object(PDOException), 'SELECT * FROM a...')
+#1 F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\db\Command.php(359): yii\db\Command->queryInternal('<span class="st...', '<span class="ke...')
+#2 F:\phpStudy\WWW\php_9\allance1\frontend\models\Major.php(56): yii\db\Command->queryAll()
+#3 F:\phpStudy\WWW\php_9\allance1\frontend\controllers\CategoryController.php(199): frontend\models\Major->majorshow()
+#4 [internal function]: frontend\controllers\CategoryController->actionMajorshow()
+#5 F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array('[<span class="t...', '[]')
+#6 F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams('[<span class="s...')
+#7 F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('<span class="st...', '[<span class="s...')
+#8 F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('<span class="st...', '[<span class="s...')
+#9 F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#10 F:\phpStudy\WWW\php_9\allance1\frontend\web\index.php(18): yii\base\Application->run()
+#11 {main}
+Additional Information:
+Array
+(
+    [0] => 42S02
+    [1] => 1146
+    [2] => Table 'allance.al_major' doesn't exist
+)
+
+2016-06-19 20:00:16 [::1][-][-][info][application] $_GET = [
+    'r' => 'category/majorshow'
+]
+
+$_COOKIE = [
+    '__gads' => 'ID=958cf7cb6afa7cad:T=1460978978:S=ALNI_Mb2TnEoFXLJ87eaP3y14ps-v80dlw'
+    'bdshare_firstime' => '1460978979566'
+    'g' => '89642_1461225954402'
+    'CNZZDATA2192707' => 'cnzz_eid=16655850-1461223841-&ntime=1461330789'
+    'Hm_lvt_dfa5478034171cc641b1639b2a5b717d' => '1461225955,1461244135,1461331760'
+    '_ga' => 'GA1.1.1275183857.1461225955'
+    'pgv_pvi' => '7869699072'
+    'PHPSESSID' => 'vusq9t3n72g3l2sr431a84d793'
+    'pgv_si' => 's196015104'
+]
+
+$_SESSION = [
+    '__flash' => []
+    'adm_id' => '1'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:47.0) Gecko/20100101 Firefox/47.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://localhost/php_9/allance1/frontend/web/index.php?r=public/left'
+    'HTTP_COOKIE' => '__gads=ID=958cf7cb6afa7cad:T=1460978978:S=ALNI_Mb2TnEoFXLJ87eaP3y14ps-v80dlw; bdshare_firstime=1460978979566; g=89642_1461225954402; CNZZDATA2192707=cnzz_eid%3D16655850-1461223841-%26ntime%3D1461330789; Hm_lvt_dfa5478034171cc641b1639b2a5b717d=1461225955,1461244135,1461331760; _ga=GA1.1.1275183857.1461225955; pgv_pvi=7869699072; PHPSESSID=vusq9t3n72g3l2sr431a84d793; pgv_si=s196015104'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'PATH' => 'F:\\phpStudy\\php55;D:\\Program Files\\Git\\cmd;C:\\Program Files\\TortoiseGit\\bin;'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e PHP/5.5.30'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'F:/phpStudy/WWW'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'F:/phpStudy/WWW'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'SCRIPT_FILENAME' => 'F:/phpStudy/WWW/php_9/allance1/frontend/web/index.php'
+    'REMOTE_PORT' => '61105'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=category/majorshow'
+    'REQUEST_URI' => '/php_9/allance1/frontend/web/index.php?r=category/majorshow'
+    'SCRIPT_NAME' => '/php_9/allance1/frontend/web/index.php'
+    'PHP_SELF' => '/php_9/allance1/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1466337616.541
+    'REQUEST_TIME' => 1466337616
+]
+2016-06-19 20:01:45 [::1][-][-][error][yii\base\ErrorException:8] exception 'yii\base\ErrorException' with message 'Undefined index: alog_id' in F:\phpStudy\WWW\php_9\allance1\frontend\views\admin\ri.html:65
+Stack trace:
+#0 F:\phpStudy\WWW\php_9\allance1\frontend\views\admin\ri.html(65): yii\base\ErrorHandler->handleError(8, 'Undefined index...', 'F:\\phpStudy\\WWW...', 65, Array)
+#1 F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\base\View.php(325): require('F:\\phpStudy\\WWW...')
+#2 F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\base\View.php(247): yii\base\View->renderPhpFile('F:\\phpStudy\\WWW...', Array)
+#3 F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\base\View.php(149): yii\base\View->renderFile('F:\\phpStudy\\WWW...', Array, Object(frontend\controllers\AdminController))
+#4 F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\base\Controller.php(371): yii\base\View->render('ri.html', Array, Object(frontend\controllers\AdminController))
+#5 F:\phpStudy\WWW\php_9\allance1\frontend\controllers\AdminController.php(153): yii\base\Controller->render('ri.html', Array)
+#6 [internal function]: frontend\controllers\AdminController->actionRi()
+#7 F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#8 F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#9 F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('ri', Array)
+#10 F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('admin/ri', Array)
+#11 F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#12 F:\phpStudy\WWW\php_9\allance1\frontend\web\index.php(18): yii\base\Application->run()
+#13 {main}
+2016-06-19 20:01:45 [::1][-][-][info][application] $_GET = [
+    'r' => 'admin/ri'
+]
+
+$_COOKIE = [
+    '__gads' => 'ID=958cf7cb6afa7cad:T=1460978978:S=ALNI_Mb2TnEoFXLJ87eaP3y14ps-v80dlw'
+    'bdshare_firstime' => '1460978979566'
+    'g' => '89642_1461225954402'
+    'CNZZDATA2192707' => 'cnzz_eid=16655850-1461223841-&ntime=1461330789'
+    'Hm_lvt_dfa5478034171cc641b1639b2a5b717d' => '1461225955,1461244135,1461331760'
+    '_ga' => 'GA1.1.1275183857.1461225955'
+    'pgv_pvi' => '7869699072'
+    'PHPSESSID' => 'vusq9t3n72g3l2sr431a84d793'
+    'pgv_si' => 's196015104'
+]
+
+$_SESSION = [
+    '__flash' => []
+    'adm_id' => '1'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:47.0) Gecko/20100101 Firefox/47.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://localhost/php_9/allance1/frontend/web/index.php?r=public/left'
+    'HTTP_COOKIE' => '__gads=ID=958cf7cb6afa7cad:T=1460978978:S=ALNI_Mb2TnEoFXLJ87eaP3y14ps-v80dlw; bdshare_firstime=1460978979566; g=89642_1461225954402; CNZZDATA2192707=cnzz_eid%3D16655850-1461223841-%26ntime%3D1461330789; Hm_lvt_dfa5478034171cc641b1639b2a5b717d=1461225955,1461244135,1461331760; _ga=GA1.1.1275183857.1461225955; pgv_pvi=7869699072; PHPSESSID=vusq9t3n72g3l2sr431a84d793; pgv_si=s196015104'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'PATH' => 'F:\\phpStudy\\php55;D:\\Program Files\\Git\\cmd;C:\\Program Files\\TortoiseGit\\bin;'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e PHP/5.5.30'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'F:/phpStudy/WWW'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'F:/phpStudy/WWW'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'SCRIPT_FILENAME' => 'F:/phpStudy/WWW/php_9/allance1/frontend/web/index.php'
+    'REMOTE_PORT' => '61554'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=admin/ri'
+    'REQUEST_URI' => '/php_9/allance1/frontend/web/index.php?r=admin/ri'
+    'SCRIPT_NAME' => '/php_9/allance1/frontend/web/index.php'
+    'PHP_SELF' => '/php_9/allance1/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1466337705.1
+    'REQUEST_TIME' => 1466337705
+]
+2016-06-19 20:01:45 [::1][-][-][warning][yii\log\Dispatcher::dispatch] Unable to send log via yii\debug\LogTarget: Exception 'PDOException' with message 'You cannot serialize or unserialize PDO instances' 
+
+in F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2-debug\LogTarget.php:58
+
+Stack trace:
+#0 [internal function]: PDO->__sleep()
+#1 F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2-debug\LogTarget.php(58): serialize(Array)
+#2 F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2-debug\LogTarget.php(112): yii\debug\LogTarget->export(Array)
+#3 F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\log\Dispatcher.php(183): yii\debug\LogTarget->collect(Array, true)
+#4 F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\log\Logger.php(173): yii\log\Dispatcher->dispatch(Array, true)
+#5 F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\base\ErrorHandler.php(111): yii\log\Logger->flush(true)
+#6 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\base\ErrorException))
+#7 {main}
+2016-06-19 20:01:45 [::1][-][-][info][application] $_GET = [
+    'r' => 'admin/ri'
+]
+
+$_COOKIE = [
+    '__gads' => 'ID=958cf7cb6afa7cad:T=1460978978:S=ALNI_Mb2TnEoFXLJ87eaP3y14ps-v80dlw'
+    'bdshare_firstime' => '1460978979566'
+    'g' => '89642_1461225954402'
+    'CNZZDATA2192707' => 'cnzz_eid=16655850-1461223841-&ntime=1461330789'
+    'Hm_lvt_dfa5478034171cc641b1639b2a5b717d' => '1461225955,1461244135,1461331760'
+    '_ga' => 'GA1.1.1275183857.1461225955'
+    'pgv_pvi' => '7869699072'
+    'PHPSESSID' => 'vusq9t3n72g3l2sr431a84d793'
+    'pgv_si' => 's196015104'
+]
+
+$_SESSION = [
+    '__flash' => []
+    'adm_id' => '1'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:47.0) Gecko/20100101 Firefox/47.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://localhost/php_9/allance1/frontend/web/index.php?r=public/left'
+    'HTTP_COOKIE' => '__gads=ID=958cf7cb6afa7cad:T=1460978978:S=ALNI_Mb2TnEoFXLJ87eaP3y14ps-v80dlw; bdshare_firstime=1460978979566; g=89642_1461225954402; CNZZDATA2192707=cnzz_eid%3D16655850-1461223841-%26ntime%3D1461330789; Hm_lvt_dfa5478034171cc641b1639b2a5b717d=1461225955,1461244135,1461331760; _ga=GA1.1.1275183857.1461225955; pgv_pvi=7869699072; PHPSESSID=vusq9t3n72g3l2sr431a84d793; pgv_si=s196015104'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'PATH' => 'F:\\phpStudy\\php55;D:\\Program Files\\Git\\cmd;C:\\Program Files\\TortoiseGit\\bin;'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e PHP/5.5.30'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'F:/phpStudy/WWW'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'F:/phpStudy/WWW'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'SCRIPT_FILENAME' => 'F:/phpStudy/WWW/php_9/allance1/frontend/web/index.php'
+    'REMOTE_PORT' => '61554'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=admin/ri'
+    'REQUEST_URI' => '/php_9/allance1/frontend/web/index.php?r=admin/ri'
+    'SCRIPT_NAME' => '/php_9/allance1/frontend/web/index.php'
+    'PHP_SELF' => '/php_9/allance1/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1466337705.1
+    'REQUEST_TIME' => 1466337705
+]
+2016-06-19 20:03:48 [::1][-][-][error][yii\db\Exception] exception 'PDOException' with message 'SQLSTATE[42S02]: Base table or view not found: 1146 Table 'allance.al_major' doesn't exist' in F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\db\Command.php:837
+Stack trace:
+#0 F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\db\Command.php(837): PDOStatement->execute()
+#1 F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\db\Command.php(359): yii\db\Command->queryInternal('<span class="st...', '<span class="ke...')
+#2 F:\phpStudy\WWW\php_9\allance1\frontend\models\Major.php(56): yii\db\Command->queryAll()
+#3 F:\phpStudy\WWW\php_9\allance1\frontend\controllers\CategoryController.php(199): frontend\models\Major->majorshow()
+#4 [internal function]: frontend\controllers\CategoryController->actionMajorshow()
+#5 F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array('[<span class="t...', '[]')
+#6 F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams('[<span class="s...')
+#7 F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('<span class="st...', '[<span class="s...')
+#8 F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('<span class="st...', '[<span class="s...')
+#9 F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#10 F:\phpStudy\WWW\php_9\allance1\frontend\web\index.php(18): yii\base\Application->run()
+#11 {main}
+
+Next exception 'yii\db\Exception' with message 'SQLSTATE[42S02]: Base table or view not found: 1146 Table 'allance.al_major' doesn't exist
+The SQL being executed was: SELECT * FROM al_major ' in F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\db\Schema.php:628
+Stack trace:
+#0 F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\db\Command.php(852): yii\db\Schema->convertException(Object(PDOException), 'SELECT * FROM a...')
+#1 F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\db\Command.php(359): yii\db\Command->queryInternal('<span class="st...', '<span class="ke...')
+#2 F:\phpStudy\WWW\php_9\allance1\frontend\models\Major.php(56): yii\db\Command->queryAll()
+#3 F:\phpStudy\WWW\php_9\allance1\frontend\controllers\CategoryController.php(199): frontend\models\Major->majorshow()
+#4 [internal function]: frontend\controllers\CategoryController->actionMajorshow()
+#5 F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array('[<span class="t...', '[]')
+#6 F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams('[<span class="s...')
+#7 F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('<span class="st...', '[<span class="s...')
+#8 F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('<span class="st...', '[<span class="s...')
+#9 F:\phpStudy\WWW\php_9\allance1\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#10 F:\phpStudy\WWW\php_9\allance1\frontend\web\index.php(18): yii\base\Application->run()
+#11 {main}
+Additional Information:
+Array
+(
+    [0] => 42S02
+    [1] => 1146
+    [2] => Table 'allance.al_major' doesn't exist
+)
+
+2016-06-19 20:03:48 [::1][-][-][info][application] $_GET = [
+    'r' => 'category/majorshow'
+]
+
+$_COOKIE = [
+    '__gads' => 'ID=958cf7cb6afa7cad:T=1460978978:S=ALNI_Mb2TnEoFXLJ87eaP3y14ps-v80dlw'
+    'bdshare_firstime' => '1460978979566'
+    'g' => '89642_1461225954402'
+    'CNZZDATA2192707' => 'cnzz_eid=16655850-1461223841-&ntime=1461330789'
+    'Hm_lvt_dfa5478034171cc641b1639b2a5b717d' => '1461225955,1461244135,1461331760'
+    '_ga' => 'GA1.1.1275183857.1461225955'
+    'pgv_pvi' => '7869699072'
+    'PHPSESSID' => 'vusq9t3n72g3l2sr431a84d793'
+    'pgv_si' => 's196015104'
+]
+
+$_SESSION = [
+    '__flash' => []
+    'adm_id' => '1'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:47.0) Gecko/20100101 Firefox/47.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://localhost/php_9/allance1/frontend/web/index.php?r=public/left'
+    'HTTP_COOKIE' => '__gads=ID=958cf7cb6afa7cad:T=1460978978:S=ALNI_Mb2TnEoFXLJ87eaP3y14ps-v80dlw; bdshare_firstime=1460978979566; g=89642_1461225954402; CNZZDATA2192707=cnzz_eid%3D16655850-1461223841-%26ntime%3D1461330789; Hm_lvt_dfa5478034171cc641b1639b2a5b717d=1461225955,1461244135,1461331760; _ga=GA1.1.1275183857.1461225955; pgv_pvi=7869699072; PHPSESSID=vusq9t3n72g3l2sr431a84d793; pgv_si=s196015104'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'PATH' => 'F:\\phpStudy\\php55;D:\\Program Files\\Git\\cmd;C:\\Program Files\\TortoiseGit\\bin;'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e PHP/5.5.30'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'F:/phpStudy/WWW'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'F:/phpStudy/WWW'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'SCRIPT_FILENAME' => 'F:/phpStudy/WWW/php_9/allance1/frontend/web/index.php'
+    'REMOTE_PORT' => '61824'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=category/majorshow'
+    'REQUEST_URI' => '/php_9/allance1/frontend/web/index.php?r=category/majorshow'
+    'SCRIPT_NAME' => '/php_9/allance1/frontend/web/index.php'
+    'PHP_SELF' => '/php_9/allance1/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1466337828.007
+    'REQUEST_TIME' => 1466337828
+]

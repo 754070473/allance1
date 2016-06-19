@@ -42,21 +42,41 @@ class PrivilegeController extends Controller
     	$request = Yii::$app->request;
 		$name = $request->post('name');
 		$controller = $request->post('controller');
-		$function = $request->post('function');
-		$id = $request->post('id');
 		$time = date('Y-m-d H:i:s',time());
-		$connection = \Yii::$app->db;
-         $re = $connection->createCommand()->insert('al_privilege', ['i_name' => $name,'i_controller' => $controller,'i_function' => $function,'i_addtime' => $time,'p_pid' => $id])->execute();
-		if($re)
+		$function = $request->post('function')?$request->post('function'):"";
+		if($function=="")
 		{
-			$id = $connection->getLastInsertID();
-				$content = '添加权限'.$id.'-'.$name;
-				$this->adminLog($content);
-			echo $id.','.$time;
+			$id = 0;
+			$connection = \Yii::$app->db;
+			 $re = $connection->createCommand()->insert('al_privilege', ['i_name' => $name,'i_controller' => $controller,'i_addtime' => $time,'p_pid' => $id])->execute();
+			if($re)
+			{
+				$id = $connection->getLastInsertID();
+					$content = '添加权限'.$id.'-'.$name;
+					$this->adminLog($content);
+				echo $id.','.$time;
+			}
+			else
+			{
+				echo 0;
+			}
 		}
 		else
 		{
-			echo 0;
+			$id = $request->post('id');
+			$connection = \Yii::$app->db;
+			 $re = $connection->createCommand()->insert('al_privilege', ['i_name' => $name,'i_controller' => $controller,'i_function' => $function,'i_addtime' => $time,'p_pid' => $id])->execute();
+			if($re)
+			{
+				$id = $connection->getLastInsertID();
+					$content = '添加权限'.$id.'-'.$name;
+					$this->adminLog($content);
+				echo $id.','.$time;
+			}
+			else
+			{
+				echo 0;
+			}
 		}
     }
 	/**
