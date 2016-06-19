@@ -78,6 +78,7 @@
                                     </thead>
                                     <tbody>
                                         <?php foreach ($arr as $key => $val): ?>
+
                                         <tr id="<?php echo $val['cou_id']?>" class="gradeA">
                                             <td>
                                                 <input type="checkbox" value="<?php echo $val['cou_id']; ?>">
@@ -92,14 +93,14 @@
                                                     <img class="operation" src="img/update.png">
                                                 </a> 
                                                 <?php else: ?>
-                                                    
-                                            
                                                 <a href="index.php?r=counselor/update&cou_id=<?php echo $val['cou_id']; ?>">
                                                     <img class="operation" src="img/update.png">
                                                 </a> 
                                                 <a href="index.php?r=counselor/delete&cou_id=<?php echo $val['cou_id']; ?>">
                                                     <img class="operation delban" src="img/delete.png">
                                                 </a>
+                                                <?php endif ?>
+
                                             </td>
                                         </tr>
                                         <?php endforeach ?>

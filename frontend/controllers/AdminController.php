@@ -84,6 +84,7 @@ class AdminController extends Controller
         $request = Yii::$app->request;
 
         $id = $request->get('id');
+        //echo  $id;die;
         $connection = \Yii::$app->db;
         $na = (new \yii\db\Query())
             ->select(['a_name'])
@@ -94,8 +95,7 @@ class AdminController extends Controller
       // echo $name;die;
         $re = $connection->createCommand()->delete('al_admin', "adm_id=$id")->execute();
         if ($re) {
-            $id = $connection->getLastInsertID();
-            $content = '添加管理员'.$id.'-'.$name;
+            $content = '删除管理员'.$id.'-'.$name;
             $this->adminLog($content);
             return $this->redirect(array("admin/show"));
         } else {
@@ -129,8 +129,8 @@ class AdminController extends Controller
         $re = $connection->createCommand()->update('al_admin', ['a_name' => $name, 'a_pwd' => $pwd], "adm_id=$id")->execute();
         // $connection->createCommand()->delete('user', 'status = 0')->execute();
         if ($re) {
-            $id = $connection->getLastInsertID();
-            $content = '添加管理员'.$id.'-'.$name;
+          //  $id = $connection->getLastInsertID();
+            $content = '修改管理员'.$id.'-'.$name;
             $this->adminLog($content);
             return $this->redirect(array('admin/show'));
         } else {
@@ -174,7 +174,7 @@ class AdminController extends Controller
         if ($re) {
 
             $id = $connection->getLastInsertID();
-            $content = '添加管理员'.$id.'-'.$name;
+            $content = '删除管理员'.$id.'-'.$name;
             $this->adminLog($content);
             return $this->redirect(array("admin/ri"));
         } else {
@@ -202,8 +202,8 @@ class AdminController extends Controller
 
                  ->all();
              $name=$na['0']['a_name'];
-             $id = $connection->getLastInsertID();
-             $content = '添加管理员'.$id.'-'.$name;
+            // $id = $connection->getLastInsertID();
+             $content = '修改日志'.$id.'-'.$name;
              $this->adminLog($content);
              return $this->redirect(array("admin/ri"));
          }else{
@@ -229,8 +229,8 @@ class AdminController extends Controller
 
                 ->all();
             $name=$na['0']['a_name'];
-            $id = $connection->getLastInsertID();
-            $content = '添加管理员'.$id.'-'.$name;
+            //$id = $connection->getLastInsertID();
+            $content = '批量删除'.$id.'-'.$name;
             $this->adminLog($content);
           echo 1;
         }else{
@@ -259,7 +259,7 @@ class AdminController extends Controller
 // 移除：unset(Yii::app()->session['var']);
          $connection = \Yii::$app->db;
         $request = Yii::$app->request;
-                        $user= $request->post('user'); 
+                        $user= md5($request->post('user')); 
                         //print_r($user);die;
                          //打开session
                        $session = Yii::$app->session;
@@ -287,7 +287,7 @@ class AdminController extends Controller
                        $session = Yii::$app->session;
                            //取出session
                         $adm_id= $session['adm_id'];     
-                        $pwd= $request->post('pwd'); 
+                        $pwd= md5($request->post('pwd')); 
                         //print_r($pwd);die;
         $aa=$connection->createCommand()->update('al_admin', ['a_pwd'=>"$pwd"], "adm_id=$adm_id")->execute();
         if($aa){
