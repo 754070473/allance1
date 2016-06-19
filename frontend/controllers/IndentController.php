@@ -52,4 +52,22 @@ class IndentController extends Controller
     {
     	return $this->render('add.html');
     }
+    //订单修改
+    public function actionDel()
+    {
+        $request = Yii::$app->request;
+        $id = $request->get('id');
+
+        $connection = \Yii::$app->db;
+       $re= $connection->createCommand()->delete('al_indent',"ind_id =$id ")->execute();
+           if($re){
+
+               return $this->redirect(array('indent/show'));
+           }else{
+               echo  "删除失败";
+           }
+
+        // print_r($rows);die;
+
+    }
 }

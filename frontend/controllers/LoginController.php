@@ -62,7 +62,7 @@ class LoginController extends Controller
         $connection = \Yii::$app->db;
         $request = Yii::$app->request;
                         $name= $request->post('name'); 
-                         $pwd= $request->post('pwd'); 
+                         $pwd= $request->post('pwd');
                         //print_r($user);die;
         $row = (new \yii\db\Query())
                         ->select(['*'])

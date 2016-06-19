@@ -62,13 +62,13 @@
                         <tbody>
                         <?php foreach($arr as $v){?>
                         <tr>
-                            <td><input type="checkbox"  class="s1" value="<?= $v['alog_id']?>"></td>
-                            <td><?= $v['alog_id']?></td>
+                            <td><input type="checkbox"  class="s1" value="<?= $v['log_id']?>"></td>
+                            <td><?= $v['log_id']?></td>
                             <td><?= $v['a_name']?></td>
-                            <td><?= $v['a_content']?></td>
-                            <td><?= $v['a_time']?></td>
-                            <td><a href="index.php?r=admin/upd&id=<?= $v['alog_id']?>"><img 	src="img/update.png"></a>
-                                <a href="index.php?r=admin/shan&id=<?= $v['alog_id']?>"><img 	src="img/delete.png"></a></td>
+                            <td><?= $v['content']?></td>
+                            <td><?= $v['log_addtime']?></td>
+                            <td><a href="index.php?r=admin/upd&id=<?= $v['log_id']?>"><img 	src="img/update.png"></a>
+                                <a href="index.php?r=admin/shan&id=<?= $v['log_id']?>"><img 	src="img/delete.png"></a></td>
                         </tr>
                         <?php
                         }?>
