@@ -63,9 +63,9 @@ class AdminController extends Controller
             ])->execute();
 
             if ($qq) {
-                $id = $connection->getLastInsertID();
-                $content = '添加管理员'.$id.'-'.$name;
-                $this->adminLog($content);
+				$id = $connection->getLastInsertID();
+				$content = '添加管理员'.$id.'-'.$name;
+				$this->adminLog($content);
                 return $this->render('show.html', ["arr" => $re]);
             } else {
                 return $this->render('useradd.html');
@@ -259,7 +259,7 @@ class AdminController extends Controller
 // 移除：unset(Yii::app()->session['var']);
          $connection = \Yii::$app->db;
         $request = Yii::$app->request;
-                        $user= $request->post('user'); 
+                        $user= md5($request->post('user')); 
                         //print_r($user);die;
                          //打开session
                        $session = Yii::$app->session;
@@ -287,7 +287,7 @@ class AdminController extends Controller
                        $session = Yii::$app->session;
                            //取出session
                         $adm_id= $session['adm_id'];     
-                        $pwd= $request->post('pwd'); 
+                        $pwd= md5($request->post('pwd')); 
                         //print_r($pwd);die;
         $aa=$connection->createCommand()->update('al_admin', ['a_pwd'=>"$pwd"], "adm_id=$adm_id")->execute();
         if($aa){

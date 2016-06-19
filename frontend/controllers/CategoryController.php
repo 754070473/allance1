@@ -248,7 +248,7 @@ class CategoryController extends Controller
     //列表
     public function actionPostshow()
     {
-        $arr = ControlController::classify('al_post','p_pid');
+        $arr = $this->classify('al_post','p_pid');
          return $this->render('post_show.html',['arr'=>$arr]);
     }
     //表单

@@ -11,15 +11,16 @@ use frontend\models\Navigation;
 */
 class NavigationController extends \yii\web\Controller
 {
-     use ControlController;
+    use ControlController;
 	public $layout=false;
 	public $enableCsrfValidation=false;
     //渲染添加导航列表
     public function actionIndex()
     {
     	$model = new Navigation();   //实例化model
-
+ 
         $request = Yii::$app->request;  //实例化请求处理
+        $connection = \Yii::$app->db;   //实例化数据库操作
         if($request->isPost)
         {
             //接受数据
@@ -39,6 +40,9 @@ class NavigationController extends \yii\web\Controller
             //判断
             if($re)
             {
+                $id = $connection->getLastInsertID();
+                $content = '添加导航'.$id.'-'.$n_name;
+                $this->adminLog($content);
                 return $this->redirect(array('navigation/show'));
             }
             else
@@ -70,15 +74,19 @@ class NavigationController extends \yii\web\Controller
         $model = new Navigation();   //实例化model
 
         $request = Yii::$app->request;  //实例化请求处理
+        $connection = \Yii::$app->db;   //实例化数据库操作
 
         //接受id
         $id=$request->get('id');
         $model = Navigation::findOne($id);
+        $n_name = $model->n_name;
         $re=$model->delete();
         
         //判断
         if($re)
         {
+            $content = '删除导航'.$id.'-'.$n_name;
+            $this->adminLog($content);
             return $this->redirect(['navigation/show']);
         }
         else
@@ -108,6 +116,7 @@ class NavigationController extends \yii\web\Controller
         $model = new Navigation();   //实例化model
 
         $request = Yii::$app->request;  //实例化请求处理
+        $connection = \Yii::$app->db;   //实例化数据库操作
 
         //接受收据
         $id=$request->post('id');
@@ -118,6 +127,7 @@ class NavigationController extends \yii\web\Controller
         $n_addtime=date('Y-m-d H:i:s',time());
         
         $models = Navigation::findOne($id);
+        $prev_n_num = $models->n_name;         //修改前导航
         $models->n_name=$n_name;
         $models->n_url=$n_url;
         $models->n_type=$n_type;
@@ -127,6 +137,8 @@ class NavigationController extends \yii\web\Controller
         //判断
         if($re)
         {
+            $content = '修改导航'.$id.'-'.$prev_n_num.'=>'.$n_name;
+            $this->adminLog($content);
             return $this->redirect(['navigation/show']);
         }
         else
