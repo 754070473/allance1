@@ -1,0 +1,172 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>广告-有点</title>
+<link rel="stylesheet" type="text/css" href="css/css.css" />
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<!-- <script type="text/javascript" src="js/page.js" ></script> -->
+
+<style>
+/*权限*/
+.box{ width:92%; margin-left:100px; border:1px solid #ccc; border-bottom:none}
+.box dl.dl_box{border-bottom:1px solid #CCC; overflow:hidden; margin:0; padding:0; width:100% }
+.box dl.dl_box dt{ width:17%;line-height:30px; padding-left:10px; }
+.box dl.dl_box dd{width:83%; border-left:1px solid #ccc;padding-left:10px;}
+.box dl.dl_box dd span{  width:193px; height:30px; line-height:30px; display:inline-block;}
+.co-box .fill-info .box dl.dl_box label{ text-align:left; width:193px; height:30px; overflow:hidden}
+.co-box .fill-info .box dl.dl_box label input{ margin-right:5px;}
+.co-box .fill-info .box dl.dl_box dd label{font-weight:normal}
+dl{clear:left;}
+dt,dd{float:left;}
+/* 保存按钮 */
+.className{
+  line-height:30px;
+  height:30px;
+  width:100px;
+  color:#ffffff;
+  background-color:#ededed;
+  font-size:15px;
+  font-weight:bold;
+  font-family:Arial;
+  background:-webkit-gradient(linear, left top, left bottom, color-start(0.05, #79bbff), color-stop(1, #378de5));
+  background:-moz-linear-gradient(top, #79bbff 5%, #378de5 100%);
+  background:-o-linear-gradient(top, #79bbff 5%, #378de5 100%);
+  background:-ms-linear-gradient(top, #79bbff 5%, #378de5 100%);
+  background:linear-gradient(to bottom, #79bbff 5%, #378de5 100%);
+  background:-webkit-linear-gradient(top, #79bbff 5%, #378de5 100%);
+  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#79bbff', endColorstr='#378de5',GradientType=0);
+  border:1px solid #84bbf3;
+  -webkit-border-top-left-radius:6px;
+  -moz-border-radius-topleft:6px;
+  border-top-left-radius:6px;
+  -webkit-border-top-right-radius:6px;
+  -moz-border-radius-topright:6px;
+  border-top-right-radius:6px;
+  -webkit-border-bottom-left-radius:6px;
+  -moz-border-radius-bottomleft:6px;
+  border-bottom-left-radius:6px;
+  -webkit-border-bottom-right-radius:6px;
+  -moz-border-radius-bottomright:6px;
+  border-bottom-right-radius:6px;
+  -moz-box-shadow: inset 0px 1px 0px 0px #bbdaf7;
+  -webkit-box-shadow: inset 0px 1px 0px 0px #bbdaf7;
+  box-shadow: inset 0px 1px 0px 0px #bbdaf7;
+  text-align:center;
+  display:inline-block;
+  text-decoration:none;
+}
+.className:hover{
+  background-color:#f5f5f5;
+  background:-webkit-gradient(linear, left top, left bottom, color-start(0.05, #378de5), color-stop(1, #79bbff));
+  background:-moz-linear-gradient(top, #378de5 5%, #79bbff 100%);
+  background:-o-linear-gradient(top, #378de5 5%, #79bbff 100%);
+  background:-ms-linear-gradient(top, #378de5 5%, #79bbff 100%);
+  background:linear-gradient(to bottom, #378de5 5%, #79bbff 100%);
+  background:-webkit-linear-gradient(top, #378de5 5%, #79bbff 100%);
+  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#378de5', endColorstr='#79bbff',GradientType=0);
+}
+</style>
+</head>
+
+<body>
+	<div id="pageAll">
+		<div class="pageTop">
+			<div class="page">
+				<img src="img/coin02.png" /><span><a href="#">首页</a>&nbsp;-&nbsp;<a
+					href="#">管理员管理</a>&nbsp;-</span>&nbsp;管理员赋权
+			</div>
+		</div>
+		<div class="page">
+			<!-- banner页面样式 -->
+			<div class="banner">
+				<!-- banner 表格 显示 -->
+				<div class="banShow">
+				<form action="index.php?r=admin/empowerinfo" method="post">
+				<input type="hidden" value="<?php echo $adm_id?>" name="adm_id" />
+					<label style="color:#0066CC;">请选择权限：</label>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="line-height:40px"><input type="checkbox" id="checked"/>全选/反选</span>
+                      <div class="box">
+                          <?php foreach($arr as $key=>$val){?>
+                            <dl class="dl_box" style="list-style:none;">
+                                <dt style="width:100px">
+                                    <label>
+                                        <input type="checkbox" id="<?php echo $val['pri_id']?>" class="checked" value="<?php echo $val['pri_id']?>" name="pri_id[]" <?php if($val['in'] == 1){?>checked="checked"<?php }?> /><?php echo $val['i_name']?>
+                                    </label>
+                                </dt>
+                                    <?php foreach($val['son'] as $k=>$v){?>
+                                        <dd style="float:right">
+                                            <span>
+                                                <label>
+                                                    <input type="checkbox" class="checked<?php echo $val['pri_id']?>" parent_id="<?php echo $val['pri_id']?>" value="<?php echo $v['pri_id']?>" name="pri_id[]" <?php if($v['in'] == 1){?>checked="checked"<?php }?> /><?php echo $v['i_name']?>
+                                                </label>
+                                            </span>
+                                        </dd>
+                                    <?php }?>
+                            </dl>
+                          <?php }?>
+                    </div>
+					<input type="submit" value="保存" class="className" style="float: right;margin-top: 40px"/>
+					</form>
+				</div>
+				<!-- banner 表格 显示 end-->
+			</div>
+			<!-- banner页面样式end -->
+		</div>
+
+	</div>
+</body>
+
+<script type="text/javascript">
+$('#checked').click(function(){
+	var checked = $('#checked').prop('checked');
+	var check = $('input:checkbox');
+	for(var i=0;i<check.length;i++)
+	{
+		if(checked == true)
+		{
+			check.eq(i).prop('checked',true);
+		}
+		else
+		{
+			check.eq(i).prop('checked',false);
+		}
+	}
+})
+$('.checked').click(function(){
+	var check = $(this).val();
+	var checked = $('.checked'+check);
+	for(var i=0;i<checked.length;i++)
+	{
+		if($(this).prop('checked') == true)
+		{
+			checked.eq(i).prop('checked',true);
+		}
+		else
+		{
+			checked.eq(i).prop('checked',false);
+		}
+	}
+})
+$('span label input:checkbox').click(function(){
+	var id = $(this).attr('parent_id');
+	var check = $('.checked'+id);
+	var n = 0;
+	for(var i=0;i<check.length;i++)
+	{
+		if(check.eq(i).prop('checked') == true)
+		{
+			n++;
+		}
+	}
+	if(n > 0)
+	{
+		$('#'+id).prop('checked',true);
+	}
+	else
+	{
+		$('#'+id).prop('checked',false);
+	}
+})
+</script>
+</html>
