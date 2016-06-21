@@ -11,7 +11,8 @@
 |
 */
 //展示首页面
-Route::get('/index', 'IndexController@index');
+Route::get('/', 'IndexController@index');
+Route::get('/index/index', 'IndexController@index');
 
 //展示招聘信息详情
 Route::get('/jobdetail', 'IndexController@jobdetail');
