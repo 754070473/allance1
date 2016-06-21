@@ -41,12 +41,27 @@ var youdao_conv_id = 271546;
     			<img src="style/images/logo.png" width="229" height="43" alt="拉勾招聘-专注互联网招聘" />
     		</a>
     		<ul class="reset" id="navheader">
-    			<li class="current"><a href="index">首页</a></li>
-    			<li ><a href="companylist" >公司</a></li>
-    			<li ><a href="#" target="_blank">论坛</a></li>
-    				    			<li ><a href="jianli" rel="nofollow">我的简历</a></li>
-	    							    			<li ><a href="create" rel="nofollow">发布职位</a></li>
-	    		    		</ul>
+    			<?php if(empty(session('key'))){?>
+                           <li ><a href="index">首页</a></li>
+                           <li ><a href="companylist" >职位</a></li>
+                          <li ><a href="toForum" target="_blank">论坛</a></li>
+                          <li ><a href="login" rel="nofollow">个人中心</a></li>
+                          <li ><a href="login" rel="nofollow">发布职位</a></li>
+                <?php }else if(session('key')==1){?>
+                         <li ><a href="index">首页</a></li>
+                         <li ><a href="companylist" >职位</a></li>
+                         <li ><a href="toForum" target="_blank">论坛</a></li>
+                         <li ><a href="jianli" rel="nofollow">个人中心</a></li>
+                         <li ><a href="create" rel="nofollow">发布职位</a></li>
+                <?php }else if(session('key')==0){?>
+                        <li ><a href="index">首页</a></li>
+                         <li ><a href="companylist" >职位</a></li>
+                         <li ><a href="toForum" target="_blank">论坛</a></li>
+                         <li ><a href="jianli" rel="nofollow">个人中心</a></li>
+                         <li ><a href="create" rel="nofollow">发布职位</a></li>
+                <?php  }?>
+
+	    	</ul>
         	            <ul class="loginTop">
             	<li><a href="login" rel="nofollow" target="_parent">登录</a></li> 
             	<li>|</li>
