@@ -43,9 +43,9 @@ var youdao_conv_id = 271546;
     		</a>
     		<ul id="navheader" class="reset">
     			<li><a href="index">首页</a></li>
-    			<li><a href="companylist">公司</a></li>
+    			<li><a href="companylist">职位</a></li>
     			<li><a target="_blank" href="h/toForum">论坛</a></li>
-    				    			<li class="current"><a rel="nofollow" href="jianli">我的简历</a></li>
+    			<li class="current"><a rel="nofollow" href="jianli">个人中心</a></li>
 	    						    		</ul>
         	        	<dl class="collapsible_menu">
             	<dt>
@@ -53,7 +53,7 @@ var youdao_conv_id = 271546;
             		<span class="red dn" id="noticeDot-0"></span>
             		<i></i>
             	</dt>
-                                	<dd><a rel="nofollow" href="jianli">我的简历</a></dd>
+                                	<dd><a rel="nofollow" href="jianli">个人中心</a></dd>
                 	                	<dd><a href="collections">我收藏的职位</a></dd>
                 	                	                	<dd class="btm"><a href="subscribe">我的订阅</a></dd>
                 	<dd><a href="create">我要招人</a></dd>

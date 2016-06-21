@@ -41,12 +41,10 @@ var youdao_conv_id = 271546;
     		</a>
     		<ul id="navheader" class="reset">
     			<li><a href="index">首页</a></li>
-    			<li class="current"><a href="companylist">公司</a></li>
+    			<li class="current"><a href="companylist">职位</a></li>
     			<li><a target="_blank" href="">论坛</a></li>
-    				    			<li>
-	    				<a rel="nofollow" href="">简历管理</a>
-	    					    			</li>
-	    							    			<li><a rel="nofollow" href="create">发布职位</a></li>
+    			<li><a rel="nofollow" href="">个人中心</a></li>
+	    		<li><a rel="nofollow" href="create">发布职位</a></li>
 	    		    		</ul>
         	        	<dl class="collapsible_menu">
             	<dt>
