@@ -35,6 +35,8 @@ var youdao_conv_id = 271546;
 <body>
 <div id="body">
 	<div id="header">
+
+
     	<div class="wrapper">
     		<a class="logo" href="h/">
     			<img width="229" height="43" alt="拉勾招聘-专注互联网招聘" src="style/images/logo.png">
@@ -64,7 +66,9 @@ var youdao_conv_id = 271546;
 				<a target="_blank" href="delivery"><strong>0</strong>条新投递反馈</a>
 				<a class="closeNT" href="javascript:;"></a>
             </div>
-                    </div>
+           </div>
+
+
     </div><!-- end #header -->
     <div id="container">
         
