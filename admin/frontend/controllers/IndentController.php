@@ -38,10 +38,17 @@ class IndentController extends Controller
             ->innerJoin('al_recruit', 'al_indent.rec_id=al_recruit.rec_id ')
             ->innerJoin('al_post', 'al_recruit.post_id=al_post.post_id')
             ->innerJoin('al_com_message', 'al_post.mes_id=al_com_message.mes_id')
+			->where('i_status = 1')
+			->orderBy('ind_id desc')
             ->all();
-
-
-       // print_r($rows);die;
+		$connection = \Yii::$app->db;
+		$command = $connection->createCommand('SELECT ind_id FROM al_indent where i_check=0');
+		$id = $command->queryColumn();
+		if($id)
+		{
+			$command = $connection->createCommand('UPDATE al_indent SET i_check=1');
+			$command->execute();
+		}
         return $this->render('show.html',["arr" => $rows]);
     }
     /**
