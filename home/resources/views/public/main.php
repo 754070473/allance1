@@ -36,12 +36,10 @@ var youdao_conv_id = 271546;
 <body>
 <div id="body">
 <!--头部-->
-
-@include('public.top')
+<?php include('top.php') ?>
     <div id="container">
 <!--左侧-->				
-
-@include('public.left')			
+<?php include('left.php') ?>
 	
         <div class="searchtype_arrow"></div>
         <input type="text" id="search_input" name = "kd"  tabindex="1" value=""  placeholder="请输入职位名称，如：产品经理"  />
