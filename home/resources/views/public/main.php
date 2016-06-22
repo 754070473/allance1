@@ -6,7 +6,7 @@
 <link rel="alternate" media="handheld"  />
 <!-- end 云适配 -->
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<title>拉勾网-最专业的互联网招聘平台</title>
+<title>强强联合-最专业的互联网招聘平台</title>
 <meta property="qc:admins" content="23635710066417756375" />
 <meta content="" name="description">
 <meta content="" name="keywords">
@@ -190,8 +190,7 @@ var youdao_conv_id = 271546;
             </ul>
             <div id="hotList">
 	            <ul class="hot_pos reset">
-	            		            		            				            		<li class="clearfix">
-		            																		            					                	<div class="hot_pos_l">
+                    <li class="clearfix">																            					                	                            <div class="hot_pos_l">
 			                    	<div class="mb10">
 			                        	<a href="h/jobs/147822.html" target="_blank">运营总监</a> 
 			                            &nbsp;

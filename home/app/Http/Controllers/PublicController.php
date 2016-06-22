@@ -20,7 +20,8 @@ class PublicController extends Controller {
 	// }
 	/**中心*/
 	public  function main(){
-		return view("public.main");
+		$arr = $this->classify('al_post','p_pid');
+		return view("public.main",['arr'=>$arr]);
 	}
 
 }	

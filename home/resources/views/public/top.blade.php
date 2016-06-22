@@ -6,7 +6,7 @@
 <link rel="alternate" media="handheld"  />
 <!-- end 云适配 -->
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<title>拉勾网-最专业的互联网招聘平台</title>
+<title>强强联合-最专业的互联网招聘平台</title>
 <meta property="qc:admins" content="23635710066417756375" />
 <meta content="" name="description">
 <meta content="" name="keywords">
@@ -38,7 +38,7 @@ var youdao_conv_id = 271546;
 	<div id="header">
     	<div class="wrapper">
     		<a href="index.html" class="logo">
-    			<img src="style/images/logo.png" width="229" height="43" alt="拉勾招聘-专注互联网招聘" />
+    			<img src="style/images/logo.png" width="229" height="43" alt="强强联合-专注互联网招聘" />
     		</a>
     		<ul class="reset" id="navheader">
     			<?php if(empty(session('key'))){?>
