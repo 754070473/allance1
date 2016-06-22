@@ -11,8 +11,14 @@
 |
 */
 //展示首页面
+Route::get('/', 'IndexController@index');
 Route::get('/index', 'IndexController@index');
-
+/**
+ * 公共样式
+ */
+Route::get('/top', 'PublicController@top');
+Route::get('/left', 'PublicController@left');
+Route::get('/main', 'PublicController@main');
 //展示招聘信息详情
 Route::get('/jobdetail', 'IndexController@jobdetail');
 
