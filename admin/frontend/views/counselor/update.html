@@ -1,0 +1,242 @@
+<?php
+use yii\helpers\Html;
+use yii\widgets\ActiveForm;
+?>
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="renderer" content="webkit">
+
+    <title>素材火www.sucaihuo.com - 表单验证</title>
+
+    <meta name="keywords" content="H+后台主题,后台bootstrap框架,会员中心主题,后台HTML,响应式后台">
+    <meta name="description" content="H+是一个完全响应式，基于Bootstrap3最新版本开发的扁平化主题，她采用了主流的左右两栏式布局，使用了Html5+CSS3等现代技术">
+
+    <link href="css/bootstrap.min.css?v=3.4.0" rel="stylesheet">
+    <link href="font-awesome/css/font-awesome.css?v=4.3.0" rel="stylesheet">
+    <link href="css/animate.css" rel="stylesheet">
+    <link href="css/style.css?v=2.2.0" rel="stylesheet">
+
+</head>
+
+<body style="background-color:#fff;">
+    <div id="wrapper">
+
+            <div class="row wrapper border-bottom white-bg page-heading">
+                <div class="col-lg-10">
+                    <h2>表单验证</h2>
+                    <ol class="breadcrumb">
+                        <li>
+                            <a href="index.html">企业信息</a>
+                        </li>
+                        <li>
+                            <a>添加</a>
+                        </li>
+                        <li>
+                            <strong></strong>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+            <div class="wrapper wrapper-content  animated fadeInRight">
+
+                <div class="row">
+                    <div class="col-lg-6">
+                         
+                        <div class="ibox ">
+                            <div class="ibox-title">
+                                
+                                <a onclick="fnClickAddRow();" href="index.php?r=counselor/show" class="btn btn-primary ">顾问列表</a>
+                            </div>
+                           
+                            <div class="ibox-content">
+                                <h2>
+                                企业账户密码修改
+                            </h2>
+                                <?php $form = ActiveForm::begin([
+                                   'method'=>'post',
+                                   'action'=>['counselor/update']  
+                                ])?>
+
+                                
+                                    <div class="form-group">
+                                        <label>顾问: </label>
+                                        <input type="text" name="c_name" value="<?php echo $arr['c_name']; ?>">
+                                    </div> 
+                                    <div class="form-group">
+                                        <label>qq: </label>
+                                        <input type="text" name="c_qq" value="<?php echo $arr['c_qq']; ?>">
+
+                                        <input type="hidden" name="cou_id" value="<?php echo $arr['cou_id']; ?>">
+                                    </div> 
+                                    
+                                    <div>
+                                        <button class="btn btn-sm btn-primary m-t-n-xs" type="submit"><strong>提交</strong>
+                                        </button>
+                                    </div>
+                                    <?php ActiveForm::end() ?>
+                                
+                            </div>
+                        </div>
+
+
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="ibox ">
+                            <div class="ibox-title">
+                                <h5>方法</h5>
+                            </div>
+                            <div class="ibox-content">
+                                <h2>
+                               内置验证方法
+                            </h2>
+                                <table class="table table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th>方法</th>
+                                            <th>描述</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>remote</td>
+                                            <td>请求远程校验。url通常是一个 远程调用方法
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>minlength</td>
+                                            <td>设置最小长度</td>
+                                        </tr>
+                                        <tr>
+                                            <td>maxlength</td>
+                                            <td>设置最大长度</td>
+                                        </tr>
+                                        <tr>
+                                            <td>rangelength</td>
+                                            <td>设置一个长度范围[min,max]</td>
+                                        </tr>
+                                        <tr>
+                                            <td>min</td>
+                                            <td>设置最小值</td>
+                                        </tr>
+                                        <tr>
+                                            <td>max</td>
+                                            <td>设置最大值</td>
+                                        </tr>
+                                        <tr>
+                                            <td>range</td>
+                                            <td>设置值的范围</td>
+                                        </tr>
+                                        <tr>
+                                            <td>email</td>
+                                            <td>验证电子邮箱格式</td>
+                                        </tr>
+                                        <tr>
+                                            <td>url</td>
+                                            <td>验证URL格式</td>
+                                        </tr>
+                                        <tr>
+                                            <td>date</td>
+                                            <td>验证日期格式(类似30/30/2008的格式,不验证日期准确性只验证格式</td>
+                                        </tr>
+                                        <tr>
+                                            <td>dateISO</td>
+                                            <td>验证ISO类型的日期格式</td>
+                                        </tr>
+                                        <tr>
+                                            <td>number</td>
+                                            <td>验证十进制数字（包括小数）</td>
+                                        </tr>
+                                        <tr>
+                                            <td>digits</td>
+                                            <td>验证整数</td>
+                                        </tr>
+                                        <tr>
+                                            <td>creditcard</td>
+                                            <td>验证信用卡号</td>
+                                        </tr>
+                                        <tr>
+                                            <td>equalTo</td>
+                                            <td>验证两个输入框的内容是否相同</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+
+            </div>
+
+        
+
+    </div>
+    </div>
+
+    <!-- Mainly scripts -->
+    <script src="js/jquery-2.1.1.min.js"></script>
+    <script src="js/bootstrap.min.js?v=3.4.0"></script>
+    <script src="js/plugins/metisMenu/jquery.metisMenu.js"></script>
+    <script src="js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+
+    <!-- Custom and plugin javascript -->
+    <script src="js/hplus.js?v=2.2.0"></script>
+    <script src="js/plugins/pace/pace.min.js"></script>
+
+    <!-- Jquery Validate -->
+    <script src="js/plugins/validate/jquery.validate.min.js"></script>
+
+    <script src="js/plugins/validate/messages_zh.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+
+            $("#form").validate({
+                rules: {
+                    password: {
+                        required: true,
+                        minlength: 3
+                    },
+                    c_pwd: {
+                        required: true,
+                        minlength: 3
+                    },
+                    m_url: {
+                        required: true,
+                        url: true
+                    },
+                    number: {
+                        required: true,
+                        number: true
+                    },
+                    min: {
+                        required: true,
+                        minlength: 6
+                    },
+                    m_qq: {
+                        required: true,
+                        number: true,
+                        minlength: 6,
+                        maxlength: 11
+                    },
+                    max: {
+                        required: true,
+                        maxlength: 4
+                    }
+                }
+            });
+        });
+
+        
+    </script>
+
+    <script type="text/javascript" src="http://tajs.qq.com/stats?sId=9051096" charset="UTF-8"></script><!--统计代码，可删除-->
+</body>
+
+</html>

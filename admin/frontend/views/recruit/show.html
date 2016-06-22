@@ -1,0 +1,402 @@
+<?php 
+use yii\widgets\LinkPager
+
+ ?>
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="renderer" content="webkit">
+
+    <title>素材火www.sucaihuo.com - 数据表格</title>
+    <meta name="keywords" content="H+后台主题,后台bootstrap框架,会员中心主题,后台HTML,响应式后台">
+    <meta name="description" content="H+是一个完全响应式，基于Bootstrap3最新版本开发的扁平化主题，她采用了主流的左右两栏式布局，使用了Html5+CSS3等现代技术">
+
+    <link href="css/bootstrap.min.css?v=3.4.0" rel="stylesheet">
+    <link href="font-awesome/css/font-awesome.css?v=4.3.0" rel="stylesheet">
+
+    <!-- Data Tables -->
+    <link href="css/plugins/dataTables/dataTables.bootstrap.css" rel="stylesheet">
+
+    <link href="css/animate.css" rel="stylesheet">
+    <link href="css/style.css?v=2.2.0" rel="stylesheet">
+
+</head>
+
+<body style="background-color:#fff;">
+    <div id="wrapper">
+
+            <div class="row wrapper border-bottom white-bg page-heading">
+                <div class="col-lg-10">
+                    <h2>数据表格</h2>
+                    <ol class="breadcrumb">
+                        <li>
+                            <a href="index.html">招聘信息</a>
+                        </li>
+                        <li>
+                            <a>招聘信息列表</a>
+                        </li>
+                    </ol>
+                </div>
+                <div class="col-lg-2">
+
+                </div>
+            </div>
+            <div class="wrapper wrapper-content animated fadeInRight">
+               
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="ibox float-e-margins">
+                            <div class="ibox-title">
+                                <h5>招聘信息</h5>
+                                <div class="ibox-tools">
+                                    <a class="collapse-link">
+                                        <i class="fa fa-chevron-up"></i>
+                                    </a>
+                                    <a class="dropdown-toggle" data-toggle="dropdown" href="table_data_tables.html#">
+                                        <i class="fa fa-wrench"></i>
+                                    </a>
+                                    <a class="close-link">
+                                        <i class="fa fa-times"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="ibox-content">
+                                <div class="">
+                                  
+                                <a onclick="delAll();" href="javascript:void(0)" class="btn btn-primary ">批量删除</a>
+                                </div>
+                               <!--  <table class="table table-striped table-bordered table-hover " id="editable"> -->
+
+                             <table class="table table-striped table-bordered table-hover dataTables-example">
+                                    <thead>
+                                        <tr>
+                                            <th>序号</th>
+                                            <th>所属企业</th>
+                                            <th>所属地区</th>
+                                            <th>职位名称</th>
+                                            <th>职位薪资</th>
+                                            <th>工作年限</th>
+                                            <th>学历要求</th>
+                                            <th>专业要求</th>
+                                            <th>语言要求</th>
+                                            <th>职位描述</th>
+                                            <th>是否全日志统招</th>
+                                            <th>年龄要求</th>
+                                            <th>性别要求</th>
+                                            <th>发布时长</th>
+                                            <th>发布时间</th>
+                                            <th>推广类型</th>
+                                            <th>推广价格</th>
+                                            <th>操作</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <?php foreach ($arr as $key => $val): ?>
+                                        <tr id="<?php echo $val['recr_id']?>">
+                                            <td>
+                                                <input type="checkbox" value="<?php echo $val['recr_id']; ?>">
+                                                <?php echo $val['recr_id']; ?>
+                                            </td>
+                                            <td><?php echo $val['m_name']; ?></td>
+                                            <td><?php echo $val['pl_name']; ?></td>
+                                            <td class="up" ziduan="r_name"><?php echo $val['r_name']; ?></td>
+                                            <td class="up" ziduan="r_pay"><?php echo $val['r_pay']; ?></td>
+                                            <td >
+                                                <?php if ($val['r_suffer']=='0'): ?>
+                                                    应届生
+                                                <?php elseif ($val['r_suffer']=='1'): ?>
+                                                    无经验  
+                                                <?php elseif ($val['r_suffer']=='2'): ?>
+                                                    1年以下
+                                                <?php elseif ($val['r_suffer']=='3'): ?>
+                                                    1-3年
+                                                <?php elseif ($val['r_suffer']=='4'): ?>
+                                                    3-5年
+                                                <?php elseif ($val['r_suffer']=='5'): ?>
+                                                    5-10年
+                                                <?php elseif ($val['r_suffer']=='6'): ?>
+                                                    10年以上
+                                                <?php else: ?>
+                                                    无符合资格
+                                                <?php endif ?>
+                                            </td>
+                                            <td >
+                                                <?php if ($val['r_edu']=='0'): ?>
+                                                    初中
+                                                <?php elseif ($val['r_edu']=='1'): ?>
+                                                    高中   
+                                                <?php elseif ($val['r_edu']=='2'): ?>
+                                                    中技
+                                                <?php elseif ($val['r_edu']=='3'): ?>
+                                                    中专
+                                                <?php elseif ($val['r_edu']=='4'): ?>
+                                                    大专
+                                                <?php elseif ($val['r_edu']=='5'): ?>
+                                                    本科
+                                                <?php elseif ($val['r_edu']=='6'): ?>
+                                                    硕士
+                                                <?php elseif ($val['r_edu']=='7'): ?>
+                                                    博士
+                                                <?php elseif ($val['r_edu']=='8'): ?>
+                                                    博后
+                                                <?php else: ?>
+                                                    小学
+                                                <?php endif ?>
+                                            </td>
+                                            <td class="up" ziduan="r_major"><?php echo $val['r_major']; ?>
+                                                </td>
+                                            <td >
+                                                <?php if ($val['r_language']=='0'): ?>
+                                                    不限
+                                                <?php elseif ($val['r_language']=='1'): ?>
+                                                    中文  
+                                                <?php elseif ($val['r_language']=='2'): ?>
+                                                    英文
+                                                <?php else: ?>
+                                                    不限
+                                                <?php endif ?>
+                                                
+                                           
+                                            <td class="up" ziduan="r_describe"><?php echo $val['r_describe']; ?></td>
+                                            <td >
+                                                <?php if ($val['r_iflogbook']=='0'): ?>
+                                                    不限
+                                                <?php elseif ($val['r_iflogbook']=='1'): ?>
+                                                    是 
+                                                <?php else: ?>
+                                                    不限
+                                                <?php endif ?>
+                                            </td>
+                                            <td class="up" ziduan="r_age"><?php echo $val['r_age']; ?></td>
+                                            <td>
+                                                <?php if ($val['r_sex']=='0'): ?>
+                                                    不限
+                                                <?php elseif ($val['r_sex']=='1'): ?>
+                                                    女    
+                                                <?php elseif ($val['r_sex']=='2'): ?>
+                                                    男
+                                                <?php else: ?>
+                                                    默认
+                                                <?php endif ?>
+                                            </td>
+                                            <td><?php echo $val['r_time']; ?></td>
+                                            <td><?php echo $val['r_addtime']; ?></td>
+                                            <td><?php echo $val['g_type_name']; ?></td>
+                                            <td><?php echo $val['g_price']; ?></td>
+
+                                            <td class="center">
+                                            
+                                            <a href="index.php?r=recruit/delete&rec_id=<?php echo $val['recr_id']; ?>">
+                                                <img class="operation delban" src="img/delete.png">
+                                            </a>
+                                            </td>
+                                        </tr>
+                                        <?php endforeach ?>
+                                    </tbody>
+                                
+                                </table>
+                                    <div style="float:right;">
+                                       <?php echo LinkPager::widget([
+                                            'pagination' => $pages,
+                                        ]); ?>
+                                    </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </div>
+
+
+    </div>
+
+
+
+
+    <!-- Mainly scripts -->
+    <script src="js/jquery-2.1.1.min.js"></script>
+    <script src="js/bootstrap.min.js?v=3.4.0"></script>
+    <script src="js/plugins/metisMenu/jquery.metisMenu.js"></script>
+    <script src="js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+
+    <script src="js/plugins/jeditable/jquery.jeditable.js"></script>
+
+    <!-- Data Tables -->
+    <script src="js/plugins/dataTables/jquery.dataTables.js"></script>
+    <script src="js/plugins/dataTables/dataTables.bootstrap.js"></script>
+
+    <!-- Custom and plugin javascript -->
+    <script src="js/hplus.js?v=2.2.0"></script>
+    <script src="js/plugins/pace/pace.min.js"></script>
+
+    <!-- Page-Level Scripts -->
+
+<script type="text/javascript">
+//即点即改
+$(document).on('click','.up',function () {
+    var td=$(this);
+    var old_val=$(this).text();
+    var id=$(this).parent().attr('id');
+    
+    var input=$("<input type='text'/>");
+    $(this).html(input);
+    input.focus().val($.trim(old_val));
+    input.click(function(){
+        return  false;
+    })
+    input.blur(function(){
+        var new_val=$(this).val();
+        var ziduan=$(this).parent().attr('ziduan');
+        if(new_val!=old_val){
+            $.ajax({
+            type: "post", 
+            url: "index.php?r=recruit/oneupdate", 
+            data: "rec_id="+id+"&value="+new_val+"&ziduan="+ziduan,
+                success: function(msg)
+                {
+                    if(msg==1){ 
+                        td.text(new_val); 
+                    }
+                    else{ 
+                        td.text(old_val); 
+                    } 
+                } 
+            });
+        }else{
+            td.text(old_val); 
+        }
+    });
+});
+/**批量删除*/
+function delAll(){
+    // 首先获取当前页最后一个tr的第二个td间的值,作为要查询的条件
+    var obj=$(":checkbox");
+    var arr=Array();
+    for (var i = 0; i < obj.length; i++) {
+        if(obj[i].checked==true){
+            arr.push(obj[i].value);
+        }
+    }
+    var id=arr.join(',');
+    //var last_id=$("tr:last td:nth-child(2)").html();
+    var last_id = $('tr:last').attr('id');
+    $.ajax({
+        type:'post',
+        url:"index.php?r=recruit/delete",
+        data:'rec_id='+id+'&last_id='+last_id,
+        success:function(msg)
+        {
+            var data=eval("("+msg+")");
+            var str="";
+            for(i=0;i<data.length;i++)
+            {
+                str+="<tr id='"+data[i].recr_id+"'>";
+                    str+="<td>"+"<input type='checkbox' value='"+data[i].recr_id+"'>"+data[i].recr_id+"</td>";
+                    str+="<td>"+data[i].m_name+"</td>";
+                    str+="<td>"+data[i].pl_name+"</td>";
+                    str+="<td class='up' ziduan='r_name'>"+data[i].r_name+"</td>";
+                    str+="<td class='up' ziduan='r_pay'>"+data[i].r_pay+"</td>";
+                   
+
+                    if(data[i].r_suffer=='0'){
+                        str+="<td>应届生</td>";
+                    }else if(data[i].r_suffer=='1'){
+                        str+="<td>无经验</td>";
+                    }else if(data[i].r_suffer=='2'){
+                        str+="<td>1年以下</td>";
+                    }else if(data[i].r_suffer=='3'){
+                        str+="<td>1-3年</td>";
+                    }else if(data[i].r_suffer=='4'){
+                        str+="<td> 3-5年</td>";
+                    }else if(data[i].r_suffer=='5'){
+                        str+="<td>5-10年</td>";
+                    }else if(data[i].r_suffer=='6'){
+                        str+="<td>10年以上</td>";
+                    }else{
+                        str+="<td>无符合资格</td>";
+                    }
+
+
+                    if(data[i].r_edu=='0'){
+                        str+="<td>初中</td>";
+                    }else if(data[i].r_edu=='1'){
+                        str+="<td>高中</td>";
+                    }else if(data[i].r_edu=='2'){
+                        str+="<td>中技</td>";
+                    }else if(data[i].r_edu=='3'){
+                        str+="<td>中专</td>";
+                    }else if(data[i].r_edu=='4'){
+                        str+="<td>大专</td>";
+                    }else if(data[i].r_edu=='5'){
+                        str+="<td>本科</td>";
+                    }else if(data[i].r_edu=='6'){
+                        str+="<td>硕士</td>";
+                    }else if(data[i].r_edu=='7'){
+                        str+="<td>博士</td>";
+                    }else if(data[i].r_edu=='8'){
+                        str+="<td>博后</td>";
+                    }else{
+                        str+="<td>小学</td>";
+                    }
+
+
+                    str+="<td class='up' ziduan='r_major'>"+data[i].r_major+"</td>";
+                    if(data[i].r_language=='0'){
+                        str+="<td>不限</td>";
+                    }else if(data[i].r_language=='1'){
+                        str+="<td>中文</td>";
+                    }else if(data[i].r_language=='2'){
+                        str+="<td>英文</td>";
+                    }else{
+                        str+="<td>不限</td>";
+                    }
+
+                    str+="<td class='up' ziduan='r_describe'>"+data[i].r_describe+"</td>";
+
+                   
+
+
+                    if(data[i].r_iflogbook=='0'){
+                        str+="<td>不限</td>";
+                    }else if(data[i].r_iflogbook=='1'){
+                        str+="<td>是</td>";
+                    }else{
+                        str+="<td>不限</td>";
+                    }
+
+                    str+="<td class='up' ziduan='r_age'>"+data[i].r_age+"</td>";
+                    if(data[i].r_sex=='0'){
+                        str+="<td>不限</td>";
+                    }else if(data[i].r_sex=='1'){
+                        str+="<td>男</td>";
+                    }else if(data[i].r_sex=='2'){
+                        str+="<td>女</td>";
+                    }else{
+                        str+="<td>默认</td>";
+                    }
+                    
+                    str+="<td>"+data[i].r_time+"</td>";
+                    str+="<td>"+data[i].r_addtime+"</td>";
+                    str+="<td>"+data[i].g_type_name+"</td>";
+                    str+="<td>"+data[i].g_price+"</td>";
+                    str+="<td>";
+                        str+="<a href='index.php?r=recruit/delete&rec_id="+data[i].recr_id+"'>"+"<img class='operation' src=img/delete.png >"+"</a>";
+                    str+="</td>";
+                str+="</tr>";
+            }
+            $("#"+last_id).after(str);
+            for (var i = 0; i < arr.length; i++) {
+                $("#"+arr[i]).remove();
+            }
+        }
+    })
+
+} 
+</script>
+</body>
+
+</html>
