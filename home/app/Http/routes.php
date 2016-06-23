@@ -99,7 +99,8 @@ Route::get('/jianli', 'PersonalController@jianli');
     
 //发布新职位
 Route::get('/create', 'PostofficeController@create');
-	
+Route::post('/postAdd','PostofficeController@postAdd');
+
 //职位发布成功
 Route::get('/index06', 'PostofficeController@index06');	
 
