@@ -13,7 +13,7 @@ class PublicController extends Controller {
 	//展示头部
 	public  function top(){
 		$per_id=Session::get('per_id');//用户id
-		$arr = $this->classify('al_post','p_pid');
+		
 		$com_id=Session::get('com_id');//企业id
 		if(!empty($per_id)){
 			$key="1";//判断是否是个人登录
@@ -32,7 +32,7 @@ class PublicController extends Controller {
             // if (!is_file($cacheFile) || time() - filemtime($cacheFile) > $cacheTime) {  
             //<!--页面输出部分内容。也是ob_get_contents()函数取得的全部内容-->
             
-                 return view("public.top",["per_id"=>$per_id,'arr'=>$arr,'com_id'=>$com_id,'key'=>$key]);
+                 return view("public.top",["per_id"=>$per_id,'com_id'=>$com_id,'key'=>$key]);
 
             // $content = ob_get_contents(); //取得php页面输出的全部内容   
             // $fp = fopen($cacheFile, "w"); //输出内容写入文件  
@@ -52,8 +52,8 @@ class PublicController extends Controller {
 	}
 	/**中心*/
 	public  function main(){
-		
-		return view("public.main");
+		$arr = $this->classify('al_post','p_pid');
+		return view("public.main",['arr'=>$arr]);
 	}
 
 }	

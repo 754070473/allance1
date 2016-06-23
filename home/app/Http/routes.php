@@ -38,8 +38,10 @@ Route::get('/myhome', 'IndexController@myhome');
 //招聘信息展示（可以投个简历）
 Route::get('/toudi', 'IndexController@toudi');
 
-//公司列表
+//个人找职位
 Route::get('/companylist', 'IndexController@companylist');
+//公司找简历
+Route::get('/company', 'IndexController@company');
 
 //展示关于 联系我们
 Route::get('/about', 'IndexController@about');	

@@ -22,7 +22,6 @@ abstract class Controller extends BaseController
      */
     public function classify($table,$pid_name,$pid=0){
 		$dbh = DB::connection()->getPdo();
-		$dbh->query('set names utf8;');
 		$rescolumns = $dbh->query("SHOW FULL COLUMNS FROM ".$table)->fetch();
         $k = $rescolumns['Field'];
         //查询表中根分类
