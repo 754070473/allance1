@@ -43,13 +43,13 @@ var youdao_conv_id = 271546;
     		<ul class="reset" id="navheader">
     			<?php if(empty(session('key'))){?>
                            <li ><a href="index">首页</a></li>
-                           <li ><a href="companylist" >职位</a></li>
+                           <li ><a href="company" >职位</a></li>
                           <li ><a href="toForum" target="_blank">论坛</a></li>
-                          <li ><a href="login" rel="nofollow">个人中心</a></li>
+                          <li ><a href="jianli" rel="nofollow">个人中心</a></li>
                           <li ><a href="login" rel="nofollow">发布职位</a></li>
                 <?php }else if(session('key')==1){?>
                          <li ><a href="index">首页</a></li>
-                         <li ><a href="companylist" >职位</a></li>
+                         <li ><a href="company" >职位</a></li>
                          <li ><a href="toForum" target="_blank">论坛</a></li>
                          <li ><a href="jianli" rel="nofollow">个人中心</a></li>
                          <li ><a href="create" rel="nofollow">发布职位</a></li>

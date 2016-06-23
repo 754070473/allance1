@@ -47297,3 +47297,1016 @@ $_SERVER = [
     'REQUEST_TIME_FLOAT' => 1466411889.44
     'REQUEST_TIME' => 1466411889
 ]
+2016-06-22 09:12:45 [::1][-][-][error][yii\db\Exception] exception 'PDOException' with message 'SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)' in D:\wamp\WWW\di9yue\allance1\admin\vendor\yiisoft\yii2\db\Connection.php:579
+Stack trace:
+#0 D:\wamp\WWW\di9yue\allance1\admin\vendor\yiisoft\yii2\db\Connection.php(579): PDO->__construct('mysql:host=127....', 'root', '147542', NULL)
+#1 D:\wamp\WWW\di9yue\allance1\admin\vendor\yiisoft\yii2\db\Connection.php(529): yii\db\Connection->createPdoInstance()
+#2 D:\wamp\WWW\di9yue\allance1\admin\vendor\yiisoft\yii2\db\Connection.php(836): yii\db\Connection->open()
+#3 D:\wamp\WWW\di9yue\allance1\admin\vendor\yiisoft\yii2\db\Connection.php(823): yii\db\Connection->getMasterPdo()
+#4 D:\wamp\WWW\di9yue\allance1\admin\vendor\yiisoft\yii2\db\Schema.php(477): yii\db\Connection->getSlavePdo()
+#5 D:\wamp\WWW\di9yue\allance1\admin\vendor\yiisoft\yii2\db\Connection.php(732): yii\db\Schema->quoteValue('liu')
+#6 D:\wamp\WWW\di9yue\allance1\admin\vendor\yiisoft\yii2\db\Command.php(172): yii\db\Connection->quoteValue('liu')
+#7 D:\wamp\WWW\di9yue\allance1\admin\vendor\yiisoft\yii2\db\Command.php(806): yii\db\Command->getRawSql()
+#8 D:\wamp\WWW\di9yue\allance1\admin\vendor\yiisoft\yii2\db\Command.php(359): yii\db\Command->queryInternal('fetchAll', NULL)
+#9 D:\wamp\WWW\di9yue\allance1\admin\vendor\yiisoft\yii2\db\Query.php(206): yii\db\Command->queryAll()
+#10 D:\wamp\WWW\di9yue\allance1\admin\frontend\controllers\LoginController.php(82): yii\db\Query->all()
+#11 [internal function]: frontend\controllers\LoginController->actionSelect1()
+#12 D:\wamp\WWW\di9yue\allance1\admin\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#13 D:\wamp\WWW\di9yue\allance1\admin\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#14 D:\wamp\WWW\di9yue\allance1\admin\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('select1', Array)
+#15 D:\wamp\WWW\di9yue\allance1\admin\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('login/select1', Array)
+#16 D:\wamp\WWW\di9yue\allance1\admin\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#17 D:\wamp\WWW\di9yue\allance1\admin\frontend\web\index.php(18): yii\base\Application->run()
+#18 {main}
+
+Next exception 'yii\db\Exception' with message 'SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)' in D:\wamp\WWW\di9yue\allance1\admin\vendor\yiisoft\yii2\db\Connection.php:534
+Stack trace:
+#0 D:\wamp\WWW\di9yue\allance1\admin\vendor\yiisoft\yii2\db\Connection.php(836): yii\db\Connection->open()
+#1 D:\wamp\WWW\di9yue\allance1\admin\vendor\yiisoft\yii2\db\Connection.php(823): yii\db\Connection->getMasterPdo()
+#2 D:\wamp\WWW\di9yue\allance1\admin\vendor\yiisoft\yii2\db\Schema.php(477): yii\db\Connection->getSlavePdo()
+#3 D:\wamp\WWW\di9yue\allance1\admin\vendor\yiisoft\yii2\db\Connection.php(732): yii\db\Schema->quoteValue('liu')
+#4 D:\wamp\WWW\di9yue\allance1\admin\vendor\yiisoft\yii2\db\Command.php(172): yii\db\Connection->quoteValue('liu')
+#5 D:\wamp\WWW\di9yue\allance1\admin\vendor\yiisoft\yii2\db\Command.php(806): yii\db\Command->getRawSql()
+#6 D:\wamp\WWW\di9yue\allance1\admin\vendor\yiisoft\yii2\db\Command.php(359): yii\db\Command->queryInternal('fetchAll', NULL)
+#7 D:\wamp\WWW\di9yue\allance1\admin\vendor\yiisoft\yii2\db\Query.php(206): yii\db\Command->queryAll()
+#8 D:\wamp\WWW\di9yue\allance1\admin\frontend\controllers\LoginController.php(82): yii\db\Query->all()
+#9 [internal function]: frontend\controllers\LoginController->actionSelect1()
+#10 D:\wamp\WWW\di9yue\allance1\admin\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#11 D:\wamp\WWW\di9yue\allance1\admin\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#12 D:\wamp\WWW\di9yue\allance1\admin\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('select1', Array)
+#13 D:\wamp\WWW\di9yue\allance1\admin\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('login/select1', Array)
+#14 D:\wamp\WWW\di9yue\allance1\admin\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#15 D:\wamp\WWW\di9yue\allance1\admin\frontend\web\index.php(18): yii\base\Application->run()
+#16 {main}
+Additional Information:
+
+2016-06-22 09:12:44 [::1][-][-][info][application] $_GET = [
+    'r' => 'login/select1'
+]
+
+$_POST = [
+    'name' => 'liu'
+    'pwd' => '555555'
+]
+
+$_COOKIE = [
+    'pgv_pvi' => '7623903232'
+    '_pk_ysp_id_' => [
+        'object Object' => 'd691c1c93ad0eec5.1466557304.1.1466557304.1466557304.'
+    ]
+    'XSRF-TOKEN' => 'eyJpdiI6IjArOFIrNkNyWkpIU0YwQkFQNDR5blE9PSIsInZhbHVlIjoiZjZ1RVJZUjVlemJ6K2JqWDNycUE5ZjVJaTl6cDQ1ZVwvSmNzUkxiNWxiWWxoNks0c2o5dlJmS3FYeWFBRmVNQ04wMjB4S2N1S1FMbmZ5VmpPR2puRGxnPT0iLCJtYWMiOiI0OWNiMWJlYjYwMjNkODY3NTUyNWIyYjAzNzZhNjQ0ZTM2MDgyYTlkNTYxNmJlOWZjOWZhZmU5N2UzMGU1NDQwIn0='
+    'laravel_session' => 'eyJpdiI6Ik8xRjZFTHc4bTNjQThZUlwvdG5hRkZ3PT0iLCJ2YWx1ZSI6IkZDTytYaWJpc3R1emRFSzdWWWlYdXR1dHZFUHV3dG1iUlN5N3ZqSTYyT1BReWFmYXZqa214WktqZlM2ZHlRVXFxM2lKSEpQc01jNmhZaVdjWVVua2hRPT0iLCJtYWMiOiJkMzkzNDBhMjE0MTcwOTU1Y2NkOGE5OTdiYWNkMjk0Y2EyOTQ2NDcwODg3NmQ5ODE0YTAzMTQwMGFmOGIzY2VkIn0='
+    '_pk_ysp_ses_' => [
+        'object Object' => '*'
+    ]
+    'PHPSESSID' => 'tbq0da9iolo95ilnppu5466gh2'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.3; WOW64; rv:31.0) Gecko/20100101 Firefox/31.0'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-cn,zh;q=0.8,en-us;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded; charset=UTF-8'
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest'
+    'HTTP_REFERER' => 'http://localhost/di9yue/allance1/admin/frontend/web/index.php?r=login/login'
+    'CONTENT_LENGTH' => '19'
+    'HTTP_COOKIE' => 'pgv_pvi=7623903232; _pk_ysp_id.[object Object].1fff=d691c1c93ad0eec5.1466557304.1.1466557304.1466557304.; XSRF-TOKEN=eyJpdiI6IjArOFIrNkNyWkpIU0YwQkFQNDR5blE9PSIsInZhbHVlIjoiZjZ1RVJZUjVlemJ6K2JqWDNycUE5ZjVJaTl6cDQ1ZVwvSmNzUkxiNWxiWWxoNks0c2o5dlJmS3FYeWFBRmVNQ04wMjB4S2N1S1FMbmZ5VmpPR2puRGxnPT0iLCJtYWMiOiI0OWNiMWJlYjYwMjNkODY3NTUyNWIyYjAzNzZhNjQ0ZTM2MDgyYTlkNTYxNmJlOWZjOWZhZmU5N2UzMGU1NDQwIn0%3D; laravel_session=eyJpdiI6Ik8xRjZFTHc4bTNjQThZUlwvdG5hRkZ3PT0iLCJ2YWx1ZSI6IkZDTytYaWJpc3R1emRFSzdWWWlYdXR1dHZFUHV3dG1iUlN5N3ZqSTYyT1BReWFmYXZqa214WktqZlM2ZHlRVXFxM2lKSEpQc01jNmhZaVdjWVVua2hRPT0iLCJtYWMiOiJkMzkzNDBhMjE0MTcwOTU1Y2NkOGE5OTdiYWNkMjk0Y2EyOTQ2NDcwODg3NmQ5ODE0YTAzMTQwMGFmOGIzY2VkIn0%3D; _pk_ysp_ses.[object Object].1fff=*; PHPSESSID=tbq0da9iolo95ilnppu5466gh2'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_PRAGMA' => 'no-cache'
+    'HTTP_CACHE_CONTROL' => 'no-cache'
+    'PATH' => 'D:\\wamp\\php55;C:\\Program Files\\TortoiseGit\\bin;'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e PHP/5.5.30'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'D:/wamp/WWW'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/wamp/WWW'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'SCRIPT_FILENAME' => 'D:/wamp/WWW/di9yue/allance1/admin/frontend/web/index.php'
+    'REMOTE_PORT' => '57281'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => 'r=login/select1'
+    'REQUEST_URI' => '/di9yue/allance1/admin/frontend/web/index.php?r=login/select1'
+    'SCRIPT_NAME' => '/di9yue/allance1/admin/frontend/web/index.php'
+    'PHP_SELF' => '/di9yue/allance1/admin/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1466557964.963
+    'REQUEST_TIME' => 1466557964
+]
+2016-06-22 09:12:45 [::1][-][-][warning][yii\log\Dispatcher::dispatch] Unable to send log via yii\debug\LogTarget: Exception 'Exception' with message 'Serialization of 'Closure' is not allowed' 
+
+in D:\wamp\WWW\di9yue\allance1\admin\vendor\yiisoft\yii2-debug\LogTarget.php:58
+
+Stack trace:
+#0 D:\wamp\WWW\di9yue\allance1\admin\vendor\yiisoft\yii2-debug\LogTarget.php(58): serialize(Array)
+#1 D:\wamp\WWW\di9yue\allance1\admin\vendor\yiisoft\yii2-debug\LogTarget.php(112): yii\debug\LogTarget->export(Array)
+#2 D:\wamp\WWW\di9yue\allance1\admin\vendor\yiisoft\yii2\log\Dispatcher.php(183): yii\debug\LogTarget->collect(Array, true)
+#3 D:\wamp\WWW\di9yue\allance1\admin\vendor\yiisoft\yii2\log\Logger.php(173): yii\log\Dispatcher->dispatch(Array, true)
+#4 D:\wamp\WWW\di9yue\allance1\admin\vendor\yiisoft\yii2\base\ErrorHandler.php(111): yii\log\Logger->flush(true)
+#5 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\db\Exception))
+#6 {main}
+2016-06-22 09:12:44 [::1][-][-][info][application] $_GET = [
+    'r' => 'login/select1'
+]
+
+$_POST = [
+    'name' => 'liu'
+    'pwd' => '555555'
+]
+
+$_COOKIE = [
+    'pgv_pvi' => '7623903232'
+    '_pk_ysp_id_' => [
+        'object Object' => 'd691c1c93ad0eec5.1466557304.1.1466557304.1466557304.'
+    ]
+    'XSRF-TOKEN' => 'eyJpdiI6IjArOFIrNkNyWkpIU0YwQkFQNDR5blE9PSIsInZhbHVlIjoiZjZ1RVJZUjVlemJ6K2JqWDNycUE5ZjVJaTl6cDQ1ZVwvSmNzUkxiNWxiWWxoNks0c2o5dlJmS3FYeWFBRmVNQ04wMjB4S2N1S1FMbmZ5VmpPR2puRGxnPT0iLCJtYWMiOiI0OWNiMWJlYjYwMjNkODY3NTUyNWIyYjAzNzZhNjQ0ZTM2MDgyYTlkNTYxNmJlOWZjOWZhZmU5N2UzMGU1NDQwIn0='
+    'laravel_session' => 'eyJpdiI6Ik8xRjZFTHc4bTNjQThZUlwvdG5hRkZ3PT0iLCJ2YWx1ZSI6IkZDTytYaWJpc3R1emRFSzdWWWlYdXR1dHZFUHV3dG1iUlN5N3ZqSTYyT1BReWFmYXZqa214WktqZlM2ZHlRVXFxM2lKSEpQc01jNmhZaVdjWVVua2hRPT0iLCJtYWMiOiJkMzkzNDBhMjE0MTcwOTU1Y2NkOGE5OTdiYWNkMjk0Y2EyOTQ2NDcwODg3NmQ5ODE0YTAzMTQwMGFmOGIzY2VkIn0='
+    '_pk_ysp_ses_' => [
+        'object Object' => '*'
+    ]
+    'PHPSESSID' => 'tbq0da9iolo95ilnppu5466gh2'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.3; WOW64; rv:31.0) Gecko/20100101 Firefox/31.0'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-cn,zh;q=0.8,en-us;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded; charset=UTF-8'
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest'
+    'HTTP_REFERER' => 'http://localhost/di9yue/allance1/admin/frontend/web/index.php?r=login/login'
+    'CONTENT_LENGTH' => '19'
+    'HTTP_COOKIE' => 'pgv_pvi=7623903232; _pk_ysp_id.[object Object].1fff=d691c1c93ad0eec5.1466557304.1.1466557304.1466557304.; XSRF-TOKEN=eyJpdiI6IjArOFIrNkNyWkpIU0YwQkFQNDR5blE9PSIsInZhbHVlIjoiZjZ1RVJZUjVlemJ6K2JqWDNycUE5ZjVJaTl6cDQ1ZVwvSmNzUkxiNWxiWWxoNks0c2o5dlJmS3FYeWFBRmVNQ04wMjB4S2N1S1FMbmZ5VmpPR2puRGxnPT0iLCJtYWMiOiI0OWNiMWJlYjYwMjNkODY3NTUyNWIyYjAzNzZhNjQ0ZTM2MDgyYTlkNTYxNmJlOWZjOWZhZmU5N2UzMGU1NDQwIn0%3D; laravel_session=eyJpdiI6Ik8xRjZFTHc4bTNjQThZUlwvdG5hRkZ3PT0iLCJ2YWx1ZSI6IkZDTytYaWJpc3R1emRFSzdWWWlYdXR1dHZFUHV3dG1iUlN5N3ZqSTYyT1BReWFmYXZqa214WktqZlM2ZHlRVXFxM2lKSEpQc01jNmhZaVdjWVVua2hRPT0iLCJtYWMiOiJkMzkzNDBhMjE0MTcwOTU1Y2NkOGE5OTdiYWNkMjk0Y2EyOTQ2NDcwODg3NmQ5ODE0YTAzMTQwMGFmOGIzY2VkIn0%3D; _pk_ysp_ses.[object Object].1fff=*; PHPSESSID=tbq0da9iolo95ilnppu5466gh2'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_PRAGMA' => 'no-cache'
+    'HTTP_CACHE_CONTROL' => 'no-cache'
+    'PATH' => 'D:\\wamp\\php55;C:\\Program Files\\TortoiseGit\\bin;'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e PHP/5.5.30'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'D:/wamp/WWW'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/wamp/WWW'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'SCRIPT_FILENAME' => 'D:/wamp/WWW/di9yue/allance1/admin/frontend/web/index.php'
+    'REMOTE_PORT' => '57281'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => 'r=login/select1'
+    'REQUEST_URI' => '/di9yue/allance1/admin/frontend/web/index.php?r=login/select1'
+    'SCRIPT_NAME' => '/di9yue/allance1/admin/frontend/web/index.php'
+    'PHP_SELF' => '/di9yue/allance1/admin/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1466557964.963
+    'REQUEST_TIME' => 1466557964
+]
+2016-06-22 09:12:45 [::1][-][-][error][yii\db\Exception] exception 'PDOException' with message 'SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)' in D:\wamp\WWW\di9yue\allance1\admin\vendor\yiisoft\yii2\db\Connection.php:579
+Stack trace:
+#0 D:\wamp\WWW\di9yue\allance1\admin\vendor\yiisoft\yii2\db\Connection.php(579): PDO->__construct('mysql:host=127....', 'root', '147542', NULL)
+#1 D:\wamp\WWW\di9yue\allance1\admin\vendor\yiisoft\yii2\db\Connection.php(529): yii\db\Connection->createPdoInstance()
+#2 D:\wamp\WWW\di9yue\allance1\admin\vendor\yiisoft\yii2\db\Connection.php(836): yii\db\Connection->open()
+#3 D:\wamp\WWW\di9yue\allance1\admin\vendor\yiisoft\yii2\db\Connection.php(823): yii\db\Connection->getMasterPdo()
+#4 D:\wamp\WWW\di9yue\allance1\admin\vendor\yiisoft\yii2\db\Schema.php(477): yii\db\Connection->getSlavePdo()
+#5 D:\wamp\WWW\di9yue\allance1\admin\vendor\yiisoft\yii2\db\Connection.php(732): yii\db\Schema->quoteValue('<span class="st...')
+#6 D:\wamp\WWW\di9yue\allance1\admin\vendor\yiisoft\yii2\db\Command.php(172): yii\db\Connection->quoteValue('<span class="st...')
+#7 D:\wamp\WWW\di9yue\allance1\admin\vendor\yiisoft\yii2\db\Command.php(806): yii\db\Command->getRawSql()
+#8 D:\wamp\WWW\di9yue\allance1\admin\vendor\yiisoft\yii2\db\Command.php(359): yii\db\Command->queryInternal('<span class="st...', '<span class="ke...')
+#9 D:\wamp\WWW\di9yue\allance1\admin\vendor\yiisoft\yii2\db\Query.php(206): yii\db\Command->queryAll()
+#10 D:\wamp\WWW\di9yue\allance1\admin\frontend\controllers\LoginController.php(102): yii\db\Query->all()
+#11 [internal function]: frontend\controllers\LoginController->actionLogin1()
+#12 D:\wamp\WWW\di9yue\allance1\admin\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array('[<span class="t...', '[]')
+#13 D:\wamp\WWW\di9yue\allance1\admin\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams('[<span class="s...')
+#14 D:\wamp\WWW\di9yue\allance1\admin\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('<span class="st...', '[<span class="s...')
+#15 D:\wamp\WWW\di9yue\allance1\admin\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('<span class="st...', '[<span class="s...')
+#16 D:\wamp\WWW\di9yue\allance1\admin\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#17 D:\wamp\WWW\di9yue\allance1\admin\frontend\web\index.php(18): yii\base\Application->run()
+#18 {main}
+
+Next exception 'yii\db\Exception' with message 'SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)' in D:\wamp\WWW\di9yue\allance1\admin\vendor\yiisoft\yii2\db\Connection.php:534
+Stack trace:
+#0 D:\wamp\WWW\di9yue\allance1\admin\vendor\yiisoft\yii2\db\Connection.php(836): yii\db\Connection->open()
+#1 D:\wamp\WWW\di9yue\allance1\admin\vendor\yiisoft\yii2\db\Connection.php(823): yii\db\Connection->getMasterPdo()
+#2 D:\wamp\WWW\di9yue\allance1\admin\vendor\yiisoft\yii2\db\Schema.php(477): yii\db\Connection->getSlavePdo()
+#3 D:\wamp\WWW\di9yue\allance1\admin\vendor\yiisoft\yii2\db\Connection.php(732): yii\db\Schema->quoteValue('<span class="st...')
+#4 D:\wamp\WWW\di9yue\allance1\admin\vendor\yiisoft\yii2\db\Command.php(172): yii\db\Connection->quoteValue('<span class="st...')
+#5 D:\wamp\WWW\di9yue\allance1\admin\vendor\yiisoft\yii2\db\Command.php(806): yii\db\Command->getRawSql()
+#6 D:\wamp\WWW\di9yue\allance1\admin\vendor\yiisoft\yii2\db\Command.php(359): yii\db\Command->queryInternal('<span class="st...', '<span class="ke...')
+#7 D:\wamp\WWW\di9yue\allance1\admin\vendor\yiisoft\yii2\db\Query.php(206): yii\db\Command->queryAll()
+#8 D:\wamp\WWW\di9yue\allance1\admin\frontend\controllers\LoginController.php(102): yii\db\Query->all()
+#9 [internal function]: frontend\controllers\LoginController->actionLogin1()
+#10 D:\wamp\WWW\di9yue\allance1\admin\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array('[<span class="t...', '[]')
+#11 D:\wamp\WWW\di9yue\allance1\admin\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams('[<span class="s...')
+#12 D:\wamp\WWW\di9yue\allance1\admin\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('<span class="st...', '[<span class="s...')
+#13 D:\wamp\WWW\di9yue\allance1\admin\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('<span class="st...', '[<span class="s...')
+#14 D:\wamp\WWW\di9yue\allance1\admin\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#15 D:\wamp\WWW\di9yue\allance1\admin\frontend\web\index.php(18): yii\base\Application->run()
+#16 {main}
+Additional Information:
+
+2016-06-22 09:12:45 [::1][-][-][info][application] $_GET = [
+    'r' => 'login/login1'
+]
+
+$_POST = [
+    'name1' => 'liu'
+    'pwd1' => '555555'
+]
+
+$_COOKIE = [
+    'pgv_pvi' => '7623903232'
+    '_pk_ysp_id_' => [
+        'object Object' => 'd691c1c93ad0eec5.1466557304.1.1466557304.1466557304.'
+    ]
+    'XSRF-TOKEN' => 'eyJpdiI6IjArOFIrNkNyWkpIU0YwQkFQNDR5blE9PSIsInZhbHVlIjoiZjZ1RVJZUjVlemJ6K2JqWDNycUE5ZjVJaTl6cDQ1ZVwvSmNzUkxiNWxiWWxoNks0c2o5dlJmS3FYeWFBRmVNQ04wMjB4S2N1S1FMbmZ5VmpPR2puRGxnPT0iLCJtYWMiOiI0OWNiMWJlYjYwMjNkODY3NTUyNWIyYjAzNzZhNjQ0ZTM2MDgyYTlkNTYxNmJlOWZjOWZhZmU5N2UzMGU1NDQwIn0='
+    'laravel_session' => 'eyJpdiI6Ik8xRjZFTHc4bTNjQThZUlwvdG5hRkZ3PT0iLCJ2YWx1ZSI6IkZDTytYaWJpc3R1emRFSzdWWWlYdXR1dHZFUHV3dG1iUlN5N3ZqSTYyT1BReWFmYXZqa214WktqZlM2ZHlRVXFxM2lKSEpQc01jNmhZaVdjWVVua2hRPT0iLCJtYWMiOiJkMzkzNDBhMjE0MTcwOTU1Y2NkOGE5OTdiYWNkMjk0Y2EyOTQ2NDcwODg3NmQ5ODE0YTAzMTQwMGFmOGIzY2VkIn0='
+    '_pk_ysp_ses_' => [
+        'object Object' => '*'
+    ]
+    'PHPSESSID' => 'tbq0da9iolo95ilnppu5466gh2'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.3; WOW64; rv:31.0) Gecko/20100101 Firefox/31.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-cn,zh;q=0.8,en-us;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://localhost/di9yue/allance1/admin/frontend/web/index.php?r=login/login'
+    'HTTP_COOKIE' => 'pgv_pvi=7623903232; _pk_ysp_id.[object Object].1fff=d691c1c93ad0eec5.1466557304.1.1466557304.1466557304.; XSRF-TOKEN=eyJpdiI6IjArOFIrNkNyWkpIU0YwQkFQNDR5blE9PSIsInZhbHVlIjoiZjZ1RVJZUjVlemJ6K2JqWDNycUE5ZjVJaTl6cDQ1ZVwvSmNzUkxiNWxiWWxoNks0c2o5dlJmS3FYeWFBRmVNQ04wMjB4S2N1S1FMbmZ5VmpPR2puRGxnPT0iLCJtYWMiOiI0OWNiMWJlYjYwMjNkODY3NTUyNWIyYjAzNzZhNjQ0ZTM2MDgyYTlkNTYxNmJlOWZjOWZhZmU5N2UzMGU1NDQwIn0%3D; laravel_session=eyJpdiI6Ik8xRjZFTHc4bTNjQThZUlwvdG5hRkZ3PT0iLCJ2YWx1ZSI6IkZDTytYaWJpc3R1emRFSzdWWWlYdXR1dHZFUHV3dG1iUlN5N3ZqSTYyT1BReWFmYXZqa214WktqZlM2ZHlRVXFxM2lKSEpQc01jNmhZaVdjWVVua2hRPT0iLCJtYWMiOiJkMzkzNDBhMjE0MTcwOTU1Y2NkOGE5OTdiYWNkMjk0Y2EyOTQ2NDcwODg3NmQ5ODE0YTAzMTQwMGFmOGIzY2VkIn0%3D; _pk_ysp_ses.[object Object].1fff=*; PHPSESSID=tbq0da9iolo95ilnppu5466gh2'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'CONTENT_LENGTH' => '21'
+    'PATH' => 'D:\\wamp\\php55;C:\\Program Files\\TortoiseGit\\bin;'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e PHP/5.5.30'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'D:/wamp/WWW'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/wamp/WWW'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'SCRIPT_FILENAME' => 'D:/wamp/WWW/di9yue/allance1/admin/frontend/web/index.php'
+    'REMOTE_PORT' => '57282'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => 'r=login/login1'
+    'REQUEST_URI' => '/di9yue/allance1/admin/frontend/web/index.php?r=login/login1'
+    'SCRIPT_NAME' => '/di9yue/allance1/admin/frontend/web/index.php'
+    'PHP_SELF' => '/di9yue/allance1/admin/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1466557965.238
+    'REQUEST_TIME' => 1466557965
+]
+2016-06-22 09:13:40 [::1][-][tbq0da9iolo95ilnppu5466gh2][error][yii\base\ErrorException:2] exception 'yii\base\ErrorException' with message 'mysql_connect(): Access denied for user 'root'@'localhost' (using password: YES)' in D:\wamp\WWW\di9yue\allance1\admin\frontend\controllers\LogincontrolController.php:15
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleError(2, 'mysql_connect()...', 'D:\\wamp\\WWW\\di9...', 15, Array)
+#1 D:\wamp\WWW\di9yue\allance1\admin\frontend\controllers\LogincontrolController.php(15): mysql_connect('127.0.0.1', 'root', '147542')
+#2 D:\wamp\WWW\di9yue\allance1\admin\frontend\controllers\LoginController.php(120): frontend\controllers\LoginController->adminLog('\xE7\xAE\xA1\xE7\x90\x86\xE5\x91\x98\xE7\x99\xBB\xE5\xBD\x95...')
+#3 [internal function]: frontend\controllers\LoginController->actionLogin1()
+#4 D:\wamp\WWW\di9yue\allance1\admin\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#5 D:\wamp\WWW\di9yue\allance1\admin\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#6 D:\wamp\WWW\di9yue\allance1\admin\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('login1', Array)
+#7 D:\wamp\WWW\di9yue\allance1\admin\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('login/login1', Array)
+#8 D:\wamp\WWW\di9yue\allance1\admin\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#9 D:\wamp\WWW\di9yue\allance1\admin\frontend\web\index.php(18): yii\base\Application->run()
+#10 {main}
+2016-06-22 09:13:40 [::1][-][tbq0da9iolo95ilnppu5466gh2][info][application] $_GET = [
+    'r' => 'login/login1'
+]
+
+$_POST = [
+    'name1' => 'liu'
+    'pwd1' => '555555'
+]
+
+$_COOKIE = [
+    'pgv_pvi' => '7623903232'
+    '_pk_ysp_id_' => [
+        'object Object' => 'd691c1c93ad0eec5.1466557304.1.1466557304.1466557304.'
+    ]
+    'XSRF-TOKEN' => 'eyJpdiI6IjArOFIrNkNyWkpIU0YwQkFQNDR5blE9PSIsInZhbHVlIjoiZjZ1RVJZUjVlemJ6K2JqWDNycUE5ZjVJaTl6cDQ1ZVwvSmNzUkxiNWxiWWxoNks0c2o5dlJmS3FYeWFBRmVNQ04wMjB4S2N1S1FMbmZ5VmpPR2puRGxnPT0iLCJtYWMiOiI0OWNiMWJlYjYwMjNkODY3NTUyNWIyYjAzNzZhNjQ0ZTM2MDgyYTlkNTYxNmJlOWZjOWZhZmU5N2UzMGU1NDQwIn0='
+    'laravel_session' => 'eyJpdiI6Ik8xRjZFTHc4bTNjQThZUlwvdG5hRkZ3PT0iLCJ2YWx1ZSI6IkZDTytYaWJpc3R1emRFSzdWWWlYdXR1dHZFUHV3dG1iUlN5N3ZqSTYyT1BReWFmYXZqa214WktqZlM2ZHlRVXFxM2lKSEpQc01jNmhZaVdjWVVua2hRPT0iLCJtYWMiOiJkMzkzNDBhMjE0MTcwOTU1Y2NkOGE5OTdiYWNkMjk0Y2EyOTQ2NDcwODg3NmQ5ODE0YTAzMTQwMGFmOGIzY2VkIn0='
+    '_pk_ysp_ses_' => [
+        'object Object' => '*'
+    ]
+    'PHPSESSID' => 'tbq0da9iolo95ilnppu5466gh2'
+]
+
+$_SESSION = [
+    '__flash' => []
+    'adm_id' => '1'
+    'a_name' => 'aaa'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.3; WOW64; rv:31.0) Gecko/20100101 Firefox/31.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-cn,zh;q=0.8,en-us;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://localhost/di9yue/allance1/admin/frontend/web/index.php?r=login/login'
+    'HTTP_COOKIE' => 'pgv_pvi=7623903232; _pk_ysp_id.[object Object].1fff=d691c1c93ad0eec5.1466557304.1.1466557304.1466557304.; XSRF-TOKEN=eyJpdiI6IjArOFIrNkNyWkpIU0YwQkFQNDR5blE9PSIsInZhbHVlIjoiZjZ1RVJZUjVlemJ6K2JqWDNycUE5ZjVJaTl6cDQ1ZVwvSmNzUkxiNWxiWWxoNks0c2o5dlJmS3FYeWFBRmVNQ04wMjB4S2N1S1FMbmZ5VmpPR2puRGxnPT0iLCJtYWMiOiI0OWNiMWJlYjYwMjNkODY3NTUyNWIyYjAzNzZhNjQ0ZTM2MDgyYTlkNTYxNmJlOWZjOWZhZmU5N2UzMGU1NDQwIn0%3D; laravel_session=eyJpdiI6Ik8xRjZFTHc4bTNjQThZUlwvdG5hRkZ3PT0iLCJ2YWx1ZSI6IkZDTytYaWJpc3R1emRFSzdWWWlYdXR1dHZFUHV3dG1iUlN5N3ZqSTYyT1BReWFmYXZqa214WktqZlM2ZHlRVXFxM2lKSEpQc01jNmhZaVdjWVVua2hRPT0iLCJtYWMiOiJkMzkzNDBhMjE0MTcwOTU1Y2NkOGE5OTdiYWNkMjk0Y2EyOTQ2NDcwODg3NmQ5ODE0YTAzMTQwMGFmOGIzY2VkIn0%3D; _pk_ysp_ses.[object Object].1fff=*; PHPSESSID=tbq0da9iolo95ilnppu5466gh2'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'CONTENT_LENGTH' => '21'
+    'PATH' => 'D:\\wamp\\php55;C:\\Program Files\\TortoiseGit\\bin;'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e PHP/5.5.30'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'D:/wamp/WWW'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/wamp/WWW'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'SCRIPT_FILENAME' => 'D:/wamp/WWW/di9yue/allance1/admin/frontend/web/index.php'
+    'REMOTE_PORT' => '57393'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => 'r=login/login1'
+    'REQUEST_URI' => '/di9yue/allance1/admin/frontend/web/index.php?r=login/login1'
+    'SCRIPT_NAME' => '/di9yue/allance1/admin/frontend/web/index.php'
+    'PHP_SELF' => '/di9yue/allance1/admin/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1466558020.323
+    'REQUEST_TIME' => 1466558020
+]
+2016-06-22 09:13:40 [::1][-][tbq0da9iolo95ilnppu5466gh2][warning][yii\log\Dispatcher::dispatch] Unable to send log via yii\debug\LogTarget: Exception 'PDOException' with message 'You cannot serialize or unserialize PDO instances' 
+
+in D:\wamp\WWW\di9yue\allance1\admin\vendor\yiisoft\yii2-debug\LogTarget.php:58
+
+Stack trace:
+#0 [internal function]: PDO->__sleep()
+#1 D:\wamp\WWW\di9yue\allance1\admin\vendor\yiisoft\yii2-debug\LogTarget.php(58): serialize(Array)
+#2 D:\wamp\WWW\di9yue\allance1\admin\vendor\yiisoft\yii2-debug\LogTarget.php(112): yii\debug\LogTarget->export(Array)
+#3 D:\wamp\WWW\di9yue\allance1\admin\vendor\yiisoft\yii2\log\Dispatcher.php(183): yii\debug\LogTarget->collect(Array, true)
+#4 D:\wamp\WWW\di9yue\allance1\admin\vendor\yiisoft\yii2\log\Logger.php(173): yii\log\Dispatcher->dispatch(Array, true)
+#5 D:\wamp\WWW\di9yue\allance1\admin\vendor\yiisoft\yii2\base\ErrorHandler.php(111): yii\log\Logger->flush(true)
+#6 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\base\ErrorException))
+#7 {main}
+2016-06-22 09:13:40 [::1][-][tbq0da9iolo95ilnppu5466gh2][info][application] $_GET = [
+    'r' => 'login/login1'
+]
+
+$_POST = [
+    'name1' => 'liu'
+    'pwd1' => '555555'
+]
+
+$_COOKIE = [
+    'pgv_pvi' => '7623903232'
+    '_pk_ysp_id_' => [
+        'object Object' => 'd691c1c93ad0eec5.1466557304.1.1466557304.1466557304.'
+    ]
+    'XSRF-TOKEN' => 'eyJpdiI6IjArOFIrNkNyWkpIU0YwQkFQNDR5blE9PSIsInZhbHVlIjoiZjZ1RVJZUjVlemJ6K2JqWDNycUE5ZjVJaTl6cDQ1ZVwvSmNzUkxiNWxiWWxoNks0c2o5dlJmS3FYeWFBRmVNQ04wMjB4S2N1S1FMbmZ5VmpPR2puRGxnPT0iLCJtYWMiOiI0OWNiMWJlYjYwMjNkODY3NTUyNWIyYjAzNzZhNjQ0ZTM2MDgyYTlkNTYxNmJlOWZjOWZhZmU5N2UzMGU1NDQwIn0='
+    'laravel_session' => 'eyJpdiI6Ik8xRjZFTHc4bTNjQThZUlwvdG5hRkZ3PT0iLCJ2YWx1ZSI6IkZDTytYaWJpc3R1emRFSzdWWWlYdXR1dHZFUHV3dG1iUlN5N3ZqSTYyT1BReWFmYXZqa214WktqZlM2ZHlRVXFxM2lKSEpQc01jNmhZaVdjWVVua2hRPT0iLCJtYWMiOiJkMzkzNDBhMjE0MTcwOTU1Y2NkOGE5OTdiYWNkMjk0Y2EyOTQ2NDcwODg3NmQ5ODE0YTAzMTQwMGFmOGIzY2VkIn0='
+    '_pk_ysp_ses_' => [
+        'object Object' => '*'
+    ]
+    'PHPSESSID' => 'tbq0da9iolo95ilnppu5466gh2'
+]
+
+$_SESSION = [
+    '__flash' => []
+    'adm_id' => '1'
+    'a_name' => 'aaa'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.3; WOW64; rv:31.0) Gecko/20100101 Firefox/31.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-cn,zh;q=0.8,en-us;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://localhost/di9yue/allance1/admin/frontend/web/index.php?r=login/login'
+    'HTTP_COOKIE' => 'pgv_pvi=7623903232; _pk_ysp_id.[object Object].1fff=d691c1c93ad0eec5.1466557304.1.1466557304.1466557304.; XSRF-TOKEN=eyJpdiI6IjArOFIrNkNyWkpIU0YwQkFQNDR5blE9PSIsInZhbHVlIjoiZjZ1RVJZUjVlemJ6K2JqWDNycUE5ZjVJaTl6cDQ1ZVwvSmNzUkxiNWxiWWxoNks0c2o5dlJmS3FYeWFBRmVNQ04wMjB4S2N1S1FMbmZ5VmpPR2puRGxnPT0iLCJtYWMiOiI0OWNiMWJlYjYwMjNkODY3NTUyNWIyYjAzNzZhNjQ0ZTM2MDgyYTlkNTYxNmJlOWZjOWZhZmU5N2UzMGU1NDQwIn0%3D; laravel_session=eyJpdiI6Ik8xRjZFTHc4bTNjQThZUlwvdG5hRkZ3PT0iLCJ2YWx1ZSI6IkZDTytYaWJpc3R1emRFSzdWWWlYdXR1dHZFUHV3dG1iUlN5N3ZqSTYyT1BReWFmYXZqa214WktqZlM2ZHlRVXFxM2lKSEpQc01jNmhZaVdjWVVua2hRPT0iLCJtYWMiOiJkMzkzNDBhMjE0MTcwOTU1Y2NkOGE5OTdiYWNkMjk0Y2EyOTQ2NDcwODg3NmQ5ODE0YTAzMTQwMGFmOGIzY2VkIn0%3D; _pk_ysp_ses.[object Object].1fff=*; PHPSESSID=tbq0da9iolo95ilnppu5466gh2'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'CONTENT_LENGTH' => '21'
+    'PATH' => 'D:\\wamp\\php55;C:\\Program Files\\TortoiseGit\\bin;'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e PHP/5.5.30'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'D:/wamp/WWW'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/wamp/WWW'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'SCRIPT_FILENAME' => 'D:/wamp/WWW/di9yue/allance1/admin/frontend/web/index.php'
+    'REMOTE_PORT' => '57393'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => 'r=login/login1'
+    'REQUEST_URI' => '/di9yue/allance1/admin/frontend/web/index.php?r=login/login1'
+    'SCRIPT_NAME' => '/di9yue/allance1/admin/frontend/web/index.php'
+    'PHP_SELF' => '/di9yue/allance1/admin/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1466558020.323
+    'REQUEST_TIME' => 1466558020
+]
+2016-06-22 09:15:08 [::1][-][tbq0da9iolo95ilnppu5466gh2][error][yii\base\ErrorException:2] exception 'yii\base\ErrorException' with message 'mysql_connect(): Access denied for user 'root'@'localhost' (using password: YES)' in D:\wamp\WWW\di9yue\allance1\admin\frontend\controllers\LogincontrolController.php:15
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleError(2, 'mysql_connect()...', 'D:\\wamp\\WWW\\di9...', 15, Array)
+#1 D:\wamp\WWW\di9yue\allance1\admin\frontend\controllers\LogincontrolController.php(15): mysql_connect('127.0.0.1', 'root', '147542')
+#2 D:\wamp\WWW\di9yue\allance1\admin\frontend\controllers\LoginController.php(120): frontend\controllers\LoginController->adminLog('\xE7\xAE\xA1\xE7\x90\x86\xE5\x91\x98\xE7\x99\xBB\xE5\xBD\x95...')
+#3 [internal function]: frontend\controllers\LoginController->actionLogin1()
+#4 D:\wamp\WWW\di9yue\allance1\admin\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#5 D:\wamp\WWW\di9yue\allance1\admin\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#6 D:\wamp\WWW\di9yue\allance1\admin\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('login1', Array)
+#7 D:\wamp\WWW\di9yue\allance1\admin\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('login/login1', Array)
+#8 D:\wamp\WWW\di9yue\allance1\admin\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#9 D:\wamp\WWW\di9yue\allance1\admin\frontend\web\index.php(18): yii\base\Application->run()
+#10 {main}
+2016-06-22 09:15:08 [::1][-][tbq0da9iolo95ilnppu5466gh2][info][application] $_GET = [
+    'r' => 'login/login1'
+]
+
+$_POST = [
+    'name1' => 'liu'
+    'pwd1' => '555555'
+]
+
+$_COOKIE = [
+    'pgv_pvi' => '7623903232'
+    '_pk_ysp_id_' => [
+        'object Object' => 'd691c1c93ad0eec5.1466557304.1.1466557304.1466557304.'
+    ]
+    'XSRF-TOKEN' => 'eyJpdiI6IjArOFIrNkNyWkpIU0YwQkFQNDR5blE9PSIsInZhbHVlIjoiZjZ1RVJZUjVlemJ6K2JqWDNycUE5ZjVJaTl6cDQ1ZVwvSmNzUkxiNWxiWWxoNks0c2o5dlJmS3FYeWFBRmVNQ04wMjB4S2N1S1FMbmZ5VmpPR2puRGxnPT0iLCJtYWMiOiI0OWNiMWJlYjYwMjNkODY3NTUyNWIyYjAzNzZhNjQ0ZTM2MDgyYTlkNTYxNmJlOWZjOWZhZmU5N2UzMGU1NDQwIn0='
+    'laravel_session' => 'eyJpdiI6Ik8xRjZFTHc4bTNjQThZUlwvdG5hRkZ3PT0iLCJ2YWx1ZSI6IkZDTytYaWJpc3R1emRFSzdWWWlYdXR1dHZFUHV3dG1iUlN5N3ZqSTYyT1BReWFmYXZqa214WktqZlM2ZHlRVXFxM2lKSEpQc01jNmhZaVdjWVVua2hRPT0iLCJtYWMiOiJkMzkzNDBhMjE0MTcwOTU1Y2NkOGE5OTdiYWNkMjk0Y2EyOTQ2NDcwODg3NmQ5ODE0YTAzMTQwMGFmOGIzY2VkIn0='
+    '_pk_ysp_ses_' => [
+        'object Object' => '*'
+    ]
+    'PHPSESSID' => 'tbq0da9iolo95ilnppu5466gh2'
+]
+
+$_SESSION = [
+    '__flash' => []
+    'adm_id' => '1'
+    'a_name' => 'aaa'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.3; WOW64; rv:31.0) Gecko/20100101 Firefox/31.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-cn,zh;q=0.8,en-us;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://localhost/di9yue/allance1/admin/frontend/web/index.php?r=login/login'
+    'HTTP_COOKIE' => 'pgv_pvi=7623903232; _pk_ysp_id.[object Object].1fff=d691c1c93ad0eec5.1466557304.1.1466557304.1466557304.; XSRF-TOKEN=eyJpdiI6IjArOFIrNkNyWkpIU0YwQkFQNDR5blE9PSIsInZhbHVlIjoiZjZ1RVJZUjVlemJ6K2JqWDNycUE5ZjVJaTl6cDQ1ZVwvSmNzUkxiNWxiWWxoNks0c2o5dlJmS3FYeWFBRmVNQ04wMjB4S2N1S1FMbmZ5VmpPR2puRGxnPT0iLCJtYWMiOiI0OWNiMWJlYjYwMjNkODY3NTUyNWIyYjAzNzZhNjQ0ZTM2MDgyYTlkNTYxNmJlOWZjOWZhZmU5N2UzMGU1NDQwIn0%3D; laravel_session=eyJpdiI6Ik8xRjZFTHc4bTNjQThZUlwvdG5hRkZ3PT0iLCJ2YWx1ZSI6IkZDTytYaWJpc3R1emRFSzdWWWlYdXR1dHZFUHV3dG1iUlN5N3ZqSTYyT1BReWFmYXZqa214WktqZlM2ZHlRVXFxM2lKSEpQc01jNmhZaVdjWVVua2hRPT0iLCJtYWMiOiJkMzkzNDBhMjE0MTcwOTU1Y2NkOGE5OTdiYWNkMjk0Y2EyOTQ2NDcwODg3NmQ5ODE0YTAzMTQwMGFmOGIzY2VkIn0%3D; _pk_ysp_ses.[object Object].1fff=*; PHPSESSID=tbq0da9iolo95ilnppu5466gh2'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'CONTENT_LENGTH' => '21'
+    'PATH' => 'D:\\wamp\\php55;C:\\Program Files\\TortoiseGit\\bin;'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e PHP/5.5.30'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'D:/wamp/WWW'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/wamp/WWW'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'SCRIPT_FILENAME' => 'D:/wamp/WWW/di9yue/allance1/admin/frontend/web/index.php'
+    'REMOTE_PORT' => '57598'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => 'r=login/login1'
+    'REQUEST_URI' => '/di9yue/allance1/admin/frontend/web/index.php?r=login/login1'
+    'SCRIPT_NAME' => '/di9yue/allance1/admin/frontend/web/index.php'
+    'PHP_SELF' => '/di9yue/allance1/admin/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1466558108.64
+    'REQUEST_TIME' => 1466558108
+]
+2016-06-22 09:15:08 [::1][-][tbq0da9iolo95ilnppu5466gh2][warning][yii\log\Dispatcher::dispatch] Unable to send log via yii\debug\LogTarget: Exception 'PDOException' with message 'You cannot serialize or unserialize PDO instances' 
+
+in D:\wamp\WWW\di9yue\allance1\admin\vendor\yiisoft\yii2-debug\LogTarget.php:58
+
+Stack trace:
+#0 [internal function]: PDO->__sleep()
+#1 D:\wamp\WWW\di9yue\allance1\admin\vendor\yiisoft\yii2-debug\LogTarget.php(58): serialize(Array)
+#2 D:\wamp\WWW\di9yue\allance1\admin\vendor\yiisoft\yii2-debug\LogTarget.php(112): yii\debug\LogTarget->export(Array)
+#3 D:\wamp\WWW\di9yue\allance1\admin\vendor\yiisoft\yii2\log\Dispatcher.php(183): yii\debug\LogTarget->collect(Array, true)
+#4 D:\wamp\WWW\di9yue\allance1\admin\vendor\yiisoft\yii2\log\Logger.php(173): yii\log\Dispatcher->dispatch(Array, true)
+#5 D:\wamp\WWW\di9yue\allance1\admin\vendor\yiisoft\yii2\base\ErrorHandler.php(111): yii\log\Logger->flush(true)
+#6 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\base\ErrorException))
+#7 {main}
+2016-06-22 09:15:08 [::1][-][tbq0da9iolo95ilnppu5466gh2][info][application] $_GET = [
+    'r' => 'login/login1'
+]
+
+$_POST = [
+    'name1' => 'liu'
+    'pwd1' => '555555'
+]
+
+$_COOKIE = [
+    'pgv_pvi' => '7623903232'
+    '_pk_ysp_id_' => [
+        'object Object' => 'd691c1c93ad0eec5.1466557304.1.1466557304.1466557304.'
+    ]
+    'XSRF-TOKEN' => 'eyJpdiI6IjArOFIrNkNyWkpIU0YwQkFQNDR5blE9PSIsInZhbHVlIjoiZjZ1RVJZUjVlemJ6K2JqWDNycUE5ZjVJaTl6cDQ1ZVwvSmNzUkxiNWxiWWxoNks0c2o5dlJmS3FYeWFBRmVNQ04wMjB4S2N1S1FMbmZ5VmpPR2puRGxnPT0iLCJtYWMiOiI0OWNiMWJlYjYwMjNkODY3NTUyNWIyYjAzNzZhNjQ0ZTM2MDgyYTlkNTYxNmJlOWZjOWZhZmU5N2UzMGU1NDQwIn0='
+    'laravel_session' => 'eyJpdiI6Ik8xRjZFTHc4bTNjQThZUlwvdG5hRkZ3PT0iLCJ2YWx1ZSI6IkZDTytYaWJpc3R1emRFSzdWWWlYdXR1dHZFUHV3dG1iUlN5N3ZqSTYyT1BReWFmYXZqa214WktqZlM2ZHlRVXFxM2lKSEpQc01jNmhZaVdjWVVua2hRPT0iLCJtYWMiOiJkMzkzNDBhMjE0MTcwOTU1Y2NkOGE5OTdiYWNkMjk0Y2EyOTQ2NDcwODg3NmQ5ODE0YTAzMTQwMGFmOGIzY2VkIn0='
+    '_pk_ysp_ses_' => [
+        'object Object' => '*'
+    ]
+    'PHPSESSID' => 'tbq0da9iolo95ilnppu5466gh2'
+]
+
+$_SESSION = [
+    '__flash' => []
+    'adm_id' => '1'
+    'a_name' => 'aaa'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.3; WOW64; rv:31.0) Gecko/20100101 Firefox/31.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-cn,zh;q=0.8,en-us;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://localhost/di9yue/allance1/admin/frontend/web/index.php?r=login/login'
+    'HTTP_COOKIE' => 'pgv_pvi=7623903232; _pk_ysp_id.[object Object].1fff=d691c1c93ad0eec5.1466557304.1.1466557304.1466557304.; XSRF-TOKEN=eyJpdiI6IjArOFIrNkNyWkpIU0YwQkFQNDR5blE9PSIsInZhbHVlIjoiZjZ1RVJZUjVlemJ6K2JqWDNycUE5ZjVJaTl6cDQ1ZVwvSmNzUkxiNWxiWWxoNks0c2o5dlJmS3FYeWFBRmVNQ04wMjB4S2N1S1FMbmZ5VmpPR2puRGxnPT0iLCJtYWMiOiI0OWNiMWJlYjYwMjNkODY3NTUyNWIyYjAzNzZhNjQ0ZTM2MDgyYTlkNTYxNmJlOWZjOWZhZmU5N2UzMGU1NDQwIn0%3D; laravel_session=eyJpdiI6Ik8xRjZFTHc4bTNjQThZUlwvdG5hRkZ3PT0iLCJ2YWx1ZSI6IkZDTytYaWJpc3R1emRFSzdWWWlYdXR1dHZFUHV3dG1iUlN5N3ZqSTYyT1BReWFmYXZqa214WktqZlM2ZHlRVXFxM2lKSEpQc01jNmhZaVdjWVVua2hRPT0iLCJtYWMiOiJkMzkzNDBhMjE0MTcwOTU1Y2NkOGE5OTdiYWNkMjk0Y2EyOTQ2NDcwODg3NmQ5ODE0YTAzMTQwMGFmOGIzY2VkIn0%3D; _pk_ysp_ses.[object Object].1fff=*; PHPSESSID=tbq0da9iolo95ilnppu5466gh2'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'CONTENT_LENGTH' => '21'
+    'PATH' => 'D:\\wamp\\php55;C:\\Program Files\\TortoiseGit\\bin;'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e PHP/5.5.30'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'D:/wamp/WWW'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/wamp/WWW'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'SCRIPT_FILENAME' => 'D:/wamp/WWW/di9yue/allance1/admin/frontend/web/index.php'
+    'REMOTE_PORT' => '57598'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => 'r=login/login1'
+    'REQUEST_URI' => '/di9yue/allance1/admin/frontend/web/index.php?r=login/login1'
+    'SCRIPT_NAME' => '/di9yue/allance1/admin/frontend/web/index.php'
+    'PHP_SELF' => '/di9yue/allance1/admin/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1466558108.64
+    'REQUEST_TIME' => 1466558108
+]
+2016-06-22 09:15:20 [::1][-][tbq0da9iolo95ilnppu5466gh2][error][yii\base\ErrorException:2] exception 'yii\base\ErrorException' with message 'mysql_connect(): Access denied for user 'root'@'localhost' (using password: YES)' in D:\wamp\WWW\di9yue\allance1\admin\frontend\controllers\LogincontrolController.php:15
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleError(2, 'mysql_connect()...', 'D:\\wamp\\WWW\\di9...', 15, Array)
+#1 D:\wamp\WWW\di9yue\allance1\admin\frontend\controllers\LogincontrolController.php(15): mysql_connect('127.0.0.1', 'root', '147542')
+#2 D:\wamp\WWW\di9yue\allance1\admin\frontend\controllers\LoginController.php(120): frontend\controllers\LoginController->adminLog('\xE7\xAE\xA1\xE7\x90\x86\xE5\x91\x98\xE7\x99\xBB\xE5\xBD\x95...')
+#3 [internal function]: frontend\controllers\LoginController->actionLogin1()
+#4 D:\wamp\WWW\di9yue\allance1\admin\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#5 D:\wamp\WWW\di9yue\allance1\admin\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#6 D:\wamp\WWW\di9yue\allance1\admin\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('login1', Array)
+#7 D:\wamp\WWW\di9yue\allance1\admin\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('login/login1', Array)
+#8 D:\wamp\WWW\di9yue\allance1\admin\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#9 D:\wamp\WWW\di9yue\allance1\admin\frontend\web\index.php(18): yii\base\Application->run()
+#10 {main}
+2016-06-22 09:15:20 [::1][-][tbq0da9iolo95ilnppu5466gh2][info][application] $_GET = [
+    'r' => 'login/login1'
+]
+
+$_POST = [
+    'name1' => 'liu'
+    'pwd1' => '555555'
+]
+
+$_COOKIE = [
+    'pgv_pvi' => '7623903232'
+    '_pk_ysp_id_' => [
+        'object Object' => 'd691c1c93ad0eec5.1466557304.1.1466557304.1466557304.'
+    ]
+    'XSRF-TOKEN' => 'eyJpdiI6IjArOFIrNkNyWkpIU0YwQkFQNDR5blE9PSIsInZhbHVlIjoiZjZ1RVJZUjVlemJ6K2JqWDNycUE5ZjVJaTl6cDQ1ZVwvSmNzUkxiNWxiWWxoNks0c2o5dlJmS3FYeWFBRmVNQ04wMjB4S2N1S1FMbmZ5VmpPR2puRGxnPT0iLCJtYWMiOiI0OWNiMWJlYjYwMjNkODY3NTUyNWIyYjAzNzZhNjQ0ZTM2MDgyYTlkNTYxNmJlOWZjOWZhZmU5N2UzMGU1NDQwIn0='
+    'laravel_session' => 'eyJpdiI6Ik8xRjZFTHc4bTNjQThZUlwvdG5hRkZ3PT0iLCJ2YWx1ZSI6IkZDTytYaWJpc3R1emRFSzdWWWlYdXR1dHZFUHV3dG1iUlN5N3ZqSTYyT1BReWFmYXZqa214WktqZlM2ZHlRVXFxM2lKSEpQc01jNmhZaVdjWVVua2hRPT0iLCJtYWMiOiJkMzkzNDBhMjE0MTcwOTU1Y2NkOGE5OTdiYWNkMjk0Y2EyOTQ2NDcwODg3NmQ5ODE0YTAzMTQwMGFmOGIzY2VkIn0='
+    '_pk_ysp_ses_' => [
+        'object Object' => '*'
+    ]
+    'PHPSESSID' => 'tbq0da9iolo95ilnppu5466gh2'
+]
+
+$_SESSION = [
+    '__flash' => []
+    'adm_id' => '1'
+    'a_name' => 'aaa'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.3; WOW64; rv:31.0) Gecko/20100101 Firefox/31.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-cn,zh;q=0.8,en-us;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://localhost/di9yue/allance1/admin/frontend/web/index.php?r=login/login'
+    'HTTP_COOKIE' => 'pgv_pvi=7623903232; _pk_ysp_id.[object Object].1fff=d691c1c93ad0eec5.1466557304.1.1466557304.1466557304.; XSRF-TOKEN=eyJpdiI6IjArOFIrNkNyWkpIU0YwQkFQNDR5blE9PSIsInZhbHVlIjoiZjZ1RVJZUjVlemJ6K2JqWDNycUE5ZjVJaTl6cDQ1ZVwvSmNzUkxiNWxiWWxoNks0c2o5dlJmS3FYeWFBRmVNQ04wMjB4S2N1S1FMbmZ5VmpPR2puRGxnPT0iLCJtYWMiOiI0OWNiMWJlYjYwMjNkODY3NTUyNWIyYjAzNzZhNjQ0ZTM2MDgyYTlkNTYxNmJlOWZjOWZhZmU5N2UzMGU1NDQwIn0%3D; laravel_session=eyJpdiI6Ik8xRjZFTHc4bTNjQThZUlwvdG5hRkZ3PT0iLCJ2YWx1ZSI6IkZDTytYaWJpc3R1emRFSzdWWWlYdXR1dHZFUHV3dG1iUlN5N3ZqSTYyT1BReWFmYXZqa214WktqZlM2ZHlRVXFxM2lKSEpQc01jNmhZaVdjWVVua2hRPT0iLCJtYWMiOiJkMzkzNDBhMjE0MTcwOTU1Y2NkOGE5OTdiYWNkMjk0Y2EyOTQ2NDcwODg3NmQ5ODE0YTAzMTQwMGFmOGIzY2VkIn0%3D; _pk_ysp_ses.[object Object].1fff=*; PHPSESSID=tbq0da9iolo95ilnppu5466gh2'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'CONTENT_LENGTH' => '21'
+    'PATH' => 'D:\\wamp\\php55;C:\\Program Files\\TortoiseGit\\bin;'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e PHP/5.5.30'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'D:/wamp/WWW'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/wamp/WWW'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'SCRIPT_FILENAME' => 'D:/wamp/WWW/di9yue/allance1/admin/frontend/web/index.php'
+    'REMOTE_PORT' => '57620'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => 'r=login/login1'
+    'REQUEST_URI' => '/di9yue/allance1/admin/frontend/web/index.php?r=login/login1'
+    'SCRIPT_NAME' => '/di9yue/allance1/admin/frontend/web/index.php'
+    'PHP_SELF' => '/di9yue/allance1/admin/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1466558120.33
+    'REQUEST_TIME' => 1466558120
+]
+2016-06-22 09:15:20 [::1][-][tbq0da9iolo95ilnppu5466gh2][warning][yii\log\Dispatcher::dispatch] Unable to send log via yii\debug\LogTarget: Exception 'PDOException' with message 'You cannot serialize or unserialize PDO instances' 
+
+in D:\wamp\WWW\di9yue\allance1\admin\vendor\yiisoft\yii2-debug\LogTarget.php:58
+
+Stack trace:
+#0 [internal function]: PDO->__sleep()
+#1 D:\wamp\WWW\di9yue\allance1\admin\vendor\yiisoft\yii2-debug\LogTarget.php(58): serialize(Array)
+#2 D:\wamp\WWW\di9yue\allance1\admin\vendor\yiisoft\yii2-debug\LogTarget.php(112): yii\debug\LogTarget->export(Array)
+#3 D:\wamp\WWW\di9yue\allance1\admin\vendor\yiisoft\yii2\log\Dispatcher.php(183): yii\debug\LogTarget->collect(Array, true)
+#4 D:\wamp\WWW\di9yue\allance1\admin\vendor\yiisoft\yii2\log\Logger.php(173): yii\log\Dispatcher->dispatch(Array, true)
+#5 D:\wamp\WWW\di9yue\allance1\admin\vendor\yiisoft\yii2\base\ErrorHandler.php(111): yii\log\Logger->flush(true)
+#6 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\base\ErrorException))
+#7 {main}
+2016-06-22 09:15:20 [::1][-][tbq0da9iolo95ilnppu5466gh2][info][application] $_GET = [
+    'r' => 'login/login1'
+]
+
+$_POST = [
+    'name1' => 'liu'
+    'pwd1' => '555555'
+]
+
+$_COOKIE = [
+    'pgv_pvi' => '7623903232'
+    '_pk_ysp_id_' => [
+        'object Object' => 'd691c1c93ad0eec5.1466557304.1.1466557304.1466557304.'
+    ]
+    'XSRF-TOKEN' => 'eyJpdiI6IjArOFIrNkNyWkpIU0YwQkFQNDR5blE9PSIsInZhbHVlIjoiZjZ1RVJZUjVlemJ6K2JqWDNycUE5ZjVJaTl6cDQ1ZVwvSmNzUkxiNWxiWWxoNks0c2o5dlJmS3FYeWFBRmVNQ04wMjB4S2N1S1FMbmZ5VmpPR2puRGxnPT0iLCJtYWMiOiI0OWNiMWJlYjYwMjNkODY3NTUyNWIyYjAzNzZhNjQ0ZTM2MDgyYTlkNTYxNmJlOWZjOWZhZmU5N2UzMGU1NDQwIn0='
+    'laravel_session' => 'eyJpdiI6Ik8xRjZFTHc4bTNjQThZUlwvdG5hRkZ3PT0iLCJ2YWx1ZSI6IkZDTytYaWJpc3R1emRFSzdWWWlYdXR1dHZFUHV3dG1iUlN5N3ZqSTYyT1BReWFmYXZqa214WktqZlM2ZHlRVXFxM2lKSEpQc01jNmhZaVdjWVVua2hRPT0iLCJtYWMiOiJkMzkzNDBhMjE0MTcwOTU1Y2NkOGE5OTdiYWNkMjk0Y2EyOTQ2NDcwODg3NmQ5ODE0YTAzMTQwMGFmOGIzY2VkIn0='
+    '_pk_ysp_ses_' => [
+        'object Object' => '*'
+    ]
+    'PHPSESSID' => 'tbq0da9iolo95ilnppu5466gh2'
+]
+
+$_SESSION = [
+    '__flash' => []
+    'adm_id' => '1'
+    'a_name' => 'aaa'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.3; WOW64; rv:31.0) Gecko/20100101 Firefox/31.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-cn,zh;q=0.8,en-us;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://localhost/di9yue/allance1/admin/frontend/web/index.php?r=login/login'
+    'HTTP_COOKIE' => 'pgv_pvi=7623903232; _pk_ysp_id.[object Object].1fff=d691c1c93ad0eec5.1466557304.1.1466557304.1466557304.; XSRF-TOKEN=eyJpdiI6IjArOFIrNkNyWkpIU0YwQkFQNDR5blE9PSIsInZhbHVlIjoiZjZ1RVJZUjVlemJ6K2JqWDNycUE5ZjVJaTl6cDQ1ZVwvSmNzUkxiNWxiWWxoNks0c2o5dlJmS3FYeWFBRmVNQ04wMjB4S2N1S1FMbmZ5VmpPR2puRGxnPT0iLCJtYWMiOiI0OWNiMWJlYjYwMjNkODY3NTUyNWIyYjAzNzZhNjQ0ZTM2MDgyYTlkNTYxNmJlOWZjOWZhZmU5N2UzMGU1NDQwIn0%3D; laravel_session=eyJpdiI6Ik8xRjZFTHc4bTNjQThZUlwvdG5hRkZ3PT0iLCJ2YWx1ZSI6IkZDTytYaWJpc3R1emRFSzdWWWlYdXR1dHZFUHV3dG1iUlN5N3ZqSTYyT1BReWFmYXZqa214WktqZlM2ZHlRVXFxM2lKSEpQc01jNmhZaVdjWVVua2hRPT0iLCJtYWMiOiJkMzkzNDBhMjE0MTcwOTU1Y2NkOGE5OTdiYWNkMjk0Y2EyOTQ2NDcwODg3NmQ5ODE0YTAzMTQwMGFmOGIzY2VkIn0%3D; _pk_ysp_ses.[object Object].1fff=*; PHPSESSID=tbq0da9iolo95ilnppu5466gh2'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'CONTENT_LENGTH' => '21'
+    'PATH' => 'D:\\wamp\\php55;C:\\Program Files\\TortoiseGit\\bin;'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e PHP/5.5.30'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'D:/wamp/WWW'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/wamp/WWW'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'SCRIPT_FILENAME' => 'D:/wamp/WWW/di9yue/allance1/admin/frontend/web/index.php'
+    'REMOTE_PORT' => '57620'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => 'r=login/login1'
+    'REQUEST_URI' => '/di9yue/allance1/admin/frontend/web/index.php?r=login/login1'
+    'SCRIPT_NAME' => '/di9yue/allance1/admin/frontend/web/index.php'
+    'PHP_SELF' => '/di9yue/allance1/admin/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1466558120.33
+    'REQUEST_TIME' => 1466558120
+]
+2016-06-22 10:59:53 [::1][-][-][error][yii\base\ErrorException:8] exception 'yii\base\ErrorException' with message 'Undefined index: pla_id2' in D:\wamp\WWW\di9yue\allance1\admin\frontend\views\resume\show.html:184
+Stack trace:
+#0 D:\wamp\WWW\di9yue\allance1\admin\frontend\views\resume\show.html(184): yii\base\ErrorHandler->handleError(8, 'Undefined index...', 'D:\\wamp\\WWW\\di9...', 184, Array)
+#1 D:\wamp\WWW\di9yue\allance1\admin\vendor\yiisoft\yii2\base\View.php(325): require('D:\\wamp\\WWW\\di9...')
+#2 D:\wamp\WWW\di9yue\allance1\admin\vendor\yiisoft\yii2\base\View.php(247): yii\base\View->renderPhpFile('D:\\wamp\\WWW\\di9...', Array)
+#3 D:\wamp\WWW\di9yue\allance1\admin\vendor\yiisoft\yii2\base\View.php(149): yii\base\View->renderFile('D:\\wamp\\WWW\\di9...', Array, Object(frontend\controllers\ResumeController))
+#4 D:\wamp\WWW\di9yue\allance1\admin\vendor\yiisoft\yii2\base\Controller.php(371): yii\base\View->render('show.html', Array, Object(frontend\controllers\ResumeController))
+#5 D:\wamp\WWW\di9yue\allance1\admin\frontend\controllers\ResumeController.php(41): yii\base\Controller->render('show.html', Array)
+#6 [internal function]: frontend\controllers\ResumeController->actionShow()
+#7 D:\wamp\WWW\di9yue\allance1\admin\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#8 D:\wamp\WWW\di9yue\allance1\admin\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#9 D:\wamp\WWW\di9yue\allance1\admin\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('show', Array)
+#10 D:\wamp\WWW\di9yue\allance1\admin\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('resume/show', Array)
+#11 D:\wamp\WWW\di9yue\allance1\admin\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#12 D:\wamp\WWW\di9yue\allance1\admin\frontend\web\index.php(18): yii\base\Application->run()
+#13 {main}
+2016-06-22 10:59:53 [::1][-][-][info][application] $_GET = [
+    'r' => 'resume/show'
+]
+
+$_COOKIE = [
+    'pgv_pvi' => '7623903232'
+    '_pk_ysp_id_' => [
+        'object Object' => '5247100beda3c32a.1466560819.1.1466560819.1466560819.'
+    ]
+    'XSRF-TOKEN' => 'eyJpdiI6IlU4RzA1WWhwYmc5ZHdcL00wMktLRE53PT0iLCJ2YWx1ZSI6IkVqR0kwNXAxS1VhM3hEUFwvbFJySDl6bFRxNlJBdm83RHJzcGh1YTdmTU53dndpQzZzNFI4QWhUaUFLdGVleHkwNXV6Y0VsaWlJNk4zZUVnQWZGZTEzZz09IiwibWFjIjoiOWNkZDY0ODRmMjU4YTFkYTYzYzZjMmE3N2ViOGNkYjBlZjM4ZTkyMDgzY2RkYzBkNGU5MTJkNTcxZTRlNmQxNyJ9'
+    'laravel_session' => 'eyJpdiI6Ik9BZjcrQ3Nrc1NFcjJpVDVjOEVpNUE9PSIsInZhbHVlIjoiMWY1NVJxZjdPeFMrM2dMYmVpb1wvNnROaFJ1eCtsMzF4VWs1a2FVRDlPcEdJb0l1UnBcL1p4d3FxUHFnM0g1UWdXNmZJb2tWNWFac051d1BDOEhxVUFBdz09IiwibWFjIjoiNDI5ZDc0OTYxMWZlYzY5NjEwNGZiMTNhMWNiZTM3NTRhOTcyNGRjMTBkYjFkMzg5Yjc0ZjQzOTY0MTQyYmJiOCJ9'
+    'PHPSESSID' => 'tbq0da9iolo95ilnppu5466gh2'
+    'pgv_si' => 's4110741504'
+]
+
+$_SESSION = [
+    '__flash' => []
+    'adm_id' => '1'
+    'a_name' => 'aaa'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.3; WOW64; rv:31.0) Gecko/20100101 Firefox/31.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-cn,zh;q=0.8,en-us;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://localhost/di9yue/allance1/admin/frontend/web/index.php?r=public/left'
+    'HTTP_COOKIE' => 'pgv_pvi=7623903232; _pk_ysp_id.[object Object].1fff=5247100beda3c32a.1466560819.1.1466560819.1466560819.; XSRF-TOKEN=eyJpdiI6IlU4RzA1WWhwYmc5ZHdcL00wMktLRE53PT0iLCJ2YWx1ZSI6IkVqR0kwNXAxS1VhM3hEUFwvbFJySDl6bFRxNlJBdm83RHJzcGh1YTdmTU53dndpQzZzNFI4QWhUaUFLdGVleHkwNXV6Y0VsaWlJNk4zZUVnQWZGZTEzZz09IiwibWFjIjoiOWNkZDY0ODRmMjU4YTFkYTYzYzZjMmE3N2ViOGNkYjBlZjM4ZTkyMDgzY2RkYzBkNGU5MTJkNTcxZTRlNmQxNyJ9; laravel_session=eyJpdiI6Ik9BZjcrQ3Nrc1NFcjJpVDVjOEVpNUE9PSIsInZhbHVlIjoiMWY1NVJxZjdPeFMrM2dMYmVpb1wvNnROaFJ1eCtsMzF4VWs1a2FVRDlPcEdJb0l1UnBcL1p4d3FxUHFnM0g1UWdXNmZJb2tWNWFac051d1BDOEhxVUFBdz09IiwibWFjIjoiNDI5ZDc0OTYxMWZlYzY5NjEwNGZiMTNhMWNiZTM3NTRhOTcyNGRjMTBkYjFkMzg5Yjc0ZjQzOTY0MTQyYmJiOCJ9; PHPSESSID=tbq0da9iolo95ilnppu5466gh2; pgv_si=s4110741504'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'PATH' => 'D:\\wamp\\php55;C:\\Program Files\\TortoiseGit\\bin;'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e PHP/5.5.30'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'D:/wamp/WWW'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/wamp/WWW'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'SCRIPT_FILENAME' => 'D:/wamp/WWW/di9yue/allance1/admin/frontend/web/index.php'
+    'REMOTE_PORT' => '50123'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=resume/show'
+    'REQUEST_URI' => '/di9yue/allance1/admin/frontend/web/index.php?r=resume/show'
+    'SCRIPT_NAME' => '/di9yue/allance1/admin/frontend/web/index.php'
+    'PHP_SELF' => '/di9yue/allance1/admin/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1466564393.368
+    'REQUEST_TIME' => 1466564393
+]
+2016-06-22 10:59:53 [::1][-][-][warning][yii\log\Dispatcher::dispatch] Unable to send log via yii\debug\LogTarget: Exception 'PDOException' with message 'You cannot serialize or unserialize PDO instances' 
+
+in D:\wamp\WWW\di9yue\allance1\admin\vendor\yiisoft\yii2-debug\LogTarget.php:58
+
+Stack trace:
+#0 [internal function]: PDO->__sleep()
+#1 D:\wamp\WWW\di9yue\allance1\admin\vendor\yiisoft\yii2-debug\LogTarget.php(58): serialize(Array)
+#2 D:\wamp\WWW\di9yue\allance1\admin\vendor\yiisoft\yii2-debug\LogTarget.php(112): yii\debug\LogTarget->export(Array)
+#3 D:\wamp\WWW\di9yue\allance1\admin\vendor\yiisoft\yii2\log\Dispatcher.php(183): yii\debug\LogTarget->collect(Array, true)
+#4 D:\wamp\WWW\di9yue\allance1\admin\vendor\yiisoft\yii2\log\Logger.php(173): yii\log\Dispatcher->dispatch(Array, true)
+#5 D:\wamp\WWW\di9yue\allance1\admin\vendor\yiisoft\yii2\base\ErrorHandler.php(111): yii\log\Logger->flush(true)
+#6 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\base\ErrorException))
+#7 {main}
+2016-06-22 10:59:53 [::1][-][-][info][application] $_GET = [
+    'r' => 'resume/show'
+]
+
+$_COOKIE = [
+    'pgv_pvi' => '7623903232'
+    '_pk_ysp_id_' => [
+        'object Object' => '5247100beda3c32a.1466560819.1.1466560819.1466560819.'
+    ]
+    'XSRF-TOKEN' => 'eyJpdiI6IlU4RzA1WWhwYmc5ZHdcL00wMktLRE53PT0iLCJ2YWx1ZSI6IkVqR0kwNXAxS1VhM3hEUFwvbFJySDl6bFRxNlJBdm83RHJzcGh1YTdmTU53dndpQzZzNFI4QWhUaUFLdGVleHkwNXV6Y0VsaWlJNk4zZUVnQWZGZTEzZz09IiwibWFjIjoiOWNkZDY0ODRmMjU4YTFkYTYzYzZjMmE3N2ViOGNkYjBlZjM4ZTkyMDgzY2RkYzBkNGU5MTJkNTcxZTRlNmQxNyJ9'
+    'laravel_session' => 'eyJpdiI6Ik9BZjcrQ3Nrc1NFcjJpVDVjOEVpNUE9PSIsInZhbHVlIjoiMWY1NVJxZjdPeFMrM2dMYmVpb1wvNnROaFJ1eCtsMzF4VWs1a2FVRDlPcEdJb0l1UnBcL1p4d3FxUHFnM0g1UWdXNmZJb2tWNWFac051d1BDOEhxVUFBdz09IiwibWFjIjoiNDI5ZDc0OTYxMWZlYzY5NjEwNGZiMTNhMWNiZTM3NTRhOTcyNGRjMTBkYjFkMzg5Yjc0ZjQzOTY0MTQyYmJiOCJ9'
+    'PHPSESSID' => 'tbq0da9iolo95ilnppu5466gh2'
+    'pgv_si' => 's4110741504'
+]
+
+$_SESSION = [
+    '__flash' => []
+    'adm_id' => '1'
+    'a_name' => 'aaa'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.3; WOW64; rv:31.0) Gecko/20100101 Firefox/31.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-cn,zh;q=0.8,en-us;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://localhost/di9yue/allance1/admin/frontend/web/index.php?r=public/left'
+    'HTTP_COOKIE' => 'pgv_pvi=7623903232; _pk_ysp_id.[object Object].1fff=5247100beda3c32a.1466560819.1.1466560819.1466560819.; XSRF-TOKEN=eyJpdiI6IlU4RzA1WWhwYmc5ZHdcL00wMktLRE53PT0iLCJ2YWx1ZSI6IkVqR0kwNXAxS1VhM3hEUFwvbFJySDl6bFRxNlJBdm83RHJzcGh1YTdmTU53dndpQzZzNFI4QWhUaUFLdGVleHkwNXV6Y0VsaWlJNk4zZUVnQWZGZTEzZz09IiwibWFjIjoiOWNkZDY0ODRmMjU4YTFkYTYzYzZjMmE3N2ViOGNkYjBlZjM4ZTkyMDgzY2RkYzBkNGU5MTJkNTcxZTRlNmQxNyJ9; laravel_session=eyJpdiI6Ik9BZjcrQ3Nrc1NFcjJpVDVjOEVpNUE9PSIsInZhbHVlIjoiMWY1NVJxZjdPeFMrM2dMYmVpb1wvNnROaFJ1eCtsMzF4VWs1a2FVRDlPcEdJb0l1UnBcL1p4d3FxUHFnM0g1UWdXNmZJb2tWNWFac051d1BDOEhxVUFBdz09IiwibWFjIjoiNDI5ZDc0OTYxMWZlYzY5NjEwNGZiMTNhMWNiZTM3NTRhOTcyNGRjMTBkYjFkMzg5Yjc0ZjQzOTY0MTQyYmJiOCJ9; PHPSESSID=tbq0da9iolo95ilnppu5466gh2; pgv_si=s4110741504'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'PATH' => 'D:\\wamp\\php55;C:\\Program Files\\TortoiseGit\\bin;'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e PHP/5.5.30'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'D:/wamp/WWW'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/wamp/WWW'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'SCRIPT_FILENAME' => 'D:/wamp/WWW/di9yue/allance1/admin/frontend/web/index.php'
+    'REMOTE_PORT' => '50123'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=resume/show'
+    'REQUEST_URI' => '/di9yue/allance1/admin/frontend/web/index.php?r=resume/show'
+    'SCRIPT_NAME' => '/di9yue/allance1/admin/frontend/web/index.php'
+    'PHP_SELF' => '/di9yue/allance1/admin/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1466564393.368
+    'REQUEST_TIME' => 1466564393
+]
+2016-06-23 09:26:05 [::1][-][-][error][yii\db\Exception] exception 'PDOException' with message 'SQLSTATE[42S02]: Base table or view not found: 1146 Table 'allance.al_major' doesn't exist' in D:\wamp\WWW\di9yue\allance1\admin\vendor\yiisoft\yii2\db\Command.php:837
+Stack trace:
+#0 D:\wamp\WWW\di9yue\allance1\admin\vendor\yiisoft\yii2\db\Command.php(837): PDOStatement->execute()
+#1 D:\wamp\WWW\di9yue\allance1\admin\vendor\yiisoft\yii2\db\Command.php(359): yii\db\Command->queryInternal('<span class="st...', '<span class="ke...')
+#2 D:\wamp\WWW\di9yue\allance1\admin\frontend\models\Major.php(56): yii\db\Command->queryAll()
+#3 D:\wamp\WWW\di9yue\allance1\admin\frontend\controllers\CategoryController.php(199): frontend\models\Major->majorshow()
+#4 [internal function]: frontend\controllers\CategoryController->actionMajorshow()
+#5 D:\wamp\WWW\di9yue\allance1\admin\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array('[<span class="t...', '[]')
+#6 D:\wamp\WWW\di9yue\allance1\admin\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams('[<span class="s...')
+#7 D:\wamp\WWW\di9yue\allance1\admin\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('<span class="st...', '[<span class="s...')
+#8 D:\wamp\WWW\di9yue\allance1\admin\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('<span class="st...', '[<span class="s...')
+#9 D:\wamp\WWW\di9yue\allance1\admin\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#10 D:\wamp\WWW\di9yue\allance1\admin\frontend\web\index.php(18): yii\base\Application->run()
+#11 {main}
+
+Next exception 'yii\db\Exception' with message 'SQLSTATE[42S02]: Base table or view not found: 1146 Table 'allance.al_major' doesn't exist
+The SQL being executed was: SELECT * FROM al_major ' in D:\wamp\WWW\di9yue\allance1\admin\vendor\yiisoft\yii2\db\Schema.php:628
+Stack trace:
+#0 D:\wamp\WWW\di9yue\allance1\admin\vendor\yiisoft\yii2\db\Command.php(852): yii\db\Schema->convertException(Object(PDOException), 'SELECT * FROM a...')
+#1 D:\wamp\WWW\di9yue\allance1\admin\vendor\yiisoft\yii2\db\Command.php(359): yii\db\Command->queryInternal('<span class="st...', '<span class="ke...')
+#2 D:\wamp\WWW\di9yue\allance1\admin\frontend\models\Major.php(56): yii\db\Command->queryAll()
+#3 D:\wamp\WWW\di9yue\allance1\admin\frontend\controllers\CategoryController.php(199): frontend\models\Major->majorshow()
+#4 [internal function]: frontend\controllers\CategoryController->actionMajorshow()
+#5 D:\wamp\WWW\di9yue\allance1\admin\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array('[<span class="t...', '[]')
+#6 D:\wamp\WWW\di9yue\allance1\admin\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams('[<span class="s...')
+#7 D:\wamp\WWW\di9yue\allance1\admin\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('<span class="st...', '[<span class="s...')
+#8 D:\wamp\WWW\di9yue\allance1\admin\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('<span class="st...', '[<span class="s...')
+#9 D:\wamp\WWW\di9yue\allance1\admin\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#10 D:\wamp\WWW\di9yue\allance1\admin\frontend\web\index.php(18): yii\base\Application->run()
+#11 {main}
+Additional Information:
+Array
+(
+    [0] => 42S02
+    [1] => 1146
+    [2] => Table 'allance.al_major' doesn't exist
+)
+
+2016-06-23 09:26:04 [::1][-][-][info][application] $_GET = [
+    'r' => 'category/majorshow'
+]
+
+$_COOKIE = [
+    'pgv_pvi' => '7623903232'
+    '_pk_ysp_id_' => [
+        'object Object' => '3d064aec74bea4af.1466645077.1.1466645077.1466645077.'
+    ]
+    'XSRF-TOKEN' => 'eyJpdiI6Im4rT0NmUnFVdzRqRFVzcEJCYjFNbFE9PSIsInZhbHVlIjoiT3QxWllUWkZSTWhob0swU0ZsbVF1TzhwODZEeFB3R1RxY2MwVVJZQVNzS2VmUlpuU1dTdWJHZkpMU1wvNzNwcmxxTUhtdmsxek9Wbkt2emhtZ2xyc2h3PT0iLCJtYWMiOiIzNGY4YmNiM2Q1NTg3MTM0ODVhZmYxMTJlYmU4ZDE4YmIxN2Q3ODhlNTc5MzY3NGVkMDcyNThiM2M3YzUzZGI2In0='
+    'laravel_session' => 'eyJpdiI6IjhxN1FaeGZcL21qYlwvOFdPZXdHZ0JuZz09IiwidmFsdWUiOiJHM2RmQkp2WEhwNkVzWWxxOTh3XC8xQ3B3azNxYUZmTWdqSjZuNWVNZ2pOMXhSZThmbXAyaG5vWXlFTDlLcExVZ2JHNWhJTVwvbHpLcXJ6RkRvVm5EYVhBPT0iLCJtYWMiOiJmYzQyZDVkOGY5ZDZjMmU2NzUyOWE2NzZlZDFkNmRiYzRkYmMxZWI2NWRhMzFiOTM1ODJlMmMxNGExMDg1Yzc0In0='
+    '_pk_ysp_ses_' => [
+        'object Object' => '*'
+    ]
+    'PHPSESSID' => 'tlhl8u6q8epdd2orjviu4ob4g0'
+    'pgv_si' => 's4579520512'
+]
+
+$_SESSION = [
+    '__flash' => []
+    'adm_id' => '1'
+    'a_name' => 'aaa'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.3; WOW64; rv:31.0) Gecko/20100101 Firefox/31.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-cn,zh;q=0.8,en-us;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://localhost/di9yue/allance1/admin/frontend/web/index.php?r=public/left'
+    'HTTP_COOKIE' => 'pgv_pvi=7623903232; _pk_ysp_id.[object Object].1fff=3d064aec74bea4af.1466645077.1.1466645077.1466645077.; XSRF-TOKEN=eyJpdiI6Im4rT0NmUnFVdzRqRFVzcEJCYjFNbFE9PSIsInZhbHVlIjoiT3QxWllUWkZSTWhob0swU0ZsbVF1TzhwODZEeFB3R1RxY2MwVVJZQVNzS2VmUlpuU1dTdWJHZkpMU1wvNzNwcmxxTUhtdmsxek9Wbkt2emhtZ2xyc2h3PT0iLCJtYWMiOiIzNGY4YmNiM2Q1NTg3MTM0ODVhZmYxMTJlYmU4ZDE4YmIxN2Q3ODhlNTc5MzY3NGVkMDcyNThiM2M3YzUzZGI2In0%3D; laravel_session=eyJpdiI6IjhxN1FaeGZcL21qYlwvOFdPZXdHZ0JuZz09IiwidmFsdWUiOiJHM2RmQkp2WEhwNkVzWWxxOTh3XC8xQ3B3azNxYUZmTWdqSjZuNWVNZ2pOMXhSZThmbXAyaG5vWXlFTDlLcExVZ2JHNWhJTVwvbHpLcXJ6RkRvVm5EYVhBPT0iLCJtYWMiOiJmYzQyZDVkOGY5ZDZjMmU2NzUyOWE2NzZlZDFkNmRiYzRkYmMxZWI2NWRhMzFiOTM1ODJlMmMxNGExMDg1Yzc0In0%3D; _pk_ysp_ses.[object Object].1fff=*; PHPSESSID=tlhl8u6q8epdd2orjviu4ob4g0; pgv_si=s4579520512'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'PATH' => 'D:\\wamp\\php55;C:\\Program Files\\TortoiseGit\\bin;'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e PHP/5.5.30'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'D:/wamp/WWW'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/wamp/WWW'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'SCRIPT_FILENAME' => 'D:/wamp/WWW/di9yue/allance1/admin/frontend/web/index.php'
+    'REMOTE_PORT' => '61225'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=category/majorshow'
+    'REQUEST_URI' => '/di9yue/allance1/admin/frontend/web/index.php?r=category/majorshow'
+    'SCRIPT_NAME' => '/di9yue/allance1/admin/frontend/web/index.php'
+    'PHP_SELF' => '/di9yue/allance1/admin/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1466645164.945
+    'REQUEST_TIME' => 1466645164
+]

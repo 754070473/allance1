@@ -49,7 +49,7 @@ var youdao_conv_id = 271546;
                           <li ><a href="login" rel="nofollow">发布职位</a></li>
                 <?php }else if(session('key')==1){?>
                          <li ><a href="index">首页</a></li>
-                         <li ><a href="companylist" >职位</a></li>
+                         <li ><a href="company" >职位</a></li>
                          <li ><a href="toForum" target="_blank">论坛</a></li>
                          <?php if(empty(session('key'))){ ?>
                          <li ><a href="login" rel="nofollow">个人中心</a></li>
@@ -138,23 +138,23 @@ var youdao_conv_id = 271546;
 						    								    										    							    										    		<dl>
 							    			<dt>ABCDEF</dt>
 							    			<dd>
-							     										     				<span>北京</span>
-							     										     				<span>长春</span>
-							     										     				<span>成都</span>
-							     										     				<span>重庆</span>
-							     										     				<span>长沙</span>
-							     										     				<span>常州</span>
-							     										     				<span>东莞</span>
-							     										     				<span>大连</span>
-							     										     				<span>佛山</span>
-							     										     				<span>福州</span>
-							     										    			</dd>
+							     			<span>北京</span>
+							     			<span>长春</span>
+							     			<span>成都</span>
+							     			<span>重庆</span>
+							     			<span>长沙</span>
+							     			<span>常州</span>
+							     			<span>东莞</span>
+							     			<span>大连</span>
+							     			<span>佛山</span>
+							     			<span>福州</span>
+							     			</dd>
 							    	  	</dl>
 							    	  								    							    										    		<dl>
 							    			<dt>GHIJ</dt>
 							    			<dd>
-							     										     				<span>贵阳</span>
-							     										     				<span>广州</span>
+							     			<span>贵阳</span>
+							     			<span>广州</span>
 							     										     				<span>哈尔滨</span>
 							     										     				<span>合肥</span>
 							     										     				<span>海口</span>
@@ -162,8 +162,8 @@ var youdao_conv_id = 271546;
 							     										     				<span>惠州</span>
 							     										     				<span>金华</span>
 							     										     				<span>济南</span>
-							     										     				<span>嘉兴</span>
-							     										    			</dd>
+							     										     				<span>嘉兴</span>							     											     				
+							     			</dd>
 							    	  	</dl>
 							    	  								    							    										    		<dl>
 							    			<dt>KLMN</dt>
