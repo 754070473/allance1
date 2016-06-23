@@ -19,6 +19,7 @@ Route::get('/index', 'IndexController@index');
 Route::get('/top', 'PublicController@top');
 Route::get('/left', 'PublicController@left');
 Route::get('/main', 'PublicController@main');
+
 //展示招聘信息详情
 Route::get('/jobdetail', 'IndexController@jobdetail');
 
@@ -92,8 +93,12 @@ Route::get('/success', 'CpregisterController@success');
 Route::get('/tag', 'CpregisterController@tag');		 
 	 
 //展示登录界面
-Route::get('/login', 'LoginController@login');	
-	
+Route::any('/login', 'LoginController@login');	
+Route::any('/login_register', 'LoginController@login_register');	
+Route::any('/login_pro', 'LoginController@login_pro');
+Route::any('/loginone', 'LoginController@loginone');
+Route::get('/logout', 'LoginController@logout');
+
 //我的简历
 Route::get('/jianli', 'PersonalController@jianli');
     
@@ -116,7 +121,7 @@ Route::get('/canInterviewResumes', 'RecresumeController@canInterviewResumes');
 Route::get('/autoFilterResumes', 'RecresumeController@autoFilterResumes');	
 
 //注册
-Route::get('/register', 'RegisterController@register');
+Route::get('/register/', 'RegisterController@register');
 
 //简历
 Route::get('/preview', 'ResumeglController@preview');

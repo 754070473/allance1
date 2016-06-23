@@ -1,7 +1,10 @@
 <?php
 namespace App\Http\Controllers;
 use DB;
+use Session;
 
+use Illuminate\Http\Request;
+use Illuminate\Routing\Controller;
 /**
  *   LoginController  账号登录
  */
@@ -21,8 +24,9 @@ class PublicController extends Controller {
 	// }
 	/**中心*/
 	public  function main(){
+		$per_id=Session::get('per_id');
 		$arr = $this->classify('al_post','p_pid');
-        return view("public.main",['arr'=>$arr]);
+		return view("public.main",["per_id"=>$per_id,'arr'=>$arr]);
 	}
 
 }	
