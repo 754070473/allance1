@@ -306,9 +306,10 @@ class AdminController extends Controller
                         ->from('al_admin_privilege')
                         ->where(['adm_id' =>$adm_id])  
                        ->all();
+		$pri_id = array_column($row,'pri_id');
 		foreach($arr as $key=>$val)
 		{
-			if(in_array($val['pri_id'],$row))
+			if(in_array($val['pri_id'],$pri_id))
 			{
 				$arr[$key]['in'] = 1;
 			}
@@ -320,7 +321,7 @@ class AdminController extends Controller
 			{
 				foreach($val['son'] as $k=>$v)
 				{
-					if(in_array($v['pri_id'],$row))
+					if(in_array($v['pri_id'],$pri_id))
 					{
 						$arr[$key]['son'][$k]['in'] = 1;
 					}
@@ -343,7 +344,7 @@ class AdminController extends Controller
 		$pri_id = $request->post('pri_id')?$request->post('pri_id'):"";
 		if($pri_id == "")
 		{
-			echo "<script>alert('请先选择权限');window.history.go(-1)</script>";
+			echo "<script>alert('请先选择权限');window.history.go(-1)</script>";die;
 		}
 		$sql = "insert into al_admin_privilege (adm_id,pri_id) values";
 		foreach($pri_id as $val)
@@ -352,6 +353,11 @@ class AdminController extends Controller
 		}
 		$sql = substr($sql,0,-1);
 		$connection = \Yii::$app->db;
+		$command = $connection->createCommand('SELECT pri_id FROM al_admin_privilege where adm_id = '.$adm_id);
+		$posts = $command->queryAll();
+		if($posts){
+			$connection->createCommand()->delete('al_admin_privilege', "adm_id=$adm_id")->execute();
+		}
 		$command = $connection->createCommand($sql);
 		$re = $command->execute();
 		if($re)

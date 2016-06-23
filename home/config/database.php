@@ -54,10 +54,17 @@ return [
 
         'mysql' => [
             'driver'    => 'mysql',
+<<<<<<< HEAD
             'host'      =>'localhost',
             'database'  =>'allance',
             'username'  =>'root',
             'password'  =>'root',
+=======
+            'host'      => "127.0.0.1",
+            'database'  => 'allance',
+            'username'  => 'root',
+            'password'  => '147542',
+>>>>>>> c034a0611c515c15d8c95864269c5b8ef6a38bee
             'charset'   => 'utf8',
             'collation' => 'utf8_unicode_ci',
             'prefix'    => '',

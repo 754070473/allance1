@@ -41,23 +41,26 @@ var youdao_conv_id = 271546;
             <div id="cloud_m"><img src="style/images/cloud_m.png" width="136" height="95"  alt="cloud" /></div>
         </div>
         
-    	<input type="hidden" id="resubmitToken" value="" />		
+    	
 		 <div class="login_box">
         	<form id="loginForm" action="index">
-				<input type="text" id="email" name="email" value="" tabindex="1" placeholder="请输入登录邮箱地址" />
-			  	<input type="password" id="password" name="password" tabindex="2" placeholder="请输入密码" />
+
+				<input type="text" id="email" name="name" value="{{$phone}}" tabindex="1" placeholder="请输入登录邮箱或手机号" />
+			  	<input type="password" id="password" name="pwd" tabindex="2" placeholder="请输入密码" />
 				<span class="error" style="display:none;" id="beError"></span>
+
 			    <label class="fl" for="remember"><input type="checkbox" id="remember" value="" checked="checked" name="autoLogin" /> 记住我</label>
 			    <a href="reset" class="fr" target="_blank">忘记密码？</a>
-			    
-				<!--<input type="submit" id="submitLogin" value="登 &nbsp; &nbsp; 录" />-->
-				<a style="color:#fff;" href="index" class="submitLogin" title="登 &nbsp; &nbsp; 录"/>登 &nbsp; &nbsp; 录</a>
 
 			    
-			    <input type="hidden" id="callback" name="callback" value=""/>
-                <input type="hidden" id="authType" name="authType" value=""/>
-                <input type="hidden" id="signature" name="signature" value=""/>
-                <input type="hidden" id="timestamp" name="timestamp" value=""/>
+				<!-- <input type="submit" id="submitLogin" value="登 &nbsp; &nbsp; 录" /> -->
+				<input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">	
+				
+				<br>
+				<br>
+			    <span id="check" style="color:red;"></span>
+			    <br>
+				<a style="color:#fff;" href="javascript:void(0)" class="submitLogin" title="登 &nbsp; &nbsp; 录"/>登 &nbsp; &nbsp; 录</a>
 			</form>
 			<div class="login_right">
 				<div>还没有拉勾帐号？</div>
@@ -71,64 +74,72 @@ var youdao_conv_id = 271546;
     </div>
 
 <script type="text/javascript">
-$(function(){
-	//验证表单
-	 	$("#loginForm").validate({
-	 		/* onkeyup: false,
-	    	focusCleanup:true, */
-	        rules: {
-	    	   	email: {
-	    	    	required: true,
-	    	    	email: true
-	    	   	},
-	    	   	password: {
-	    	    	required: true
-	    	   	}
-	    	},
-	    	messages: {
-	    	   	email: {
-	    	    	required: "请输入登录邮箱地址",
-	    	    	email: "请输入有效的邮箱地址，如：vivi@lagou.com"
-	    	   	},
-	    	   	password: {
-	    	    	required: "请输入密码"
-	    	   	}
-	    	},
-	    	submitHandler:function(form){
-	    		if($('#remember').prop("checked")){
-	      			$('#remember').val(1);
-	      		}else{
-	      			$('#remember').val(null);
-	      		}
-	    		var email = $('#email').val();
-	    		var password = $('#password').val();
-	    		var remember = $('#remember').val();
-	    		
-	    		var callback = $('#callback').val();
-	    		var authType = $('#authType').val();
-	    		var signature = $('#signature').val();
-	    		var timestamp = $('#timestamp').val();
-	    		
-	    		$(form).find(":submit").attr("disabled", true);
-	            $.ajax({
-	            	type:'POST',
-	            	data:{email:email,password:password,autoLogin:remember, callback:callback, authType:authType, signature:signature, timestamp:timestamp},
-	            	url:ctx+'/user/login.json'
-	            }).done(function(result) {
-					if(result.success){
-					 	if(result.content.loginToUrl){
-							window.location.href=result.content.loginToUrl;
-	            		}else{
-	            			window.location.href=ctx+'/';
-	            		} 
-					}else{
-						$('#beError').text(result.msg).show();
-					}
-					$(form).find(":submit").attr("disabled", false);
-	            }); 
-	        }  
-		});
+var kaiguan = null;
+var num = 20;
+var gload="";//全局变量
+$(".submitLogin").click(function(){
+	var name=$('#email').val();
+	var pwd=$('#password').val();
+
+	
+   	var phone=/^1[34578]{1}\d{9}$/;
+   	var email=/^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+   	if(name==""){
+		$("#check").text("用户名不得为空");
+	}else{
+		if(!(phone.test(name)||email.test(name))){
+			$("#check").text("请输入正确邮箱或手机号");
+		}else{
+			$.ajax({
+			   type: "get",
+			   url: "{{url('login_pro')}}",
+			   data: "name="+name+'&pwd='+pwd,
+			   success: function(msg){
+			   	if (msg=="1") {
+			   		$('#check').html('');
+			   		window.location.href="index";
+			   	} else if (msg=="2") {
+			   		$('#check').html('你的密码错误');
+			   	} else if(msg=="3"){
+			   		$('#check').html('你的邮箱或手机号有误');
+			   	} else if(msg=="4"){
+			   		$('#check').html('');
+			   		window.location.href="index";
+			   	}
+			   	
+			   //  if(msg==1){
+			   //    alert(1)
+			   //  }else if(msg==2){
+			   //      num = 20;
+			   //      $('#submitLogin').attr('disabled',true);
+			   //      kaiguan = setInterval(run,1000);
+			   //    $('#check').html('此账号还在锁定期间,20秒候重新登录');
+			   //  }else{
+			   //    $('#check').html(msg);
+			   //    window.ready();
+			   //  }
+			   //    closeme();
+			   }
+			});
+			
+		}
+	}
+
+	
 })
+
+// function run(){
+//   num--;
+//   $('.Prompt').html('此账号还在锁定期间,请('+num+')秒后重新登录');
+//   if(num == 0){
+//       $('#login_button').attr('disabled',false);
+//       $('.Prompt').html('');
+//       clearInterval(kaiguan);
+//   }
+// }
+
+
 </script>
+
 </body>
 </html>

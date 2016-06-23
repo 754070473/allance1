@@ -1,0 +1,47 @@
+	<div id="sidebar">
+			<div class="mainNavs">
+                    <?php foreach($arr as $key=>$val): ?>
+                    <div class="menu_box">
+						<div class="menu_main">
+                                <h2><?php echo e($val['i_name']); ?><span></span></h2>
+                                        <?php foreach($val['son'] as $ke=>$va): ?>
+                                            <?php foreach($va['son'] as $k=>$v): ?>
+                                                <?php if($v['num'] == 1): ?>
+                                        <a href="h/jobs/list_Java?labelWords=label"><?php echo e($v['i_name']); ?></a>
+                                            <?php endif; ?>
+                                            <?php endforeach; ?>
+                                            <?php endforeach; ?>
+			            </div>
+					   	<div class="menu_sub dn">
+                            <?php foreach($val['son'] as $ke=>$va): ?>
+					   		<dl class="reset">
+					        		<dt>
+					        			<a href="h/jobs/list_后端开发?labelWords=label">
+					        				<?php echo e($va['i_name']); ?>
+
+					        			</a>
+					        		</dt>
+						        	<dd>
+                                        <?php foreach($va['son'] as $k=>$v): ?>
+                                            <?php if($v['num'] == 1): ?>
+                                         <a href="h/jobs/list_Java?labelWords=label" class="curr" ><?php echo e($v['i_name']); ?></a>
+                                        <?php else: ?>
+                                         <a href="h/jobs/list_Java?labelWords=label" ><?php echo e($v['i_name']); ?></a>
+                                            <?php endif; ?>
+                                        <?php endforeach; ?>
+							         </dd>
+					        	</dl>
+                            <?php endforeach; ?>
+                            </div>
+					</div>
+                        <?php endforeach; ?>
+            </div>
+			<a class="subscribe" href="subscribe" target="_blank">订阅职位</a>
+		</div>
+        <div class="content">	
+	        			<div id="search_box">
+		<form id="searchForm" name="searchForm" action="list.html" method="get">
+        <ul id="searchType">
+        	        	<li data-searchtype="1" class="type_selected">职位</li>
+        	<li data-searchtype="4">公司</li>
+      	</ul>
