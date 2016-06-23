@@ -4,7 +4,6 @@ use DB;
 use Session;
 
 use Illuminate\Http\Request;
-use Illuminate\Routing\Controller;
 /**
  *   LoginController  账号登录
  */

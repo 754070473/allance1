@@ -58,10 +58,8 @@ class IndexController extends Controller {
     public function company()
 
     {
-          $arr = DB::table('al_post')
-                         ->get();
-          $arr = DB::table('al_place')
-                         ->get();
+         
+       
        $users = DB::table('al_resume')
             ->join('al_post', 'al_resume.post_id', '=', 'al_post.post_id')
             ->join('al_place', 'al_resume.pla_id', '=', 'al_place.pla_id')
@@ -71,8 +69,9 @@ class IndexController extends Controller {
              ->where('if_img',0)
             ->paginate(15);
         // print_r($users);die;
-
-        return view('index.company', ['users' => $users],['arr'=>$arr]);
+        $ar = $this->classify('al_post','p_pid');
+        //print_r($ar);die;
+        return view('index.company', ['users' => $users],['ar'=>$ar]);
 
      // return view("index.company");
     }
