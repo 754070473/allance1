@@ -1,5 +1,10 @@
 <?php
 namespace App\Http\Controllers;
+use DB;
+use Session;
+
+use Illuminate\Http\Request;
+use Illuminate\Routing\Controller;
 /**
  *   IndexController  信息展示
  */

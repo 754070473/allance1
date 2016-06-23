@@ -1,6 +1,10 @@
 <?php
 namespace App\Http\Controllers;
+use DB;
+use Session;
 
+use Illuminate\Http\Request;
+use Illuminate\Routing\Controller;
 /**
  *   LoginController  账号登录
  */
@@ -20,7 +24,8 @@ class PublicController extends Controller {
 	// }
 	/**中心*/
 	public  function main(){
-		return view("public.main");
+		$per_id=Session::get('per_id');
+		return view("public.main",["per_id"=>$per_id]);
 	}
 
 }	

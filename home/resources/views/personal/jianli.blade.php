@@ -35,8 +35,6 @@ var youdao_conv_id = 271546;
 <body>
 <div id="body">
 	<div id="header">
-
-
     	<div class="wrapper">
     		<a class="logo" href="h/">
     			<img width="229" height="43" alt="拉勾招聘-专注互联网招聘" src="style/images/logo.png">
@@ -46,21 +44,21 @@ var youdao_conv_id = 271546;
     			<li><a href="companylist">职位</a></li>
     			<li><a target="_blank" href="h/toForum">论坛</a></li>
     			<li class="current"><a rel="nofollow" href="jianli">个人中心</a></li>
-	    						    		</ul>
-        	        	<dl class="collapsible_menu">
+	    	</ul>
+        	<dl class="collapsible_menu">
             	<dt>
            			<span>jason&nbsp;</span> 
             		<span class="red dn" id="noticeDot-0"></span>
             		<i></i>
             	</dt>
-                                	<dd><a rel="nofollow" href="jianli">个人中心</a></dd>
-                	                	<dd><a href="collections">我收藏的职位</a></dd>
-                	                	                	<dd class="btm"><a href="subscribe">我的订阅</a></dd>
+                    <dd><a rel="nofollow" href="jianli">个人中心</a></dd>
+                	<dd><a href="collections">我收藏的职位</a></dd>
+                	<dd class="btm"><a href="subscribe">我的订阅</a></dd>
                 	<dd><a href="create">我要招人</a></dd>
-                                                <dd><a href="accountBind">帐号设置</a></dd>
-                                <dd class="logout"><a rel="nofollow" href="login">退出</a></dd>
+                    <dd><a href="accountBind">帐号设置</a></dd>
+                    <dd class="logout"><a rel="nofollow" href="login">退出</a></dd>
             </dl>
-                                    <div class="dn" id="noticeTip">
+           <div class="dn" id="noticeTip">
             	<span class="bot"></span>
 				<span class="top"></span>
 				<a target="_blank" href="delivery"><strong>0</strong>条新投递反馈</a>
