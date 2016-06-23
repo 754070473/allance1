@@ -1,18 +1,19 @@
 <?php
 namespace App\Http\Controllers;
+use DB;
+use Session;
+
+
 /**
  *   IndexController  信息展示
  */
-use DB;
-use App\Http\Controllers\IndexController;
 
 class IndexController extends Controller {
-	
 	//展示首页面
 	public  function index(){
 		return view("index.index");
 	}
-    
+
     //展示招聘信息详情
     public function jobdetail()
     {
@@ -24,7 +25,7 @@ class IndexController extends Controller {
     {
     	return view("index.jobdetail1");
     }
-    
+
     //招聘列表（可搜索）
     public function lists()
     {
@@ -42,7 +43,7 @@ class IndexController extends Controller {
     {
     	return view("index.myhome");
     }
-   
+
     //招聘信息展示（可以投个简历）
     public function toudi()
     {
@@ -52,6 +53,7 @@ class IndexController extends Controller {
     //个人找职位
     public function companylist()
     {
+
         return view("index.companylist");
     }
      //公司找简历
@@ -82,6 +84,6 @@ class IndexController extends Controller {
 	{
 		return view("index.about");
 	}
-}	
+}
 
 ?>

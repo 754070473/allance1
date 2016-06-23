@@ -16,9 +16,9 @@ Route::get('/index', 'IndexController@index');
 /**
  * 公共样式
  */
-Route::get('/top', 'PublicController@top');
-Route::get('/left', 'PublicController@left');
-Route::get('/main', 'PublicController@main');
+Route::any('/top', 'PublicController@top');
+Route::any('/left', 'PublicController@left');
+Route::any('/main', 'PublicController@main');
 
 //展示招聘信息详情
 Route::get('/jobdetail', 'IndexController@jobdetail');
@@ -94,12 +94,19 @@ Route::get('/success', 'CpregisterController@success');
 //填写公司信息
 Route::get('/tag', 'CpregisterController@tag');		 
 	 
-//展示登录界面
+//展示个人登录界面
 Route::any('/login', 'LoginController@login');	
+//个人与企业注册
 Route::any('/login_register', 'LoginController@login_register');	
+//执行个人登录
 Route::any('/login_pro', 'LoginController@login_pro');
+//验证企业个人唯一
 Route::any('/loginone', 'LoginController@loginone');
 Route::get('/logout', 'LoginController@logout');
+//企业登录页面
+Route::get('/company_login', 'LoginController@company_login');
+//执行企业登录页面
+Route::get('/company_login_pro', 'LoginController@company_login_pro');
 
 //我的简历
 Route::get('/jianli', 'PersonalController@jianli');
