@@ -490,23 +490,24 @@ $(function(){
     		var comfirmpassword = $('#comfirmpassword').val();
     		var resubmitToken = $('#resubmitToken').val();
     		$.ajax({
-    			url:ctx+'/user/updatePwd.json',
-    			type:'POST',
-    			data:{
-    				oldPassword:oldpassword,
-    				newPassword:newpassword,
-    				newPassword2:comfirmpassword,
-    				resubmitToken:resubmitToken
+    			url:'pass',
+    			type:'get',
+    			data:
+    			{
+    				'oldPassword':oldpassword,
+    				'newPassword':newpassword,
     			},
-            	dataType:'json'
-    		}).done(function(result){
-				$('#resubmitToken').val(result.resubmitToken);
-    			if(result.success){
+            	
+    		}).done(function(e){
+    			if(e==1)
+    			{
     				$.colorbox({inline:true, href:$("#updatePassword"),title:"修改密码成功"});
-    				setCountdown(4,'updatePassword h4 span',ctx+"/user/logout.html");	//调用倒计时
-    			}else{
-    				$('#updatePwd_beError').html(result.msg).show();
+    				setCountdown(4,'updatePassword h4 span',"login");	//调用倒计时
     			}
+				else
+				{
+					$('#updatePwd_beError').html(e).show();
+				}				
     		});
         }  
     });

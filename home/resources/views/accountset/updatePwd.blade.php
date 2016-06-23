@@ -77,7 +77,8 @@ var youdao_conv_id = 271546;
             </dt>
             <dd>
             	            	<form id="updatePswForm">
-            		<table class="savePassword">
+                        <input type="hidden"  id="resubmitToken" name='resubmitToken' value="{{csrf_token()}}">
+                    <table class="savePassword">
             			<tbody><tr>
             				<td>登录邮箱</td>
             				<td class="c7">jason@qq.com</td>
@@ -95,11 +96,13 @@ var youdao_conv_id = 271546;
             			</tr>
             			<tr>
             				<td class="label">确认密码</td>
-            				<td><input type="password" maxlength="16" id="comfirmpassword" name="comfirmpassword" style="background-image: url(style/images/img/a6y3y0Wx5kbFHvGuXzkgf0xhKnPzA4UTyaTB8Ph8AvcHi3fnsrZ7Wore02YViqVOrRXXPhfqP8j6MYlawoAAAAASUVORK5CYII=quot); background-repeat: no-repeat; background-attachment: scroll; background-position: right center;"></td>
+            				<td><input type="password" maxlength="16" id="comfirmpassword" name="comfirmpassword" style="background-image: url(style/images/img/a6y3y0Wx5kbFHvGuXzkgf0xhKnPzA4UTyaTB8Ph8AvcHi3fnsrZ7Wore02YViqVOrRXXPhfqP8j6MYlawoAAAAASUVORK5CYII=quot); background-repeat: no-repeat; background-attachment: scroll; background-position: right center;">
+                                <span id="qr" style="display:none;" class="error">
+                            </td>
             			</tr>
             			<tr>
             				<td>&nbsp;</td>
-            				<td><input type="submit" value="保 存"></td>
+            				<td><input type="submit" id='tijiao'  value="保 存"></td>
             			</tr>
             		</tbody></table>
 				</form>
@@ -269,9 +272,9 @@ var youdao_conv_id = 271546;
 	</div>
 	
 </div>
-<!------------------------------------- end -----------------------------------------> <script src="style/js/setting.js"></script>
+<script src="style/js/setting.js"></script>
 			<div class="clear"></div>
-			<input type="hidden" value="" id="resubmitToken">
+			<input type="hidden" value="" id="">
 	    	<a rel="nofollow" title="回到顶部" id="backtop"></a>
 	    </div><!-- end #container -->
 	</div><!-- end #body -->
@@ -292,3 +295,20 @@ var youdao_conv_id = 271546;
 
 
 <div id="cboxOverlay" style="display: none;"></div><div id="colorbox" class="" role="dialog" tabindex="-1" style="display: none;"><div id="cboxWrapper"><div><div id="cboxTopLeft" style="float: left;"></div><div id="cboxTopCenter" style="float: left;"></div><div id="cboxTopRight" style="float: left;"></div></div><div style="clear: left;"><div id="cboxMiddleLeft" style="float: left;"></div><div id="cboxContent" style="float: left;"><div id="cboxTitle" style="float: left;"></div><div id="cboxCurrent" style="float: left;"></div><button type="button" id="cboxPrevious"></button><button type="button" id="cboxNext"></button><button id="cboxSlideshow"></button><div id="cboxLoadingOverlay" style="float: left;"></div><div id="cboxLoadingGraphic" style="float: left;"></div></div><div id="cboxMiddleRight" style="float: left;"></div></div><div style="clear: left;"><div id="cboxBottomLeft" style="float: left;"></div><div id="cboxBottomCenter" style="float: left;"></div><div id="cboxBottomRight" style="float: left;"></div></div></div><div style="position: absolute; width: 9999px; visibility: hidden; display: none;"></div></div></body></html>
+<script>
+    $('#comfirmpassword').blur(function(){
+        var oldpassword = $('#oldpassword').val();
+        var newpassword = $('#newpassword').val();
+        var comfirmpassword = $('#comfirmpassword').val();
+        if(newpassword!=comfirmpassword)
+        {
+            $('#qr').show();
+            $('#qr').html('两次密码不一致');
+        }
+        else
+        {
+            $('#qr').hide();
+            $('#qr').html('');
+        }
+    })
+</script>

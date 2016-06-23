@@ -51,6 +51,8 @@ Route::get('/reset', 'AccountsetController@reset');
    
 //修改密码
 Route::get('/updatePwd', 'AccountsetController@updatePwd'); 
+//修改密码
+Route::get('/pass', 'AccountsetController@pass');
 
 //我收藏的职位
 Route::get('/collections', 'CollectionsController@collections');
