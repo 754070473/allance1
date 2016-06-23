@@ -3,7 +3,7 @@ namespace App\Http\Controllers;
 /**
  *   IndexController  信息展示
  */
-
+header("content-type:text/html;charset=utf-8");
 class IndexController extends Controller {
 	
 	//展示首页面
