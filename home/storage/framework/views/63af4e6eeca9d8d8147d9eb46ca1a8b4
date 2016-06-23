@@ -1,5 +1,5 @@
 ﻿<!DOCTYPE HTML>
-<html xmlns:wb="http://open.weibo.com/wb">
+<html>
 <head>
 <script id="allmobilize" charset="utf-8" src="style/js/allmobilize.min.js"></script>
 <meta http-equiv="Cache-Control" content="no-siteapp" />

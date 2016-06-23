@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
  *   IndexController  信息展示
  */
 use DB;
-use App\Http\Controllers\IndexController;
 
 class IndexController extends Controller {
 	
