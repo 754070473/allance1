@@ -4,13 +4,11 @@ use DB;
 use Session;
 
 use Illuminate\Http\Request;
-use Illuminate\Routing\Controller;
 /**
  *   IndexController  信息展示
  */
 
 class IndexController extends Controller {
-	
 	//展示首页面
 	public  function index(){
 		return view("index.index");
@@ -55,6 +53,7 @@ class IndexController extends Controller {
     //公司列表
     public function companylist()
     {
+       
         return view("index.companylist");
     }
 
