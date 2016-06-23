@@ -25,7 +25,8 @@ class PublicController extends Controller {
 	/**中心*/
 	public  function main(){
 		$per_id=Session::get('per_id');
-		return view("public.main",["per_id"=>$per_id]);
+		$arr = $this->classify('al_post','p_pid');
+		return view("public.main",["per_id"=>$per_id,'arr'=>$arr]);
 	}
 
 }	
