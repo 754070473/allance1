@@ -12,15 +12,19 @@ use Illuminate\Http\Request;
 class PublicController extends Controller {
 	//展示头部
 	public  function top(){
+		//个人
 		$per_id=Session::get('per_id');//用户id
-		
+		$query['i_name']=Session::get('i_name');//用户id
+		//企业
 		$com_id=Session::get('com_id');//企业id
+		$query['c_phone']=Session::get('c_phone');
+		$query['c_email']=Session::get('c_email');
 		if(!empty($per_id)){
-			$key="1";//判断是否是个人登录
+			$query['key']="1";//判断是否是个人登录
 		}else if(!empty($com_id)){
-			$key="2";//企业登录
+			$query['key']="2";//企业登录
 		}else{
-			$key="0";//没登录
+			$query['key']="0";//没登录
 		}
 		/**生成静态化页面*/
             // ob_start(); //打开输出缓冲区  
@@ -32,7 +36,7 @@ class PublicController extends Controller {
             // if (!is_file($cacheFile) || time() - filemtime($cacheFile) > $cacheTime) {  
             //<!--页面输出部分内容。也是ob_get_contents()函数取得的全部内容-->
             
-                 return view("public.top",["per_id"=>$per_id,'com_id'=>$com_id,'key'=>$key]);
+                 return view("public.top",$query);
 
             // $content = ob_get_contents(); //取得php页面输出的全部内容   
             // $fp = fopen($cacheFile, "w"); //输出内容写入文件  
