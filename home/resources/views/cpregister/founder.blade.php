@@ -32,35 +32,22 @@ var youdao_conv_id = 271546;
 </script> 
 <script src="style/js/conv.js" type="text/javascript"></script>
 <script src="style/js/ajaxCross.json" charset="UTF-8"></script></head>
+<script type="text/javascript">
+    $(function(){
+     $.get("{{url('top')}}",function(m){
+         $('#cache').html(m);
+        
+     })
+    })
+
+</script>
+
 <body>
 <div id="body">
-	<div id="header">
-    	<div class="wrapper">
-    		<a class="logo" href="index">
-    			<img width="229" height="43" alt="拉勾招聘-专注互联网招聘" src="style/images/logo.png">
-    		</a>
-    		<ul id="navheader" class="reset">
-    			<li><a href="index">首页</a></li>
-    			<li class="current"><a href="companylist">职位</a></li>
-    			<li><a target="_blank" href="">论坛</a></li>
-    			<li><a rel="nofollow" href="">个人中心</a></li>
-	    		<li><a rel="nofollow" href="create">发布职位</a></li>
-	    		    		</ul>
-        	        	<dl class="collapsible_menu">
-            	<dt>
-           			<span>jason&nbsp;</span> 
-            		<span class="red dn" id="noticeDot-1"></span>
-            		<i></i>
-            	</dt>
-                                	<dd><a href="positions">我发布的职位</a></dd>
-                	<dd><a href="positions">我收到的简历</a></dd>
-                	<dd class="btm"><a href="myhome">我的公司主页</a></dd>
-                	<dd><a href="jianli">我要找工作</a></dd>
-                                                <dd><a href="accountBind">帐号设置</a></dd>
-                                <dd class="logout"><a rel="nofollow" href="login">退出</a></dd>
-            </dl>
-                                </div>
-    </div><!-- end #header -->
+<!--头部-->
+<div id="cache">
+
+</div>
     <div id="container">
           
         <div class="content_mid">

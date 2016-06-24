@@ -32,41 +32,22 @@ var youdao_conv_id = 271546;
 </script> 
 <script src="style/js/conv.js" type="text/javascript"></script>
 <script src="style/js/ajaxCross.json" charset="UTF-8"></script></head>
+<script type="text/javascript">
+    $(function(){
+     $.get("{{url('top')}}",function(m){
+         $('#cache').html(m);
+        
+     })
+    })
+
+</script>
+
 <body>
 <div id="body">
-	<div id="header">
-    	<div class="wrapper">
-    		<a class="logo" href="index">
-    			<img width="229" height="43" alt="拉勾招聘-专注互联网招聘" src="style/images/logo.png">
-    		</a>
-    		<ul id="navheader" class="reset">
-    			<li><a href="index">首页</a></li>
-    			<li><a href="companylist">职位</a></li>
-    			<li><a target="_blank" href="">论坛</a></li>
-    			<li><a rel="nofollow" href="jianli">个人中心</a></li>
-	    	</ul>
-            <dl class="collapsible_menu">
-            	<dt>
-           			<span>jason&nbsp;</span> 
-            		<span class="red dn" id="noticeDot-0"></span>
-            		<i></i>
-            	</dt>
-                <dd><a rel="nofollow" href="jianli">个人中心</a></dd>
-                <dd><a href="collections">我收藏的职位</a></dd>
-                <dd><a href="delivery">我投递的职位 <span id="noticeNo" class="red dn">(0)</span></a></dd>
-                <dd class="btm"><a href="subscribe">我的订阅</a></dd>
-                <dd><a href="create">我要招人</a></dd>
-                <dd><a href="accountBind">帐号设置</a></dd>
-                <dd class="logout"><a rel="nofollow" href="login">退出</a></dd>
-            </dl>
-            <div class="dn" id="noticeTip">
-            	<span class="bot"></span>
-				<span class="top"></span>
-				<a target="_blank" href="delivery"><strong>0</strong>条新投递反馈</a>
-				<a class="closeNT" href="javascript:;"></a>
-            </div>
-        </div>
-    </div><!-- end #header -->
+<!--头部-->
+<div id="cache">
+
+</div>
     <div id="container">
         	  	
         <div class="clearfix">

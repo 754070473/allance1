@@ -10,10 +10,80 @@ use Illuminate\Routing\Controller;
 
 class LoginController extends Controller {
 	
-	//展示登录界面
+	//展示个人登录界面
 	public  function login(Request $request){
 		$phone=Session::get('phone');
 		return view("login.login",['phone'=>$phone]);
+	}
+	/**
+	 * 展示企业登录
+	 * @return [type] [description]
+	 */
+	public function company_login()
+	{
+		$phone=Session::get('phone');
+		return view("login.company_login",['phone'=>$phone]);
+	}
+	/**
+	 * 执行企业登录
+	 * @return [type] [description]
+	 */
+	public function company_login_pro(Request $request)
+	{
+		//登录验证
+		//$u_pwd = do_hash($_POST['u_pwd'],'md5'); // MD5加密
+		//$this->load->helper('security');
+		$data=$request->all();
+		$name=$request->input('name');
+		$pwd=md5($request->input('pwd'));
+
+		if (preg_match("/^1[34578]{1}\d{9}$/",$name)) {
+			$arr=DB::table('al_company')
+                ->select(['*'])
+                ->where('c_phone','=',"$name")
+                ->limit(1)
+                ->get();
+               foreach($arr as $k=>$v){
+		            $com_id=$arr[$k]->com_id;
+		            $c_phone=$arr[$k]->c_phone;
+		        }
+		          if($arr){
+			        	//时间清零后修改登录字段
+	                    if($arr[0]->c_pwd==$pwd){
+	                        //密码正确 修改字段num=0 登陆成功
+	                        Session::put('com_id',$com_id);
+	                        Session::put('c_phone',$c_phone);
+	                       echo "1";
+	                    }else{
+	                       echo "2";
+	                    }
+			        }else{
+			        	echo "3";
+			        }
+		}else{
+			$arr=DB::table('al_company')
+                ->select(['*'])
+                ->where('c_email','=',"$name")
+                ->limit(1)
+                ->get();
+            foreach($arr as $k=>$v){
+	           $com_id=$arr[$k]->com_id;
+		       $c_email=$arr[$k]->c_email;
+	        }
+	        if($arr){
+	        	//时间清零后修改登录字段
+                if($arr[0]->c_pwd==$pwd){
+                    //密码正确 修改字段num=0 登陆成功
+                    Session::put('com_id',$com_id);
+                    Session::put('c_email',$c_email);
+                   echo "4";
+                }else{
+                   echo "2";
+                }
+	        }else{
+	        	echo "3";
+	        }
+		}
 	}
 	/**
 	 * [login_pro 执行个人登录]
@@ -81,48 +151,6 @@ class LoginController extends Controller {
 	        	echo "3";
 	        }
 		}
-		
-
-        
-       //  if($arr){
-       //  	//设置用户失效
-       //  	$session=$this->session->userdata('name');
-       //  	//print_r($session);die;
-       //  	if($session==""){
-       //  		//时间清零后修改登录字段
-       //          $this->db->update('tea_client',array('num'=>'0'),"cli_id='$cli_id'");
-       //          if($arr[0]['num']<3){
-       //              if($arr[0]['cli_pwd']==$cli_pwd){
-       //                  //密码正确 修改字段num=0 登陆成功
-       //                 	$this->session->set_userdata('cli_id',$cli_id);  //用户id
-	      // 				$u_name=str_replace($cli_name, "<font color='#99ffff'>$cli_name</font>",$cli_name);
-       //                  $this->session->set_userdata('cli_name',$cli_name); //用户姓名
-       //                 	$this->session->set_userdata('cli_account',$cli_account); //用户姓名
-       //                 //  //取出用户权限
-       //                 //  $access=$this->getAccess($id);
-       //                 echo 1;
-       //              }else{
-       //                  //密码不正确 给用户提示 修改num字段  每错误一次使其加1
-       //                  $num=$arr[0]['num'];
-       //                  $num+=1;
-       //                 $this->db->update('tea_client',array('num'=>$num),"cli_id='$cli_id'");
-       //                 echo "你输入的密码不正确，还有".(3-$num)."次机会";
-       //              }
-       //          }else{
-       //          	 //锁定半分钟
-       //          	 //$this->input->cookie('u_name',$data['u_name'],90);
-       //          	 $this->session->set_userdata('name',$data['cli_name'],20);
-       //          	 $this->session->set_tempdata('name',$data['cli_name'],20);
-       //              echo "该账号已被锁定无法登陆，请联系管理员";
-       //          }
-       //  	}else{
-       //  		echo "2";
-       //  	}
-
-       //  }else{
-       //  	echo "该账号不存在，请核对";
-       // }
-
 
 
 	}
@@ -155,7 +183,9 @@ class LoginController extends Controller {
 				    	)
 					);
 			}
-
+			Session::put('phone',$phone);  
+			
+			return redirect('company_login');
 		}
 		else
 		{//个人注册
@@ -171,9 +201,10 @@ class LoginController extends Controller {
 				    	)
 					);
 			}
+			Session::put('phone',$phone);  
+			return redirect('login');
 		}
-		Session::put('phone',$phone);  
-		return redirect('login');
+		
 
 
 	}

@@ -1,17 +1,19 @@
 <?php
 namespace App\Http\Controllers;
+use DB;
+use Session;
+
+
 /**
  *   IndexController  信息展示
  */
-use DB;
 
 class IndexController extends Controller {
-	
 	//展示首页面
 	public  function index(){
 		return view("index.index");
 	}
-    
+
     //展示招聘信息详情
     public function jobdetail()
     {
@@ -23,7 +25,7 @@ class IndexController extends Controller {
     {
     	return view("index.jobdetail1");
     }
-    
+
     //招聘列表（可搜索）
     public function lists()
     {
@@ -41,7 +43,7 @@ class IndexController extends Controller {
     {
     	return view("index.myhome");
     }
-   
+
     //招聘信息展示（可以投个简历）
     public function toudi()
     {
@@ -51,16 +53,15 @@ class IndexController extends Controller {
     //个人找职位
     public function companylist()
     {
+
         return view("index.companylist");
     }
      //公司找简历
     public function company()
 
     {
-          $arr = DB::table('al_post')
-                         ->get();
-          $arr = DB::table('al_place')
-                         ->get();
+         
+       
        $users = DB::table('al_resume')
             ->join('al_post', 'al_resume.post_id', '=', 'al_post.post_id')
             ->join('al_place', 'al_resume.pla_id', '=', 'al_place.pla_id')
@@ -70,8 +71,9 @@ class IndexController extends Controller {
              ->where('if_img',0)
             ->paginate(15);
         // print_r($users);die;
-
-        return view('index.company', ['users' => $users],['arr'=>$arr]);
+        $ar = $this->classify('al_post','p_pid');
+        //print_r($ar);die;
+        return view('index.company', ['users' => $users],['ar'=>$ar]);
 
      // return view("index.company");
     }
@@ -82,6 +84,6 @@ class IndexController extends Controller {
 	{
 		return view("index.about");
 	}
-}	
+}
 
 ?>

@@ -30,27 +30,22 @@ console.log(1);
 <script type="text/javascript">
 </script>
 </head>
+<script type="text/javascript">
+    $(function(){
+     $.get("{{url('top')}}",function(m){
+         $('#cache').html(m);
+        
+     })
+    })
+
+</script>
+
 <body>
 <div id="body">
-	<div id="header">
-    	<div class="wrapper">
-    		<a href="index" class="logo">
-    			<img src="style/images/logo.png" width="229" height="43" alt="强强联合-专注互联网招聘" />
-    		</a>
-    		<ul class="reset" id="navheader">
-    			<li ><a href="index">首页</a></li>
-    			<li ><a href="companylist" >职位</a></li>
-    			<li ><a href="h/toForum" target="_blank">论坛</a></li>
-    			<li ><a href="jianli" rel="nofollow">个人中心</a></li>
-	    		<li ><a href="create" rel="nofollow">发布职位</a></li>
-	    		    		</ul>
-        	            <ul class="loginTop">
-            	<li><a href="login" rel="nofollow">登录</a></li> 
-            	<li>|</li>
-            	<li><a href="register" rel="nofollow">注册</a></li>
-            </ul>
-                                </div>
-    </div><!-- end #header -->
+<!--头部-->
+<div id="cache">
+
+</div>
     <div id="container">
         	  	
         <div class="clearfix">
