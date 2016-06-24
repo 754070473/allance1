@@ -98,7 +98,7 @@ $(".submitLogin").click(function(){
 			   	if (msg=="1") {
 			   		$('#check').html('');
 			   		//alert('手机号登录成功')
-			   		window.location.href="index";
+			   		window.location.href="index.php";
 			   	} else if (msg=="2") {
 			   		$('#check').html('你的密码错误');
 			   	} else if(msg=="3"){
@@ -106,7 +106,7 @@ $(".submitLogin").click(function(){
 			   	} else if(msg=="4"){
 			   		$('#check').html('');
 			   		//alert('邮箱登录成功')
-			   		window.location.href="index";
+			   		window.location.href="index.php";
 			   	}
 			   	
 			   //  if(msg==1){
