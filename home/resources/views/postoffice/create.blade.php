@@ -38,11 +38,25 @@ console.log(1);
      })
     })
 
+<<<<<<< HEAD
 </script>
 
 <body>
 	<div id="cache" style="padding-bottom:20px;"></div>
 	<div id="body">
+=======
+</script> 
+
+
+<body>
+    <!--头部-->
+<div id="cache" style="padding-bottom:20px;">
+
+</div>
+<div id="body">
+
+
+>>>>>>> 3dac5884214cff812e21ecfede0d7fbf0a95b666
     <div id="container">
         
         	<div class="sidebar">

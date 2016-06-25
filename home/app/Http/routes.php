@@ -110,6 +110,13 @@ Route::get('/company_login_pro', 'LoginController@company_login_pro');
 
 //我的简历
 Route::get('/jianli', 'PersonalController@jianli');
+//个人简历信息
+Route::any('/preview', 'PersonalController@preview');
+Route::any('/basic', 'PersonalController@basic');//基本 信息 修改
+Route::any('/uploadPhoto', 'PersonalController@uploadPhoto');//上传头像
+Route::any('/postcheck', 'PersonalController@postcheck');//职位检测
+Route::any('/expectedwork', 'PersonalController@expectedwork');//修改期望工作
+
     
 //发布新职位
 Route::get('/create', 'PostofficeController@create');
@@ -146,4 +153,5 @@ Route::get('/subscribe', 'SubscribeController@subscribe');
 //我的职位订阅1
 Route::get('/subscribe01', 'SubscribeController@subscribe01');    
 
-	
+//职位订阅入库
+Route::get('/subinfo','SubscribeController@subinfo');

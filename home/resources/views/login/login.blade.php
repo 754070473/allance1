@@ -104,6 +104,7 @@ $(".submitLogin").click(function(){
 			   		$('#check').html('你的邮箱或手机号有误');
 			   	} else if(msg=="4"){
 			   		$('#check').html('');
+
 			   		window.location.href="index";
 			   	}
 			   	

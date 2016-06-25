@@ -21,7 +21,8 @@ class LoginController extends Controller {
 	 */
 	public function company_login()
 	{
-		return view("login.company_login");
+		$phone=Session::get('phone');
+		return view("login.company_login",['phone'=>$phone]);
 	}
 	/**
 	 * 执行企业登录
@@ -182,7 +183,9 @@ class LoginController extends Controller {
 				    	)
 					);
 			}
-
+			Session::put('phone',$phone);  
+			
+			return redirect('company_login');
 		}
 		else
 		{//个人注册
@@ -198,9 +201,10 @@ class LoginController extends Controller {
 				    	)
 					);
 			}
+			Session::put('phone',$phone);  
+			return redirect('login');
 		}
-		Session::put('phone',$phone);  
-		return redirect('login');
+		
 
 
 	}

@@ -5,9 +5,12 @@
 						<div class="menu_main">
                                 <h2><?php echo e($val['i_name']); ?><span></span></h2>
                                         <?php foreach($val['son'] as $ke=>$va): ?>
+                                        <?php if($va['num'] == 1): ?>
+                                        <a href="<?php echo e(url('/list')); ?>?i_name=<?php echo e($va['i_name']); ?>"><?php echo e($va['i_name']); ?></a>
+                                        <?php endif; ?>
                                             <?php foreach($va['son'] as $k=>$v): ?>
                                                 <?php if($v['num'] == 1): ?>
-                                        <a href="h/jobs/list_Java?labelWords=label"><?php echo e($v['i_name']); ?></a>
+                                        <a href="<?php echo e(url('/list')); ?>?i_name=<?php echo e($v['i_name']); ?>"><?php echo e($v['i_name']); ?></a>
                                             <?php endif; ?>
                                             <?php endforeach; ?>
                                             <?php endforeach; ?>
@@ -16,7 +19,7 @@
                             <?php foreach($val['son'] as $ke=>$va): ?>
 					   		<dl class="reset">
 					        		<dt>
-					        			<a href="h/jobs/list_后端开发?labelWords=label">
+					        			<a href="<?php echo e(url('/list')); ?>?i_name=<?php echo e($va['i_name']); ?>">
 					        				<?php echo e($va['i_name']); ?>
 
 					        			</a>
@@ -24,9 +27,9 @@
 						        	<dd>
                                         <?php foreach($va['son'] as $k=>$v): ?>
                                             <?php if($v['num'] == 1): ?>
-                                         <a href="h/jobs/list_Java?labelWords=label" class="curr" ><?php echo e($v['i_name']); ?></a>
+                                         <a href="<?php echo e(url('/list')); ?>?i_name=<?php echo e($v['i_name']); ?>" class="curr" ><?php echo e($v['i_name']); ?></a>
                                         <?php else: ?>
-                                         <a href="h/jobs/list_Java?labelWords=label" ><?php echo e($v['i_name']); ?></a>
+                                         <a href="<?php echo e(url('/list')); ?>?i_name=<?php echo e($v['i_name']); ?>" ><?php echo e($v['i_name']); ?></a>
                                             <?php endif; ?>
                                         <?php endforeach; ?>
 							         </dd>
