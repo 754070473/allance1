@@ -1,4 +1,5 @@
 ﻿<!DOCTYPE HTML>
+
 <html xmlns:wb="http://open.weibo.com/wb">
 <head>
 <script id="allmobilize" charset="utf-8" src="style/js/allmobilize.min.js"></script>
@@ -29,8 +30,8 @@ console.log(1);
     <script type="text/javascript" src="style/js/excanvas.js"></script>
 <![endif]-->
 <script type="text/javascript">
-var youdao_conv_id = 271546; 
-</script> 
+var youdao_conv_id = 271546;
+</script>
 <script type="text/javascript" src="style/js/conv.js"></script>
 </head>
 <script type="text/javascript">
@@ -50,57 +51,54 @@ var youdao_conv_id = 271546;
 
 </div>
 
+
     <div id="container">
-        
+
         <div class="clearfix">
+
             <div class="content_l">
-            	<form id="companyListForm" name="companyListForm" method="get" action="h/c/companylist">
-	                <input type="hidden" id="city" name="city" value="全国" />
-	                <input type="hidden" id="fs" name="fs" value="" />
-	                <input type="hidden" id="ifs" name="ifs" value="" />
-	                <input type="hidden" id="ol" name="ol" value="" />
 	                <dl class="hc_tag">
 	                    <dt>
 	                       <!--  <h2 class="fl">热门公司</h2> -->
 	                        <ul class="workplace reset fr" id="workplaceSelect">
 	                        	                                <li >
-                                	<a href="javascript:void(0)"  class="current" >全国</a> 
+                                	<a href="javascript:void(0)"  class="current" >全国</a>
                                 	                                	|
                                 	                                </li>
 	                                                            <li >
-                                	<a href="javascript:void(0)" >北京</a> 
+                                	<a href="javascript:void(0)" >北京</a>
                                 	                                	|
                                 	                                </li>
 	                                                            <li >
-                                	<a href="javascript:void(0)" >上海</a> 
+                                	<a href="javascript:void(0)" >上海</a>
                                 	                                	|
                                 	                                </li>
 	                                                            <li >
-                                	<a href="javascript:void(0)" >广州</a> 
+                                	<a href="javascript:void(0)" >广州</a>
                                 	                                	|
                                 	                                </li>
 	                                                            <li >
-                                	<a href="javascript:void(0)" >深圳</a> 
+                                	<a href="javascript:void(0)" >深圳</a>
                                 	                                	|
                                 	                                </li>
 	                                                            <li >
-                                	<a href="javascript:void(0)" >成都</a> 
+                                	<a href="javascript:void(0)" >成都</a>
                                 	                                	|
                                 	                                </li>
 	                                                            <li >
-                                	<a href="javascript:void(0)" >杭州</a> 
+                                	<a href="javascript:void(0)" >杭州</a>
                                 	                                	|
                                 	                                </li>
 	                                                            <li >
-                                	<a href="javascript:void(0)" >武汉</a> 
+                                	<a href="javascript:void(0)" >武汉</a>
                                 	                                	|
                                 	                                </li>
 	                                                            <li >
-                                	<a href="javascript:void(0)" >南京</a> 
+                                	<a href="javascript:void(0)" >南京</a>
                                 	                                	|
                                 	                                </li>
 	                                                            <li  class="more" >
-                                	<a href="javascript:void(0)" >其他</a> 
+                                	<a href="javascript:void(0)" >其他</a>
                                 	                                	<div class="triangle citymore_arrow"></div>
                                 	                                </li>
 	                            	                            <li id="box_expectCity" class="searchlist_expectCity dn">
@@ -197,34 +195,36 @@ var youdao_conv_id = 271546;
 		                                	                                	                            </dd>
 	                        </dl>
 	                        <dl>
-	                            <dt>行业领域：</dt>
-	                            <dd>
-	                                	                                			                                <a href="javascript:void(0)">移动互联网</a>
-		                                	                                	                                			                                <a href="javascript:void(0)">电子商务</a>
-		                                	                                	                                			                                <a href="javascript:void(0)">社交</a>
-		                                	                                	                                			                                <a href="javascript:void(0)">企业服务</a>
-		                                	                                	                                			                                <a href="javascript:void(0)">O2O</a>
-		                                	                                	                                			                                <a href="javascript:void(0)">教育</a>
-		                                	                                	                                			                                <a href="javascript:void(0)">文化艺术</a>
-		                                	                                	                                			                                <a href="javascript:void(0)">游戏</a>
-		                                	                                	                                			                                <a href="javascript:void(0)">在线旅游</a>
-		                                	                                	                                			                                <a href="javascript:void(0)">金融互联网</a>
-		                                	                                	                                			                                <a href="javascript:void(0)">健康医疗</a>
-		                                	                                	                                			                                <a href="javascript:void(0)">生活服务</a>
-		                                	                                	                                			                                <a href="javascript:void(0)">硬件</a>
-		                                	                                	                                			                                <a href="javascript:void(0)">搜索</a>
-		                                	                                	                                			                                <a href="javascript:void(0)">安全</a>
-		                                	                                	                                			                                <a href="javascript:void(0)">运动体育</a>
-		                                	                                	                                			                                <a href="javascript:void(0)">云计算\大数据</a>
-		                                	                                	                                			                                <a href="javascript:void(0)">移动广告</a>
-		                                	                                	                                			                                <a href="javascript:void(0)">社会化营销</a>
-		                                	                                	                                			                                <a href="javascript:void(0)">视频多媒体</a>
-		                                	                                	                                			                                <a href="javascript:void(0)">媒体</a>
-		                                	                                	                                			                                <a href="javascript:void(0)">智能家居</a>
-		                                	                                	                                			                                <a href="javascript:void(0)">智能电视</a>
-		                                	                                	                                			                                <a href="javascript:void(0)">分类信息</a>
-		                                	                                	                                			                                <a href="javascript:void(0)">招聘</a>
-		                                	                                	                            </dd>
+                                <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
+                                <dt>行业领域：</dt>
+                                @foreach($ap as $v)<dd>
+                                	                                			                                  <a href="javascript:void(0)" onclick=fun({{$v['h_id']}})>  {{$v['a_hang']}}</a>
+		                                	                                	                                			                                {{--<a href="javascript:void(0)">电子商务</a>--}}
+                                       	                                	                                			                                {{--<a href="javascript:void(0)">社交</a>--}}
+		                                	                                	                                			                                {{--<a href="javascript:void(0)">企业服务</a>--}}
+		                                	                                	                                			                                {{--<a href="javascript:void(0)">O2O</a>--}}
+		                                	                                	                                			                                {{--<a href="javascript:void(0)">教育</a>--}}
+		                                	                                	                                			                                {{--<a href="javascript:void(0)">文化艺术</a>--}}
+		                                	                                	                                			                                {{--<a href="javascript:void(0)">游戏</a>--}}
+		                                	                                	                                			                                {{--<a href="javascript:void(0)">在线旅游</a>--}}
+		                                	                                	                                			                                {{--<a href="javascript:void(0)">金融互联网</a>--}}
+		                                	                                	                                			                                {{--<a href="javascript:void(0)">健康医疗</a>--}}
+		                                	                                	                                			                                {{--<a href="javascript:void(0)">生活服务</a>--}}
+		                                	                                	                                			                                {{--<a href="javascript:void(0)">硬件</a>--}}
+		                                	                                	                                			                                {{--<a href="javascript:void(0)">搜索</a>--}}
+		                                	                                	                                			                                {{--<a href="javascript:void(0)">安全</a>--}}
+		                                	                                	                                			                                {{--<a href="javascript:void(0)">运动体育</a>--}}
+		                                	                                	                                			                                {{--<a href="javascript:void(0)">云计算\大数据</a>--}}
+		                                	                                	                                			                                {{--<a href="javascript:void(0)">移动广告</a>--}}
+		                                	                                	                                			                                {{--<a href="javascript:void(0)">社会化营销</a>--}}
+		                                	                                	                                			                                {{--<a href="javascript:void(0)">视频多媒体</a>--}}
+		                                	                                	                                			                                {{--<a href="javascript:void(0)">媒体</a>--}}
+		                                	                                	                                			                                {{--<a href="javascript:void(0)">智能家居</a>--}}
+		                                	                                	                                			                                {{--<a href="javascript:void(0)">智能电视</a>--}}
+		                                	                                	                                			                                {{--<a href="javascript:void(0)">分类信息</a>--}}
+		                                	                                	                                			                                {{--<a href="javascript:void(0)">招聘</a>--}}
+
+		                                	                                	                              </dd> @endforeach
 	                        </dl>
 	                        <!-- <dl>
 	                            <dt>热门标签：</dt>
@@ -255,350 +255,42 @@ var youdao_conv_id = 271546;
 	                        </dl> -->
 	                    </dd>
 	                </dl>
-	               	                	<ul class="hc_list reset">
-		                  		                  		                        <li  style="clear:both;" >
-			                        <a href="h/c/25829" target="_blank">
+
+	               	                	<ul class="hc_list reset" id="so">
+                                            @foreach($ar as  $k=>$v)
+                                                <?php if(($k+1)%3==1){  ?>
+                                                <li  style="clear:both;" >
+                                                    <?php }else{?>
+                                                <li>
+                                                    <?php } ?>
+			                        <a href="{{url('index04')}}?id={{$v['mes_id']}}" target="_blank" >
 			                        	<h3 title="CCIC">CCIC</h3>
+
+
 			                        	<div class="comLogo">
-				                        	<img src="style/images/logo_default.png" width="190" height="190" alt="CCIC" />
+
+				                        	<img src="style/images/c5e0d4d3dc9047c89986c9eca2feb277.png" width="190" height="190" alt="CCIC"  "/>
 				                        	<ul>
-				                        		<li>安全</li>
-				                        		<li>深圳，D轮及以上</li>
+				                        		<li>{{$v['m_name']}}</li>
+				                        		<li>{{$v['m_logo']}}</li>
 				                        	</ul>
 			                        	</div>
 			                        </a>
-			                        			                        	<a href="h/jobs/148928" target="_blank"> 环境监测工程师</a>
-			                        			                        	<a href="h/jobs/148919" target="_blank"> 电学校准工程师</a>
-			                        			                        	<a href="h/jobs/148931" target="_blank"> 能源管理项目经理</a>
+
+                                                <a href="h/jobs/148928" target="_blank"> {{$v['r_name']}}</a>
+
 			                        			                        <ul class="reset ctags">
-			                        				                        				                        	<li>D轮及以上</li>
-																							                        				                        	<li>安全</li>
-																							                        				                        	<li>年终分红</li>
-																							                        				                        	<li>绩效奖金</li>
-																							                        				                        	<li>五险一金</li>
-																							                        				                        	<li>交通补助</li>
-																						                        </ul>
-			                    </li>
-		                        		                    		                        <li >
-			                        <a href="h/c/25836" target="_blank">
-			                        	<h3 title="MOMO">MOMO</h3>
-			                        	<div class="comLogo">
-				                        	<img src="style/images/c5e0d4d3dc9047c89986c9eca2feb277.png" width="190" height="190" alt="MOMO" />
-				                        	<ul>
-				                        		<li>移动互联网</li>
-				                        		<li>西安，C轮</li>
-				                        	</ul>
-			                        	</div>
-			                        </a>
-			                        			                        	<a href="h/jobs/148976" target="_blank"> PHP</a>
-			                        			                        	<a href="h/jobs/148979" target="_blank"> U3D</a>
-			                        			                        	<a href="h/jobs/148991" target="_blank"> 游戏动作/主美</a>
-			                        			                        <ul class="reset ctags">
-			                        				                        				                        	<li>C轮</li>
-																							                        				                        	<li>移动互联网</li>
-																							                        				                        	<li>五险</li>
-																							                        				                        	<li>年度旅游</li>
-																							                        				                        	<li>扁平管理</li>
-																						                        </ul>
-			                    </li>
-		                        		                    		                        <li >
-			                        <a href="h/c/25842" target="_blank">
-			                        	<h3 title="博雅">博雅</h3>
-			                        	<div class="comLogo">
-				                        	<img src="style/images/05ca024b95d242bb8178edaa5bd1b25a.jpg" width="190" height="190" alt="博雅" />
-				                        	<ul>
-				                        		<li>移动互联网,电子商务</li>
-				                        		<li>北京，B轮</li>
-				                        	</ul>
-			                        	</div>
-			                        </a>
-			                        			                        	<a href="h/jobs/149014" target="_blank"> PHP后端研发工程师</a>
-			                        			                        	<a href="h/jobs/149015" target="_blank"> PHP高级工程师-ERP方向</a>
-			                        			                        	<a href="h/jobs/149010" target="_blank"> PHP架构师</a>
-			                        			                        	<a href="h/jobs/149012" target="_blank"> PHP高级研发工程师</a>
-			                        			                        <ul class="reset ctags">
-			                        				                        				                        	<li>B轮</li>
-																							                        				                        	<li>移动互联网</li>
-																							                        				                        	<li>电子商务</li>
-																							                        				                        	<li>股票期权</li>
-																							                        				                        	<li>绩效奖金</li>
-																							                        				                        	<li>五险一金</li>
-																						                        </ul>
-			                    </li>
-		                        		                    		                        <li  style="clear:both;" >
-			                        <a href="h/c/25851" target="_blank">
-			                        	<h3 title="飞道科技">飞道科技</h3>
-			                        	<div class="comLogo">
-				                        	<img src="style/images/ff80808146d99c970146efd983ea016a.jpg" width="190" height="190" alt="飞道科技" />
-				                        	<ul>
-				                        		<li>移动互联网</li>
-				                        		<li>郑州，D轮及以上</li>
-				                        	</ul>
-			                        	</div>
-			                        </a>
-			                        			                        	<a href="h/jobs/149105" target="_blank"> Java底层开发工程师</a>
-			                        			                        	<a href="h/jobs/149098" target="_blank"> Android</a>
-			                        			                        	<a href="h/jobs/149094" target="_blank"> iOS</a>
-			                        			                        	<a href="h/jobs/149101" target="_blank"> WPF研发工程师</a>
-			                        			                        <ul class="reset ctags">
-			                        				                        				                        	<li>D轮及以上</li>
-																							                        				                        	<li>移动互联网</li>
-																							                        				                        	<li>绩效奖金</li>
-																							                        				                        	<li>专项奖金</li>
-																							                        				                        	<li>五险一金</li>
-																							                        				                        	<li>带薪年假</li>
-																						                        </ul>
-			                    </li>
-		                        		                    		                        <li >
-			                        <a href="h/c/25856" target="_blank">
-			                        	<h3 title="世纪优优">世纪优优</h3>
-			                        	<div class="comLogo">
-				                        	<img src="style/images/logo_default.png" width="190" height="190" alt="世纪优优" />
-				                        	<ul>
-				                        		<li>视频多媒体,媒体</li>
-				                        		<li>北京，D轮及以上</li>
-				                        	</ul>
-			                        	</div>
-			                        </a>
-			                        			                        	<a href="h/jobs/149099" target="_blank"> 视频网站编辑</a>
-			                        			                        	<a href="h/jobs/149108" target="_blank"> 海外市场拓展经理</a>
-			                        			                        	<a href="h/jobs/149106" target="_blank"> 平面设计师</a>
-			                        			                        	<a href="h/jobs/149104" target="_blank"> 视频网站主编</a>
-			                        			                        <ul class="reset ctags">
-			                        				                        				                        	<li>D轮及以上</li>
-																							                        				                        	<li>视频多媒体</li>
-																							                        				                        	<li>媒体</li>
-																							                        				                        	<li>绩效奖金</li>
-																							                        				                        	<li>股票期权</li>
-																							                        				                        	<li>五险一金</li>
-																						                        </ul>
-			                    </li>
-		                        		                    		                        <li >
-			                        <a href="h/c/25862" target="_blank">
-			                        	<h3 title="易迅">易迅</h3>
-			                        	<div class="comLogo">
-				                        	<img src="style/images/logo_default.png" width="190" height="190" alt="易迅" />
-				                        	<ul>
-				                        		<li>电子商务</li>
-				                        		<li>上海，D轮及以上</li>
-				                        	</ul>
-			                        	</div>
-			                        </a>
-			                        			                        	<a href="h/jobs/149194" target="_blank"> Web前端开发工程师</a>
-			                        			                        <ul class="reset ctags">
-			                        				                        				                        	<li>D轮及以上</li>
-																							                        				                        	<li>电子商务</li>
-																							                        				                        	<li>绩效奖金</li>
-																							                        				                        	<li>年底双薪</li>
-																							                        				                        	<li>五险一金</li>
-																							                        				                        	<li>岗位晋升</li>
-																						                        </ul>
-			                    </li>
-		                        		                    		                        <li  style="clear:both;" >
-			                        <a href="h/c/25729" target="_blank">
-			                        	<h3 title="大东方">大东方</h3>
-			                        	<div class="comLogo">
-				                        	<img src="style/images/3ad1d8845e8345019006b38cd45302c0.jpg" width="190" height="190" alt="大东方" />
-				                        	<ul>
-				                        		<li>金融互联网</li>
-				                        		<li>成都，D轮及以上</li>
-				                        	</ul>
-			                        	</div>
-			                        </a>
-			                        			                        	<a href="h/jobs/148097" target="_blank"> BD经理</a>
-			                        			                        <ul class="reset ctags">
-			                        				                        				                        	<li>D轮及以上</li>
-																							                        				                        	<li>金融互联网</li>
-																							                        				                        	<li>绩效奖金</li>
-																							                        				                        	<li>年底双薪</li>
-																							                        				                        	<li>专项奖金</li>
-																							                        				                        	<li>五险一金</li>
-																						                        </ul>
-			                    </li>
-		                        		                    		                        <li >
-			                        <a href="h/c/25738" target="_blank">
-			                        	<h3 title="金棕榈">金棕榈</h3>
-			                        	<div class="comLogo">
-				                        	<img src="style/images/f57de6b836fa454ebd13c41537e152ba.png" width="190" height="190" alt="金棕榈" />
-				                        	<ul>
-				                        		<li>移动互联网,云计算\大数据</li>
-				                        		<li>上海，B轮</li>
-				                        	</ul>
-			                        	</div>
-			                        </a>
-			                        			                        	<a href="h/jobs/148468" target="_blank"> 测试工程师</a>
-			                        			                        	<a href="h/jobs/148457" target="_blank"> iOS</a>
-			                        			                        	<a href="h/jobs/148463" target="_blank"> UI设计师</a>
-			                        			                        	<a href="h/jobs/148453" target="_blank"> Java</a>
-			                        			                        <ul class="reset ctags">
-			                        				                        				                        	<li>B轮</li>
-																							                        				                        	<li>移动互联网</li>
-																							                        				                        	<li>云计算\大数据</li>
-																							                        				                        	<li>绩效奖金</li>
-																							                        				                        	<li>年底双薪</li>
-																							                        				                        	<li>通讯津贴</li>
-																						                        </ul>
-			                    </li>
-		                        		                    		                        <li >
-			                        <a href="h/c/25763" target="_blank">
-			                        	<h3 title="永航科技">永航科技</h3>
-			                        	<div class="comLogo">
-				                        	<img src="style/images/8e05f869fe0640318d62c562d6a9a322.jpg" width="190" height="190" alt="永航科技" />
-				                        	<ul>
-				                        		<li>游戏</li>
-				                        		<li>北京，D轮及以上</li>
-				                        	</ul>
-			                        	</div>
-			                        </a>
-			                        			                        	<a href="h/jobs/148284" target="_blank"> U3D开发工程师</a>
-			                        			                        	<a href="h/jobs/148296" target="_blank"> 游戏特效</a>
-			                        			                        	<a href="h/jobs/148303" target="_blank"> 原画师</a>
-			                        			                        	<a href="h/jobs/148249" target="_blank"> C++</a>
-			                        			                        <ul class="reset ctags">
-			                        				                        				                        	<li>D轮及以上</li>
-																							                        				                        	<li>游戏</li>
-																							                        				                        	<li>绩效奖金</li>
-																							                        				                        	<li>五险一金</li>
-																							                        				                        	<li>带薪年假</li>
-																							                        				                        	<li>定期体检</li>
-																						                        </ul>
-			                    </li>
-		                        		                    		                        <li  style="clear:both;" >
-			                        <a href="h/c/25778" target="_blank">
-			                        	<h3 title="北京思特奇">北京思特奇</h3>
-			                        	<div class="comLogo">
-				                        	<img src="style/images/8d63eda78f714d2dacb0e5d201bbce2e.jpg" width="190" height="190" alt="北京思特奇" />
-				                        	<ul>
-				                        		<li>电子商务,云计算\大数据</li>
-				                        		<li>南昌，D轮及以上</li>
-				                        	</ul>
-			                        	</div>
-			                        </a>
-			                        			                        	<a href="h/jobs/148380" target="_blank"> Java高级工程师</a>
-			                        			                        	<a href="h/jobs/148470" target="_blank"> 网站运营专员</a>
-			                        			                        	<a href="h/jobs/148377" target="_blank"> Java开发工程师</a>
-			                        			                        <ul class="reset ctags">
-			                        				                        				                        	<li>D轮及以上</li>
-																							                        				                        	<li>电子商务</li>
-																							                        				                        	<li>云计算\大数据</li>
-																							                        				                        	<li>绩效奖金</li>
-																							                        				                        	<li>专项奖金</li>
-																							                        				                        	<li>五险一金</li>
-																						                        </ul>
-			                    </li>
-		                        		                    		                        <li >
-			                        <a href="h/c/25784" target="_blank">
-			                        	<h3 title="瑞德医疗">瑞德医疗</h3>
-			                        	<div class="comLogo">
-				                        	<img src="style/images/11c812bedb4a481fa06ca488dac2f23f.png" width="190" height="190" alt="瑞德医疗" />
-				                        	<ul>
-				                        		<li>健康医疗</li>
-				                        		<li>北京，C轮</li>
-				                        	</ul>
-			                        	</div>
-			                        </a>
-			                        			                        	<a href="h/jobs/148433" target="_blank"> 网络编辑</a>
-			                        			                        	<a href="h/jobs/148426" target="_blank"> 市场营销</a>
-			                        			                        <ul class="reset ctags">
-			                        				                        				                        	<li>C轮</li>
-																							                        				                        	<li>健康医疗</li>
-																						                        </ul>
-			                    </li>
-		                        		                    		                        <li >
-			                        <a href="h/c/25804" target="_blank">
-			                        	<h3 title="乐影网">乐影网</h3>
-			                        	<div class="comLogo">
-				                        	<img src="style/images/7fdf693be1044ed8a71f561420162a3b.png" width="190" height="190" alt="乐影网" />
-				                        	<ul>
-				                        		<li>O2O</li>
-				                        		<li>北京，B轮</li>
-				                        	</ul>
-			                        	</div>
-			                        </a>
-			                        			                        	<a href="h/jobs/148657" target="_blank"> C++开发工程师</a>
-			                        			                        <ul class="reset ctags">
-			                        				                        				                        	<li>B轮</li>
-																							                        				                        	<li>O2O</li>
-																							                        				                        	<li>五险一金</li>
-																							                        				                        	<li>带薪年假</li>
-																							                        				                        	<li>节日礼物</li>
-																							                        				                        	<li>定期体检</li>
-																						                        </ul>
-			                    </li>
-		                        		                    		                        <li  style="clear:both;" >
-			                        <a href="h/c/25226" target="_blank">
-			                        	<h3 title="卓宝计算机">卓宝计算机</h3>
-			                        	<div class="comLogo">
-				                        	<img src="style/images/e802e0078d194e76afbb7abb102af275.jpg" width="190" height="190" alt="卓宝计算机" />
-				                        	<ul>
-				                        		<li>移动互联网,视频多媒体</li>
-				                        		<li>上海，B轮</li>
-				                        	</ul>
-			                        	</div>
-			                        </a>
-			                        			                        	<a href="h/jobs/143909" target="_blank"> 对日Windows C++软件工程师</a>
-			                        			                        	<a href="h/jobs/145066" target="_blank"> 日语韩语软件测试</a>
-			                        			                        	<a href="h/jobs/143905" target="_blank"> 嵌入式C/C++对日初级软件工程师（常驻世界500强日企）</a>
-			                        			                        	<a href="h/jobs/143903" target="_blank"> 对日C/C++资深软件开发（长期派驻知名五百强日企）</a>
-			                        			                        <ul class="reset ctags">
-			                        				                        				                        	<li>B轮</li>
-																							                        				                        	<li>移动互联网</li>
-																							                        				                        	<li>视频多媒体</li>
-																							                        				                        	<li>五险一金</li>
-																							                        				                        	<li>弹性工作</li>
-																							                        				                        	<li>年度旅游</li>
-																						                        </ul>
-			                    </li>
-		                        		                    		                        <li >
-			                        <a href="h/c/25236" target="_blank">
-			                        	<h3 title="中科蓝鲸">中科蓝鲸</h3>
-			                        	<div class="comLogo">
-				                        	<img src="style/images/329b56ef443c4ae2a2024955f58705f8.jpg" width="190" height="190" alt="中科蓝鲸" />
-				                        	<ul>
-				                        		<li>云计算\大数据</li>
-				                        		<li>北京，D轮及以上</li>
-				                        	</ul>
-			                        	</div>
-			                        </a>
-			                        			                        	<a href="h/jobs/145237" target="_blank"> 人力资源部</a>
-			                        			                        	<a href="h/jobs/143927" target="_blank"> PHP</a>
-			                        			                        <ul class="reset ctags">
-			                        				                        				                        	<li>D轮及以上</li>
-																							                        				                        	<li>云计算\大数据</li>
-																							                        				                        	<li>绩效奖金</li>
-																							                        				                        	<li>股票期权</li>
-																							                        				                        	<li>五险一金</li>
-																							                        				                        	<li>通讯津贴</li>
-																						                        </ul>
-			                    </li>
-		                        		                    		                        <li >
-			                        <a href="h/c/25268" target="_blank">
-			                        	<h3 title="杭州瓷肌">杭州瓷肌</h3>
-			                        	<div class="comLogo">
-				                        	<img src="style/images/451a3ab87bb149a5b0779baf81f0a667.jpg" width="190" height="190" alt="杭州瓷肌" />
-				                        	<ul>
-				                        		<li>电子商务</li>
-				                        		<li>杭州，B轮</li>
-				                        	</ul>
-			                        	</div>
-			                        </a>
-			                        			                        	<a href="h/jobs/144038" target="_blank"> 视觉设计经理/主管</a>
-			                        			                        	<a href="h/jobs/147887" target="_blank"> 招聘</a>
-			                        			                        	<a href="h/jobs/144041" target="_blank"> 视觉设计师</a>
-			                        			                        <ul class="reset ctags">
-			                        				                        				                        	<li>B轮</li>
-																							                        				                        	<li>电子商务</li>
-																							                        				                        	<li>五险一金</li>
-																							                        				                        	<li>带薪年假</li>
-																							                        				                        	<li>节日礼物</li>
-																							                        				                        	<li>定期体检</li>
-																						                        </ul>
-			                    </li>
-		                        		                    		                </ul>
-		                
+			                        				                        				                        	<li>{{$v['m_course']}}</li>
+																							                        				                        	<li>{{$v['m_welfare']}}</li>
+
+                                                                               </ul>
+                                                                                   </li>@endforeach
+                                    </ul>
+
+
 		                		               	<div class="Pagination"></div>
-		               		                                </form>
-            </div>	
+
+            </div>
             <div class="content_r">
             	<div class="subscribe_side">
 	            	<a href="subscribe" target="_blank">
@@ -615,7 +307,7 @@ var youdao_conv_id = 271546;
 	                    </div>
 	                    <i>我也要订阅职位</i>
 	            	</a>
-	            </div> 
+	            </div>
                 <div class="greybg qrcode mt20">
                 	<img src="style/images/companylist_qr.png" width="242" height="242" alt="拉勾微信公众号二维码" />
                     <span class="c7">扫描拉勾二维码，微信轻松搜工作</span>
@@ -629,22 +321,37 @@ var youdao_conv_id = 271546;
                	</a>
             </div>
        	</div>
-   	
+
    	<input type="hidden" value="" name="userid" id="userid" />
-      
+
 <script type="text/javascript" src="style/js/company_list.min.js"></script>
 <script>
-$(function(){
-	/*分页 */
- 	 	 				 		$('.Pagination').pager({
-	      currPage: 1,
-	      pageNOName: "pn",
-	      form: "companyListForm",
-	      pageCount: 20,
-	      pageSize: 5
-	});	
-})
-</script>       	
+//                    $(function(){
+//                    	/*分页 */
+//                    	 	 				 		$('.Pagination').pager({
+//                    	      currPage: 1,
+//                    	      pageNOName: "pn",
+//                    	      form: "companyListForm",
+//                            pageCount: 20,
+//                            pageSize: 5
+//                    //});
+//                    })
+function fun(id){
+ // alert(id)
+    $.ajax({
+        type: "GET",
+        url: "{{url('hang')}}",
+        data: "id="+id,
+        success: function(msg){
+            //alert(  msg );
+            $("#so").html(msg);
+        }
+    });
+}
+        function  qq(){
+            arert(1);
+        }
+</script>
 			<div class="clear"></div>
 			<input type="hidden" id="resubmitToken" value="" />
 	    	<a id="backtop" title="回到顶部" rel="nofollow"></a>
