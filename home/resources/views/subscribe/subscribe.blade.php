@@ -310,6 +310,18 @@ console.log(1);
 				$('#select_salary').click(function(){
 					$('#salaryError').hide();
                 });
+                function ck_login(){
+                    var email = $('#email').val();
+                    var password = $('#password').val();
+                    $.ajax({
+                        type : 'GET',
+                        url : 'login_pro',
+                        data : 'name='+email+'pwd='+password,
+                        success:function(msg){
+                            alert(msg)
+                        }
+                    })
+                }
             </script>
             <div class="content_r">
             	<div class="subscribe_side mb20 c5">
@@ -401,12 +413,12 @@ console.log(1);
      <!-- 登录框 -->
 	<div id="loginPop" class="popup" style="height:240px;">
        	<form id="loginForm">
-			<input type="text" id="email" name="email" tabindex="1" placeholder="请输入登录邮箱地址" />
+			<input type="text" id="email" name="email" tabindex="1" placeholder="请输入登录邮箱地址或手机号" />
 			<input type="password" id="password" name="password" tabindex="2" placeholder="请输入密码" />
 			<span class="error" style="display:none;" id="beError"></span>
 		    <label class="fl" for="remember"><input type="checkbox" id="remember" value="" checked="checked" name="autoLogin" /> 记住我</label>
 		    <a href="h/reset" class="fr" target="_blank">忘记密码？</a>
-		    <input type="submit" id="submitLogin" value="登 &nbsp; &nbsp; 录" />
+		    <input type="button" id="submitLogin" value="登 &nbsp; &nbsp; 录" onclick="ck_login()" />
 		</form>
 		<div class="login_right">
 			<div>还没有拉勾帐号？</div>

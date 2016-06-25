@@ -3,7 +3,7 @@
                     @foreach($arr as $key=>$val)
                     <div class="menu_box">
 						<div class="menu_main">
-                                <h2><span>{{$val['i_name']}}</span></h2>
+                                <h2>{{$val['i_name']}}<span></span></h2>
                                         @foreach($val['son'] as $ke=>$va)
                                         @if($va['num'] == 1)
                                         <a href="{{url('/list')}}?i_name={{$va['i_name']}}">{{$va['i_name']}}</a>

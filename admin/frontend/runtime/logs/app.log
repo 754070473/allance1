@@ -53119,3 +53119,150 @@ $_SERVER = [
     'REQUEST_TIME_FLOAT' => 1466557723.479
     'REQUEST_TIME' => 1466557723
 ]
+2016-06-25 09:03:15 [::1][-][-][error][yii\base\ErrorException:8] exception 'yii\base\ErrorException' with message 'Undefined index: if_img' in F:\phpStudy\WWW\php_9\allance1\admin\frontend\views\resume\photo.html:85
+Stack trace:
+#0 F:\phpStudy\WWW\php_9\allance1\admin\frontend\views\resume\photo.html(85): yii\base\ErrorHandler->handleError(8, 'Undefined index...', 'F:\\phpStudy\\WWW...', 85, Array)
+#1 F:\phpStudy\WWW\php_9\allance1\admin\vendor\yiisoft\yii2\base\View.php(325): require('F:\\phpStudy\\WWW...')
+#2 F:\phpStudy\WWW\php_9\allance1\admin\vendor\yiisoft\yii2\base\View.php(247): yii\base\View->renderPhpFile('F:\\phpStudy\\WWW...', Array)
+#3 F:\phpStudy\WWW\php_9\allance1\admin\vendor\yiisoft\yii2\base\View.php(149): yii\base\View->renderFile('F:\\phpStudy\\WWW...', Array, Object(frontend\controllers\ResumeController))
+#4 F:\phpStudy\WWW\php_9\allance1\admin\vendor\yiisoft\yii2\base\Controller.php(371): yii\base\View->render('photo.html', Array, Object(frontend\controllers\ResumeController))
+#5 F:\phpStudy\WWW\php_9\allance1\admin\frontend\controllers\ResumeController.php(85): yii\base\Controller->render('photo.html', Array)
+#6 [internal function]: frontend\controllers\ResumeController->actionPhoto()
+#7 F:\phpStudy\WWW\php_9\allance1\admin\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#8 F:\phpStudy\WWW\php_9\allance1\admin\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#9 F:\phpStudy\WWW\php_9\allance1\admin\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('photo', Array)
+#10 F:\phpStudy\WWW\php_9\allance1\admin\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('resume/photo', Array)
+#11 F:\phpStudy\WWW\php_9\allance1\admin\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#12 F:\phpStudy\WWW\php_9\allance1\admin\frontend\web\index.php(18): yii\base\Application->run()
+#13 {main}
+2016-06-25 09:03:14 [::1][-][-][info][application] $_GET = [
+    'r' => 'resume/photo'
+]
+
+$_COOKIE = [
+    'XSRF-TOKEN' => 'eyJpdiI6IkpBbzY4Q2RQQnlBM05ET2t0MGFBa0E9PSIsInZhbHVlIjoibXlEUTIxUVQraklOendYVUhuYWtHdTRaMmpReFBDXC92cFFocVFVWlwvNGZTUGxHR2g5ME0reGRZemVWRWMyekF6NVVLZ1VpdVZaK09kQldJdTBTSXRRdz09IiwibWFjIjoiNDZjN2MwOWUyOThhODAyOWMyM2NiNjJiMjAwZjNmMDljOWNmM2E0OTFmNDdkZDUzMGY5ZDAzMzM2NzcxYjMxNSJ9'
+    'laravel_session' => 'eyJpdiI6Ik5WaThRVEc3UENaWmNTSk5QSE84MEE9PSIsInZhbHVlIjoieWlnSmtkeDBiS1BtcEFPRmhZUXBVN3N2NHBRaHVkOTd6ZURJQVVLRmNTZVdZVmdNazNtbFRWQ0p6amUxOFJVRW1xaThHZ3dxZVNKcUlZdkdpcmRsblE9PSIsIm1hYyI6IjY3MDBlOGUwNjg1M2Y4ZWZjODc0MDYyOTE2ZWVmNmE1MmU0ZjA1NTQ3MGNiYTFmM2U0NDkzMjBmYmNkODM5MDcifQ=='
+    '_pk_ysp_id_' => [
+        'object Object' => 'b8f825328b2a7947.1466816414.1.1466816414.1466816414.'
+    ]
+    '_pk_ysp_ses_' => [
+        'object Object' => '*'
+    ]
+    'PHPSESSID' => 'sqgohcac6v2e872au5rmqhm3m0'
+]
+
+$_SESSION = [
+    '__flash' => []
+    'adm_id' => '2'
+    'a_name' => '陈浩'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:47.0) Gecko/20100101 Firefox/47.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://localhost/php_9/allance1/admin/frontend/web/index.php?r=public/left'
+    'HTTP_COOKIE' => 'XSRF-TOKEN=eyJpdiI6IkpBbzY4Q2RQQnlBM05ET2t0MGFBa0E9PSIsInZhbHVlIjoibXlEUTIxUVQraklOendYVUhuYWtHdTRaMmpReFBDXC92cFFocVFVWlwvNGZTUGxHR2g5ME0reGRZemVWRWMyekF6NVVLZ1VpdVZaK09kQldJdTBTSXRRdz09IiwibWFjIjoiNDZjN2MwOWUyOThhODAyOWMyM2NiNjJiMjAwZjNmMDljOWNmM2E0OTFmNDdkZDUzMGY5ZDAzMzM2NzcxYjMxNSJ9; laravel_session=eyJpdiI6Ik5WaThRVEc3UENaWmNTSk5QSE84MEE9PSIsInZhbHVlIjoieWlnSmtkeDBiS1BtcEFPRmhZUXBVN3N2NHBRaHVkOTd6ZURJQVVLRmNTZVdZVmdNazNtbFRWQ0p6amUxOFJVRW1xaThHZ3dxZVNKcUlZdkdpcmRsblE9PSIsIm1hYyI6IjY3MDBlOGUwNjg1M2Y4ZWZjODc0MDYyOTE2ZWVmNmE1MmU0ZjA1NTQ3MGNiYTFmM2U0NDkzMjBmYmNkODM5MDcifQ%3D%3D; _pk_ysp_id.[object Object].1fff=b8f825328b2a7947.1466816414.1.1466816414.1466816414.; _pk_ysp_ses.[object Object].1fff=*; PHPSESSID=sqgohcac6v2e872au5rmqhm3m0'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'PATH' => 'F:\\phpStudy\\php55;D:\\Program Files\\Git\\cmd;C:\\Program Files\\TortoiseGit\\bin;'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e PHP/5.5.30'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'F:/phpStudy/WWW'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'F:/phpStudy/WWW'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'SCRIPT_FILENAME' => 'F:/phpStudy/WWW/php_9/allance1/admin/frontend/web/index.php'
+    'REMOTE_PORT' => '58246'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=resume/photo'
+    'REQUEST_URI' => '/php_9/allance1/admin/frontend/web/index.php?r=resume/photo'
+    'SCRIPT_NAME' => '/php_9/allance1/admin/frontend/web/index.php'
+    'PHP_SELF' => '/php_9/allance1/admin/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1466816594.993
+    'REQUEST_TIME' => 1466816594
+]
+2016-06-25 09:03:15 [::1][-][-][warning][yii\log\Dispatcher::dispatch] Unable to send log via yii\debug\LogTarget: Exception 'PDOException' with message 'You cannot serialize or unserialize PDO instances' 
+
+in F:\phpStudy\WWW\php_9\allance1\admin\vendor\yiisoft\yii2-debug\LogTarget.php:58
+
+Stack trace:
+#0 [internal function]: PDO->__sleep()
+#1 F:\phpStudy\WWW\php_9\allance1\admin\vendor\yiisoft\yii2-debug\LogTarget.php(58): serialize(Array)
+#2 F:\phpStudy\WWW\php_9\allance1\admin\vendor\yiisoft\yii2-debug\LogTarget.php(112): yii\debug\LogTarget->export(Array)
+#3 F:\phpStudy\WWW\php_9\allance1\admin\vendor\yiisoft\yii2\log\Dispatcher.php(183): yii\debug\LogTarget->collect(Array, true)
+#4 F:\phpStudy\WWW\php_9\allance1\admin\vendor\yiisoft\yii2\log\Logger.php(173): yii\log\Dispatcher->dispatch(Array, true)
+#5 F:\phpStudy\WWW\php_9\allance1\admin\vendor\yiisoft\yii2\base\ErrorHandler.php(111): yii\log\Logger->flush(true)
+#6 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\base\ErrorException))
+#7 {main}
+2016-06-25 09:03:14 [::1][-][-][info][application] $_GET = [
+    'r' => 'resume/photo'
+]
+
+$_COOKIE = [
+    'XSRF-TOKEN' => 'eyJpdiI6IkpBbzY4Q2RQQnlBM05ET2t0MGFBa0E9PSIsInZhbHVlIjoibXlEUTIxUVQraklOendYVUhuYWtHdTRaMmpReFBDXC92cFFocVFVWlwvNGZTUGxHR2g5ME0reGRZemVWRWMyekF6NVVLZ1VpdVZaK09kQldJdTBTSXRRdz09IiwibWFjIjoiNDZjN2MwOWUyOThhODAyOWMyM2NiNjJiMjAwZjNmMDljOWNmM2E0OTFmNDdkZDUzMGY5ZDAzMzM2NzcxYjMxNSJ9'
+    'laravel_session' => 'eyJpdiI6Ik5WaThRVEc3UENaWmNTSk5QSE84MEE9PSIsInZhbHVlIjoieWlnSmtkeDBiS1BtcEFPRmhZUXBVN3N2NHBRaHVkOTd6ZURJQVVLRmNTZVdZVmdNazNtbFRWQ0p6amUxOFJVRW1xaThHZ3dxZVNKcUlZdkdpcmRsblE9PSIsIm1hYyI6IjY3MDBlOGUwNjg1M2Y4ZWZjODc0MDYyOTE2ZWVmNmE1MmU0ZjA1NTQ3MGNiYTFmM2U0NDkzMjBmYmNkODM5MDcifQ=='
+    '_pk_ysp_id_' => [
+        'object Object' => 'b8f825328b2a7947.1466816414.1.1466816414.1466816414.'
+    ]
+    '_pk_ysp_ses_' => [
+        'object Object' => '*'
+    ]
+    'PHPSESSID' => 'sqgohcac6v2e872au5rmqhm3m0'
+]
+
+$_SESSION = [
+    '__flash' => []
+    'adm_id' => '2'
+    'a_name' => '陈浩'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:47.0) Gecko/20100101 Firefox/47.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://localhost/php_9/allance1/admin/frontend/web/index.php?r=public/left'
+    'HTTP_COOKIE' => 'XSRF-TOKEN=eyJpdiI6IkpBbzY4Q2RQQnlBM05ET2t0MGFBa0E9PSIsInZhbHVlIjoibXlEUTIxUVQraklOendYVUhuYWtHdTRaMmpReFBDXC92cFFocVFVWlwvNGZTUGxHR2g5ME0reGRZemVWRWMyekF6NVVLZ1VpdVZaK09kQldJdTBTSXRRdz09IiwibWFjIjoiNDZjN2MwOWUyOThhODAyOWMyM2NiNjJiMjAwZjNmMDljOWNmM2E0OTFmNDdkZDUzMGY5ZDAzMzM2NzcxYjMxNSJ9; laravel_session=eyJpdiI6Ik5WaThRVEc3UENaWmNTSk5QSE84MEE9PSIsInZhbHVlIjoieWlnSmtkeDBiS1BtcEFPRmhZUXBVN3N2NHBRaHVkOTd6ZURJQVVLRmNTZVdZVmdNazNtbFRWQ0p6amUxOFJVRW1xaThHZ3dxZVNKcUlZdkdpcmRsblE9PSIsIm1hYyI6IjY3MDBlOGUwNjg1M2Y4ZWZjODc0MDYyOTE2ZWVmNmE1MmU0ZjA1NTQ3MGNiYTFmM2U0NDkzMjBmYmNkODM5MDcifQ%3D%3D; _pk_ysp_id.[object Object].1fff=b8f825328b2a7947.1466816414.1.1466816414.1466816414.; _pk_ysp_ses.[object Object].1fff=*; PHPSESSID=sqgohcac6v2e872au5rmqhm3m0'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'PATH' => 'F:\\phpStudy\\php55;D:\\Program Files\\Git\\cmd;C:\\Program Files\\TortoiseGit\\bin;'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e PHP/5.5.30'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'F:/phpStudy/WWW'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'F:/phpStudy/WWW'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'SCRIPT_FILENAME' => 'F:/phpStudy/WWW/php_9/allance1/admin/frontend/web/index.php'
+    'REMOTE_PORT' => '58246'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=resume/photo'
+    'REQUEST_URI' => '/php_9/allance1/admin/frontend/web/index.php?r=resume/photo'
+    'SCRIPT_NAME' => '/php_9/allance1/admin/frontend/web/index.php'
+    'PHP_SELF' => '/php_9/allance1/admin/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1466816594.993
+    'REQUEST_TIME' => 1466816594
+]
