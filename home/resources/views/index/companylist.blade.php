@@ -34,52 +34,23 @@ var youdao_conv_id = 271546;
 </script>
 <script type="text/javascript" src="style/js/conv.js"></script>
 </head>
+<script type="text/javascript">
+    $(function(){
+     $.get("{{url('top')}}",function(m){
+         $('#cache').html(m);
+        
+     })
+    })
+
+</script>
+
 <body>
 <div id="body">
-	<div id="header">
-    	<div class="wrapper">
-    		<a href="index" class="logo">
-    			<img src="style/images/logo.png" width="229" height="43" alt="拉勾招聘-专注互联网招聘" />
-    		</a>
-    		<ul class="reset" id="navheader">
-    			<?php if(empty(session('key'))){?>
-                           <li ><a href="index">首页</a></li>
-                           <li ><a href="companylist" >职位</a></li>
-                          <li ><a href="toForum" target="_blank">论坛</a></li>
-                          <li ><a href="login" rel="nofollow">个人中心</a></li>
-                          <li ><a href="login" rel="nofollow">发布职位</a></li>
-                <?php }else if(session('key')==1){?>
-                         <li ><a href="index">首页</a></li>
-                         <li ><a href="companylist" >职位</a></li>
-                         <li ><a href="toForum" target="_blank">论坛</a></li>
-                         <?php if(empty(session('key'))){ ?>
-                         <li ><a href="login" rel="nofollow">个人中心</a></li>
-                          <li ><a href="login" rel="nofollow">发布职位</a></li>
-                        <?php }else{?>
-                         <li ><a href="jianli" rel="nofollow">个人中心</a></li>
-                         <li ><a href="create" rel="nofollow">发布职位</a></li>
-                         <?php }?>
-                <?php }else if(session('key')==0){?>
-                        <li ><a href="index">首页</a></li>
-                         <li ><a href="companylist" >职位</a></li>
-                         <li ><a href="toForum" target="_blank">论坛</a></li>
-                         <?php if(empty(session('key'))){ ?>
-                         <li ><a href="login" rel="nofollow">个人中心</a></li>
-                          <li ><a href="login" rel="nofollow">发布职位</a></li>
-                        <?php }else{?>
-                         <li ><a href="jianli" rel="nofollow">个人中心</a></li>
-                         <li ><a href="create" rel="nofollow">发布职位</a></li>
-                         <?php }?>
-                <?php  }?>
+<!--头部-->
+<div id="cache">
 
-	    		    		</ul>
-        	            <ul class="loginTop">
-            	<li><a href="login" rel="nofollow">登录</a></li>
-            	<li>|</li>
-            	<li><a href="register" rel="nofollow">注册</a></li>
-            </ul>
-                                </div>
-    </div><!-- end #header -->
+</div>
+
 
     <div id="container">
 

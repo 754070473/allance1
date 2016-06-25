@@ -32,41 +32,25 @@ var youdao_conv_id = 271546;
 </script> 
 <script src="style/js/conv.js" type="text/javascript"></script>
 <script src="style/js/ajaxCross.json" charset="UTF-8"></script></head>
+<script type="text/javascript">
+    $(function(){
+     $.get("{{url('top')}}",function(m){
+         $('#cache').html(m);
+        
+     })
+    })
+
+</script>
 <body>
+	<!--头部-->
+<div id="cache" style="padding-bottom:20px;">
+
+</div>
+</body>
+<body>
+
 <div id="body">
-	<div id="header">
-    	<div class="wrapper">
-    		<a class="logo" href="http://www.lagou.com/">
-    			<img width="229" height="43" alt="拉勾招聘-专注互联网招聘" src="style/images/logo.png">
-    		</a>
-    		<ul id="navheader" class="reset">
-    			<li><a href="index">首页</a></li>
-    			<li><a href="companylist">职位</a></li>
-    			<li><a target="_blank" href="http://www.lagou.com/toForum">论坛</a></li>
-    			<li><a rel="nofollow" href="jianli">个人中心</a></li>
-	    						    		</ul>
-        	        	<dl class="collapsible_menu">
-            	<dt>
-           			<span>jason&nbsp;</span> 
-            		<span class="red" id="noticeDot-0"></span>
-            		<i></i>
-            	</dt>
-                                	<dd><a rel="nofollow" href="jianli">个人中心</a></dd>
-                	                	<dd><a href="collections">我收藏的职位</a></dd>
-                	                	                	<dd><a href="delivery">我投递的职位 <span id="noticeNo" class="red">(1)</span></a></dd>
-                	                	<dd class="btm"><a href="subscribe">我的订阅</a></dd>
-                	<dd><a href="create">我要招人</a></dd>
-                                                <dd><a href="accountBind">帐号设置</a></dd>
-                                <dd class="logout"><a rel="nofollow" href="login">退出</a></dd>
-            </dl>
-                                    <div id="noticeTip">
-            	<span class="bot"></span>
-				<span class="top"></span>
-				<a target="_blank" href="delivery"><strong>1</strong>条新投递反馈</a>
-				<a class="closeNT" href="javascript:;"></a>
-            </div>
-                    </div>
-    </div><!-- end #header -->
+
     <div id="container">
                 	<div class="sidebar">
             	<a class="btn_create" href="create">发布新职位</a>
@@ -194,4 +178,8 @@ var CallCenter = {
 CallCenter.init(url);
 </script>
 
-<div id="cboxOverlay" style="display: none;"></div><div id="colorbox" class="" role="dialog" tabindex="-1" style="display: none;"><div id="cboxWrapper"><div><div id="cboxTopLeft" style="float: left;"></div><div id="cboxTopCenter" style="float: left;"></div><div id="cboxTopRight" style="float: left;"></div></div><div style="clear: left;"><div id="cboxMiddleLeft" style="float: left;"></div><div id="cboxContent" style="float: left;"><div id="cboxTitle" style="float: left;"></div><div id="cboxCurrent" style="float: left;"></div><button type="button" id="cboxPrevious"></button><button type="button" id="cboxNext"></button><button id="cboxSlideshow"></button><div id="cboxLoadingOverlay" style="float: left;"></div><div id="cboxLoadingGraphic" style="float: left;"></div></div><div id="cboxMiddleRight" style="float: left;"></div></div><div style="clear: left;"><div id="cboxBottomLeft" style="float: left;"></div><div id="cboxBottomCenter" style="float: left;"></div><div id="cboxBottomRight" style="float: left;"></div></div></div><div style="position: absolute; width: 9999px; visibility: hidden; display: none;"></div></div></body></html>
+<div id="cboxOverlay" style="display: none;"></div>
+<div id="colorbox" class="" role="dialog" tabindex="-1" style="display: none;">
+<div id="cboxWrapper"><div><div id="cboxTopLeft" style="float: left;"></div>
+<div id="cboxTopCenter" style="float: left;"></div>
+<div id="cboxTopRight" style="float: left;"></div></div><div style="clear: left;"><div id="cboxMiddleLeft" style="float: left;"></div><div id="cboxContent" style="float: left;"><div id="cboxTitle" style="float: left;"></div><div id="cboxCurrent" style="float: left;"></div><button type="button" id="cboxPrevious"></button><button type="button" id="cboxNext"></button><button id="cboxSlideshow"></button><div id="cboxLoadingOverlay" style="float: left;"></div><div id="cboxLoadingGraphic" style="float: left;"></div></div><div id="cboxMiddleRight" style="float: left;"></div></div><div style="clear: left;"><div id="cboxBottomLeft" style="float: left;"></div><div id="cboxBottomCenter" style="float: left;"></div><div id="cboxBottomRight" style="float: left;"></div></div></div><div style="position: absolute; width: 9999px; visibility: hidden; display: none;"></div></div></body></html>

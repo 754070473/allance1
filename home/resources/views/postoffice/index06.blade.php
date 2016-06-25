@@ -32,40 +32,23 @@ var youdao_conv_id = 271546;
 </script> 
 <script src="style/js/conv.js" type="text/javascript"></script>
 <script src="style/js/ajaxCross.json" charset="UTF-8"></script></head>
+<script type="text/javascript">
+    $(function(){
+     $.get("{{url('top')}}",function(m){
+         $('#cache').html(m);
+        
+     })
+    })
+
+</script>
+
 <body><script src="http://tajs.qq.com/jiathis.php?uid=1626433&amp;dm=www.lagou.com" charset="utf-8"></script><link href="style/css/jiathis_share.css" rel="stylesheet" type="text/css"><iframe frameborder="0" style="position: fixed; display: none; opacity: 0;"></iframe><div class="jiathis_style" style="position: absolute; z-index: 1000000000; display: none; top: 50%; left: 50%; overflow: auto;"></div><div class="jiathis_style" style="position: absolute; z-index: 1000000000; display: none; overflow: auto;"></div><iframe frameborder="0" style="display: none;" src="http://v3.jiathis.com/code_mini/jiathis_utility"></iframe>
 <div id="body">
-	<div id="header">
-    	<div class="wrapper">
-    		<a class="logo" href="index">
-    			<img width="229" height="43" alt="拉勾招聘-专注互联网招聘" src="style/images/logo.png">
-    		</a>
-    		<ul id="navheader" class="reset">
-    			<li><a href="index">首页</a></li>
-    			<li><a href="companylist">职位</a></li>
-    			<li><a target="_blank" href="">论坛</a></li>
-    			<li><a rel="nofollow" href="jianli">个人中心</a></li>
-	    						    		</ul>
-        	        	<dl class="collapsible_menu">
-            	<dt>
-           			<span>jason&nbsp;</span> 
-            		<span class="red dn" id="noticeDot-0"></span>
-            		<i></i>
-            	</dt>
-                                	<dd><a rel="nofollow" href="jianli">个人中心</a></dd>
-                	                	<dd><a href="collections">我收藏的职位</a></dd>
-                	                	                	<dd class="btm"><a href="subscribe">我的订阅</a></dd>
-                	<dd><a href="create">我要招人</a></dd>
-                                                <dd><a href="accountBind">帐号设置</a></dd>
-                                <dd class="logout"><a rel="nofollow" href="login">退出</a></dd>
-            </dl>
-                                    <div class="dn" id="noticeTip">
-            	<span class="bot"></span>
-				<span class="top"></span>
-				<a target="_blank" href="delivery"><strong>0</strong>条新投递反馈</a>
-				<a class="closeNT" href="javascript:;"></a>
-            </div>
-                    </div>
-    </div><!-- end #header -->
+<!--头部-->
+<div id="cache" style="padding-bottom:20px;">
+
+</div>
+
     <div id="container">
             
         	<div class="sidebar">
@@ -122,9 +105,9 @@ var youdao_conv_id = 271546;
 	                	<div class="ccc_tr">今日已发布 <span>1</span> 个职位   还可发布 <span>4</span> 个职位</div>
 	                	<div class="publish_tip">
                             <h2>恭喜你，职位发布成功！</h2>
-                            <a target="_blank" href="http://www.lagou.com/jobs/149594">预览职位</a><br>
+                            <a target="_blank" href="">预览职位</a><br>
                                                         <a class="greylink" href="create">继续发布新职位</a><br>
-                                                        <a class="greylink" href="http://www.lagou.com/c/25927"> 进入我的公司主页</a><br>
+                                                        <a class="greylink" href=""> 进入我的公司主页</a><br>
                         	<div style="float:left;" class="invite_share">
 			                    <!-- JiaThis Button BEGIN -->
 								<div class="jiathis_style_32x32">
