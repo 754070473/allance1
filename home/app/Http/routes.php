@@ -56,6 +56,8 @@ Route::get('/pass', 'AccountsetController@pass');
 
 //我收藏的职位
 Route::get('/collections', 'CollectionsController@collections');
+//取消收藏
+Route::get('/cancel_collections', 'CollectionsController@ceancel');
 
 //公司详情
 Route::get('/index04', 'CompanyglController@index04');

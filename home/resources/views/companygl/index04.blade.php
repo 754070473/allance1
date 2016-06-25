@@ -1,6 +1,8 @@
 ﻿<!DOCTYPE HTML>
 <html xmlns:wb="http://open.weibo.com/wb"><head>
-</script><script type="text/javascript" async="" src="style/js/conversion.js"></script><script src="style/js/allmobilize.min.js" charset="utf-8" id="allmobilize"></script><style type="text/css"></style>
+<script type="text/javascript" async="" src="style/js/conversion.js"></script>
+<script src="style/js/allmobilize.min.js" charset="utf-8" id="allmobilize"></script>
+<style type="text/css"></style>
 <meta content="no-siteapp" http-equiv="Cache-Control">
 <link  media="handheld" rel="alternate">
 <!-- end 云适配 -->
@@ -41,7 +43,7 @@ var youdao_conv_id = 271546;
     		</a>
     		<ul id="navheader" class="reset">
     			<li><a href="index">首页</a></li>
-    			<li class="current"><a href="companylist">职位</a></li>
+    			<li class="current"><a href="companylist">公司</a></li>
     			<li><a target="_blank" href="">论坛</a></li>
     			<li><a rel="nofollow" href="">个人中心</a></li>
 	    		<li><a rel="nofollow" href="create">发布职位</a></li>
@@ -69,7 +71,10 @@ var youdao_conv_id = 271546;
 	                <div class="c_detail">
 	                	<div style="background-color:#fff;" class="c_logo">
 		                	<a title="上传公司LOGO" id="logoShow" class="inline cboxElement" href="#logoUploader">
-		                				                			<img width="190" height="190" alt="公司logo" src="style/images/logo_default.png">
+
+		                		<!-- 公司的logo -->
+
+	                			<img width="190" height="190" alt="公司logo" src="style/images/{{$arr->m_logo}}">
 	                        		                        	
 	                        	<span>更换公司图片<br>190px*190px 小于5M</span>
 	                        </a>
@@ -94,23 +99,22 @@ var youdao_conv_id = 271546;
 	                        	<a target="_blank" class="applyC" href="http://www.lagou.com/c/auth">申请认证</a>
 	                        	                        <div class="clear"></div>
 	                       	
-	                       		                   			<h1 title="福建平潭协创进出口贸易有限公司" class="fullname">福建平潭协创进出口贸易有限公司</h1>
+	                       		                   			<h1 title="{{$arr->m_name}}" class="fullname">{{$arr->m_name}}</h1>
 	                        	                        
 	                        <form class="clear editDetail dn" id="editDetailForm" style="display: none;">
-	                            <input type="text" placeholder="请输入公司简称" maxlength="15" value="平潭协创进出口贸易有限公司" name="companyShortName" id="companyShortName" class="valid">
+	                            <input type="text" placeholder="请输入公司简称" maxlength="15" value="{{$arr->m_name}}" name="companyShortName" id="companyShortName" class="valid">
 	                            <input type="text" placeholder="一句话描述公司优势，核心价值，限50字" maxlength="50" value="测试的发打发打发大范德萨发" name="companyFeatures" id="companyFeatures" class="valid"><span for="companyFeatures" generated="true" class="error" style="display: none;">请输入5-50字的一句话介绍</span>
 	                            <input type="hidden" value="25927" id="companyId" name="companyId">
 	                            <input type="submit" value="保存" id="saveDetail" class="btn_small">
 	                            <a id="cancelDetail" class="btn_cancel_s" >取消</a>
 		                    </form>
 	                            
-	                        <div class="clear oneword" style="display: block;"><img width="17" height="15" src="style/images/quote_l.png">&nbsp; <span>公司名称公司名称公司名称</span> &nbsp;<img width="17" height="15" src="style/images/quote_r.png"></div>
+	                        <script></script>
 	                        <h3 class="dn">已选择标签</h3>
 	                        <ul style="overflow:auto" id="hasLabels" class="reset clearfix">
-	                        			                        	<li><span>年终分红</span></li>
-		                        		                        	<li><span>五险一金</span></li>
-		                        		                        	<li><span>弹性工作</span></li>
-		                        		                        	<li><span>岗位晋升</span></li>
+	                        	@foreach($welfare as $key=>$val)
+	                        			                        	<li><span>{{$val}}</span></li>
+		                        		                   @endforeach	
 		                        	                            <li class="link">编辑</li>
 	                        </ul>
 	                        <div class="dn" id="addLabels">
@@ -124,6 +128,7 @@ var youdao_conv_id = 271546;
 	                            <a id="cancelLabels" class="btn_cancel_s" href="javascript:void(0)">取消</a>
 	                        </div>
 	                    </div>
+
 	                    <a title="编辑基本信息" class="c_edit" id="editCompanyDetail" href="javascript:void(0);" style="display: block;"></a>
 	                	<div class="clear"></div>
 	                </div>
@@ -195,21 +200,21 @@ var youdao_conv_id = 271546;
 					                    <dd>
 					                    	<img width="380" height="220" alt="发大发" src="style/images/product_default.png">
 				                        	<div class="cp_intro">
-				                        						                        		<h3><a target="_blank" href="http://www.zmtpost.com">随便写</a></h3>
+        						               <h3><a target="_blank" href="http://www.zmtpost.com">随便写</a></h3>
 					                            <div class="scroll-pane" style="overflow: hidden; padding: 0px; width: 260px;">
 					                            	
 					                            <div class="jspContainer" style="width: 260px; height: 140px;"><div class="jspPane" style="padding: 0px; top: 0px; width: 260px;"><div>随便写随便写随便写随便写随便写随便写随便写随便写随便写随便写随便写随便写随便写随便写随便写随便写随便写随便写随便写随便写随便写</div></div></div></div>
 					                        </div>
 					                        <a title="编辑公司产品" class="c_edit product_edit" href="javascript:void(0)"></a>
-					            								            			<a title="新增公司产品" class="c_add product_add" href="javascript:void(0)"></a>
-					            								                    </dd>
+					            			<a title="新增公司产品" class="c_add product_add" href="javascript:void(0)"></a>
+					                    </dd>
 					                </dl>
 	            
 	              				</div>
        								        						    			        			</div>   <!-- end #Product --> 
        	
        				<div id="Profile">
-			            				        	<div class="profile_wrap">
+			            	<div class="profile_wrap">
 					             <!--无介绍 -->
 									<dl class="c_section dn" style="display: none;">
 					                	<dt>

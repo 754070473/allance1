@@ -1,6 +1,6 @@
 <?php
 namespace App\Http\Controllers;
-use Session,DB;
+use Session,DB,Request;
 /**
  *   CollectionsController  收藏管理
  */
@@ -33,4 +33,18 @@ class CollectionsController extends Controller{
            
 		return view("collections.collections",$data);
 	}
+    //取消收藏
+    public function ceancel()
+    {
+        $id = Request::input('id');
+        $res = DB::table('al_collect')->where('col_id',$id)->delete();
+        if($res)
+        {
+            echo 1;
+        }
+        else
+        {
+            echo '删除失败';
+        }
+    }
 }
