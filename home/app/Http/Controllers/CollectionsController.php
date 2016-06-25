@@ -10,7 +10,7 @@ class CollectionsController extends Controller{
     //我收藏的职位
 	public  function collections(){
 		$id = session::get('per_id');
-		$res_id = 1;
+		// $res_id = 1;
 		$data['arr'] = DB::table('al_collect')         
             ->join('al_personal', function($join)  
             {  
