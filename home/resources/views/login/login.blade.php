@@ -97,14 +97,15 @@ $(".submitLogin").click(function(){
 			   success: function(msg){
 			   	if (msg=="1") {
 			   		$('#check').html('');
-			   		window.location.href="index.php";
+			   		window.location.href="index";
 			   	} else if (msg=="2") {
 			   		$('#check').html('你的密码错误');
 			   	} else if(msg=="3"){
 			   		$('#check').html('你的邮箱或手机号有误');
 			   	} else if(msg=="4"){
 			   		$('#check').html('');
-			   		window.location.href="index.php";
+
+			   		window.location.href="index";
 			   	}
 			   	
 			   //  if(msg==1){

@@ -40,14 +40,13 @@ var youdao_conv_id = 271546;
     })
 
 </script> 
-<body>
-<div id="cache">
 
-</div>	
-</body>
 
 <body>
-<!-- 头部 -->
+    <!--头部-->
+<div id="cache" style="padding-bottom:20px;">
+
+</div>
 <div id="body">
 
 
