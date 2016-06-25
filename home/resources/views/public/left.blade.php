@@ -5,9 +5,12 @@
 						<div class="menu_main">
                                 <h2>{{$val['i_name']}}<span></span></h2>
                                         @foreach($val['son'] as $ke=>$va)
+                                        @if($va['num'] == 1)
+                                        <a href="{{url('/list')}}?i_name={{$va['i_name']}}">{{$va['i_name']}}</a>
+                                        @endif
                                             @foreach($va['son'] as $k=>$v)
                                                 @if($v['num'] == 1)
-                                        <a href="h/jobs/list_Java?labelWords=label">{{$v['i_name']}}</a>
+                                        <a href="{{url('/list')}}?i_name={{$v['i_name']}}">{{$v['i_name']}}</a>
                                             @endif
                                             @endforeach
                                             @endforeach
@@ -16,16 +19,16 @@
                             @foreach($val['son'] as $ke=>$va)
 					   		<dl class="reset">
 					        		<dt>
-					        			<a href="h/jobs/list_后端开发?labelWords=label">
+					        			<a href="{{url('/list')}}?i_name={{$va['i_name']}}">
 					        				{{$va['i_name']}}
 					        			</a>
 					        		</dt>
 						        	<dd>
                                         @foreach($va['son'] as $k=>$v)
                                             @if($v['num'] == 1)
-                                         <a href="h/jobs/list_Java?labelWords=label" class="curr" >{{$v['i_name']}}</a>
+                                         <a href="{{url('/list')}}?i_name={{$v['i_name']}}" class="curr" >{{$v['i_name']}}</a>
                                         @else
-                                         <a href="h/jobs/list_Java?labelWords=label" >{{$v['i_name']}}</a>
+                                         <a href="{{url('/list')}}?i_name={{$v['i_name']}}" >{{$v['i_name']}}</a>
                                             @endif
                                         @endforeach
 							         </dd>

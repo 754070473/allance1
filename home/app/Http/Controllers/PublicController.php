@@ -59,7 +59,6 @@ class PublicController extends Controller {
 		$arr = $this->classify('al_post','p_pid');
 		return view("public.main",['arr'=>$arr]);
 	}
-
 }	
 
 ?>

@@ -151,4 +151,5 @@ Route::get('/subscribe', 'SubscribeController@subscribe');
 //我的职位订阅1
 Route::get('/subscribe01', 'SubscribeController@subscribe01');    
 
-	
+//职位订阅入库
+Route::get('/subinfo','SubscribeController@subinfo');
