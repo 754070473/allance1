@@ -68,7 +68,7 @@ class PostofficeController extends Controller{
         //判断
         if($re)
         {
-             return view("");
+             $this->jobyl();
         }
         else
         {
@@ -79,7 +79,7 @@ class PostofficeController extends Controller{
 	//职位预览
     public function jobyl()
     {
-           
+        return view('postoffice.jobyl');
     }
 
 	//职位发布成功

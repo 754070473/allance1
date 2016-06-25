@@ -2,16 +2,23 @@
 namespace App\Http\Controllers;
 use DB;
 use Session;
+use Illuminate\Http\Request;
 
 
 /**
  *   IndexController  信息展示
  */
 
+use App\Http\Controllers\Controller;
+use DB, Redirect, Input, Response,Session;
+   header("content-type:text/html;charset=utf-8");
 class IndexController extends Controller {
 	//展示首页面
 	public  function index(){
-		return view("index.index");
+      $rous= DB::table('al_com_message')->get();
+        //print_r($rous);
+
+		return view("public.main",["arr"=>$rous]);
 	}
 
     //展示招聘信息详情
@@ -53,8 +60,15 @@ class IndexController extends Controller {
     //个人找职位
     public function companylist()
     {
-
-        return view("index.companylist");
+       //$arr= DB::table('al_com_message')->get();
+        //print_r($arr);die;
+        $arr = DB::table('al_com_message')
+            ->join('al_recruit', 'al_com_message.mes_id', '=', 'al_recruit.mes_id')
+            ->select('*')
+            ->get();
+        $ar = DB::table('al_hang')->get();
+         //1print_r($users);die;
+        return view("index.companylist",["ar"=>$arr,'ap'=>$ar]);
     }
      //公司找简历
     public function company()
@@ -78,12 +92,24 @@ class IndexController extends Controller {
      // return view("index.company");
     }
 
-
 	//展示关于 联系我们
 	public function about()
 	{
 		return view("index.about");
 	}
-}
+   //公司查询
+    public function hang(Request $request)
+    {
+        $id=$request->input('id');
+        //print_r($id);die;
+        $arr = DB::table('al_com_message')
+            ->join('al_recruit', 'al_com_message.mes_id', '=', 'al_recruit.mes_id')
+            ->where("h_id",$id)
+            ->select('*')
+            ->get();
+      //  $arr= DB::table('al_com_message')->get();
+      // print_r($arr);die;
+        return view('index.companyshow', ['ar' => $arr]);
 
+    }
 ?>
