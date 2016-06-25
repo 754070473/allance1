@@ -39,10 +39,12 @@ Route::get('/myhome', 'IndexController@myhome');
 Route::get('/toudi', 'IndexController@toudi');
 
 //个人找职位
-Route::get('/companylist', 'IndexController@companylist');
+Route::get('/companylist', 'ReController@companylist');
+
 //公司找简历
 Route::get('/company', 'IndexController@company');
-
+//公司查询
+Route::any('/hang', 'IndexController@hang');
 //展示关于 联系我们
 Route::get('/about', 'IndexController@about');	
 
@@ -63,8 +65,8 @@ Route::get('/collections', 'CollectionsController@collections');
 Route::get('/cancel_collections', 'CollectionsController@ceancel');
 
 //公司详情
-Route::get('/index04', 'CompanyglController@index04');
-    
+Route::get('index04', 'CompanyglController@index04');
+
 //申请公司认证
 Route::get('/auth', 'CompanyglController@auth');	
     
