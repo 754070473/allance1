@@ -33,11 +33,21 @@ var youdao_conv_id = 271546;
 </script> 
 <script type="text/javascript" src="style/js/conv.js"></script>
 </head>
+<script type="text/javascript">
+    $(function(){
+     $.get("{{url('top')}}",function(m){
+         $('#cache').html(m);
+        
+     })
+    })
+
+</script>
 <body>
 <div id="body">
 <!--头部-->
+<div id="cache">
 
-@include('public.top')
+</div>
     <div id="container">
 <!--左侧-->				
 

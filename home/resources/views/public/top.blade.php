@@ -6,7 +6,7 @@
 <link rel="alternate" media="handheld"  />
 <!-- end 云适配 -->
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<title>拉勾网-最专业的互联网招聘平台</title>
+<title>强强联合-最专业的互联网招聘平台</title>
 <meta property="qc:admins" content="23635710066417756375" />
 <meta content="" name="description">
 <meta content="" name="keywords">
@@ -32,42 +32,90 @@ console.log(1);
 var youdao_conv_id = 271546; 
 </script> 
 <script type="text/javascript" src="style/js/conv.js"></script>
+
 </head>
 <body>
 <div id="body">
 	<div id="header">
     	<div class="wrapper">
     		<a href="index.html" class="logo">
-    			<img src="style/images/logo.png" width="229" height="43" alt="拉勾招聘-专注互联网招聘" />
+    			<img src="style/images/logo.png" width="229" height="43" alt="强强联合-专注互联网招聘" />
     		</a>
-    		<ul class="reset" id="navheader">
-    			<?php if(empty(session('key'))){?>
-                           <li ><a href="index">首页</a></li>
-                           <li ><a href="companylist" >职位</a></li>
-                          <li ><a href="toForum" target="_blank">论坛</a></li>
-                          <li ><a href="login" rel="nofollow">个人中心</a></li>
-                          <li ><a href="login" rel="nofollow">发布职位</a></li>
-                <?php }else if(session('key')==1){?>
-                         <li ><a href="index">首页</a></li>
-                         <li ><a href="companylist" >职位</a></li>
-                         <li ><a href="toForum" target="_blank">论坛</a></li>
-                         <li ><a href="jianli" rel="nofollow">个人中心</a></li>
-                         <li ><a href="create" rel="nofollow">发布职位</a></li>
-                <?php }else if(session('key')==0){?>
-                        <li ><a href="index">首页</a></li>
-                         <li ><a href="companylist" >职位</a></li>
-                         <li ><a href="toForum" target="_blank">论坛</a></li>
-                         <li ><a href="jianli" rel="nofollow">个人中心</a></li>
-                         <li ><a href="create" rel="nofollow">发布职位</a></li>
-                <?php  }?>
-
-	    	</ul>
-        	            <ul class="loginTop">
-            	<li><a href="login" rel="nofollow" target="_parent">登录</a></li> 
-            	<li>|</li>
-            	<li><a href="register" rel="nofollow">注册</a></li>
+    		
+        @if($key==1)
+            <ul class="reset" id="navheader">
+            <li ><a href="index.php">首页</a></li>
+            <li ><a href="companylist" >职位</a></li>
+            <li ><a href="login" rel="nofollow">个人中心</a></li>
+            <li ><a href="toForum" target="_blank">论坛</a></li>
             </ul>
-                                </div>
+              <dl class="collapsible_menu">
+                <dt>
+                    <span>{{$i_name}}</span> 
+                    <span class="red dn" id="noticeDot-0"></span>
+                    <i></i>
+                </dt>
+                    <dd><a rel="nofollow" href="jianli">个人中心</a></dd>
+                    <dd><a href="collections">我收藏的职位</a></dd>
+                    <dd class="btm"><a href="subscribe">我的订阅</a></dd>
+                    <dd><a href="create">我要招人</a></dd>
+                    <dd><a href="accountBind">帐号设置</a></dd>
+                    <dd class="login"><a rel="nofollow" href="logout">退出</a></dd>
+            </dl>
+           <div class="dn" id="noticeTip">
+                <span class="bot"></span>
+                <span class="top"></span>
+                <a target="_blank" href="delivery"><strong>0</strong>条新投递反馈</a>
+                <a class="closeNT" href="javascript:;"></a>
+            </div>
+            @elseif($key==2)
+             <ul class="reset" id="navheader">
+                <li ><a href="index.php">首页</a></li>
+                   <li ><a href="company" >职位</a></li>
+                  <li ><a href="toForum" target="_blank">论坛</a></li>
+                  <li ><a href="login" rel="nofollow">个人中心</a></li>
+                  <li ><a href="login" rel="nofollow">发布职位</a></li>
+            </ul>
+            <dl class="collapsible_menu">
+                <dt>
+                    <span>{{$c_email}}{{$c_phone}}</span> 
+                    <span class="red dn" id="noticeDot-0"></span>
+                    <i></i>
+                </dt>
+                    <dd><a rel="nofollow" href="jianli">个人中心</a></dd>
+                    <dd><a href="collections">我收藏的职位</a></dd>
+                    <dd class="btm"><a href="subscribe">我的订阅</a></dd>
+                    <dd><a href="create">我要招人</a></dd>
+                    <dd><a href="accountBind">帐号设置</a></dd>
+                    <dd class="login"><a rel="nofollow" href="logout">退出</a></dd>
+            </dl>
+           <div class="dn" id="noticeTip">
+                <span class="bot"></span>
+                <span class="top"></span>
+                <a target="_blank" href="delivery"><strong>0</strong>条新投递反馈</a>
+                <a class="closeNT" href="javascript:;"></a>
+            </div>
+            @elseif($key==0)
+            <ul id="navheader" class="reset">
+                <li ><a href="index.php">首页</a></li>
+                 <li ><a href="companylist" >职位</a></li>
+                 <li ><a href="toForum" target="_blank">论坛</a></li>
+                 <li ><a href="jianli" rel="nofollow">个人中心</a></li>
+               
+                </ul>
+            <ul class="loginTop">
+                <li><a href="company_login" rel="nofollow" target="_parent">企业登录</a></li> 
+                <li>|</li>
+                <li><a href="login" rel="nofollow" target="_parent">登录</a></li> 
+                <li>|</li>
+                <li><a href="{{url('register')}}" rel="nofollow">注册</a></li>
+            </ul>
+
+            
+            @endif
+	    	
+        	        
+        </div>
     </div><!-- end #header -->
 
 
