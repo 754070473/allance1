@@ -39,7 +39,8 @@ Route::get('/toudi', 'IndexController@toudi');
 
 //公司列表
 Route::get('/companylist', 'IndexController@companylist');
-
+//公司查询
+Route::any('/hang', 'IndexController@hang');
 //展示关于 联系我们
 Route::get('/about', 'IndexController@about');	
 
@@ -56,8 +57,8 @@ Route::get('/updatePwd', 'AccountsetController@updatePwd');
 Route::get('/collections', 'CollectionsController@collections');
 
 //公司详情
-Route::get('/index04', 'CompanyglController@index04');
-    
+Route::get('index04', 'CompanyglController@index04');
+
 //申请公司认证
 Route::get('/auth', 'CompanyglController@auth');	
     
@@ -99,7 +100,7 @@ Route::get('/jianli', 'PersonalController@jianli');
     
 //发布新职位
 Route::get('/create', 'PostofficeController@create');
-	
+
 //职位发布成功
 Route::get('/index06', 'PostofficeController@index06');	
 

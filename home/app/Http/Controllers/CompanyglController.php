@@ -4,14 +4,20 @@ namespace App\Http\Controllers;
 /**
  *   CompanyglController  企业信息管理
  */
+header("content-type:text/html;charset=utf-8");
+use DB;
+use Illuminate\Http\Request;
 
 class CompanyglController extends Controller {
 	
 
     //公司详情
-    public function index04()
+    public function index04(Request $request)
     {
-        return view("companygl.index04");
+        $id=$request->input('id');
+        $arr = DB::table('al_com_message')->where("mes_id",$id)->get();
+       // print_r($arr);die;
+        return view("companygl.index04",["ar"=>$arr]);
     }
 
 	//申请公司认证
@@ -24,7 +30,6 @@ class CompanyglController extends Controller {
         return view("companygl.authSuccess");
     }
 
-    
 
     //开通招聘服务（1）
     public  function bindstep1(){

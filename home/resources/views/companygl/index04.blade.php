@@ -87,6 +87,7 @@ var youdao_conv_id = 271546;
 						     -->
 		                
 	                    <div class="c_box companyName">
+                                   @foreach($ar as  $v)
 	                    		                   			<h2 title="公司名称">公司名称</h2>
 	                   			                        
 	                        	                        	<em class="unvalid"></em>
@@ -94,8 +95,8 @@ var youdao_conv_id = 271546;
 	                        	<a target="_blank" class="applyC" href="http://www.lagou.com/c/auth">申请认证</a>
 	                        	                        <div class="clear"></div>
 	                       	
-	                       		                   			<h1 title="福建平潭协创进出口贸易有限公司" class="fullname">福建平潭协创进出口贸易有限公司</h1>
-	                        	                        
+	                       		                   			<h1 title="{{$v['m_name']}}" class="fullname">{{$v['m_name']}}</h1>
+
 	                        <form class="clear editDetail dn" id="editDetailForm" style="display: none;">
 	                            <input type="text" placeholder="请输入公司简称" maxlength="15" value="平潭协创进出口贸易有限公司" name="companyShortName" id="companyShortName" class="valid">
 	                            <input type="text" placeholder="一句话描述公司优势，核心价值，限50字" maxlength="50" value="测试的发打发打发大范德萨发" name="companyFeatures" id="companyFeatures" class="valid"><span for="companyFeatures" generated="true" class="error" style="display: none;">请输入5-50字的一句话介绍</span>
@@ -104,15 +105,14 @@ var youdao_conv_id = 271546;
 	                            <a id="cancelDetail" class="btn_cancel_s" >取消</a>
 		                    </form>
 	                            
-	                        <div class="clear oneword" style="display: block;"><img width="17" height="15" src="style/images/quote_l.png">&nbsp; <span>公司名称公司名称公司名称</span> &nbsp;<img width="17" height="15" src="style/images/quote_r.png"></div>
+	                        <div class="clear oneword" style="display: block;"><img width="17" height="15" src="style/images/quote_l.png">&nbsp; <span>{{$v['m_name']}}</span> &nbsp;<img width="17" height="15" src="style/images/quote_r.png"></div>
 	                        <h3 class="dn">已选择标签</h3>
 	                        <ul style="overflow:auto" id="hasLabels" class="reset clearfix">
-	                        			                        	<li><span>年终分红</span></li>
-		                        		                        	<li><span>五险一金</span></li>
-		                        		                        	<li><span>弹性工作</span></li>
-		                        		                        	<li><span>岗位晋升</span></li>
+	                        			                        	<li><span>{{$v['m_welfare']}}</span></li>
+
 		                        	                            <li class="link">编辑</li>
 	                        </ul>
+
 	                        <div class="dn" id="addLabels">
 	                        	<a id="changeLabels" class="change" href="javascript:void(0)">换一换</a>
 	                        	<input type="hidden" value="1" id="labelPageNo">
@@ -195,11 +195,11 @@ var youdao_conv_id = 271546;
 					                    <dd>
 					                    	<img width="380" height="220" alt="发大发" src="style/images/product_default.png">
 				                        	<div class="cp_intro">
-				                        						                        		<h3><a target="_blank" href="http://www.zmtpost.com">随便写</a></h3>
+				                        						                        		<h3><a target="_blank" href="http://www.zmtpost.com">产品</a></h3>
 					                            <div class="scroll-pane" style="overflow: hidden; padding: 0px; width: 260px;">
 					                            	
-					                            <div class="jspContainer" style="width: 260px; height: 140px;"><div class="jspPane" style="padding: 0px; top: 0px; width: 260px;"><div>随便写随便写随便写随便写随便写随便写随便写随便写随便写随便写随便写随便写随便写随便写随便写随便写随便写随便写随便写随便写随便写</div></div></div></div>
-					                        </div>
+					                            <div class="jspContainer" style="width: 260px; height: 140px;"><div class="jspPane" style="padding: 0px; top: 0px; width: 260px;"><div></div> {{$v['pro_intro']}}</div></div></div>
+                                                </div>
 					                        <a title="编辑公司产品" class="c_edit product_edit" href="javascript:void(0)"></a>
 					            								            			<a title="新增公司产品" class="c_add product_add" href="javascript:void(0)"></a>
 					            								                    </dd>
@@ -244,8 +244,8 @@ var youdao_conv_id = 271546;
 					                   		<h2><em></em>公司介绍</h2>
 					                   	</dt>
 					                   	<dd>
-					                   		<div class="c_intro">随便写随便写随便写随便写随便写随便写随便写随便写随便写随便写随便写随便写随便写随便写随便写</div>
-					                   		<a title="编辑公司介绍" id="editIntro" class="c_edit" href="javascript:void(0)"></a>
+					                   		<div class="c_intro"></div>
+					                   		<a title="编辑公司介绍" id="editIntro" class="c_edit" href="javascript:void(0)">{{$v['m_culture']}}</a>
 					                   	</dd>
 					               	</dl>
 				            </div>
@@ -272,7 +272,7 @@ var youdao_conv_id = 271546;
 	          	<input type="hidden" value="" name="pageSize" id="pageSize">
           		<div id="flag"></div>
             </div>	<!-- end .content_l -->
-            
+            @endforeach
             <div class="content_r">
             	<div id="Tags">
 	            	<div id="c_tags_show" class="c_tags solveWrap" style="display: block;">
