@@ -45,7 +45,7 @@ var youdao_conv_id = 271546;
 <body><script src="http://tajs.qq.com/jiathis.php?uid=1626433&amp;dm=www.lagou.com" charset="utf-8"></script><link href="style/css/jiathis_share.css" rel="stylesheet" type="text/css"><iframe frameborder="0" style="position: fixed; display: none; opacity: 0;"></iframe><div class="jiathis_style" style="position: absolute; z-index: 1000000000; display: none; top: 50%; left: 50%; overflow: auto;"></div><div class="jiathis_style" style="position: absolute; z-index: 1000000000; display: none; overflow: auto;"></div><iframe frameborder="0" style="display: none;" src="http://v3.jiathis.com/code_mini/jiathis_utility"></iframe>
 <div id="body">
 <!--头部-->
-<div id="cache">
+<div id="cache" style="padding-bottom:20px;">
 
 </div>
 
@@ -105,9 +105,9 @@ var youdao_conv_id = 271546;
 	                	<div class="ccc_tr">今日已发布 <span>1</span> 个职位   还可发布 <span>4</span> 个职位</div>
 	                	<div class="publish_tip">
                             <h2>恭喜你，职位发布成功！</h2>
-                            <a target="_blank" href="http://www.lagou.com/jobs/149594">预览职位</a><br>
+                            <a target="_blank" href="">预览职位</a><br>
                                                         <a class="greylink" href="create">继续发布新职位</a><br>
-                                                        <a class="greylink" href="http://www.lagou.com/c/25927"> 进入我的公司主页</a><br>
+                                                        <a class="greylink" href=""> 进入我的公司主页</a><br>
                         	<div style="float:left;" class="invite_share">
 			                    <!-- JiaThis Button BEGIN -->
 								<div class="jiathis_style_32x32">
