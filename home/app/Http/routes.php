@@ -39,7 +39,8 @@ Route::get('/myhome', 'IndexController@myhome');
 Route::get('/toudi', 'IndexController@toudi');
 
 //个人找职位
-Route::get('/companylist', 'IndexController@companylist');
+Route::get('/companylist', 'ReController@companylist');
+
 //公司找简历
 Route::get('/company', 'IndexController@company');
 //公司查询
