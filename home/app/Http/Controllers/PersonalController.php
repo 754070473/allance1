@@ -11,6 +11,7 @@ class PersonalController extends Controller {
     public  function jianli(){
         return view("personal.jianli");
     }
+ 
 }	
 
 ?>

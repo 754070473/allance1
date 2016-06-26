@@ -42,7 +42,12 @@ Route::get('/toudi', 'IndexController@toudi');
 Route::get('/companylist', 'IndexController@companylist');
 //公司找简历
 Route::get('/company', 'IndexController@company');
-
+//查找详细信息
+Route::get('/select_all', 'IndexController@select_all');
+//查找详细信息
+Route::get('/select_al', 'IndexController@select_al');
+//查找个人简历详细信息
+Route::get('/gerenlist', 'IndexController@gerenlist');
 //展示关于 联系我们
 Route::get('/about', 'IndexController@about');	
 

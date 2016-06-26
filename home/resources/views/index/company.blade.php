@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html xmlns:wb="http://open.weibo.com/wb">
+<html xmlns:wb="http://open.weibo.com/wb" id="cao">
 <head>
 <script id="allmobilize" charset="utf-8" src="style/js/allmobilize.min.js"></script>
 <meta http-equiv="Cache-Control" content="no-siteapp" />
@@ -11,7 +11,7 @@
 <meta content="全国condition-condition-公司列表-拉勾网-最专业的互联网招聘平台" name="description">
 <meta content="全国condition-公司列表-拉勾网-最专业的互联网招聘平台" name="keywords">
 <meta name="baidu-site-verification" content="QIQ6KC1oZ6" />
-
+<meta name="csrf-token" content="{{ csrf_token() }}">
 <!-- <div class="web_root"  style="display:none">h</div> -->
 <script type="text/javascript">
 var ctx = "h";
@@ -56,52 +56,63 @@ var youdao_conv_id = 271546;
 .sublist li p.mcate-item-bd a:hover{color:#6c5143;text-decoration:underline;}
 </style>
 </head>
+<script type="text/javascript">
+    $(function(){
+     $.get("{{url('top')}}",function(m){
+         $('#cache').html(m);
+        
+     })
+    })
+
+
+
+	
+  //    function place(id){
+  //  alert(id);
+  //       $.ajax({
+  //                         type: 'GET',
+		// url: "{{url('select_all')}}",
+		// data: {'id': id},
+		// headers: {
+		//             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+		//         },
+  //           success:function(msg){
+             
+  //               console.log(msg);
+  //               str="";
+  //               $.each(msg,function(key,user){
+
+  //              str+= '<li  style="clear:both;  "  >'
+
+  //                   str+= '<a href="h/c/25829" target="_blank">'
+  //                   str+='<h3 title="CCIC">简历</h3>';
+  //                   str+= '<div class="comLogo">'
+  //                   str+= <img src="style/images/logo_default.png" width="190" height="190" alt="CCIC" />;
+  //                   str+='<ul>'
+  //                   str+= '<li>'
+  //                   str+= user['p_name'];
+  //                   str+= '</li>'
+  //                   str+= '<li>'
+  //                   str+= user['i_name'];
+  //                   str+= '</li>'
+  //                   str+= "</ul>"
+  //                   str+='</div>'
+  //                   str+= '</a>'
+                    
+  //              str+='</li>'
+  //               })
+  //               $("#cao").html(str);
+  //           }
+  //           })
+  //       } 
+ 
+</script>
 <body>
 <div id="body">
-	<div id="header">
-    	<div class="wrapper">
-    		<a href="index" class="logo">
-    			<img src="style/images/logo.png" width="229" height="43" alt="拉勾招聘-专注互联网招聘" />
-    		</a>
-    		<ul class="reset" id="navheader">
-    			<?php if(empty(session('key'))){?>
-                           <li ><a href="index">首页</a></li>
-                           <li ><a href="companylist" >职位</a></li>
-                          <li ><a href="toForum" target="_blank">论坛</a></li>
-                          <li ><a href="login" rel="nofollow">个人中心</a></li>
-                          <li ><a href="login" rel="nofollow">发布职位</a></li>
-                <?php }else if(session('key')==1){?>
-                         <li ><a href="index">首页</a></li>
-                         <li ><a href="company" >职位</a></li>
-                         <li ><a href="toForum" target="_blank">论坛</a></li>
-                         <?php if(empty(session('key'))){ ?>
-                         <li ><a href="login" rel="nofollow">个人中心</a></li>
-                          <li ><a href="login" rel="nofollow">发布职位</a></li>
-                        <?php }else{?>
-                         <li ><a href="jianli" rel="nofollow">个人中心</a></li>
-                         <li ><a href="create" rel="nofollow">发布职位</a></li>
-                         <?php }?>
-                <?php }else if(session('key')==0){?>
-                        <li ><a href="index">首页</a></li>
-                         <li ><a href="companylist" >职位</a></li>
-                         <li ><a href="toForum" target="_blank">论坛</a></li>
-                         <?php if(empty(session('key'))){ ?>
-                         <li ><a href="login" rel="nofollow">个人中心</a></li>
-                          <li ><a href="login" rel="nofollow">发布职位</a></li>
-                        <?php }else{?>
-                         <li ><a href="jianli" rel="nofollow">个人中心</a></li>
-                         <li ><a href="create" rel="nofollow">发布职位</a></li>
-                         <?php }?>
-                <?php  }?>
+<!--头部-->
+<div id="cache">
 
-	    		    		</ul>
-        	            <ul class="loginTop">
-            	<li><a href="login" rel="nofollow">登录</a></li> 
-            	<li>|</li>
-            	<li><a href="register" rel="nofollow">注册</a></li>
-            </ul>
-                                </div>
-    </div><!-- end #header -->
+</div>
     <div id="container">
         
         <div class="clearfix">
@@ -115,127 +126,19 @@ var youdao_conv_id = 271546;
 	                    <dt>
 	                       <!--  <h2 class="fl">热门公司</h2> -->
 	                        <ul class="workplace reset fr" id="workplaceSelect">
-	                        	                                <li >
-                                	<a href="javascript:void(0)"  class="current" >全国</a> 
+	                        	                                <li style="float:left; " >
+                                	<a href="company"  class="company"  >全国</a> 
                                 	                                	|
                                 	                                </li>
-	                                                            <li >
-                                	<a href="javascript:void(0)" >北京</a> 
-                                	                                	|
-                                	                                </li>
-	                                                            <li >
-                                	<a href="javascript:void(0)" >上海</a> 
-                                	                                	|
-                                	                                </li>
-	                                                            <li >
-                                	<a href="javascript:void(0)" >广州</a> 
-                                	                                	|
-                                	                                </li>
-	                                                            <li >
-                                	<a href="javascript:void(0)" >深圳</a> 
-                                	                                	|
-                                	                                </li>
-	                                                            <li >
-                                	<a href="javascript:void(0)" >成都</a> 
-                                	                                	|
-                                	                                </li>
-	                                                            <li >
-                                	<a href="javascript:void(0)" >杭州</a> 
-                                	                                	|
-                                	                                </li>
-	                                                            <li >
-                                	<a href="javascript:void(0)" >武汉</a> 
-                                	                                	|
-                                	                                </li>
-	                                                            <li >
-                                	<a href="javascript:void(0)" >南京</a> 
-                                	                                	|
-                                	                                </li>
-	                                                            <li  class="more" >
-                                	<a href="javascript:void(0)" >其他</a> 
-                                	                                	<div class="triangle citymore_arrow"></div>
-                                	                                </li>
-	                            	                            <li id="box_expectCity" class="searchlist_expectCity dn">
-					            	<span class="bot"></span>
-					            	<span class="top"></span>
-						    								    										    							    										    		<dl>
-							    			<dt>ABCDEF</dt>
-							    			<dd>
-							     			<span>北京</span>
-							     			<span>长春</span>
-							     			<span>成都</span>
-							     			<span>重庆</span>
-							     			<span>长沙</span>
-							     			<span>常州</span>
-							     			<span>东莞</span>
-							     			<span>大连</span>
-							     			<span>佛山</span>
-							     			<span>福州</span>
-							     			</dd>
-							    	  	</dl>
-							    	  								    							    										    		<dl>
-							    			<dt>GHIJ</dt>
-							    			<dd>
-							     			<span>贵阳</span>
-							     			<span>广州</span>
-							     			<span>哈尔滨</span>
-							     			<span>合肥</span>
-							     			<span>海口</span>
-							     			<span>杭州</span>
-							     			<span>惠州</span>
-							     			<span>金华</span>
-							                                <span>济南</span>
-							     		          <span>嘉兴</span>							     											     				
-							     			</dd>
-							    	  	</dl>
-							    	  								    							    										    		<dl>
-							    			<dt>KLMN</dt>
-							    			<dd>
-							     			<span>昆明</span>
-							     			<span>廊坊</span>
-							     			<span>宁波</span>
-							     			<span>南昌</span>
-							     			<span>南京</span>
-							     			<span>南宁</span>
-							     			<span>南通</span>
-							     			</dd>
-							    	  	</dl>
-							    	  								    							    										    		<dl>
-							    			<dt>OPQR</dt>
-							    			<dd>
-							     			<span>青岛</span>
-							     			<span>泉州</span>
-							     			/dd>
-							    	  	</dl>
-							    	  								    							    										    		<dl>
-							    			<dt>STUV</dt>
-							    			<dd>
-							     			<span>上海</span>
-							     			<span>石家庄</span>
-							     			<span>绍兴</span>
-							     			<span>沈阳</span>
-							     			<span>深圳</span>
-							     			<span>苏州</span>
-							     			<span>天津</span>
-							     			<span>太原</span>
-							     			<span>台州</span>
-							     			</dd>
-							    	  	</dl>
-							    	  								    							    										    		<dl>
-							    			<dt>WXYZ</dt>
-							    			<dd>
-							     			<span>武汉</span>
-							     			<span>无锡</span>
-							     			<span>温州</span>
-							     			<span>西安</span>
-							     			<span>厦门</span>
-							     			<span>烟台</span>
-							     			<span>珠海</span>
-							     			<span>中山</span>
-							     			<span>郑州</span>
-							     			</dd>
-							    	  	</dl>
-							    	  								    								    </li>
+
+	                                                           @foreach ($acc as $v=>$ac)
+	               	                <li  >
+                                                                     	
+                                	<a href="javascript:viod(0)" onclick="place({{$ac->pla_id}})">{{$ac->i_name }}</a> 
+                                	                </li>
+	                                                  @endforeach        
+	                                                           
+	                            	                            								    								    </ li>
 	                        </ul>
 	                    </dt>
 	                </dl>  
@@ -244,7 +147,7 @@ var youdao_conv_id = 271546;
 		<div class="list" id="navlist">
 			<ul id="navfouce" style="width:680px;">
 				@foreach($ar as $val)
-				<li><a href="http://sc.chinaz.com/jiaoben/">{{$val['i_name']}}</a></li>   
+				<li><a href="">{{$val['i_name']}}</a></li>   
 				@endforeach
 			</ul>
 		</div>
@@ -257,7 +160,7 @@ var youdao_conv_id = 271546;
 						<h3 class="mcate-item-hd"><span>{{$va['i_name']}}</span></h3>
 						<p class="mcate-item-bd">
 							@foreach($va['son'] as $v)
-							<a href="http://sc.chinaz.com/jiaoben">{{$v['i_name']}}</a>
+							<a  href="javascript:viod(0)" onclick="post({{$v['post_id']}})">{{$v['i_name']}}</a>
 							@endforeach
 						</p>
 					</li>
@@ -331,42 +234,19 @@ var youdao_conv_id = 271546;
 	});
 
 })();
+  
+
+ 
 </script>
-	                        <!-- <dl>
-	                            <dt>热门标签：</dt>
-	                            <dd>
-	                                	                                			                               	<a href="javascript:void(0)">年底双薪</a>
-		                                	                                	                                			                               	<a href="javascript:void(0)">专项奖金</a>
-		                                	                                	                                			                               	<a href="javascript:void(0)">股票期权</a>
-		                                	                                	                                			                               	<a href="javascript:void(0)">绩效奖金</a>
-		                                	                                	                                			                               	<a href="javascript:void(0)">年终分红</a>
-		                                	                                	                                			                               	<a href="javascript:void(0)">带薪年假</a>
-		                                	                                	                                			                               	<a href="javascript:void(0)">交通补助</a>
-		                                	                                	                                			                               	<a href="javascript:void(0)">通讯津贴</a>
-		                                	                                	                                			                               	<a href="javascript:void(0)">午餐补助</a>
-		                                	                                	                                			                               	<a href="javascript:void(0)">定期体检</a>
-		                                	                                	                                			                               	<a href="javascript:void(0)">弹性工作</a>
-		                                	                                	                                			                               	<a href="javascript:void(0)">年度旅游</a>
-		                                	                                	                                			                               	<a href="javascript:void(0)">节日礼物</a>
-		                                	                                	                                			                               	<a href="javascript:void(0)">免费班车</a>
-		                                	                                	                                			                               	<a href="javascript:void(0)">帅哥多</a>
-		                                	                                	                                			                               	<a href="javascript:void(0)">美女多</a>
-		                                	                                	                                			                               	<a href="javascript:void(0)">领导好</a>
-		                                	                                	                                			                               	<a href="javascript:void(0)">扁平管理</a>
-		                                	                                	                                			                               	<a href="javascript:void(0)">管理规范</a>
-		                                	                                	                                			                               	<a href="javascript:void(0)">技能培训</a>
-		                                	                                	                                			                               	<a href="javascript:void(0)">岗位晋升</a>
-		                                	                                	                                			                               	<a href="javascript:void(0)">五险一金</a>
-		                                	                                	                            </dd>
-	                        </dl> -->
-	                                                       <ul class="hc_list reset"    >
+	                       
+	                                                       <ul class="hc_list reset"    id="so">
 	               	                	  @foreach ($users as $v=>$user)
 	               	                	<?php  if(($v+1)%3==1){ ?> 
                                                                      <li  style="clear:both;  "  >
                                                                      	<?php }else{?>
                                                                      	<li>
                                                                      	<?php } ?>
-			                        <a href="h/c/25829" target="_blank">
+			                        <a href="gerenlist?id={{$user->res_id}}" target="_blank">
 			                        	<h3 title="CCIC">简历</h3>
 			                        	<div class="comLogo">
 				                        	<img src="style/images/logo_default.png" width="190" height="190" alt="CCIC" />
@@ -376,21 +256,14 @@ var youdao_conv_id = 271546;
 				                        	</ul>
 			                        	</div>
 			                        </a>
-			                        
-			                    
-			                    </li>
-			                   
-			                  
-			               
-			                 
-			             
-		                          @endforeach    		                
+			                   </li>
+			          @endforeach  
+			          <li  style="clear:both;  "  >{!! $users->render() !!}   </li>	                
 		                	   </ul>
-		                		               	<!-- <div class="Pagination"></div> -->
-		               		                                {!! $users->render() !!}
+		                		
 		               		                            </form>
 <div class="container">
-    
+  
 
 </div>
 
@@ -429,26 +302,7 @@ var youdao_conv_id = 271546;
    	
    	<input type="hidden" value="" name="userid" id="userid" />
       
-<script type="text/javascript" src="style/js/company_list.min.js"></script>
 
-<script src="JavaScript/jQuery-1.2.6.min.js" type="text/javascript" ></script>
-<script src="JavaScript/jquery.pager.js" type="text/javascript"></script>
-
-<link href="Styles/Pager.css" rel="stylesheet" type="text/css" />
-<javascript>
-<mce:script type="text/javascript"><!-- 
-            $(Pagination).ready(function()   
-            {  
-                $("#pager").pager({ pagenumber: 1, pagecount: <%=this.UserPageCount %>, buttonClickCallback: PageClick });  
-            });  
-            PageClick = function(pageclickednumber)  
-            {  
-                $("#pager").pager({ pagenumber: pageclickednumber, pagecount: <%=this.UserPageCount %>, buttonClickCallback: PageClick });  
-                $.get("AjaxServer/UserMgr.ashx", { page: pageclickednumber, action: "getlist" }, function(data) {  
-                    $("#pnlUserMain").html(data);});  
-            }  
-   </mce:script>   -->
-</javascript>
 
  	
 			<div class="clear"></div>
@@ -472,4 +326,36 @@ var youdao_conv_id = 271546;
 <!--  -->
 
 </body>
+
 </html>
+<script>
+
+function place(id){
+ // alert(id)
+    $.ajax({
+        type: "GET",
+        url: "{{url('select_all')}}",
+        data: "id="+id,
+        success: function(msg){
+            //alert(  msg );
+            $("#so").html(msg);
+        }
+    });
+}
+   function post(id){
+ // alert(id)
+    $.ajax({
+        type: "GET",
+        url: "{{url('select_al')}}",
+        data: "id="+id,
+        success: function(msg){
+            //alert(  msg );
+            $("#so").html(msg);
+        }
+    });
+}    
+</script>
+
+ 
+
+  
