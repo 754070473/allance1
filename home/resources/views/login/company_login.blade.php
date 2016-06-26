@@ -45,7 +45,7 @@ var youdao_conv_id = 271546;
 		 <div class="login_box">
         	<form id="loginForm" action="index">
 
-				<input type="text" id="email" name="name" value="" tabindex="1" placeholder="请输入企业登录邮箱或手机号" />
+				<input type="text" id="email" name="name" value="{{$phone}}" tabindex="1" placeholder="请输入企业登录邮箱或手机号" />
 			  	<input type="password" id="password" name="pwd" tabindex="2" placeholder="请输入密码" />
 				<span class="error" style="display:none;" id="beError"></span>
 

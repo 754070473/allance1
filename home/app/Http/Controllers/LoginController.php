@@ -21,7 +21,8 @@ class LoginController extends Controller {
 	 */
 	public function company_login()
 	{
-		return view("login.company_login");
+		$phone=Session::get('phone');
+		return view("login.company_login",['phone'=>$phone]);
 	}
 	/**
 	 * 执行企业登录
@@ -114,7 +115,7 @@ class LoginController extends Controller {
 	                        //密码正确 修改字段num=0 登陆成功
 	                        Session::put('per_id',$per_id);
 	                        Session::put('p_phone',$p_phone);
-		      				$i_name=str_replace($i_name, "<font color='#99ffff'>$i_name</font>",$i_name);
+		      				//$i_name=str_replace($i_name, "<font color='#99ffff'>$i_name</font>",$i_name);
 		      				Session::put('i_name',$i_name);
 	                       echo "1";
 	                    }else{
@@ -182,7 +183,9 @@ class LoginController extends Controller {
 				    	)
 					);
 			}
-
+			Session::put('phone',$phone);  
+			
+			return redirect('company_login');
 		}
 		else
 		{//个人注册
@@ -198,9 +201,10 @@ class LoginController extends Controller {
 				    	)
 					);
 			}
+			Session::put('phone',$phone);  
+			return redirect('login');
 		}
-		Session::put('phone',$phone);  
-		return redirect('login');
+		
 
 
 	}

@@ -7719,16 +7719,20 @@ Stack trace:
 [2016-06-25 01:59:20] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected ';'' in D:\wamp\WWW\di9yue\allance1\home\app\Http\Controllers\IndexController.php:132
 Stack trace:
 #0 {main}  
-[2016-06-25 02:48:23] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected '' => $users]);' (T_CONSTANT_ENCAPSED_STRING), expecting ']'' in D:\wamp\WWW\di9yue\allance1\home\app\Http\Controllers\IndexController.php:118
+[2016-06-25 02:48:23] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected '' => $users]);
+' (T_CONSTANT_ENCAPSED_STRING), expecting ']'' in D:\wamp\WWW\di9yue\allance1\home\app\Http\Controllers\IndexController.php:118
 Stack trace:
 #0 {main}  
-[2016-06-25 02:48:26] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected '' => $users]);' (T_CONSTANT_ENCAPSED_STRING), expecting ']'' in D:\wamp\WWW\di9yue\allance1\home\app\Http\Controllers\IndexController.php:118
+[2016-06-25 02:48:26] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected '' => $users]);
+' (T_CONSTANT_ENCAPSED_STRING), expecting ']'' in D:\wamp\WWW\di9yue\allance1\home\app\Http\Controllers\IndexController.php:118
 Stack trace:
 #0 {main}  
-[2016-06-25 02:49:02] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected '' => $users]);' (T_CONSTANT_ENCAPSED_STRING), expecting ']'' in D:\wamp\WWW\di9yue\allance1\home\app\Http\Controllers\IndexController.php:121
+[2016-06-25 02:49:02] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected '' => $users]);
+' (T_CONSTANT_ENCAPSED_STRING), expecting ']'' in D:\wamp\WWW\di9yue\allance1\home\app\Http\Controllers\IndexController.php:121
 Stack trace:
 #0 {main}  
-[2016-06-25 02:49:10] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected '' => $users]);' (T_CONSTANT_ENCAPSED_STRING), expecting ']'' in D:\wamp\WWW\di9yue\allance1\home\app\Http\Controllers\IndexController.php:121
+[2016-06-25 02:49:10] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected '' => $users]);
+' (T_CONSTANT_ENCAPSED_STRING), expecting ']'' in D:\wamp\WWW\di9yue\allance1\home\app\Http\Controllers\IndexController.php:121
 Stack trace:
 #0 {main}  
 [2016-06-25 06:58:25] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected 'pub' (T_STRING), expecting function (T_FUNCTION)' in D:\wamp\WWW\di9yue\allance1\home\app\Http\Controllers\IndexController.php:161
