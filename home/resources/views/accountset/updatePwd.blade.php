@@ -44,7 +44,7 @@ var youdao_conv_id = 271546;
 <body>
 <div id="body">
 <!--头部-->
-<div id="cache">
+<div id="cache" style="padding-bottom:20px;">
 
 </div>
 
@@ -67,13 +67,13 @@ var youdao_conv_id = 271546;
                         <input type="hidden"  id="resubmitToken" name='resubmitToken' value="{{csrf_token()}}">
                     <table class="savePassword">
             			<tbody><tr>
-            				<td>登录邮箱</td>
-            				<td class="c7">jason@qq.com</td>
+            				<td>登录用户</td>
+            				<td class="c7">{{$aa}}</td>
             			</tr>
             			<tr>
             				<td class="label">当前密码</td>
             				<td>
-            					<input type="password" maxlength="16" id="oldpassword" name="oldpassword" style="background-image: url(style/images/img/0CQnd2Jos49xUAAAAASUVORK5CYII=quot); background-repeat: no-repeat; background-attachment: scroll; background-position: right center;">
+            					<input type="password" value="" maxlength="16" id="oldpassword" name="oldpassword" style="background-image: url(style/images/img/0CQnd2Jos49xUAAAAASUVORK5CYII=quot); background-repeat: no-repeat; background-attachment: scroll; background-position: right center;">
             					<span id="updatePwd_beError" style="display:none;" class="error">
             				</span></td>            				
             			</tr>

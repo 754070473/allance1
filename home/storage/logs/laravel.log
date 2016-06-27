@@ -6558,7 +6558,7 @@ Stack trace:
 #52 F:\phpStudy\WWW\php_9\allance1\home\public\index.php(54): Illuminate\Foundation\Http\Kernel->handle(Object(Illuminate\Http\Request))
 #53 {main}
 
-Next exception 'Illuminate\Database\QueryException' with message 'SQLSTATE[42S22]: Column not found: 1054 Unknown column 's_job' in 'field list' (SQL: insert into `al_subscrip` (`s_email`, `s_day`, `s_job`, `s_city`, `s_stage`, `s_industry`, `s_salary`, `s_time`) values (754070473@qq.com, 3, C  , 北京, 初创型, 移动互联网, 2k以下, 2016-06-25 08:31:35))' in F:\phpStudy\WWW\php_9\allance1\home\vendor\laravel\framework\src\Illuminate\Database\Connection.php:651
+Next exception 'Illuminate\Database\QueryException' with message 'SQLSTATE[42S22]: Column not found: 1054 Unknown column 's_job' in 'field list' (SQL: insert into `al_subscrip` (`s_email`, `s_day`, `s_job`, `s_city`, `s_stage`, `s_industry`, `s_salary`, `s_time`) values (754070473@qq.com, 3, C  , 北京, 初创�? 移动互联�? 2k以下, 2016-06-25 08:31:35))' in F:\phpStudy\WWW\php_9\allance1\home\vendor\laravel\framework\src\Illuminate\Database\Connection.php:651
 Stack trace:
 #0 F:\phpStudy\WWW\php_9\allance1\home\vendor\laravel\framework\src\Illuminate\Database\Connection.php(611): Illuminate\Database\Connection->runQueryCallback('insert into `al...', Array, Object(Closure))
 #1 F:\phpStudy\WWW\php_9\allance1\home\vendor\laravel\framework\src\Illuminate\Database\Connection.php(391): Illuminate\Database\Connection->run('insert into `al...', Array, Object(Closure))
@@ -6669,7 +6669,7 @@ Stack trace:
 #52 F:\phpStudy\WWW\php_9\allance1\home\public\index.php(54): Illuminate\Foundation\Http\Kernel->handle(Object(Illuminate\Http\Request))
 #53 {main}
 
-Next exception 'Illuminate\Database\QueryException' with message 'SQLSTATE[42S22]: Column not found: 1054 Unknown column 's_job' in 'field list' (SQL: insert into `al_subscrip` (`s_email`, `s_day`, `s_job`, `s_city`, `s_stage`, `s_industry`, `s_salary`, `s_time`) values (754070473@qq.com, 3, C  , 北京, 初创型, 移动互联网, 2k以下, 2016-06-25 08:31:46))' in F:\phpStudy\WWW\php_9\allance1\home\vendor\laravel\framework\src\Illuminate\Database\Connection.php:651
+Next exception 'Illuminate\Database\QueryException' with message 'SQLSTATE[42S22]: Column not found: 1054 Unknown column 's_job' in 'field list' (SQL: insert into `al_subscrip` (`s_email`, `s_day`, `s_job`, `s_city`, `s_stage`, `s_industry`, `s_salary`, `s_time`) values (754070473@qq.com, 3, C  , 北京, 初创�? 移动互联�? 2k以下, 2016-06-25 08:31:46))' in F:\phpStudy\WWW\php_9\allance1\home\vendor\laravel\framework\src\Illuminate\Database\Connection.php:651
 Stack trace:
 #0 F:\phpStudy\WWW\php_9\allance1\home\vendor\laravel\framework\src\Illuminate\Database\Connection.php(611): Illuminate\Database\Connection->runQueryCallback('insert into `al...', Array, Object(Closure))
 #1 F:\phpStudy\WWW\php_9\allance1\home\vendor\laravel\framework\src\Illuminate\Database\Connection.php(391): Illuminate\Database\Connection->run('insert into `al...', Array, Object(Closure))
@@ -6780,7 +6780,7 @@ Stack trace:
 #52 F:\phpStudy\WWW\php_9\allance1\home\public\index.php(54): Illuminate\Foundation\Http\Kernel->handle(Object(Illuminate\Http\Request))
 #53 {main}
 
-Next exception 'Illuminate\Database\QueryException' with message 'SQLSTATE[42S22]: Column not found: 1054 Unknown column 's_job' in 'field list' (SQL: insert into `al_subscrip` (`s_email`, `s_day`, `s_job`, `s_city`, `s_stage`, `s_industry`, `s_salary`, `s_time`) values (754070473@qq.com, 3, C  , 北京, 初创型, 移动互联网, 2k以下, 2016-06-25 08:31:46))' in F:\phpStudy\WWW\php_9\allance1\home\vendor\laravel\framework\src\Illuminate\Database\Connection.php:651
+Next exception 'Illuminate\Database\QueryException' with message 'SQLSTATE[42S22]: Column not found: 1054 Unknown column 's_job' in 'field list' (SQL: insert into `al_subscrip` (`s_email`, `s_day`, `s_job`, `s_city`, `s_stage`, `s_industry`, `s_salary`, `s_time`) values (754070473@qq.com, 3, C  , 北京, 初创�? 移动互联�? 2k以下, 2016-06-25 08:31:46))' in F:\phpStudy\WWW\php_9\allance1\home\vendor\laravel\framework\src\Illuminate\Database\Connection.php:651
 Stack trace:
 #0 F:\phpStudy\WWW\php_9\allance1\home\vendor\laravel\framework\src\Illuminate\Database\Connection.php(611): Illuminate\Database\Connection->runQueryCallback('insert into `al...', Array, Object(Closure))
 #1 F:\phpStudy\WWW\php_9\allance1\home\vendor\laravel\framework\src\Illuminate\Database\Connection.php(391): Illuminate\Database\Connection->run('insert into `al...', Array, Object(Closure))
@@ -6891,7 +6891,7 @@ Stack trace:
 #52 F:\phpStudy\WWW\php_9\allance1\home\public\index.php(54): Illuminate\Foundation\Http\Kernel->handle(Object(Illuminate\Http\Request))
 #53 {main}
 
-Next exception 'Illuminate\Database\QueryException' with message 'SQLSTATE[42S22]: Column not found: 1054 Unknown column 's_job' in 'field list' (SQL: insert into `al_subscrip` (`s_email`, `s_day`, `s_job`, `s_city`, `s_stage`, `s_industry`, `s_salary`, `s_time`) values (754070473@qq.com, 3, C  , 北京, 初创型, 移动互联网, 2k以下, 2016-06-25 08:31:46))' in F:\phpStudy\WWW\php_9\allance1\home\vendor\laravel\framework\src\Illuminate\Database\Connection.php:651
+Next exception 'Illuminate\Database\QueryException' with message 'SQLSTATE[42S22]: Column not found: 1054 Unknown column 's_job' in 'field list' (SQL: insert into `al_subscrip` (`s_email`, `s_day`, `s_job`, `s_city`, `s_stage`, `s_industry`, `s_salary`, `s_time`) values (754070473@qq.com, 3, C  , 北京, 初创�? 移动互联�? 2k以下, 2016-06-25 08:31:46))' in F:\phpStudy\WWW\php_9\allance1\home\vendor\laravel\framework\src\Illuminate\Database\Connection.php:651
 Stack trace:
 #0 F:\phpStudy\WWW\php_9\allance1\home\vendor\laravel\framework\src\Illuminate\Database\Connection.php(611): Illuminate\Database\Connection->runQueryCallback('insert into `al...', Array, Object(Closure))
 #1 F:\phpStudy\WWW\php_9\allance1\home\vendor\laravel\framework\src\Illuminate\Database\Connection.php(391): Illuminate\Database\Connection->run('insert into `al...', Array, Object(Closure))
@@ -7002,7 +7002,7 @@ Stack trace:
 #52 F:\phpStudy\WWW\php_9\allance1\home\public\index.php(54): Illuminate\Foundation\Http\Kernel->handle(Object(Illuminate\Http\Request))
 #53 {main}
 
-Next exception 'Illuminate\Database\QueryException' with message 'SQLSTATE[42S22]: Column not found: 1054 Unknown column 's_job' in 'field list' (SQL: insert into `al_subscrip` (`s_email`, `s_day`, `s_job`, `s_city`, `s_stage`, `s_industry`, `s_salary`, `s_time`) values (754070473@qq.com, 3, C  , 北京, 初创型, 移动互联网, 2k以下, 2016-06-25 08:31:47))' in F:\phpStudy\WWW\php_9\allance1\home\vendor\laravel\framework\src\Illuminate\Database\Connection.php:651
+Next exception 'Illuminate\Database\QueryException' with message 'SQLSTATE[42S22]: Column not found: 1054 Unknown column 's_job' in 'field list' (SQL: insert into `al_subscrip` (`s_email`, `s_day`, `s_job`, `s_city`, `s_stage`, `s_industry`, `s_salary`, `s_time`) values (754070473@qq.com, 3, C  , 北京, 初创�? 移动互联�? 2k以下, 2016-06-25 08:31:47))' in F:\phpStudy\WWW\php_9\allance1\home\vendor\laravel\framework\src\Illuminate\Database\Connection.php:651
 Stack trace:
 #0 F:\phpStudy\WWW\php_9\allance1\home\vendor\laravel\framework\src\Illuminate\Database\Connection.php(611): Illuminate\Database\Connection->runQueryCallback('insert into `al...', Array, Object(Closure))
 #1 F:\phpStudy\WWW\php_9\allance1\home\vendor\laravel\framework\src\Illuminate\Database\Connection.php(391): Illuminate\Database\Connection->run('insert into `al...', Array, Object(Closure))
@@ -7113,7 +7113,7 @@ Stack trace:
 #52 F:\phpStudy\WWW\php_9\allance1\home\public\index.php(54): Illuminate\Foundation\Http\Kernel->handle(Object(Illuminate\Http\Request))
 #53 {main}
 
-Next exception 'Illuminate\Database\QueryException' with message 'SQLSTATE[42S22]: Column not found: 1054 Unknown column 's_job' in 'field list' (SQL: insert into `al_subscrip` (`s_email`, `s_day`, `s_job`, `s_city`, `s_stage`, `s_industry`, `s_salary`, `s_time`) values (754070473@qq.com, 3, C  , 北京, 初创型, 移动互联网, 2k以下, 2016-06-25 08:31:51))' in F:\phpStudy\WWW\php_9\allance1\home\vendor\laravel\framework\src\Illuminate\Database\Connection.php:651
+Next exception 'Illuminate\Database\QueryException' with message 'SQLSTATE[42S22]: Column not found: 1054 Unknown column 's_job' in 'field list' (SQL: insert into `al_subscrip` (`s_email`, `s_day`, `s_job`, `s_city`, `s_stage`, `s_industry`, `s_salary`, `s_time`) values (754070473@qq.com, 3, C  , 北京, 初创�? 移动互联�? 2k以下, 2016-06-25 08:31:51))' in F:\phpStudy\WWW\php_9\allance1\home\vendor\laravel\framework\src\Illuminate\Database\Connection.php:651
 Stack trace:
 #0 F:\phpStudy\WWW\php_9\allance1\home\vendor\laravel\framework\src\Illuminate\Database\Connection.php(611): Illuminate\Database\Connection->runQueryCallback('insert into `al...', Array, Object(Closure))
 #1 F:\phpStudy\WWW\php_9\allance1\home\vendor\laravel\framework\src\Illuminate\Database\Connection.php(391): Illuminate\Database\Connection->run('insert into `al...', Array, Object(Closure))
@@ -7224,7 +7224,7 @@ Stack trace:
 #52 F:\phpStudy\WWW\php_9\allance1\home\public\index.php(54): Illuminate\Foundation\Http\Kernel->handle(Object(Illuminate\Http\Request))
 #53 {main}
 
-Next exception 'Illuminate\Database\QueryException' with message 'SQLSTATE[42S22]: Column not found: 1054 Unknown column 's_job' in 'field list' (SQL: insert into `al_subscrip` (`s_email`, `s_day`, `s_job`, `s_city`, `s_stage`, `s_industry`, `s_salary`, `s_time`) values (754070473@qq.com, 3, C  , 北京, 初创型, 移动互联网, 2k以下, 2016-06-25 08:31:52))' in F:\phpStudy\WWW\php_9\allance1\home\vendor\laravel\framework\src\Illuminate\Database\Connection.php:651
+Next exception 'Illuminate\Database\QueryException' with message 'SQLSTATE[42S22]: Column not found: 1054 Unknown column 's_job' in 'field list' (SQL: insert into `al_subscrip` (`s_email`, `s_day`, `s_job`, `s_city`, `s_stage`, `s_industry`, `s_salary`, `s_time`) values (754070473@qq.com, 3, C  , 北京, 初创�? 移动互联�? 2k以下, 2016-06-25 08:31:52))' in F:\phpStudy\WWW\php_9\allance1\home\vendor\laravel\framework\src\Illuminate\Database\Connection.php:651
 Stack trace:
 #0 F:\phpStudy\WWW\php_9\allance1\home\vendor\laravel\framework\src\Illuminate\Database\Connection.php(611): Illuminate\Database\Connection->runQueryCallback('insert into `al...', Array, Object(Closure))
 #1 F:\phpStudy\WWW\php_9\allance1\home\vendor\laravel\framework\src\Illuminate\Database\Connection.php(391): Illuminate\Database\Connection->run('insert into `al...', Array, Object(Closure))
@@ -7410,7 +7410,7 @@ Stack trace:
 #52 F:\phpStudy\WWW\php_9\allance1\home\public\index.php(54): Illuminate\Foundation\Http\Kernel->handle(Object(Illuminate\Http\Request))
 #53 {main}
 
-Next exception 'Illuminate\Database\QueryException' with message 'SQLSTATE[42S22]: Column not found: 1054 Unknown column 's_job' in 'field list' (SQL: insert into `al_subscrip` (`s_email`, `s_day`, `s_job`, `s_city`, `s_stage`, `s_industry`, `s_salary`, `s_time`) values (54070473@qq.com, 3, C  , 北京, 初创型, 移动互联网, 2k以下, 2016-06-25 08:45:41))' in F:\phpStudy\WWW\php_9\allance1\home\vendor\laravel\framework\src\Illuminate\Database\Connection.php:651
+Next exception 'Illuminate\Database\QueryException' with message 'SQLSTATE[42S22]: Column not found: 1054 Unknown column 's_job' in 'field list' (SQL: insert into `al_subscrip` (`s_email`, `s_day`, `s_job`, `s_city`, `s_stage`, `s_industry`, `s_salary`, `s_time`) values (54070473@qq.com, 3, C  , 北京, 初创�? 移动互联�? 2k以下, 2016-06-25 08:45:41))' in F:\phpStudy\WWW\php_9\allance1\home\vendor\laravel\framework\src\Illuminate\Database\Connection.php:651
 Stack trace:
 #0 F:\phpStudy\WWW\php_9\allance1\home\vendor\laravel\framework\src\Illuminate\Database\Connection.php(611): Illuminate\Database\Connection->runQueryCallback('insert into `al...', Array, Object(Closure))
 #1 F:\phpStudy\WWW\php_9\allance1\home\vendor\laravel\framework\src\Illuminate\Database\Connection.php(391): Illuminate\Database\Connection->run('insert into `al...', Array, Object(Closure))
@@ -7546,7 +7546,7 @@ Stack trace:
 #52 F:\phpStudy\WWW\php_9\allance1\home\public\index.php(54): Illuminate\Foundation\Http\Kernel->handle(Object(Illuminate\Http\Request))
 #53 {main}
 
-Next exception 'Illuminate\Database\QueryException' with message 'SQLSTATE[42S22]: Column not found: 1054 Unknown column 's_job' in 'field list' (SQL: insert into `al_subscrip` (`s_email`, `s_day`, `s_job`, `s_city`, `s_stage`, `s_industry`, `s_salary`, `s_time`) values ('754070473@qq.com', '3', 'C  ', '北京', '初创型', '移动互联网', '2k以下', '2016-06-25 08:53:24'))' in F:\phpStudy\WWW\php_9\allance1\home\vendor\laravel\framework\src\Illuminate\Database\Connection.php:651
+Next exception 'Illuminate\Database\QueryException' with message 'SQLSTATE[42S22]: Column not found: 1054 Unknown column 's_job' in 'field list' (SQL: insert into `al_subscrip` (`s_email`, `s_day`, `s_job`, `s_city`, `s_stage`, `s_industry`, `s_salary`, `s_time`) values ('754070473@qq.com', '3', 'C  ', '北京', '初创�?, '移动互联�?, '2k以下', '2016-06-25 08:53:24'))' in F:\phpStudy\WWW\php_9\allance1\home\vendor\laravel\framework\src\Illuminate\Database\Connection.php:651
 Stack trace:
 #0 F:\phpStudy\WWW\php_9\allance1\home\vendor\laravel\framework\src\Illuminate\Database\Connection.php(611): Illuminate\Database\Connection->runQueryCallback('insert into `al...', Array, Object(Closure))
 #1 F:\phpStudy\WWW\php_9\allance1\home\vendor\laravel\framework\src\Illuminate\Database\Connection.php(391): Illuminate\Database\Connection->run('insert into `al...', Array, Object(Closure))
@@ -7765,7 +7765,7 @@ Stack trace:
 #52 F:\phpStudy\WWW\php_9\allance1\home\public\index.php(54): Illuminate\Foundation\Http\Kernel->handle(Object(Illuminate\Http\Request))
 #53 {main}
 
-Next exception 'Illuminate\Database\QueryException' with message 'SQLSTATE[42S22]: Column not found: 1054 Unknown column 's_job' in 'field list' (SQL: insert into `al_subscrip` (`s_email`, `s_day`, `s_job`, `s_place`, `s_stage`, `s_industry`, `s_salary`, `s_time`, `per_id`) values (754070473@qq.com, 3, C  , 北京, 初创型, O2O, 2k以下, 2016-06-26 10:44:02, 6))' in F:\phpStudy\WWW\php_9\allance1\home\vendor\laravel\framework\src\Illuminate\Database\Connection.php:651
+Next exception 'Illuminate\Database\QueryException' with message 'SQLSTATE[42S22]: Column not found: 1054 Unknown column 's_job' in 'field list' (SQL: insert into `al_subscrip` (`s_email`, `s_day`, `s_job`, `s_place`, `s_stage`, `s_industry`, `s_salary`, `s_time`, `per_id`) values (754070473@qq.com, 3, C  , 北京, 初创�? O2O, 2k以下, 2016-06-26 10:44:02, 6))' in F:\phpStudy\WWW\php_9\allance1\home\vendor\laravel\framework\src\Illuminate\Database\Connection.php:651
 Stack trace:
 #0 F:\phpStudy\WWW\php_9\allance1\home\vendor\laravel\framework\src\Illuminate\Database\Connection.php(611): Illuminate\Database\Connection->runQueryCallback('insert into `al...', Array, Object(Closure))
 #1 F:\phpStudy\WWW\php_9\allance1\home\vendor\laravel\framework\src\Illuminate\Database\Connection.php(391): Illuminate\Database\Connection->run('insert into `al...', Array, Object(Closure))
@@ -7901,7 +7901,7 @@ Stack trace:
 #52 F:\phpStudy\WWW\php_9\allance1\home\public\index.php(54): Illuminate\Foundation\Http\Kernel->handle(Object(Illuminate\Http\Request))
 #53 {main}
 
-Next exception 'Illuminate\Database\QueryException' with message 'SQLSTATE[42S22]: Column not found: 1054 Unknown column 's_job' in 'field list' (SQL: insert into `al_subscrip` (`s_email`, `s_day`, `s_job`, `s_place`, `s_stage`, `s_industry`, `s_salary`, `s_time`, `per_id`) values (754070473@qq.com, 3, C  , 北京, 成长型, O2O, 2k-5k, 2016-06-26 10:46:08, 6))' in F:\phpStudy\WWW\php_9\allance1\home\vendor\laravel\framework\src\Illuminate\Database\Connection.php:651
+Next exception 'Illuminate\Database\QueryException' with message 'SQLSTATE[42S22]: Column not found: 1054 Unknown column 's_job' in 'field list' (SQL: insert into `al_subscrip` (`s_email`, `s_day`, `s_job`, `s_place`, `s_stage`, `s_industry`, `s_salary`, `s_time`, `per_id`) values (754070473@qq.com, 3, C  , 北京, 成长�? O2O, 2k-5k, 2016-06-26 10:46:08, 6))' in F:\phpStudy\WWW\php_9\allance1\home\vendor\laravel\framework\src\Illuminate\Database\Connection.php:651
 Stack trace:
 #0 F:\phpStudy\WWW\php_9\allance1\home\vendor\laravel\framework\src\Illuminate\Database\Connection.php(611): Illuminate\Database\Connection->runQueryCallback('insert into `al...', Array, Object(Closure))
 #1 F:\phpStudy\WWW\php_9\allance1\home\vendor\laravel\framework\src\Illuminate\Database\Connection.php(391): Illuminate\Database\Connection->run('insert into `al...', Array, Object(Closure))
@@ -8037,7 +8037,7 @@ Stack trace:
 #52 F:\phpStudy\WWW\php_9\allance1\home\public\index.php(54): Illuminate\Foundation\Http\Kernel->handle(Object(Illuminate\Http\Request))
 #53 {main}
 
-Next exception 'Illuminate\Database\QueryException' with message 'SQLSTATE[42S22]: Column not found: 1054 Unknown column 's_job' in 'field list' (SQL: insert into `al_subscrip` (`s_email`, `s_day`, `s_job`, `s_place`, `s_stage`, `s_industry`, `s_salary`, `s_time`, `per_id`) values ('754070473@qq.com', '3', 'C  ', '广州', '成熟型', '教育', '2k以下', '2016-06-26 10:49:11', '6'))' in F:\phpStudy\WWW\php_9\allance1\home\vendor\laravel\framework\src\Illuminate\Database\Connection.php:651
+Next exception 'Illuminate\Database\QueryException' with message 'SQLSTATE[42S22]: Column not found: 1054 Unknown column 's_job' in 'field list' (SQL: insert into `al_subscrip` (`s_email`, `s_day`, `s_job`, `s_place`, `s_stage`, `s_industry`, `s_salary`, `s_time`, `per_id`) values ('754070473@qq.com', '3', 'C  ', '广州', '成熟�?, '教育', '2k以下', '2016-06-26 10:49:11', '6'))' in F:\phpStudy\WWW\php_9\allance1\home\vendor\laravel\framework\src\Illuminate\Database\Connection.php:651
 Stack trace:
 #0 F:\phpStudy\WWW\php_9\allance1\home\vendor\laravel\framework\src\Illuminate\Database\Connection.php(611): Illuminate\Database\Connection->runQueryCallback('insert into `al...', Array, Object(Closure))
 #1 F:\phpStudy\WWW\php_9\allance1\home\vendor\laravel\framework\src\Illuminate\Database\Connection.php(391): Illuminate\Database\Connection->run('insert into `al...', Array, Object(Closure))
@@ -8173,7 +8173,7 @@ Stack trace:
 #52 F:\phpStudy\WWW\php_9\allance1\home\public\index.php(54): Illuminate\Foundation\Http\Kernel->handle(Object(Illuminate\Http\Request))
 #53 {main}
 
-Next exception 'Illuminate\Database\QueryException' with message 'SQLSTATE[42S22]: Column not found: 1054 Unknown column 's_job' in 'field list' (SQL: insert into `al_subscrip` (`s_email`, `s_day`, `s_job`, `s_place`, `s_stage`, `s_industry`, `s_salary`, `s_time`, `per_id`) values (754070473@qq.com, 3, 数据挖掘, 上海, 初创型, 电子商务, 2k-5k, 2016-06-26 10:57:19, 6))' in F:\phpStudy\WWW\php_9\allance1\home\vendor\laravel\framework\src\Illuminate\Database\Connection.php:651
+Next exception 'Illuminate\Database\QueryException' with message 'SQLSTATE[42S22]: Column not found: 1054 Unknown column 's_job' in 'field list' (SQL: insert into `al_subscrip` (`s_email`, `s_day`, `s_job`, `s_place`, `s_stage`, `s_industry`, `s_salary`, `s_time`, `per_id`) values (754070473@qq.com, 3, 数据挖掘, 上海, 初创�? 电子商务, 2k-5k, 2016-06-26 10:57:19, 6))' in F:\phpStudy\WWW\php_9\allance1\home\vendor\laravel\framework\src\Illuminate\Database\Connection.php:651
 Stack trace:
 #0 F:\phpStudy\WWW\php_9\allance1\home\vendor\laravel\framework\src\Illuminate\Database\Connection.php(611): Illuminate\Database\Connection->runQueryCallback('insert into `al...', Array, Object(Closure))
 #1 F:\phpStudy\WWW\php_9\allance1\home\vendor\laravel\framework\src\Illuminate\Database\Connection.php(391): Illuminate\Database\Connection->run('insert into `al...', Array, Object(Closure))

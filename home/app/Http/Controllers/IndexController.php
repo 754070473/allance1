@@ -2,7 +2,8 @@
 namespace App\Http\Controllers;
 use DB;
 use Session;
-
+use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 /**
  *   IndexController  信息展示
@@ -61,7 +62,11 @@ class IndexController extends Controller {
 
     {
          
-       
+       $acc = DB::table('al_place')
+                 ->where('p_pid',0)
+                ->get();
+// print_r($acc);die; 
+                $ar = $this->classify('al_post','p_pid');
        $users = DB::table('al_resume')
             ->join('al_post', 'al_resume.post_id', '=', 'al_post.post_id')
             ->join('al_place', 'al_resume.pla_id', '=', 'al_place.pla_id')
@@ -70,14 +75,99 @@ class IndexController extends Controller {
              ->where('r_type',0)
              ->where('if_img',0)
             ->paginate(15);
-        // print_r($users);die;
-        $ar = $this->classify('al_post','p_pid');
         //print_r($ar);die;
-        return view('index.company', ['users' => $users],['ar'=>$ar]);
+        return view('index.company', ['acc'=>$acc,'ar'=>$ar,'users' => $users]);
 
      // return view("index.company");
     }
+ //公司找简历详细信息
+    public function select_all(Request $request)
+    {
 
+        $id=$request->input('id');
+      //echo ($id);die;
+
+//        $acc = DB::table('al_place')
+//                  ->where('p_pid',0)
+                 
+//                 ->get();
+// //print_r($acc);die; 
+//                 $ar = $this->classify('al_post','p_pid');
+       $users = DB::table('al_resume')
+            ->join('al_post', 'al_resume.post_id', '=', 'al_post.post_id')
+            ->join('al_place', 'al_resume.pla_id', '=', 'al_place.pla_id')
+            ->select('al_resume.*', 'al_post.i_name as p_name', 'al_place.i_name')
+             ->where('al_place.pla_id',"$id")
+             ->where('r_show',0)
+             ->where('r_type',0)
+             ->where('if_img',0)
+            ->paginate(15);
+        // 存储数据到session...
+               session(['pla_id' =>$id]);
+  
+//echo "$value";die;
+       return view('index.companyshowlist', ['users' => $users]);
+ 
+    }
+    //公司找简历详细信息
+    public function select_al(Request $request)
+    {
+
+        $post_id=$request->input('id');
+      //echo ($post_id);die;
+
+       // $acc = DB::table('al_place')
+       //           ->where('p_pid',0)
+                 
+       //          ->get();
+//print_r($acc);die; 
+                // $ar = $this->classify('al_post','p_pid');
+                if(empty(session('pla_id'))){
+             $users = DB::table('al_resume')
+            ->join('al_post', 'al_resume.post_id', '=', 'al_post.post_id')
+            ->join('al_place', 'al_resume.pla_id', '=', 'al_place.pla_id')
+            ->select('al_resume.*', 'al_post.i_name as p_name', 'al_place.i_name')
+             ->where('al_post.post_id',"$post_id")
+             ->where('al_place.pla_id',"$pla_id")
+             ->where('r_show',0)
+             ->where('r_type',0)
+             ->where('if_img',0)
+            ->paginate(15);
+                }else{
+                    // 从session中获取数据...
+    $pla_id = session('pla_id');
+                    $users = DB::table('al_resume')
+            ->join('al_post', 'al_resume.post_id', '=', 'al_post.post_id')
+            ->join('al_place', 'al_resume.pla_id', '=', 'al_place.pla_id')
+            ->select('al_resume.*', 'al_post.i_name as p_name', 'al_place.i_name')
+             ->where('al_post.post_id',"$post_id")
+             ->where('al_place.pla_id',"$pla_id")
+             ->where('r_show',0)
+             ->where('r_type',0)
+             ->where('if_img',0)
+            ->paginate(15);
+                }
+       
+      
+  
+//echo "$value";die;
+       return view('index.companyshowlist', ['users' => $users]);
+       
+}
+//简历详情
+public  function gerenlist(Request $request){
+     $res_id=$request->input('id');
+     $users = DB::table('al_resume')
+            ->join('al_post', 'al_resume.post_id', '=', 'al_post.post_id')
+            ->join('al_place', 'al_resume.pla_id', '=', 'al_place.pla_id')
+            ->select('al_resume.*', 'al_post.i_name as p_name', 'al_place.i_name')
+             ->where('res_id',"$res_id")
+            ->get();
+     //echo "$res_id";die;
+            //print_r($users);die;
+      return view('index.geren', ['users' => $users]);
+
+}
 
 	//展示关于 联系我们
 	public function about()

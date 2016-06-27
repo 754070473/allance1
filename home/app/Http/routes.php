@@ -42,7 +42,12 @@ Route::get('/toudi', 'IndexController@toudi');
 Route::get('/companylist', 'IndexController@companylist');
 //公司找简历
 Route::get('/company', 'IndexController@company');
-
+//查找详细信息
+Route::get('/select_all', 'IndexController@select_all');
+//查找详细信息
+Route::get('/select_al', 'IndexController@select_al');
+//查找个人简历详细信息
+Route::get('/gerenlist', 'IndexController@gerenlist');
 //展示关于 联系我们
 Route::get('/about', 'IndexController@about');	
 
@@ -54,13 +59,9 @@ Route::get('/reset', 'AccountsetController@reset');
    
 //修改密码
 Route::get('/updatePwd', 'AccountsetController@updatePwd'); 
-//修改密码
-Route::get('/pass', 'AccountsetController@pass');
 
 //我收藏的职位
 Route::get('/collections', 'CollectionsController@collections');
-//取消收藏
-Route::get('/cancel_collections', 'CollectionsController@ceancel');
 
 //公司详情
 Route::get('/index04', 'CompanyglController@index04');
@@ -114,19 +115,23 @@ Route::get('/company_login_pro', 'LoginController@company_login_pro');
 
 //我的简历
 Route::get('/jianli', 'PersonalController@jianli');
+
 //个人简历信息
 Route::any('/preview', 'PersonalController@preview');
 Route::any('/basic', 'PersonalController@basic');//基本 信息 修改
 Route::any('/uploadPhoto', 'PersonalController@uploadPhoto');//上传头像
 Route::any('/postcheck', 'PersonalController@postcheck');//职位检测
 Route::any('/expectedwork', 'PersonalController@expectedwork');//修改期望工作
+Route::any('/workexperience', 'PersonalController@workexperience');//修改工作经历
+Route::any('/projectexperience', 'PersonalController@projectexperience');//修改项目经验
+Route::any('/educational', 'PersonalController@educational');//修改教育背景
+Route::any('/majorcheck', 'PersonalController@majorcheck');//检查是否有该专业
+Route::any('/description', 'PersonalController@description');//自我描述
 
     
 //发布新职位
 Route::get('/create', 'PostofficeController@create');
-Route::post('/postAdd','PostofficeController@postAdd');
-Route::get('/jobyl','PostofficeController@jobyl');
-
+	
 //职位发布成功
 Route::get('/index06', 'PostofficeController@index06');	
 
@@ -157,8 +162,7 @@ Route::get('/subscribe', 'SubscribeController@subscribe');
 //我的职位订阅1
 Route::get('/subscribe01', 'SubscribeController@subscribe01');    
 
-//职位订阅入库
-Route::get('/subinfo','SubscribeController@subinfo');
+	
 
 //职位订阅删除
 Route::get('/subdel','SubscribeController@subdel');
