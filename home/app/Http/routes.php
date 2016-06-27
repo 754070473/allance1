@@ -42,7 +42,12 @@ Route::get('/toudi', 'IndexController@toudi');
 Route::get('/companylist', 'IndexController@companylist');
 //公司找简历
 Route::get('/company', 'IndexController@company');
-
+//查找详细信息
+Route::get('/select_all', 'IndexController@select_all');
+//查找详细信息
+Route::get('/select_al', 'IndexController@select_al');
+//查找个人简历详细信息
+Route::get('/gerenlist', 'IndexController@gerenlist');
 //展示关于 联系我们
 Route::get('/about', 'IndexController@about');	
 
@@ -110,6 +115,7 @@ Route::get('/company_login_pro', 'LoginController@company_login_pro');
 
 //我的简历
 Route::get('/jianli', 'PersonalController@jianli');
+
 //个人简历信息
 Route::any('/preview', 'PersonalController@preview');
 Route::any('/basic', 'PersonalController@basic');//基本 信息 修改
@@ -156,5 +162,4 @@ Route::get('/subscribe', 'SubscribeController@subscribe');
 //我的职位订阅1
 Route::get('/subscribe01', 'SubscribeController@subscribe01');    
 
-//职位订阅入库
-Route::get('/subinfo','SubscribeController@subinfo');
+	
