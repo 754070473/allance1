@@ -116,6 +116,11 @@ Route::any('/basic', 'PersonalController@basic');//基本 信息 修改
 Route::any('/uploadPhoto', 'PersonalController@uploadPhoto');//上传头像
 Route::any('/postcheck', 'PersonalController@postcheck');//职位检测
 Route::any('/expectedwork', 'PersonalController@expectedwork');//修改期望工作
+Route::any('/workexperience', 'PersonalController@workexperience');//修改工作经历
+Route::any('/projectexperience', 'PersonalController@projectexperience');//修改项目经验
+Route::any('/educational', 'PersonalController@educational');//修改教育背景
+Route::any('/majorcheck', 'PersonalController@majorcheck');//检查是否有该专业
+Route::any('/description', 'PersonalController@description');//自我描述
 
     
 //发布新职位
