@@ -134,7 +134,7 @@ var youdao_conv_id = 271546;
 	                                                           @foreach ($acc as $v=>$ac)
 	               	                <li  >
                                                                      	
-                                	<a href="javascript:viod(0)" onclick="place({{$ac['pla_id']}})">{{$ac['i_name']}}</a> 
+                                	<a href="javascript:viod(0)" onclick="place({{$ac->pla_id}})">{{$ac->i_name}}</a> 
                                 	                </li>
 	                                                  @endforeach        
 	                                                           
@@ -246,13 +246,13 @@ var youdao_conv_id = 271546;
                                                                      	<?php }else{?>
                                                                      	<li>
                                                                      	<?php } ?>
-			                        <a href="gerenlist?id={{$user['res_id']}}" target="_blank">
+			                        <a href="gerenlist?id={{$user->res_id}}" target="_blank">
 			                        	<h3 title="CCIC">简历</h3>'
 			                        	<div class="comLogo">
 				                        	<img src="style/images/logo_default.png" width="190" height="190" alt="CCIC" />
 				                        	<ul>
-				                        		<li>{{ $user['p_name']}}</li>
-				                        		<li>{{ $user['i_name']}}</li>
+				                        		<li>{{ $user->p_name}}</li>
+				                        		<li>{{ $user->i_name}}</li>
 				                        	</ul>
 			                        	</div>
 			                        </a>
