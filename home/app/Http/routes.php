@@ -159,3 +159,6 @@ Route::get('/subscribe01', 'SubscribeController@subscribe01');
 
 //职位订阅入库
 Route::get('/subinfo','SubscribeController@subinfo');
+
+//职位订阅删除
+Route::get('/subdel','SubscribeController@subdel');
