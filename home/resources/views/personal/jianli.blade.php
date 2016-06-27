@@ -1,6 +1,7 @@
 ﻿<!DOCTYPE HTML>
 <html xmlns:wb="http://open.weibo.com/wb"><head>
-</script><script type="text/javascript" async="" src="style/js/conversion.js"></script><script src="style/js/allmobilize.min.js" charset="utf-8" id="allmobilize"></script><style type="text/css"></style>
+</script><script type="text/javascript" async="" src="style/js/conversion.js"></script>
+<script src="style/js/allmobilize.min.js" charset="utf-8" id="allmobilize"></script><style type="text/css"></style>
 <meta content="no-siteapp" http-equiv="Cache-Control">
 <link  media="handheld" rel="alternate">
 <!-- end 云适配 -->
@@ -28,7 +29,7 @@ console.log(1);
     <script type="text/javascript" src="style/js/excanvas.js"></script>
 <![endif]-->
 <script type="text/javascript">
-var youdao_conv_id = 271546; 
+
 </script> 
 <script src="style/js/conv.js" type="text/javascript"></script>
 <script src="style/js/ajaxCross.json" charset="UTF-8"></script></head>
@@ -41,13 +42,15 @@ var youdao_conv_id = 271546;
     })
 
 </script>
+<body>
+<!--头部-->
+<div id="cache" style="padding-bottom:40px;">
 
+</div>	
+</body>
 <body>
 <div id="body">
-<!--头部-->
-<div id="cache">
 
-</div>
 
     <div id="container">
         
@@ -299,7 +302,7 @@ var youdao_conv_id = 271546;
             		            			<span></span>
             		</div><!--end .expectShow-->
             		<div class="expectEdit dn">
-            			<form id="expectForm">
+            			<form id="expectForm" action="{{url('expectedwork')}}" method="post">
 	            			<table>
 	            				<tbody>
 	            				<tr>
@@ -385,7 +388,7 @@ var youdao_conv_id = 271546;
 	            				<tr>
 	            					<td>
 							        	<input type="text" placeholder="期望职位，如：产品经理" value="" name="i_name" id="expectPosition">
-							        	<input type="hidden" value="" name="post_id" id="post_id">
+							        	
 							        	<br>
 							        	<span id="postcheck"></span>
 									</td>
@@ -426,8 +429,10 @@ var youdao_conv_id = 271546;
 	            				</tr>
 	            				<tr>
 	            					<td colspan="3">
-										<input type="submit" value="保 存" class="btn_profile_save">
-						          		<a class="btn_profile_cancel" href="javascript:;">取 消</a>
+			            					<input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
+								      		<input type="hidden" name="res_id" value="{{$arr->res_id}}">
+											<input type="submit" value="保 存" class="btn_profile_save">
+							          		<a class="btn_profile_cancel" href="javascript:;">取 消</a>
 	            					</td>
 	            				</tr>
 	            			</tbody></table>
@@ -450,7 +455,7 @@ var youdao_conv_id = 271546;
             		<h2>工作经历  <span> （投递简历时必填）</span></h2>
             		            		<span class="c_add dn"></span>
             		<div class="experienceShow dn">
-            		            			<form class="experienceForm borderBtm dn">
+            		    <form class="experienceForm borderBtm dn" action="{{url('workexperience')}}" method="post">
 	            			<table>
 	            				<tbody><tr>
 							      	<td valign="top">
@@ -476,51 +481,7 @@ var youdao_conv_id = 271546;
 								        	<input type="button" value="开始年份" class="profile_select_139 profile_select_normal select_companyYearStart">
 											<div class="box_companyYearStart boxUpDown boxUpDown_139 dn" style="display: none;">
 									            <ul>
-							        			<li>2014</li>
-							        			<li>2013</li>
-							        			<li>2012</li>
-							        			<li>2011</li>
-							        			<li>2010</li>
-							        			<li>2009</li>
-							        			<li>2008</li>
-							        			<li>2007</li>
-							        			<li>2006</li>
-							        			<li>2005</li>
-							        			<li>2004</li>
-							        			<li>2003</li>
-							        			<li>2002</li>
-							        			<li>2001</li>
-							        			<li>2000</li>
-							        			<li>1999</li>
-							        			<li>1998</li>
-							        			<li>1997</li>
-							        			<li>1996</li>
-							        			<li>1995</li>
-							        			<li>1994</li>
-							        			<li>1993</li>
-							        			<li>1992</li>
-							        			<li>1991</li>
-							        			<li>1990</li>
-							        			<li>1989</li>
-							        			<li>1988</li>
-							        			<li>1987</li>
-							        			<li>1986</li>
-							        			<li>1985</li>
-							        			<li>1984</li>
-							        			<li>1983</li>
-							        			<li>1982</li>
-							        			<li>1981</li>
-							        			<li>1980</li>
-							        			<li>1979</li>
-							        			<li>1978</li>
-							        			<li>1977</li>
-							        			<li>1976</li>
-							        			<li>1975</li>
-							        			<li>1974</li>
-							        			<li>1973</li>
-							        			<li>1972</li>
-							        			<li>1971</li>
-							        			<li>1970</li>
+									            <li>2014</li><li>2013</li><li>2012</li><li>2011</li><li>2010</li><li>2009</li><li>2008</li><li>2007</li><li>2006</li><li>2005</li><li>2004</li><li>2003</li><li>2002</li><li>2001</li><li>2000</li><li>1999</li><li>1998</li><li>1997</li><li>1996</li><li>1995</li><li>1994</li><li>1993</li><li>1992</li><li>1991</li><li>1990</li><li>1989</li><li>1988</li><li>1987</li><li>1986</li><li>1985</li><li>1984</li><li>1983</li><li>1982</li><li>1981</li><li>1980</li><li>1979</li><li>1978</li><li>1977</li><li>1976</li><li>1975</li><li>1974</li><li>1973</li><li>1972</li><li>1971</li><li>1970</li>
 									        	</ul>
 									        </div>
 										</div>
@@ -544,52 +505,8 @@ var youdao_conv_id = 271546;
 								        	<input type="button" value="结束年份" class="profile_select_139 profile_select_normal select_companyYearEnd">
 											<div class="box_companyYearEnd  boxUpDown boxUpDown_139 dn" style="display: none;">
 									            <ul>
-<li>至今</li>
-								        			<li>2014</li>
-								        			<li>2013</li>
-								        			<li>2012</li>
-								        			<li>2011</li>
-								        			<li>2010</li>
-								        			<li>2009</li>
-								        			<li>2008</li>
-								        			<li>2007</li>
-								        			<li>2006</li>
-								        			<li>2005</li>
-								        			<li>2004</li>
-								        			<li>2003</li>
-								        			<li>2002</li>
-								        			<li>2001</li>
-								        			<li>2000</li>
-								        			<li>1999</li>
-								        			<li>1998</li>
-								        			<li>1997</li>
-								        			<li>1996</li>
-								        			<li>1995</li>
-								        			<li>1994</li>
-								        			<li>1993</li>
-								        			<li>1992</li>
-								        			<li>1991</li>
-								        			<li>1990</li>
-								        			<li>1989</li>
-								        			<li>1988</li>
-								        			<li>1987</li>
-								        			<li>1986</li>
-								        			<li>1985</li>
-								        			<li>1984</li>
-								        			<li>1983</li>
-								        			<li>1982</li>
-								        			<li>1981</li>
-								        			<li>1980</li>
-								        			<li>1979</li>
-								        			<li>1978</li>
-								        			<li>1977</li>
-								        			<li>1976</li>
-								        			<li>1975</li>
-								        			<li>1974</li>
-								        			<li>1973</li>
-								        			<li>1972</li>
-								        			<li>1971</li>
-								        			<li>1970</li>
+													<li>至今</li><li>2014</li><li>2013</li><li>2012</li><li>2011</li><li>2010</li><li>2009</li><li>2008</li><li>2007</li><li>2006</li><li>2005</li><li>2004</li><li>2003</li><li>2002</li><li>2001</li><li>2000</li><li>1999</li><li>1998</li><li>1997</li><li>1996</li><li>1995</li><li>1994</li><li>1993</li><li>1992</li><li>1991</li><li>1990</li><li>1989</li><li>1988</li><li>1987</li><li>1986</li><li>1985</li><li>1984</li><li>1983</li><li>1982</li><li>1981</li><li>1980</li><li>1979</li><li>1978</li><li>1977</li><li>1976</li><li>1975</li><li>1974</li><li>1973</li><li>1972</li><li>1971</li><li>1970</li>
+
 									        	</ul>
 									        </div>
 										</div>
@@ -608,19 +525,21 @@ var youdao_conv_id = 271546;
 	            				<tr>
 	            					<td></td>
 	            					<td colspan="3">
+	            						<input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
+								      	<input type="hidden" name="res_id" value="{{$arr->res_id}}">
 										<input type="submit" value="保 存" class="btn_profile_save">
 						          		<a class="btn_profile_cancel" href="javascript:;">取 消</a>
 	            					</td>
 	            				</tr>
 	            			</tbody></table>
-	            			<input type="hidden" class="expId" value="">
             			</form><!--end .experienceForm-->
             			
             			<ul class="wlist clearfix">
             				            				            			</ul>
             		</div><!--end .experienceShow-->
             		<div class="experienceEdit dn">
-            			<form class="experienceForm">
+            			<form class="experienceForm" action="{{url('workexperience')}}" method="post">
+            			
 	            			<table>
 	            				<tbody><tr>
 							      	<td valign="top">
@@ -646,51 +565,8 @@ var youdao_conv_id = 271546;
 								        	<input type="button" value="开始年份" class="profile_select_139 profile_select_normal select_companyYearStart">
 											<div class="box_companyYearStart boxUpDown boxUpDown_139 dn" style="display: none;">
 									            <ul>
-									        			<li>2014</li>
-									        			<li>2013</li>
-									        			<li>2012</li>
-									        			<li>2011</li>
-									        			<li>2010</li>
-									        			<li>2009</li>
-									        			<li>2008</li>
-									        			<li>2007</li>
-									        			<li>2006</li>
-									        			<li>2005</li>
-									        			<li>2004</li>
-									        			<li>2003</li>
-									        			<li>2002</li>
-									        			<li>2001</li>
-									        			<li>2000</li>
-									        			<li>1999</li>
-									        			<li>1998</li>
-									        			<li>1997</li>
-									        			<li>1996</li>
-									        			<li>1995</li>
-									        			<li>1994</li>
-									        			<li>1993</li>
-									        			<li>1992</li>
-									        			<li>1991</li>
-									        			<li>1990</li>
-									        			<li>1989</li>
-									        			<li>1988</li>
-									        			<li>1987</li>
-									        			<li>1986</li>
-									        			<li>1985</li>
-									        			<li>1984</li>
-									        			<li>1983</li>
-									        			<li>1982</li>
-									        			<li>1981</li>
-									        			<li>1980</li>
-									        			<li>1979</li>
-									        			<li>1978</li>
-									        			<li>1977</li>
-									        			<li>1976</li>
-									        			<li>1975</li>
-									        			<li>1974</li>
-									        			<li>1973</li>
-									        			<li>1972</li>
-									        			<li>1971</li>
-									        			<li>1970</li>
+									        												            <li>2014</li><li>2013</li><li>2012</li><li>2011</li><li>2010</li><li>2009</li><li>2008</li><li>2007</li><li>2006</li><li>2005</li><li>2004</li><li>2003</li><li>2002</li><li>2001</li><li>2000</li><li>1999</li><li>1998</li><li>1997</li><li>1996</li><li>1995</li><li>1994</li><li>1993</li><li>1992</li><li>1991</li><li>1990</li><li>1989</li><li>1988</li><li>1987</li><li>1986</li><li>1985</li><li>1984</li><li>1983</li><li>1982</li><li>1981</li><li>1980</li><li>1979</li><li>1978</li><li>1977</li><li>1976</li><li>1975</li><li>1974</li><li>1973</li><li>1972</li><li>1971</li><li>1970</li>
+
 									        	</ul>
 									        </div>
 										</div>
@@ -715,51 +591,8 @@ var youdao_conv_id = 271546;
 											<div class="box_companyYearEnd  boxUpDown boxUpDown_139 dn" style="display: none;">
 									            <ul>
 									            	<li>至今</li>
-									        			<li>2014</li>
-									        			<li>2013</li>
-									        			<li>2012</li>
-									        			<li>2011</li>
-									        			<li>2010</li>
-									        			<li>2009</li>
-									        			<li>2008</li>
-									        			<li>2007</li>
-									        			<li>2006</li>
-									        			<li>2005</li>
-									        			<li>2004</li>
-									        			<li>2003</li>
-									        			<li>2002</li>
-									        			<li>2001</li>
-									        			<li>2000</li>
-									        			<li>1999</li>
-									        			<li>1998</li>
-									        			<li>1997</li>
-									        			<li>1996</li>
-									        			<li>1995</li>
-									        			<li>1994</li>
-									        			<li>1993</li>
-									        			<li>1992</li>
-									        			<li>1991</li>
-									        			<li>1990</li>
-									        			<li>1989</li>
-									        			<li>1988</li>
-									        			<li>1987</li>
-									        			<li>1986</li>
-									        			<li>1985</li>
-									        			<li>1984</li>
-									        			<li>1983</li>
-									        			<li>1982</li>
-									        			<li>1981</li>
-									        			<li>1980</li>
-									        			<li>1979</li>
-									        			<li>1978</li>
-									        			<li>1977</li>
-									        			<li>1976</li>
-									        			<li>1975</li>
-									        			<li>1974</li>
-									        			<li>1973</li>
-									        			<li>1972</li>
-									        			<li>1971</li>
-									        			<li>1970</li>
+									        												            <li>2014</li><li>2013</li><li>2012</li><li>2011</li><li>2010</li><li>2009</li><li>2008</li><li>2007</li><li>2006</li><li>2005</li><li>2004</li><li>2003</li><li>2002</li><li>2001</li><li>2000</li><li>1999</li><li>1998</li><li>1997</li><li>1996</li><li>1995</li><li>1994</li><li>1993</li><li>1992</li><li>1991</li><li>1990</li><li>1989</li><li>1988</li><li>1987</li><li>1986</li><li>1985</li><li>1984</li><li>1983</li><li>1982</li><li>1981</li><li>1980</li><li>1979</li><li>1978</li><li>1977</li><li>1976</li><li>1975</li><li>1974</li><li>1973</li><li>1972</li><li>1971</li><li>1970</li>
+
 									        	</ul>
 									        </div>
 										</div>
@@ -778,6 +611,9 @@ var youdao_conv_id = 271546;
 	            				<tr>
 	            					<td></td>
 	            					<td colspan="3">
+
+	            						<input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
+								      	<input type="hidden" name="res_id" value="{{$arr->res_id}}">
 										<input type="submit" value="保 存" class="btn_profile_save">
 						          		<a class="btn_profile_cancel" href="javascript:;">取 消</a>
 	            					</td>
@@ -796,13 +632,13 @@ var youdao_conv_id = 271546;
 
             	<div class="profile_box" id="projectExperience">
             		<h2>项目经验</h2>
-            		            		<span class="c_add dn"></span>
+            		     <span class="c_add dn"></span>
             		<div class="projectShow dn">
             		            			<ul class="plist clearfix">
 	            			            			</ul>
             		</div><!--end .projectShow-->
             		<div class="projectEdit dn">
-            			<form class="projectForm">
+            			<form class="projectForm" action="{{url('projectexperience')}}" method="post">
 	            			<table>
 	            				<tbody><tr>
 	            					<td valign="top">
@@ -828,51 +664,8 @@ var youdao_conv_id = 271546;
 								        	<input type="button" value="开始年份" class="profile_select_139 profile_select_normal select_projectYearStart">
 											<div class="box_projectYearStart  boxUpDown boxUpDown_139 dn" style="display: none;">
 									            <ul>
-									        			<li>2014</li>
-									        			<li>2013</li>
-									        			<li>2012</li>
-									        			<li>2011</li>
-									        			<li>2010</li>
-									        			<li>2009</li>
-									        			<li>2008</li>
-									        			<li>2007</li>
-									        			<li>2006</li>
-									        			<li>2005</li>
-									        			<li>2004</li>
-									        			<li>2003</li>
-									        			<li>2002</li>
-									        			<li>2001</li>
-									        			<li>2000</li>
-									        			<li>1999</li>
-									        			<li>1998</li>
-									        			<li>1997</li>
-									        			<li>1996</li>
-									        			<li>1995</li>
-									        			<li>1994</li>
-									        			<li>1993</li>
-									        			<li>1992</li>
-									        			<li>1991</li>
-									        			<li>1990</li>
-									        			<li>1989</li>
-									        			<li>1988</li>
-									        			<li>1987</li>
-									        			<li>1986</li>
-									        			<li>1985</li>
-									        			<li>1984</li>
-									        			<li>1983</li>
-									        			<li>1982</li>
-									        			<li>1981</li>
-									        			<li>1980</li>
-									        			<li>1979</li>
-									        			<li>1978</li>
-									        			<li>1977</li>
-									        			<li>1976</li>
-									        			<li>1975</li>
-									        			<li>1974</li>
-									        			<li>1973</li>
-									        			<li>1972</li>
-									        			<li>1971</li>
-									        			<li>1970</li>
+									        		<li>2014</li><li>2013</li><li>2012</li><li>2011</li><li>2010</li><li>2009</li><li>2008</li><li>2007</li><li>2006</li><li>2005</li><li>2004</li><li>2003</li><li>2002</li><li>2001</li><li>2000</li><li>1999</li><li>1998</li><li>1997</li><li>1996</li><li>1995</li><li>1994</li><li>1993</li><li>1992</li><li>1991</li><li>1990</li><li>1989</li><li>1988</li><li>1987</li><li>1986</li><li>1985</li><li>1984</li><li>1983</li><li>1982</li><li>1981</li><li>1980</li><li>1979</li><li>1978</li><li>1977</li><li>1976</li><li>1975</li><li>1974</li><li>1973</li><li>1972</li><li>1971</li><li>1970</li>
+
 									        	</ul>
 									        </div>
 										</div>
@@ -897,51 +690,8 @@ var youdao_conv_id = 271546;
 											<div class="box_projectYearEnd  boxUpDown boxUpDown_139 dn" style="display: none;">
 									            <ul>
 									            	<li>至今</li>
-									        			<li>2014</li>
-									        			<li>2013</li>
-									        			<li>2012</li>
-									        			<li>2011</li>
-									        			<li>2010</li>
-									        			<li>2009</li>
-									        			<li>2008</li>
-									        			<li>2007</li>
-									        			<li>2006</li>
-									        			<li>2005</li>
-									        			<li>2004</li>
-									        			<li>2003</li>
-									        			<li>2002</li>
-									        			<li>2001</li>
-									        			<li>2000</li>
-									        			<li>1999</li>
-									        			<li>1998</li>
-									        			<li>1997</li>
-									        			<li>1996</li>
-									        			<li>1995</li>
-									        			<li>1994</li>
-									        			<li>1993</li>
-									        			<li>1992</li>
-									        			<li>1991</li>
-									        			<li>1990</li>
-									        			<li>1989</li>
-									        			<li>1988</li>
-									        			<li>1987</li>
-									        			<li>1986</li>
-									        			<li>1985</li>
-									        			<li>1984</li>
-									        			<li>1983</li>
-									        			<li>1982</li>
-									        			<li>1981</li>
-									        			<li>1980</li>
-									        			<li>1979</li>
-									        			<li>1978</li>
-									        			<li>1977</li>
-									        			<li>1976</li>
-									        			<li>1975</li>
-									        			<li>1974</li>
-									        			<li>1973</li>
-									        			<li>1972</li>
-									        			<li>1971</li>
-									        			<li>1970</li>
+									        												            <li>2014</li><li>2013</li><li>2012</li><li>2011</li><li>2010</li><li>2009</li><li>2008</li><li>2007</li><li>2006</li><li>2005</li><li>2004</li><li>2003</li><li>2002</li><li>2001</li><li>2000</li><li>1999</li><li>1998</li><li>1997</li><li>1996</li><li>1995</li><li>1994</li><li>1993</li><li>1992</li><li>1991</li><li>1990</li><li>1989</li><li>1988</li><li>1987</li><li>1986</li><li>1985</li><li>1984</li><li>1983</li><li>1982</li><li>1981</li><li>1980</li><li>1979</li><li>1978</li><li>1977</li><li>1976</li><li>1975</li><li>1974</li><li>1973</li><li>1972</li><li>1971</li><li>1970</li>
+
 									        	</ul>
 									        </div>
 										</div>
@@ -973,6 +723,8 @@ var youdao_conv_id = 271546;
 	            				<tr>
 	            					<td valign="top"></td> 
 	            					<td colspan="3">
+	            						<input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
+								      	<input type="hidden" name="res_id" value="{{$arr->res_id}}">
 										<input type="submit" value="保 存" class="btn_profile_save">
 						          		<a class="btn_profile_cancel" href="javascript:;">取 消</a>
 	            					</td>
@@ -991,176 +743,8 @@ var youdao_conv_id = 271546;
             	<div class="profile_box" id="educationalBackground">
             		<h2>教育背景<span>（投递简历时必填）</span></h2>
             							<span class="c_add dn"></span>
-            		<div class="educationalShow dn">
-            		            			<form class="educationalForm borderBtm dn">
-	            			<table>
-	            				<tbody><tr>
-							      	<td valign="top">
-							        	<span class="redstar">*</span>
-							      	</td> 
-							      	<td>
-							        	<input type="text" placeholder="学校名称" name="schoolName" class="schoolName">
-							      	</td>
-							      	<td valign="top">
-							        	<span class="redstar">*</span>
-							      	</td> 
-							      	<td>
-							      		<input type="hidden" class="degree" value="" name="degree">
-							        	<input type="button" value="学历" class="profile_select_287 profile_select_normal select_degree">
-										<div class="box_degree boxUpDown boxUpDown_287 dn" style="display: none;">
-								            <ul>
-								        			<li>大专</li>
-								        			<li>本科</li>
-								        			<li>硕士</li>
-								        			<li>博士</li>
-								        			<li>其他</li>
-								        	</ul>
-								        </div>
-							        </td>
-							    </tr>
-	            				<tr>
-	            					<td valign="top">
-							        	<span class="redstar">*</span>
-							      	</td> 
-	            					<td>
-	            						<input type="text" placeholder="专业名称" name="professionalName" class="professionalName">
-	            					</td>
-	            					<td valign="top">
-							        	<span class="redstar">*</span>
-							      	</td> 
-	            					<td>
-		            					<div class="fl">
-		            						<input type="hidden" class="schoolYearStart" value="" name="schoolYearStart">
-								        	<input type="button" value="开始年份" class="profile_select_139 profile_select_normal select_schoolYearStart">
-											<div class="box_schoolYearStart boxUpDown boxUpDown_139 dn" style="display: none;">
-									            <ul>
-								        			<li>2014</li>
-								        			<li>2013</li>
-								        			<li>2012</li>
-								        			<li>2011</li>
-								        			<li>2010</li>
-								        			<li>2009</li>
-								        			<li>2008</li>
-								        			<li>2007</li>
-								        			<li>2006</li>
-								        			<li>2005</li>
-								        			<li>2004</li>
-								        			<li>2003</li>
-								        			<li>2002</li>
-								        			<li>2001</li>
-								        			<li>2000</li>
-								        			<li>1999</li>
-								        			<li>1998</li>
-								        			<li>1997</li>
-								        			<li>1996</li>
-								        			<li>1995</li>
-								        			<li>1994</li>
-								        			<li>1993</li>
-								        			<li>1992</li>
-								        			<li>1991</li>
-								        			<li>1990</li>
-								        			<li>1989</li>
-								        			<li>1988</li>
-								        			<li>1987</li>
-								        			<li>1986</li>
-								        			<li>1985</li>
-								        			<li>1984</li>
-								        			<li>1983</li>
-								        			<li>1982</li>
-								        			<li>1981</li>
-								        			<li>1980</li>
-								        			<li>1979</li>
-								        			<li>1978</li>
-								        			<li>1977</li>
-								        			<li>1976</li>
-								        			<li>1975</li>
-								        			<li>1974</li>
-								        			<li>1973</li>
-								        			<li>1972</li>
-								        			<li>1971</li>
-								        			<li>1970</li>
-									        	</ul>
-									        </div>
-										</div>
-										<div class="fl">
-		            						<input type="hidden" class="schoolYearEnd" value="" name="schoolYearEnd">
-								        	<input type="button" value="结束年份" class="profile_select_139 profile_select_normal select_schoolYearEnd">
-											<div style="display: none;" class="box_schoolYearEnd  boxUpDown boxUpDown_139 dn">
-									            <ul>
-									        			<li>2021</li>
-									        			<li>2020</li>
-									        			<li>2019</li>
-									        			<li>2018</li>
-									        			<li>2017</li>
-									        			<li>2016</li>
-									        			<li>2015</li>
-									        			<li>2014</li>
-									        			<li>2013</li>
-									        			<li>2012</li>
-									        			<li>2011</li>
-									        			<li>2010</li>
-									        			<li>2009</li>
-									        			<li>2008</li>
-									        			<li>2007</li>
-									        			<li>2006</li>
-									        			<li>2005</li>
-									        			<li>2004</li>
-									        			<li>2003</li>
-									        			<li>2002</li>
-									        			<li>2001</li>
-									        			<li>2000</li>
-									        			<li>1999</li>
-									        			<li>1998</li>
-									        			<li>1997</li>
-									        			<li>1996</li>
-									        			<li>1995</li>
-									        			<li>1994</li>
-									        			<li>1993</li>
-									        			<li>1992</li>
-									        			<li>1991</li>
-									        			<li>1990</li>
-									        			<li>1989</li>
-									        			<li>1988</li>
-									        			<li>1987</li>
-									        			<li>1986</li>
-									        			<li>1985</li>
-									        			<li>1984</li>
-									        			<li>1983</li>
-									        			<li>1982</li>
-									        			<li>1981</li>
-									        			<li>1980</li>
-									        			<li>1979</li>
-									        			<li>1978</li>
-									        			<li>1977</li>
-									        			<li>1976</li>
-									        			<li>1975</li>
-									        			<li>1974</li>
-									        			<li>1973</li>
-									        			<li>1972</li>
-									        			<li>1971</li>
-									        			<li>1970</li>
-									        	</ul>
-									        </div>
-	            						</div>
-	            						<div class="clear"></div>
-	            					</td>
-	            				</tr>
-	            				<tr>
-	            					<td></td>
-	            					<td colspan="3">
-										<input type="submit" value="保 存" class="btn_profile_save">
-						          		<a class="btn_profile_cancel" href="javascript:;">取 消</a>
-	            					</td>
-	            				</tr>
-	            			</tbody></table>
-	            			<input type="hidden" class="eduId" value="">
-            			</form><!--end .educationalForm-->
-
-            			<ul class="elist clearfix">
-            					            			            			</ul>
-            		</div><!--end .educationalShow-->
             		<div class="educationalEdit dn">
-            			<form class="educationalForm">
+            			<form class="educationalForm" action="{{url('educational')}}" method="post">
 	            			<table>
 	            				<tbody><tr>
 							      	<td valign="top">
@@ -1177,10 +761,15 @@ var youdao_conv_id = 271546;
 							        	<input type="button" value="学历" class="profile_select_287 profile_select_normal select_degree">
 										<div class="box_degree boxUpDown boxUpDown_287 dn" style="display: none;">
 								            <ul>
+								        			<li>初中</li>
+								        			<li>高中</li>
+								        			<li>中技</li>
+								        			<li>中专</li>
 								        			<li>大专</li>
 								        			<li>本科</li>
 								        			<li>硕士</li>
 								        			<li>博士</li>
+								        			<li>博后</li>
 								        			<li>其他</li>
 								        	</ul>
 								        </div>
@@ -1192,6 +781,31 @@ var youdao_conv_id = 271546;
 							      	</td> 
 	            					<td>
 	            						<input type="text" placeholder="专业名称" name="professionalName" class="professionalName">
+	            						<br>
+	            						<span id="professionalName"></span>
+	            						<script type="text/javascript">
+		            						$(".professionalName").keyup(function(){
+												var m_name=$(this).val();
+												if(m_name==""){
+													$("#professionalName").css('color','red').html("请输入专业名称，如：软件工程");
+												}else{
+												//alert(1)
+													$.ajax({
+													   type: "get",
+													   url: "{{url('majorcheck')}}",
+													   data: "m_name="+m_name,
+													   success: function(msg){
+													   	//alert(msg)
+													     if (msg=="1") {
+													     	$("#professionalName").html("");
+													     }else{
+													     	$("#professionalName").css('color','red').html("请输入有效的专业名，如：软件工程");
+													     }
+													   }
+													});
+												}
+											})
+										</script>
 	            					</td>
 	            					<td valign="top">
 							        	<span class="redstar">*</span>
@@ -1202,51 +816,7 @@ var youdao_conv_id = 271546;
 								        	<input type="button" value="开始年份" class="profile_select_139 profile_select_normal select_schoolYearStart">
 											<div class="box_schoolYearStart boxUpDown boxUpDown_139 dn" style="display: none;">
 									            <ul>
-									        			<li>2014</li>
-									        			<li>2013</li>
-									        			<li>2012</li>
-									        			<li>2011</li>
-									        			<li>2010</li>
-									        			<li>2009</li>
-									        			<li>2008</li>
-									        			<li>2007</li>
-									        			<li>2006</li>
-									        			<li>2005</li>
-									        			<li>2004</li>
-									        			<li>2003</li>
-									        			<li>2002</li>
-									        			<li>2001</li>
-									        			<li>2000</li>
-									        			<li>1999</li>
-									        			<li>1998</li>
-									        			<li>1997</li>
-									        			<li>1996</li>
-									        			<li>1995</li>
-									        			<li>1994</li>
-									        			<li>1993</li>
-									        			<li>1992</li>
-									        			<li>1991</li>
-									        			<li>1990</li>
-									        			<li>1989</li>
-									        			<li>1988</li>
-									        			<li>1987</li>
-									        			<li>1986</li>
-									        			<li>1985</li>
-									        			<li>1984</li>
-									        			<li>1983</li>
-									        			<li>1982</li>
-									        			<li>1981</li>
-									        			<li>1980</li>
-									        			<li>1979</li>
-									        			<li>1978</li>
-									        			<li>1977</li>
-									        			<li>1976</li>
-									        			<li>1975</li>
-									        			<li>1974</li>
-									        			<li>1973</li>
-									        			<li>1972</li>
-									        			<li>1971</li>
-									        			<li>1970</li>
+									        		<li>2014</li><li>2013</li><li>2012</li><li>2011</li><li>2010</li><li>2009</li><li>2008</li><li>2007</li><li>2006</li><li>2005</li><li>2004</li><li>2003</li><li>2002</li><li>2001</li><li>2000</li><li>1999</li><li>1998</li><li>1997</li><li>1996</li><li>1995</li><li>1994</li><li>1993</li><li>1992</li><li>1991</li><li>1990</li><li>1989</li><li>1988</li><li>1987</li><li>1986</li><li>1985</li><li>1984</li><li>1983</li><li>1982</li><li>1981</li><li>1980</li><li>1979</li><li>1978</li><li>1977</li><li>1976</li><li>1975</li><li>1974</li><li>1973</li><li>1972</li><li>1971</li><li>1970</li>
 									        	</ul>
 									        </div>
 										</div>
@@ -1255,51 +825,7 @@ var youdao_conv_id = 271546;
 								        	<input type="button" value="结束年份" class="profile_select_139 profile_select_normal select_schoolYearEnd">
 											<div class="box_schoolYearEnd  boxUpDown boxUpDown_139 dn" style="display: none;">
 									            <ul>
-									        			<li>2014</li>
-									        			<li>2013</li>
-									        			<li>2012</li>
-									        			<li>2011</li>
-									        			<li>2010</li>
-									        			<li>2009</li>
-									        			<li>2008</li>
-									        			<li>2007</li>
-									        			<li>2006</li>
-									        			<li>2005</li>
-									        			<li>2004</li>
-									        			<li>2003</li>
-									        			<li>2002</li>
-									        			<li>2001</li>
-									        			<li>2000</li>
-									        			<li>1999</li>
-									        			<li>1998</li>
-									        			<li>1997</li>
-									        			<li>1996</li>
-									        			<li>1995</li>
-									        			<li>1994</li>
-									        			<li>1993</li>
-									        			<li>1992</li>
-									        			<li>1991</li>
-									        			<li>1990</li>
-									        			<li>1989</li>
-									        			<li>1988</li>
-									        			<li>1987</li>
-									        			<li>1986</li>
-									        			<li>1985</li>
-									        			<li>1984</li>
-									        			<li>1983</li>
-									        			<li>1982</li>
-									        			<li>1981</li>
-									        			<li>1980</li>
-									        			<li>1979</li>
-									        			<li>1978</li>
-									        			<li>1977</li>
-									        			<li>1976</li>
-									        			<li>1975</li>
-									        			<li>1974</li>
-									        			<li>1973</li>
-									        			<li>1972</li>
-									        			<li>1971</li>
-									        			<li>1970</li>
+									        		<li>2016</li><li>2015</li><li>2014</li><li>2013</li><li>2012</li><li>2011</li><li>2010</li><li>2009</li><li>2008</li><li>2007</li><li>2006</li><li>2005</li><li>2004</li><li>2003</li><li>2002</li><li>2001</li><li>2000</li><li>1999</li><li>1998</li><li>1997</li><li>1996</li><li>1995</li><li>1994</li><li>1993</li><li>1992</li><li>1991</li><li>1990</li><li>1989</li><li>1988</li><li>1987</li><li>1986</li><li>1985</li><li>1984</li><li>1983</li><li>1982</li><li>1981</li><li>1980</li><li>1979</li><li>1978</li><li>1977</li><li>1976</li><li>1975</li><li>1974</li><li>1973</li><li>1972</li><li>1971</li><li>1970</li>
 									        	</ul>
 									        </div>
 	            						</div>
@@ -1309,6 +835,8 @@ var youdao_conv_id = 271546;
 	            				<tr>
 	            					<td></td>
 	            					<td colspan="3">
+	            						<input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
+								      	<input type="hidden" name="res_id" value="{{$arr->res_id}}">
 										<input type="submit" value="保 存" class="btn_profile_save">
 						          		<a class="btn_profile_cancel" href="javascript:;">取 消</a>
 	            					</td>
@@ -1331,7 +859,7 @@ var youdao_conv_id = 271546;
             		            			
             		</div><!--end .descriptionShow-->
             		<div class="descriptionEdit dn">
-            			<form class="descriptionForm">
+            			<form class="descriptionForm" action="{{url('description')}}" method="post">
 	            			<table>
 	            				<tbody><tr>
 									<td colspan="2">
@@ -1341,6 +869,8 @@ var youdao_conv_id = 271546;
 	            				</tr>
 	            				<tr>
 	            					<td colspan="2">
+	            						<input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
+								      	<input type="hidden" name="res_id" value="{{$arr->res_id}}">
 										<input type="submit" value="保 存" class="btn_profile_save">
 						          		<a class="btn_profile_cancel" href="javascript:;">取 消</a>
 	            					</td>
@@ -1355,43 +885,49 @@ var youdao_conv_id = 271546;
             		</div><!--end .descriptionAdd-->
             	</div><!--end #selfDescription-->
 
-            	<div class="profile_box" id="worksShow">
+            	<!-- <div class="profile_box" id="worksShow">
             		<h2>作品展示</h2>
             		            		<span class="c_add dn"></span>
             		<div class="workShow dn">
             		            			<ul class="slist clearfix">
             				            			</ul>
-            		</div><!--end .workShow-->
+            		</div>end .workShow
             		<div class="workEdit dn">
-            			<form class="workForm">
-	            			<table>
-	            				<tbody><tr>
-							      	<td>
-							        	<input type="text" placeholder="请输入作品链接" name="workLink" class="workLink">
-							      	</td>
-							    </tr>
-	            				<tr>
-									<td>
-										<textarea maxlength="100" class="workDescription s_textarea" name="workDescription" placeholder="请输入说明文字"></textarea>
-										<div class="word_count">你还可以输入 <span>100</span> 字</div>
-									</td>
-	            				</tr>
-	            				<tr>
-	            					<td>
-										<input type="submit" value="保 存" class="btn_profile_save">
-						          		<a class="btn_profile_cancel" href="javascript:;">取 消</a>
-	            					</td>
-	            				</tr>
-	            			</tbody></table>
-	            			<input type="hidden" class="showId" value="">
-            			</form><!--end .workForm-->
-            		</div><!--end .workEdit-->
+            			<form class="workForm" action="{{url('workexperience')}}" method="post">
+            	
+            		            						
+            		            			<table>
+            		            				<tbody><tr>
+            								      	<td>
+            								        	<input type="text" placeholder="请输入作品链接" name="workLink" class="workLink">
+            								      	</td>
+            								    </tr>
+            		            				<tr>
+            										<td>
+            											<textarea maxlength="100" class="workDescription s_textarea" name="workDescription" placeholder="请输入说明文字"></textarea>
+            											<div class="word_count">你还可以输入 <span>100</span> 字</div>
+            										</td>
+            		            				</tr>
+            		            				<tr>
+            		            					<td>
+            		            					<input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
+            									      	<input type="hidden" name="res_id" value="{{$arr->res_id}}">
+            											<input type="submit" value="保 存" class="btn_profile_save">
+            							          		<a class="btn_profile_cancel" href="javascript:;">取 消</a>
+            		            					</td>
+            		            				</tr>
+            		            			</tbody></table>
+            		            			<input type="hidden" class="showId" value="">
+            			</form>end .workForm
+            		</div>end .workEdit
             		            		<div class="workAdd pAdd">
             		            			好作品会说话！<br>
-						快来秀出你的作品打动企业吧！
-						<span>添加作品展示</span>
-            		</div><!--end .workAdd-->
-            	</div><!--end #worksShow-->
+            							快来秀出你的作品打动企业吧！
+            							<span>添加作品展示</span>
+            		</div>end .workAdd
+            	</div>end #worksShow -->
+
+
 				<input type="hidden" id="resumeId" value="268472">
             </div><!--end .content_l-->
             <div class="content_r">
