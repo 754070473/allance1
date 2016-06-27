@@ -3,7 +3,7 @@ namespace App\Http\Controllers;
 use DB;
 use Session;
 use Illuminate\Http\Request;
-
+use App\Http\Controllers\Controller;
 
 /**
  *   IndexController  信息展示
@@ -64,9 +64,8 @@ class IndexController extends Controller {
          
        $acc = DB::table('al_place')
                  ->where('p_pid',0)
-                 
                 ->get();
-//print_r($acc);die; 
+// print_r($acc);die; 
                 $ar = $this->classify('al_post','p_pid');
        $users = DB::table('al_resume')
             ->join('al_post', 'al_resume.post_id', '=', 'al_post.post_id')
@@ -76,8 +75,6 @@ class IndexController extends Controller {
              ->where('r_type',0)
              ->where('if_img',0)
             ->paginate(15);
-        // print_r($users);die;
-       
         //print_r($ar);die;
         return view('index.company', ['acc'=>$acc,'ar'=>$ar,'users' => $users]);
 

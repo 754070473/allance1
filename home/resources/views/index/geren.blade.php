@@ -40,7 +40,7 @@ $(function(){
 	
   	<div id="previewWrapper">
         <div class="preview_header">
-            <h1 title="jason的简历">{{$user->r_name}}的简历</h1>
+            <h1 title="jason的简历">{{$user['r_name']}}的简历</h1>
                         	<a title="下载简历" class="inline cboxElement" href="#downloadOnlineResume">下载该简历</a>
                     </div><!--end .preview_header-->
 
@@ -48,51 +48,51 @@ $(function(){
             <div class="profile_box" id="basicInfo">
                 <h2>基本信息</h2>
                 <div class="basicShow">
-                   <span>{{$user->p_name}}| 
-                   @if($user->r_sex==1) 
+                   <span>{{$user['p_name']}}| 
+                   @if($user['r_sex']==1) 
                      	男
                      @else
                      女
                      @endif  |  
-                     @if($user->t_edu==0) 
+                     @if($user['r_sex']==0) 
                      	初中
-                     @elseif($user->t_edu==1) 
+                     @elseif($user['r_sex']==1) 
                      高中
-                      @elseif($user->t_edu==2) 
+                      @elseif($user['r_sex']==2) 
                      中技
-                      @elseif($user->t_edu==3) 
+                      @elseif($user['r_sex']==3) 
                      中专
-                      @elseif($user->t_edu==4) 
+                      @elseif($user['r_sex']==4) 
                      大专
-                      @elseif($user->t_edu==5) 
+                      @elseif($user['r_sex']==5) 
                      本科 
-                      @elseif($user->t_edu==6) 
+                      @elseif($user['r_sex']==6) 
                       硕士
-                      @elseif($user->t_edu==7) 
+                      @elseif($user['r_sex']==7) 
                      博士 
-                      @elseif($user->t_edu==8) 
+                      @elseif($user['r_sex']==8) 
                      博士后 
                      @endif
                      |   
-                      @if($user->r_suffer==0) 
+                      @if($user['r_suffer']==0) 
                      	应届生
-                     @elseif($user->r_suffer==1) 
+                     @elseif($user['r_suffer']==1) 
                      无经验
-                      @elseif($user->r_suffer==2) 
+                      @elseif($user['r_suffer']==2) 
                      一年一下
-                      @elseif($user->r_suffer==3) 
+                      @elseif($user['r_suffer']==3) 
                      1-3年
-                      @elseif($user->r_suffer==4) 
+                      @elseif($user['r_suffer']==4) 
                      3-5年
-                      @elseif($user->r_suffer==5) 
+                      @elseif($user['r_suffer']==5) 
                      5-10年
-                      @elseif($user->r_suffer==6) 
+                      @elseif($user['r_suffer']==6) 
                      10年以上
                  
                      @endif
-                     | {{$user->i_name}}<br>
-            		{{$user->r_ind}} | <br>
-            		{{$user->r_phone}} | {{$user->r_email}}<br>
+                     | {{$user['i_name']}}<br>
+            		{{$user['r_ind']}} | <br>
+            		{{$user['r_phone']}} | {{$user['r_email']}}<br>
             			
             		</span>
            			<div class="m_portrait">
@@ -105,14 +105,14 @@ $(function(){
 				            <div class="profile_box" id="expectJob">
 	                <h2>期望工作</h2>
 	                <div class="expectShow">
-	                {{$user->i_name}}，@if($user->r_nature==0) 
+	                {{$user['i_name']}}，@if($user['r_nature']==0) 
                      	全职
-                     @elseif($user->r_nature ==1) 
+                     @elseif($user['r_nature'] ==1) 
                      兼职
-                      @elseif($user->r_nature==2) 
+                      @elseif($user['r_nature']==2) 
                      实习
                      
-                     @endif，月薪{{$user->r_pay}}，{{$user->p_name}}
+                     @endif，月薪{{$user['r_pay']}}，{{$user['p_name']}}
 	                </div><!--end .expectShow-->
 	            </div><!--end #expectJob-->
 						
@@ -124,20 +124,20 @@ $(function(){
             			<span class="c9"></span>
 	           				<div>
 	           			<img width="56" height="56" alt="上海辉硕科技有限公司" src="style/images/logo_default.png">
-	           		<h3> {{$user->p_name}}</h3>
-	           		<h4>@if($user->r_suffer==0) 
-                     	应届生
-                     @elseif($user->r_suffer==1) 
+	           		<h3> {{$user['p_name']}}</h3>
+	           		<h4>@if($user['r_suffer']==0) 
+                      应届生
+                     @elseif($user['r_suffer']==1) 
                      无经验
-                      @elseif($user->r_suffer==2) 
+                      @elseif($user['r_suffer']==2) 
                      一年一下
-                      @elseif($user->r_suffer==3) 
+                      @elseif($user['r_suffer']==3) 
                      1-3年
-                      @elseif($user->r_suffer==4) 
+                      @elseif($user['r_suffer']==4) 
                      3-5年
-                      @elseif($user->r_suffer==5) 
+                      @elseif($user['r_suffer']==5) 
                      5-10年
-                      @elseif($user->r_suffer==6) 
+                      @elseif($user['r_suffer']==6) 
                      10年以上
                  
                      @endif</h4>
@@ -156,23 +156,24 @@ $(function(){
             			<span class="c9">2004-2008</span>
             				<div>
             				<h3>北京大学</h3>
-            				<h4>@if($user->t_edu==0) 
-                     	初中
-                     @elseif($user->t_edu==1) 
+            				<h4> 
+                     @if($user['r_sex']==0) 
+                      初中
+                     @elseif($user['r_sex']==1) 
                      高中
-                      @elseif($user->t_edu==2) 
+                      @elseif($user['r_sex']==2) 
                      中技
-                      @elseif($user->t_edu==3) 
+                      @elseif($user['r_sex']==3) 
                      中专
-                      @elseif($user->t_edu==4) 
+                      @elseif($user['r_sex']==4) 
                      大专
-                      @elseif($user->t_edu==5) 
+                      @elseif($user['r_sex']==5) 
                      本科 
-                      @elseif($user->t_edu==6) 
+                      @elseif($user['r_sex']==6) 
                       硕士
-                      @elseif($user->t_edu==7) 
+                      @elseif($user['r_sex']==7) 
                      博士 
-                      @elseif($user->t_edu==8) 
+                      @elseif($user['r_sex']==8) 
                      博士后 
                      @endif</h4>
             			</div>
@@ -184,7 +185,7 @@ $(function(){
 		<div class="profile_box" id="selfDescription">
 	                <h2>自我描述</h2>
 	                <div class="descriptionShow">
-	            	{{$user->r_ind}} 
+	            	{{$user['r_ind']}} 
 	                </div><!--end .descriptionShow-->
 	            </div><!--end #selfDescription-->
 						
