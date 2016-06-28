@@ -1,10 +1,10 @@
 <?php
 namespace App\Http\Controllers;
 
-use Session,DB,Request;
 // use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Routing\Controller;
+use Session,DB,Request;
 // use App\Personal;
 /**
  *   AccountsetController  账号设置
@@ -27,14 +27,17 @@ class AccountsetController extends Controller{
     //修改密码
     public function updatePwd()
     {
-        // Session::put('id',1);
-    	return view("accountset.updatePwd");
+        $id = session::get('per_id');
+        // $id=1;
+        $row = DB::table('al_personal')->where('per_id',$id)->first();
+        $email['aa'] = $row->i_name;
+        return view("accountset.updatePwd",$email);
+       
     }
     public function pass(Request $request)
     {
-
         $id = session::get('per_id');
-
+        // $id=1;
         $j_pwd = $request::input('oldPassword');
         $n_pwd = $request::input('newPassword');
         $row = DB::table('al_personal')->where('per_id',$id)->first();

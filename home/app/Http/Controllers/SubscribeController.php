@@ -1,5 +1,6 @@
 <?php
 namespace App\Http\Controllers;
+use DB;
 use Session;
 use Illuminate\Http\Request;
 /**
@@ -14,20 +15,21 @@ class SubscribeController extends Controller{
 
         //职位
         $post = $this->classify('al_post','p_pid');
+        $industry = DB::table('al_hang')->get();
         if($per_id == "")
         {
-            return view("subscribe.subscribe",['post'=>$post]);
+            return view("subscribe.subscribe",['post'=>$post,'industry'=>$industry]);
         }
         else
         {
             $arr = DB::table('al_subscrip')->where('per_id', "$per_id")->first();
             if(empty($arr))
             {
-                return view("subscribe.subscribe",['post'=>$post]);
+                return view("subscribe.subscribe",['post'=>$post,'industry'=>$industry]);
             }
             else
             {
-                return view("subscribe.subscribe01",['post'=>$post,'arr'=>$arr]);
+                return view("subscribe.subscribe01",['post'=>$post,'arr'=>$arr,'industry'=>$industry]);
             }
         }
     }
@@ -48,15 +50,41 @@ class SubscribeController extends Controller{
             $stage = $request->input('stage');
             $industry = $request->input('industry');
             $salary = $request->input('salary');
-            $time = date('Y-m-d H:i:s', time());
-            $re = DB::table('al_subscrip')->insert(['s_email' => "$email", 's_day' => "$day", 's_job' => "$job", 's_city' => "$city", 's_stage' => "$stage", 's_industry' => "$industry", 's_salary' => "$salary", 's_time' => "$time"]);
-            if($re)
-            {
-                echo 1;
+            $time = date('Y-m-d H:i:s',time());
+            $arr = DB::table('al_subscrip')->where('per_id', "$per_id")->first();
+            if(empty($arr)) {
+                $re = DB::insert('insert into al_subscrip (s_email, s_day, s_job, s_place, s_stage, s_industry, s_salary, s_time, per_id) values (?, ?,?,?,?,?,?,?,?)', [$email, $day, $job, $city, $stage, $industry, $salary, $time, $per_id]);
+                if ($re) {
+                    echo 1;
+                } else {
+                    echo 2;
+                }
             }
             else
             {
-                echo 2;
+                $re = DB::table('al_subscrip')
+                    ->where('per_id',$per_id)
+                    ->update(['s_email' => $email,'s_day'=>$day,'s_job'=>$job,'s_place'=>$city,'s_stage'=>$stage,'s_industry'=>$industry,'s_salary'=>$salary,'s_time'=>$time]);
+                if ($re) {
+                    echo 1;
+                } else {
+                    echo 2;
+                }
+            }
+        }
+    }
+
+    public function subdel()
+    {
+        $per_id = Session::get('per_id')?Session::get('per_id'):"";
+        if(empty($per_id)){
+            echo 0;
+        }else{
+            $re = DB::table('al_subscrip')->where('per_id', '=', $per_id)->delete();
+            if($re){
+                echo 1;
+            }else{
+                echo 0;
             }
         }
     }

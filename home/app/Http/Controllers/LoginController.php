@@ -115,7 +115,7 @@ class LoginController extends Controller {
 	                        //密码正确 修改字段num=0 登陆成功
 	                        Session::put('per_id',$per_id);
 	                        Session::put('p_phone',$p_phone);
-		      				$i_name=str_replace($i_name, "<font color='#99ffff'>$i_name</font>",$i_name);
+		      				//$i_name=str_replace($i_name, "<font color='#99ffff'>$i_name</font>",$i_name);
 		      				Session::put('i_name',$i_name);
 	                       echo "1";
 	                    }else{
