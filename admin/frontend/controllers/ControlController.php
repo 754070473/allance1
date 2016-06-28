@@ -151,17 +151,4 @@ trait ControlController {
         }
         return $arr;
     }
-    /*public function integral(){
-        $url = $_SERVER['REQUEST_URI'];
-        $url = substr($url,strpos($url,'=')+1);
-        $controller = substr($url,0,strpos($url,'/'));
-        $function = substr($url,strpos($url,'/')+1);
-        mysql_connect('127.0.0.1','root','root')or die('连接失败');
-        mysql_select_db('allance')or die('选择失败');
-        $sql = "select i_num from al_integral where i_controller='$controller' and i_function='$function'";
-        $re = mysql_query($sql);
-        if($arr = mysql_fetch_assoc($re)){
-
-        }
-    }*/
 }

@@ -63,7 +63,14 @@ var youdao_conv_id = 271546;
 	                    
 	                    <h3>已添加标签</h3>
 	                    <ul class="reset" id="labels">
-	                    		                    </ul>
+	                    	@if(!$m_welfare['0']=="")
+								@foreach($m_welfare as $v)
+		                    	<li><span>{{$v}}</span><i class=""></i></li>
+								@endforeach
+							@else
+
+							@endif
+	                   	</ul>
 	                     
 	                    <input type="text" placeholder="请输入自定义标签" name="label" id="label">	
 	                    <input type="submit" value="贴上" id="add_label">
@@ -74,56 +81,60 @@ var youdao_conv_id = 271546;
 	                            <dt>薪酬激励</dt>
 	                            <dd>
 	                                <ul class="reset">
-	                                		                                    <li>年终分红</li>
-	                                    	                                    <li>绩效奖金</li>
-	                                    	                                    <li>股票期权</li>
-	                                    	                                    <li>专项奖金</li>
-	                                    	                                    <li>年底双薪</li>
-	                                    	                                </ul>
+	                                    <li>年终分红</li>
+	                                    <li>绩效奖金</li>
+	                                    <li>股票期权</li>
+	                                    <li>专项奖金</li>
+	                                    <li>年底双薪</li>
+	                                </ul>
 	                            </dd>
 	                        </dl>
 	                        	                        <dl>
 	                            <dt>员工福利</dt>
 	                            <dd>
 	                                <ul class="reset">
-	                                		                                    <li>五险一金</li>
-	                                    	                                    <li>通讯津贴</li>
-	                                    	                                    <li>交通补助</li>
-	                                    	                                    <li>带薪年假</li>
-	                                    	                                </ul>
+	                                    <li>五险一金</li>
+	                                    <li>通讯津贴</li>
+	                                    <li>交通补助</li>
+	                                    <li>带薪年假</li>
+	                                </ul>
 	                            </dd>
 	                        </dl>
 	                        	                        <dl>
 	                            <dt>员工关怀</dt>
 	                            <dd>
 	                                <ul class="reset">
-	                                		                                    <li>免费班车</li>
-	                                    	                                    <li>节日礼物</li>
-	                                    	                                    <li>年度旅游</li>
-	                                    	                                    <li>弹性工作</li>
-	                                    	                                    <li>定期体检</li>
-	                                    	                                    <li>午餐补助</li>
-	                                    	                                </ul>
+	                                    <li>免费班车</li>
+	                                    <li>节日礼物</li>
+	                                    <li>年度旅游</li>
+	                                    <li>弹性工作</li>
+	                                    <li>定期体检</li>
+	                                    <li>午餐补助</li>
+	                                </ul>
 	                            </dd>
 	                        </dl>
 	                        	                        <dl>
 	                            <dt>其他</dt>
 	                            <dd>
 	                                <ul class="reset">
-	                                		                                    <li>岗位晋升</li>
-	                                    	                                    <li>技能培训</li>
-	                                    	                                    <li>管理规范</li>
-	                                    	                                    <li>扁平管理</li>
-	                                    	                                    <li>领导好</li>
-	                                    	                                    <li>美女多</li>
-	                                    	                                    <li>帅哥多</li>
-	                                    	                                </ul>
+	                                    <li>岗位晋升</li>
+	                                    <li>技能培训</li>
+	                                    <li>管理规范</li>
+	                                    <li>扁平管理</li>
+	                                    <li>领导好</li>
+	                                    <li>美女多</li>
+	                                    <li>帅哥多</li>
+	                                </ul>
 	                            </dd>
 	                        </dl>
-	                        	                    </div>	
+	                    </div>	
 	                    <input type="hidden" id="companyId" name="companyId" value="25927">
+
+	                     <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
+						<input type="hidden" name="mes_id" value="{{$arr->mes_id}}" id="mes_id">
+
 	                    <input type="button" value="保存，下一步" id="step2Submit" class="btn_big fr">
-	                    <a class="btn_cancel fr" href="http://www.lagou.com/c/founder">跳过</a>
+	                    <a class="btn_cancel fr" href="{{url('founder')}}">跳过</a>
                    
                 </dd>
             </dl>

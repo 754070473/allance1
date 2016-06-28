@@ -99,32 +99,73 @@ var youdao_conv_id = 271546;
 	                        	<a target="_blank" class="applyC" href="http://www.lagou.com/c/auth">申请认证</a>
 	                        	                        <div class="clear"></div>
 	                       	
-	                       		                   			<h1 title="{{$arr->m_name}}" class="fullname">{{$arr->m_name}}</h1>
+	                       		                   			<h1 title="{{$arr->m_name}}" id='bb' class="fullname">{{$arr->m_name}}</h1>
 	                        	                        
-	                        <form class="clear editDetail dn" id="editDetailForm" style="display: none;">
+	                        <form class="clear editDetail dn" id="editForm" style="display: none;">
 	                            <input type="text" placeholder="请输入公司简称" maxlength="15" value="{{$arr->m_name}}" name="companyShortName" id="companyShortName" class="valid">
-	                            <input type="text" placeholder="一句话描述公司优势，核心价值，限50字" maxlength="50" value="测试的发打发打发大范德萨发" name="companyFeatures" id="companyFeatures" class="valid"><span for="companyFeatures" generated="true" class="error" style="display: none;">请输入5-50字的一句话介绍</span>
-	                            <input type="hidden" value="25927" id="companyId" name="companyId">
+	                            <input type="hidden" name='mes_id' value="{{$arr->mes_id}}">
+	                            <input type="hidden" id="_token" value="<?php echo csrf_token(); ?>">
+	                            <input type="hidden" value="25927" id="companyId">
 	                            <input type="submit" value="保存" id="saveDetail" class="btn_small">
 	                            <a id="cancelDetail" class="btn_cancel_s" >取消</a>
 		                    </form>
 	                            
-	                        <script></script>
+	                        <script>
+	                        	$('#editForm').submit(function(){
+	                        		
+	                        		var data=$(this).serialize();
+	                        		// alert(data);
+	                        		$.ajax({
+	                        			type:"get",
+	                        			url:"save_company_name",
+	                        			data:data,
+	                        			success:function(e)
+	                        			{
+	                        				if(e==0)
+	                        				{
+	                        					alert('编辑失败');
+	                        				}
+	                        				else
+	                        				{
+	                        					$('#editForm').hide();
+	                        					$('#bb').html(e);
+	                        					$('#editCompanyDetail').show();
+	                        				}
+	                        			}
+
+	                        		})
+	                        		return false;
+	                        		// var mes_id = $('#mes_id').val();
+	                        		// alert(mes_id)
+	                        		// var aa = $('#companyShortName').val();
+	                        		// $.ajax({
+	                        		// 	type:"get",
+	                        		// 	url:"save_company_name",
+	                        		// 	data:"aa="+aa+"&mes_id="+mes_id,
+	                        		// 	success:function(e)
+	                        		// 	{
+	                        		// 		alert(e);
+	                        		// 	}
+	                        		// })
+
+	                        	})
+	                        </script>
 	                        <h3 class="dn">已选择标签</h3>
 	                        <ul style="overflow:auto" id="hasLabels" class="reset clearfix">
 	                        	@foreach($welfare as $key=>$val)
-	                        			                        	<li><span>{{$val}}</span></li>
-		                        		                   @endforeach	
-		                        	                            <li class="link">编辑</li>
+			                        	<li><span name ="fuli[]">{{$val}}</span></li>
+        		                   @endforeach	
+        	                            <span id='bianji' ><li  class="link">编辑</li></span>
 	                        </ul>
 	                        <div class="dn" id="addLabels">
 	                        	<a id="changeLabels" class="change" href="javascript:void(0)">换一换</a>
 	                        	<input type="hidden" value="1" id="labelPageNo">
+	                        	<input type="hidden"  id="m_id" value="{{$arr->mes_id}}">
 	                            <input type="submit" value="贴上" class="fr" id="add_label">
                             	<input type="text" placeholder="添加自定义标签" name="label" id="label" class="label_form fr">	
 	                            <div class="clear"></div>
 	                            <ul class="reset clearfix"> </ul>
-	                            <a id="saveLabels" class="btn_small" href="javascript:void(0)">保存</a>
+	                            <a id="save_cun" class="btn_small" href="javascript:void(0)">保存</a>
 	                            <a id="cancelLabels" class="btn_cancel_s" href="javascript:void(0)">取消</a>
 	                        </div>
 	                    </div>
@@ -132,7 +173,40 @@ var youdao_conv_id = 271546;
 	                    <a title="编辑基本信息" class="c_edit" id="editCompanyDetail" href="javascript:void(0);" style="display: block;"></a>
 	                	<div class="clear"></div>
 	                </div>
-                
+                <script>
+                	$('#save_cun').click(function(){
+                		var m_id = $('#m_id').val();
+                		// var hasLabels = $('.fuli[]');
+                		var hasLabels = $('span[name="fuli[]"]');
+                		var abc = [];
+                		for(var i=0;i<hasLabels.length;i++){
+                			abc[i]= hasLabels.eq(i).html();
+                		}
+                		// console.log(abc);
+                		// alert(abc);
+                		
+                		$.ajax({
+                			type:"get",
+                			url:"save_company_welfare",
+                			data:"m_id="+m_id+"&abc="+abc,
+                			success:function(e)
+                			{
+                				if(e==1)
+                				{
+                					// $('#addLabels').hide();
+                					// $('#bianji').show();
+                					//不会了先来个刷新 以后改正
+                					// window.history.go(0);
+                					window.location.reload();
+                				}
+                				else
+                				{
+                					alert(e);
+                				}
+                			}
+                		})
+                	})
+                </script>
                 	<div class="c_breakline"></div>
        
        				<div id="Product">
@@ -159,9 +233,9 @@ var youdao_conv_id = 271546;
 					                    	<h2><em></em>公司产品</h2>
 					                    </dt>
 					                    <dd>
-					                        <form method="post" class="productForm">
+					                        <form method="post" class="productForm"  enctype="multipart/form-data" >
 					                            <div class="new_product">
-					                            	
+					                            	<input type="hidden" name="_token" value="{{csrf_token()}}">
 							                            <div class="product_upload dn productNo">
 							                                <div style="background-color: rgb(147, 183, 187);">
 							                                	<span>上传产品图片</span> 
@@ -192,6 +266,11 @@ var youdao_conv_id = 271546;
 											</form>
 					                    </dd>
 					                </dl>
+					                <script>
+					                	$('#cpmc').click(function(){
+					                		alert(1);
+					                	})
+					                </script>
 					                <!--有产品-->
 					                <dl class="c_product">
 					                	<dt>
@@ -234,7 +313,10 @@ var youdao_conv_id = 271546;
 					                    </dt>
 					                    <dd>
 						                    <form id="companyDesForm">
-						                        <textarea placeholder="请分段详细描述公司简介、企业文化等" name="companyProfile" id="companyProfile" class="valid">该方法嘎嘎该方法嘎嘎该方法嘎嘎该方法嘎嘎该方法嘎嘎该方法嘎嘎该方法嘎嘎该方法嘎嘎该方法嘎嘎该方法嘎嘎该方法嘎嘎该方法嘎嘎</textarea>		                                        
+						                    	<input type="hidden" id='me_id' value="{{$arr->mes_id}}">
+						                        <textarea placeholder="请分段详细描述公" name="companyProfile" id="companyProfile" class="valid">
+						                        	{{$arr->m_culture}}
+						                        </textarea>		                                        
 						                        <div class="word_count fr">你还可以输入 <span>955</span> 字</div>
 						                        <div class="clear"></div>
 						                        <input type="submit" value="保存" id="submitProfile" class="btn_small">
@@ -242,19 +324,40 @@ var youdao_conv_id = 271546;
 						                    </form>
 					                    </dd>
 					                </dl>
-					            
+					            	
 					            <!--有介绍-->
 					               <dl class="c_section" style="display: block;">
 					               		<dt>
 					                   		<h2><em></em>公司介绍</h2>
 					                   	</dt>
 					                   	<dd>
-					                   		<div class="c_intro">随便写随便写随便写随便写随便写随便写随便写随便写随便写随便写随便写随便写随便写随便写随便写</div>
+					                   		<div id="jieshao" class="c_intro">{{$arr->m_culture}}</div>
 					                   		<a title="编辑公司介绍" id="editIntro" class="c_edit" href="javascript:void(0)"></a>
 					                   	</dd>
 					               	</dl>
 				            </div>
-				                 	
+				                <script>
+					            		$('#submitProfile').click(function(){
+					            			var jieshao = $('#companyProfile').val();
+					            			var me_id = $('#me_id').val();
+					            			$.ajax({
+					            				type:"get",
+					            				url:"save_company_introduce",
+					            				data:"jieshao="+jieshao+"&me_id="+me_id,
+					            				success:function(e)
+					            				{
+					            					if(e==1)
+					            					{
+					            						window.location.reload();
+					            					}
+					            					else
+					            					{
+					            						alert(e);
+					            					}
+					            				}
+					            			})
+					            		})
+					            	</script> 	
 	     			</div><!-- end #Profile -->
       	
       	<!--[if IE 7]> <br /> <![endif]-->
@@ -281,16 +384,17 @@ var youdao_conv_id = 271546;
             <div class="content_r">
             	<div id="Tags">
 	            	<div id="c_tags_show" class="c_tags solveWrap" style="display: block;">
-	                    <table><tbody><tr><td>地点</td><td>上海</td></tr><tr><td>领域</td><td>移动互联网</td></tr><tr><td>规模</td><td>150-500人</td></tr><tr><td>主页</td><td><a target="_blank" href="http://www.zmtpost.com">http://www.zmtpost.com</a></td></tr></tbody></table>
+	                    <table><tbody><tr><td>地点</td><td>{{$arr->i_name}}</td></tr><tr><td>领域</td><td>移动互联网</td></tr><tr><td>规模</td><td>150-500人</td></tr><tr><td>主页</td><td><a target="_blank" href="{{$arr->m_url}}">{{$arr->m_url}}</a></td></tr></tbody></table>
 	                    <a id="editTags" class="c_edit" href="javascript:void(0)"></a>
 	                </div>
 	                <div id="c_tags_edit" class="c_tags editTags dn" style="display: none;">
 		                <form id="tagForms">
 		                    <table>
+		                    	<input type="hidden" name='me_id' value="{{$arr->mes_id}}">
 		                        <tbody><tr>
 		                            <td>地点</td>
 		                            <td>
-		                            	<input type="text" placeholder="请输入地点" value="上海" name="city" id="city" class="valid">	
+		                            	<input type="text" placeholder="请输入地点(城市名)" value="{{$arr->i_name}}" name="city" id="city" class="valid">	
 		                            </td>
 		                        </tr>
 		                        <tr>
@@ -312,12 +416,7 @@ var youdao_conv_id = 271546;
 		                            	<input type="button" value="150-500人" id="select_sca" class="select_tags">
 		                                <div class="selectBox dn" id="box_sca" style="display: none;">
 		                                    <ul class="reset">
-		                                    			                                    						                            			<li>少于15人</li>
-				                            				                                        		                                    						                            			<li>15-50人</li>
-				                            				                                        		                                    						                            			<li>50-150人</li>
-				                            				                                        		                                    						                            			<li class="current">150-500人</li>
-				                            				                                        		                                    						                            			<li>500-2000人</li>
-				                            				                                        		                                    						                            			<li>2000人以上</li>
+			                                        		                                    						                            			<li>2000人以上</li>
 				                            				                                        		                                    </ul>
 		                                </div>	
 		                            </td>
@@ -325,21 +424,45 @@ var youdao_conv_id = 271546;
 		                        <tr>
 		                            <td>主页</td>
 		                            <td>
-                            			<input type="text" placeholder="请输入网址" value="http://www.weimob.com" name="companyUrl" id="companyUrl" class="valid">	
+                            			<input type="text" placeholder="请输入网址" value="{{$arr->m_url}}" name="companyUrl" id="companyUrl" class="valid">	
 		                            </td>
 		                        </tr>
 		                    </tbody></table>
 		                    <input type="hidden" id="comCity" value="上海">
 		                    <input type="hidden" id="comInd" value="移动互联网">
 		                    <input type="hidden" id="comSize" value="150-500人">
-		                    <input type="hidden" id="comUrl" value="http://www.zmtpost.com">
+		                    <input type="hidden" id="comUrl" value="{{$arr->m_url}}">
 		                    <input type="submit" value="保存" id="submitFeatures" class="btn_small">
 		                    <a id="cancelFeatures" class="btn_cancel_s" href="javascript:void(0)">取消</a>
 		                    <div class="clear"></div>
 		            	</form>
 	                </div>
        			</div><!-- end #Tags -->
-       			
+       			 <script>
+                	$('#tagForms').submit(function(){
+                		
+                		var data=$(this).serialize();
+                		$.ajax({
+                			type:"get",
+                			url:"save_company_dlgz",
+                			data:data,
+                			success:function(e)
+                			{
+                				if(e==1)
+                				{
+                					window.location.reload();
+                				}
+                				else
+                				{
+                					alert(e);
+                				}
+                			}
+
+                		})
+                		return false;
+                	})
+                </script>
+
        			<dl class="c_section c_stages">
                 	<dt>
                     	<h2><em></em>融资阶段</h2>
@@ -429,7 +552,7 @@ var youdao_conv_id = 271546;
 		       			       		<!--有创始团队-->
 		                <dl class="c_section c_member">
 		                	<dt>
-		                    	<h2><em></em>创始团队</h2>
+		                    	<h2><em></em>公司位置</h2>
 		                    		                    		<a title="添加创始人" class="c_add" href="javascript:void(0)"></a>
 	                    				                    </dt>
 		                    <dd> 
@@ -492,41 +615,7 @@ var youdao_conv_id = 271546;
 	       	
 	       	
 	       <!--公司深度报道-->
-            <div id="Reported">	
-	            		            <!--无报道-->
-		            <dl class="c_section c_reported">
-		            	<dt>
-		                	<h2><em></em>公司深度报道</h2>
-                   			<a title="添加报道" class="c_add dn" href="javascript:void(0)"></a>
-		                </dt>
-		                <dd>
-		                	<!-- 编辑报道 -->
-                       		<ul class="reset dn"></ul>
-		                	
-		                	<!-- 无报道 -->
-	                        <div class="addnew_right reported_info">
-	                        	展示外界对公司的深度报道，<br>便于求职者了解公司！<br>
-	                            <a class="report_edit" href="javascript:void(0)">+添加报道</a>
-	                        </div>
-	                        
-		                	<ul class="newReport dn">
-	                        	<li>
-		                			<a style="display:none;" class="article" title="" target="_blank" ></a>
-		                			<a title="编辑报道" class="c_edit dn" href="javascript:;"></a>
-		                			<form class="reportForm">
-		                				<input type="text" placeholder="请输入文章标题" value="" name="articleTitle">
-		                				<input type="text" placeholder="请输入文章链接" value="" name="articleUrl">
-		                				<input type="submit" value="保存" class="btn_small">
-			                            <a class="btn_cancel_s report_cancel" href="javascript:;">取消</a>
-			                            <input type="hidden" value="" class="article_id">
-			                     	</form>
-		                		</li>
-	                        </ul>
-				        </dd>
-		            </dl><!-- end .c_reported -->
-		                    </div><!-- end #Reported -->
-	       	
-        </div>
+       
    	</div>
 
 <!-------------------------------------弹窗lightbox  ----------------------------------------->

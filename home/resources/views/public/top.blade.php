@@ -41,13 +41,13 @@ var youdao_conv_id = 271546;
     		<a href="index.html" class="logo">
     			<img src="style/images/logo.png" width="229" height="43" alt="强强联合-专注互联网招聘" />
     		</a>
-    		
+    		<!--个人-->
         @if($key==1)
             <ul class="reset" id="navheader">
             <li ><a href="index.php">首页</a></li>
+            <li ><a href="companylist">职位</a></li>
             <li ><a href="companylist" >公司</a></li>
             <li ><a href="jianli" rel="nofollow">个人中心</a></li>
-            <li ><a href="toForum" target="_blank">论坛</a></li>
             </ul>
               <dl class="collapsible_menu">
                 <dt>
@@ -58,7 +58,6 @@ var youdao_conv_id = 271546;
                     <dd><a rel="nofollow" href="jianli">个人中心</a></dd>
                     <dd><a href="collections">我收藏的职位</a></dd>
                     <dd class="btm"><a href="subscribe">我的订阅</a></dd>
-                    <dd><a href="create">我要招人</a></dd>
                     <dd><a href="accountBind">帐号设置</a></dd>
                     <dd class="login"><a rel="nofollow" href="logout">退出</a></dd>
             </dl>
@@ -68,11 +67,13 @@ var youdao_conv_id = 271546;
                 <a target="_blank" href="delivery"><strong>0</strong>条新投递反馈</a>
                 <a class="closeNT" href="javascript:;"></a>
             </div>
+            <!--企业-->
             @elseif($key==2)
              <ul class="reset" id="navheader">
                 <li ><a href="index.php">首页</a></li>
-                   <li ><a href="company" >职位</a></li>
-                  <li ><a href="toForum" target="_blank">论坛</a></li>
+                 <li ><a href="company" >简历</a></li>
+                  <li ><a href="companylist">公司</a></li>
+                  <li ><a href="index01" target="_blank">企业信息中心</a></li>
                  
                   <li ><a href="login" rel="nofollow">发布职位</a></li>
             </ul>
@@ -84,7 +85,7 @@ var youdao_conv_id = 271546;
                 </dt>
                     
                     <dd><a href="canInterviewResumes">收到的简历</a></dd>
-                    <dd class="btm"><a href="subscribe">我的订阅</a></dd>
+                    <dd class="btm"><a href="index01">企业信息中心</a></dd>
                     <dd><a href="create">我要招人</a></dd>
                     <dd><a href="accountBind">帐号设置</a></dd>
                     <dd class="login"><a rel="nofollow" href="logout">退出</a></dd>
@@ -98,8 +99,8 @@ var youdao_conv_id = 271546;
             @elseif($key==0)
             <ul id="navheader" class="reset">
                 <li ><a href="index.php">首页</a></li>
+                 <li ><a href="companylist" >职位</a></li>
                  <li ><a href="companylist" >公司</a></li>
-                 <li ><a href="toForum" target="_blank">论坛</a></li>
                  <li ><a href="jianli" rel="nofollow">个人中心</a></li>
                
                 </ul>
