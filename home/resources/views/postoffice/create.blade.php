@@ -15,6 +15,7 @@
 <script type="text/javascript">
 var ctx = "http://www.lagou.com";
 console.log(1);
+var youdao_conv_id = 271546; 
 </script>
 <link href="http://www.lagou.com/images/favicon.ico" rel="Shortcut Icon">
 <link href="style/css/style.css" type="text/css" rel="stylesheet">
@@ -139,8 +140,6 @@ console.log(1);
                                                     </dd>
                                                 </dl> 
                                                 @endforeach                                             
-                                        </div>
-                                        <br><span id="check_r_major"></span> 
                                     </td>
                                 </tr>   
                                 
@@ -149,7 +148,6 @@ console.log(1);
                                 	<td>职位名称</td>
                                 	<td>
                                     	<input type="text" placeholder="请输入职位名称，如：产品经理" value="" name="r_name" id="positionName">
-                                    <br><span id="check_r_name"></span>	                                    
                                     	                                    </td>
                                     
                                 </tr>
@@ -162,7 +160,7 @@ console.log(1);
                                 	<td width="25"><span class="redstar">*</span></td>
                                 	<td width="85">性别要求</td>
                                 	<td>
-                                    	<ul class="profile_radio clearfix reset" id="sex">
+                                    	<ul class="profile_radio clearfix reset">
                                     		                                             
                                                         <li>
                                                            男<em></em>
@@ -174,15 +172,13 @@ console.log(1);
                                                            <input type="radio" name="r_sex" value="1" > 
                                                        </li>
                                         </ul>
-                                    <br>
-                                    <span id="check_sex"></span>
                                     </td>                                                                                                                                                                    
                                 </tr>                                                                                                       </ul>
                                 <tr>
                                 	<td width="25"><span class="redstar">*</span></td>
                                 	<td width="85">语言要求</td>
                                 	<td>
-                                    	<ul class="profile_radio clearfix reset" id="lanuage">
+                                    	<ul class="profile_radio clearfix reset">
                                     		                                             
                                                         <li>
                                                            中文<em></em>
@@ -195,15 +191,13 @@ console.log(1);
                                                        </li>
       
                                         </ul>
-                                        <br>
-                                        <span id="check_language"></span>
                                     </td>                                                                                                                                                                    
                                 </tr>
                                  <tr>
                                 	<td width="25"><span class="redstar">*</span></td>
                                 	<td width="85">全日制</td>
                                 	<td>
-                                    	<ul class="profile_radio clearfix reset" id="r_iflogbook">
+                                    	<ul class="profile_radio clearfix reset" >
                                     		                                             
                                                         <li>
                                                            是<em></em>
@@ -215,8 +209,6 @@ console.log(1);
                                                            <input type="radio" name="r_iflogbook" value="0"> 
                                                        </li>
                                         </ul>
-                                    <br>
-                                    <span id="check_iflogbook"></span>
                                     </td>                                                                                                                                                                    
                                 </tr>
                             	<tr>
@@ -237,7 +229,6 @@ console.log(1);
 
                                         </div>
                                      
-                                        <span id="check_salary"></span>
                                     </td>
                                 </tr>
                        
@@ -248,9 +239,9 @@ console.log(1);
                                 	<td width="25"><span class="redstar">*</span></td>
                                 	<td width="85">工作年限</td>
                                 	<td>
-                                    	<input type="hidden" id="experience" value="" name="r_suffer">
-                                        <input type="button" value="请选择工作年限" id="select_experience" class="selectr selectr_380" name="r_suffer">                                      
-                                        <div class="boxUpDown boxUpDown_380 dn" id="box_experience" style="display: none;">
+                                    	<input type="hidden" id="r_suffer" value="" name="r_suffer">
+                                        <input type="button" value="请选择工作年限" id="select_suffer" class="selectr selectr_380" name="r_suffer">                                      
+                                        <div class="boxUpDown boxUpDown_380 dn" id="box_suffer" style="display: none;">
                                             <ul>
                                                                                                     <li value="0">
                                                         应届生
@@ -275,8 +266,6 @@ console.log(1);
                                                     </li>
                                         	 	                                            </ul>
                                     	</div>
-                                    	<br>
-                                    	<span id="check_r_suffer"></span>
                                     </td>
                                 </tr>
                             	<tr>
@@ -284,9 +273,9 @@ console.log(1);
                                 	<td>学历要求</td>
                                     <!--<h3><span>(最高月薪不能大于最低月薪的2倍)</span></h3> -->
                                 	<td>
-                                    	<input type="hidden" id="education" value="" name="r_edu">
-                                        <input type="button" value="请选择学历要求" id="select_education" class="selectr selectr_380" name="r_edu">                                      
-                                        <div class="boxUpDown boxUpDown_380 dn" id="box_education" style="display: none;">
+                                    	<input type="hidden" id="r_edu" value="" name="r_edu">
+                                        <input type="button" value="请选择学历要求" id="select_edu" class="selectr selectr_380" name="r_edu">                                      
+                                        <div class="boxUpDown boxUpDown_380 dn" id="box_edu" style="display: none;">
                                             <ul>
                                                                                                     <li>
                                                         初中                                        
@@ -317,8 +306,6 @@ console.log(1);
                                                     </li>
                                         	 	                                            </ul>
                                     	</div>
-                                    	<br>
-                                    	<span id="check_r_edu"></span>
                                     </td>
                                 </tr>
                              
@@ -326,7 +313,7 @@ console.log(1);
                                 	<td width="25"><span class="redstar">*</span></td>
                                 	<td width="85">年龄要求</td>
                                 	<td>
-                                    	<input type="hidden" id="age" value="" name="r_age">
+                                    	<input type="hidden" id="r_age" value="" name="r_age">
                                         <input type="button" value="请选择年龄" id="select_age" class="selectr selectr_380"  name="r_age" >                                      
                                         <div class="boxUpDown boxUpDown_380 dn" id="box_age" style="display: none;">
                                             <ul>
@@ -339,8 +326,6 @@ console.log(1);
                                                 
                                         	 	                                            </ul>
                                     	</div>
-                                    	<br>
-                                    	<span id="check_r_age"></span>
                                     </td>
                                 </tr>
                                
@@ -354,10 +339,9 @@ console.log(1);
                                 	<td>
                                     	<span class="c9 f14">(建议分条描述工作职责等。请勿输入公司邮箱、联系电话及其他外链，否则将自动删除)</span>
                                     	
-                                        <textarea name="r_describe" id="positionDetail" class="tinymce" aria-hidden="true"></textarea>                                       	
+                                        <textarea name="r_describe" id="r_describe" class="tinymce" aria-hidden="true"></textarea>                                       	
                                         <script type="text/javascript">CKEDITOR.replace('r_describe')</script>
                                         
-                                    </td><span id="check_r_describe"></span>
                                 </tr>
 
                                 <tr>
@@ -365,8 +349,6 @@ console.log(1);
                                 	<td>工作地址</td>
                                 	<td>
                                     	<input type="text" placeholder="请输入详细的工作地址" value="" name="r_place" class="input_520" id="positionAddress">	
-                                        <br>
-                                        <span id="check_r_place"></span>
                                         <input type="hidden" value="" name="positionLng" id="lng">
                             			<input type="hidden" value="" name="positionLat" id="lat">
                                         <div class="work_place f14">我们将在职位详情页以地图方式精准呈现给用户  <a id="mapPreview" href="javascript:;">预览地图</a></div>
@@ -374,12 +356,56 @@ console.log(1);
                                 </tr>
                             </tbody></table>
                             
+
+                            <table class="btm">
+                            	<tbody>
+                            	<tr>
+                                	<td><span class="redstar">*</span></td>
+                                	<td>推广类型</td>
+                                	<td>
+                                		<input type="hidden" id="g_type" value="" name="g_type" >
+                                        <input type="button" value="请选择推广类型" id="select_type" class="selectr selectr_380"  name="g_type" >                                      
+                                        <div class="boxUpDown boxUpDown_380 dn" id="box_type" style="display: none;">
+                                            <ul>
+                                                
+                                                	@foreach($res as $v)
+                                                    <li value="{{$v->g_type_id}}">
+                                                      {{$v->g_type_name}}
+                                                    </li>
+                                                	@endforeach
+                                                
+                                        	 	                                            </ul>
+                                    	</div>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                	<td><span class="redstar">*</span></td>
+                                	<td>推广时间</td>
+                                	<td>
+                                		<input type="hidden" id="r_time" value="" name="r_time">
+                                        <input type="button" value="请选择推广类型" id="select_time" class="selectr selectr_380"  name="r_time" >                                      
+                                        <div class="boxUpDown boxUpDown_380 dn" id="box_time" style="display: none;">
+                                            <ul>
+                                                
+                                                	@for($i=1;$i < 61;$i++)
+                                                    <li>
+                                                      {{$i}}
+                                                    </li>
+                                                	@endfor
+                                                
+                                        	 	                                            </ul>
+                                    	</div>天
+                                    </td>
+                                </tr>
+                            </tbody></table>
+
                             <table>
                                 <tr>
                                 	<td width="25"></td>
                                 	<td colspan="2">
-                                    	<input type="button" value="预览" id="formSubmit" class="btn_32">
-                                    	<input type="submit" value="发布" id="jobPreview" class="btn_32">
+                                    	<input type="submit" value="预览" id="jobPreview" class="btn_32">
+                                    	<input type="button" value="发布" id="formSubmit" class="btn_32">
                                     </td>
                                 </tr>
                          	</tbody></table>
@@ -420,109 +446,6 @@ console.log(1);
 	        <div id="allmap" style="overflow: hidden; position: relative; z-index: 0; background-color: rgb(243, 241, 236); color: rgb(0, 0, 0); text-align: left;"><div style="overflow: visible; position: absolute; z-index: 0; left: 0px; top: 0px; cursor: grab;"><div class="BMap_mask" style="position: absolute; left: 0px; top: 0px; z-index: 9; overflow: hidden; width: 0px; height: 0px;"></div><div style="position: absolute; height: 0px; width: 0px; left: 0px; top: 0px; z-index: 200;"><div style="position: absolute; height: 0px; width: 0px; left: 0px; top: 0px; z-index: 800;"></div><div style="position: absolute; height: 0px; width: 0px; left: 0px; top: 0px; z-index: 700;"></div><div style="position: absolute; height: 0px; width: 0px; left: 0px; top: 0px; z-index: 600;"></div><div style="position: absolute; height: 0px; width: 0px; left: 0px; top: 0px; z-index: 500;"><label class="BMapLabel" unselectable="on" style="position: absolute; -moz-user-select: none; display: none; cursor: inherit; background-color: rgb(190, 190, 190); border: 1px solid rgb(190, 190, 190); padding: 1px; white-space: nowrap; font: 12px arial,simsun,sans-serif; z-index: -20000; color: rgb(190, 190, 190);">shadow</label></div><div style="position: absolute; height: 0px; width: 0px; left: 0px; top: 0px; z-index: 400;"></div><div style="position: absolute; height: 0px; width: 0px; left: 0px; top: 0px; z-index: 300;"></div><div style="position: absolute; height: 0px; width: 0px; left: 0px; top: 0px; z-index: 201;"></div><div style="position: absolute; height: 0px; width: 0px; left: 0px; top: 0px; z-index: 200;"></div></div><div style="position: absolute; overflow: visible; top: 0px; left: 0px; z-index: 1;"><div style="position: absolute; overflow: visible; z-index: -100; left: 0px; top: 0px; display: none;"></div></div><div style="position: absolute; overflow: visible; top: 0px; left: 0px; z-index: 2; display: block;"><div style="position: absolute; overflow: visible; top: 0px; left: 0px; z-index: 0; display: block;"><canvas style="position: absolute; width: 256px; height: 256px; left: -74px; top: -213px; background: none repeat scroll 0% 0% rgb(243, 241, 236);" width="256" height="256" id="_1_bg_6323_2355_15"></canvas></div><div style="position: absolute; overflow: visible; top: 0px; left: 0px; z-index: 10; display: block;"><canvas style="position: absolute; width: 256px; height: 256px; left: -74px; top: -213px;" width="256" height="256" id="_1_poi_6323_2355_15"></canvas></div></div><div style="position: absolute; overflow: visible; top: 0px; left: 0px; z-index: 3;"></div></div><div style="position: absolute; z-index: 1201; top: 10px; right: 10px; width: 17px; height: 16px; background: url(style/images/img/st-close.pngquot) no-repeat scroll 0% 0% transparent; cursor: pointer; display: none;" title="退出全景"></div><div style="height: 32px; position: absolute; z-index: 30; -moz-user-select: none; bottom: 0px; right: auto; top: auto; left: 1px; display: none;" class=" anchorBL"><a title="到百度地图查看此区域" target="_blank" href="http://map.baidu.com/?sr=1" style="outline: medium none;"><img src="style/images/copyright_logo.png" style="border:none;width:77px;height:32px"></a></div><div style="position:absolute;z-index:0;top:0px;left:0px;overflow:hidden;visibility:hidden;cursor:-moz-grab" id="zoomer"><div style="top:0;left:0;" class="BMap_zoomer"></div><div style="top:0;right:0;" class="BMap_zoomer"></div><div style="bottom:0;left:0;" class="BMap_zoomer"></div><div style="bottom:0;right:0;" class="BMap_zoomer"></div></div><div unselectable="on" class=" BMap_stdMpCtrl BMap_stdMpType0 BMap_noprint anchorTL" style="width: 62px; height: 186px; bottom: auto; right: auto; top: 10px; left: 10px; position: absolute; z-index: 1100; -moz-user-select: none;"><div class="BMap_stdMpPan"><div title="向上平移" class="BMap_button BMap_panN"></div><div title="向左平移" class="BMap_button BMap_panW"></div><div title="向右平移" class="BMap_button BMap_panE"></div><div title="向下平移" class="BMap_button BMap_panS"></div><div class="BMap_stdMpPanBg BMap_smcbg"></div></div><div class="BMap_stdMpZoom" style="height: 141px; width: 62px;"><div title="放大一级" class="BMap_button BMap_stdMpZoomIn"><div class="BMap_smcbg"></div></div><div title="缩小一级" class="BMap_button BMap_stdMpZoomOut" style="top: 120px;"><div class="BMap_smcbg"></div></div><div class="BMap_stdMpSlider" style="height: 102px;"><div class="BMap_stdMpSliderBgTop" style="height: 102px;"><div class="BMap_smcbg"></div></div><div class="BMap_stdMpSliderBgBot" style="top: 19px; height: 87px;"></div><div title="放置到此级别" class="BMap_stdMpSliderMask"></div><div title="拖动缩放" class="BMap_stdMpSliderBar" style="cursor: grab; top: 19px;"><div class="BMap_smcbg"></div></div></div><div class="BMap_zlHolder"><div class="BMap_zlSt"><div class="BMap_smcbg"></div></div><div class="BMap_zlCity"><div class="BMap_smcbg"></div></div><div class="BMap_zlProv"><div class="BMap_smcbg"></div></div><div class="BMap_zlCountry"><div class="BMap_smcbg"></div></div></div></div></div><div unselectable="on" style="bottom: auto; right: 10px; top: 10px; left: auto; white-space: nowrap; cursor: pointer; position: absolute; z-index: 10; -moz-user-select: none;" class=" BMap_noprint anchorTR"><div style="-moz-user-select: none; float: left;"><div style="-moz-user-select: none; box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.35); border-left: 1px solid rgb(139, 164, 220); border-top: 1px solid rgb(139, 164, 220); border-bottom: 1px solid rgb(139, 164, 220); background: none repeat scroll 0% 0% rgb(142, 168, 224); padding: 2px 6px; font: bold 12px/1.3em arial,simsun,sans-serif; text-align: center; white-space: nowrap; border-radius: 3px 0px 0px 3px; color: rgb(255, 255, 255);" title="显示普通地图">地图</div></div><div style="-moz-user-select: none; float: left;"><div style="-moz-user-select: none; box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.35); border-left: 1px solid rgb(139, 164, 220); border-top: 1px solid rgb(139, 164, 220); border-bottom: 1px solid rgb(139, 164, 220); background: none repeat scroll 0% 0% rgb(255, 255, 255); padding: 2px 6px; font-family: arial,simsun,sans-serif; font-style: normal; font-variant: normal; font-size: 12px; line-height: 1.3em; font-size-adjust: none; font-stretch: normal; -moz-font-feature-settings: normal; -moz-font-language-override: normal; text-align: center; white-space: nowrap; color: rgb(0, 0, 0);" title="显示卫星影像">卫星</div><div style="-moz-user-select: none; position: absolute; top: 0px; left: 0px; z-index: -1; display: none;"><div style="border-right:1px solid #8ba4dc;border-bottom:1px solid #8ba4dc;border-left:1px solid #8ba4dc;background:white;font:12px arial,simsun,sans-serif;padding:0 8px 0 6px;line-height:1.6em;box-shadow:2px 2px 3px rgba(0, 0, 0, 0.35)" title="显示带有街道的卫星影像"><span class="BMap_checkbox" "=" checked="checked"></span><label style="vertical-align: middle; cursor: pointer;">混合</label></div></div></div><div style="-moz-user-select: none; float: left;"><div style="-moz-user-select: none; box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.35); border-left: 1px solid rgb(139, 164, 220); border-width: 1px; border-style: solid; border-color: rgb(139, 164, 220); background: none repeat scroll 0% 0% rgb(255, 255, 255); padding: 2px 6px; font-family: arial,simsun,sans-serif; font-style: normal; font-variant: normal; font-size: 12px; line-height: 1.3em; font-size-adjust: none; font-stretch: normal; -moz-font-feature-settings: normal; -moz-font-language-override: normal; text-align: center; white-space: nowrap; border-radius: 0px 3px 3px 0px; color: rgb(0, 0, 0);" title="显示三维地图">三维</div></div></div><div unselectable="on" class=" BMap_scaleCtrl BMap_noprint anchorBL" style="bottom: 18px; right: auto; top: auto; left: 81px; width: 88px; position: absolute; z-index: 10; -moz-user-select: none;"><div unselectable="on" class="BMap_scaleTxt" style="background-color: transparent; color: black;">500&nbsp;米</div><div class="BMap_scaleBar BMap_scaleHBar" style="background-color: black;"><img src="style/images/mapctrls.png" style="border:none"></div><div class="BMap_scaleBar BMap_scaleLBar" style="background-color: black;"><img src="style/images/mapctrls.png" style="border:none"></div><div class="BMap_scaleBar BMap_scaleRBar" style="background-color: black;"><img src="style/images/mapctrls.png" style="border:none"></div></div><div unselectable="on" class=" BMap_omCtrl BMap_ieundefined BMap_noprint anchorBR quad4" style="width: 13px; height: 13px; bottom: 0px; right: 0px; top: auto; left: auto; position: absolute; z-index: 10; -moz-user-select: none;"><div class="BMap_omOutFrame" style="width: 149px; height: 149px;"><div class="BMap_omInnFrame" style="bottom: auto; right: auto; top: 5px; left: 5px; width: 142px; height: 142px;"><div class="BMap_omMapContainer"></div><div class="BMap_omViewMv" style="cursor: grab;"><div class="BMap_omViewInnFrame"><div></div></div></div></div></div><div class="BMap_omBtn BMap_omBtnClosed" style="bottom: 0px; right: 0px; top: auto; left: auto;"></div></div><div unselectable="on" class=" BMap_cpyCtrl BMap_noprint anchorBL" style="cursor: default; white-space: nowrap; -moz-user-select: none; color: black; background: none repeat scroll 0% 0% transparent; font: 11px/15px arial,simsun,sans-serif; bottom: 2px; right: auto; top: auto; left: 4px; position: absolute; z-index: 10;"><span _cid="1" style="display: inline;"><span style="font-size:11px">&copy; 2014 Baidu&nbsp;- Data &copy; <a style="display:inline;" href="http://www.navinfo.com/" target="_blank">NavInfo</a> &amp; <a style="display:inline;" href="http://www.cennavi.com.cn/" target="_blank">CenNavi</a> &amp; <a style="display:inline;" href="http://www.365ditu.com/" target="_blank">道道通</a></span></span></div></div>
         </div><!--/#baiduMap-->
 </div>
-<!------------------------------------- end ----------------------------------------->
-<!-- <script type="text/javascript" src="style/js/tinymce.min.js"></script>
-<script>
-$(function(){
-		
-	/*textarea 编辑器*/
-	tinymce.init({
-	    selector: "textarea.tinymce",
-	    // width: 100,
-	    height: 225,
-		language: "zh_CN",
-		content_css: ctx + "/js/tinymce4/content.css",
-		plugins: "contextmenu autolink code paste searchreplace",
-	    contextmenu: "copy cut paste",
-	    // paste_word_valid_elements: "",
-	    paste_as_text: true,
-	    // paste_webkit_styles: "color",//all | none
-	    // paste_retain_style_properties: "font-size",//
-	    menubar: false,
-	    statusbar: false,
-	    toolbar: [
-	    	"undo redo | bold italic underline strikethrough | bullist numlist | alignleft aligncenter alignright | removeformat | code"
-	    ],
-	    save_enablewhendirty: function(e) {
-	        console.log('dirty',e);
-	    },
-	    save_onsavecallback: function(e){
-	        console.log('save',e);
-	    },
-	    setup: function (editor) {
-	        editor.on('keyup', function (e) {  
-	        	tinyMCE.triggerSave();
-	        	var editorContent = tinyMCE.get(editor.id).getContent();
-			    if(editorContent.length > 20){
-					$("#" + editor.id).valid();
-			    }
-	        });
-	    }
-	});
-});
-</script> -->
-
-<!-- old -->
-<script src="style/js/jquery.tinymce.js" type="text/javascript"></script>
-<script>
-$(function(){
-		
-	/***********************************************
-	** textarea 编辑器
-	*/
-	$('textarea.tinymce').tinymce({
-		// Location of TinyMCE script
-		script_url : ctx+'/js/tinymce/jscripts/tiny_mce/tiny_mce.js',
-
-		// General options
-		theme : "advanced",
-		language : "zh-cn",
-		plugins : "paste,autolink,lists,style,layer,save,advhr,advimage,advlink,iespell,inlinepopups,preview,media,searchreplace,contextmenu,fullscreen,noneditable,visualchars,nonbreaking",
-
-		// Theme options
-		theme_advanced_buttons1 : "bold,italic,underline,|,justifyleft,justifycenter,justifyright,|,bullist,numlist,|,outdent,indent,|,undo,redo,|,link,unlink,|,hr,fullscreen,image",
-		theme_advanced_toolbar_location : "top",
-		theme_advanced_toolbar_align : "left",
-		theme_advanced_statusbar_location : "none",//定义输入框下方是否显示状态栏，默认不显示
-		theme_advanced_resizing : false,
-		paste_auto_cleanup_on_paste: true,
-		paste_as_text: true,
-		auto_cleanup_word:true,
-		paste_remove_styles: true,
-		contextmenu: "copy cut paste",
-        force_br_newlines: true,
-        force_p_newlines: false,
-        apply_source_formatting: false,
-        remove_linebreaks: false,
-        convert_newlines_to_brs: true,
-
-		// Example content CSS (should be your site CSS)
-		content_css : ctx+"/js/tinymce/examples/css/content.css",
-
-		// Drop lists for link/image/media/template dialogs
-		template_external_list_url : "lists/template_list.js",
-		external_link_list_url : "lists/link_list.js",
-
-		// Replace values for the template plugin
-		template_replace_values : {
-			username : "Some User",
-			staffid : "991234"
-		},
-		onchange_callback: function(editor){
-	        tinyMCE.triggerSave();
-	        var editorContent = tinyMCE.get(editor.id).getContent();
-		    if(editorContent.length &gt; 20){
-				$("#" + editor.id).valid();
-		    }
-	    } 
-	});
-	
-	$('#workAddress').focus(function(){
-		$('#beError').hide();
-	});
-});
-</script>
-<!-- end old -->
 
 <script src="style/js/jobs.min.js" type="text/javascript"></script>
 <script src="http://api.map.baidu.com/api?v=2.0&amp;ak=A2c1a1ff1fe0750e3290660295aac602" type="text/javascript"></script><script src="http://api.map.baidu.com/getscript?v=2.0&amp;ak=A2c1a1ff1fe0750e3290660295aac602&amp;services=&amp;t=20140617153133" type="text/javascript"></script>
@@ -641,184 +564,3 @@ $(function(){
 
 
 <div id="cboxOverlay" style="display: none;"></div><div id="colorbox" class="" role="dialog" tabindex="-1" style="display: none;"><div id="cboxWrapper"><div><div id="cboxTopLeft" style="float: left;"></div><div id="cboxTopCenter" style="float: left;"></div><div id="cboxTopRight" style="float: left;"></div></div><div style="clear: left;"><div id="cboxMiddleLeft" style="float: left;"></div><div id="cboxContent" style="float: left;"><div id="cboxTitle" style="float: left;"></div><div id="cboxCurrent" style="float: left;"></div><button type="button" id="cboxPrevious"></button><button type="button" id="cboxNext"></button><button id="cboxSlideshow"></button><div id="cboxLoadingOverlay" style="float: left;"></div><div id="cboxLoadingGraphic" style="float: left;"></div></div><div id="cboxMiddleRight" style="float: left;"></div></div><div style="clear: left;"><div id="cboxBottomLeft" style="float: left;"></div><div id="cboxBottomCenter" style="float: left;"></div><div id="cboxBottomRight" style="float: left;"></div></div></div><div style="position: absolute; width: 9999px; visibility: hidden; display: none;"></div></div></body></html>
-<script>
-	var a=false;
-    $('#select_category').blur(function(){
-        var  r_major=$('#positionType').val();
-        if(r_major=='')
-        {
-            $('#check_r_major').html("<font color='red'>*请选择职位类别！</font>");
-            a=false;
-        }
-        else
-        {
-           $('#check_r_major').html("");
-           a=true;
-        }
-    })
-
-    $('#positionName').blur(function(){
-        var  r_major=$('#positionName').val();
-        if(r_major=='')
-        {
-            $('#check_r_name').html("<font color='red'>*请填写职位名称！</font>");
-            a=false;
-        }
-        else
-        {
-           $('#check_r_name').html("");
-           a=true;
-        }
-    })
-
-    $('#sex').blur(function(){
-        var  sex=$("input['name=r_sex']").attr("checked");
-        if(!sex)
-        {
-            $('#check_sex').html("<font color='red'>*请选择性别！</font>");
-            a=false;
-        }
-        else
-        {
-           $('#check_sex').html("");
-           a=true;
-        }
-    })
-
-    $('#language').blur(function(){
-        var  language=$('#language').val();
-        if(language=='')
-        {
-            $('#check_language').html("<font color='red'>*请选择语言！</font>");
-            a=false;
-        }
-        else
-        {
-           $('#check_language').html("");
-           a=true;
-        }
-    })
-
-    $('#iflogbook').blur(function(){
-        var  iflogbook=$('#iflogbook').val();
-        if(iflogbook=='')
-        {
-            $('#check_iflogbook').html("<font color='red'>*请选择是否全日制！</font>");
-            a=false;
-        }
-        else
-        {
-           $('#check_iflogbook').html("");
-           a=true;
-        }
-    })
-
-    $('#salaryMin').blur(function(){
-        var  salaryMin=$('#salaryMin').val();
-        if(salaryMin=='')
-        {
-            $('#check_salary').html("<font color='red'>*请填写最低月薪！</font>");
-            a=false;
-        }
-        else
-        {
-           $('#check_salary').html("");
-           a=true;
-        }
-    })
-
-    $('#salaryMax').blur(function(){
-        var  salaryMax=$('#salaryMax').val();
-        if(salaryMax=='')
-        {
-            $('#check_salary').html("<font color='red'>*请填写最高薪资！</font>");
-            a=false;
-        }
-        else
-        {
-           $('#check_salary').html("");
-           a=true;
-        }
-    })
-
-    $('#select_experience').blur(function(){
-        var  r_suffer=$('#experience').val();
-        if(r_suffer=='')
-        {
-            $('#check_r_suffer').html("<font color='red'>*请选择工作年限！</font>");
-            a=false;
-        }
-        else
-        {
-           $('#check_r_suffer').html("");
-           a=true;
-        }
-    })
-
-    $('#select_education').blur(function(){
-        var  r_edu=$('#education').val();
-        if(r_edu=='')
-        {
-            $('#check_r_edu').html("<font color='red'>*请选择学历要求！</font>");
-            a=false;
-        }
-        else
-        {
-           $('#check_r_edu').html("");
-           a=true;
-        }
-    })
-
-    $('#select_age').blur(function(){
-        var  age=$('#age').val();
-        if(age=='')
-        {
-            $('#check_r_age').html("<font color='red'>*请选择年龄！</font>");
-            a=false;
-        }
-        else
-        {
-           $('#check_r_age').html("");
-           a=true;
-        }
-    })
-
-    $('#positionDetail').click(function(){
-        var  r_describe=$('#positionDetail').val();
-        if(r_describe=='')
-        {
-            $('#check_r_describe').html("<font color='red'>*请填写职位描述！</font>");
-            a=false;
-        }
-        else
-        {
-           $('#check_r_describe').html("");
-           a=true;
-        }
-    })
-
-    $('#positionAddress').blur(function(){
-        var  r_place=$('#positionAddress').val();
-        if(r_place=='')
-        {
-            $('#check_r_place').html("<font color='red'>*请输入工作地址！</font>");
-            a=false;
-        }
-        else
-        {
-           $('#check_r_place').html("");
-           a=true;
-        }
-    })
-
-    $('form').submit(function(){
-           if(a==false)
-           {
-               return false;
-           }
-           else
-           {
-           	   return true;
-           }
-	});
-</script>

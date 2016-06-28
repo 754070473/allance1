@@ -34,7 +34,7 @@ class PostofficeController extends Controller{
         //查询企业信息id
         $company=DB::table('al_company')->where('com_id',"$com_id")->first();
         $mes_id=$company->mes_id;
-
+          
 		//接值
 		$r_major=htmlspecialchars(Request::input('r_major'));
 	    $r_name=htmlspecialchars(Request::input('r_name'));
@@ -48,7 +48,14 @@ class PostofficeController extends Controller{
         $r_place=htmlspecialchars(Request::input('r_place'));
         $r_age=htmlspecialchars(Request::input('r_age'));
         $r_iflogbook=htmlspecialchars(Request::input('r_iflogbook'));
-         
+        $g_type=htmlspecialchars(Request::input('g_type'));
+        $r_time=htmlspecialchars(Request::input('r_time'));
+
+
+        //查询分类id
+        $fen = DB::table('al_generalize_type')->where('g_type_name', "$g_type")->first();
+        $g_type_id=$fen->g_type_id;
+
         //判断r_edu
         if($r_edu=='初中')
         {
@@ -106,7 +113,9 @@ class PostofficeController extends Controller{
             'r_place'=>$r_place,
             'r_age'=>$r_age,
             'r_iflogbook'=>$r_iflogbook,
-            'r_edu'=>$r_edu
+            'r_edu'=>$r_edu,
+            'r_time'=>$r_time,
+            'g_type_id'=>$g_type_id
         ]);
 
         //判断

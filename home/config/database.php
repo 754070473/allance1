@@ -53,11 +53,11 @@ return [
         ],
 
         'mysql' => [
-            'driver'    => 'mysql',
+            'driver'    =>'mysql',
             'host'      =>'localhost',
             'database'  =>'allance',
             'username'  =>'root',
-            'password'  =>'147542',
+            'password'  =>'root',
             'charset'   => 'utf8',
             'collation' => 'utf8_unicode_ci',
             'prefix'    => '',
