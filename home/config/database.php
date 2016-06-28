@@ -54,7 +54,8 @@ return [
 
         'mysql' => [
             'driver'    => 'mysql',
-            'host'      =>'localhost',
+            
+            'host'      =>'127.0.0.1',
             'database'  =>'allance',
             'username'  =>'root',
             'password'  =>'147542',
