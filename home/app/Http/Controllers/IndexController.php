@@ -3,7 +3,7 @@ namespace App\Http\Controllers;
 use DB;
 use Session;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
+
 
 /**
  *   IndexController  信息展示
@@ -123,19 +123,20 @@ class IndexController extends Controller {
 //print_r($acc);die; 
                 // $ar = $this->classify('al_post','p_pid');
                 if(empty(session('pla_id'))){
+
              $users = DB::table('al_resume')
             ->join('al_post', 'al_resume.post_id', '=', 'al_post.post_id')
             ->join('al_place', 'al_resume.pla_id', '=', 'al_place.pla_id')
             ->select('al_resume.*', 'al_post.i_name as p_name', 'al_place.i_name')
              ->where('al_post.post_id',"$post_id")
-             ->where('al_place.pla_id',"$pla_id")
+             
              ->where('r_show',0)
              ->where('r_type',0)
              ->where('if_img',0)
             ->paginate(15);
                 }else{
                     // 从session中获取数据...
-    $pla_id = session('pla_id');
+             $pla_id = session('pla_id');
                     $users = DB::table('al_resume')
             ->join('al_post', 'al_resume.post_id', '=', 'al_post.post_id')
             ->join('al_place', 'al_resume.pla_id', '=', 'al_place.pla_id')

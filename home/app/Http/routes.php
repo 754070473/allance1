@@ -60,6 +60,14 @@ Route::get('/reset', 'AccountsetController@reset');
 //修改密码
 Route::get('/updatePwd', 'AccountsetController@updatePwd'); 
 
+
+//找回企业密码
+Route::get('/companypwdl', 'AccountsetController@companypwdl');    
+
+//显示企业密码
+Route::get('/companypwd', 'AccountsetController@companypwd'); 
+//修改企业密码
+Route::get('/companyupdate', 'AccountsetController@companyupdate'); 
 //我收藏的职位
 Route::get('/collections', 'CollectionsController@collections');
 
