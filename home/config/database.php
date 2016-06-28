@@ -13,6 +13,7 @@ return [
     |
     */
 
+    //'fetch' => PDO::FETCH_ASSOC,
     'fetch' => PDO::FETCH_CLASS,
 
     /*
@@ -53,8 +54,9 @@ return [
         ],
 
         'mysql' => [
-            'driver'    => 'mysql',
-            'host'      =>'localhost',
+            'driver'    =>'mysql',
+            
+            'host'      =>'127.0.0.1',
             'database'  =>'allance',
             'username'  =>'root',
             'password'  =>'root',

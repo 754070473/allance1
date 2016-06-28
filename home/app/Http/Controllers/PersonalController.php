@@ -10,8 +10,7 @@ use Illuminate\Http\Request;
 class PersonalController extends Controller {
 
     //我的简历
-    public  function jianli(Request $request){
-    	
+    public function jianli(Request $request){
     //
     	$query['per_id']=Session::get('per_id');//用户id
     	$query['i_name']=Session::get('i_name');//用户id
@@ -77,10 +76,97 @@ class PersonalController extends Controller {
         return view("personal.jianli",$query);
         
     }
+
     //简历预览
-    public function preview()
+    public function previews()
     {
-    	return view("resumegl.preview");
+        $query['per_id']=Session::get('per_id');//用户id
+        $query['i_name']=Session::get('i_name');//用户id
+        $per_id=$query['per_id'];
+        //个人账号信息
+        $query['personal']=DB::table('al_personal')
+                ->select(['*'])
+                ->where('per_id','=',"$per_id")
+                ->limit(1)
+                ->first();
+                
+        //简历信息
+        $query['arr']=DB::table('al_resume')
+                ->select('res_id', 'per_id', 'r_name', 'r_sex', 'r_year', 'r_phone', 'r_hotel', 't_edu',  'r_suffer', 
+                        'r_email', 'r_native', 'r_mantal', 'r_status', 'r_nature', 'r_pay', 'r_politics', 'r_ind', 
+                        'r_photo', 'r_addtime', 'r_show', 'r_type', 'last_time'
+                        , "al_post.i_name as post_name",'al_place.i_name as place_name','i_level','companyName', 'positionName', 
+                        'companyYearStart', 'companyMonthStart', 'companyYearEnd', 'companyMonthEnd','projectName', 'thePost', 'projectYearStart'
+                        , 'projectMonthStart', 'projectYearEnd', 'projectMonthEnd', 'projectDescription', 'schoolName', 'schoolYearStart'
+                        , 'schoolYearEnd', 'if_img','m_name')
+                ->where('per_id','=',"$per_id")
+                ->leftJoin('al_place', 'al_resume.pla_id', '=', 'al_place.pla_id')
+                ->leftJoin('al_post', 'al_resume.post_id', '=', 'al_post.post_id')
+                ->leftJoin('al_major', 'al_resume.major_id', '=', 'al_major.major_id')
+                ->limit(1)
+                ->first();
+                //print_r($query['arr']);die;
+
+                if(!$query['arr']){
+
+                    $time=date('Y-m-d H:i:s');
+                    $arr=DB::table('al_resume')->insert([
+                        ['per_id' => "$per_id",'last_time'=>$time,'r_addtime'=>$time]
+                    ]);
+                    $query['arr']=DB::table('al_resume')
+                    ->select('res_id', 'per_id', 'r_name', 'r_sex', 'r_year', 'r_phone', 'r_hotel', 't_edu', 'r_suffer', 
+                        'r_email', 'r_native', 'r_mantal', 'r_status', 'r_nature', 'r_pay', 'r_politics', 'r_ind', 
+                        'r_photo', 'r_addtime', 'r_show', 'r_type', 'last_time'
+                        , "al_post.i_name as post_name",'al_place.i_name as place_name','i_level','m_name')
+                    ->where('per_id','=',"$per_id")
+                    ->leftJoin('al_place', 'al_resume.pla_id', '=', 'al_place.pla_id')
+                    ->leftJoin('al_post', 'al_resume.post_id', '=', 'al_post.post_id')
+                    ->leftJoin('al_major', 'al_resume.major_id', '=', 'al_major.major_id')
+                    ->limit(1)
+                    ->first();
+                    
+                }
+                //print_r($query['arr']);die;
+        //热门城市
+        $res_id=$query['arr']->res_id;
+        $query['hot']=DB::table('al_place')->select(['*'])->where('i_level','like',"%1%")->get();
+        //ABCDEF
+        $query['ABCDEF']=DB::table('al_place')->select(['*'])->where('i_level','like',"%A%")->orwhere('i_level','like',"%B%")->orwhere('i_level','like',"%C%")->orwhere('i_level','like',"%D%")->orwhere('i_level','like',"%E%")->orwhere('i_level','like',"%F%")->get();
+        //GHIJ
+        $query['GHIJ']=DB::table('al_place')->select(['*'])->where('i_level','like',"%G%")->orwhere('i_level','like',"%H%")->orwhere('i_level','like',"%I%")->orwhere('i_level','like',"%J%")->get();
+        //KLMN
+        $query['KLMN']=DB::table('al_place')->select(['*'])->where('i_level','like',"%K%")->orwhere('i_level','like',"%L%")->orwhere('i_level','like',"%M%")->orwhere('i_level','like',"%N%")->get();
+        //OPQR
+        $query['OPQR']=DB::table('al_place')->select(['*'])->where('i_level','like',"%O%")->orwhere('i_level','like',"%P%")->orwhere('i_level','like',"%Q%")->orwhere('i_level','like',"%R%")->get();
+        //STUV
+         $query['STUV']=DB::table('al_place')->select(['*'])->where('i_level','like',"%S%")->orwhere('i_level','like',"%T%")->orwhere('i_level','like',"%U%")->orwhere('i_level','like',"%V%")->get();
+        //WXYZ
+         $query['WXYZ']=DB::table('al_place')->select(['*'])->where('i_level','like',"%W%")->orwhere('i_level','like',"%X%")->orwhere('i_level','like',"%Y%")->orwhere('i_level','like',"%Z%")->get();
+          //期望城市     
+         //print_r($query);die;
+    	return view("resumegl.preview",$query);
+    }
+    /**
+     * 修改用户名称
+     * @param  string $value [description]
+     * @return [type]        [description]
+     */
+    public function per_i_name(Request $request)
+    {
+        $per_id=Session::get('per_id');//用户id
+        $i_name=$request->input('i_name');
+        Session::put('i_name',$i_name);//用户名称
+        $data['i_name']=Session::get('i_name',$i_name);//用户名称
+
+        $arr=DB::table('al_personal')
+            ->where('per_id', $per_id)
+            ->update($data);
+            if($arr){
+                return redirect('jianli');
+            }else{
+                return redirect('jianli');
+            }
+
     }
     /**
      * 基本 信息 修改

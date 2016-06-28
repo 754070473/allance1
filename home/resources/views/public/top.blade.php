@@ -41,7 +41,7 @@ var youdao_conv_id = 271546;
     		<a href="index.html" class="logo">
     			<img src="style/images/logo.png" width="229" height="43" alt="强强联合-专注互联网招聘" />
     		</a>
-    		
+    		<!--个人-->
         @if($key==1)
             <ul class="reset" id="navheader">
             <li ><a href="index.php">首页</a></li>
@@ -67,11 +67,18 @@ var youdao_conv_id = 271546;
                 <a target="_blank" href="delivery"><strong>0</strong>条新投递反馈</a>
                 <a class="closeNT" href="javascript:;"></a>
             </div>
+            <!--企业-->
             @elseif($key==2)
              <ul class="reset" id="navheader">
                 <li ><a href="index.php">首页</a></li>
+<<<<<<< HEAD
                  <li ><a href="company" >职位</a></li>
                   <li ><a href="companylist" target="_blank">公司</a></li>
+=======
+                   <li ><a href="company" >职位</a></li>
+                  <li ><a href="index01" target="_blank">企业信息中心</a></li>
+                 
+>>>>>>> 551cf6d896c72ca7b2189d79a223ff697739fcb6
                   <li ><a href="login" rel="nofollow">发布职位</a></li>
             </ul>
             <dl class="collapsible_menu">
@@ -82,6 +89,7 @@ var youdao_conv_id = 271546;
                 </dt>
                     
                     <dd><a href="collections">我收藏的职位</a></dd>
+                    <dd class="btm"><a href="index01">企业信息中心</a></dd>
                     <dd class="btm"><a href="subscribe">我的订阅</a></dd>
                     <dd><a href="create">我要招人</a></dd>
                     <dd><a href="accountBind">帐号设置</a></dd>

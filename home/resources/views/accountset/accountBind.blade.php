@@ -1,4 +1,4 @@
-﻿<!DOCTYPE HTML>
+<!DOCTYPE HTML>
 <html xmlns:wb="http://open.weibo.com/wb"><head>
 </script><script type="text/javascript" async="" src="style/js/conversion.js"></script><script src="style/js/allmobilize.min.js" charset="utf-8" id="allmobilize"></script><style type="text/css"></style>
 <meta content="no-siteapp" http-equiv="Cache-Control">
@@ -54,7 +54,14 @@ var youdao_conv_id = 271546;
     <dl id="user_sideBarmenu" class="user_sideBarmenu">
      	        <dt><h3>帐号设置</h3></dt>
                 <dd><a class="hover" href="accountBind">帐号绑定</a></dd>
-        <dd><a href="updatePwd">修改密码</a></dd>
+        <dd>
+        	@if(session('per_id'))
+        	<a href="updatePwd">修改密码</a>
+        	@elseif(session('com_id'))
+        	<a href="companypwdl">修改密码</a>
+        	@endif
+        	
+        </dd>
             </dl>
 </div>
 <input type="hidden" id="hasSidebar" value="1">	<div class="user_bindContent">
@@ -64,7 +71,20 @@ var youdao_conv_id = 271546;
             </dt>
             <dd id="pad">
                 <ul class="user_noModify">
-                    <li>当前登录帐号：<span>jason@qq.com</span> </li>
+                    <li>当前登录帐号：<span>
+                    	@if(session('c_phone'))
+                             <?php  
+                             $aa=session('c_phone');
+                            echo "$aa";
+                             ?>
+                    	@elseif(session('c_email'))
+                               <?php  
+                               $aa=session('c_email');
+                               echo "$aa";
+                               ?>
+                    	@endif
+
+                    </span> </li>
                     <li>绑定后，你可以同时使用以下方式登录拉勾</li>
                 </ul>
                 <dl class="user_thirdLogin">
