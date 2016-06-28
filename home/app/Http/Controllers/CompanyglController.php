@@ -13,7 +13,7 @@ class CompanyglController extends Controller {
     public function index04()
     {
         $com_id = session::get('com_id');
-        $com_id = 1;    //测试数据
+        // $com_id = 1;    //测试数据
         $name = DB::table('al_company')
         ->where('com_id',$com_id)
         ->first();
