@@ -34,10 +34,8 @@ console.log(1);
     $(function(){
      $.get("{{url('top')}}",function(m){
          $('#cache').html(m);
-        
      })
     })
-
 </script>
 
 <body>
@@ -149,31 +147,9 @@ console.log(1);
 	                            <input type="button" class="select" id="select_industry" value="请选择行业领域" />
 	                            <div id="box_industry" class="dn">
 	                            	<ul class="reset">
-                                            <li>移动互联网</li>
-                                            <li>电子商务</li>
-                                            <li>社交</li>
-                                            <li>企业服务</li>
-                                            <li>O2O</li>
-                                            <li>教育</li>
-                                            <li>文化艺术</li>
-                                            <li>游戏</li>
-                                            <li>在线旅游</li>
-                                            <li>金融互联网</li>
-                                            <li>健康医疗</li>
-                                            <li>生活服务</li>
-                                            <li>硬件</li>
-                                            <li>搜索</li>
-                                            <li>安全</li>
-                                            <li>运动体育</li>
-                                            <li>云计算\大数据</li>
-                                            <li>移动广告</li>
-                                            <li>社会化营销</li>
-                                            <li>视频多媒体</li>
-                                            <li>媒体</li>
-                                            <li>智能家居</li>
-                                            <li>智能电视</li>
-                                            <li>分类信息</li>
-                                            <li>招聘</li>
+                                            @foreach($industry as $i)
+                                                <li>{{$i->h_name}}</li>
+                                            @endforeach
                                     </ul>
 	                            </div>
 	                            <span id="fieldError" class="error" style="display:none;">请选择行业领域 </span>	
@@ -221,7 +197,7 @@ console.log(1);
                     var select_industry_hidden = $('#select_industry_hidden').val();
                     //月薪范围
                     var select_salary_hidden = $('#select_salary_hidden').val();
-					if(subEmail=="" || select_day_hidden=="" || select_city_hidden=="" || select_stage_hidden=="" || select_industry_hidden=="")
+					if(subEmail=="" || select_day_hidden=="" || select_city_hidden=="")
 					{
 						if(subEmail == "")
 						{
@@ -239,18 +215,6 @@ console.log(1);
 						{
 							$('#cityError').show();
 						}
-						if(select_stage_hidden == "")
-						{
-							$('#stageError').show();
-						}
-						if(select_industry_hidden == "")
-						{
-							$('#fieldError').show();
-						}
-						if(select_salary_hidden == "")
-						{
-							$('#salaryError').show();
-						}
 					}else
 					{
 						$.ajax({
@@ -259,6 +223,7 @@ console.log(1);
 							data : 'email='+subEmail+'&day='+select_day_hidden+'&job='+select_job_hidden+'&city='+select_city_hidden+'&stage='+select_stage_hidden+'&industry='+select_industry_hidden+'&salary='+select_salary_hidden,
 							success : function(msg)
 							{
+                                alert(msg);
 								if(msg == 0)
                                 {
                                     $.colorbox({
@@ -310,15 +275,26 @@ console.log(1);
 				$('#select_salary').click(function(){
 					$('#salaryError').hide();
                 });
-                function ck_login(){
+
+                function ck_login()
+                {
                     var email = $('#email').val();
                     var password = $('#password').val();
                     $.ajax({
                         type : 'GET',
                         url : 'login_pro',
-                        data : 'name='+email+'pwd='+password,
-                        success:function(msg){
+                        data : 'name='+email+'&pwd='+password,
+                        success:function(msg)
+                        {
                             alert(msg)
+                            if(msg == 4)
+                            {
+                                ck_sub();
+                            }
+                            else
+                            {
+                                $('#beError').show();
+                            }
                         }
                     })
                 }
@@ -413,9 +389,9 @@ console.log(1);
      <!-- 登录框 -->
 	<div id="loginPop" class="popup" style="height:240px;">
        	<form id="loginForm">
-			<input type="text" id="email" name="email" tabindex="1" placeholder="请输入登录邮箱地址或手机号" />
+			<input type="text" id="email" name="email" tabindex="1" placeholder="请输入登录邮箱地址" />
 			<input type="password" id="password" name="password" tabindex="2" placeholder="请输入密码" />
-			<span class="error" style="display:none;" id="beError"></span>
+			<span class="error" style="display:none;" id="beError">账号或密码有误，请重新输入</span>
 		    <label class="fl" for="remember"><input type="checkbox" id="remember" value="" checked="checked" name="autoLogin" /> 记住我</label>
 		    <a href="h/reset" class="fr" target="_blank">忘记密码？</a>
 		    <input type="button" id="submitLogin" value="登 &nbsp; &nbsp; 录" onclick="ck_login()" />

@@ -55,7 +55,7 @@ class PersonalController extends Controller {
                 }
                 //print_r($query['arr']);die;
         //热门城市
-        $res_id=$query['arr']->res_id;
+//        $res_id=$query['arr']->res_id;
         $query['hot']=DB::table('al_place')->select(['*'])->where('i_level','like',"%1%")->get();
         //ABCDEF
         $query['ABCDEF']=DB::table('al_place')->select(['*'])->where('i_level','like',"%A%")->orwhere('i_level','like',"%B%")->orwhere('i_level','like',"%C%")->orwhere('i_level','like',"%D%")->orwhere('i_level','like',"%E%")->orwhere('i_level','like',"%F%")->get();

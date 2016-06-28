@@ -12,6 +12,25 @@ use App\Http\Controllers\Controller;
 class IndexController extends Controller {
 	//展示首页面
 	public  function index(){
+        $this->integral();
+        //获取客户端ip
+        $ip = $this->getIP();
+        $time = date('Y-m-d',time());
+        $sel_ip = DB::table('al_ip')->where('ip', $ip)->first();
+        if(empty($sel_ip))
+        {
+            DB::table('al_ip')->insert(
+                ['ip' => $ip, 'ip_time' => $time]);
+        }
+        else
+        {
+            if($sel_ip->ip_time != $time)
+            {
+                DB::table('al_ip')
+                    ->where('ip_id', $sel_ip->ip_id)
+                    ->update(['ip_time' => $time]);
+            }
+        }
 		return view("index.index");
 	}
 
@@ -128,7 +147,6 @@ class IndexController extends Controller {
             ->join('al_place', 'al_resume.pla_id', '=', 'al_place.pla_id')
             ->select('al_resume.*', 'al_post.i_name as p_name', 'al_place.i_name')
              ->where('al_post.post_id',"$post_id")
-             ->where('al_place.pla_id',"$pla_id")
              ->where('r_show',0)
              ->where('r_type',0)
              ->where('if_img',0)
@@ -174,6 +192,20 @@ public  function gerenlist(Request $request){
 	{
 		return view("index.about");
 	}
+    //获取ip
+    function getIp(){
+        $onlineip='';
+        if(getenv('HTTP_CLIENT_IP')&&strcasecmp(getenv('HTTP_CLIENT_IP'),'unknown')){
+            $onlineip=getenv('HTTP_CLIENT_IP');
+        } elseif(getenv('HTTP_X_FORWARDED_FOR')&&strcasecmp(getenv('HTTP_X_FORWARDED_FOR'),'unknown')){
+            $onlineip=getenv('HTTP_X_FORWARDED_FOR');
+        } elseif(getenv('REMOTE_ADDR')&&strcasecmp(getenv('REMOTE_ADDR'),'unknown')){
+            $onlineip=getenv('REMOTE_ADDR');
+        } elseif(isset($_SERVER['REMOTE_ADDR'])&&$_SERVER['REMOTE_ADDR']&&strcasecmp($_SERVER['REMOTE_ADDR'],'unknown')){
+            $onlineip=$_SERVER['REMOTE_ADDR'];
+        }
+        return $onlineip;
+    }
 }
 
 ?>
