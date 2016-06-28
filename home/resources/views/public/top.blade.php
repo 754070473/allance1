@@ -45,7 +45,7 @@ var youdao_conv_id = 271546;
         @if($key==1)
             <ul class="reset" id="navheader">
             <li ><a href="index.php">首页</a></li>
-            <li ><a href="companylist" >职位</a></li>
+            <li ><a href="companylist" >公司</a></li>
             <li ><a href="jianli" rel="nofollow">个人中心</a></li>
             <li ><a href="toForum" target="_blank">论坛</a></li>
             </ul>
@@ -83,7 +83,7 @@ var youdao_conv_id = 271546;
                     <i></i>
                 </dt>
                     
-                    <dd><a href="collections">我收藏的职位</a></dd>
+                    <dd><a href="canInterviewResumes">收到的简历</a></dd>
                     <dd class="btm"><a href="subscribe">我的订阅</a></dd>
                     <dd><a href="create">我要招人</a></dd>
                     <dd><a href="accountBind">帐号设置</a></dd>
@@ -98,7 +98,7 @@ var youdao_conv_id = 271546;
             @elseif($key==0)
             <ul id="navheader" class="reset">
                 <li ><a href="index.php">首页</a></li>
-                 <li ><a href="companylist" >职位</a></li>
+                 <li ><a href="companylist" >公司</a></li>
                  <li ><a href="toForum" target="_blank">论坛</a></li>
                  <li ><a href="jianli" rel="nofollow">个人中心</a></li>
                

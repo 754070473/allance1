@@ -40,11 +40,12 @@ Route::get('/toudi', 'IndexController@toudi');
 
 //个人找职位
 Route::get('/companylist', 'ReController@companylist');
-
+//个人找职位
+Route::get('/hang', 'ReController@han');
+//个人找职位
+Route::get('/type', 'ReController@hang');
 //公司找简历
 Route::get('/company', 'IndexController@company');
-//公司查询
-Route::any('/hang', 'IndexController@hang');
 //展示关于 联系我们
 Route::get('/about', 'IndexController@about');	
 
@@ -133,8 +134,9 @@ Route::get('/jobyl','PostofficeController@jobyl');
 Route::get('/index06', 'PostofficeController@index06');	
 
 //有效职位
-Route::get('/positions', 'RecresumeController@positions');	
-	
+Route::get('/positions', 'RecresumeController@positions');
+
+
 //不合适简历
 Route::get('/haveRefuseResumes', 'RecresumeController@haveRefuseResumes');	
 	
