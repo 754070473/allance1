@@ -58,12 +58,15 @@ console.log(1);
             <div class="content_l">
             	<div class="fl" id="resume_name">
 	            	<div class="nameShow fl">
-	            		<h1 title="jason的简历">{{$arr->r_name}}的简历</h1>
-	            		<span class="rename">重命名</span> | <a target="_blank" href="{{url('preview')}}">预览</a>
+	            		<h1 title="jason的简历">{{$i_name}}的简历</h1>
+	            		<span class="rename">重命名</span> | <a target="_blank" href="{{url('previews')}}">预览</a>
             		</div>
-            		<form class="fl dn" id="resumeNameForm">
-            			<input type="text" value="jason的简历" name="resumeName" class="nameEdit c9">	
-            			<input type="submit" value="保存"> | <a target="_blank" href="h/resume/preview">预览</a>
+            		<form class="fl dn" id="resumeNameForm" action="{{url('per_i_name')}}" method="post">
+            			<input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
+						<input type="hidden" name="res_id" value="{{$arr->res_id}}">
+
+            			<input type="text" value="{{$i_name}}" name="i_name" class="nameEdit c9">	
+            			<input type="submit" value="保存"> | <a target="_blank" href="{{url('previews')}}">预览</a>
             		</form>
             	</div><!--end #resume_name-->
             	<div class="fr c5" id="lastChangedTime">最后一次更新：<span>{{$arr->last_time}} </span></div><!--end #lastChangedTime-->

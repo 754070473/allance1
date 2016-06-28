@@ -1,6 +1,7 @@
 <?php
 namespace App\Http\Controllers;
 use DB,Session;
+use Request;
 /**
  *   CompanyglController  企业信息管理
  */
@@ -18,15 +19,113 @@ class CompanyglController extends Controller {
         ->first();
         // print_r($name);die;
         $mes_id = $name->mes_id;
+        // echo $mes_id;die;
         $data['arr'] = DB::table('al_com_message')
         ->join('al_recruit', 'al_recruit.mes_id', '=', 'al_com_message.mes_id')
+        ->join('al_place','al_place.pla_id','=','al_com_message.m_place')
         ->where('al_com_message.mes_id',$mes_id)
         ->first();
+        // print_r($data['arr']);
         $m_welfare= $data['arr']->m_welfare;
         $data['welfare'] = explode(',',$m_welfare);
 
         // print_r($data['welfare']);die;
+        // print_r($data);
         return view("companygl.index04",$data);
+    }
+    // 修改 公司名
+    public function save_company_name(Request $request)
+    {
+        $mes_id = $request::input('mes_id');
+        $m_name = $request::input('companyShortName');
+        // echo $m_name;
+        $res = DB::table('al_com_message')
+            ->where('mes_id', $mes_id)
+            ->update(['m_name' => $m_name]);
+            if($res)
+            {
+                echo $m_name;
+            }
+            else
+            {
+                echo '0';
+            }
+    }
+
+    //编辑 公司福利
+    public function save_company_welfare()
+    {
+        $mes_id = Request::input('m_id');
+        $abc = Request::input('abc');
+        // echo $abc;
+      $res = DB::table('al_com_message')
+            ->where('mes_id', $mes_id)
+            ->update(['m_welfare' => $abc]);
+            if($res)
+            {
+                echo 1;
+            }
+            else
+            {
+                echo '失败';
+            }
+
+    }
+
+    // 编辑 公司介绍
+    public function save_company_introduce()
+    {
+        $mes_id = Request::input('me_id');
+        $jieshao = Request::input('jieshao');
+         // echo $jieshao;
+          $res = DB::table('al_com_message')
+            ->where('mes_id', $mes_id)
+            ->update(['m_culture' => $jieshao]);
+            if($res)
+            {
+                echo 1;
+            }
+            else
+            {
+                echo '失败';
+            }
+    }
+
+    //公司详情  编辑 地点  领域   规模  主页 
+    public function save_company_dlgz()
+    {
+        $city = Request::input('city');
+        $industryField = Request::input('industryField');   //领域
+        $companySize = Request::input('companySize');       //规模
+        $companyUrl = Request::input('companyUrl');         //企业地址
+        $mes_id = Request::input('me_id');         
+        $i_name = DB::table('al_place')->where('i_name', $city)->first();
+        $m_place = $i_name->pla_id;
+        $res = DB::table('al_com_message')
+            ->where('mes_id', $mes_id)
+            ->update(['m_place' => $m_place,'m_url'=>$companyUrl]);
+            if($res)
+            {
+                echo 1;
+            }
+            else
+            {
+                echo '失败';
+            }
+    }
+
+    //编辑公司历程
+    public function save_company_course()
+    {
+        $mes_id = Request::input('me_id'); 
+        $remark = Request::input('remark'); 
+    }
+
+    // 添加公司 产品
+    public function save_company_product()
+    {
+        $data = Request::input();
+        print_r($data);
     }
 
 	//申请公司认证
