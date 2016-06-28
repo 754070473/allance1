@@ -34,7 +34,7 @@ class IndexController extends Controller {
 		return view("index.index");
 	}
 
-    //展示招聘信息详情
+    //职位详情
     public function jobdetail()
     {
     	return view("index.jobdetail");

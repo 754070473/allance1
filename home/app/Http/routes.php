@@ -20,7 +20,7 @@ Route::any('/top', 'PublicController@top');
 Route::any('/left', 'PublicController@left');
 Route::any('/main', 'PublicController@main');
 
-//展示招聘信息详情
+//职位详情
 Route::get('/jobdetail', 'IndexController@jobdetail');
 
 //展示招聘信息详情2
