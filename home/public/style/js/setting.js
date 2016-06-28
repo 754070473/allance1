@@ -20,13 +20,13 @@ $(function(){
 	/*bindEmail*/
 	/**没有进行帐号绑定的时候，如果点击logo离开，出现弹窗**/
 	var isLeave=true;
-	window.onbeforeunload = function(){
-		if(isLeave){
-			return;
-		}else{
-			return "内容还未保存，确认离开该页面吗？ ";	
-		}
-	 }
+	// window.onbeforeunload = function(){
+	// 	if(isLeave){
+	// 		return;
+	// 	}else{
+	// 		return "内容还未保存，确认离开该页面吗？ ";	
+	// 	}
+	//  }
 	$('#confirmLeave').click(function(){
 		isLeave = false;
 	})
