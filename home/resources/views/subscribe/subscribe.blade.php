@@ -197,7 +197,7 @@ console.log(1);
                     var select_industry_hidden = $('#select_industry_hidden').val();
                     //月薪范围
                     var select_salary_hidden = $('#select_salary_hidden').val();
-					if(subEmail=="" || select_day_hidden=="" || select_city_hidden=="" || select_stage_hidden=="" || select_industry_hidden=="")
+					if(subEmail=="" || select_day_hidden=="" || select_city_hidden=="")
 					{
 						if(subEmail == "")
 						{
@@ -215,18 +215,6 @@ console.log(1);
 						{
 							$('#cityError').show();
 						}
-						if(select_stage_hidden == "")
-						{
-							$('#stageError').show();
-						}
-						if(select_industry_hidden == "")
-						{
-							$('#fieldError').show();
-						}
-						if(select_salary_hidden == "")
-						{
-							$('#salaryError').show();
-						}
 					}else
 					{
 						$.ajax({
@@ -235,6 +223,7 @@ console.log(1);
 							data : 'email='+subEmail+'&day='+select_day_hidden+'&job='+select_job_hidden+'&city='+select_city_hidden+'&stage='+select_stage_hidden+'&industry='+select_industry_hidden+'&salary='+select_salary_hidden,
 							success : function(msg)
 							{
+                                alert(msg);
 								if(msg == 0)
                                 {
                                     $.colorbox({

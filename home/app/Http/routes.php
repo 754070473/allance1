@@ -160,9 +160,13 @@ Route::get('/delivery', 'ResumetdController@delivery');
 Route::get('/subscribe', 'SubscribeController@subscribe');
   
 //我的职位订阅1
-Route::get('/subscribe01', 'SubscribeController@subscribe01');    
-
-	
+Route::get('/subscribe01', 'SubscribeController@subscribe01');
 
 //职位订阅删除
 Route::get('/subdel','SubscribeController@subdel');
+
+//职位订阅添加
+Route::get('/subinfo','SubscribeController@subinfo');
+
+//发送邮件测试
+Route::get('/send','SubscribeController@send');
