@@ -59,13 +59,34 @@ Route::get('/updatePwd', 'AccountsetController@updatePwd');
 //修改密码
 Route::get('/pass', 'AccountsetController@pass');
 
+//职位详情
+Route::get('/position_details', 'PositionController@position_details');
+
+
 //我收藏的职位
 Route::get('/collections', 'CollectionsController@collections');
 //取消收藏
 Route::get('/cancel_collections', 'CollectionsController@ceancel');
 
+
 //公司详情
 Route::get('index04', 'CompanyglController@index04');
+//公司详情 修改公司名称
+Route::get('save_company_name', 'CompanyglController@save_company_name');
+//公司详情  编辑公司的福利
+Route::get('save_company_welfare', 'CompanyglController@save_company_welfare');
+//公司详情 添加公司的产品
+Route::post('save_company_product', 'CompanyglController@save_company_product');
+//公司详情  编辑公司介绍
+Route::get('save_company_introduce', 'CompanyglController@save_company_introduce');
+//公司详情  编辑 地点  领域   规模  主页 
+Route::get('save_company_dlgz', 'CompanyglController@save_company_dlgz');
+//公司详情 编辑公司历程
+Route::get('save_company_course', 'CompanyglController@save_company_course');
+
+
+
+
 
 //申请公司认证
 Route::get('/auth', 'CompanyglController@auth');	

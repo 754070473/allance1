@@ -13,7 +13,8 @@ return [
     |
     */
 
-    'fetch' => PDO::FETCH_ASSOC,
+    // 'fetch' => PDO::FETCH_ASSOC,  //数组
+    'fetch' => PDO::FETCH_CLASS,    //对象
 
     /*
     |--------------------------------------------------------------------------
