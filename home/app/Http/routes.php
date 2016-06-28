@@ -125,7 +125,7 @@ Route::any('/expectedwork', 'PersonalController@expectedwork');//修改期望工
 //发布新职位
 Route::get('/create', 'PostofficeController@create');
 Route::post('/postAdd','PostofficeController@postAdd');
-Route::get('/jobyl','PostofficeController@jobyl');
+Route::any('/jobyl','PostofficeController@jobyl');
 
 //职位发布成功
 Route::get('/index06', 'PostofficeController@index06');	

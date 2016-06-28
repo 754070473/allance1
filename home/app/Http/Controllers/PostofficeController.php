@@ -34,6 +34,7 @@ class PostofficeController extends Controller{
         //查询企业信息id
         $company=DB::table('al_company')->where('com_id',"$com_id")->first();
         $mes_id=$company->mes_id;
+
 		//接值
 		$r_major=htmlspecialchars(Request::input('r_major'));
 	    $r_name=htmlspecialchars(Request::input('r_name'));
@@ -44,8 +45,48 @@ class PostofficeController extends Controller{
 	    $r_suffer=htmlspecialchars(Request::input('r_suffer'));
 	    $r_edu=htmlspecialchars(Request::input('r_edu'));
 	    $r_describe=htmlspecialchars(Request::input('r_describe'));
+        $r_place=htmlspecialchars(Request::input('r_place'));
+        $r_age=htmlspecialchars(Request::input('r_age'));
+        $r_iflogbook=htmlspecialchars(Request::input('r_iflogbook'));
+         
+        //判断r_edu
+        if($r_edu=='初中')
+        {
+             $r_edu=0;
+        }
+        elseif($r_edu=='高中')
+        {
+             $r_edu=1;
+        }
+        elseif($r_edu=='中技')
+        {
+             $r_edu=2;
+        }
+        elseif($r_edu=='中专')
+        {
+             $r_edu=3;
+        }
+        elseif($r_edu=='大专')
+        {
+             $r_edu=4;
+        }
+        elseif($r_edu=='本科')
+        {
+             $r_edu=5;
+        }
+        elseif($r_edu=='硕士')
+        {
+             $r_edu=6;
+        }
+        elseif($r_edu=='博士')
+        {
+             $r_edu=7;
+        }
+        elseif($r_edu=='博后')
+        {
+             $r_edu=8;
+        }
 
-        
         //发布时间
         $r_addtime=date('Y-m-d H:i:s',time());
         
@@ -59,16 +100,19 @@ class PostofficeController extends Controller{
             'r_language'=>$r_language,
             'r_pay'=>$r_pay,
             'r_suffer'=>$r_suffer,
-            'r_edu'=>$r_edu,
             'r_describe'=>$r_describe,
             'r_addtime'=>$r_addtime,
-            'mes_id'=>$mes_id 
+            'mes_id'=>$mes_id,
+            'r_place'=>$r_place,
+            'r_age'=>$r_age,
+            'r_iflogbook'=>$r_iflogbook,
+            'r_edu'=>$r_edu
         ]);
 
         //判断
         if($re)
         {
-             $this->jobyl();
+             return redirect('/index06');
         }
         else
         {
