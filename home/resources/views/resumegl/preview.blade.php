@@ -37,7 +37,7 @@ $(function(){
 <body>
   	<div id="previewWrapper">
         <div class="preview_header">
-            <h1 title="jason的简历">jason的简历</h1>
+            <h1 title="jason的简历">{{$i_name}}</h1>
                         	<a title="下载简历" class="inline cboxElement" href="#downloadOnlineResume">下载该简历</a>
                     </div><!--end .preview_header-->
 
@@ -45,11 +45,78 @@ $(function(){
             <div class="profile_box" id="basicInfo">
                 <h2>基本信息</h2>
                 <div class="basicShow">
-                   <span>jason | 
-                    男 |                     大专 |                                       		3年工作经验
-            		            			| 广州<br>
-            			            				高级产品经理 · 上海辉硕科技有限公司 | 本科 · 北京大学<br>
-            			            			18644444444 | jason@qq.com<br>
+                   <span>{{$arr->r_name}} | 
+                    @if($arr->r_sex==1)
+		     		男
+		     		@elseif($arr->r_sex==2)
+		     		女 
+		     		@else
+		     		性别
+		     		@endif  |              
+		     		@if($arr->t_edu==0)
+		     		<?php echo $t_edu="初中" ?>
+		     		@elseif($arr->t_edu==1)
+		     		<?php echo $t_edu="高中" ?>
+		     		@elseif($arr->t_edu==2)
+		     		 <?php echo $t_edu="中技" ?>
+		     		@elseif($arr->t_edu==3)
+		     		 <?php echo $t_edu="中专" ?>
+		     		@elseif($arr->t_edu==4)
+		     		 <?php echo $t_edu="大专" ?>
+		     		@elseif($arr->t_edu==5)
+		     		 <?php echo $t_edu="本科" ?>
+		     		@elseif($arr->t_edu==6)
+		     		 <?php echo $t_edu="硕士" ?>
+		     		@elseif($arr->t_edu==7)
+		     		 <?php echo $t_edu="博士" ?>
+		     		@elseif($arr->t_edu==8)
+		     		<?php echo $t_edu="博后" ?>
+		     		@else
+		     		 <?php echo $t_edu="其他" ?>
+		     		@endif  
+		     		 |   
+		     		  @if($arr->r_suffer==0)
+		     		<?php echo $r_suffer="应届生" ?>
+		     		@elseif($arr->r_suffer==1)
+		     		<?php echo $r_suffer="无经验" ?>
+		     		@elseif($arr->r_suffer==2)
+		     		 <?php echo $r_suffer="1年以下" ?>
+		     		@elseif($arr->r_suffer==3)
+		     		 <?php echo $r_suffer="1-3年" ?>
+		     		@elseif($arr->r_suffer==4)
+		     		 <?php echo $r_suffer="3-5年" ?>
+		     		@elseif($arr->r_suffer==5)
+		     		 <?php echo $r_suffer="5-10年" ?>
+		     		@elseif($arr->r_suffer==6)
+		     		 <?php echo $r_suffer="10年以上" ?>
+		     		@else
+		     		 <?php echo $r_suffer="其他" ?>
+		     		@endif  
+            		            			| {{$arr->place_name}}<br>
+            			            				{{$arr->positionName}} · {{$arr->companyName}} | 
+            			            										@if($arr->t_edu==0)
+																     		<?php echo $t_edu="初中" ?>
+																     		@elseif($arr->t_edu==1)
+																     		<?php echo $t_edu="高中" ?>
+																     		@elseif($arr->t_edu==2)
+																     		 <?php echo $t_edu="中技" ?>
+																     		@elseif($arr->t_edu==3)
+																     		 <?php echo $t_edu="中专" ?>
+																     		@elseif($arr->t_edu==4)
+																     		 <?php echo $t_edu="大专" ?>
+																     		@elseif($arr->t_edu==5)
+																     		 <?php echo $t_edu="本科" ?>
+																     		@elseif($arr->t_edu==6)
+																     		 <?php echo $t_edu="硕士" ?>
+																     		@elseif($arr->t_edu==7)
+																     		 <?php echo $t_edu="博士" ?>
+																     		@elseif($arr->t_edu==8)
+																     		<?php echo $t_edu="博后" ?>
+																     		@else
+																     		 <?php echo $t_edu="其他" ?>
+																     		@endif  
+		     		 · {{$arr->schoolName}}<br>
+            			            			{{$arr->r_phone}} | {{$arr->r_email}}<br>
             			
             		</span>
            			<div class="m_portrait">
@@ -62,7 +129,17 @@ $(function(){
 				            <div class="profile_box" id="expectJob">
 	                <h2>期望工作</h2>
 	                <div class="expectShow">
-	                	广州，全职，月薪5k-10k，产品经理
+	                	{{$arr->place_name}}，
+	                	@if($arr->r_nature==0)
+	                	全职
+						@elseif($arr->r_nature==1)
+						兼职
+						@elseif($arr->r_nature==2)
+						实习
+						@else
+						请填写工作性质
+						@endif
+	                	，月薪{{$arr->r_pay}}，{{$arr->post_name}}
 	                </div><!--end .expectShow-->
 	            </div><!--end #expectJob-->
 						
@@ -71,11 +148,13 @@ $(function(){
 	                <div class="experienceShow">
 	                  <ul class="wlist clearfix">
 	                  	                    	           				            				<li class="clear">
-            					           					<span class="c9">2013.06-至今</span>
+            					           					<span class="c9">{{$arr->companyYearStart}}.{{$arr->companyMonthStart}}-
+																{{$arr->companyYearEnd}}.{{$arr->companyMonthEnd}}
+            					           					</span>
 	           					<div>
 	           						<img width="56" height="56" alt="上海辉硕科技有限公司" src="style/images/logo_default.png">
-	           						<h3>高级产品经理 </h3>
-	           						<h4>上海辉硕科技有限公司</h4>
+	           						<h3>{{$arr->positionName}} </h3>
+	           						<h4>{{$arr->companyName}}</h4>
 	           					</div>
 	           				</li>
 	           					          				                  </ul>
@@ -88,9 +167,10 @@ $(function(){
 	                  <ul class="plist clearfix">
 	                  			            				            					            				<li class="noborder">
 	            					            					<div class="projectList">
-		            					<div class="f16 mb10">微盟，jason
+		            					<div class="f16 mb10">{{$arr->projectName}}，{{$arr->thePost}}
 		            						<span class="c9">
-		            									            								（2013.06-至今）
+		            									        （{{$arr->projectYearStart}}.{{$arr->projectMonthStart}}-
+																{{$arr->projectYearEnd}}.{{$arr->projectMonthEnd}}）
 		            									            						</span>
 		            					</div>
 		            							            					<div class="dl1"></div>
@@ -105,10 +185,33 @@ $(function(){
 	                <div class="educationalShow">
 	                  <ul class="elist clearfix">
 	                  	                  	            				            				<li class="clear">
-            				            					<span class="c9">2004-2008</span>
+            				            					<span class="c9">{{$arr->schoolYearStart}}-{{$arr->schoolYearEnd}}</span>
             					<div>
-            						<h3>北京大学</h3>
-            						<h4>黑客联盟，本科</h4>
+            						<h3>{{$arr->schoolName}}</h3>
+            						<h4>{{$arr->m_name}}，
+										@if($arr->t_edu==0)
+							     		<?php echo $t_edu="初中" ?>
+							     		@elseif($arr->t_edu==1)
+							     		<?php echo $t_edu="高中" ?>
+							     		@elseif($arr->t_edu==2)
+							     		 <?php echo $t_edu="中技" ?>
+							     		@elseif($arr->t_edu==3)
+							     		 <?php echo $t_edu="中专" ?>
+							     		@elseif($arr->t_edu==4)
+							     		 <?php echo $t_edu="大专" ?>
+							     		@elseif($arr->t_edu==5)
+							     		 <?php echo $t_edu="本科" ?>
+							     		@elseif($arr->t_edu==6)
+							     		 <?php echo $t_edu="硕士" ?>
+							     		@elseif($arr->t_edu==7)
+							     		 <?php echo $t_edu="博士" ?>
+							     		@elseif($arr->t_edu==8)
+							     		<?php echo $t_edu="博后" ?>
+							     		@else
+							     		 <?php echo $t_edu="其他" ?>
+							     		@endif  
+
+            						</h4>
             					</div>
             				</li>
             				           					                  </ul>
@@ -118,23 +221,24 @@ $(function(){
 				            <div class="profile_box" id="selfDescription">
 	                <h2>自我描述</h2>
 	                <div class="descriptionShow">
-	            	黑客
+	            	{{$arr->r_ind}}
 	                </div><!--end .descriptionShow-->
 	            </div><!--end #selfDescription-->
 						
-				            <div class="profile_box" id="worksShow">
-	                <h2>作品展示</h2>
-	                <div class="workShow">
-	                  <ul class="slist clearfix">
-	                  		                  	            				            				<li class="noborder">
-            				            					<div class="workList c7">
-	            						            							            							<div class="f16">网址：<a target="_blank" href="http://www.weimob.com">http://www.weimob.com</a></div>
-	            							            						            					<p>产品 </p>
-	            				</div>
-            				</li>
-            				           					                  </ul>
-	                </div><!--end .workShow-->
-	            </div><!--end #worksShow-->
+				<!-- <div class="profile_box" id="worksShow">
+					                <h2>作品展示</h2>
+					                <div class="workShow">
+					                  <ul class="slist clearfix">
+					                  		                  	            				            				<li class="noborder">
+				            				            					<div class="workList c7">
+					            						            							            							<div class="f16">网址：<a target="_blank" href="http://www.weimob.com">http://www.weimob.com</a></div>
+					            							            						            					<p>产品 </p>
+					            				</div>
+				            				</li>
+				            				           					                  </ul>
+					                </div>end .workShow
+					            </div> --><!--end #worksShow-->
+
 			        </div><!--end .preview_content-->
   	</div><!--end #previewWrapper-->
 
