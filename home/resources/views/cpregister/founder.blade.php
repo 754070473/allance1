@@ -60,49 +60,52 @@ var youdao_conv_id = 271546;
                 	<div class="c_text">展示强劲的创始团队，让求职者跟随而来吧！</div>
                  	<img width="668" height="56" class="c_steps" alt="第三步" src="style/images/step3.png">
                     
-                    <form method="post" action="http://www.lagou.com/cl/saveLeaderInfos.json" id="memberForm">
-                    	<input type="hidden" value="52346c62232045a8ab1d45cb3e0540b7" name="resubmitToken">
-                   	 	<input type="hidden" id="companyId" name="companyId" value="25927">
+                    <form method="post" action="{{url('founder')}}" method="post" id="memberForm">
+                    	
+                    	
 	                    <div id="memberDiv">
 		                    <div class="formWrapper">
-		                    	<input type="hidden" value="25927" name="leaderInfos[0].companyId">
-		                        <div class="new_portrait">
+		                    	
+		                        <!-- <div class="new_portrait">
 		                            <div class="portrait_upload" id="portraitNo0">
 		                                <span>上传创始人头像</span>
 		                            </div>
 		                            <div class="portraitShow dn" id="portraitShow0">
-			                        	<img width="120" height="120" src="">
-			                        	<span>更换头像</span>
-			                        </div>
-			                        <input type="file" value="" title="支持jpg、jpeg、gif、png格式，文件小于5M" onchange="img_check(this,'http://www.lagou.com/c/upload.json',120,120,5,'myfiles0','myfiles0_error','portraitNo0','portraitShow0','type0','leaderInfos0');" name="myfiles" id="myfiles0" class="myfiles">
-			                    	<input type="hidden" value="7" name="type" id="type0">
-			                    	<input type="hidden" name="leaderInfos[0].photo" id="leaderInfos0">
+		                        			                        	<img width="120" height="120" src="">
+		                        			                        	<span>更换头像</span>
+		                        			                        </div>
+		                        			                        <input type="file" value="" title="支持jpg、jpeg、gif、png格式，文件小于5M" onchange="img_check(this,'http://www.lagou.com/c/upload.json',120,120,5,'myfiles0','myfiles0_error','portraitNo0','portraitShow0','type0','leaderInfos0');" name="myfiles" id="myfiles0" class="myfiles">
+		                        			                    	<input type="hidden" value="7" name="type" id="type0">
+		                        			                    	<input type="hidden" name="leaderInfos[0].photo" id="leaderInfos0">
 		                            <em>
-								                                尺寸：120*120px <br> 	
-								                                大小：小于5M
+		                        								                                尺寸：120*120px <br> 	
+		                        								                                大小：小于5M
 		                            </em>
 		                            <span style="display:none;" id="myfiles0_error" class="error"></span>
-		                        </div>
+		                        </div> -->
 		                        
 		                        
 		                        <h3>创始人姓名</h3>
-		                        <input type="text" placeholder="请输入创始人姓名" name="leaderInfos[0].name" id="name0" class="s_input1 valid">	
+		                        <input type="text" placeholder="请输入创始人姓名" name="leadername" id="name0" class="s_input1 valid">	
 		                        
 		                        <h3>当前职位</h3>
-		                        <input type="text" placeholder="请输入当前职位，如：创始人兼CEO" name="leaderInfos[0].position" id="position0" class="s_input1 valid">	
+		                        <input type="text" placeholder="请输入当前职位，如：创始人兼CEO" name="position" id="position0" class="s_input1 valid">	
 		                        
 		                        <h3>新浪微博</h3>
-		                        <input type="text" placeholder="请输入创始人新浪微博地址" name="leaderInfos[0].weibo" id="weibo0">	
+		                        <input type="text" placeholder="请输入创始人新浪微博地址" name="weibo" id="weibo0">	
 		                        
 		                        <h3>创始人简介</h3> 
-		                        <textarea placeholder="请输入该创始人的个人履历等，建议按照时间倒序分条展示" maxlength="1000" name="leaderInfos[0].remark" id="description0"></textarea>	
+		                        <textarea placeholder="请输入该创始人的个人履历等，建议按照时间倒序分条展示" maxlength="1000" name="remark" id="description0"></textarea>	
 		                        <div class="word_count">你还可以输入 <span>500</span> 字</div>
 		                    </div>
 	                    </div>
-                    	<a id="addMember" class="add_member" href="javascript:void(0)"><i></i>继续添加创始团队</a>
+                    	<!-- <a id="addMember" class="add_member" href="javascript:void(0)"><i></i>继续添加创始团队</a> -->
                    		<div class="clear"></div>
+                   		<input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
+						<input type="hidden" name="mes_id" value="{{$arr->mes_id}}" id="mes_id">
+
                     	<input type="submit" value="保存，下一步" id="step3Submit" class="btn_big fr">
-                    	<a class="btn_cancel fr" href="http://www.lagou.com/c/product">跳过</a>
+                    	<a class="btn_cancel fr" href="{{url('index02')}}">跳过</a>
                     </form>
                 </dd>
             </dl>

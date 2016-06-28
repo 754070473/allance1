@@ -61,13 +61,13 @@ var youdao_conv_id = 271546;
                 	<div class="c_text">目标明确、前途光明的产品是吸引求职者的制胜法宝哦！</div>
                  	<img width="668" height="56" class="c_steps" alt="第四步" src="style/images/step4.png">
                     
-                    <form method="post" action="http://www.lagou.com/cp/saveCompanyProducts.json" id="productForm">
-                    	<input type="hidden" value="8f79f658e49846ae89d90a3f1590f12e" name="resubmitToken">
-                    	<input type="hidden" id="companyId" name="companyId" value="25927">
+                    <form method="post" action="{{url('index02')}}" method="post" id="productForm">
+                    	
+                    	
                     	<div id="productDiv">
 		                    <div class="formWrapper">
-		                    	<input type="hidden" value="25927" name="productInfos[0].companyId">
-		                        <h3>产品海报</h3>
+		                    	
+		                        <!-- <h3>产品海报</h3>
 		                        <div class="new_product mt20">
 		                            <div id="productNo0" class="product_upload">
 		                                <div style="background-color: rgb(147, 183, 187);">
@@ -77,28 +77,33 @@ var youdao_conv_id = 271546;
 		                                </div>
 		                            </div>
 		                            <div id="productShow0" class="product_upload dn productShow">
-			                        	<img width="380" height="220" src="">
-			                        	<span>更换产品图片<br>380*220px 小于5M</span>
-			                        </div>
-			                        <input type="file" title="支持jpg、jpeg、gif、png格式，文件小于5M" onchange="img_check(this,'http://www.lagou.com/c/upload.json',380,220,5,'myfiles0','myfiles0_error','productNo0','productShow0','type0','productInfos0');" name="myfiles" id="myfiles0">
-			                    	<input type="hidden" value="3" name="productInfos[0].type" id="type0"> 
-			                    	<input type="hidden" name="productInfos[0].productPicUrl" id="productInfos0">   
-			                    </div>
+		                        			                        	<img width="380" height="220" src="">
+		                        			                        	<span>更换产品图片<br>380*220px 小于5M</span>
+		                        			                        </div>
+		                        			                        <input type="file" title="支持jpg、jpeg、gif、png格式，文件小于5M" onchange="img_check(this,'http://www.lagou.com/c/upload.json',380,220,5,'myfiles0','myfiles0_error','productNo0','productShow0','type0','productInfos0');" name="myfiles" id="myfiles0">
+		                        			                    	<input type="hidden" value="3" name="productInfos[0].type" id="type0"> 
+		                        			                    	<input type="hidden" name="productInfos[0].productPicUrl" id="productInfos0">   
+		                        			                    </div> -->
 			                   	<span style="display:none;" id="myfiles0_error" class="error"></span>
 			                    
 		                        <h3>产品名称</h3>
-		                        <input type="text" placeholder="请输入产品名称" name="productInfos[0].product" id="name0">	
+		                        <input type="text" placeholder="请输入产品名称" name="product" id="name0">	
 		                        
 		                        <h3>产品地址</h3>
-		                        <input type="text" placeholder="请输入产品主页URL或产品下载地址" name="productInfos[0].productUrl" id="address0">	
+		                        <input type="text" placeholder="请输入产品主页URL或产品下载地址" name="productUrl" id="address0">	
 		                        
 		                        <h3>产品简介</h3> 
-		                        <textarea placeholder="请简短描述该产品定位、产品特色、用户群体等" maxlength="1000" name="productInfos[0].productProfile" id="description0"></textarea>	
+		                        <textarea placeholder="请简短描述该产品定位、产品特色、用户群体等" maxlength="1000" name="productProfile" id="description0"></textarea>	
 		                        <div class="word_count">你还可以输入 <span>500</span> 字</div>
 		                    </div>
 	                    </div>
-                    	<a id="addMember" class="add_member" href="javascript:void(0)"><i></i>继续添加公司产品</a>
+                    	<!-- <a id="addMember" class="add_member" href="javascript:void(0)"><i></i>继续添加公司产品</a> -->
                    		<div class="clear"></div>
+
+                   		<input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
+						<input type="hidden" name="mes_id" value="{{$arr->mes_id}}" id="mes_id">
+
+
                     	<input type="submit" value="保存，下一步" id="step4Submit" class="btn_big fr">
                     	<a class="btn_cancel fr" href="http://www.lagou.com/c/intro">跳过</a>
                     </form>
