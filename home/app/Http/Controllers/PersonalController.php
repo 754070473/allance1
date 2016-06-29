@@ -1,6 +1,7 @@
 <?php
 namespace App\Http\Controllers;
 use DB;
+use Storage,Input;
 use Session;
 use Illuminate\Http\Request;
 /**
@@ -153,6 +154,7 @@ class PersonalController extends Controller {
      */
     public function per_i_name(Request $request)
     {
+
         $per_id=Session::get('per_id');//用户id
         $i_name=$request->input('i_name');
         Session::put('i_name',$i_name);//用户名称
@@ -174,6 +176,10 @@ class PersonalController extends Controller {
      */
     public function basic(Request $request)
     {
+
+        //$file = Input::file('r_photo');
+        $data['r_photo']=$this->imgUpload('r_photo');//上传图片
+        
     	$res_id=$request->input('res_id');//个人信息id
 
     	$data['r_sex']=$request->input('gender');//性别

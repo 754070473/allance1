@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Storage,Input;
 use DB;
 use Session;
 use Illuminate\Foundation\Bus\DispatchesJobs;
@@ -83,6 +83,21 @@ abstract class Controller extends BaseController
         {
             DB::table('al_user_log')->insert(
                 ['per_id' => $per_id, 'u_content' => $content, 'u_time' => $time]);
+        }
+    }
+
+    public function imgUpload($upload)
+    {
+        $file = Input::file($upload);
+        if($file -> isValid()){
+            $clientName = $file -> getClientOriginalName(); //图片名称
+            $tmpName = $file ->getFileName();//缓存在tmp文件夹中的文件名例如php8933.tmp 这种类型的.
+            $realPath = $file -> getRealPath(); //这个表示的是缓存在tmp文件夹下的文件的绝对路径
+            $entension = $file -> getClientOriginalExtension(); //上传文件的后缀.
+            $mimeTye = $file -> getMimeType();
+            $newName = md5(date('ymdhis').$clientName)."."."$entension";//修改图片名称
+            $path = $file -> move('upload/',$newName);
+            return $path;
         }
     }
 }

@@ -155,12 +155,14 @@ console.log(1);
             			</span>
             			<div class="m_portrait">
 	                    	<div></div>
-	                    	<img width="120" height="120" alt="jason" src="style/images/361748.jpg">
+	                    	<img width="120" height="120" alt="jason" src="{{$arr->r_photo}}">
 	                    </div>
             		</div><!--end .basicShow-->
 
             		<div class="basicEdit dn">
+
             			<form id="profileForm" action="{{url('basic')}}" method="post" enctype="multipart/form-data">
+						  <div style="float:left;">
 						  <table>
 						    <tbody>
 						    <tr>
@@ -181,8 +183,26 @@ console.log(1);
 						            	  女<em></em>
 						              	<input type="radio" name="gender" value="2"> 
 						            </li>
+						            <li style="margin-left:220px;">
+						            	
+										<div class="new_portrait">
+											  <div class="portrait_upload" id="portraitNo">
+											      <span>上传自己的头像</span>
+											  </div>
+											  <div class="portraitShow dn" id="portraitShow">
+											    <img width="120" height="120" src="">
+											    <span>更换头像</span>
+											  </div>
+											  <input type="file" value="" title="支持jpg、jpeg、gif、png格式，文件小于5M"  name="r_photo" id="headPic">
+												<!-- <input type="hidden" id="headPicHidden" /> -->
+											  	
+											  	<span style="display:none;" id="headPic_error" class="error"></span>
+										</div><!--end .new_portrait-->
+								    
+						            </li>
 						          </ul>  
 						      </td>
+
 						    </tr>
 						    <tr>
 						      <td valign="top">
@@ -257,6 +277,7 @@ console.log(1);
 							        	  </ul>
 						          </div>  
 						      </td>
+						      
 						    </tr>
 						    <tr>
 						      <td></td> 
@@ -268,25 +289,12 @@ console.log(1);
 						      </td>
 						    </tr>
 						  </tbody></table>
+						 </div>
+
+							
 						</form><!--end #profileForm-->
 
 
-						<div class="new_portrait">
-						  <div class="portrait_upload" id="portraitNo">
-						      <span>上传自己的头像</span>
-						  </div>
-						  <div class="portraitShow dn" id="portraitShow">
-						    <img width="120" height="120" src="">
-						    <span>更换头像</span>
-						  </div>
-						  <input type="file" value="" title="支持jpg、jpeg、gif、png格式，文件小于5M" onchange="img_check(this,'h/resume/uploadPhoto.json','headPic');" name="headPic" id="headPic" class="myfiles">
-							<!-- <input type="hidden" id="headPicHidden" /> -->
-						  	<em>
-						                  尺寸：120*120px <br>   
-						                  大小：小于5M
-						  	</em>
-						  	<span style="display:none;" id="headPic_error" class="error"></span>
-						</div><!--end .new_portrait-->
             		</div><!--end .basicEdit-->
             		<input type="hidden" id="nameVal" value="{{$arr->r_name}}">
             		<input type="hidden" id="genderVal" value="{{$arr->r_sex}}">

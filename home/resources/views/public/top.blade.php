@@ -45,7 +45,7 @@ var youdao_conv_id = 271546;
         @if($key==1)
             <ul class="reset" id="navheader">
             <li ><a href="index.php">首页</a></li>
-            <li ><a href="companylist" >职位</a></li>
+            <li ><a href="companylist">职位</a></li>
             <li ><a href="companylist" >公司</a></li>
             <li ><a href="jianli" rel="nofollow">个人中心</a></li>
             </ul>
@@ -71,14 +71,10 @@ var youdao_conv_id = 271546;
             @elseif($key==2)
              <ul class="reset" id="navheader">
                 <li ><a href="index.php">首页</a></li>
-<<<<<<< HEAD
-                 <li ><a href="company" >职位</a></li>
-                  <li ><a href="companylist" target="_blank">公司</a></li>
-=======
-                   <li ><a href="company" >职位</a></li>
+                 <li ><a href="company" >简历</a></li>
+                  <li ><a href="companylist">公司</a></li>
                   <li ><a href="index01" target="_blank">企业信息中心</a></li>
                  
->>>>>>> 551cf6d896c72ca7b2189d79a223ff697739fcb6
                   <li ><a href="login" rel="nofollow">发布职位</a></li>
             </ul>
             <dl class="collapsible_menu">
@@ -88,9 +84,8 @@ var youdao_conv_id = 271546;
                     <i></i>
                 </dt>
                     
-                    <dd><a href="collections">我收藏的职位</a></dd>
+                    <dd><a href="canInterviewResumes">收到的简历</a></dd>
                     <dd class="btm"><a href="index01">企业信息中心</a></dd>
-                    <dd class="btm"><a href="subscribe">我的订阅</a></dd>
                     <dd><a href="create">我要招人</a></dd>
                     <dd><a href="accountBind">帐号设置</a></dd>
                     <dd class="login"><a rel="nofollow" href="logout">退出</a></dd>
@@ -105,7 +100,7 @@ var youdao_conv_id = 271546;
             <ul id="navheader" class="reset">
                 <li ><a href="index.php">首页</a></li>
                  <li ><a href="companylist" >职位</a></li>
-                 <li ><a href="companylist" target="_blank">公司</a></li>
+                 <li ><a href="companylist" >公司</a></li>
                  <li ><a href="jianli" rel="nofollow">个人中心</a></li>
                
                 </ul>

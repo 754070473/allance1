@@ -61,8 +61,11 @@ var youdao_conv_id = 271546;
                 	<div class="c_text">背景深、规模大、发展快、氛围好…用优势吸引求职者吧！</div>
                  	<img width="668" height="56" class="c_steps" alt="第五步" src="style/images/step5.png">
                     <!-- action="http://www.lagou.com/c/saveProfile.json" -->
-                    <form method="post" action="{{url('index03')}}" method="psot" id="infoForm">
+                    <form method="post" action="{{url('index03')}}" method="psot" id="infoForm" enctype="multipart/form-data">
                     	<input type="hidden" name="companyId" value="25927">
+
+                        <h3>公司logo</h3>
+                        <input type="file" name="m_logo"> 
                         <h3>公司介绍</h3> 
                         <textarea placeholder="请分段详细描述公司简介、企业文化等" name="m_desc" id="companyProfile"></textarea>	
                         <div class="word_count">你还可以输入 <span>1000</span> 字</div>
