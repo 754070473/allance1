@@ -56,9 +56,57 @@ class PublicController extends Controller {
 	}
 	/**中心*/
 	public  function main(){
+        $now_time = date('Y-m-d H:i:s',time());
 		$arr = $this->classify('al_post','p_pid');
-		return view("public.main",['arr'=>$arr]);
+        $data = DB::select('select * from al_generalize_type');
+        foreach($data as $key=>$val)
+        {
+            $data[$key]->son = DB::table('al_recruit')
+                ->join('al_com_message', 'al_recruit.mes_id', '=', 'al_com_message.mes_id')
+                ->join('al_hang', 'al_com_message.me_id', '=', 'al_hang.me_id')
+                ->where('g_type_id', '=', $val->g_type_id)
+                ->where('r_status',1)
+                ->get();
+            foreach ($data[$key]->son as $k => $v) {
+                $time = $this->time($v->r_addtime, $now_time);
+                if ($time['d'] > 0) {
+                    $data[$key]->son[$k]->r_addtime = $time['d'] . '天前发布';
+                } elseif ($time['h'] > 0) {
+                    $data[$key]->son[$k]->r_addtime = $time['h'] . '小时前发布';
+                } elseif ($time['m'] > 4) {
+                    $data[$key]->son[$k]->r_addtime = $time['m'] . '分钟前发布';
+                } else {
+                    $data[$key]->son[$k]->r_addtime = '刚刚发布';
+                }
+            }
+        }
+		return view("public.main",['arr'=>$arr,'data'=>$data]);
 	}
+
+    /**
+     * 获取时间相差天、时、分、秒数
+     * @param $one 初始时间
+     * @param $tow 结束时间
+     * @return array
+     */
+    public function time($one,$tow){
+        $one = strtotime($one);
+        $tow = strtotime($tow);
+        $cle = $tow - $one; //得出时间戳差值
+
+        /* 这个只是提示
+        echo floor($cle/60); //得出一共多少分钟
+        echo floor($cle/3600); //得出一共多少小时
+        echo floor($cle/3600/24); //得出一共多少天
+        */
+        /*Rming()函数，即舍去法取整*/
+        $d = floor($cle/3600/24);
+        $h = floor(($cle%(3600*24))/3600);  //%取余
+        $m = floor(($cle%(3600*24))%3600/60);
+        $s = floor(($cle%(3600*24))%60);
+
+        return array('d'=>$d,'h'=>$h,'m'=>$m,'s'=>$s);
+    }
 }	
 
 ?>
