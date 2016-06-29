@@ -164,11 +164,21 @@ Route::any('/unpositions', 'CpzwglController@unpositions');
 Route::any('/ptup', 'CpzwglController@ptup');	
 	
 //不合适简历
-Route::get('/haveRefuseResumes', 'RecresumeController@haveRefuseResumes');	
-	
+Route::get('/haveRefuseResumes', 'RecresumeController@haveRefuseResumes');
+//通知面试
+Route::get('/haveNotice', 'RecresumeController@mian');
 //待定简历
-Route::get('/canInterviewResumes', 'RecresumeController@canInterviewResumes');	
-	
+Route::get('/canInterviewResumes', 'RecresumeController@canInterviewResumes');
+//待定修改
+Route::get('/can', 'RecresumeController@can');
+//通知面试
+Route::get('/tong', 'RecresumeController@tong');
+//删除简历
+Route::get('/del', 'RecresumeController@del');
+//待定成功
+Route::get('tiao', 'RecresumeController@canInterviewResumes');
+//待定成功
+Route::get('zhi', 'RecresumeController@canInterviewResumes');
 //自动过滤简历
 Route::get('/autoFilterResumes', 'RecresumeController@autoFilterResumes');	
 
@@ -177,7 +187,8 @@ Route::get('/register/', 'RegisterController@register');
 
 //简历
 Route::get('/preview', 'ResumeglController@preview');
-   
+//查看简历
+Route::get('/pre', 'ResumeglController@pre');
 //已投递简历状态
 Route::get('/delivery', 'ResumetdController@delivery');
 

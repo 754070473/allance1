@@ -1,65 +1,67 @@
-﻿<!DOCTYPE HTML>
+<!DOCTYPE HTML>
 <html xmlns:wb="http://open.weibo.com/wb"><head>
-</script><script type="text/javascript" async="" src="style/js/conversion.js"></script><script src="style/js/allmobilize.min.js" charset="utf-8" id="allmobilize"></script><style type="text/css"></style>
-<meta content="no-siteapp" http-equiv="Cache-Control">
-<link  media="handheld" rel="alternate">
-<!-- end 云适配 -->
-<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-<title>拉勾网-最专业的互联网招聘平台</title>
+    </script><script type="text/javascript" async="" src="style/js/conversion.js"></script><script src="style/js/allmobilize.min.js" charset="utf-8" id="allmobilize"></script><style type="text/css"></style>
+    <meta content="no-siteapp" http-equiv="Cache-Control">
+    <link  media="handheld" rel="alternate">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
+    <!-- end 云适配 -->
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+    <title>拉勾网-最专业的互联网招聘平台</title>
     <meta content="23635710066417756375" property="qc:admins">
-<meta name="description" content="拉勾网是3W旗下的互联网领域垂直招聘网站">
-<meta name="keywords" content="拉勾,拉勾网,拉勾招聘,拉钩, 拉钩网 ,互联网招聘,拉勾互联网招聘, 移动互联网招聘, 垂直互联网招聘, 微信招聘, 微博招聘, 拉勾官网, 拉勾百科,跳槽, 高薪职位, 互联网圈子, IT招聘, 职场招聘, 猎头招聘,O2O招聘, LBS招聘, 社交招聘, 校园招聘, 校招,社会招聘,社招">
-<meta content="QIQ6KC1oZ6" name="baidu-site-verification">
+    <meta name="description" content="拉勾网是3W旗下的互联网领域垂直招聘网站">
+    <meta name="keywords" content="拉勾,拉勾网,拉勾招聘,拉钩, 拉钩网 ,互联网招聘,拉勾互联网招聘, 移动互联网招聘, 垂直互联网招聘, 微信招聘, 微博招聘, 拉勾官网, 拉勾百科,跳槽, 高薪职位, 互联网圈子, IT招聘, 职场招聘, 猎头招聘,O2O招聘, LBS招聘, 社交招聘, 校园招聘, 校招,社会招聘,社招">
+    <meta content="QIQ6KC1oZ6" name="baidu-site-verification">
 
-<!-- <div class="web_root"  style="display:none">http://www.lagou.com</div> -->
-<script type="text/javascript">
-var ctx = "http://www.lagou.com";
-console.log(1);
-</script>
-<link href="http://www.lagou.com/images/favicon.ico" rel="Shortcut Icon">
-<link href="style/css/style.css" type="text/css" rel="stylesheet">
-<link href="style/css/external.min.css" type="text/css" rel="stylesheet">
-<link href="style/css/popup.css" type="text/css" rel="stylesheet">
-<script type="text/javascript" src="style/js/jquery.1.10.1.min.js"></script>
-<script src="style/js/jquery.lib.min.js" type="text/javascript"></script>
-<script type="text/javascript" src="style/js/ajaxfileupload.js"></script>
-<script src="style/js/additional-methods.js" type="text/javascript"></script>
-<!--[if lte IE 8]>
+    <!-- <div class="web_root"  style="display:none">http://www.lagou.com</div> -->
+    <script type="text/javascript">
+        var ctx = "http://www.lagou.com";
+        console.log(1);
+    </script>
+    <link href="http://www.lagou.com/images/favicon.ico" rel="Shortcut Icon">
+    <link href="style/css/style.css" type="text/css" rel="stylesheet">
+    <link href="style/css/external.min.css" type="text/css" rel="stylesheet">
+    <link href="style/css/popup.css" type="text/css" rel="stylesheet">
+    <script type="text/javascript" src="style/js/jquery.1.10.1.min.js"></script>
+    <script src="style/js/jquery.lib.min.js" type="text/javascript"></script>
+    <script type="text/javascript" src="style/js/ajaxfileupload.js"></script>
+    <script src="style/js/additional-methods.js" type="text/javascript"></script>
+    <!--[if lte IE 8]>
     <script type="text/javascript" src="style/js/excanvas.js"></script>
-<![endif]-->
-<script type="text/javascript">
-var youdao_conv_id = 271546;
-</script>
-<script src="style/js/conv.js" type="text/javascript"></script>
-<script src="style/js/ajaxCross.json" charset="UTF-8"></script></head>
+    <![endif]-->
+    <script type="text/javascript">
+        var youdao_conv_id = 271546;
+    </script>
+    <script src="style/js/conv.js" type="text/javascript"></script>
+    <script src="style/js/ajaxCross.json" charset="UTF-8"></script></head>
 <script type="text/javascript">
     $(function(){
-     $.get("{{url('top')}}",function(m){
-         $('#cache').html(m);
+        $.get("{{url('top')}}",function(m){
+            $('#cache').html(m);
 
-     })
+        })
     })
 
 </script>
+
 <body>
 <div id="body">
-<!--头部-->
-<div id="cache">
-</div>
-    <div id="container"   style="padding-top:20px" >
+    <!--头部-->
+    <div id="cache">
+
+    </div>
+    <div id="container" style="padding-top:20px" >
         <div class="sidebar">
-            <a class="btn_create" href="create.html">发布新职位</a>
+            <a class="btn_create" href="create">发布新职位</a>
             <dl class="company_center_aside">
                 <dt>我收到的简历</dt>
-                <dd class="current">
-                    <a href="canInterviewResumes">待处理简历</a>
+                <dd>
+                    <a href="">待处理简历</a>
                 </dd>
                 <dd>
                     <a href="canInterviewResumes">待定简历</a>
                 </dd>
-                <dd>
+                <dd  class="current">
                     <a href="haveNotice">已通知面试简历</a>
                 </dd>
                 <dd>
@@ -72,10 +74,10 @@ var youdao_conv_id = 271546;
             <dl class="company_center_aside">
                 <dt>我发布的职位</dt>
                 <dd>
-                    <a href="positions.html">有效职位</a>
+                    <a href="positions">有效职位</a>
                 </dd>
                 <dd>
-                    <a href="positions.html">已下线职位</a>
+                    <a href="positions">已下线职位</a>
                 </dd>
             </dl>
         </div><!-- end .sidebar -->
@@ -84,20 +86,20 @@ var youdao_conv_id = 271546;
                 <dt>
                 <h1>
                     <em></em>
-                    简历处理                         </h1>
+                    不合适简历 <span>（共1份）</span>                        </h1>
                 </dt>
                 <dd>
-                    <form action="canInterviewResumes.html" method="get" id="filterForm">
-                        <div class="filter_actions">
+                    <form action="haveRefuseResumes" method="get" id="filterForm">
+                        <div class="filter_actions ">
                             <label class="checkbox">
                                 <input type="checkbox">
                                 <i></i>
                             </label>
                             <span>全选</span>
-                            <a id="resumeRefuseAll" href="javascript:;">不合适</a>
-                            <div id="filter_btn" class="">筛选简历 <em class=""></em></div>
+                            <a id="resumeDelAll" href="javascript:;">删除</a>
+                            <div id="filter_btn">筛选简历 <em></em></div>
                         </div><!-- end .filter_actions -->
-                        <div class="filter_options  dn " style="display: none;">
+                        <div class="filter_options  dn ">
                             <dl>
                                 <dt>简历状态：</dt>
                                 <dd>
@@ -144,49 +146,51 @@ var youdao_conv_id = 271546;
                             <input type="hidden" value="0" name="filterStatus" id="filterStatus">
                             <input type="hidden" value="" name="positionId" id="positionId">
                         </div><!-- end .filter_options -->
-                        @foreach($users as $v)                    <ul class="reset resumeLists">
-                            <li data-id="1686182" class="onlineResume">
-                                <label class="checkbox">
-                                    <input type="checkbox">
-                                    <i></i>
-                                </label>
-                                <div class="resumeShow">
-                                    <a title="预览在线简历" target="_blank" class="resumeImg" href="resumeView.html?deliverId=1686182">
-                                        <img src="style/images/default_headpic.png">
-                                    </a>
-                                    <div class="resumeIntro">
-                                        <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
+                        <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
+                        <ul class="reset resumeLists" >
+                            @foreach($users as $v)
+                                <li data-id="1686182" class="onlineResume" id="so{{$v->res_id}}">
+                                    <label class="checkbox">
+                                        <input type="checkbox">
+                                        <i></i>
+                                    </label>
+                                    <div class="resumeShow" >
+                                        <a title="预览在线简历" target="_blank" class="resumeImg" href="resumeView.html?deliverId=1686182">
+                                            <img src="style/images/default_headpic.png">
+                                        </a>
+                                        <div class="resumeIntro">
+                                            <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
 
 
-                                        <h3 class="unread">
-                                            <a target="_blank" title="预览jason的简历" href="pre?&id={{$v->res_id}}">
-                                                {{$v->r_name}}
-                                            </a>
-                                            <em></em>
-                                        </h3>
-                                        <span class="fr">投递时间： {{$v->last_time}}</span>
-                                        <div>
-                                            {{$v->r_name}}			                                        	 / @if($v->r_sex==1)男@else() 女@endif                                       	/  @if($v->t_edu==0)初中@elseif($v->t_edu==1) 高中
-                                            @elseif($v->t_edu==2) 中技
-                                            @elseif($v->t_edu==3) 中专
-                                            @elseif($v->t_edu==4) 大专
-                                            @elseif($v->t_edu==5) 本科
-                                            @elseif($v->t_edu==6) 硕士
-                                            @elseif($v->t_edu==7) 博士
-                                            @else($v->t_edu==8) 博士后
-                                            @endif  		                                        	/
-                                            @if($v->r_suffer==0)应届生@elseif($v->r_suffer==1) 无经验
-                                            @elseif($v->r_suffer==2) 1年以下
-                                            @elseif($v->r_suffer==3)1-3年
-                                            @elseif($v->r_suffer==4) 3-5年
-                                            @elseif($v->r_suffer==5) 5-10年
-                                            @elseiif($v->r_suffer==6)10年以上
+                                            <h3 class="unread">
+                                                <a target="_blank" title="预览jason的简历" href="pre?&id={{$v->res_id}}">
+                                                    {{$v->r_name}}
+                                                </a>
+                                                <em></em>
+                                            </h3>
+                                            <span class="fr">投递时间： {{$v->last_time}}</span>
+                                            <div>
+                                                {{$v->r_name}}			                                        	 / @if($v->r_sex==1)男@else() 女@endif                                       	/  @if($v->t_edu==0)初中@elseif($v->t_edu==1) 高中
+                                                @elseif($v->t_edu==2) 中技
+                                                @elseif($v->t_edu==3) 中专
+                                                @elseif($v->t_edu==4) 大专
+                                                @elseif($v->t_edu==5) 本科
+                                                @elseif($v->t_edu==6) 硕士
+                                                @elseif($v->t_edu==7) 博士
+                                                @else($v->t_edu==8) 博士后
+                                                @endif  		                                        	/
+                                                @if($v->r_suffer==0)应届生@elseif($v->r_suffer==1) 无经验
+                                                @elseif($v->r_suffer==2) 1年以下
+                                                @elseif($v->r_suffer==3)1-3年
+                                                @elseif($v->r_suffer==4) 3-5年
+                                                @elseif($v->r_suffer==5) 5-10年
+                                                @elseiif($v->r_suffer==6)10年以上
 
-                                            @endif    			                                        	/ {{$v->r_name}} 			                                            			                                        		<br>
-                                            高级产品经理 · 上海辉硕科技有限公司 |  北京大学
+                                                @endif    			                                        	/ 		                                            			                                        		<br>
+                                                高级产品经理 · 上海辉硕科技有限公司 |  北京大学
 
-                                        </div>
-                                        <div class="jdpublisher">
+                                            </div>
+                                            <div class="jdpublisher">
 				                                        <span>
 				                                        	应聘职位：<a title="随便写" target="_blank" href="http://www.lagou.com/jobs/149594.html"> 	                                     @if($v->post_id==0)网络工程师@elseif($v->post_id==1)系统工程师
                                                                 @elseif($v->post_id==2) 运维工程师
@@ -197,26 +201,19 @@ var youdao_conv_id = 271546;
                                                             @endif
 
 				                                       						                                        </span>
+                                            </div>
+
                                         </div>
 
+
                                     </div>
-                                    <div class="links">
-                                        <a data-deliverid="1686182" data-name="jason" data-positionid="149594" data-email="888888888@qq.com" class="resume_notice" href="javascript:void(0)" onclick="tong({{$v->res_id}})">通知面试</a>
-                                        <a data-deliverid="1686182" class="resume_refuse" href="javascript:void(0)" onclick="fun({{$v->res_id}})">不合适</a>
-                                        <a data-resumename="jason的简历" data-positionname="随便写" data-deliverid="1686182" data-positionid="149594" data-resumekey="1ccca806e13637f7b1a4560f80f08057" data-forwardcount="1" class="resume_forward" href="javascript:void(0)">
-                                            转发
-                                            <span>(1人)</span>
-                                        </a>
+                                    <div class="contactInfo">
+                                        <span class="c9">电话：</span>{{$v->r_phone}} 		  &nbsp;&nbsp;&nbsp;
+                                        <span class="c9">邮箱：</span><a href="mailto:888888888@qq.com">{{$v->r_email}}</a>
                                     </div>
-                                </div>
-                                <div class="contactInfo">
-                                    <span class="c9">电话：</span>{{$v->r_phone}} 		  &nbsp;&nbsp;&nbsp;
-                                    <span class="c9">邮箱：</span><a href="mailto:888888888@qq.com">{{$v->r_email}}</a>
-                                </div>
-                            </li>
-                        </ul><!-- end .resumeLists -->
-                        @endforeach
-                    </form>
+                                </li>
+                                <!-- end .resumeLists -->
+                            @endforeach </ul>
                 </dd>
             </dl><!-- end .company_center_content -->
         </div><!-- end .content -->
@@ -377,11 +374,11 @@ var youdao_conv_id = 271546;
                         </tr>
                         <tr>
                             <td>
-                                        <textarea name="content">非常荣幸收到您的简历，在我们仔细阅读您的简历之后，却不得不很遗憾的通知您：
-                您的简历与该职位的定位有些不匹配，因此无法进入面试。
+	             		<textarea name="content">非常荣幸收到您的简历，在我们仔细阅读您的简历之后，却不得不很遗憾的通知您：
+您的简历与该职位的定位有些不匹配，因此无法进入面试。
 
-                但您的信息已录入我司人才储备库，当有合适您的职位开放时我们将第一时间联系您，希望在未来我们有机会成为一起拼搏的同事；
-                再次感谢您对我们的信任，祝您早日找到满意的工作。</textarea>
+但您的信息已录入我司人才储备库，当有合适您的职位开放时我们将第一时间联系您，希望在未来我们有机会成为一起拼搏的同事；
+再次感谢您对我们的信任，祝您早日找到满意的工作。</textarea>
                             </td>
                         </tr>
                         <tr>
@@ -417,14 +414,14 @@ var youdao_conv_id = 271546;
         <script>
         </script>
         <div class="clear"></div>
-        <input type="hidden" value="b4bc225f0d084ee5b8d045f9c98a49ff" id="resubmitToken">
+        <input type="hidden" value="9421e33d3091428796fec127b07b6c5b" id="resubmitToken">
         <a rel="nofollow" title="回到顶部" id="backtop"></a>
     </div><!-- end #container -->
 </div><!-- end #body -->
 <div id="footer">
     <div class="wrapper">
-        <a rel="nofollow" target="_blank" href="about.html">联系我们</a>
-        <a target="_blank" href="http://www.lagou.com/af/zhaopin.html">互联网公司导航</a>
+        <a rel="nofollow" target="_blank" href="about">联系我们</a>
+        <a target="_blank" href="http://www.lagou.com/af/zhaopin">互联网公司导航</a>
         <a rel="nofollow" target="_blank" href="http://e.weibo.com/lagou720">拉勾微博</a>
         <a rel="nofollow" href="javascript:void(0)" class="footer_qr">拉勾微信<i></i></a>
         <div class="copyright">&copy;2013-2014 Lagou <a href="http://www.miitbeian.gov.cn/state/outPortal/loginPortal.action" target="_blank">京ICP备14023790号-2</a></div>
@@ -436,39 +433,66 @@ var youdao_conv_id = 271546;
 
 <!--  -->
 
-<div id="cboxOverlay" style="display: none;"></div><div id="colorbox" class="" role="dialog" tabindex="-1" style="display: none;"><div id="cboxWrapper"><div><div id="cboxTopLeft" style="float: left;"></div><div id="cboxTopCenter" style="float: left;"></div><div id="cboxTopRight" style="float: left;"></div></div><div style="clear: left;"><div id="cboxMiddleLeft" style="float: left;"></div><div id="cboxContent" style="float: left;"><div id="cboxTitle" style="float: left;"></div><div id="cboxCurrent" style="float: left;"></div><button type="button" id="cboxPrevious"></button><button type="button" id="cboxNext"></button><button id="cboxSlideshow"></button><div id="cboxLoadingOverlay" style="float: left;"></div><div id="cboxLoadingGraphic" style="float: left;"></div></div><div id="cboxMiddleRight" style="float: left;"></div></div><div style="clear: left;"><div id="cboxBottomLeft" style="float: left;"></div><div id="cboxBottomCenter" style="float: left;"></div><div id="cboxBottomRight" style="float: left;"></div></div></div><div style="position: absolute; width: 9999px; visibility: hidden; display: none;"></div></div><div class="ui-datepicker ui-widget ui-widget-content ui-helper-clearfix ui-corner-all" id="ui-datepicker-div">
-</div>
-</body>
-</html>
-<script>
-    function  fun(id){
-      //  alert(id)
-        $.ajax({
-            type: "get",
-            url: "{{url('can')}}",
-            data: "id="+id,
-            headers: {
-                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-            },
-            success: function(msg){
-              if(msg==1){
-                  window.location.href="tiao";
-              }
-            }
+<script type="text/javascript">
+    $(function(){
+        $('#noticeDot-1').hide();
+        $('#noticeTip a.closeNT').click(function(){
+            $(this).parent().hide();
         });
-    }
-    function  tong(id){
-       // alert(id)
+    });
+    var index = Math.floor(Math.random() * 2);
+    var ipArray = new Array('42.62.79.226','42.62.79.227');
+    var url = "ws://" + ipArray[index] + ":18080/wsServlet?code=314873";
+    var CallCenter = {
+        init:function(url){
+            var _websocket = new WebSocket(url);
+            _websocket.onopen = function(evt) {
+                console.log("Connected to WebSocket server.");
+            };
+            _websocket.onclose = function(evt) {
+                console.log("Disconnected");
+            };
+            _websocket.onmessage = function(evt) {
+                //alert(evt.data);
+                var notice = jQuery.parseJSON(evt.data);
+                if(notice.status[0] == 0){
+                    $('#noticeDot-0').hide();
+                    $('#noticeTip').hide();
+                    $('#noticeNo').text('').show().parent('a').attr('href',ctx+'/mycenter/delivery');
+                    $('#noticeNoPage').text('').show().parent('a').attr('href',ctx+'/mycenter/delivery');
+                }else{
+                    $('#noticeDot-0').show();
+                    $('#noticeTip strong').text(notice.status[0]);
+                    $('#noticeTip').show();
+                    $('#noticeNo').text('('+notice.status[0]+')').show().parent('a').attr('href',ctx+'/mycenter/delivery');
+                    $('#noticeNoPage').text(' ('+notice.status[0]+')').show().parent('a').attr('href',ctx+'/mycenter/delivery');
+                }
+                $('#noticeDot-1').hide();
+            };
+            _websocket.onerror = function(evt) {
+                console.log('Error occured: ' + evt);
+            };
+        }
+    };
+    CallCenter.init(url);
+</script>
+
+<div id="cboxOverlay" style="display: none;"></div><div id="colorbox" class="" role="dialog" tabindex="-1" style="display: none;"><div id="cboxWrapper"><div><div id="cboxTopLeft" style="float: left;"></div><div id="cboxTopCenter" style="float: left;"></div><div id="cboxTopRight" style="float: left;"></div></div><div style="clear: left;"><div id="cboxMiddleLeft" style="float: left;"></div><div id="cboxContent" style="float: left;"><div id="cboxTitle" style="float: left;"></div><div id="cboxCurrent" style="float: left;"></div><button type="button" id="cboxPrevious"></button><button type="button" id="cboxNext"></button><button id="cboxSlideshow"></button><div id="cboxLoadingOverlay" style="float: left;"></div><div id="cboxLoadingGraphic" style="float: left;"></div></div><div id="cboxMiddleRight" style="float: left;"></div></div><div style="clear: left;"><div id="cboxBottomLeft" style="float: left;"></div><div id="cboxBottomCenter" style="float: left;"></div><div id="cboxBottomRight" style="float: left;"></div></div></div><div style="position: absolute; width: 9999px; visibility: hidden; display: none;"></div></div><div class="ui-datepicker ui-widget ui-widget-content ui-helper-clearfix ui-corner-all" id="ui-datepicker-div"></div></body></html>
+<script>
+    function  del(id){
+        // alert(id)
         $.ajax({
             type: "get",
-            url: "{{url('tong')}}",
+            url: "{{url('del')}}",
             data: "id="+id,
             headers: {
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
             },
-            success: function(msg){
-                if(msg==1){
-                    window.location.href="zhi";
+
+            success: function(msg) {
+                //  alert(msg)
+                if (msg == 1) {
+                    $("#so"+id).remove();
                 }
             }
         });
