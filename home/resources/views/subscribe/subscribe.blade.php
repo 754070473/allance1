@@ -223,7 +223,6 @@ console.log(1);
 							data : 'email='+subEmail+'&day='+select_day_hidden+'&job='+select_job_hidden+'&city='+select_city_hidden+'&stage='+select_stage_hidden+'&industry='+select_industry_hidden+'&salary='+select_salary_hidden,
 							success : function(msg)
 							{
-                                alert(msg);
 								if(msg == 0)
                                 {
                                     $.colorbox({
@@ -286,7 +285,6 @@ console.log(1);
                         data : 'name='+email+'&pwd='+password,
                         success:function(msg)
                         {
-                            alert(msg)
                             if(msg == 4)
                             {
                                 ck_sub();

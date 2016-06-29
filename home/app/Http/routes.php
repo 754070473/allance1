@@ -60,6 +60,14 @@ Route::get('/reset', 'AccountsetController@reset');
 //修改密码
 Route::get('/updatePwd', 'AccountsetController@updatePwd'); 
 
+
+//找回企业密码
+Route::get('/companypwdl', 'AccountsetController@companypwdl');    
+
+//企业密码
+Route::get('/companypwd', 'AccountsetController@companypwd'); 
+//修改企业密码
+Route::get('/companyupdate', 'AccountsetController@companyupdate'); 
 //我收藏的职位
 Route::get('/collections', 'CollectionsController@collections');
 
@@ -173,3 +181,7 @@ Route::get('/subinfo','SubscribeController@subinfo');
 
 //发送邮件测试
 Route::get('/send','SubscribeController@send');
+//公司找详细简历
+Route::get('/gerenlist', 'IndexController@gerenlist');
+// //公司找个人地址	
+// Route::get('/select_all', 'IndexController@select_all');
