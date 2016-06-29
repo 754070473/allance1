@@ -34,7 +34,7 @@ var youdao_conv_id = 271546;
 <script src="style/js/ajaxCross.json" charset="UTF-8"></script></head>
 <script type="text/javascript">
     $(function(){
-     $.get("{{url('top')}}",function(m){
+     $.get("<?php echo e(url('top')); ?>",function(m){
          $('#cache').html(m);
         
      })
@@ -60,16 +60,17 @@ var youdao_conv_id = 271546;
                     <h2><em></em>填写公司信息</h2>
                 </dt>
                 <dd>
-	                <form id="stepForm" action="{{url('index01')}}" method="post">
+	                <form id="stepForm" action="<?php echo e(url('index01')); ?>" method="post" enctype="multipart/form-data">
 	                	<div class="c_text_1">基本信息为必填项，是求职者加速了解公司的窗口，认真填写吧！</div>
 	                 	<img width="668" height="56" class="c_steps" alt="第一步" src="style/images/step1.png">
 	                    
 	                    <h3>公司全称 <span>
-	                    	@if($arr->m_name=="")
+	                    	<?php if($arr->m_name==""): ?>
 								<input type="text" placeholder="请输入公司名称，如:福建平潭协创进出口有限公司 " value="" name="name" id="name" class="valid">
-							@else
-								{{$arr->m_name}}
-							@endif
+							<?php else: ?>
+								<?php echo e($arr->m_name); ?>
+
+							<?php endif; ?>
 	                    </span></h3> 
 							<input type="text" placeholder="请输入公司名称，如:福建平潭协创进出口有限公司 " value="" name="name" id="name" class="valid">
 	                   
@@ -77,20 +78,10 @@ var youdao_conv_id = 271546;
 	                    <!-- <h3>公司简称</h3> 非必填
 	                    	<input type="text" placeholder="请输入公司简称，如:拉勾" value="" name="m_course" id="name" class="valid"> -->	
 	                    <!--非必填改必填-->
-	                  <!--  <h3>公司LOGO</h3> 
-	                   	<div class="c_logo c_logo_pos">
-	                    	<a title="上传公司LOGO" class="inline cboxElement" href="#logoUploader">
-   		                        <div id="logoNo">
-   		                    		<span>上传公司LOGO</span> <br>
-   							                            尺寸：190*190px  <br>
-   							                            大小：小于5M
-   								</div>
-   								<div class="dn" id="logoShow">
-   		                        	<img width="190" height="190" alt="公司logo" src="">
-        							<span>更换公司LOGO<br>190px*190px 小于5M</span>
-   		                        </div>
-   							</a>  
-	                    </div> -->
+	                   <h3>公司LOGO</h3> 
+	                   	
+	                    	<input type="file" name="m_logo" value="" id="m_logo">
+	                  
 	                    
 	                    <h3>公司网址</h3>
 	                    <input type="text" placeholder="请输入公司网址" value="" name="website" id="website">	
@@ -104,9 +95,9 @@ var youdao_conv_id = 271546;
     		                    	<input type="button" value="请选择行业领域" name="select_industry" id="select_industry" class="select">
     		                    <div class="dn" id="box_industry" style="display: none;">
 		                        <ul class="reset">
-		                        @foreach($hang as $val)
-		                        		<li>{{$val->h_name}}</li>
-		        				@endforeach
+		                        <?php foreach($hang as $val): ?>
+		                        		<li><?php echo e($val->h_name); ?></li>
+		        				<?php endforeach; ?>
 		                        </ul>
 		                    </div>	
 	                    </div>
@@ -176,7 +167,7 @@ var youdao_conv_id = 271546;
 	                    <input type="hidden" id="companyId" name="companyId" value="25927">
 
 	                    <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
-						<input type="hidden" name="mes_id" value="{{$arr->mes_id}}" id="mes_id">
+						<input type="hidden" name="mes_id" value="<?php echo e($arr->mes_id); ?>" id="mes_id">
 
 	                    
 	                    <input type="submit" value="保存，下一步" id="stepBtn" class="btn_big fr">

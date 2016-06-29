@@ -12,7 +12,26 @@ use Illuminate\Http\Request;
 class IndexController extends Controller {
 	//展示首页面
 	public  function index(){
-		return view("index.index");
+        $this->integral();
+        //获取客户端ip
+        $ip = $this->getIP();
+        $time = date('Y-m-d',time());
+        $sel_ip = DB::table('al_ip')->where('ip', $ip)->first();
+        if(empty($sel_ip))
+        {
+            DB::table('al_ip')->insert(
+                ['ip' => $ip, 'ip_time' => $time]);
+        }
+        else
+        {
+            if($sel_ip->ip_time != $time)
+            {
+                DB::table('al_ip')
+                    ->where('ip_id', $sel_ip->ip_id)
+                    ->update(['ip_time' => $time]);
+            }
+        }
+        return view("index.index");
 	}
 
     //展示招聘信息详情
@@ -175,6 +194,22 @@ public  function gerenlist(Request $request){
 	{
 		return view("index.about");
 	}
+
+    //获取ip
+    function getIp(){
+        $onlineip='';
+        if(getenv('HTTP_CLIENT_IP')&&strcasecmp(getenv('HTTP_CLIENT_IP'),'unknown')){
+            $onlineip=getenv('HTTP_CLIENT_IP');
+        } elseif(getenv('HTTP_X_FORWARDED_FOR')&&strcasecmp(getenv('HTTP_X_FORWARDED_FOR'),'unknown')){
+            $onlineip=getenv('HTTP_X_FORWARDED_FOR');
+        } elseif(getenv('REMOTE_ADDR')&&strcasecmp(getenv('REMOTE_ADDR'),'unknown')){
+            $onlineip=getenv('REMOTE_ADDR');
+        } elseif(isset($_SERVER['REMOTE_ADDR'])&&$_SERVER['REMOTE_ADDR']&&strcasecmp($_SERVER['REMOTE_ADDR'],'unknown')){
+            $onlineip=$_SERVER['REMOTE_ADDR'];
+        }
+        return $onlineip;
+    }
+
 }
 
 ?>

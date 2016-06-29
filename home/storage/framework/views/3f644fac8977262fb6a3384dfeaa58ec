@@ -32,7 +32,7 @@ console.log(1);
 </head>
 <script type="text/javascript">
     $(function(){
-     $.get("{{url('top')}}",function(m){
+     $.get("<?php echo e(url('top')); ?>",function(m){
          $('#cache').html(m);
      })
     })
@@ -83,25 +83,26 @@ console.log(1);
 	                       		<input type="button" class="select" id="select_job" value="请选择职位名称" />
 	                       		
 	                            <div id="sub_box_job" class="dn">
-                                    @foreach($post as $val)
+                                    <?php foreach($post as $val): ?>
                                         <dl>
-		                                	<dt>{{$val['i_name']}}</dt>
+		                                	<dt><?php echo e($val['i_name']); ?></dt>
 		                                    <dd>
 		                                    	<ul class="reset job_main">
-                                                    @foreach($val['son'] as $va)
+                                                    <?php foreach($val['son'] as $va): ?>
 		                                            <li>
-			                                            {{$va['i_name']}}
+			                                            <?php echo e($va['i_name']); ?>
+
                                                         <ul class="reset job_sub dn">
-                                                            @foreach($va['son'] as $v)
-                                                            <li>{{$v['i_name']}}</li>
-                                                            @endforeach
+                                                            <?php foreach($va['son'] as $v): ?>
+                                                            <li><?php echo e($v['i_name']); ?></li>
+                                                            <?php endforeach; ?>
                                                         </ul>
                                                     </li>
-                                                    @endforeach
+                                                    <?php endforeach; ?>
                                                 </ul>
 		                                    </dd>
 		                                </dl>
-                                        @endforeach
+                                        <?php endforeach; ?>
                                 </div>
 	                            <span id="positionError" class="error" style="display:none;">请选择职位名称 </span>		
 	                        </dd>
@@ -147,9 +148,9 @@ console.log(1);
 	                            <input type="button" class="select" id="select_industry" value="请选择行业领域" />
 	                            <div id="box_industry" class="dn">
 	                            	<ul class="reset">
-                                            @foreach($industry as $i)
-                                                <li>{{$i->h_name}}</li>
-                                            @endforeach
+                                            <?php foreach($industry as $i): ?>
+                                                <li><?php echo e($i->h_name); ?></li>
+                                            <?php endforeach; ?>
                                     </ul>
 	                            </div>
 	                            <span id="fieldError" class="error" style="display:none;">请选择行业领域 </span>	
@@ -219,10 +220,11 @@ console.log(1);
 					{
 						$.ajax({
 							type : 'GET',
-							url : '{{url("subinfo")}}',
+							url : '<?php echo e(url("subinfo")); ?>',
 							data : 'email='+subEmail+'&day='+select_day_hidden+'&job='+select_job_hidden+'&city='+select_city_hidden+'&stage='+select_stage_hidden+'&industry='+select_industry_hidden+'&salary='+select_salary_hidden,
 							success : function(msg)
 							{
+                                alert(msg);
 								if(msg == 0)
                                 {
                                     $.colorbox({
@@ -285,6 +287,7 @@ console.log(1);
                         data : 'name='+email+'&pwd='+password,
                         success:function(msg)
                         {
+                            alert(msg)
                             if(msg == 4)
                             {
                                 ck_sub();

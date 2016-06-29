@@ -3,7 +3,6 @@ namespace App\Http\Controllers;
 use DB;
 use Session;
 use Illuminate\Http\Request;
-use Illuminate\Routing\Controller;
 /**
  *   LoginController  账号登录
  */
@@ -53,6 +52,7 @@ class LoginController extends Controller {
 	                        //密码正确 修改字段num=0 登陆成功
 	                        Session::put('com_id',$com_id);
 	                        Session::put('c_phone',$c_phone);
+                            $this->userlog('手机号登录');
 	                       echo "1";
 	                    }else{
 	                       echo "2";
@@ -76,6 +76,7 @@ class LoginController extends Controller {
                     //密码正确 修改字段num=0 登陆成功
                     Session::put('com_id',$com_id);
                     Session::put('c_email',$c_email);
+                    $this->userlog('邮箱登录');
                    echo "4";
                 }else{
                    echo "2";
@@ -117,6 +118,7 @@ class LoginController extends Controller {
 	                        Session::put('p_phone',$p_phone);
 		      				//$i_name=str_replace($i_name, "<font color='#99ffff'>$i_name</font>",$i_name);
 		      				Session::put('i_name',$i_name);
+                            $this->userlog('手机号登录');
 	                       echo "1";
 	                    }else{
 	                       echo "2";
@@ -143,6 +145,7 @@ class LoginController extends Controller {
                     Session::put('p_email',$p_email);
       				//$i_name=str_replace($i_name, "<font color='#99ffff'>$i_name</font>",$i_name);
       				Session::put('i_name',$i_name);
+                    $this->userlog('邮箱登录');
                    echo "4";
                 }else{
                    echo "2";
@@ -272,6 +275,7 @@ class LoginController extends Controller {
 
 	public function logout(Request $request)
 	{
+        $this->userlog('退出');
 		Session::flush('phone');
 		return redirect('index');
 
