@@ -35,7 +35,7 @@ console.log(1);
 <script src="style/js/ajaxCross.json" charset="UTF-8"></script></head>
 <script type="text/javascript">
     $(function(){
-     $.get("{{url('top')}}",function(m){
+     $.get("<?php echo e(url('top')); ?>",function(m){
          $('#cache').html(m);
         
      })
@@ -58,18 +58,18 @@ console.log(1);
             <div class="content_l">
             	<div class="fl" id="resume_name">
 	            	<div class="nameShow fl">
-	            		<h1 title="jason的简历">{{$i_name}}的简历</h1>
-	            		<span class="rename">重命名</span> | <a target="_blank" href="{{url('previews')}}">预览</a>
+	            		<h1 title="jason的简历"><?php echo e($i_name); ?>的简历</h1>
+	            		<span class="rename">重命名</span> | <a target="_blank" href="<?php echo e(url('previews')); ?>">预览</a>
             		</div>
-            		<form class="fl dn" id="resumeNameForm" action="{{url('per_i_name')}}" method="post">
+            		<form class="fl dn" id="resumeNameForm" action="<?php echo e(url('per_i_name')); ?>" method="post">
             			<input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
-						<input type="hidden" name="res_id" value="{{$arr->res_id}}">
+						<input type="hidden" name="res_id" value="<?php echo e($arr->res_id); ?>">
 
-            			<input type="text" value="{{$i_name}}" name="i_name" class="nameEdit c9">	
-            			<input type="submit" value="保存"> | <a target="_blank" href="{{url('previews')}}">预览</a>
+            			<input type="text" value="<?php echo e($i_name); ?>" name="i_name" class="nameEdit c9">	
+            			<input type="submit" value="保存"> | <a target="_blank" href="<?php echo e(url('previews')); ?>">预览</a>
             		</form>
             	</div><!--end #resume_name-->
-            	<div class="fr c5" id="lastChangedTime">最后一次更新：<span>{{$arr->last_time}} </span></div><!--end #lastChangedTime-->
+            	<div class="fr c5" id="lastChangedTime">最后一次更新：<span><?php echo e($arr->last_time); ?> </span></div><!--end #lastChangedTime-->
             	<div id="resumeScore">
             		<div class="score fl">
             			<canvas height="120" width="120" id="doughnutChartCanvas" style="width: 120px; height: 120px;"></canvas>
@@ -86,82 +86,82 @@ console.log(1);
             		<h2>基本信息</h2>
             		<span class="c_edit"></span>
             		<div class="basicShow">
-            			     <span>{{$arr->r_name}} |  
-            			     		@if($arr->r_sex==1)
+            			     <span><?php echo e($arr->r_name); ?> |  
+            			     		<?php if($arr->r_sex==1): ?>
             			     		男
-            			     		@elseif($arr->r_sex==2)
+            			     		<?php elseif($arr->r_sex==2): ?>
             			     		女 
-            			     		@else
+            			     		<?php else: ?>
             			     		性别
-            			     		@endif 
+            			     		<?php endif; ?> 
             			     		   |  
-									@if($arr->t_edu==0)
+									<?php if($arr->t_edu==0): ?>
             			     		<?php echo $t_edu="初中" ?>
-            			     		@elseif($arr->t_edu==1)
+            			     		<?php elseif($arr->t_edu==1): ?>
             			     		<?php echo $t_edu="高中" ?>
-            			     		@elseif($arr->t_edu==2)
+            			     		<?php elseif($arr->t_edu==2): ?>
             			     		 <?php echo $t_edu="中技" ?>
-            			     		@elseif($arr->t_edu==3)
+            			     		<?php elseif($arr->t_edu==3): ?>
             			     		 <?php echo $t_edu="中专" ?>
-            			     		@elseif($arr->t_edu==4)
+            			     		<?php elseif($arr->t_edu==4): ?>
             			     		 <?php echo $t_edu="大专" ?>
-            			     		@elseif($arr->t_edu==5)
+            			     		<?php elseif($arr->t_edu==5): ?>
             			     		 <?php echo $t_edu="本科" ?>
-            			     		@elseif($arr->t_edu==6)
+            			     		<?php elseif($arr->t_edu==6): ?>
             			     		 <?php echo $t_edu="硕士" ?>
-            			     		@elseif($arr->t_edu==7)
+            			     		<?php elseif($arr->t_edu==7): ?>
             			     		 <?php echo $t_edu="博士" ?>
-            			     		@elseif($arr->t_edu==8)
+            			     		<?php elseif($arr->t_edu==8): ?>
             			     		<?php echo $t_edu="博后" ?>
-            			     		@else
+            			     		<?php else: ?>
             			     		 <?php echo $t_edu="其他" ?>
-            			     		@endif  
+            			     		<?php endif; ?>  
             			     		  |
             			     		  
-            			     		@if($arr->r_suffer==0)
+            			     		<?php if($arr->r_suffer==0): ?>
             			     		<?php echo $r_suffer="应届生" ?>
-            			     		@elseif($arr->r_suffer==1)
+            			     		<?php elseif($arr->r_suffer==1): ?>
             			     		<?php echo $r_suffer="无经验" ?>
-            			     		@elseif($arr->r_suffer==2)
+            			     		<?php elseif($arr->r_suffer==2): ?>
             			     		 <?php echo $r_suffer="1年以下" ?>
-            			     		@elseif($arr->r_suffer==3)
+            			     		<?php elseif($arr->r_suffer==3): ?>
             			     		 <?php echo $r_suffer="1-3年" ?>
-            			     		@elseif($arr->r_suffer==4)
+            			     		<?php elseif($arr->r_suffer==4): ?>
             			     		 <?php echo $r_suffer="3-5年" ?>
-            			     		@elseif($arr->r_suffer==5)
+            			     		<?php elseif($arr->r_suffer==5): ?>
             			     		 <?php echo $r_suffer="5-10年" ?>
-            			     		@elseif($arr->r_suffer==6)
+            			     		<?php elseif($arr->r_suffer==6): ?>
             			     		 <?php echo $r_suffer="10年以上" ?>
-            			     		@else
+            			     		<?php else: ?>
             			     		 <?php echo $r_suffer="其他" ?>
-            			     		@endif  
+            			     		<?php endif; ?>  
 
             			     		  <br>
-            			            	{{$arr->r_phone}} |
-            			             	{{$arr->r_email}}<br>
+            			            	<?php echo e($arr->r_phone); ?> |
+            			             	<?php echo e($arr->r_email); ?><br>
             			             	<div style="display:none;">
-            			             		@if($arr->r_status==0)
+            			             		<?php if($arr->r_status==0): ?>
 		            			     		<?php echo $r_status="我目前已离职可快速到岗" ?>
-		            			     		@elseif($arr->r_status==1)
+		            			     		<?php elseif($arr->r_status==1): ?>
 		            			     		<?php echo $r_status="我目前正在职正考虑换个新环境" ?>
-		            			     		@elseif($arr->r_status==2)
+		            			     		<?php elseif($arr->r_status==2): ?>
 		            			     		 <?php echo $r_status="我暂时不想找工作" ?>
-		            			     		@elseif($arr->r_status==3)
+		            			     		<?php elseif($arr->r_status==3): ?>
 		            			     		 <?php echo $r_status="目前暂无跳槽打算" ?>
-		            			     		@elseif($arr->r_status==4)
+		            			     		<?php elseif($arr->r_status==4): ?>
 		            			     		 <?php echo $r_status="我是应届毕业生" ?>
-		            			     		@endif  
+		            			     		<?php endif; ?>  
             			             	</div>
             			</span>
             			<div class="m_portrait">
 	                    	<div></div>
-	                    	<img width="120" height="120" alt="jason" src="{{$arr->r_photo}}">
+	                    	<img width="120" height="120" alt="jason" src="<?php echo e($arr->r_photo); ?>">
 	                    </div>
             		</div><!--end .basicShow-->
 
             		<div class="basicEdit dn">
 
-            			<form id="profileForm" action="{{url('basic')}}" method="post" enctype="multipart/form-data">
+            			<form id="profileForm" action="<?php echo e(url('basic')); ?>" method="post" enctype="multipart/form-data">
 						  <div style="float:left;">
 						  <table>
 						    <tbody>
@@ -170,7 +170,7 @@ console.log(1);
 						        <span class="redstar">*</span>
 						      </td> 
 						      <td>
-						        <input type="text" placeholder="姓名" value="{{$arr->r_name}}" name="name" id="r_name">
+						        <input type="text" placeholder="姓名" value="<?php echo e($arr->r_name); ?>" name="name" id="r_name">
 						      </td>
 						      <td valign="top"></td> 
 						      <td>
@@ -209,8 +209,8 @@ console.log(1);
 						        <span class="redstar">*</span>
 						      </td> 
 						      <td>
-						      	<input type="hidden" id="topDegree" value="{{$t_edu}}" name="topDegree">
-						        <input type="button" value="{{$arr->t_edu}}" id="select_topDegree" class="profile_select_190 profile_select_normal">
+						      	<input type="hidden" id="topDegree" value="<?php echo e($t_edu); ?>" name="topDegree">
+						        <input type="button" value="<?php echo e($arr->t_edu); ?>" id="select_topDegree" class="profile_select_190 profile_select_normal">
 								<div class="boxUpDown boxUpDown_190 dn" id="box_topDegree" style="display: none;">
 						        	<ul>
 					        			<li>初中</li>
@@ -283,7 +283,7 @@ console.log(1);
 						      <td></td> 
 						      <td colspan="3">
 						      		<input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
-						      		<input type="hidden" name="res_id" value="{{$arr->res_id}}">
+						      		<input type="hidden" name="res_id" value="<?php echo e($arr->res_id); ?>">
 						          <input type="submit" value="保 存" class="btn_profile_save">
 						          <a class="btn_profile_cancel" href="javascript:;">取 消</a>
 						      </td>
@@ -296,13 +296,13 @@ console.log(1);
 
 
             		</div><!--end .basicEdit-->
-            		<input type="hidden" id="nameVal" value="{{$arr->r_name}}">
-            		<input type="hidden" id="genderVal" value="{{$arr->r_sex}}">
-            		<input type="hidden" id="topDegreeVal" value="{{$t_edu}}">
-            		<input type="hidden" id="workyearVal" value="{{$r_suffer}}">
-            		<input type="hidden" id="currentStateVal" value="{{$r_status}}">
-            		<input type="hidden" id="emailVal" value="{{$arr->r_email}}">
-            		<input type="hidden" id="telVal" value="{{$arr->r_phone}}">
+            		<input type="hidden" id="nameVal" value="<?php echo e($arr->r_name); ?>">
+            		<input type="hidden" id="genderVal" value="<?php echo e($arr->r_sex); ?>">
+            		<input type="hidden" id="topDegreeVal" value="<?php echo e($t_edu); ?>">
+            		<input type="hidden" id="workyearVal" value="<?php echo e($r_suffer); ?>">
+            		<input type="hidden" id="currentStateVal" value="<?php echo e($r_status); ?>">
+            		<input type="hidden" id="emailVal" value="<?php echo e($arr->r_email); ?>">
+            		<input type="hidden" id="telVal" value="<?php echo e($arr->r_phone); ?>">
             		<input type="hidden" id="pageType" value="1"> 
             	</div><!--end #basicInfo-->
 
@@ -313,7 +313,7 @@ console.log(1);
             		            			<span></span>
             		</div><!--end .expectShow-->
             		<div class="expectEdit dn">
-            			<form id="expectForm" action="{{url('expectedwork')}}" method="post">
+            			<form id="expectForm" action="<?php echo e(url('expectedwork')); ?>" method="post">
 	            			<table>
 	            				<tbody>
 	            				<tr>
@@ -324,57 +324,57 @@ console.log(1);
 								          		<dl>
 								        			<dt>热门城市</dt>
 								        			<dd>
-								        				@foreach($hot as $val)
-								        				<span>{{$val->i_name}}</span>
-								        				@endforeach
+								        				<?php foreach($hot as $val): ?>
+								        				<span><?php echo e($val->i_name); ?></span>
+								        				<?php endforeach; ?>
 									        		</dd>
 								        	  	</dl>
 								        		<dl>
 								        			<dt>ABCDEF</dt>
 								        			<dd>
-									        			@foreach($ABCDEF as $val)
-								        				<span>{{$val->i_name}}</span>
-								        				@endforeach
+									        			<?php foreach($ABCDEF as $val): ?>
+								        				<span><?php echo e($val->i_name); ?></span>
+								        				<?php endforeach; ?>
 								        			</dd>
 								        	  	</dl>
 								        		<dl>
 								        			<dt>GHIJ</dt>
 												<dd>
-							        				@foreach($GHIJ as $val)
-							        				<span>{{$val->i_name}}</span>
-							        				@endforeach
+							        				<?php foreach($GHIJ as $val): ?>
+							        				<span><?php echo e($val->i_name); ?></span>
+							        				<?php endforeach; ?>
 							        			</dd>
 								        	  	</dl>
 								        		<dl>
 								        			<dt>KLMN</dt>
 								        			<dd>
-									        			@foreach($KLMN as $val)
-								        				<span>{{$val->i_name}}</span>
-								        				@endforeach
+									        			<?php foreach($KLMN as $val): ?>
+								        				<span><?php echo e($val->i_name); ?></span>
+								        				<?php endforeach; ?>
 								        			</dd>
 								        	  	</dl>
 								        		<dl>
 								        			<dt>OPQR</dt>
 								        			<dd>
-									        			@foreach($OPQR as $val)
-								        				<span>{{$val->i_name}}</span>
-								        				@endforeach
+									        			<?php foreach($OPQR as $val): ?>
+								        				<span><?php echo e($val->i_name); ?></span>
+								        				<?php endforeach; ?>
 								        			</dd>
 								        	  	</dl>
 								        		<dl>
 								        			<dt>STUV</dt>
 								        			<dd>
-									        			@foreach($STUV as $val)
-								        				<span>{{$val->i_name}}</span>
-								        				@endforeach
+									        			<?php foreach($STUV as $val): ?>
+								        				<span><?php echo e($val->i_name); ?></span>
+								        				<?php endforeach; ?>
 								        			</dd>
 								        	  	</dl>
 								        		<dl>
 								        			<dt>WXYZ</dt>
 								        			<dd>
-									        			@foreach($hot as $val)
-								        				<span>{{$val->i_name}}</span>
-								        				@endforeach
+									        			<?php foreach($hot as $val): ?>
+								        				<span><?php echo e($val->i_name); ?></span>
+								        				<?php endforeach; ?>
 								        			</dd>
 								        	  	</dl>
 								        </div>  
@@ -408,7 +408,7 @@ console.log(1);
 											var i_name=$(this).val();
 											$.ajax({
 											   type: "get",
-											   url: "{{url('postcheck')}}",
+											   url: "<?php echo e(url('postcheck')); ?>",
 											   data: "i_name="+i_name,
 											   success: function(msg){
 											     if (msg=="1") {
@@ -441,7 +441,7 @@ console.log(1);
 	            				<tr>
 	            					<td colspan="3">
 			            					<input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
-								      		<input type="hidden" name="res_id" value="{{$arr->res_id}}">
+								      		<input type="hidden" name="res_id" value="<?php echo e($arr->res_id); ?>">
 											<input type="submit" value="保 存" class="btn_profile_save">
 							          		<a class="btn_profile_cancel" href="javascript:;">取 消</a>
 	            					</td>
@@ -466,7 +466,7 @@ console.log(1);
             		<h2>工作经历  <span> （投递简历时必填）</span></h2>
             		            		<span class="c_add dn"></span>
             		<div class="experienceShow dn">
-            		    <form class="experienceForm borderBtm dn" action="{{url('workexperience')}}" method="post">
+            		    <form class="experienceForm borderBtm dn" action="<?php echo e(url('workexperience')); ?>" method="post">
 	            			<table>
 	            				<tbody><tr>
 							      	<td valign="top">
@@ -537,7 +537,7 @@ console.log(1);
 	            					<td></td>
 	            					<td colspan="3">
 	            						<input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
-								      	<input type="hidden" name="res_id" value="{{$arr->res_id}}">
+								      	<input type="hidden" name="res_id" value="<?php echo e($arr->res_id); ?>">
 										<input type="submit" value="保 存" class="btn_profile_save">
 						          		<a class="btn_profile_cancel" href="javascript:;">取 消</a>
 	            					</td>
@@ -549,7 +549,7 @@ console.log(1);
             				            				            			</ul>
             		</div><!--end .experienceShow-->
             		<div class="experienceEdit dn">
-            			<form class="experienceForm" action="{{url('workexperience')}}" method="post">
+            			<form class="experienceForm" action="<?php echo e(url('workexperience')); ?>" method="post">
             			
 	            			<table>
 	            				<tbody><tr>
@@ -624,7 +624,7 @@ console.log(1);
 	            					<td colspan="3">
 
 	            						<input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
-								      	<input type="hidden" name="res_id" value="{{$arr->res_id}}">
+								      	<input type="hidden" name="res_id" value="<?php echo e($arr->res_id); ?>">
 										<input type="submit" value="保 存" class="btn_profile_save">
 						          		<a class="btn_profile_cancel" href="javascript:;">取 消</a>
 	            					</td>
@@ -649,7 +649,7 @@ console.log(1);
 	            			            			</ul>
             		</div><!--end .projectShow-->
             		<div class="projectEdit dn">
-            			<form class="projectForm" action="{{url('projectexperience')}}" method="post">
+            			<form class="projectForm" action="<?php echo e(url('projectexperience')); ?>" method="post">
 	            			<table>
 	            				<tbody><tr>
 	            					<td valign="top">
@@ -735,7 +735,7 @@ console.log(1);
 	            					<td valign="top"></td> 
 	            					<td colspan="3">
 	            						<input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
-								      	<input type="hidden" name="res_id" value="{{$arr->res_id}}">
+								      	<input type="hidden" name="res_id" value="<?php echo e($arr->res_id); ?>">
 										<input type="submit" value="保 存" class="btn_profile_save">
 						          		<a class="btn_profile_cancel" href="javascript:;">取 消</a>
 	            					</td>
@@ -755,7 +755,7 @@ console.log(1);
             		<h2>教育背景<span>（投递简历时必填）</span></h2>
             							<span class="c_add dn"></span>
             		<div class="educationalEdit dn">
-            			<form class="educationalForm" action="{{url('educational')}}" method="post">
+            			<form class="educationalForm" action="<?php echo e(url('educational')); ?>" method="post">
 	            			<table>
 	            				<tbody><tr>
 							      	<td valign="top">
@@ -803,7 +803,7 @@ console.log(1);
 												//alert(1)
 													$.ajax({
 													   type: "get",
-													   url: "{{url('majorcheck')}}",
+													   url: "<?php echo e(url('majorcheck')); ?>",
 													   data: "m_name="+m_name,
 													   success: function(msg){
 													   	//alert(msg)
@@ -847,7 +847,7 @@ console.log(1);
 	            					<td></td>
 	            					<td colspan="3">
 	            						<input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
-								      	<input type="hidden" name="res_id" value="{{$arr->res_id}}">
+								      	<input type="hidden" name="res_id" value="<?php echo e($arr->res_id); ?>">
 										<input type="submit" value="保 存" class="btn_profile_save">
 						          		<a class="btn_profile_cancel" href="javascript:;">取 消</a>
 	            					</td>
@@ -870,7 +870,7 @@ console.log(1);
             		            			
             		</div><!--end .descriptionShow-->
             		<div class="descriptionEdit dn">
-            			<form class="descriptionForm" action="{{url('description')}}" method="post">
+            			<form class="descriptionForm" action="<?php echo e(url('description')); ?>" method="post">
 	            			<table>
 	            				<tbody><tr>
 									<td colspan="2">
@@ -881,7 +881,7 @@ console.log(1);
 	            				<tr>
 	            					<td colspan="2">
 	            						<input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
-								      	<input type="hidden" name="res_id" value="{{$arr->res_id}}">
+								      	<input type="hidden" name="res_id" value="<?php echo e($arr->res_id); ?>">
 										<input type="submit" value="保 存" class="btn_profile_save">
 						          		<a class="btn_profile_cancel" href="javascript:;">取 消</a>
 	            					</td>
@@ -904,7 +904,7 @@ console.log(1);
             				            			</ul>
             		</div>end .workShow
             		<div class="workEdit dn">
-            			<form class="workForm" action="{{url('workexperience')}}" method="post">
+            			<form class="workForm" action="<?php echo e(url('workexperience')); ?>" method="post">
             	
             		            						
             		            			<table>
@@ -922,7 +922,7 @@ console.log(1);
             		            				<tr>
             		            					<td>
             		            					<input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
-            									      	<input type="hidden" name="res_id" value="{{$arr->res_id}}">
+            									      	<input type="hidden" name="res_id" value="<?php echo e($arr->res_id); ?>">
             											<input type="submit" value="保 存" class="btn_profile_save">
             							          		<a class="btn_profile_cancel" href="javascript:;">取 消</a>
             		            					</td>

@@ -89,23 +89,25 @@ Route::get('/bindStep2', 'CompanyglController@bindStep2');
 //开通招聘服务（3）
 Route::get('/bindStep3', 'CompanyglController@bindStep3');
    
-//填写公司信息
-Route::get('/founder', 'CpregisterController@founder');
+//填写公司信息第3步
+Route::any('/founder', 'CpregisterController@founder');
 	
-//填写公司信息
-Route::get('/index01', 'CpregisterController@index01');	
+//填写公司信息第一步
+Route::any('/index01', 'CpregisterController@index01');	
+Route::any('/index01_pro', 'CpregisterController@index01_pro');	
 	
-//填写公司信息
-Route::get('/index02', 'CpregisterController@index02');		
+//填写公司信息第4步
+Route::any('/index02', 'CpregisterController@index02');		
 
-//填写公司信息
-Route::get('/index03', 'CpregisterController@index03');		
+//填写公司信息第5步
+Route::any('/index03', 'CpregisterController@index03');		
 	
 //填写公司信息  发布职位
-Route::get('/success', 'CpregisterController@success');	
+Route::any('/success', 'CpregisterController@success');	
 
-//填写公司信息
-Route::get('/tag', 'CpregisterController@tag');		 
+//填写公司信息第2步
+Route::any('/tag', 'CpregisterController@tag');		 
+Route::any('/tag_pro', 'CpregisterController@tag_pro');		 
 	 
 //展示个人登录界面
 Route::any('/login', 'LoginController@login');	
@@ -125,7 +127,7 @@ Route::get('/company_login_pro', 'LoginController@company_login_pro');
 Route::get('/jianli', 'PersonalController@jianli');
 
 //个人简历信息
-Route::any('/preview', 'PersonalController@preview');
+Route::any('/previews', 'PersonalController@previews');
 Route::any('/basic', 'PersonalController@basic');//基本 信息 修改
 Route::any('/uploadPhoto', 'PersonalController@uploadPhoto');//上传头像
 Route::any('/postcheck', 'PersonalController@postcheck');//职位检测
@@ -135,6 +137,7 @@ Route::any('/projectexperience', 'PersonalController@projectexperience');//修�
 Route::any('/educational', 'PersonalController@educational');//修改教育背景
 Route::any('/majorcheck', 'PersonalController@majorcheck');//检查是否有该专业
 Route::any('/description', 'PersonalController@description');//自我描述
+Route::any('/per_i_name', 'PersonalController@per_i_name');//修改用户名称
 
     
 //发布新职位
@@ -168,7 +171,16 @@ Route::get('/delivery', 'ResumetdController@delivery');
 Route::get('/subscribe', 'SubscribeController@subscribe');
   
 //我的职位订阅1
-Route::get('/subscribe01', 'SubscribeController@subscribe01');    
+Route::get('/subscribe01', 'SubscribeController@subscribe01');
+
+//职位订阅删除
+Route::get('/subdel','SubscribeController@subdel');
+
+//职位订阅添加
+Route::get('/subinfo','SubscribeController@subinfo');
+
+//发送邮件测试
+Route::get('/send','SubscribeController@send');
 //公司找详细简历
 Route::get('/gerenlist', 'IndexController@gerenlist');
 // //公司找个人地址	
