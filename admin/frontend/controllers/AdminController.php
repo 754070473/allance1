@@ -146,7 +146,7 @@ class AdminController extends Controller
        // $connection = \Yii::$app->db;
 
 
-        $arr=Yii::$app->db->createCommand("select * from al_admin right join al_admin_log on al_admin.adm_id=al_admin_log.adm_id order by a_addtime desc")->queryall();
+        $arr=Yii::$app->db->createCommand("select * from al_admin right join al_admin_log on al_admin.adm_id=al_admin_log.adm_id order by log_addtime desc")->queryall();
         return $this->render('ri.html', ["arr" =>$arr]);
 
     }
@@ -177,8 +177,6 @@ class AdminController extends Controller
         } else {
             echo "<script>alert('删除失败')</script>";
         }
-
-
     }
     //修改日志数据
     public function actionUpd()

@@ -102,10 +102,10 @@ var youdao_conv_id = 271546;
                         </h1>
                     </dt>
 	                <dd> 
-	                	<div class="ccc_tr">今日已发布 <span>1</span> 个职位   还可发布 <span>4</span> 个职位</div>
+	                
 	                	<div class="publish_tip">
                             <h2>恭喜你，职位发布成功！</h2>
-                            <a target="_blank" href="">预览职位</a><br>
+                            <a  href="positions">预览职位</a><br>
                                                         <a class="greylink" href="create">继续发布新职位</a><br>
                                                         <a class="greylink" href=""> 进入我的公司主页</a><br>
                         	<div style="float:left;" class="invite_share">

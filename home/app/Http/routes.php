@@ -142,19 +142,43 @@ Route::any('/per_i_name', 'PersonalController@per_i_name');//修改用户名称
     
 //发布新职位
 Route::get('/create', 'PostofficeController@create');
+Route::post('/postAdd', 'PostofficeController@postAdd');
 	
 //职位发布成功
 Route::get('/index06', 'PostofficeController@index06');	
 
 //有效职位
-Route::get('/positions', 'RecresumeController@positions');	
+Route::get('/positions', 'CpzwglController@positions');
+//有效职位删除	
+Route::get('/ptdel','CpzwglController@ptdel');
+//有效职位下线
+Route::get('/ptdown','CpzwglController@ptdown');
+//有效职位编辑
+Route::get('/ptedit','CpzwglController@ptedit');
+//有效职位编辑2
+Route::any('/ptedit2','CpzwglController@ptedit2');
+
+//已下线职位
+Route::any('/unpositions', 'CpzwglController@unpositions');	
+//职位上线
+Route::any('/ptup', 'CpzwglController@ptup');	
 	
 //不合适简历
-Route::get('/haveRefuseResumes', 'RecresumeController@haveRefuseResumes');	
-	
+Route::get('/haveRefuseResumes', 'RecresumeController@haveRefuseResumes');
+//通知面试
+Route::get('/haveNotice', 'RecresumeController@mian');
 //待定简历
-Route::get('/canInterviewResumes', 'RecresumeController@canInterviewResumes');	
-	
+Route::get('/canInterviewResumes', 'RecresumeController@canInterviewResumes');
+//待定修改
+Route::get('/can', 'RecresumeController@can');
+//通知面试
+Route::get('/tong', 'RecresumeController@tong');
+//删除简历
+Route::get('/del', 'RecresumeController@del');
+//待定成功
+Route::get('tiao', 'RecresumeController@canInterviewResumes');
+//待定成功
+Route::get('zhi', 'RecresumeController@canInterviewResumes');
 //自动过滤简历
 Route::get('/autoFilterResumes', 'RecresumeController@autoFilterResumes');	
 
@@ -163,7 +187,8 @@ Route::get('/register/', 'RegisterController@register');
 
 //简历
 Route::get('/preview', 'ResumeglController@preview');
-   
+//查看简历
+Route::get('/pre', 'ResumeglController@pre');
 //已投递简历状态
 Route::get('/delivery', 'ResumetdController@delivery');
 

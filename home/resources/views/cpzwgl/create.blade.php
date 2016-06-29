@@ -5,7 +5,7 @@
 <link  media="handheld" rel="alternate">
 <!-- end 云适配 -->
 <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-<title>发布新职位-招聘服务-拉勾网-最专业的互联网招聘平台</title>
+<title>编辑职位-招聘服务-强强联合-最专业的互联网招聘平台</title>
 <meta content="23635710066417756375" property="qc:admins">
 <meta name="description" content="拉勾网是3W旗下的互联网领域垂直招聘网站,互联网职业机会尽在拉勾网">
 <meta name="keywords" content="拉勾,拉勾网,拉勾招聘,拉钩, 拉钩网 ,互联网招聘,拉勾互联网招聘, 移动互联网招聘, 垂直互联网招聘, 微信招聘, 微博招聘, 拉勾官网, 拉勾百科,跳槽, 高薪职位, 互联网圈子, IT招聘, 职场招聘, 猎头招聘,O2O招聘, LBS招聘, 社交招聘, 校园招聘, 校招,社会招聘,社招">
@@ -49,7 +49,7 @@ var youdao_conv_id = 271546;
     <div id="container">
         
         	<div class="sidebar">
-            	<a class="btn_create" href="create">发布新职位</a>
+            	<a class="btn_create" href="create">编辑职位</a>
                 <dl class="company_center_aside">
 		<dt>我收到的简历</dt>
 		<dd>
@@ -74,7 +74,7 @@ var youdao_conv_id = 271546;
 		<a href="positions">有效职位</a>
 	</dd>
 	<dd>
-		<a href="positions">已下线职位</a>
+		<a href="unpositions">已下线职位</a>
 	</dd>
 	</dl>
                 <div class="subscribe_side mt20">
@@ -95,12 +95,12 @@ var youdao_conv_id = 271546;
                     <dt>
                         <h1>
                             <em></em>
-                                                       		发布新职位
+                                                       		编辑职位
                            	                        </h1>
                     </dt>
                     <dd>
-                    	
-                    	<form action="{{url('postAdd')}}" method="post" id="jobForm">
+                    
+                    	<form action="{{url('ptedit2')}}" method="post" id="jobForm">
                     		<input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
                             <input type="hidden" value="" name="id">
                             <input type="hidden" value="create" name="preview">
@@ -111,8 +111,8 @@ var youdao_conv_id = 271546;
                                 	<td width="25"><span class="redstar">*</span></td>
                                 	<td width="85">职位类别</td>
                                 	<td>
-                                    	<input type="hidden" id="positionType" value="" name="r_major">
-                                        <input type="button" value="请选择职位类别" id="select_category" class="selectr selectr_380" >                                      
+                                    	<input type="hidden" id="positionType" value="{{$res->r_major}}" name="r_major">
+                                        <input type="button" value="{{$res->r_major}}" id="select_category" class="selectr selectr_380">                                      
                                         <div class="dn" id="box_job" style="display: none;">
                                                                                      
                                                
@@ -147,7 +147,7 @@ var youdao_conv_id = 271546;
                                 	<td><span class="redstar">*</span></td>
                                 	<td>职位名称</td>
                                 	<td>
-                                    	<input type="text" placeholder="请输入职位名称，如：产品经理" value="" name="r_name" id="positionName">
+                                    	<input type="text" placeholder="{{$res->r_name}}" value="{{$res->r_name}}" name="r_name" id="positionName">
                                     	                                    </td>
                                     
                                 </tr>
@@ -161,7 +161,17 @@ var youdao_conv_id = 271546;
                                 	<td width="85">性别要求</td>
                                 	<td>
                                     	<ul class="profile_radio clearfix reset">
-                                    		                                             
+                                    		@if($res->r_sex == 2)
+                                                        <li>
+                                                           男<em></em>
+                                                           <input type="radio" name="r_sex" value="2" checked="checked" > 
+                                                        </li>
+                                                         
+                                                        <li>
+                                                           女<em></em>
+                                                           <input type="radio" name="r_sex" value="1" > 
+                                                       </li>
+                                            @else
                                                         <li>
                                                            男<em></em>
                                                            <input type="radio" name="r_sex" value="2" > 
@@ -169,8 +179,9 @@ var youdao_conv_id = 271546;
                                                          
                                                         <li>
                                                            女<em></em>
-                                                           <input type="radio" name="r_sex" value="1" > 
+                                                           <input type="radio" name="r_sex" value="1" checked="checked" > 
                                                        </li>
+                                            @endif
                                         </ul>
                                     </td>                                                                                                                                                                    
                                 </tr>                                                                                                       </ul>
@@ -179,7 +190,17 @@ var youdao_conv_id = 271546;
                                 	<td width="85">语言要求</td>
                                 	<td>
                                     	<ul class="profile_radio clearfix reset">
-                                    		                                             
+                                            @if($res->r_language == '中文')                                       
+                                                        <li>
+                                                           中文<em></em>
+                                                           <input type="radio" name="r_language" value="中文" checked="checked" > 
+                                                        </li>
+                                                         
+                                                        <li>
+                                                           英文<em></em>
+                                                           <input type="radio" name="r_language" value="英文"> 
+                                                       </li>
+                                            @else
                                                         <li>
                                                            中文<em></em>
                                                            <input type="radio" name="r_language" value="中文"> 
@@ -187,9 +208,9 @@ var youdao_conv_id = 271546;
                                                          
                                                         <li>
                                                            英文<em></em>
-                                                           <input type="radio" name="r_language" value="英文"> 
+                                                           <input type="radio" name="r_language" value="英文" checked="checked" > 
                                                        </li>
-      
+                                            @endif
                                         </ul>
                                     </td>                                                                                                                                                                    
                                 </tr>
@@ -198,16 +219,27 @@ var youdao_conv_id = 271546;
                                 	<td width="85">全日制</td>
                                 	<td>
                                     	<ul class="profile_radio clearfix reset" >
-                                    		                                             
+                                    		@if($res->r_iflogbook == 1)                                             
                                                         <li>
                                                            是<em></em>
-                                                           <input type="radio" name="r_iflogbook" value="1"> 
+                                                           <input type="radio" name="r_iflogbook" value="1" checked="checked" > 
                                                         </li>
                                                          
                                                         <li>
                                                            否<em></em>
                                                            <input type="radio" name="r_iflogbook" value="0"> 
                                                        </li>
+                                            @else
+                                                       <li>
+                                                           是<em></em>
+                                                           <input type="radio" name="r_iflogbook" value="1" > 
+                                                        </li>
+                                                         
+                                                        <li>
+                                                           否<em></em>
+                                                           <input type="radio" name="r_iflogbook" value="0" checked="checked" > 
+                                                       </li>
+                                            @endif
                                         </ul>
                                     </td>                                                                                                                                                                    
                                 </tr>
@@ -218,11 +250,11 @@ var youdao_conv_id = 271546;
                                 	<td>
                                     	<div class="salary_range">
                                             <div>
-                                                <input type="text" placeholder="最低月薪" value="" id="salaryMin" name="r_pay_down"> 
+                                                <input type="text" placeholder="" value="{{$salary_min}}" id="salaryMin" name="r_pay_down"> 
                                                 <span>k</span>
                                             </div>
                                             <div>
-                                                <input type="text" placeholder="最高月薪" value="" id="salaryMax" name="r_pay_up"> 
+                                                <input type="text" placeholder="" value="{{$salary_max}}" id="salaryMax" name="r_pay_up"> 
                                                 <span>k</span>
                                             </div>
                                             <span>只能输入整数，如：9</span>
@@ -239,8 +271,8 @@ var youdao_conv_id = 271546;
                                 	<td width="25"><span class="redstar">*</span></td>
                                 	<td width="85">工作年限</td>
                                 	<td>
-                                    	<input type="hidden" id="r_suffer" value="" name="r_suffer">
-                                        <input type="button" value="请选择工作年限" id="select_suffer" class="selectr selectr_380" name="r_suffer">                                      
+                                    	<input type="hidden" id="r_suffer" value="{{$r_suffer}}" name="r_suffer">
+                                        <input type="button" value="{{$r_suffer}}" id="select_suffer" class="selectr selectr_380" name="r_suffer">                                      
                                         <div class="boxUpDown boxUpDown_380 dn" id="box_suffer" style="display: none;">
                                             <ul>
                                                                                                     <li value="0">
@@ -273,8 +305,8 @@ var youdao_conv_id = 271546;
                                 	<td>学历要求</td>
                                     <!--<h3><span>(最高月薪不能大于最低月薪的2倍)</span></h3> -->
                                 	<td>
-                                    	<input type="hidden" id="r_edu" value="" name="r_edu">
-                                        <input type="button" value="请选择学历要求" id="select_edu" class="selectr selectr_380" name="r_edu">                                      
+                                    	<input type="hidden" id="r_edu" value="{{$r_edu}}" name="r_edu">
+                                        <input type="button" value="{{$r_edu}}" id="select_edu" class="selectr selectr_380" name="r_edu">                                      
                                         <div class="boxUpDown boxUpDown_380 dn" id="box_edu" style="display: none;">
                                             <ul>
                                                                                                     <li>
@@ -313,8 +345,8 @@ var youdao_conv_id = 271546;
                                 	<td width="25"><span class="redstar">*</span></td>
                                 	<td width="85">年龄要求</td>
                                 	<td>
-                                    	<input type="hidden" id="r_age" value="" name="r_age">
-                                        <input type="button" value="请选择年龄" id="select_age" class="selectr selectr_380"  name="r_age" >                                      
+                                    	<input type="hidden" id="r_age" value="{{$res->r_age}}" name="r_age">
+                                        <input type="button" value="{{$res->r_age}}" id="select_age" class="selectr selectr_380"  name="r_age" >                                      
                                         <div class="boxUpDown boxUpDown_380 dn" id="box_age" style="display: none;">
                                             <ul>
                                                 
@@ -339,7 +371,7 @@ var youdao_conv_id = 271546;
                                 	<td>
                                     	<span class="c9 f14">(建议分条描述工作职责等。请勿输入公司邮箱、联系电话及其他外链，否则将自动删除)</span>
                                     	
-                                        <textarea name="r_describe" id="r_describe" class="tinymce" aria-hidden="true"></textarea>                                       	
+                                        <textarea name="r_describe" id="r_describe" class="tinymce" aria-hidden="true">{{$res->r_describe}}</textarea>                                       	
                                         <script type="text/javascript">CKEDITOR.replace('r_describe')</script>
                                         
                                 </tr>
@@ -348,7 +380,7 @@ var youdao_conv_id = 271546;
                                 	<td><span class="redstar">*</span></td>
                                 	<td>工作地址</td>
                                 	<td>
-                                    	<input type="text" placeholder="请输入详细的工作地址" value="" name="r_place" class="input_520" id="positionAddress">	
+                                    	<input type="text" placeholder="{{$res->r_place}}" value="{{$res->r_place}}" name="r_place" class="input_520" id="positionAddress">	
                                         <input type="hidden" value="" name="positionLng" id="lng">
                             			<input type="hidden" value="" name="positionLat" id="lat">
                                         <div class="work_place f14">我们将在职位详情页以地图方式精准呈现给用户  <a id="mapPreview" href="javascript:;">预览地图</a></div>
@@ -363,12 +395,12 @@ var youdao_conv_id = 271546;
                                 	<td><span class="redstar">*</span></td>
                                 	<td>推广类型</td>
                                 	<td>
-                                		<input type="hidden" id="g_type" value="" name="g_type" >
-                                        <input type="button" value="请选择推广类型" id="select_type" class="selectr selectr_380"  name="g_type" >                                      
+                                		<input type="hidden" id="g_type" value="{{$tg}}" name="g_type" >
+                                        <input type="button" value="{{$tg}}" id="select_type" class="selectr selectr_380"  name="g_type" >                                      
                                         <div class="boxUpDown boxUpDown_380 dn" id="box_type" style="display: none;">
                                             <ul>
                                                 
-                                                	@foreach($res as $v)
+                                                	@foreach($re as $v)
                                                     <li value="{{$v->g_type_id}}">
                                                       {{$v->g_type_name}}
                                                     </li>
@@ -383,8 +415,8 @@ var youdao_conv_id = 271546;
                                 	<td><span class="redstar">*</span></td>
                                 	<td>推广时间</td>
                                 	<td>
-                                		<input type="hidden" id="r_time" value="" name="r_time">
-                                        <input type="button" value="请选择推广时间" id="select_time" class="selectr selectr_380"  name="r_time" >                                      
+                                		<input type="hidden" id="r_time" value="{{$res->r_time}}" name="r_time">
+                                        <input type="button" value="{{$res->r_time}}" id="select_time" class="selectr selectr_380"  name="r_time" >                                      
                                         <div class="boxUpDown boxUpDown_380 dn" id="box_time" style="display: none;">
                                             <ul>
                                                 
@@ -399,13 +431,13 @@ var youdao_conv_id = 271546;
                                     </td>
                                 </tr>
                             </tbody></table>
-
+                            <input type="hidden"  value="{{$res->rec_id}}" name="rec_id">
                             <table>
                                 <tr>
                                 	<td width="25"></td>
                                 	<td colspan="2">
-                                    	<input type="button" value="预览" id="formSubmit" class="btn_32">
-                                    	<input type="submit" value="发布" id="jobPreview" class="btn_32">
+                                    	<input type="reset" value="取消"  class="btn_32">
+                                    	<input type="submit" value="修改"  class="btn_32">
                                     </td>
                                 </tr>
                          	</tbody></table>
