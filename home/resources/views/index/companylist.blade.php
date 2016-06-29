@@ -68,130 +68,20 @@ var youdao_conv_id = 271546;
                                 	<a href="javascript:void(0)"  class="current" >全国</a> 
                                 	                                	|
                                 	                                </li>
+                                	                                @foreach($place as $k=>$plac)
 	                                                            <li >
-                                	<a href="javascript:void(0)" >北京</a> 
+                                	<a href="javascript:void(0)" id="i_{{$plac->pla_id}}" onclick="place({{$plac->pla_id}})" i_name="{{$plac->i_name}}">{{$plac->i_name}}</a> 
                                 	                                	|
                                 	                                </li>
-	                                                            <li >
-                                	<a href="javascript:void(0)" >上海</a> 
-                                	                                	|
-                                	                                </li>
-	                                                            <li >
-                                	<a href="javascript:void(0)" >广州</a> 
-                                	                                	|
-                                	                                </li>
-	                                                            <li >
-                                	<a href="javascript:void(0)" >深圳</a> 
-                                	                                	|
-                                	                                </li>
-	                                                            <li >
-                                	<a href="javascript:void(0)" >成都</a> 
-                                	                                	|
-                                	                                </li>
-	                                                            <li >
-                                	<a href="javascript:void(0)" >杭州</a> 
-                                	                                	|
-                                	                                </li>
-	                                                            <li >
-                                	<a href="javascript:void(0)" >武汉</a> 
-                                	                                	|
-                                	                                </li>
-	                                                            <li >
-                                	<a href="javascript:void(0)" >南京</a> 
-                                	                                	|
-                                	                                </li>
-	                                                            <li  class="more" >
-                                	<a href="javascript:void(0)" >其他</a> 
-                                	                                	<div class="triangle citymore_arrow"></div>
-                                	                                </li>
-	                            	                            <li id="box_expectCity" class="searchlist_expectCity dn">
-					            	<span class="bot"></span>
-					            	<span class="top"></span>
-						    								    										    							    										    		<dl>
-							    			<dt>ABCDEF</dt>
-							    			<dd>
-							     										     				<span>北京</span>
-							     										     				<span>长春</span>
-							     										     				<span>成都</span>
-							     										     				<span>重庆</span>
-							     										     				<span>长沙</span>
-							     										     				<span>常州</span>
-							     										     				<span>东莞</span>
-							     										     				<span>大连</span>
-							     										     				<span>佛山</span>
-							     										     				<span>福州</span>
-							     										    			</dd>
-							    	  	</dl>
-							    	  								    							    										    		<dl>
-							    			<dt>GHIJ</dt>
-							    			<dd>
-							     										     				<span>贵阳</span>
-							     										     				<span>广州</span>
-							     										     				<span>哈尔滨</span>
-							     										     				<span>合肥</span>
-							     										     				<span>海口</span>
-							     										     				<span>杭州</span>
-							     										     				<span>惠州</span>
-							     										     				<span>金华</span>
-							     										     				<span>济南</span>
-							     										     				<span>嘉兴</span>
-							     										    			</dd>
-							    	  	</dl>
-							    	  								    							    										    		<dl>
-							    			<dt>KLMN</dt>
-							    			<dd>
-							     										     				<span>昆明</span>
-							     										     				<span>廊坊</span>
-							     										     				<span>宁波</span>
-							     										     				<span>南昌</span>
-							     										     				<span>南京</span>
-							     										     				<span>南宁</span>
-							     										     				<span>南通</span>
-							     										    			</dd>
-							    	  	</dl>
-							    	  								    							    										    		<dl>
-							    			<dt>OPQR</dt>
-							    			<dd>
-							     										     				<span>青岛</span>
-							     										     				<span>泉州</span>
-							     										    			</dd>
-							    	  	</dl>
-							    	  								    							    										    		<dl>
-							    			<dt>STUV</dt>
-							    			<dd>
-							     										     				<span>上海</span>
-							     										     				<span>石家庄</span>
-							     										     				<span>绍兴</span>
-							     										     				<span>沈阳</span>
-							     										     				<span>深圳</span>
-							     										     				<span>苏州</span>
-							     										     				<span>天津</span>
-							     										     				<span>太原</span>
-							     										     				<span>台州</span>
-							     										    			</dd>
-							    	  	</dl>
-							    	  								    							    										    		<dl>
-							    			<dt>WXYZ</dt>
-							    			<dd>
-							     										     				<span>武汉</span>
-							     										     				<span>无锡</span>
-							     										     				<span>温州</span>
-							     										     				<span>西安</span>
-							     										     				<span>厦门</span>
-							     										     				<span>烟台</span>
-							     										     				<span>珠海</span>
-							     										     				<span>中山</span>
-							     										     				<span>郑州</span>
-							     										    			</dd>
-							    	  	</dl>
-							    	  								    								    </li>
+                                	                                @endforeach
+	                            	  								    								    </li>
 	                        </ul>
 	                    </dt>
 	                    <dd>
 	                        <dl>
 	                            <dt>发展阶段：</dt>
 	                            <dd>
-	                            			                            			      <a href="type?&rr=初创型">初创型</a>
+	                            			             <a href="type?&rr=初创型">初创型</a>
                                                                                           <a href="type?&rr=成长型">成长型</a>
                                                                                           <a href="type?&rr=成熟型"> 成熟型</a>
                                                                                           <a href="type?&rr=已上市">已上市</a>
@@ -205,7 +95,7 @@ var youdao_conv_id = 271546;
                                         <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
 
 
-                                        <a href="javascript:void(0)" id="cla{{$v->me_id}}"  onclick="fun({{$v->me_id}})">{{$v->h_name}}</a>
+                                        <a href="javascript:void(0)"  onclick="fun({{$v->me_id}})">{{$v->h_name}}</a>
                                         @endforeach
 
 		                                	                                	                            </dd>
@@ -239,17 +129,18 @@ var youdao_conv_id = 271546;
 	                        </dl> -->
 	                    </dd>
 	                </dl>
+                        @foreach($ar as  $k=>$v)
 	               	                	<ul class="hc_list reset" id="so">
 
 			                        <a href="h/c/25829" target="_blank">
-                                        @foreach($ar as  $k=>$v)
+
                                             <?php if(($k+1)%3==1){  ?>
                                             <li  style="clear:both;" >
                                                 <?php }else{?>
                                             <li>
                                                 <?php } ?>
                                                 <a href="{{url('index04')}}" target="_blank">
-                                                    <h3 title="CCIC">CCIC</h3>
+                                                    <h3 title="CCIC">公司</h3>
 
 
                                                     <div class="comLogo">
@@ -270,25 +161,7 @@ var youdao_conv_id = 271546;
                                                 </ul>
                                             </li>
                                         @endforeach
-		         		                        	{{--<li>绩效奖金</li>--}}
 
-			                        {{--</a>--}}
-			                        	{{--{--<a href="h/jobs/148380" target="_blank"> Java高级工程师</a>--}}
-			                        			                        	{{--<a href="h/jobs/148470" target="_blank"> 网站运营专员</a>--}}
-			                        			                        	{{--<a href="h/jobs/148377" target="_blank"> Java开发工程师</a>--}}
-			                        			                        {{--<ul class="reset ctags">--}}
-			                        				                        				                        	{{--<li>D轮及以上</li>--}}
-																							                        				                        	{{--<li>电子商务</li>--}}
-																							                        				                        	{{--<li>云计算\大数据</li>--}}
-
-																							                        				                        	{{--<li>电子商务</li>--}}
-																							                        				                        	{{--<li>五险一金</li>--}}
-																							                        				                        	{{--<li>带薪年假</li>--}}
-																							                        				                        	{{--<li>节日礼物</li>--}}
-																							                        				                        	{{--<li>定期体检</li>--}}
-																						                        {{--</ul>--}}
-			                    {{--</li>--}}
-		                        		                    		                {{--</ul>--}}
 
 		                		               	<div class="Pagination"></div>
 
@@ -349,17 +222,31 @@ var youdao_conv_id = 271546;
        {{--});--}}
 
    {{--}--}}
-    function fun(id){
+    function fun(me_id){
+    	//alert(me_id);
         $.ajax({
             type: "GET",
             url: "{{url('hang')}}",
-            data: "id="+id,
+            data: "me_id="+me_id,
             success: function(msg){
+            	alert(msg);
               $("#so").html(msg)
             }
         });
     }
-
+function place(pla_id){
+	var i_name = $('#i_'+pla_id).attr('i_name');
+	//alert(i_name);
+         $.ajax({
+            type: "GET",
+            url: "{{url('place_list')}}",
+            data: "i_name="+i_name,
+            success: function(msg){
+            	//alert(msg);
+              $("#so").html(msg)
+            }
+        });	
+}
 
 </script>       	
 			<div class="clear"></div>

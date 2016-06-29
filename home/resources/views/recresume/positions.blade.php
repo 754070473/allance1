@@ -76,16 +76,16 @@
                     <a href="unHandleResumes.html">待处理简历</a>
                 </dd>
                 <dd>
-                    <a href="canInterviewResumes.html">待定简历</a>
+                    <a href="canInterviewResumes">待定简历</a>
                 </dd>
                 <dd>
-                    <a href="haveNoticeResumes.html">已通知面试简历</a>
+                    <a href="haveNoticeResumes">已通知面试简历</a>
                 </dd>
                 <dd>
-                    <a href="haveRefuseResumes.html">不合适简历</a>
+                    <a href="haveRefuseResumes">不合适简历</a>
                 </dd>
                 <dd class="btm">
-                    <a href="autoFilterResumes.html">自动过滤简历</a>
+                    <a href="autoFilterResumes">自动过滤简历</a>
                 </dd>
             </dl>
             <dl class="company_center_aside">
