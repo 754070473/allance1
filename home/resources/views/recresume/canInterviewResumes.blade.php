@@ -201,7 +201,7 @@ var youdao_conv_id = 271546;
 
                                     </div>
                                     <div class="links">
-                                        <a data-deliverid="1686182" data-name="jason" data-positionid="149594" data-email="888888888@qq.com" class="resume_notice" href="javascript:void(0)" onclick="tong({{$v->res_id}})">通知面试</a>
+                                        <a class="resume_notice" id="id_{{$v->res_id}}" r_name="{{$v->r_name}}" href="javascript:void(0)" onclick="tong({{$v->res_id}})">通知面试</a>
                                         <a data-deliverid="1686182" class="resume_refuse" href="javascript:void(0)" onclick="fun({{$v->res_id}})">不合适</a>
                                         <a data-resumename="jason的简历" data-positionname="随便写" data-deliverid="1686182" data-positionid="149594" data-resumekey="1ccca806e13637f7b1a4560f80f08057" data-forwardcount="1" class="resume_forward" href="javascript:void(0)">
                                             转发
@@ -231,13 +231,13 @@ var youdao_conv_id = 271546;
                             <td width="20%" align="right" class="c9">收件人  </td>
                             <td width="80%">
                                 <span class="c9" id="receiveEmail"></span>
-                                <input type="hidden" value="" name="email">
+                                <input type="hidden" value="" name="" id="rec_id">
                             </td>
                         </tr>
                         <tr>
                             <td align="right"><span class="redstar">*</span>主题</td>
                             <td>
-                                <input type="text" placeholder="公司：职位名称面试通知" name="subject">
+                                <input type="text" placeholder="公司：职位名称面试通知" name="subject" id="subject">
                             </td>
                         </tr>
                         <tr>
@@ -249,31 +249,31 @@ var youdao_conv_id = 271546;
                         <tr>
                             <td align="right"><span class="redstar">*</span>面试地点</td>
                             <td>
-                                <input type="text" name="interAdd">
+                                <input type="text" name="interAdd" id="interAdd">
                             </td>
                         </tr>
                         <tr>
                             <td align="right">联系人</td>
                             <td>
-                                <input type="text" name="linkMan">
+                                <input type="text" name="linkMan" id="linkMan">
                             </td>
                         </tr>
                         <tr>
                             <td align="right"><span class="redstar">*</span>联系电话</td>
                             <td>
-                                <input type="text" name="linkPhone">
+                                <input type="text" name="linkPhone" id="linkPhone">
                             </td>
                         </tr>
                         <tr>
                             <td valign="top" align="right">补充内容</td>
                             <td>
-                                <textarea name="content"></textarea>
+                                <textarea name="content" id="content"></textarea>
                             </td>
                         </tr>
                         <tr>
                             <td></td>
                             <td>
-                                <input type="submit" value="发送" class="btn">
+                                <input type="submit" value="发送" class="btn" onclick="ck_inform()">
                                 <a class="emailPreview" href="javascript:;">预览</a>
                             </td>
                         </tr>
@@ -376,8 +376,8 @@ var youdao_conv_id = 271546;
                             </td>
                         </tr>
                         <tr>
-                            <td>
-                                        <textarea name="content">非常荣幸收到您的简历，在我们仔细阅读您的简历之后，却不得不很遗憾的通知您：
+                            <td><input type="hidden" id="del_id"/>
+                                        <textarea name="content" id="del_content">非常荣幸收到您的简历，在我们仔细阅读您的简历之后，却不得不很遗憾的通知您：
                 您的简历与该职位的定位有些不匹配，因此无法进入面试。
 
                 但您的信息已录入我司人才储备库，当有合适您的职位开放时我们将第一时间联系您，希望在未来我们有机会成为一起拼搏的同事；
@@ -386,7 +386,7 @@ var youdao_conv_id = 271546;
                         </tr>
                         <tr>
                             <td>
-                                <input type="submit" value="确认不合适" class="btn">
+                                <input type="submit" value="确认不合适" class="btn" onclick="ck_del()">
                                 <a class="emial_cancel" href="javascript:;">取消</a>
                             </td>
                         </tr>
@@ -442,35 +442,77 @@ var youdao_conv_id = 271546;
 </html>
 <script>
     function  fun(id){
-      //  alert(id)
+        $('#del_id').val(id);
+        $.colorbox({
+            inline: !0,
+            href: "#confirmRefuse",
+            title: "不合适"
+        });
+    }
+    function ck_del()
+    {
+        var id = $('#del_id').val();
+        var content = $('#del_content').val();
         $.ajax({
             type: "get",
             url: "{{url('can')}}",
-            data: "id="+id,
-            headers: {
-                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-            },
-            success: function(msg){
-              if(msg==1){
-                  window.location.href="tiao";
-              }
-            }
-        });
-    }
-    function  tong(id){
-       // alert(id)
-        $.ajax({
-            type: "get",
-            url: "{{url('tong')}}",
-            data: "id="+id,
-            headers: {
-                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-            },
-            success: function(msg){
+             data: "id="+id+'&content='+content,
+             headers: {
+             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+             },
+                success: function(msg){
                 if(msg==1){
-                    window.location.href="zhi";
+                    $.colorbox({
+                        inline: !0,
+                        href: "#refuseMailSuccess",
+                        title: "不合适"
+                    });
                 }
             }
         });
     }
+    function  tong(id){
+        var r_name = $('#id_'+id).attr('r_name');
+        $('#receiveEmail').html(r_name);
+        $('#rec_id').val(id);
+        $.colorbox({
+            inline: !0,
+            href: "#noticeInterview",
+            title: "通知面试"
+        });
+    }
+
+    function ck_inform(){
+		//主题
+        var subject = $('#subject').val();
+		//面试时间
+		var date = $('#datetimepicker').val();
+		//面试地点
+		var interAdd = $('#interAdd').val()
+		//联系人
+		var linkMan = $('#linkMan').val();
+		//联系电话
+		var linkPhone = $('#linkPhone').val();
+		//补充内容
+		var content = $('#content').val();
+		//id
+		var rec_id = $('#rec_id').val();
+         $.ajax({
+             type: "get",
+             url: "{{url('tong')}}",
+             data: "id="+rec_id+'&subject='+subject+'&date='+date+'&place='+interAdd+'&man='+linkMan+'&phone='+linkPhone+'&content='+content,
+             headers: {
+             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+             },
+             success: function(msg){
+                 if(msg==1){
+                     $.colorbox({
+                         inline: !0,
+                         href: "#noticeInterviewSuccess",
+                         title: "通知成功"
+                     });
+                 }
+             }
+         });
+	}
 </script>
