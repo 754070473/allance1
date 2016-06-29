@@ -239,10 +239,11 @@ var youdao_conv_id = 271546;
 	                        </dl> -->
 	                    </dd>
 	                </dl>
+                        @foreach($ar as  $k=>$v)
 	               	                	<ul class="hc_list reset" id="so">
 
 			                        <a href="h/c/25829" target="_blank">
-                                        @foreach($ar as  $k=>$v)
+
                                             <?php if(($k+1)%3==1){  ?>
                                             <li  style="clear:both;" >
                                                 <?php }else{?>
