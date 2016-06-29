@@ -138,7 +138,7 @@ var youdao_conv_id = 271546;
                                                 <?php }else{?>
                                             <li>
                                                 <?php } ?>
-                                                <a href="{{url('index04')}}" target="_blank">
+                                                <a href="geren?mes_id={{$v->mes_id}}"  target="_blank">
                                                     <h3 title="CCIC">公司</h3>
 
 
@@ -228,7 +228,7 @@ var youdao_conv_id = 271546;
             url: "{{url('hang')}}",
             data: "me_id="+me_id,
             success: function(msg){
-            	alert(msg);
+            	//alert(msg);
               $("#so").html(msg)
             }
         });
@@ -246,7 +246,19 @@ function place(pla_id){
             }
         });	
 }
+// function gerenlist(mes_id){
 
+//   alert(i_name);
+//          $.ajax({
+//             type: "GET",
+//             url: "{{url('gerenlist')}}",
+//             data: "mes_id="+mes_id,
+//             success: function(msg){
+//               //alert(msg);
+//               $("#so").html(msg)
+//             }
+//         }); 
+// }
 </script>       	
 			<div class="clear"></div>
 			<input type="hidden" id="resubmitToken" value="" />

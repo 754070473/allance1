@@ -181,11 +181,11 @@ Route::get('/subinfo','SubscribeController@subinfo');
 
 //发送邮件测试
 Route::get('/send','SubscribeController@send');
-//公司找详细简历
-Route::get('/gerenlist', 'IndexController@gerenlist');
+
 // //公司找个人地址	
 // Route::get('/select_all', 'IndexController@select_all');
 //个人找职位地点
 Route::get('/place_list', 'ReController@place_list');
 Route::get('/type', 'ReController@type');
 Route::get('/hang', 'ReController@hang');
+Route::get('/geren', 'ReController@geren');
