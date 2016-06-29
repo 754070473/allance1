@@ -30,7 +30,7 @@ class RecresumeController extends Controller{
         // print_r($users);die;
 
         // return view("recresume.canInterviewResumes");
-        return view("recresume.haveRefuseResume",['users' => $users]);
+        return view("recresume.haveRefuseResume",['users'=> $users]);
     }
 
 	//待定简历
