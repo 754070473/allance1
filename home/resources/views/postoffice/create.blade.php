@@ -99,7 +99,7 @@ var youdao_conv_id = 271546;
                            	                        </h1>
                     </dt>
                     <dd>
-                    	<div class="ccc_tr">今日已发布 <span>0</span> 个职位   还可发布 <span>5</span> 个职位</div>
+                    	
                     	<form action="{{url('postAdd')}}" method="post" id="jobForm">
                     		<input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
                             <input type="hidden" value="" name="id">

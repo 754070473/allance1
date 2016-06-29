@@ -142,6 +142,7 @@ Route::any('/per_i_name', 'PersonalController@per_i_name');//修改用户名称
     
 //发布新职位
 Route::get('/create', 'PostofficeController@create');
+Route::post('/postAdd', 'PostofficeController@postAdd');
 	
 //职位发布成功
 Route::get('/index06', 'PostofficeController@index06');	

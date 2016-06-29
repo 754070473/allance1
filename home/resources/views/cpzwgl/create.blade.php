@@ -164,7 +164,7 @@ var youdao_conv_id = 271546;
                                     		@if($res->r_sex == 2)
                                                         <li>
                                                            男<em></em>
-                                                           <input type="radio" name="r_sex" value="2" checked> 
+                                                           <input type="radio" name="r_sex" value="2" checked="checked" > 
                                                         </li>
                                                          
                                                         <li>
@@ -179,7 +179,7 @@ var youdao_conv_id = 271546;
                                                          
                                                         <li>
                                                            女<em></em>
-                                                           <input type="radio" name="r_sex" value="1" checked> 
+                                                           <input type="radio" name="r_sex" value="1" checked="checked" > 
                                                        </li>
                                             @endif
                                         </ul>
@@ -193,7 +193,7 @@ var youdao_conv_id = 271546;
                                             @if($res->r_language == '中文')                                       
                                                         <li>
                                                            中文<em></em>
-                                                           <input type="radio" name="r_language" value="中文" checked> 
+                                                           <input type="radio" name="r_language" value="中文" checked="checked" > 
                                                         </li>
                                                          
                                                         <li>
@@ -208,7 +208,7 @@ var youdao_conv_id = 271546;
                                                          
                                                         <li>
                                                            英文<em></em>
-                                                           <input type="radio" name="r_language" value="英文" checked> 
+                                                           <input type="radio" name="r_language" value="英文" checked="checked" > 
                                                        </li>
                                             @endif
                                         </ul>
@@ -222,7 +222,7 @@ var youdao_conv_id = 271546;
                                     		@if($res->r_iflogbook == 1)                                             
                                                         <li>
                                                            是<em></em>
-                                                           <input type="radio" name="r_iflogbook" value="1" checked> 
+                                                           <input type="radio" name="r_iflogbook" value="1" checked="checked" > 
                                                         </li>
                                                          
                                                         <li>
@@ -237,7 +237,7 @@ var youdao_conv_id = 271546;
                                                          
                                                         <li>
                                                            否<em></em>
-                                                           <input type="radio" name="r_iflogbook" value="0" checked> 
+                                                           <input type="radio" name="r_iflogbook" value="0" checked="checked" > 
                                                        </li>
                                             @endif
                                         </ul>
@@ -250,11 +250,11 @@ var youdao_conv_id = 271546;
                                 	<td>
                                     	<div class="salary_range">
                                             <div>
-                                                <input type="text" placeholder="" value="" id="salaryMin" name="r_pay_down"> 
+                                                <input type="text" placeholder="" value="{{$salary_min}}" id="salaryMin" name="r_pay_down"> 
                                                 <span>k</span>
                                             </div>
                                             <div>
-                                                <input type="text" placeholder="" value="" id="salaryMax" name="r_pay_up"> 
+                                                <input type="text" placeholder="" value="{{$salary_max}}" id="salaryMax" name="r_pay_up"> 
                                                 <span>k</span>
                                             </div>
                                             <span>只能输入整数，如：9</span>

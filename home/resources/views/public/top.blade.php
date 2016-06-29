@@ -75,7 +75,7 @@ var youdao_conv_id = 271546;
                   <li ><a href="companylist">公司</a></li>
                   <li ><a href="index01" target="_blank">企业信息中心</a></li>
                  
-                  <li ><a href="login" rel="nofollow">发布职位</a></li>
+                  <li ><a href="create" rel="nofollow">发布职位</a></li>
             </ul>
             <dl class="collapsible_menu">
                 <dt>
