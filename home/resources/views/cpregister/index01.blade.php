@@ -77,19 +77,19 @@ var youdao_conv_id = 271546;
 	                    <!-- <h3>公司简称</h3> 非必填
 	                    	<input type="text" placeholder="请输入公司简称，如:拉勾" value="" name="m_course" id="name" class="valid"> -->	
 	                    <!--非必填改必填-->
-	                   <!--  <h3>公司LOGO</h3> 
+	                  <!--  <h3>公司LOGO</h3> 
 	                   	<div class="c_logo c_logo_pos">
 	                    	<a title="上传公司LOGO" class="inline cboxElement" href="#logoUploader">
-		                        <div id="logoNo">
-		                    		<span>上传公司LOGO</span> <br>
-							                            尺寸：190*190px  <br>
-							                            大小：小于5M
-								</div>
-								<div class="dn" id="logoShow">
-		                        	<img width="190" height="190" alt="公司logo" src="">
-	                        		<span>更换公司LOGO<br>190px*190px 小于5M</span>
-		                        </div>
-							</a>  
+   		                        <div id="logoNo">
+   		                    		<span>上传公司LOGO</span> <br>
+   							                            尺寸：190*190px  <br>
+   							                            大小：小于5M
+   								</div>
+   								<div class="dn" id="logoShow">
+   		                        	<img width="190" height="190" alt="公司logo" src="">
+        							<span>更换公司LOGO<br>190px*190px 小于5M</span>
+   		                        </div>
+   							</a>  
 	                    </div> -->
 	                    
 	                    <h3>公司网址</h3>

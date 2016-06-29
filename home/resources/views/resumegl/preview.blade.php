@@ -121,7 +121,7 @@ $(function(){
             		</span>
            			<div class="m_portrait">
                     	<div></div>
-                    	<img width="120" height="120" alt="jason" src="style/images/default_headpic.png">
+                    	<img width="120" height="120" alt="jason" src="{{$arr->r_photo}}">
                     </div>
                 </div><!--end .basicShow-->
             </div><!--end #basicInfo-->
