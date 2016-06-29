@@ -37,7 +37,7 @@ $(function(){
 <body>
   	<div id="previewWrapper">
         <div class="preview_header">
-            <h1 title="jason的简历">{{$i_name}}</h1>
+            <h1 title="jason的简历"><?php echo e($i_name); ?></h1>
                         	<a title="下载简历" class="inline cboxElement" href="#downloadOnlineResume">下载该简历</a>
                     </div><!--end .preview_header-->
 
@@ -45,83 +45,83 @@ $(function(){
             <div class="profile_box" id="basicInfo">
                 <h2>基本信息</h2>
                 <div class="basicShow">
-                   <span>{{$arr->r_name}} | 
-                    @if($arr->r_sex==1)
+                   <span><?php echo e($arr->r_name); ?> | 
+                    <?php if($arr->r_sex==1): ?>
 		     		男
-		     		@elseif($arr->r_sex==2)
+		     		<?php elseif($arr->r_sex==2): ?>
 		     		女 
-		     		@else
+		     		<?php else: ?>
 		     		性别
-		     		@endif  |              
-		     		@if($arr->t_edu==0)
+		     		<?php endif; ?>  |              
+		     		<?php if($arr->t_edu==0): ?>
 		     		<?php echo $t_edu="初中" ?>
-		     		@elseif($arr->t_edu==1)
+		     		<?php elseif($arr->t_edu==1): ?>
 		     		<?php echo $t_edu="高中" ?>
-		     		@elseif($arr->t_edu==2)
+		     		<?php elseif($arr->t_edu==2): ?>
 		     		 <?php echo $t_edu="中技" ?>
-		     		@elseif($arr->t_edu==3)
+		     		<?php elseif($arr->t_edu==3): ?>
 		     		 <?php echo $t_edu="中专" ?>
-		     		@elseif($arr->t_edu==4)
+		     		<?php elseif($arr->t_edu==4): ?>
 		     		 <?php echo $t_edu="大专" ?>
-		     		@elseif($arr->t_edu==5)
+		     		<?php elseif($arr->t_edu==5): ?>
 		     		 <?php echo $t_edu="本科" ?>
-		     		@elseif($arr->t_edu==6)
+		     		<?php elseif($arr->t_edu==6): ?>
 		     		 <?php echo $t_edu="硕士" ?>
-		     		@elseif($arr->t_edu==7)
+		     		<?php elseif($arr->t_edu==7): ?>
 		     		 <?php echo $t_edu="博士" ?>
-		     		@elseif($arr->t_edu==8)
+		     		<?php elseif($arr->t_edu==8): ?>
 		     		<?php echo $t_edu="博后" ?>
-		     		@else
+		     		<?php else: ?>
 		     		 <?php echo $t_edu="其他" ?>
-		     		@endif  
+		     		<?php endif; ?>  
 		     		 |   
-		     		  @if($arr->r_suffer==0)
+		     		  <?php if($arr->r_suffer==0): ?>
 		     		<?php echo $r_suffer="应届生" ?>
-		     		@elseif($arr->r_suffer==1)
+		     		<?php elseif($arr->r_suffer==1): ?>
 		     		<?php echo $r_suffer="无经验" ?>
-		     		@elseif($arr->r_suffer==2)
+		     		<?php elseif($arr->r_suffer==2): ?>
 		     		 <?php echo $r_suffer="1年以下" ?>
-		     		@elseif($arr->r_suffer==3)
+		     		<?php elseif($arr->r_suffer==3): ?>
 		     		 <?php echo $r_suffer="1-3年" ?>
-		     		@elseif($arr->r_suffer==4)
+		     		<?php elseif($arr->r_suffer==4): ?>
 		     		 <?php echo $r_suffer="3-5年" ?>
-		     		@elseif($arr->r_suffer==5)
+		     		<?php elseif($arr->r_suffer==5): ?>
 		     		 <?php echo $r_suffer="5-10年" ?>
-		     		@elseif($arr->r_suffer==6)
+		     		<?php elseif($arr->r_suffer==6): ?>
 		     		 <?php echo $r_suffer="10年以上" ?>
-		     		@else
+		     		<?php else: ?>
 		     		 <?php echo $r_suffer="其他" ?>
-		     		@endif  
-            		            			| {{$arr->place_name}}<br>
-            			            				{{$arr->positionName}} · {{$arr->companyName}} | 
-            			            										@if($arr->t_edu==0)
+		     		<?php endif; ?>  
+            		            			| <?php echo e($arr->place_name); ?><br>
+            			            				<?php echo e($arr->positionName); ?> · <?php echo e($arr->companyName); ?> | 
+            			            										<?php if($arr->t_edu==0): ?>
 																     		<?php echo $t_edu="初中" ?>
-																     		@elseif($arr->t_edu==1)
+																     		<?php elseif($arr->t_edu==1): ?>
 																     		<?php echo $t_edu="高中" ?>
-																     		@elseif($arr->t_edu==2)
+																     		<?php elseif($arr->t_edu==2): ?>
 																     		 <?php echo $t_edu="中技" ?>
-																     		@elseif($arr->t_edu==3)
+																     		<?php elseif($arr->t_edu==3): ?>
 																     		 <?php echo $t_edu="中专" ?>
-																     		@elseif($arr->t_edu==4)
+																     		<?php elseif($arr->t_edu==4): ?>
 																     		 <?php echo $t_edu="大专" ?>
-																     		@elseif($arr->t_edu==5)
+																     		<?php elseif($arr->t_edu==5): ?>
 																     		 <?php echo $t_edu="本科" ?>
-																     		@elseif($arr->t_edu==6)
+																     		<?php elseif($arr->t_edu==6): ?>
 																     		 <?php echo $t_edu="硕士" ?>
-																     		@elseif($arr->t_edu==7)
+																     		<?php elseif($arr->t_edu==7): ?>
 																     		 <?php echo $t_edu="博士" ?>
-																     		@elseif($arr->t_edu==8)
+																     		<?php elseif($arr->t_edu==8): ?>
 																     		<?php echo $t_edu="博后" ?>
-																     		@else
+																     		<?php else: ?>
 																     		 <?php echo $t_edu="其他" ?>
-																     		@endif  
-		     		 · {{$arr->schoolName}}<br>
-            			            			{{$arr->r_phone}} | {{$arr->r_email}}<br>
+																     		<?php endif; ?>  
+		     		 · <?php echo e($arr->schoolName); ?><br>
+            			            			<?php echo e($arr->r_phone); ?> | <?php echo e($arr->r_email); ?><br>
             			
             		</span>
            			<div class="m_portrait">
                     	<div></div>
-                    	<img width="120" height="120" alt="jason" src="{{$arr->r_photo}}">
+                    	<img width="120" height="120" alt="jason" src="<?php echo e($arr->r_photo); ?>">
                     </div>
                 </div><!--end .basicShow-->
             </div><!--end #basicInfo-->
@@ -129,17 +129,18 @@ $(function(){
 				            <div class="profile_box" id="expectJob">
 	                <h2>期望工作</h2>
 	                <div class="expectShow">
-	                	{{$arr->place_name}}，
-	                	@if($arr->r_nature==0)
+	                	<?php echo e($arr->place_name); ?>，
+	                	<?php if($arr->r_nature==0): ?>
 	                	全职
-						@elseif($arr->r_nature==1)
+						<?php elseif($arr->r_nature==1): ?>
 						兼职
-						@elseif($arr->r_nature==2)
+						<?php elseif($arr->r_nature==2): ?>
 						实习
-						@else
+						<?php else: ?>
 						请填写工作性质
-						@endif
-	                	，月薪{{$arr->r_pay}}，{{$arr->post_name}}
+						<?php endif; ?>
+	                	，月薪<?php echo e($arr->r_pay); ?>，<?php echo e($arr->post_name); ?>
+
 	                </div><!--end .expectShow-->
 	            </div><!--end #expectJob-->
 						
@@ -148,13 +149,14 @@ $(function(){
 	                <div class="experienceShow">
 	                  <ul class="wlist clearfix">
 	                  	                    	           				            				<li class="clear">
-            					           					<span class="c9">{{$arr->companyYearStart}}.{{$arr->companyMonthStart}}-
-																{{$arr->companyYearEnd}}.{{$arr->companyMonthEnd}}
+            					           					<span class="c9"><?php echo e($arr->companyYearStart); ?>.<?php echo e($arr->companyMonthStart); ?>-
+																<?php echo e($arr->companyYearEnd); ?>.<?php echo e($arr->companyMonthEnd); ?>
+
             					           					</span>
 	           					<div>
 	           						<img width="56" height="56" alt="上海辉硕科技有限公司" src="style/images/logo_default.png">
-	           						<h3>{{$arr->positionName}} </h3>
-	           						<h4>{{$arr->companyName}}</h4>
+	           						<h3><?php echo e($arr->positionName); ?> </h3>
+	           						<h4><?php echo e($arr->companyName); ?></h4>
 	           					</div>
 	           				</li>
 	           					          				                  </ul>
@@ -167,10 +169,11 @@ $(function(){
 	                  <ul class="plist clearfix">
 	                  			            				            					            				<li class="noborder">
 	            					            					<div class="projectList">
-		            					<div class="f16 mb10">{{$arr->projectName}}，{{$arr->thePost}}
+		            					<div class="f16 mb10"><?php echo e($arr->projectName); ?>，<?php echo e($arr->thePost); ?>
+
 		            						<span class="c9">
-		            									        （{{$arr->projectYearStart}}.{{$arr->projectMonthStart}}-
-																{{$arr->projectYearEnd}}.{{$arr->projectMonthEnd}}）
+		            									        （<?php echo e($arr->projectYearStart); ?>.<?php echo e($arr->projectMonthStart); ?>-
+																<?php echo e($arr->projectYearEnd); ?>.<?php echo e($arr->projectMonthEnd); ?>）
 		            									            						</span>
 		            					</div>
 		            							            					<div class="dl1"></div>
@@ -185,31 +188,31 @@ $(function(){
 	                <div class="educationalShow">
 	                  <ul class="elist clearfix">
 	                  	                  	            				            				<li class="clear">
-            				            					<span class="c9">{{$arr->schoolYearStart}}-{{$arr->schoolYearEnd}}</span>
+            				            					<span class="c9"><?php echo e($arr->schoolYearStart); ?>-<?php echo e($arr->schoolYearEnd); ?></span>
             					<div>
-            						<h3>{{$arr->schoolName}}</h3>
-            						<h4>{{$arr->m_name}}，
-										@if($arr->t_edu==0)
+            						<h3><?php echo e($arr->schoolName); ?></h3>
+            						<h4><?php echo e($arr->m_name); ?>，
+										<?php if($arr->t_edu==0): ?>
 							     		<?php echo $t_edu="初中" ?>
-							     		@elseif($arr->t_edu==1)
+							     		<?php elseif($arr->t_edu==1): ?>
 							     		<?php echo $t_edu="高中" ?>
-							     		@elseif($arr->t_edu==2)
+							     		<?php elseif($arr->t_edu==2): ?>
 							     		 <?php echo $t_edu="中技" ?>
-							     		@elseif($arr->t_edu==3)
+							     		<?php elseif($arr->t_edu==3): ?>
 							     		 <?php echo $t_edu="中专" ?>
-							     		@elseif($arr->t_edu==4)
+							     		<?php elseif($arr->t_edu==4): ?>
 							     		 <?php echo $t_edu="大专" ?>
-							     		@elseif($arr->t_edu==5)
+							     		<?php elseif($arr->t_edu==5): ?>
 							     		 <?php echo $t_edu="本科" ?>
-							     		@elseif($arr->t_edu==6)
+							     		<?php elseif($arr->t_edu==6): ?>
 							     		 <?php echo $t_edu="硕士" ?>
-							     		@elseif($arr->t_edu==7)
+							     		<?php elseif($arr->t_edu==7): ?>
 							     		 <?php echo $t_edu="博士" ?>
-							     		@elseif($arr->t_edu==8)
+							     		<?php elseif($arr->t_edu==8): ?>
 							     		<?php echo $t_edu="博后" ?>
-							     		@else
+							     		<?php else: ?>
 							     		 <?php echo $t_edu="其他" ?>
-							     		@endif  
+							     		<?php endif; ?>  
 
             						</h4>
             					</div>
@@ -221,7 +224,8 @@ $(function(){
 				            <div class="profile_box" id="selfDescription">
 	                <h2>自我描述</h2>
 	                <div class="descriptionShow">
-	            	{{$arr->r_ind}}
+	            	<?php echo e($arr->r_ind); ?>
+
 	                </div><!--end .descriptionShow-->
 	            </div><!--end #selfDescription-->
 						
