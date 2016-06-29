@@ -2,10 +2,17 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests;
-use Request,Validator,DB;
+use Request,Validator,DB,Redirect;
+use Illuminate\Foundation\Bus\DispatchesJobs;
+use Illuminate\Routing\Controller as BaseController;
+use Illuminate\Foundation\Validation\ValidatesRequests;
+use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use App\Http\Controllers\Controller;
-use App\Models\Alpost;
+use Illuminate\Support\Facades\Input;
+use Illuminate\Cookie;
+use Illuminate\Pagination\Paginator;
 use Session;
+
 /**
  *   PostofficeController  发布职位
  */
@@ -53,9 +60,16 @@ class PostofficeController extends Controller{
 
 
         //查询分类id
-        $fen = DB::table('al_generalize_type')->where('g_type_name', "$g_type")->first();
-        $g_type_id=$fen->g_type_id;
-
+        if($g_type=='')
+        {
+            $g_type_id='';
+        }
+        else
+        {
+            $fen = DB::table('al_generalize_type')->where('g_type_name', "$g_type")->first();
+            $g_type_id=$fen->g_type_id;
+        }
+        
         //判断r_edu
         if($r_edu=='初中')
         {
@@ -121,6 +135,7 @@ class PostofficeController extends Controller{
         //判断
         if($re)
         {
+             $this->userlog('发布新职位');
              return redirect('/index06');
         }
         else
