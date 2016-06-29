@@ -5,7 +5,7 @@
 <link  media="handheld" rel="alternate">
 <!-- end 云适配 -->
 <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-<title>我发布的职位-招聘服务-强强联合-最专业的互联网招聘平台</title>
+<title>已下线的职位-招聘服务-强强联合-最专业的互联网招聘平台</title>
 <meta content="23635710066417756375" property="qc:admins">
 <meta name="description" content="拉勾网是3W旗下的互联网领域垂直招聘网站,互联网职业机会尽在拉勾网">
 <meta name="keywords" content="拉勾,拉勾网,拉勾招聘,拉钩, 拉钩网 ,互联网招聘,拉勾互联网招聘, 移动互联网招聘, 垂直互联网招聘, 微信招聘, 微博招聘, 拉勾官网, 拉勾百科,跳槽, 高薪职位, 互联网圈子, IT招聘, 职场招聘, 猎头招聘,O2O招聘, LBS招聘, 社交招聘, 校园招聘, 校招,社会招聘,社招">
@@ -78,7 +78,7 @@ var youdao_conv_id = 271546;
 		<a href="positions">有效职位</a>
 	</dd>
 	<dd>
-		<a href="aaaa">已下线职位</a>
+		<a href="unpositions">已下线职位</a>
 	</dd>
 	</dl>
             </div><!-- end .sidebar -->
@@ -87,7 +87,7 @@ var youdao_conv_id = 271546;
                     <dt>
                         <h1>
                             <em></em>
-                           有效职位 <span>（共<i style="color:#fff;font-style:normal" id="positionNumber">{{$num}}</i>个）</span>                        </h1>
+                           已下线职位 <span>（共<i style="color:#fff;font-style:normal" id="positionNumber">{{$num}}</i>个）</span>                        </h1>
                     </dt>
                     
                     <dd>
@@ -187,8 +187,8 @@ var youdao_conv_id = 271546;
 		                                    		                                    				                                    <div class="c9">发布时间：{{$v->r_addtime}}</div>
 			                                    		                                    		                                    		                                    <div class="links">
 		                                    			                                       	
-		                                       			                                       	<a class="job_edit" href="{{url('ptedit')}}?id={{$v->rec_id}}">编辑</a>
-		                                       	<a href="{{url('ptup')}}?id={{$v->rec_id}}">上线</a>                      
+		                                       			                               <a class="job_edit" href="{{url('ptedit')}}?id={{$v->rec_id}}">编辑</a>        
+		                                       	<a href="{{url('ptdown')}}?id={{$v->rec_id}}">上线</a>                      
 		                                        <a class="job_del" href="{{url('ptdel')}}?id={{$v->rec_id}}">删除</a>
 
 		                                    </div>

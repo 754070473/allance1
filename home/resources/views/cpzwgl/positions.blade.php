@@ -78,7 +78,7 @@ var youdao_conv_id = 271546;
 		<a href="positions">有效职位</a>
 	</dd>
 	<dd>
-		<a href="aaaa">已下线职位</a>
+		<a href="unpositions">已下线职位</a>
 	</dd>
 	</dl>
             </div><!-- end .sidebar -->
@@ -188,7 +188,7 @@ var youdao_conv_id = 271546;
 			                                    		                                    		                                    		                                    <div class="links">
 		                                    			                                       	
 		                                       			                                       	<a class="job_edit" href="{{url('ptedit')}}?id={{$v->rec_id}}">编辑</a>
-		                                       	<a href="{{url('ptup')}}?id={{$v->rec_id}}">上线</a>                      
+		                                       	<a href="{{url('ptdown')}}?id={{$v->rec_id}}">下线</a>                      
 		                                        <a class="job_del" href="{{url('ptdel')}}?id={{$v->rec_id}}">删除</a>
 
 		                                    </div>

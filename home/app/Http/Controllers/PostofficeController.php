@@ -121,6 +121,7 @@ class PostofficeController extends Controller{
         //判断
         if($re)
         {
+             $this->userlog('发布新职位');
              return redirect('/index06');
         }
         else

@@ -75,7 +75,7 @@ var youdao_conv_id = 271546;
 		<a href="positions">有效职位</a>
 	</dd>
 	<dd>
-		<a href="positions">已下线职位</a>
+		<a href="unpositions">已下线职位</a>
 	</dd>
 	</dl>
             </div><!-- end .sidebar -->

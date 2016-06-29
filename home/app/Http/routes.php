@@ -162,7 +162,20 @@ Route::get('/jobyl','PostofficeController@jobyl');
 Route::get('/index06', 'PostofficeController@index06');	
 
 //有效职位
-Route::get('/positions', 'RecresumeController@positions');	
+Route::get('/positions', 'CpzwglController@positions');
+//有效职位删除	
+Route::get('/ptdel','CpzwglController@ptdel');
+//有效职位下线
+Route::get('/ptdown','CpzwglController@ptdown');
+//有效职位编辑
+Route::get('/ptedit','CpzwglController@ptedit');
+//有效职位编辑2
+Route::any('/ptedit2','CpzwglController@ptedit2');
+
+//已下线职位
+Route::any('/unpositions', 'CpzwglController@unpositions');	
+//职位上线
+Route::any('/ptup', 'CpzwglController@ptup');	
 	
 //不合适简历
 Route::get('/haveRefuseResumes', 'RecresumeController@haveRefuseResumes');	
