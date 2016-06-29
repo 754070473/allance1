@@ -5,7 +5,7 @@
     <li>
         <?php } ?>
         <a href="{{url('index04')}}" target="_blank">
-            <h3 title="CCIC">CCIC</h3>
+            <h3 title="CCIC">公司</h3>
 
 
             <div class="comLogo">

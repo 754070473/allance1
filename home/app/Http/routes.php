@@ -39,7 +39,7 @@ Route::get('/myhome', 'IndexController@myhome');
 Route::get('/toudi', 'IndexController@toudi');
 
 //个人找职位
-Route::get('/companylist', 'IndexController@companylist');
+Route::get('/companylist', 'ReController@companylist');
 //公司找简历
 Route::get('/company', 'IndexController@company');
 //查找详细信息
@@ -173,3 +173,7 @@ Route::get('/subscribe01', 'SubscribeController@subscribe01');
 Route::get('/gerenlist', 'IndexController@gerenlist');
 // //公司找个人地址	
 // Route::get('/select_all', 'IndexController@select_all');
+//个人找职位地点
+Route::get('/place_list', 'ReController@place_list');
+Route::get('/type', 'ReController@type');
+Route::get('/hang', 'ReController@hang');
