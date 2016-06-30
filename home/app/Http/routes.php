@@ -78,7 +78,7 @@ Route::get('/companyupdate', 'AccountsetController@companyupdate');
 Route::get('/collections', 'CollectionsController@collections');
 
 //公司详情
-Route::get('index04', 'CompanyglController@index04');
+    
 //公司详情 修改公司名称
 Route::get('save_company_name', 'CompanyglController@save_company_name');
 //公司详情  编辑公司的福利
