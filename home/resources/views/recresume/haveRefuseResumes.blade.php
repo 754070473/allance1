@@ -56,7 +56,7 @@ var youdao_conv_id = 271546;
             	                <dl class="company_center_aside">
 		<dt>我收到的简历</dt>
 		<dd>
-		<a href="">待处理简历</a> 
+		<a href="canInterviewResumes">待处理简历</a>
 			</dd>
 	<dd>
 		<a href="canInterviewResumes">待定简历</a>

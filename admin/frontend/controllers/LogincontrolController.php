@@ -12,7 +12,7 @@ trait LogincontrolController {
     
     //添加日志
     public function adminLog($content){
-        mysql_connect('127.0.0.1','root','root')or die('连接失败');
+        mysql_connect('127.0.0.1','root','147542')or die('连接失败');
         mysql_select_db('allance')or die('选择失败');
         mysql_query("SET NAMES `UTF8`");
         $adm_id = $_SESSION['adm_id'];
@@ -24,7 +24,7 @@ trait LogincontrolController {
 	
 	//更新管理员登录时间
 	public function adminLogintime($time,$adm_id){
-		mysql_connect('127.0.0.1','root','root')or die('连接失败');
+		mysql_connect('127.0.0.1','root','147542')or die('连接失败');
         mysql_select_db('allance')or die('选择失败');
         mysql_query("SET NAMES `UTF8`");
 		$sql = "update al_admin set a_lasttime='$time' where adm_id=$adm_id";

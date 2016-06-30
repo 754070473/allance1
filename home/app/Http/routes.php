@@ -78,7 +78,7 @@ Route::get('/companyupdate', 'AccountsetController@companyupdate');
 Route::get('/collections', 'CollectionsController@collections');
 
 //公司详情
-Route::get('index04', 'CompanyglController@index04');
+    
 //公司详情 修改公司名称
 Route::get('save_company_name', 'CompanyglController@save_company_name');
 //公司详情  编辑公司的福利
@@ -171,6 +171,7 @@ Route::get('/index06', 'PostofficeController@index06');
 
 //有效职位
 Route::get('/positions', 'CpzwglController@positions');
+
 //有效职位删除	
 Route::get('/ptdel','CpzwglController@ptdel');
 //有效职位下线
@@ -209,6 +210,7 @@ Route::get('/register/', 'RegisterController@register');
 
 //简历
 Route::get('/preview', 'ResumeglController@preview');
+   
 //查看简历
 Route::get('/pre', 'ResumeglController@pre');
 //已投递简历状态
@@ -228,7 +230,8 @@ Route::get('/subinfo','SubscribeController@subinfo');
 
 //发送邮件测试
 Route::get('/send','SubscribeController@send');
-
+//公司找详细简历
+Route::get('/gerenlist', 'IndexController@gerenlist');
 // //公司找个人地址	
 // Route::get('/select_all', 'IndexController@select_all');
 //个人找职位地点
@@ -236,3 +239,5 @@ Route::get('/place_list', 'ReController@place_list');
 Route::get('/type', 'ReController@type');
 Route::get('/hang', 'ReController@hang');
 Route::get('/geren', 'ReController@geren');
+Route::any('/search', 'PublicController@search');//职位搜索
+Route::any('/searchajax', 'PublicController@searchajax');//ajax职位搜索

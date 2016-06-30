@@ -100,4 +100,23 @@ abstract class Controller extends BaseController
             return 'upload/'.$newName;
         }
     }
+
+    /**
+     * 讲数组遍历成数组
+     * @param  [type] $obj [description]
+     * @return [type]      [description]
+     */
+    public function objtoarr($obj){
+        $ret = array();
+        foreach($obj as $key =>$value){
+            //$ret[$key]=$value;
+            if(gettype($value) == 'array' || gettype($value) == 'stdClass Object'){
+                $ret[$key] = objtoarr($value);
+            }
+            else{
+                $ret[$key] = $value;
+            }
+        }
+        return $ret;
+    }
 }

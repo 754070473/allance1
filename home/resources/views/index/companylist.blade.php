@@ -130,8 +130,8 @@ var youdao_conv_id = 271546;
 	                    </dd>
 	                </dl>  
                   <ul class="hc_list reset" id="so">
+                <ul class="hc_list reset" id="so">
                         @foreach($ar as  $k=>$v)
-	               	               
 
 			                        <a href="h/c/25829" target="_blank">
 
@@ -146,7 +146,7 @@ var youdao_conv_id = 271546;
 
                                                     <div class="comLogo">
 
-                                                        <img src="style/images/c5e0d4d3dc9047c89986c9eca2feb277.png" width="190" height="190" alt="CCIC" />
+                                                        <img src="style/images/{{$v->m_logo}}" width="190" height="190" alt="CCIC" />
                                                         <ul>
                                                             <li>{{$v->m_name}}</li>
 
@@ -156,14 +156,21 @@ var youdao_conv_id = 271546;
                                                     </div>
                                                 </a>
                                                 <ul class="reset ctags">
-                                                    <li>{{$v->m_course}}</li>
+                                                    <?php
+                                                    if(strpos($v->m_welfare,',')){
+                                                    $m_welfare = explode(',',$v->m_welfare);
+                                                    foreach($m_welfare as $vv){
+                                                    ?>
+                                                    <li><?php echo $vv?></li>
+                                                    <?php }}else{?>
                                                     <li>{{$v->m_welfare}}</li>
+                                                    <?php }?>
 
                                                 </ul>
                                             </li>
                                         @endforeach
+                                        </ul>
 
-</ul>
 		                		               	<div class="Pagination"></div>
 
             </div>

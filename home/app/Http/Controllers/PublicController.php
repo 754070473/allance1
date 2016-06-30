@@ -120,6 +120,7 @@ class PublicController extends Controller {
                 ->where('r_status',1)
                 ->get();
             foreach ($data[$key]->son as $k => $v) {
+
                 $time = $this->time($v->r_addtime, $now_time);
                 if ($time['d'] > 0) {
                     $data[$key]->son[$k]->r_addtime = $time['d'] . '天前发布';
@@ -132,6 +133,7 @@ class PublicController extends Controller {
                 }
             }
         }
+        //print_r($data);die;
 		return view("public.main",['arr'=>$arr,'data'=>$data]);
 	}
 
@@ -159,6 +161,726 @@ class PublicController extends Controller {
 
         return array('d'=>$d,'h'=>$h,'m'=>$m,'s'=>$s);
     }
+    // 搜索
+    public function search(Request $request)
+    {
+        $query['name']=$request->input('name');
+
+        $name=$request->input('name');
+
+
+        $now_time = date('Y-m-d H:i:s',time());
+        $query['arr']=DB::table('al_recruit')
+            ->leftjoin('al_com_message', 'al_recruit.mes_id', '=', 'al_com_message.mes_id')
+            ->leftjoin('al_hang', 'al_com_message.me_id', '=', 'al_hang.me_id')
+            ->leftjoin('al_place', 'al_recruit.pla_id', '=', 'al_place.pla_id')
+            ->where('r_name','like',"%$name%")
+            ->where('r_status',1)
+            ->paginate(5);
+            foreach ($query['arr'] as $k => $v) {
+
+                $time = $this->time($v->r_addtime, $now_time);
+                if ($time['d'] > 0) {
+                    $query['arr'][$k]->r_addtime = $time['d'] . '天前发布';
+                } elseif ($time['h'] > 0) {
+                    $query['arr'][$k]->r_addtime = $time['h'] . '小时前发布';
+                } elseif ($time['m'] > 4) {
+                    $query['arr'][$k]->r_addtime = $time['m'] . '分钟前发布';
+                } else {
+                    $query['arr'][$k]->r_addtime = '刚刚发布';
+                }
+
+            } 
+            //热门城市
+//        $res_id=$query['arr']->res_id;
+        $query['hot']=DB::table('al_place')->select(['*'])->where('i_level','like',"%1%")->get();
+        //ABCDEF
+        $query['ABCDEF']=DB::table('al_place')->select(['*'])->where('i_level','like',"%A%")->orwhere('i_level','like',"%B%")->orwhere('i_level','like',"%C%")->orwhere('i_level','like',"%D%")->orwhere('i_level','like',"%E%")->orwhere('i_level','like',"%F%")->get();
+        //GHIJ
+        $query['GHIJ']=DB::table('al_place')->select(['*'])->where('i_level','like',"%G%")->orwhere('i_level','like',"%H%")->orwhere('i_level','like',"%I%")->orwhere('i_level','like',"%J%")->get();
+        //KLMN
+        $query['KLMN']=DB::table('al_place')->select(['*'])->where('i_level','like',"%K%")->orwhere('i_level','like',"%L%")->orwhere('i_level','like',"%M%")->orwhere('i_level','like',"%N%")->get();
+        //OPQR
+        $query['OPQR']=DB::table('al_place')->select(['*'])->where('i_level','like',"%O%")->orwhere('i_level','like',"%P%")->orwhere('i_level','like',"%Q%")->orwhere('i_level','like',"%R%")->get();
+        //STUV
+         $query['STUV']=DB::table('al_place')->select(['*'])->where('i_level','like',"%S%")->orwhere('i_level','like',"%T%")->orwhere('i_level','like',"%U%")->orwhere('i_level','like',"%V%")->get();
+        //WXYZ
+         $query['WXYZ']=DB::table('al_place')->select(['*'])->where('i_level','like',"%W%")->orwhere('i_level','like',"%X%")->orwhere('i_level','like',"%Y%")->orwhere('i_level','like',"%Z%")->get();
+          //期望城市
+          //print_r($query);die;
+        return view('index.search',$query);
+    }
+
+    public function searchajax(Request $request)
+    {
+        $r_suffer=$request->input('r_suffer');
+        if($r_suffer=="应届生"){$r_suffer="0";}elseif ($r_suffer=="无经验"){$r_suffer="1";}elseif ($r_suffer=="1年以下"){$r_suffer="2";}elseif ($r_suffer=="1-3年"){$r_suffer="3";}elseif ($r_suffer=="3-5年"){$r_suffer="4";}elseif ($r_suffer=="5-10年"){$r_suffer="5";}elseif ($r_suffer=="10年以上"){$r_suffer="6";}else{ $r_suffer=""; }
+        $r_edu=$request->input('r_edu');
+        if($r_edu=="初中"){$r_edu="0";}elseif ($r_edu=="高中"){$r_edu="1";}elseif ($r_edu=="中技"){$r_edu="2";}elseif ($r_edu=="中专"){$r_edu="3";}elseif ($r_edu=="大专"){$r_edu="4";}elseif ($r_edu=="本科"){$r_edu="5";}elseif ($r_edu=="硕士"){$r_edu="6";}elseif ($r_edu=="博士"){$r_edu="7"; }elseif ($r_edu=="博后"){$r_edu="8"; }else{ $r_edu=""; }
+        $r_pay=$request->input('r_pay');//薪资
+        if($r_pay=='不限'){ $r_pay="";}
+
+        $r_name=$request->input('r_name');//职位名称
+        $pla_id=$request->input('pla_id');//地区
+         //echo $pla_id;
+        // echo $r_suffer;//经验
+        // echo $r_edu;//学历
+        if(!empty($r_suffer)){
+            $key="1";
+        }else if(!empty($r_edu)){
+           $key="2";
+        }else if(!empty($pla_id)){
+            $key="3";
+        }else if(!empty($r_pay)){
+            $key="4";
+        }else if(!empty($r_name)){
+           $key="5";
+        }else if(!(empty($r_name)&&empty($pla_id))){
+           $key="6";
+        }else if(!( empty($r_name)&&empty($r_pay) )){
+            $key="7";
+        }else if(!( empty($r_name)&&empty($r_edu) )){
+           $key="8";
+        }else if(!( empty($r_name)&&empty($r_suffer) )){
+            $key="9";
+        }else if(!( empty($r_name)&&empty($pla_id)&&empty($r_pay) )){
+            $key="10";
+        }else if(!( empty($r_name)&&empty($pla_id)&&empty($r_edu) )){
+            $key="11";
+        }else if(!( empty($r_name)&&empty($pla_id)&&empty($r_suffer) )){
+            $key="12";
+        }else if(!( empty($r_name)&&empty($r_pay)&&empty($r_edu) )){
+           $key="13";
+        }else if(!( empty($r_name)&&empty($r_pay)&&empty($r_suffer) )){
+            $key="14";
+        }else if(!( empty($pla_id)&&empty($r_pay)&&empty($r_edu) )){
+            $key="15";
+        }else if(!( empty($pla_id)&&empty($r_pay)&&empty($r_suffer) )){
+            $key="16";
+        }else if(!( empty($r_edu)&&empty($r_pay)&&empty($r_suffer) )){
+            $key="17";
+        }else if(!( empty($r_name)&&empty($pla_id)&&empty($r_pay)&&empty($r_edu) )){
+           $key="18";
+        }else if(!( empty($r_name)&&empty($pla_id)&&empty($r_pay)&&empty($r_suffer) )){
+            $key="19";
+        }else if(!( empty($r_name)&&empty($r_edu)&&empty($r_pay)&&empty($r_suffer) )){
+            $key="20";
+        }else if(!( empty($r_name)&&empty($r_edu)&&empty($r_pay)&&empty($r_suffer)&&empty($pla_id) )){
+           $key="21";
+        }else{
+            $key="";
+        }
+
+       if($key=="1"){
+            $now_time = date('Y-m-d H:i:s',time());
+            $query['arr']=DB::table('al_recruit')
+                ->leftjoin('al_com_message', 'al_recruit.mes_id', '=', 'al_com_message.mes_id')
+                ->leftjoin('al_hang', 'al_com_message.me_id', '=', 'al_hang.me_id')
+                ->leftjoin('al_place', 'al_recruit.pla_id', '=', 'al_place.pla_id')
+
+                ->where('r_status',1)
+                ->where('r_suffer','=',"$r_suffer")
+                ->paginate(20);
+                foreach ($query['arr'] as $k => $v) {
+
+                    $time = $this->time($v->r_addtime, $now_time);
+                    if ($time['d'] > 0) {
+                        $query['arr'][$k]->r_addtime = $time['d'] . '天前发布';
+                    } elseif ($time['h'] > 0) {
+                        $query['arr'][$k]->r_addtime = $time['h'] . '小时前发布';
+                    } elseif ($time['m'] > 4) {
+                        $query['arr'][$k]->r_addtime = $time['m'] . '分钟前发布';
+                    } else {
+                        $query['arr'][$k]->r_addtime = '刚刚发布';
+                    }
+                } 
+                $query['arr']=$this->objtoarr($query['arr']);
+                //print_r($query['arr']);die;
+                echo json_encode($query['arr']);die; 
+        }else if($key=="2"){
+            $now_time = date('Y-m-d H:i:s',time());
+            $query['arr']=DB::table('al_recruit')
+                ->leftjoin('al_com_message', 'al_recruit.mes_id', '=', 'al_com_message.mes_id')
+                ->leftjoin('al_hang', 'al_com_message.me_id', '=', 'al_hang.me_id')
+            ->leftjoin('al_place', 'al_recruit.pla_id', '=', 'al_place.pla_id')
+
+                ->where('r_status',1)
+                ->where('r_edu','=',"$r_edu")
+                ->paginate(20);
+                foreach ($query['arr'] as $k => $v) {
+
+                    $time = $this->time($v->r_addtime, $now_time);
+                    if ($time['d'] > 0) {
+                        $query['arr'][$k]->r_addtime = $time['d'] . '天前发布';
+                    } elseif ($time['h'] > 0) {
+                        $query['arr'][$k]->r_addtime = $time['h'] . '小时前发布';
+                    } elseif ($time['m'] > 4) {
+                        $query['arr'][$k]->r_addtime = $time['m'] . '分钟前发布';
+                    } else {
+                        $query['arr'][$k]->r_addtime = '刚刚发布';
+                    }
+                } 
+                $query['arr']=$this->objtoarr($query['arr']);
+                //print_r($query['arr']);die;
+                echo json_encode($query['arr']);die; 
+        }else if($key=="3"){
+            $now_time = date('Y-m-d H:i:s',time());
+            $query['arr']=DB::table('al_recruit')
+                ->leftjoin('al_com_message', 'al_recruit.mes_id', '=', 'al_com_message.mes_id')
+                ->leftjoin('al_hang', 'al_com_message.me_id', '=', 'al_hang.me_id')
+                ->leftjoin('al_place', 'al_recruit.pla_id', '=', 'al_place.pla_id')
+
+                ->where('r_status',1)
+                ->where('i_name','=',"$pla_id")
+                ->paginate(20);
+                foreach ($query['arr'] as $k => $v) {
+
+                    $time = $this->time($v->r_addtime, $now_time);
+                    if ($time['d'] > 0) {
+                        $query['arr'][$k]->r_addtime = $time['d'] . '天前发布';
+                    } elseif ($time['h'] > 0) {
+                        $query['arr'][$k]->r_addtime = $time['h'] . '小时前发布';
+                    } elseif ($time['m'] > 4) {
+                        $query['arr'][$k]->r_addtime = $time['m'] . '分钟前发布';
+                    } else {
+                        $query['arr'][$k]->r_addtime = '刚刚发布';
+                    }
+                } 
+                $query['arr']=$this->objtoarr($query['arr']);
+                //print_r($query['arr']);die;
+                echo json_encode($query['arr']);die; 
+        }else if($key=="4"){
+            $now_time = date('Y-m-d H:i:s',time());
+            $query['arr']=DB::table('al_recruit')
+                ->leftjoin('al_com_message', 'al_recruit.mes_id', '=', 'al_com_message.mes_id')
+                ->leftjoin('al_hang', 'al_com_message.me_id', '=', 'al_hang.me_id')
+                ->leftjoin('al_place', 'al_recruit.pla_id', '=', 'al_place.pla_id')
+
+                ->where('r_status',1)
+                ->where('r_pay','=',"$r_pay")
+                ->paginate(20);
+                foreach ($query['arr'] as $k => $v) {
+
+                    $time = $this->time($v->r_addtime, $now_time);
+                    if ($time['d'] > 0) {
+                        $query['arr'][$k]->r_addtime = $time['d'] . '天前发布';
+                    } elseif ($time['h'] > 0) {
+                        $query['arr'][$k]->r_addtime = $time['h'] . '小时前发布';
+                    } elseif ($time['m'] > 4) {
+                        $query['arr'][$k]->r_addtime = $time['m'] . '分钟前发布';
+                    } else {
+                        $query['arr'][$k]->r_addtime = '刚刚发布';
+                    }
+                } 
+                $query['arr']=$this->objtoarr($query['arr']);
+                //print_r($query['arr']);die;
+                echo json_encode($query['arr']);die; 
+        }else if($key=="5"){
+            $now_time = date('Y-m-d H:i:s',time());
+            $query['arr']=DB::table('al_recruit')
+                ->leftjoin('al_com_message', 'al_recruit.mes_id', '=', 'al_com_message.mes_id')
+                ->leftjoin('al_hang', 'al_com_message.me_id', '=', 'al_hang.me_id')
+                ->leftjoin('al_place', 'al_recruit.pla_id', '=', 'al_place.pla_id')
+
+                ->where('r_status',1)
+                 ->where('r_name','like',"%$r_name%")
+                ->paginate(20);
+                foreach ($query['arr'] as $k => $v) {
+
+                    $time = $this->time($v->r_addtime, $now_time);
+                    if ($time['d'] > 0) {
+                        $query['arr'][$k]->r_addtime = $time['d'] . '天前发布';
+                    } elseif ($time['h'] > 0) {
+                        $query['arr'][$k]->r_addtime = $time['h'] . '小时前发布';
+                    } elseif ($time['m'] > 4) {
+                        $query['arr'][$k]->r_addtime = $time['m'] . '分钟前发布';
+                    } else {
+                        $query['arr'][$k]->r_addtime = '刚刚发布';
+                    }
+                } 
+                $query['arr']=$this->objtoarr($query['arr']);
+                //print_r($query['arr']);die;
+                echo json_encode($query['arr']);die; 
+        }else if($key=="6"){
+            $now_time = date('Y-m-d H:i:s',time());
+            $query['arr']=DB::table('al_recruit')
+                ->leftjoin('al_com_message', 'al_recruit.mes_id', '=', 'al_com_message.mes_id')
+                ->leftjoin('al_hang', 'al_com_message.me_id', '=', 'al_hang.me_id')
+                ->leftjoin('al_place', 'al_recruit.pla_id', '=', 'al_place.pla_id')
+
+                ->where('r_status',1)
+                ->where('r_name','like',"%$r_name%")
+                ->where('i_name','=',"$pla_id")
+                ->paginate(20);
+                foreach ($query['arr'] as $k => $v) {
+
+                    $time = $this->time($v->r_addtime, $now_time);
+                    if ($time['d'] > 0) {
+                        $query['arr'][$k]->r_addtime = $time['d'] . '天前发布';
+                    } elseif ($time['h'] > 0) {
+                        $query['arr'][$k]->r_addtime = $time['h'] . '小时前发布';
+                    } elseif ($time['m'] > 4) {
+                        $query['arr'][$k]->r_addtime = $time['m'] . '分钟前发布';
+                    } else {
+                        $query['arr'][$k]->r_addtime = '刚刚发布';
+                    }
+                } 
+                $query['arr']=$this->objtoarr($query['arr']);
+                //print_r($query['arr']);die;
+                echo json_encode($query['arr']);die; 
+        }else if($key=="7"){
+            $now_time = date('Y-m-d H:i:s',time());
+            $query['arr']=DB::table('al_recruit')
+                ->leftjoin('al_com_message', 'al_recruit.mes_id', '=', 'al_com_message.mes_id')
+                ->leftjoin('al_hang', 'al_com_message.me_id', '=', 'al_hang.me_id')
+                ->leftjoin('al_place', 'al_recruit.pla_id', '=', 'al_place.pla_id')
+
+                ->where('r_status',1)
+                ->where('r_name','like',"%$r_name%")
+                ->where('r_pay','like',"%r_pay%")
+                ->paginate(20);
+                foreach ($query['arr'] as $k => $v) {
+
+                    $time = $this->time($v->r_addtime, $now_time);
+                    if ($time['d'] > 0) {
+                        $query['arr'][$k]->r_addtime = $time['d'] . '天前发布';
+                    } elseif ($time['h'] > 0) {
+                        $query['arr'][$k]->r_addtime = $time['h'] . '小时前发布';
+                    } elseif ($time['m'] > 4) {
+                        $query['arr'][$k]->r_addtime = $time['m'] . '分钟前发布';
+                    } else {
+                        $query['arr'][$k]->r_addtime = '刚刚发布';
+                    }
+                } 
+                $query['arr']=$this->objtoarr($query['arr']);
+                //print_r($query['arr']);die;
+                echo json_encode($query['arr']);die; 
+        }else if($key=="8"){
+            $now_time = date('Y-m-d H:i:s',time());
+            $query['arr']=DB::table('al_recruit')
+                ->leftjoin('al_com_message', 'al_recruit.mes_id', '=', 'al_com_message.mes_id')
+                ->leftjoin('al_hang', 'al_com_message.me_id', '=', 'al_hang.me_id')
+                ->leftjoin('al_place', 'al_recruit.pla_id', '=', 'al_place.pla_id')
+
+                ->where('r_status',1)
+                ->where('r_name','like',"%$r_name%")
+                ->where('r_edu','like',"%r_edu%")
+                ->paginate(20);
+                foreach ($query['arr'] as $k => $v) {
+
+                    $time = $this->time($v->r_addtime, $now_time);
+                    if ($time['d'] > 0) {
+                        $query['arr'][$k]->r_addtime = $time['d'] . '天前发布';
+                    } elseif ($time['h'] > 0) {
+                        $query['arr'][$k]->r_addtime = $time['h'] . '小时前发布';
+                    } elseif ($time['m'] > 4) {
+                        $query['arr'][$k]->r_addtime = $time['m'] . '分钟前发布';
+                    } else {
+                        $query['arr'][$k]->r_addtime = '刚刚发布';
+                    }
+                } 
+                $query['arr']=$this->objtoarr($query['arr']);
+                //print_r($query['arr']);die;
+                echo json_encode($query['arr']);die; 
+        }else if($key=="9"){
+            $now_time = date('Y-m-d H:i:s',time());
+            $query['arr']=DB::table('al_recruit')
+                ->leftjoin('al_com_message', 'al_recruit.mes_id', '=', 'al_com_message.mes_id')
+                ->leftjoin('al_hang', 'al_com_message.me_id', '=', 'al_hang.me_id')
+                ->leftjoin('al_place', 'al_recruit.pla_id', '=', 'al_place.pla_id')
+
+                ->where('r_status',1)
+                ->where('r_name','like',"%$r_name%")
+                ->where('r_suffer','like',"%r_suffer%")
+                ->paginate(20);
+                foreach ($query['arr'] as $k => $v) {
+
+                    $time = $this->time($v->r_addtime, $now_time);
+                    if ($time['d'] > 0) {
+                        $query['arr'][$k]->r_addtime = $time['d'] . '天前发布';
+                    } elseif ($time['h'] > 0) {
+                        $query['arr'][$k]->r_addtime = $time['h'] . '小时前发布';
+                    } elseif ($time['m'] > 4) {
+                        $query['arr'][$k]->r_addtime = $time['m'] . '分钟前发布';
+                    } else {
+                        $query['arr'][$k]->r_addtime = '刚刚发布';
+                    }
+                } 
+                $query['arr']=$this->objtoarr($query['arr']);
+                //print_r($query['arr']);die;
+                echo json_encode($query['arr']);die; 
+        }else if($key=="10"){
+            $now_time = date('Y-m-d H:i:s',time());
+            $query['arr']=DB::table('al_recruit')
+                ->leftjoin('al_com_message', 'al_recruit.mes_id', '=', 'al_com_message.mes_id')
+                ->leftjoin('al_hang', 'al_com_message.me_id', '=', 'al_hang.me_id')
+                ->leftjoin('al_place', 'al_recruit.pla_id', '=', 'al_place.pla_id')
+
+                ->where('r_status',1)
+                ->where('r_name','like',"%$r_name%")
+                ->where('r_pay','like',"%r_pay%")
+                ->where('i_name','like',"%pla_id%")
+                ->paginate(20);
+                foreach ($query['arr'] as $k => $v) {
+
+                    $time = $this->time($v->r_addtime, $now_time);
+                    if ($time['d'] > 0) {
+                        $query['arr'][$k]->r_addtime = $time['d'] . '天前发布';
+                    } elseif ($time['h'] > 0) {
+                        $query['arr'][$k]->r_addtime = $time['h'] . '小时前发布';
+                    } elseif ($time['m'] > 4) {
+                        $query['arr'][$k]->r_addtime = $time['m'] . '分钟前发布';
+                    } else {
+                        $query['arr'][$k]->r_addtime = '刚刚发布';
+                    }
+                } 
+                $query['arr']=$this->objtoarr($query['arr']);
+                //print_r($query['arr']);die;
+                echo json_encode($query['arr']);die; 
+        }else if($key=="11"){
+            $now_time = date('Y-m-d H:i:s',time());
+            $query['arr']=DB::table('al_recruit')
+                ->leftjoin('al_com_message', 'al_recruit.mes_id', '=', 'al_com_message.mes_id')
+                ->leftjoin('al_hang', 'al_com_message.me_id', '=', 'al_hang.me_id')
+                ->leftjoin('al_place', 'al_recruit.pla_id', '=', 'al_place.pla_id')
+
+                ->where('r_status',1)
+                ->where('r_name','like',"%$r_name%")
+                ->where('r_edu','like',"%r_edu%")
+                ->where('i_name','like',"%pla_id%")
+                ->paginate(20);
+                foreach ($query['arr'] as $k => $v) {
+
+                    $time = $this->time($v->r_addtime, $now_time);
+                    if ($time['d'] > 0) {
+                        $query['arr'][$k]->r_addtime = $time['d'] . '天前发布';
+                    } elseif ($time['h'] > 0) {
+                        $query['arr'][$k]->r_addtime = $time['h'] . '小时前发布';
+                    } elseif ($time['m'] > 4) {
+                        $query['arr'][$k]->r_addtime = $time['m'] . '分钟前发布';
+                    } else {
+                        $query['arr'][$k]->r_addtime = '刚刚发布';
+                    }
+                } 
+                $query['arr']=$this->objtoarr($query['arr']);
+                //print_r($query['arr']);die;
+                echo json_encode($query['arr']);die; 
+        }else if($key=="12"){
+            $now_time = date('Y-m-d H:i:s',time());
+            $query['arr']=DB::table('al_recruit')
+                ->leftjoin('al_com_message', 'al_recruit.mes_id', '=', 'al_com_message.mes_id')
+                ->leftjoin('al_hang', 'al_com_message.me_id', '=', 'al_hang.me_id')
+                ->leftjoin('al_place', 'al_recruit.pla_id', '=', 'al_place.pla_id')
+
+                ->where('r_status',1)
+                ->where('r_name','like',"%$r_name%")
+                ->where('r_suffer','like',"%r_suffer%")
+                ->where('i_name','like',"%pla_id%")
+                ->paginate(20);
+                foreach ($query['arr'] as $k => $v) {
+
+                    $time = $this->time($v->r_addtime, $now_time);
+                    if ($time['d'] > 0) {
+                        $query['arr'][$k]->r_addtime = $time['d'] . '天前发布';
+                    } elseif ($time['h'] > 0) {
+                        $query['arr'][$k]->r_addtime = $time['h'] . '小时前发布';
+                    } elseif ($time['m'] > 4) {
+                        $query['arr'][$k]->r_addtime = $time['m'] . '分钟前发布';
+                    } else {
+                        $query['arr'][$k]->r_addtime = '刚刚发布';
+                    }
+                } 
+                $query['arr']=$this->objtoarr($query['arr']);
+                //print_r($query['arr']);die;
+                echo json_encode($query['arr']);die; 
+        }else if($key=="13"){
+            $now_time = date('Y-m-d H:i:s',time());
+            $query['arr']=DB::table('al_recruit')
+                ->leftjoin('al_com_message', 'al_recruit.mes_id', '=', 'al_com_message.mes_id')
+                ->leftjoin('al_hang', 'al_com_message.me_id', '=', 'al_hang.me_id')
+                ->leftjoin('al_place', 'al_recruit.pla_id', '=', 'al_place.pla_id')
+
+                ->where('r_status',1)
+                ->where('r_name','like',"%$r_name%")
+                ->where('r_pay','like',"%r_pay%")
+                ->where('r_edu','like',"%r_edu%")
+                ->paginate(20);
+                foreach ($query['arr'] as $k => $v) {
+
+                    $time = $this->time($v->r_addtime, $now_time);
+                    if ($time['d'] > 0) {
+                        $query['arr'][$k]->r_addtime = $time['d'] . '天前发布';
+                    } elseif ($time['h'] > 0) {
+                        $query['arr'][$k]->r_addtime = $time['h'] . '小时前发布';
+                    } elseif ($time['m'] > 4) {
+                        $query['arr'][$k]->r_addtime = $time['m'] . '分钟前发布';
+                    } else {
+                        $query['arr'][$k]->r_addtime = '刚刚发布';
+                    }
+                } 
+                $query['arr']=$this->objtoarr($query['arr']);
+                //print_r($query['arr']);die;
+                echo json_encode($query['arr']);die; 
+        }else if($key=="14"){
+            $now_time = date('Y-m-d H:i:s',time());
+            $query['arr']=DB::table('al_recruit')
+                ->leftjoin('al_com_message', 'al_recruit.mes_id', '=', 'al_com_message.mes_id')
+                ->leftjoin('al_hang', 'al_com_message.me_id', '=', 'al_hang.me_id')
+                ->leftjoin('al_place', 'al_recruit.pla_id', '=', 'al_place.pla_id')
+
+                ->where('r_status',1)
+                ->where('r_name','like',"%$r_name%")
+                ->where('r_pay','like',"%r_pay%")
+                ->where('r_suffer','like',"%r_suffer%")
+                ->paginate(20);
+                foreach ($query['arr'] as $k => $v) {
+
+                    $time = $this->time($v->r_addtime, $now_time);
+                    if ($time['d'] > 0) {
+                        $query['arr'][$k]->r_addtime = $time['d'] . '天前发布';
+                    } elseif ($time['h'] > 0) {
+                        $query['arr'][$k]->r_addtime = $time['h'] . '小时前发布';
+                    } elseif ($time['m'] > 4) {
+                        $query['arr'][$k]->r_addtime = $time['m'] . '分钟前发布';
+                    } else {
+                        $query['arr'][$k]->r_addtime = '刚刚发布';
+                    }
+                } 
+                $query['arr']=$this->objtoarr($query['arr']);
+                //print_r($query['arr']);die;
+                echo json_encode($query['arr']);die; 
+        }else if($key=="15"){
+            $now_time = date('Y-m-d H:i:s',time());
+            $query['arr']=DB::table('al_recruit')
+                ->leftjoin('al_com_message', 'al_recruit.mes_id', '=', 'al_com_message.mes_id')
+                ->leftjoin('al_hang', 'al_com_message.me_id', '=', 'al_hang.me_id')
+                ->leftjoin('al_place', 'al_recruit.pla_id', '=', 'al_place.pla_id')
+
+                ->where('r_status',1)
+                ->where('i_name','like',"%$pla_id%")
+                ->where('r_pay','like',"%r_pay%")
+                ->where('r_edu','like',"%r_edu%")
+                ->paginate(20);
+                foreach ($query['arr'] as $k => $v) {
+
+                    $time = $this->time($v->r_addtime, $now_time);
+                    if ($time['d'] > 0) {
+                        $query['arr'][$k]->r_addtime = $time['d'] . '天前发布';
+                    } elseif ($time['h'] > 0) {
+                        $query['arr'][$k]->r_addtime = $time['h'] . '小时前发布';
+                    } elseif ($time['m'] > 4) {
+                        $query['arr'][$k]->r_addtime = $time['m'] . '分钟前发布';
+                    } else {
+                        $query['arr'][$k]->r_addtime = '刚刚发布';
+                    }
+                } 
+                $query['arr']=$this->objtoarr($query['arr']);
+                //print_r($query['arr']);die;
+                echo json_encode($query['arr']);die; 
+        }else if($key=="16"){
+            $now_time = date('Y-m-d H:i:s',time());
+            $query['arr']=DB::table('al_recruit')
+                ->leftjoin('al_com_message', 'al_recruit.mes_id', '=', 'al_com_message.mes_id')
+                ->leftjoin('al_hang', 'al_com_message.me_id', '=', 'al_hang.me_id')
+                ->leftjoin('al_place', 'al_recruit.pla_id', '=', 'al_place.pla_id')
+
+                ->where('r_status',1)
+                ->where('i_name','like',"%$pla_id%")
+                ->where('r_pay','like',"%r_pay%")
+                ->where('r_suffer','like',"%r_suffer%")
+                ->paginate(20);
+                foreach ($query['arr'] as $k => $v) {
+
+                    $time = $this->time($v->r_addtime, $now_time);
+                    if ($time['d'] > 0) {
+                        $query['arr'][$k]->r_addtime = $time['d'] . '天前发布';
+                    } elseif ($time['h'] > 0) {
+                        $query['arr'][$k]->r_addtime = $time['h'] . '小时前发布';
+                    } elseif ($time['m'] > 4) {
+                        $query['arr'][$k]->r_addtime = $time['m'] . '分钟前发布';
+                    } else {
+                        $query['arr'][$k]->r_addtime = '刚刚发布';
+                    }
+                } 
+                $query['arr']=$this->objtoarr($query['arr']);
+                //print_r($query['arr']);die;
+                echo json_encode($query['arr']);die; 
+        }else if($key=="17"){
+            $now_time = date('Y-m-d H:i:s',time());
+            $query['arr']=DB::table('al_recruit')
+                ->leftjoin('al_com_message', 'al_recruit.mes_id', '=', 'al_com_message.mes_id')
+                ->leftjoin('al_hang', 'al_com_message.me_id', '=', 'al_hang.me_id')
+                ->leftjoin('al_place', 'al_recruit.pla_id', '=', 'al_place.pla_id')
+                ->where('r_status',1)
+                ->where('r_edu','like',"%$r_edu%")
+                ->where('r_pay','like',"%r_pay%")
+                ->where('r_suffer','like',"%r_suffer%")
+                ->paginate(20);
+                foreach ($query['arr'] as $k => $v) {
+
+                    $time = $this->time($v->r_addtime, $now_time);
+                    if ($time['d'] > 0) {
+                        $query['arr'][$k]->r_addtime = $time['d'] . '天前发布';
+                    } elseif ($time['h'] > 0) {
+                        $query['arr'][$k]->r_addtime = $time['h'] . '小时前发布';
+                    } elseif ($time['m'] > 4) {
+                        $query['arr'][$k]->r_addtime = $time['m'] . '分钟前发布';
+                    } else {
+                        $query['arr'][$k]->r_addtime = '刚刚发布';
+                    }
+                } 
+                $query['arr']=$this->objtoarr($query['arr']);
+                //print_r($query['arr']);die;
+                echo json_encode($query['arr']);die; 
+        }else if($key=="18"){
+            $now_time = date('Y-m-d H:i:s',time());
+            $query['arr']=DB::table('al_recruit')
+                ->leftjoin('al_com_message', 'al_recruit.mes_id', '=', 'al_com_message.mes_id')
+                ->leftjoin('al_hang', 'al_com_message.me_id', '=', 'al_hang.me_id')
+                ->leftjoin('al_place', 'al_recruit.pla_id', '=', 'al_place.pla_id')
+                ->where('r_status',1)
+                ->where('r_edu','like',"%$r_edu%")
+                ->where('r_pay','like',"%r_pay%")
+                ->where('r_name','like',"%r_name%")
+                ->where('i_name','like',"%pla_id%")
+                ->paginate(20);
+                foreach ($query['arr'] as $k => $v) {
+
+                    $time = $this->time($v->r_addtime, $now_time);
+                    if ($time['d'] > 0) {
+                        $query['arr'][$k]->r_addtime = $time['d'] . '天前发布';
+                    } elseif ($time['h'] > 0) {
+                        $query['arr'][$k]->r_addtime = $time['h'] . '小时前发布';
+                    } elseif ($time['m'] > 4) {
+                        $query['arr'][$k]->r_addtime = $time['m'] . '分钟前发布';
+                    } else {
+                        $query['arr'][$k]->r_addtime = '刚刚发布';
+                    }
+                } 
+                $query['arr']=$this->objtoarr($query['arr']);
+                //print_r($query['arr']);die;
+                echo json_encode($query['arr']);die; 
+        }else if($key=="19"){
+            $now_time = date('Y-m-d H:i:s',time());
+            $query['arr']=DB::table('al_recruit')
+                ->leftjoin('al_com_message', 'al_recruit.mes_id', '=', 'al_com_message.mes_id')
+                ->leftjoin('al_hang', 'al_com_message.me_id', '=', 'al_hang.me_id')
+                ->leftjoin('al_place', 'al_recruit.pla_id', '=', 'al_place.pla_id')
+                ->where('r_status',1)
+                ->where('r_suffer','like',"%$r_suffer%")
+                ->where('r_pay','like',"%r_pay%")
+                ->where('r_name','like',"%r_name%")
+                ->where('i_name','like',"%pla_id%")
+                ->paginate(20);
+                foreach ($query['arr'] as $k => $v) {
+
+                    $time = $this->time($v->r_addtime, $now_time);
+                    if ($time['d'] > 0) {
+                        $query['arr'][$k]->r_addtime = $time['d'] . '天前发布';
+                    } elseif ($time['h'] > 0) {
+                        $query['arr'][$k]->r_addtime = $time['h'] . '小时前发布';
+                    } elseif ($time['m'] > 4) {
+                        $query['arr'][$k]->r_addtime = $time['m'] . '分钟前发布';
+                    } else {
+                        $query['arr'][$k]->r_addtime = '刚刚发布';
+                    }
+                } 
+                $query['arr']=$this->objtoarr($query['arr']);
+                //print_r($query['arr']);die;
+                echo json_encode($query['arr']);die; 
+        }else if($key=="20"){
+            $now_time = date('Y-m-d H:i:s',time());
+            $query['arr']=DB::table('al_recruit')
+                ->leftjoin('al_com_message', 'al_recruit.mes_id', '=', 'al_com_message.mes_id')
+                ->leftjoin('al_hang', 'al_com_message.me_id', '=', 'al_hang.me_id')
+                ->leftjoin('al_place', 'al_recruit.pla_id', '=', 'al_place.pla_id')
+                ->where('r_status',1)
+                ->where('r_suffer','like',"%$r_suffer%")
+                ->where('r_pay','like',"%r_pay%")
+                ->where('r_name','like',"%r_name%")
+                ->where('r_edu','like',"%r_edu%")
+                ->paginate(20);
+                foreach ($query['arr'] as $k => $v) {
+
+                    $time = $this->time($v->r_addtime, $now_time);
+                    if ($time['d'] > 0) {
+                        $query['arr'][$k]->r_addtime = $time['d'] . '天前发布';
+                    } elseif ($time['h'] > 0) {
+                        $query['arr'][$k]->r_addtime = $time['h'] . '小时前发布';
+                    } elseif ($time['m'] > 4) {
+                        $query['arr'][$k]->r_addtime = $time['m'] . '分钟前发布';
+                    } else {
+                        $query['arr'][$k]->r_addtime = '刚刚发布';
+                    }
+                } 
+                $query['arr']=$this->objtoarr($query['arr']);
+                //print_r($query['arr']);die;
+                echo json_encode($query['arr']);die; 
+        }else if($key=="21"){
+            $now_time = date('Y-m-d H:i:s',time());
+            $query['arr']=DB::table('al_recruit')
+                ->leftjoin('al_com_message', 'al_recruit.mes_id', '=', 'al_com_message.mes_id')
+                ->leftjoin('al_hang', 'al_com_message.me_id', '=', 'al_hang.me_id')
+                ->leftjoin('al_place', 'al_recruit.pla_id', '=', 'al_place.pla_id')
+                ->where('r_status',1)
+                ->where('r_suffer','like',"%$r_suffer%")
+                ->where('r_pay','like',"%r_pay%")
+                ->where('r_name','like',"%r_name%")
+                ->where('r_edu','like',"%r_edu%")
+                ->where('i_name','like',"%pla_id%")
+                ->paginate(20);
+                foreach ($query['arr'] as $k => $v) {
+
+                    $time = $this->time($v->r_addtime, $now_time);
+                    if ($time['d'] > 0) {
+                        $query['arr'][$k]->r_addtime = $time['d'] . '天前发布';
+                    } elseif ($time['h'] > 0) {
+                        $query['arr'][$k]->r_addtime = $time['h'] . '小时前发布';
+                    } elseif ($time['m'] > 4) {
+                        $query['arr'][$k]->r_addtime = $time['m'] . '分钟前发布';
+                    } else {
+                        $query['arr'][$k]->r_addtime = '刚刚发布';
+                    }
+                } 
+                $query['arr']=$this->objtoarr($query['arr']);
+                //print_r($query['arr']);die;
+                echo json_encode($query['arr']);die; 
+        }else{
+            $now_time = date('Y-m-d H:i:s',time());
+            $query['arr']=DB::table('al_recruit')
+                ->leftjoin('al_com_message', 'al_recruit.mes_id', '=', 'al_com_message.mes_id')
+                ->leftjoin('al_hang', 'al_com_message.me_id', '=', 'al_hang.me_id')
+                ->leftjoin('al_place', 'al_recruit.pla_id', '=', 'al_place.pla_id')
+                ->where('r_status',1)
+                ->paginate(20);
+                foreach ($query['arr'] as $k => $v) {
+
+                    $time = $this->time($v->r_addtime, $now_time);
+                    if ($time['d'] > 0) {
+                        $query['arr'][$k]->r_addtime = $time['d'] . '天前发布';
+                    } elseif ($time['h'] > 0) {
+                        $query['arr'][$k]->r_addtime = $time['h'] . '小时前发布';
+                    } elseif ($time['m'] > 4) {
+                        $query['arr'][$k]->r_addtime = $time['m'] . '分钟前发布';
+                    } else {
+                        $query['arr'][$k]->r_addtime = '刚刚发布';
+                    }
+                } 
+                $query['arr']=$this->objtoarr($query['arr']);
+                //print_r($query['arr']);die;
+                echo json_encode($query['arr']);die; 
+        }
+                
+
+
+    }
+
+
+
+
+
+
+
 }	
 
 ?>
