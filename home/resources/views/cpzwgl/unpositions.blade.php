@@ -187,7 +187,7 @@ var youdao_conv_id = 271546;
 			                                    		                                    		                                    		                                    <div class="links">
 		                                    			                                       	
 		                                       			                               <a class="job_edit" href="{{url('ptedit')}}?id={{$v->rec_id}}">编辑</a>        
-		                                       	<a href="{{url('ptdown')}}?id={{$v->rec_id}}">上线</a>                      
+		                                       	<a href="{{url('ptup')}}?id={{$v->rec_id}}">上线</a>                      
 		                                        <a class="job_del" href="{{url('ptdel')}}?id={{$v->rec_id}}">删除</a>
 
 		                                    </div>
