@@ -41,10 +41,3 @@
             </div>
 			<a class="subscribe" href="subscribe" target="_blank">订阅职位</a>
 		</div>
-        <div class="content">	
-	        			<div id="search_box">
-		<form id="searchForm" name="searchForm" action="list.html" method="get">
-        <ul id="searchType">
-        	        	<li data-searchtype="1" class="type_selected">职位</li>
-        	<li data-searchtype="4">公司</li>
-      	</ul>

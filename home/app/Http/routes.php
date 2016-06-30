@@ -159,7 +159,7 @@ Route::get('/canInterviewResumes', 'RecresumeController@canInterviewResumes');
 Route::get('/autoFilterResumes', 'RecresumeController@autoFilterResumes');	
 
 //注册
-Route::get('/register/', 'RegisterController@register');
+Route::any('/register/', 'RegisterController@register');
 
 //简历
 Route::get('/preview', 'ResumeglController@preview');
@@ -185,3 +185,5 @@ Route::get('/send','SubscribeController@send');
 Route::get('/gerenlist', 'IndexController@gerenlist');
 // //公司找个人地址	
 // Route::get('/select_all', 'IndexController@select_all');
+Route::any('/search', 'PublicController@search');//职位搜索
+Route::any('/searchajax', 'PublicController@searchajax');//ajax职位搜索
