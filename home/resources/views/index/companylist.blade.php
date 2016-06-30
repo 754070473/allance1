@@ -129,8 +129,8 @@ var youdao_conv_id = 271546;
 	                        </dl> -->
 	                    </dd>
 	                </dl>
+                <ul class="hc_list reset" id="so">
                         @foreach($ar as  $k=>$v)
-	               	                	<ul class="hc_list reset" id="so">
 
 			                        <a href="h/c/25829" target="_blank">
 
@@ -139,13 +139,13 @@ var youdao_conv_id = 271546;
                                                 <?php }else{?>
                                             <li>
                                                 <?php } ?>
-                                                <a href="{{url('index04')}}" target="_blank">
+                                                <a href="geren?mes_id={{$v->mes_id}}"  target="_blank">
                                                     <h3 title="CCIC">公司</h3>
 
 
                                                     <div class="comLogo">
 
-                                                        <img src="style/images/c5e0d4d3dc9047c89986c9eca2feb277.png" width="190" height="190" alt="CCIC" />
+                                                        <img src="style/images/{{$v->m_logo}}" width="190" height="190" alt="CCIC" />
                                                         <ul>
                                                             <li>{{$v->m_name}}</li>
 
@@ -155,13 +155,20 @@ var youdao_conv_id = 271546;
                                                     </div>
                                                 </a>
                                                 <ul class="reset ctags">
-                                                    <li>{{$v->m_course}}</li>
+                                                    <?php
+                                                    if(strpos($v->m_welfare,',')){
+                                                    $m_welfare = explode(',',$v->m_welfare);
+                                                    foreach($m_welfare as $vv){
+                                                    ?>
+                                                    <li><?php echo $vv?></li>
+                                                    <?php }}else{?>
                                                     <li>{{$v->m_welfare}}</li>
+                                                    <?php }?>
 
                                                 </ul>
                                             </li>
                                         @endforeach
-
+                                        </ul>
 
 		                		               	<div class="Pagination"></div>
 
@@ -229,7 +236,7 @@ var youdao_conv_id = 271546;
             url: "{{url('hang')}}",
             data: "me_id="+me_id,
             success: function(msg){
-            	alert(msg);
+            	//alert(msg);
               $("#so").html(msg)
             }
         });
@@ -247,7 +254,19 @@ function place(pla_id){
             }
         });	
 }
+// function gerenlist(mes_id){
 
+//   alert(i_name);
+//          $.ajax({
+//             type: "GET",
+//             url: "{{url('gerenlist')}}",
+//             data: "mes_id="+mes_id,
+//             success: function(msg){
+//               //alert(msg);
+//               $("#so").html(msg)
+//             }
+//         }); 
+// }
 </script>       	
 			<div class="clear"></div>
 			<input type="hidden" id="resubmitToken" value="" />
