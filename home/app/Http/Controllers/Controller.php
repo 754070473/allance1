@@ -96,8 +96,8 @@ abstract class Controller extends BaseController
             $entension = $file -> getClientOriginalExtension(); //上传文件的后缀.
             $mimeTye = $file -> getMimeType();
             $newName = md5(date('ymdhis').$clientName)."."."$entension";//修改图片名称
-            $path = $file -> move('upload/',$newName);
-            return $path;
+            $path = $file -> move('style/images/upload/',$newName);
+            return 'upload/'.$newName;
         }
     }
 }

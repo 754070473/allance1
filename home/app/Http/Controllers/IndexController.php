@@ -310,7 +310,6 @@ class IndexController extends Controller {
             ->join('al_place', 'al_resume.pla_id', '=', 'al_place.pla_id')
             ->select('al_resume.*', 'al_post.i_name as p_name', 'al_place.i_name')
              ->where('al_post.post_id',"$post_id")
-             
              ->where('r_show',0)
              ->where('r_type',0)
              ->where('if_img',0)

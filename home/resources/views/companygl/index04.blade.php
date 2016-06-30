@@ -95,7 +95,7 @@ var youdao_conv_id = 271546;
 	                    		                   			<h2 title="公司名称">公司名称</h2>
 	                   			                        
 	                        	                        	<em class="unvalid"></em>
-                        		<span class="va dn" style="display: none;">拉勾未认证企业</span>
+                        		<span class="va dn" style="display: none;">强强联合未认证企业</span>
 	                        	<a target="_blank" class="applyC" href="http://www.lagou.com/c/auth">申请认证</a>
 	                        	                        <div class="clear"></div>
 	                       	
