@@ -161,8 +161,9 @@ var youdao_conv_id = 271546;
 <script type="text/javascript" src="style/js/search.min.js"></script>
 <dl class="hotSearch">
 	<dt>热门搜索：</dt>
-	<dd><a href="list.htmlJava?labelWords=label&city=全国">Java</a></dd>
-	
+    @foreach($key as $val)
+        <dd><a href="search?name={{$val->k_name}}">{{$val->k_name}}</a></dd>
+    @endforeach
 </dl>			<div class="breakline"></div>
             <dl class="workplace" id="workplaceSelect">
                 <dt class="fl">工作地点：</dt>
@@ -245,7 +246,7 @@ var youdao_conv_id = 271546;
 			                           <a href="{{url('jobdetail')}}?rec_id={{$v->rec_id}}" target="_blank">{{$v->r_name}}</a>
 			                           
 			                            &nbsp;
-			                            <span class="c9">[{{$v->i_name}}]</span>
+			                            <span class="c9">[{{$v->m_place}}]</span>
 			                            			                        </div>
 			                        <span><em class="c7">月薪：</em>{{$v->r_pay}}</span>
 			                        <span><em class="c7">经验：</em> 

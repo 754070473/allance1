@@ -40,7 +40,6 @@ class IndexController extends Controller {
     {
         $per_id = session::get('per_id');
         $rec_id = Request::input('rec_id');
-        $rec_id = 1;                    //测试职位id(招聘id)
         if(empty($per_id))
         {
             $pd = Request::input('pd');
@@ -91,7 +90,6 @@ class IndexController extends Controller {
             $arr['row'] = DB::table('al_recruit')
                         ->join('al_place', 'al_place.pla_id', '=', 'al_recruit.pla_id')
                         ->join('al_com_message', 'al_com_message.mes_id', '=', 'al_recruit.mes_id')
-                        
                         ->where('rec_id', $rec_id)->first();
                         $arr['per_id'] = $per_id ?$per_id : '' ;
                 $user = DB::table('al_collect')->where('per_id', $per_id)->first();

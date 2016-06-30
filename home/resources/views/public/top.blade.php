@@ -45,7 +45,7 @@ var youdao_conv_id = 271546;
         @if($key==1)
             <ul class="reset" id="navheader">
             <li ><a href="index.php">首页</a></li>
-            <li ><a href="companylist">职位</a></li>
+            <li ><a href="search">职位</a></li>
             <li ><a href="companylist" >公司</a></li>
             <li ><a href="jianli" rel="nofollow">个人中心</a></li>
             </ul>
@@ -99,7 +99,7 @@ var youdao_conv_id = 271546;
             @elseif($key==0)
             <ul id="navheader" class="reset">
                 <li ><a href="index.php">首页</a></li>
-                 <li ><a href="companylist" >职位</a></li>
+                 <li ><a href="search" >职位</a></li>
                  <li ><a href="companylist" >公司</a></li>
                  <li ><a href="jianli" rel="nofollow">个人中心</a></li>
                
