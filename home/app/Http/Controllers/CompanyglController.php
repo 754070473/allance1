@@ -21,10 +21,11 @@ class CompanyglController extends Controller {
         $mes_id = $name->mes_id;
         // echo $mes_id;die;
         $data['arr'] = DB::table('al_com_message')
-        ->join('al_recruit', 'al_recruit.mes_id', '=', 'al_com_message.mes_id')
-        ->join('al_place','al_place.pla_id','=','al_com_message.m_place')
+        ->leftjoin('al_recruit', 'al_recruit.mes_id', '=', 'al_com_message.mes_id')
+        // ->join('al_place','al_place.pla_id','=','al_com_message.m_place')
         ->where('al_com_message.mes_id',$mes_id)
         ->first();
+        // DB::table('al_com_message')
         // print_r($data['arr']);
         $m_welfare= $data['arr']->m_welfare;
         $data['welfare'] = explode(',',$m_welfare);
@@ -119,6 +120,15 @@ class CompanyglController extends Controller {
     {
         $mes_id = Request::input('me_id'); 
         $remark = Request::input('remark'); 
+    }
+
+    //编辑创始人
+    public function save_company_founder()
+    {
+       $name =  Request::input('name'); 
+       $position =  Request::input('position'); 
+       $remark =  Request::input('remark'); 
+        
     }
 
     // 添加公司 产品

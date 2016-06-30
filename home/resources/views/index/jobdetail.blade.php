@@ -43,48 +43,78 @@ var youdao_conv_id = 271546;
 
 </script>
 
+<script>
+
+function shoucang(rec_id)
+{
+    $.ajax({
+      type:"get",
+      url:"collections_shoucang",
+      data:"rec_id="+rec_id,
+      success:function(e)
+      {
+        if(e==0)
+        {
+          alert('已收藏');
+        }
+        else if(e==2)
+        {
+          alert('no')
+          //收藏失败
+        }
+        else
+        {
+          //收藏成功
+          var str = "<img onclick='shoucang("+e+")' class='jd_collection' src='style/images/2.jpg' alt=''>";
+          $('#shoucang').html(str);
+        }
+      }
+    })
+}
+</script>
 <body>
 <div id="body">
 <!--头部-->
 <div id="cache">
-
 </div>
     <div id="container">
                 <div class="clearfix">
             <div class="content_l">
-            	                <dl class="job_detail">
+            	   <dl class="job_detail">
                     <dt>
                         <h1 title="内容运营">
                             <em></em>
-                                                        	<div>立方网运营部招聘</div>
-                           	                           	内容运营
-                        </h1>
-                        
-                                               	
-                       	                       	<a class="inline jd_collection" href="#loginPop" title="登录">
-                       		                       	</a>
-                       	                    </dt>
+                          	<div></div>
+                           	{{$row->m_name}}
+                        </h1> 
+                        @if($aa==1)
+                              <span id='shoucang'><img onclick="shoucang({{$row->rec_id}})" class="jd_collection" src="style/images/2.jpg" alt=""></span>                 	
+                        @endif
+                        @if($aa==0)
+                              <span id='shoucang' ><img onclick="shoucang({{$row->rec_id}})" class="jd_collection" src="style/images/3.jpg" alt=""></span>                   
+                        @endif
+                    </dt>
                     <dd class="job_request">
-                    	<span class="red">4k-6k</span>
-                       	<span>武汉</span> 
-                       	<span>经验3-5年 </span>
-                       	<span> 本科及以上</span> 
-                       	<span>全职</span><br />
-                      	  职位诱惑 : 大家都来了 你还在等什么！！
-                      	<div>发布时间：3天前发布</div>
+                    	<span class="red">{{$row->r_pay}}</span>
+                       	<span>{{$row->i_name}}</span> 
+                       	<span>{{$row->r_suffer}}年</span>
+                       	<span>{{$row->r_edu}}</span> 
+                       	<span>{{$row->m_type}}</span><br />
+                      	  职位诱惑 : {{$row->m_welfare}}
+                      	<div>发布时间：{{$row->r_addtime}}</div>
                     </dd>
                     <dd class="job_bt">
                         <h3 class="description">职位描述</h3>
-                        <p>岗位职责： <br />1、参与管理和维护立方网，保证网络社区健康、有序地运转，负责网站信息安全； <br />2、强化团队建设，提高团队工作效率，做好领导与员工直接沟通的桥梁； <br />3、制定和完善客服体系规章制度,培训新人。</p>
-<p>&nbsp;岗位要求： <br />1、2年以上互联网行业客服主管工作经验，本科及以上学历； <br />2、良好的沟通和协调能力、人际交往能力和语言表达能力； <br />3、较强的责任心和执行力，富有工作热情和团队协作能力。</p>
+                        <p>{{$row->r_describe}}</p>
+
                     </dd>
                      
-                                        	<dd class="unresume">
+                    	<dd class="unresume">
 	                        <div>
 	                        	你在拉勾还没有简历呢，你可以<a href="login" target="_blank" title="完善在线简历">完善在线简历</a>，也可<a class="inline" href="#loginPop" title="登录">上传附件简历</a>直接投递
 	                       	</div>
 	                    </dd>
-                                                            <div class="saoma saoma_btm">
+                        <div class="saoma saoma_btm">
                       	<div class="dropdown_menu">
 							<div class="drop_l">
 								<img src="style/images/job_qr_btm.png" width="131" height="131" />
@@ -93,30 +123,54 @@ var youdao_conv_id = 271546;
 								<div class="drop_title"></div>
 								<p>
 									想知道HR在看简历嘛？<br />
-          							想在微信中收到面试通知？<br />
-          							<span><< 扫一扫，给你解决</span>
+    							想在微信中收到面试通知？<br />
+    							<span><< 扫一扫，给你解决</span>
 								</p>
 							</div>
 						</div>
-                    </div>
-                                        <dd>
-                                        	                    			                        	<a href="#loginPop" title="登录" class="inline btn fr btn_apply">投个简历</a>
-	                        	                   		                	                </dd>
-                </dl>
-                                <div id="weibolist"></div>
+            </div>
+                <dd>
+                    <input type="hidden" id='per_id' name='per_id' value="{{$per_id}}">
+                  	 <a  id='tou' class=" btn fr btn_apply">投个简历</a>
+                </dd>
+              </dl>
+          <div id="weibolist"></div>
             </div>	
+            <!-- 投个简历--弹框 -->
+            <script>
+              $('#tou').click(function(){
+                var per_id = $('#per_id').val();
+                if(per_id)
+                {
+                    //per_id有值
+                    $.colorbox({
+                              inline: !0,
+                              href: "#setResume",
+                              title: "选择简历"
+                          });
+                }
+                else
+                {
+                    //per_id没有值
+                    $.colorbox({
+                              inline: !0,
+                              href: "#loginPop",
+                              title: "登录"
+                          });
+                }
+              })
+
+            </script>
             <div class="content_r">
                 <dl class="job_company">
                     <dt>
                     	<a href="h/c/683" target="_blank">
-                            <img class="b2" src="style/images/ff80808140ac5ed90140b953972e0215.png" width="80" height="80" alt="北京立方网信息技术有限公司" />
+                            <img class="b2" src="{{$row->m_logo}}" width="80" height="80" alt="北京立方网信息技术有限公司" />
                             <div>
                                 <h2 class="fl">
-                                	                                  		立方网
-                                  	                                  	
-                                  	                                    	<img src="style/images/valid.png" width="15" height="19" alt="拉勾认证企业" /> 
-                                    	<span class="dn">拉勾认证企业</span>
-                                                                        
+                                		{{$row->m_name}}
+                                  	<img src="style/images/valid.png" width="15" height="19" alt="拉勾认证企业" /> 
+                                  	<span class="dn">拉勾认证企业</span>
                                 </h2>
                             </div>
                         </a>
@@ -124,17 +178,17 @@ var youdao_conv_id = 271546;
                     <dd>
                     	<ul class="c_feature reset">
                         	<li><span>领域</span> 移动互联网,游戏</li>
-                        	<li><span>规模</span> 50-150人</li>
+                        	
                         	<li>
                         		<span>主页</span> 
-                        		           							<a href="http://L99.com" target="_blank" title="http://L99.com" rel="nofollow">http://L99.com</a>
-           						                        	</li>
+		           							<a href="{{$row->m_url}}" target="_blank" title="{{$row->m_url}}" rel="nofollow">{{$row->m_url}}</a>
+                        	</li>
                         </ul>
                         
-                        <h4>发展阶段</h4>
+                        <h4>企业类型</h4>
                         <ul class="c_feature reset">
-                        	<li><span>目前阶段</span> A轮</li>
-                        	                        	<li><span>投资机构</span> IDG(A轮)，腾讯(A轮)</li>
+                        	<li><span>目前类型</span> {{$row->m_type}}</li>
+                        	                        	
                         	                        </ul>
                         
                         <!--	                    	<h4>公司产品</h4>
@@ -166,8 +220,8 @@ var youdao_conv_id = 271546;
                        	<a href="javascript:;" id="mapPreview">查看完整地图</a>
                        	                    </dd>
                 </dl>
-                                <a href="h/subject/s_zhouyou?utm_source=BD__lagou&utm_medium=&utm_campaign=zhouyou" target="_blank" class="eventAd">
-                  <img src="style/images/zhouyou.jpg" width="280" height="135" />
+                        <a href="h/subject/s_zhouyou?utm_source=BD__lagou&utm_medium=&utm_campaign=zhouyou" target="_blank" class="eventAd">
+                        <img src="style/images/zhouyou.jpg" width="280" height="135" />
                 </a>
             </div>
        	</div>                    
@@ -178,7 +232,7 @@ var youdao_conv_id = 271546;
       <input type="hidden" value="" id="positionLng" />
       <input type="hidden" value="" id="positionLat" />
 	
-		<div id="loginToolBar">
+		<!-- <div id="loginToolBar">
 		<div>
 			<em></em>
 			<img src="style/images/footbar_logo.png" width="138" height="45" />
@@ -191,9 +245,10 @@ var youdao_conv_id = 271546;
 			<input type="hidden" id="cc" value="16064" />
 			<input type="hidden" id="cp" value="96931" />
 		</div>
-	</div>
+	</div> -->
 		<div id="tipOverlay" ></div>
-<!-------------------------------------弹窗lightbox  ----------------------------------------->
+<!--弹窗lightbox -->
+
 <div style="display:none;">
 	<!-- 设置默认投递简历 -->
 	<div id="setResume" class="popup" style="height:280px;">
@@ -203,33 +258,51 @@ var youdao_conv_id = 271546;
 	    	</tr>
 	    	<tr>
 	        	<td>
-                    <form  id="resumeSetForm" class="resumeSetForm">
+                  <form  class="resumeSetForm" method='get' action='jobdetail_tou'>
 	            		<label class="radio">
-	            			<input type="radio" name="resumeName" class="resume1" value="1"  />
-	            			在线简历：
-	            				            				<span class="red">在线简历还不完善，请完善后选择投递</span>
-	            				            		</label>
-            			<div class="setBtns">
+                    <input type="hidden" name='mes_id' value="{{$row->mes_id}}">
+                    <!-- <input type="radio" name="resumeName" class="resume1" value="1"  /> -->
+                    @foreach($data as $key=>$val)
+                    <input type="hidden" name='res_id' value="{{$val->res_id}}">
+                    @if($val->r_status==0)
+                      <span> 我目前已离职，可快速到岗 </span>
+                    @endif
+                    @if($val->r_status==1)
+                      <span> 我目前在职，但考虑换个新环境</span>
+                    @endif
+                    @if($val->r_status==2)
+                      <span> 观望有好的机会再考虑 </span>
+                    @endif
+                    @if($val->r_status==3)
+                      <span> 目前暂无跳槽打算 </span>
+                    @endif
+                    @if($val->r_status==4)
+                      <span> 应届毕业生 </span>
+                    @endif
+	            			
+                    @endforeach
+	            		</label>
+            			<!-- <div class="setBtns">
             											<a href="jianli" target="_blank">修改</a>
-            			</div>
-	            		<div class="clear"></div>
-	            		<label class="radio">
+            			</div> -->
+	            		<!-- <div class="clear"></div> -->
+	            		<!-- <label class="radio">
 	            			<input type="radio" name="resumeName" class="resume0" value="0"  />
 	            			附件简历：
 	            				            				<span class="uploadedResume red">暂无附件简历</span>
-	            				            		</label>
-	            		<div class="setBtns">
+	            				            		</label> -->
+	            		<!-- <div class="setBtns">
 	            				            				<a href="h/nearBy/downloadResume" class="downloadResume dn">下载</a> <span class="dn">|</span>
             					<a target="_blank" title="上传附件简历" class="reUpload">上传附件简历</a>
 	            				            			
             				<input title="支持word、pdf、ppt、txt、wps格式文件，大小不超过10M"  name="newResume" id="reUploadResume1" 
 	                         type="file" onchange="file_check(this,'h/nearBy/updateMyResume.json','reUploadResume1')" />
-            			</div>
-            			<div class="clear"></div>
-            			<span class="error" style="display:none;">只支持word、pdf、ppt、txt、wps格式文件，请重新上传</span>
-	            		<label class="bgPink">默认使用此简历直接投递，下次不再提示</label>
-	            		<span class="setTip error"></span>
-	            		<input type="submit" class="btn_profile_save btn_s" value="保存设置" />
+            			</div> -->
+            			<!-- <div class="clear"></div> -->
+            			<!-- <span class="error" style="display:none;">只支持word、pdf、ppt、txt、wps格式文件，请重新上传</span> -->
+	            		<label class="bgPink">祝您投标成功，找到一份好的工作</label>
+	            		<span class=" error"></span>
+	            		<input type="submit" class="btn_profile_save " value="投递" />
 	            	</form>
 	            </td>
 	        </tr>
@@ -244,7 +317,7 @@ var youdao_conv_id = 271546;
 	    	</tr>
 	    	<tr>
 	        	<td>
-                    <form  id="resumeSendForm" class="resumeSetForm">
+                  <form  id="resumeSendForm" class="resumeSetForm">
 	            		<label class="radio">
 	            			<input type="radio" name="resumeName" class="resume1" value="1"  />
 	            			在线简历：
@@ -301,7 +374,6 @@ var youdao_conv_id = 271546;
 	        </tr>
 	    </table>
 	</div><!--/#uploadFile-->
-	
 	<!-- 简历上传成功 -->
 	<div id="uploadFileSuccess" class="popup">
      	<h4>简历上传成功！</h4>
@@ -400,7 +472,7 @@ var youdao_conv_id = 271546;
 	            </tr>
 	        </table>
 		</form>
-    </div><!--/#infoBeforeDeliverResume-->
+  </div><!--/#infoBeforeDeliverResume-->
     
     <!-- 上传附件简历操作说明-重新上传 -->
     <div id="fileResumeUpload" class="popup">
@@ -462,7 +534,7 @@ var youdao_conv_id = 271546;
         	<tr>
             	<td align="center">
             		<input type="hidden" name="type" value="" />
-            		<a href="javascript:sendResume(,140204,true,true);" class="btn">确认投递</a>
+            		<a href="javascript:" class="btn">确认投递</a>
             		<a href="javascript:;" class="btn_s">放弃投递</a>
             		<a href="javascript:;" class="f20 edit_field">修改信息</a>
             	</td>
