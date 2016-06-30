@@ -85,6 +85,8 @@ Route::get('save_company_name', 'CompanyglController@save_company_name');
 Route::get('save_company_welfare', 'CompanyglController@save_company_welfare');
 //公司详情 添加公司的产品
 Route::post('save_company_product', 'CompanyglController@save_company_product');
+//公司详情 编辑公司的产品
+Route::post('save_company_save', 'CompanyglController@save_company_save');
 //公司详情  编辑公司介绍
 Route::get('save_company_introduce', 'CompanyglController@save_company_introduce');
 //公司详情  编辑 地点  领域   规模  主页 
