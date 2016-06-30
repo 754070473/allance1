@@ -22,6 +22,12 @@ Route::any('/main', 'PublicController@main');
 
 //展示招聘信息详情
 Route::get('/jobdetail', 'IndexController@jobdetail');
+//验证登录(email)
+Route::get('/jobdetail_login', 'IndexController@jobdetail_login');
+Route::get('/jobdetail_tou', 'IndexController@jobdetail_tou');
+//收藏职位
+Route::get('/collections_shoucang', 'IndexController@collections_shoucang');
+
 
 //展示招聘信息详情2
 Route::get('/jobdetail1', 'IndexController@jobdetail1');
@@ -72,7 +78,21 @@ Route::get('/companyupdate', 'AccountsetController@companyupdate');
 Route::get('/collections', 'CollectionsController@collections');
 
 //公司详情
-Route::get('/index04', 'CompanyglController@index04');
+    
+//公司详情 修改公司名称
+Route::get('save_company_name', 'CompanyglController@save_company_name');
+//公司详情  编辑公司的福利
+Route::get('save_company_welfare', 'CompanyglController@save_company_welfare');
+//公司详情 添加公司的产品
+Route::post('save_company_product', 'CompanyglController@save_company_product');
+//公司详情  编辑公司介绍
+Route::get('save_company_introduce', 'CompanyglController@save_company_introduce');
+//公司详情  编辑 地点  领域   规模  主页 
+Route::get('save_company_dlgz', 'CompanyglController@save_company_dlgz');
+//公司详情 编辑公司历程
+Route::get('save_company_course', 'CompanyglController@save_company_course');
+//公司详情 编辑创始人
+Route::get('save_company_founder', 'CompanyglController@save_company_founder');
 
 //申请公司认证
 Route::get('/auth', 'CompanyglController@auth');	
@@ -149,6 +169,7 @@ Route::get('/index06', 'PostofficeController@index06');
 
 //有效职位
 Route::get('/positions', 'CpzwglController@positions');
+
 //有效职位删除	
 Route::get('/ptdel','CpzwglController@ptdel');
 //有效职位下线

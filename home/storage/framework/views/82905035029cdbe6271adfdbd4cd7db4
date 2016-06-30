@@ -13,7 +13,7 @@
 <meta content="全国condition-公司列表-拉勾网-最专业的互联网招聘平台" name="keywords">
 <meta name="baidu-site-verification" content="QIQ6KC1oZ6" />
 
-    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <meta name="csrf-token" content="<?php echo e(csrf_token()); ?>">
 <!-- <div class="web_root"  style="display:none">h</div> -->
 <script type="text/javascript">
 var ctx = "h";
@@ -37,7 +37,7 @@ var youdao_conv_id = 271546;
 </head>
 <script type="text/javascript">
     $(function(){
-     $.get("{{url('top')}}",function(m){
+     $.get("<?php echo e(url('top')); ?>",function(m){
          $('#cache').html(m);
         
      })
@@ -68,12 +68,12 @@ var youdao_conv_id = 271546;
                                 	<a href="javascript:void(0)"  class="current" >全国</a> 
                                 	                                	|
                                 	                                </li>
-                                	                                @foreach($place as $k=>$plac)
+                                	                                <?php foreach($place as $k=>$plac): ?>
 	                                                            <li >
-                                	<a href="javascript:void(0)" id="i_{{$plac->pla_id}}" onclick="place({{$plac->pla_id}})" i_name="{{$plac->i_name}}">{{$plac->i_name}}</a> 
+                                	<a href="javascript:void(0)" id="i_<?php echo e($plac->pla_id); ?>" onclick="place(<?php echo e($plac->pla_id); ?>)" i_name="<?php echo e($plac->i_name); ?>"><?php echo e($plac->i_name); ?></a> 
                                 	                                	|
                                 	                                </li>
-                                	                                @endforeach
+                                	                                <?php endforeach; ?>
 	                            	  								    								    </li>
 	                        </ul>
 	                    </dt>
@@ -90,13 +90,13 @@ var youdao_conv_id = 271546;
 	                        <dl>
 	                            <dt>行业领域：</dt>
 	                            <dd>
-                                    @foreach($arr as  $k=>$v)
+                                    <?php foreach($arr as  $k=>$v): ?>
 
                                         <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
 
 
-                                        <a href="javascript:void(0)"  onclick="fun({{$v->me_id}})">{{$v->h_name}}</a>
-                                        @endforeach
+                                        <a href="javascript:void(0)"  onclick="fun(<?php echo e($v->me_id); ?>)"><?php echo e($v->h_name); ?></a>
+                                        <?php endforeach; ?>
 
 		                                	                                	                            </dd>
 	                        </dl>
@@ -130,8 +130,8 @@ var youdao_conv_id = 271546;
 	                    </dd>
 	                </dl>  
                   <ul class="hc_list reset" id="so">
-                <ul class="hc_list reset" id="so">
-                        @foreach($ar as  $k=>$v)
+                        <?php foreach($ar as  $k=>$v): ?>
+	               	               
 
 			                        <a href="h/c/25829" target="_blank">
 
@@ -140,37 +140,30 @@ var youdao_conv_id = 271546;
                                                 <?php }else{?>
                                             <li>
                                                 <?php } ?>
-                                                <a href="geren?mes_id={{$v->mes_id}}"  target="_blank">
+                                                <a href="geren?mes_id=<?php echo e($v->mes_id); ?>"  target="_blank">
                                                     <h3 title="CCIC">公司</h3>
 
 
                                                     <div class="comLogo">
 
-                                                        <img src="style/images/{{$v->m_logo}}" width="190" height="190" alt="CCIC" />
+                                                        <img src="style/images/c5e0d4d3dc9047c89986c9eca2feb277.png" width="190" height="190" alt="CCIC" />
                                                         <ul>
-                                                            <li>{{$v->m_name}}</li>
+                                                            <li><?php echo e($v->m_name); ?></li>
 
-                                                            <li> {{$v->h_name}}</li>
+                                                            <li> <?php echo e($v->h_name); ?></li>
 
                                                         </ul>
                                                     </div>
                                                 </a>
                                                 <ul class="reset ctags">
-                                                    <?php
-                                                    if(strpos($v->m_welfare,',')){
-                                                    $m_welfare = explode(',',$v->m_welfare);
-                                                    foreach($m_welfare as $vv){
-                                                    ?>
-                                                    <li><?php echo $vv?></li>
-                                                    <?php }}else{?>
-                                                    <li>{{$v->m_welfare}}</li>
-                                                    <?php }?>
+                                                    <li><?php echo e($v->m_course); ?></li>
+                                                    <li><?php echo e($v->m_welfare); ?></li>
 
                                                 </ul>
                                             </li>
-                                        @endforeach
-                                        </ul>
+                                        <?php endforeach; ?>
 
+</ul>
 		                		               	<div class="Pagination"></div>
 
             </div>
@@ -219,22 +212,22 @@ var youdao_conv_id = 271546;
 //	      pageSize: 5
 //	});
 
-   {{--function  ww(rr){--}}
-       {{--$.ajax({--}}
-           {{--type: "GET",--}}
-           {{--url: "{{url('type')}}",--}}
-           {{--data: "rr="+rr,--}}
-           {{--success: function(msg){--}}
+   <?php /*function  ww(rr){*/ ?>
+       <?php /*$.ajax({*/ ?>
+           <?php /*type: "GET",*/ ?>
+           <?php /*url: "<?php echo e(url('type')); ?>",*/ ?>
+           <?php /*data: "rr="+rr,*/ ?>
+           <?php /*success: function(msg){*/ ?>
 
-           {{--}--}}
-       {{--});--}}
+           <?php /*}*/ ?>
+       <?php /*});*/ ?>
 
-   {{--}--}}
+   <?php /*}*/ ?>
     function fun(me_id){
     	//alert(me_id);
         $.ajax({
             type: "GET",
-            url: "{{url('hang')}}",
+            url: "<?php echo e(url('hang')); ?>",
             data: "me_id="+me_id,
             success: function(msg){
             	//alert(msg);
@@ -247,7 +240,7 @@ function place(pla_id){
 	//alert(i_name);
          $.ajax({
             type: "GET",
-            url: "{{url('place_list')}}",
+            url: "<?php echo e(url('place_list')); ?>",
             data: "i_name="+i_name,
             success: function(msg){
             	//alert(msg);
@@ -260,7 +253,7 @@ function place(pla_id){
 //   alert(i_name);
 //          $.ajax({
 //             type: "GET",
-//             url: "{{url('gerenlist')}}",
+//             url: "<?php echo e(url('gerenlist')); ?>",
 //             data: "mes_id="+mes_id,
 //             success: function(msg){
 //               //alert(msg);
