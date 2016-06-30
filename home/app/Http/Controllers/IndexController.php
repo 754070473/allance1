@@ -50,6 +50,7 @@ class IndexController extends Controller {
                 $per_id = $pd;
                 $arr['data'] = DB::table('al_personal')
                         ->join('al_resume', 'al_resume.per_id', '=', 'al_personal.per_id')
+                        ->where('al_personal.per_id',$per_id)
                         ->get();
                 $user = DB::table('al_collect')->where('per_id', $per_id)->first();
                   if(empty($user))
@@ -70,6 +71,11 @@ class IndexController extends Controller {
                         
                     }
             }
+            $arr['data'] = DB::table('al_personal')
+                        ->join('al_resume', 'al_resume.per_id', '=', 'al_personal.per_id')
+                        ->where('al_personal.per_id',$per_id)
+                        ->get();
+                $arr['aa'] = 0;
                 // $per_id = 1;                     //测试用户id
                 $arr['row'] = DB::table('al_recruit')
                             ->join('al_place', 'al_place.pla_id', '=', 'al_recruit.pla_id')
@@ -110,6 +116,7 @@ class IndexController extends Controller {
                     }
                     
                 }
+                 $arr['aa'] = 0;
             return view("index.jobdetail",$arr);
         }
         // echo $per_id;

@@ -22,9 +22,14 @@ class CompanyglController extends Controller {
         // echo $mes_id;die;
         $data['arr'] = DB::table('al_com_message')
         ->leftjoin('al_recruit', 'al_recruit.mes_id', '=', 'al_com_message.mes_id')
-        // ->join('al_place','al_place.pla_id','=','al_com_message.m_place')
+        
         ->where('al_com_message.mes_id',$mes_id)
         ->first();
+        $data['aa'] = DB::table('al_com_message')
+        ->leftjoin('al_recruit', 'al_recruit.mes_id', '=', 'al_com_message.mes_id')
+        
+        ->where('al_com_message.mes_id',$mes_id)
+        ->get();
         // DB::table('al_com_message')
         // print_r($data['arr']);
         $m_welfare= $data['arr']->m_welfare;
@@ -100,11 +105,11 @@ class CompanyglController extends Controller {
         $companySize = Request::input('companySize');       //规模
         $companyUrl = Request::input('companyUrl');         //企业地址
         $mes_id = Request::input('me_id');         
-        $i_name = DB::table('al_place')->where('i_name', $city)->first();
-        $m_place = $i_name->pla_id;
+        // $i_name = DB::table('al_place')->where('i_name', $city)->first();
+        // $m_place = $i_name->pla_id;
         $res = DB::table('al_com_message')
             ->where('mes_id', $mes_id)
-            ->update(['m_place' => $m_place,'m_url'=>$companyUrl]);
+            ->update(['m_place' => $city,'m_url'=>$companyUrl]);
             if($res)
             {
                 echo 1;
@@ -125,9 +130,21 @@ class CompanyglController extends Controller {
     //编辑创始人
     public function save_company_founder()
     {
-       $name =  Request::input('name'); 
+       $leadername =  Request::input('name'); 
        $position =  Request::input('position'); 
        $remark =  Request::input('remark'); 
+       $mes_id =  Request::input('me_id'); 
+       $res = DB::table('al_com_message')
+            ->where('mes_id', $mes_id)
+            ->update(['leadername' => $leadername,'position'=>$position,'remark'=>$remark]);
+        if($res)
+        {
+            echo 1;
+        }
+        else
+        {
+            echo 0;
+        }
         
     }
 
@@ -136,6 +153,26 @@ class CompanyglController extends Controller {
     {
         $data = Request::input();
         print_r($data);
+    }
+    //编辑公司产品
+    public function save_company_save()
+    {
+        $product = Request::input('product');
+        $productUrl = Request::input('productUrl');
+        $productProfile = Request::input('productProfile');
+        $mes_id = Request::input('mes_id');
+        $res = DB::table('al_com_message')
+            ->where('mes_id', $mes_id)
+            ->update(['product' => $product,'productUrl'=>$productUrl,'productProfile'=>$productProfile]);
+        if($res)
+        {
+            echo 1;
+        }
+        else
+        {
+            echo 0;
+        }
+
     }
 
 	//申请公司认证

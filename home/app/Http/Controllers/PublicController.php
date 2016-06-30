@@ -22,7 +22,59 @@ class PublicController extends Controller {
 		if(!empty($per_id)){
 			$query['key']="1";//判断是否是个人登录
 		}else if(!empty($com_id)){
-			$query['key']="2";//企业登录
+			
+            //根据企业id查询在企业表中是否有企业id(mes_id)
+            $user = DB::table('al_company')->where('com_id', $com_id)->first();
+            $mes_id = $user->mes_id;
+            if(empty($mes_id))
+            {
+                $query['dz'] = 'index01';
+            }
+            else
+            {
+                $mes = DB::table('al_com_message')->where('mes_id', $mes_id)->first();
+                $m_name = $mes->m_name;
+                $m_url = $mes->m_url;
+                $m_place = $mes->m_place;
+                $m_type = $mes->m_type;
+                $me_id = $mes->me_id;
+                $welfare = $mes->m_welfare;
+                $leadername = $mes->leadername;  //创始人姓名
+                $position = $mes->position;  //创始人 职位
+                $weibo = $mes->weibo;  //创始人微博
+                $remark = $mes->remark;  //创始人介绍
+                $product = $mes->product;  //产品名称
+                $productUrl = $mes->productUrl;  //产品地址
+                $productProfile = $mes->productProfile;  //产品地址
+                $m_logo = $mes->m_logo;  //公司logo
+                $m_desc = $mes->m_desc;  //产品介绍
+                if(empty($m_name)||empty($m_url)||empty($m_place)||empty($m_type)||empty($me_id))
+                {
+                    $query['dz'] = 'index01';  //添加企业信息1
+                }
+                elseif(isset($m_name)&&isset($m_url)&&isset($m_place)&&isset($m_type)&&isset($me_id)||empty($welfare))
+                {
+                    $query['dz'] = 'tag';       //添加企业信息2
+                }
+                elseif(isset($m_name)&&isset($m_url)&&isset($m_place)&&isset($m_type)&&isset($me_id)&&isset($welfare)||empty($leadername)||empty($position)||empty($weibo)||empty($remark))
+                {
+                    $query['dz'] = 'founder';   //添加企业信息3
+                }
+                elseif(isset($m_name)&&isset($m_url)&&isset($m_place)&&isset($m_type)&&isset($me_id)&&isset($welfare)&&isset($leadername)&&isset($position)&&isset($weibo)&&isset($remark)||empty($product)||empty($productProfile)||empty($productUrl))
+                {
+                    $query['dz'] = 'index02';   //添加企业信息4
+                }
+                elseif(isset($m_name)&&isset($m_url)&&isset($m_place)&&isset($m_type)&&isset($me_id)&&isset($welfare)&&isset($leadername)&&isset($position)&&isset($weibo)&&isset($remark)&&isset($product)&&isset($productProfile)&&isset($productUrl)||empty($m_logo)||empty($m_desc))
+                {
+                    $query['dz'] = 'index03';   //添加企业信息5
+                }
+                else
+                {
+                    $query['dz'] = 'index03';   //企业信息
+                }
+                $query['key']="2";//企业登录
+            }
+
 		}else{
 			$query['key']="0";//没登录
 		}
@@ -35,7 +87,7 @@ class PublicController extends Controller {
             //     is_file($cacheFile); 
             // if (!is_file($cacheFile) || time() - filemtime($cacheFile) > $cacheTime) {  
             //<!--页面输出部分内容。也是ob_get_contents()函数取得的全部内容-->
-            
+                // print_r($query);
                  return view("public.top",$query);
 
             // $content = ob_get_contents(); //取得php页面输出的全部内容   

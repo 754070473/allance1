@@ -73,7 +73,9 @@ var youdao_conv_id = 271546;
                 <li ><a href="index.php">首页</a></li>
                  <li ><a href="company" >简历</a></li>
                   <li ><a href="companylist">公司</a></li>
-                  <li ><a href="index01" target="_blank">企业信息中心</a></li>
+
+                  <li ><a href="{{$dz}}" target="_blank">企业信息中心</a></li>
+
                  
                   <li ><a href="create" rel="nofollow">发布职位</a></li>
             </ul>
@@ -85,7 +87,9 @@ var youdao_conv_id = 271546;
                 </dt>
                     
                     <dd><a href="canInterviewResumes">收到的简历</a></dd>
-                    <dd class="btm"><a href="index01">企业信息中心</a></dd>
+
+                    <dd class="btm"><a href="{{$dz}}">企业信息中心</a></dd>
+
                     <dd><a href="create">我要招人</a></dd>
                     <dd><a href="accountBind">帐号设置</a></dd>
                     <dd class="login"><a rel="nofollow" href="logout">退出</a></dd>
