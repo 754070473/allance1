@@ -6,7 +6,9 @@
 <!-- end 云适配 -->
 <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
 <title>拉勾网-最专业的互联网招聘平台</title>
-<meta content="23635710066417756375" property="qc:admins">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
+    <meta content="23635710066417756375" property="qc:admins">
 <meta name="description" content="拉勾网是3W旗下的互联网领域垂直招聘网站">
 <meta name="keywords" content="拉勾,拉勾网,拉勾招聘,拉钩, 拉钩网 ,互联网招聘,拉勾互联网招聘, 移动互联网招聘, 垂直互联网招聘, 微信招聘, 微博招聘, 拉勾官网, 拉勾百科,跳槽, 高薪职位, 互联网圈子, IT招聘, 职场招聘, 猎头招聘,O2O招聘, LBS招聘, 社交招聘, 校园招聘, 校招,社会招聘,社招">
 <meta content="QIQ6KC1oZ6" name="baidu-site-verification">
@@ -46,25 +48,25 @@ var youdao_conv_id = 271546;
 <!--头部-->
 <div id="cache">
 </div>
-    <div id="container">
+    <div id="container"   style="padding-top:20px" >
         <div class="sidebar">
             <a class="btn_create" href="create.html">发布新职位</a>
             <dl class="company_center_aside">
                 <dt>我收到的简历</dt>
-                <dd>
-                    <a href="">待处理简历</a>
-                </dd>
                 <dd class="current">
-                    <a href="canInterviewResumes.html">待定简历</a>
+                    <a href="canInterviewResumes">待处理简历</a>
                 </dd>
                 <dd>
-                    <a href="haveNoticeResumes.html">已通知面试简历</a>
+                    <a href="canInterviewResumes">待定简历</a>
                 </dd>
                 <dd>
-                    <a href="haveRefuseResumes.html">不合适简历</a>
+                    <a href="haveNotice">已通知面试简历</a>
+                </dd>
+                <dd>
+                    <a href="haveRefuseResumes">不合适简历</a>
                 </dd>
                 <dd class="btm">
-                    <a href="autoFilterResumes.html">自动过滤简历</a>
+                    <a href="autoFilterResumes">自动过滤简历</a>
                 </dd>
             </dl>
             <dl class="company_center_aside">
@@ -82,7 +84,7 @@ var youdao_conv_id = 271546;
                 <dt>
                 <h1>
                     <em></em>
-                    待定简历  <span>（共1份）</span>                        </h1>
+                    简历处理                         </h1>
                 </dt>
                 <dd>
                     <form action="canInterviewResumes.html" method="get" id="filterForm">
@@ -141,7 +143,8 @@ var youdao_conv_id = 271546;
                             </dl>
                             <input type="hidden" value="0" name="filterStatus" id="filterStatus">
                             <input type="hidden" value="" name="positionId" id="positionId">
-                        </div><!-- end .filter_options -->	                        	                        		                        <ul class="reset resumeLists">
+                        </div><!-- end .filter_options -->
+                        @foreach($users as $v)                    <ul class="reset resumeLists">
                             <li data-id="1686182" class="onlineResume">
                                 <label class="checkbox">
                                     <input type="checkbox">
@@ -152,28 +155,54 @@ var youdao_conv_id = 271546;
                                         <img src="style/images/default_headpic.png">
                                     </a>
                                     <div class="resumeIntro">
-                                        @foreach($users as $v)
+                                        <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
+
+
                                         <h3 class="unread">
-                                            <a target="_blank" title="预览jason的简历" href="resumeView.html?deliverId=1686182">
+                                            <a target="_blank" title="预览jason的简历" href="pre?&id={{$v->res_id}}">
                                                 {{$v->r_name}}
                                             </a>
                                             <em></em>
                                         </h3>
                                         <span class="fr">投递时间： {{$v->last_time}}</span>
                                         <div>
-                                            {{$v->r_name}}			                                        	 / 男                                       	/ 大专 			                                        	/ 3年  			                                        	/ 广州 			                                            			                                        		<br>
-                                            高级产品经理 · 上海辉硕科技有限公司 | 本科 · 北京大学
+                                            {{$v->r_name}}			                                        	 / @if($v->r_sex==1)男@else() 女@endif                                       	/  @if($v->t_edu==0)初中@elseif($v->t_edu==1) 高中
+                                            @elseif($v->t_edu==2) 中技
+                                            @elseif($v->t_edu==3) 中专
+                                            @elseif($v->t_edu==4) 大专
+                                            @elseif($v->t_edu==5) 本科
+                                            @elseif($v->t_edu==6) 硕士
+                                            @elseif($v->t_edu==7) 博士
+                                            @else($v->t_edu==8) 博士后
+                                            @endif  		                                        	/
+                                            @if($v->r_suffer==0)应届生@elseif($v->r_suffer==1) 无经验
+                                            @elseif($v->r_suffer==2) 1年以下
+                                            @elseif($v->r_suffer==3)1-3年
+                                            @elseif($v->r_suffer==4) 3-5年
+                                            @elseif($v->r_suffer==5) 5-10年
+                                            @elseiif($v->r_suffer==6)10年以上
+
+                                            @endif    			                                        	/ {{$v->r_name}} 			                                            			                                        		<br>
+                                            高级产品经理 · 上海辉硕科技有限公司 |  北京大学
+
                                         </div>
                                         <div class="jdpublisher">
 				                                        <span>
-				                                        	应聘职位：<a title="随便写" target="_blank" href="http://www.lagou.com/jobs/149594.html">随便写</a>
+				                                        	应聘职位：<a title="随便写" target="_blank" href="http://www.lagou.com/jobs/149594.html"> 	                                     @if($v->post_id==0)网络工程师@elseif($v->post_id==1)系统工程师
+                                                                @elseif($v->post_id==2) 运维工程师
+                                                                @elseif($v->post_id==3)项目经理
+                                                                @elseif($v->post_id==4)技术总监
+                                                                @elseif($v->post_id==17) 测试经理
+                                                                @elseif($v->post_id==6)构架师
+                                                            @endif
+
 				                                       						                                        </span>
                                         </div>
-                                            @endforeach
+
                                     </div>
                                     <div class="links">
-                                        <a data-deliverid="1686182" data-name="jason" data-positionid="149594" data-email="888888888@qq.com" class="resume_notice" href="javascript:void(0)">通知面试</a>
-                                        <a data-deliverid="1686182" class="resume_refuse" href="javascript:void(0)">不合适</a>
+                                        <a class="resume_notice" id="id_{{$v->res_id}}" r_name="{{$v->r_name}}" href="javascript:void(0)" onclick="tong({{$v->res_id}})">通知面试</a>
+                                        <a data-deliverid="1686182" class="resume_refuse" href="javascript:void(0)" onclick="fun({{$v->res_id}})">不合适</a>
                                         <a data-resumename="jason的简历" data-positionname="随便写" data-deliverid="1686182" data-positionid="149594" data-resumekey="1ccca806e13637f7b1a4560f80f08057" data-forwardcount="1" class="resume_forward" href="javascript:void(0)">
                                             转发
                                             <span>(1人)</span>
@@ -181,11 +210,12 @@ var youdao_conv_id = 271546;
                                     </div>
                                 </div>
                                 <div class="contactInfo">
-                                    <span class="c9">电话：</span>18650216666   &nbsp;&nbsp;&nbsp;
-                                    <span class="c9">邮箱：</span><a href="mailto:888888888@qq.com">888888888@qq.com</a>
+                                    <span class="c9">电话：</span>{{$v->r_phone}} 		  &nbsp;&nbsp;&nbsp;
+                                    <span class="c9">邮箱：</span><a href="mailto:888888888@qq.com">{{$v->r_email}}</a>
                                 </div>
                             </li>
                         </ul><!-- end .resumeLists -->
+                        @endforeach
                     </form>
                 </dd>
             </dl><!-- end .company_center_content -->
@@ -201,13 +231,13 @@ var youdao_conv_id = 271546;
                             <td width="20%" align="right" class="c9">收件人  </td>
                             <td width="80%">
                                 <span class="c9" id="receiveEmail"></span>
-                                <input type="hidden" value="" name="email">
+                                <input type="hidden" value="" name="" id="rec_id">
                             </td>
                         </tr>
                         <tr>
                             <td align="right"><span class="redstar">*</span>主题</td>
                             <td>
-                                <input type="text" placeholder="公司：职位名称面试通知" name="subject">
+                                <input type="text" placeholder="公司：职位名称面试通知" name="subject" id="subject">
                             </td>
                         </tr>
                         <tr>
@@ -219,31 +249,31 @@ var youdao_conv_id = 271546;
                         <tr>
                             <td align="right"><span class="redstar">*</span>面试地点</td>
                             <td>
-                                <input type="text" name="interAdd">
+                                <input type="text" name="interAdd" id="interAdd">
                             </td>
                         </tr>
                         <tr>
                             <td align="right">联系人</td>
                             <td>
-                                <input type="text" name="linkMan">
+                                <input type="text" name="linkMan" id="linkMan">
                             </td>
                         </tr>
                         <tr>
                             <td align="right"><span class="redstar">*</span>联系电话</td>
                             <td>
-                                <input type="text" name="linkPhone">
+                                <input type="text" name="linkPhone" id="linkPhone">
                             </td>
                         </tr>
                         <tr>
                             <td valign="top" align="right">补充内容</td>
                             <td>
-                                <textarea name="content"></textarea>
+                                <textarea name="content" id="content"></textarea>
                             </td>
                         </tr>
                         <tr>
                             <td></td>
                             <td>
-                                <input type="submit" value="发送" class="btn">
+                                <input type="submit" value="发送" class="btn" onclick="ck_inform()">
                                 <a class="emailPreview" href="javascript:;">预览</a>
                             </td>
                         </tr>
@@ -346,17 +376,17 @@ var youdao_conv_id = 271546;
                             </td>
                         </tr>
                         <tr>
-                            <td>
-	             		<textarea name="content">非常荣幸收到您的简历，在我们仔细阅读您的简历之后，却不得不很遗憾的通知您：
-您的简历与该职位的定位有些不匹配，因此无法进入面试。
+                            <td><input type="hidden" id="del_id"/>
+                                        <textarea name="content" id="del_content">非常荣幸收到您的简历，在我们仔细阅读您的简历之后，却不得不很遗憾的通知您：
+                您的简历与该职位的定位有些不匹配，因此无法进入面试。
 
-但您的信息已录入我司人才储备库，当有合适您的职位开放时我们将第一时间联系您，希望在未来我们有机会成为一起拼搏的同事；
-再次感谢您对我们的信任，祝您早日找到满意的工作。</textarea>
+                但您的信息已录入我司人才储备库，当有合适您的职位开放时我们将第一时间联系您，希望在未来我们有机会成为一起拼搏的同事；
+                再次感谢您对我们的信任，祝您早日找到满意的工作。</textarea>
                             </td>
                         </tr>
                         <tr>
                             <td>
-                                <input type="submit" value="确认不合适" class="btn">
+                                <input type="submit" value="确认不合适" class="btn" onclick="ck_del()">
                                 <a class="emial_cancel" href="javascript:;">取消</a>
                             </td>
                         </tr>
@@ -410,3 +440,79 @@ var youdao_conv_id = 271546;
 </div>
 </body>
 </html>
+<script>
+    function  fun(id){
+        $('#del_id').val(id);
+        $.colorbox({
+            inline: !0,
+            href: "#confirmRefuse",
+            title: "不合适"
+        });
+    }
+    function ck_del()
+    {
+        var id = $('#del_id').val();
+        var content = $('#del_content').val();
+        $.ajax({
+            type: "get",
+            url: "{{url('can')}}",
+             data: "id="+id+'&content='+content,
+             headers: {
+             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+             },
+                success: function(msg){
+                if(msg==1){
+                    $.colorbox({
+                        inline: !0,
+                        href: "#refuseMailSuccess",
+                        title: "不合适"
+                    });
+                }
+            }
+        });
+    }
+    function  tong(id){
+        var r_name = $('#id_'+id).attr('r_name');
+        $('#receiveEmail').html(r_name);
+        $('#rec_id').val(id);
+        $.colorbox({
+            inline: !0,
+            href: "#noticeInterview",
+            title: "通知面试"
+        });
+    }
+
+    function ck_inform(){
+		//主题
+        var subject = $('#subject').val();
+		//面试时间
+		var date = $('#datetimepicker').val();
+		//面试地点
+		var interAdd = $('#interAdd').val()
+		//联系人
+		var linkMan = $('#linkMan').val();
+		//联系电话
+		var linkPhone = $('#linkPhone').val();
+		//补充内容
+		var content = $('#content').val();
+		//id
+		var rec_id = $('#rec_id').val();
+         $.ajax({
+             type: "get",
+             url: "{{url('tong')}}",
+             data: "id="+rec_id+'&subject='+subject+'&date='+date+'&place='+interAdd+'&man='+linkMan+'&phone='+linkPhone+'&content='+content,
+             headers: {
+             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+             },
+             success: function(msg){
+                 if(msg==1){
+                     $.colorbox({
+                         inline: !0,
+                         href: "#noticeInterviewSuccess",
+                         title: "通知成功"
+                     });
+                 }
+             }
+         });
+	}
+</script>

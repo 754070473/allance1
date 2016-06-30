@@ -99,7 +99,7 @@ var youdao_conv_id = 271546;
                            	                        </h1>
                     </dt>
                     <dd>
-                    	<div class="ccc_tr">今日已发布 <span>0</span> 个职位   还可发布 <span>5</span> 个职位</div>
+                    	
                     	<form action="{{url('postAdd')}}" method="post" id="jobForm">
                     		<input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
                             <input type="hidden" value="" name="id">
@@ -384,7 +384,7 @@ var youdao_conv_id = 271546;
                                 	<td>推广时间</td>
                                 	<td>
                                 		<input type="hidden" id="r_time" value="" name="r_time">
-                                        <input type="button" value="请选择推广类型" id="select_time" class="selectr selectr_380"  name="r_time" >                                      
+                                        <input type="button" value="请选择推广时间" id="select_time" class="selectr selectr_380"  name="r_time" >                                      
                                         <div class="boxUpDown boxUpDown_380 dn" id="box_time" style="display: none;">
                                             <ul>
                                                 
@@ -404,8 +404,8 @@ var youdao_conv_id = 271546;
                                 <tr>
                                 	<td width="25"></td>
                                 	<td colspan="2">
-                                    	<input type="submit" value="预览" id="jobPreview" class="btn_32">
-                                    	<input type="button" value="发布" id="formSubmit" class="btn_32">
+                                    	<input type="button" value="预览" id="formSubmit" class="btn_32">
+                                    	<input type="submit" value="发布" id="jobPreview" class="btn_32">
                                     </td>
                                 </tr>
                          	</tbody></table>

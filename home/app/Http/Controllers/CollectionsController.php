@@ -10,6 +10,8 @@ class CollectionsController extends Controller{
     //我收藏的职位
 	public  function collections(){
 		$id = session::get('per_id');
+        // $rec_id = Request::input('rec_id');
+
 		$id = 1;
 		$data['arr'] = DB::table('al_collect')         
             ->join('al_personal', function($join)  
@@ -29,6 +31,7 @@ class CollectionsController extends Controller{
             	$join->on('al_com_message.m_place','=','al_place.pla_id');
             })
             ->where('al_collect.per_id',$id)
+            // ->where('al_recruit.rec_id',$rec_id)
             ->get();
             // print_r($data);
            

@@ -6,11 +6,11 @@
                                 <h2>{{$val['i_name']}}<span></span></h2>
                                         @foreach($val['son'] as $ke=>$va)
                                         @if($va['num'] == 1)
-                                        <a href="{{url('/list')}}?i_name={{$va['i_name']}}">{{$va['i_name']}}</a>
+                                        <a href="{{url('search')}}?name={{$va['i_name']}}">{{$va['i_name']}}</a>
                                         @endif
                                             @foreach($va['son'] as $k=>$v)
                                                 @if($v['num'] == 1)
-                                        <a href="{{url('/list')}}?i_name={{$v['i_name']}}">{{$v['i_name']}}</a>
+                                        <a href="{{url('search')}}?name={{$v['i_name']}}">{{$v['i_name']}}</a>
                                             @endif
                                             @endforeach
                                             @endforeach
@@ -19,16 +19,16 @@
                             @foreach($val['son'] as $ke=>$va)
 					   		<dl class="reset">
 					        		<dt>
-					        			<a href="{{url('/list')}}?i_name={{$va['i_name']}}">
+					        			<a href="{{url('search')}}?name={{$va['i_name']}}">
 					        				{{$va['i_name']}}
 					        			</a>
 					        		</dt>
 						        	<dd>
                                         @foreach($va['son'] as $k=>$v)
                                             @if($v['num'] == 1)
-                                         <a href="{{url('/list')}}?i_name={{$v['i_name']}}" class="curr" >{{$v['i_name']}}</a>
+                                         <a href="{{url('search')}}?name={{$v['i_name']}}" class="curr" >{{$v['i_name']}}</a>
                                         @else
-                                         <a href="{{url('/list')}}?i_name={{$v['i_name']}}" >{{$v['i_name']}}</a>
+                                         <a href="{{url('search')}}?name={{$v['i_name']}}" >{{$v['i_name']}}</a>
                                             @endif
                                         @endforeach
 							         </dd>

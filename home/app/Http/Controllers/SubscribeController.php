@@ -57,6 +57,7 @@ class SubscribeController extends Controller{
             if(empty($arr)) {
                 $re = DB::insert('insert into al_subscrip (s_email, s_day, s_job, s_place, s_stage, s_industry, s_salary, s_time,next_time, per_id) values (?, ?,?,?,?,?,?,?,?,?)', [$email, $day, $job, $city, $stage, $industry, $salary, $time,$next_time, $per_id]);
                 if ($re) {
+                    $this->userlog('订阅职位');
                     echo 1;
                 } else {
                     echo 2;
@@ -68,6 +69,7 @@ class SubscribeController extends Controller{
                     ->where('per_id',$per_id)
                     ->update(['s_email' => $email,'s_day'=>$day,'s_job'=>$job,'s_place'=>$city,'s_stage'=>$stage,'s_industry'=>$industry,'s_salary'=>$salary,'s_time'=>$time,'next_time'=>$next_time]);
                 if ($re) {
+                    $this->userlog('修改订阅');
                     echo 1;
                 } else {
                     echo 2;
@@ -84,12 +86,14 @@ class SubscribeController extends Controller{
         }else{
             $re = DB::table('al_subscrip')->where('per_id', '=', $per_id)->delete();
             if($re){
+                $this->userlog('退订职位');
                 echo 1;
             }else{
                 echo 0;
             }
         }
     }
+
     //订阅邮箱推送
     public function send()
     {

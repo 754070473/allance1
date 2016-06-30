@@ -14,23 +14,55 @@ class ReController extends Controller
     //展示首页面
     public function companylist()
     {
+    	 $place = DB::table('al_place')->where('p_pid',0)->get();
         $users = DB::table('al_hang')->get();
         $user = DB::table('al_com_message')
             ->join('al_hang', 'al_com_message.me_id', '=', 'al_hang.me_id')
             ->select('*')
             ->get();
         // print_r($user);die;
-        return view("index.companylist",["arr"=>$users],["ar"=>$user]);
+        return view("index.companylist",["arr"=>$users,"ar"=>$user,"place"=>$place]);
     }
-    public function hang(Request $request)
+    //个人地址找企业
+    public function place_list(Request $request){
+    	//echo "1111111";die;
+    	$i_name=$request->input('i_name');
+    	//echo "$i_name";die;
+    	 session::put('w_name',$i_name);
+    	 $user = DB::table('al_com_message')
+        ->join('al_hang', 'al_com_message.me_id', '=', 'al_hang.me_id')
+           ->where('m_place',$i_name)
+            ->select('*')
+            ->get();
+            //echo "$user";die;
+           
+return view("index.companyshow",["ar"=>$user]);
+    } 
+    //个人公司规模找企业
+    public function type(Request $request)
     {
 
         $type=$request->input('rr');
   //echo $type;die;
-         session::put('type',$type);
-        //$ty=session::get('type');
-        //echo $ty;die;
-        $user = DB::table('al_com_message')
+         session::put('rr',$type);
+         if( session::get('w_name')){
+         	$i_name=session::get('w_name');
+         	 $place = DB::table('al_place')->where('p_pid',0)->get();
+        $users = DB::table('al_hang')->get();
+          $user = DB::table('al_com_message')
+            ->join('al_hang', 'al_com_message.me_id', '=', 'al_hang.me_id')
+            ->select('*')
+            ->where("m_type",$type)
+             ->where("m_place",$i_name)
+            ->get();
+
+       $use = DB::table('al_hang')->get();
+        //print_r($use);die;
+         return view("index.companylist",["arr"=>$users,"ar"=>$user,"place"=>$place]);
+         }else{
+         	 $place = DB::table('al_place')->where('p_pid',0)->get();
+        $users = DB::table('al_hang')->get();
+         	 $user = DB::table('al_com_message')
             ->join('al_hang', 'al_com_message.me_id', '=', 'al_hang.me_id')
             ->select('*')
             ->where("m_type",$type)
@@ -38,20 +70,62 @@ class ReController extends Controller
 
        $use = DB::table('al_hang')->get();
         //print_r($use);die;
-        return view("index.companylist",["ar"=>$user,'arr'=> $use]);
+       return view("index.companylist",["arr"=>$users,"ar"=>$user,"place"=>$place]);
+         }
+        
+  
+       
 
     }
-    public function han(Request $request)
+    public function hang(Request $request)
     {
-
-        $id=$request->input('id');
-        //print_r($id);die;
-       $use = DB::table('al_com_message')->where("me_id",$id)->get();
-       // $user = DB::table('al_hang')->get();
-        //print_r($use);die;
-        return view("index.companyshow",["ar"=>$use]);
-
+    	  $me_id=$request->input('me_id');
+    	 // echo "$me_id";die;
+           if(session::get('w_name')){
+           	  $me_id=$request->input('me_id');
+	           	$i_name=session::get('w_name');
+	             $user = DB::table('al_com_message')
+	               ->join('al_hang', 'al_com_message.me_id', '=', 'al_hang.me_id')
+	               
+	               ->where('m_place',$i_name)
+	                ->where('al_com_message.me_id',$me_id)
+	               ->get();
+	                return view("index.companyshow",["ar"=>$user]);
+           }else if(session::get('w_name') && session::get('rr')){
+           	  $me_id=$request->input('me_id');
+	          $i_name=session::get('w_name');
+	           $rr=session::get('rr');
+	             $user = DB::table('al_com_message')
+	               ->join('al_hang', 'al_com_message.me_id', '=', 'al_hang.me_id')
+	             
+	               ->where('m_place',$i_name)
+	               ->where('al_com_message.me_id',$me_id)
+	               ->where('m_type',$rr)
+	               ->get();
+	               //echo "$rr";die;
+	               return view("index.companyshow",["ar"=>$user]);
+           }else{
+           	  $me_id=$request->input('me_id');
+           	  //echo "$me_id";die;
+           	$user = DB::table('al_com_message')
+	               ->join('al_hang', 'al_com_message.me_id', '=', 'al_hang.me_id')
+	              
+	               ->where('al_com_message.me_id',$me_id)
+	               ->get();
+	           //echo"$user";die;
+                           return view("index.companyshow",["ar"=>$user]);
+           }
     }
-
+public function geren(Request $request){
+             $mes_id=$request->input('mes_id');
+              //echo "$mes_id";die;
+            $user = DB::table('al_com_message')
+                 ->join('al_hang', 'al_com_message.me_id', '=', 'al_hang.me_id')
+                 ->select('*')
+                 ->where('al_com_message.mes_id',$mes_id)
+                 ->get();
+              //print_r"$user";die;
+                           return view("index.gerenlist",["ar"=>$user]);
+}
 
 }

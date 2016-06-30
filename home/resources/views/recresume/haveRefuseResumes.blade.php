@@ -3,7 +3,9 @@
 </script><script type="text/javascript" async="" src="style/js/conversion.js"></script><script src="style/js/allmobilize.min.js" charset="utf-8" id="allmobilize"></script><style type="text/css"></style>
 <meta content="no-siteapp" http-equiv="Cache-Control">
 <link  media="handheld" rel="alternate">
-<!-- end 云适配 -->
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
+    <!-- end 云适配 -->
 <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
 <title>拉勾网-最专业的互联网招聘平台</title>
 <meta content="23635710066417756375" property="qc:admins">
@@ -48,7 +50,7 @@ var youdao_conv_id = 271546;
 <div id="cache">
 
 </div>
-    <div id="container">
+    <div id="container" style="padding-top:20px" >
                 	<div class="sidebar">
         		            	<a class="btn_create" href="create">发布新职位</a>
             	                <dl class="company_center_aside">
@@ -60,7 +62,7 @@ var youdao_conv_id = 271546;
 		<a href="canInterviewResumes">待定简历</a>
 	</dd>
 	<dd>
-		<a href="haveNoticeResumes">已通知面试简历</a>
+		<a href="haveNotice">已通知面试简历</a>
 	</dd>
 	<dd class="current">
 		<a href="haveRefuseResumes">不合适简历</a>
@@ -75,7 +77,7 @@ var youdao_conv_id = 271546;
 		<a href="positions">有效职位</a>
 	</dd>
 	<dd>
-		<a href="positions">已下线职位</a>
+		<a href="unpositions">已下线职位</a>
 	</dd>
 	</dl>
             </div><!-- end .sidebar -->
@@ -84,7 +86,7 @@ var youdao_conv_id = 271546;
                     <dt>
                         <h1>
                             <em></em>
-                           	 不合适简历 <span>（共1份）</span>                        </h1>
+                           	 不合适简历                       </h1>
                     </dt>
                     <dd>
                     	<form action="haveRefuseResumes" method="get" id="filterForm">
@@ -143,45 +145,80 @@ var youdao_conv_id = 271546;
      </dl>
           <input type="hidden" value="0" name="filterStatus" id="filterStatus">
      <input type="hidden" value="" name="positionId" id="positionId">
- </div><!-- end .filter_options -->	                        	                        		                        <ul class="reset resumeLists">
-		                            			                            <li data-id="1686182" class="onlineResume">
-			                                <label class="checkbox">
-			                                    <input type="checkbox">
-			                                    <i></i>
-			                                </label>
-			                                <div class="resumeShow">
-			                                				                                    <a title="预览在线简历" target="_blank" class="resumeImg" href="resumeView?deliverId=1686182">
-			                                    	<img src="style/images/default_headpic.png">
-			                                    </a>
-			                                    			                                    <div class="resumeIntro">
-			                                        <h3 class="unread">
-																	                                        	<a target="_blank" title="预览jason的简历" href="resumeView?deliverId=1686182">
-			                                        				                                            jason的简历
-			                                        	</a>
-			                                        					                           	 			<em></em>
-			                                        </h3> 
-			                                        <span class="fr">投递时间：2014-07-01 17:08</span>
-			                                        <div> 
-			                                        	jason  			                                        	 / 男 			                                        	/ 大专 			                                        	/ 3年  			                                        	/ 广州 			                                           				                                        		<br>
-			                                            	高级产品经理 · 上海辉硕科技有限公司 | 本科 · 北京大学
-			                                            			                                        </div>
-			                                        <div class="jdpublisher">
+ </div><!-- end .filter_options -->
+                            <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
+                            <ul class="reset resumeLists" >
+                        @foreach($users as $v)
+                                <li data-id="1686182" class="onlineResume" id="so{{$v->res_id}}">
+                                    <label class="checkbox">
+                                        <input type="checkbox">
+                                        <i></i>
+                                    </label>
+                                    <div class="resumeShow" >
+                                        <a title="预览在线简历" target="_blank" class="resumeImg" href="resumeView.html?deliverId=1686182">
+                                            <img src="style/images/default_headpic.png">
+                                        </a>
+                                        <div class="resumeIntro">
+                                            <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
+
+
+                                            <h3 class="unread">
+                                                <a target="_blank" title="预览jason的简历" href="pre?&id={{$v->res_id}}">
+                                                    {{$v->r_name}}
+                                                </a>
+                                                <em></em>
+                                            </h3>
+                                            <span class="fr">投递时间： {{$v->last_time}}</span>
+                                            <div>
+                                                {{$v->r_name}}			                                        	 / @if($v->r_sex==1)男@else() 女@endif                                       	/  @if($v->t_edu==0)初中@elseif($v->t_edu==1) 高中
+                                                @elseif($v->t_edu==2) 中技
+                                                @elseif($v->t_edu==3) 中专
+                                                @elseif($v->t_edu==4) 大专
+                                                @elseif($v->t_edu==5) 本科
+                                                @elseif($v->t_edu==6) 硕士
+                                                @elseif($v->t_edu==7) 博士
+                                                @else($v->t_edu==8) 博士后
+                                                @endif  		                                        	/
+                                                @if($v->r_suffer==0)应届生@elseif($v->r_suffer==1) 无经验
+                                                @elseif($v->r_suffer==2) 1年以下
+                                                @elseif($v->r_suffer==3)1-3年
+                                                @elseif($v->r_suffer==4) 3-5年
+                                                @elseif($v->r_suffer==5) 5-10年
+                                                @elseiif($v->r_suffer==6)10年以上
+
+                                                @endif    			                                        	/ 		                                            			                                        		<br>
+                                                高级产品经理 · 上海辉硕科技有限公司 |  北京大学
+
+                                            </div>
+                                            <div class="jdpublisher">
 				                                        <span>
-				                                        	应聘职位：<a title="随便写" target="_blank" href="http://www.lagou.com/jobs/149594">随便写</a>
-				                                       						                                        </span>
-			                                        </div>
-			                                    </div>
-			                                    <div class="links">
-		                                        	<a data-resumename="jason的简历" data-positionname="随便写" data-deliverid="1686182" data-positionid="149594" data-resumekey="1ccca806e13637f7b1a4560f80f08057" data-forwardcount="1" class="resume_forward" href="javascript:void(0)">
-                                                    	转发
-                                                    	                                                    	<span>(1人)</span>
-                                                    	                                                    </a>
-                                                    <a class="resume_del" href="javascript:void(0)">删除</a>
-			                                    </div>
-			                                </div>
-			                            </li>
-		                            		                    	</ul><!-- end .resumeLists -->
-		                    		                                                </form>
+				                                        	应聘职位：<a title="随便写" target="_blank" href="http://www.lagou.com/jobs/149594.html"> 	                                     @if($v->post_id==0)网络工程师@elseif($v->post_id==1)系统工程师
+                                                                @elseif($v->post_id==2) 运维工程师
+                                                                @elseif($v->post_id==3)项目经理
+                                                                @elseif($v->post_id==4)技术总监
+                                                                @elseif($v->post_id==17) 测试经理
+                                                                @elseif($v->post_id==6)构架师
+                                                            @endif
+                                                        </span>
+                                            </div>
+
+                                        </div>
+
+                                        <div class="links">
+                                            <a data-resumename="jason的简历" data-positionname="随便写" data-deliverid="1686182" data-positionid="149594" data-resumekey="1ccca806e13637f7b1a4560f80f08057" data-forwardcount="1" class="resume_forward" href="javascript:void(0)">
+                                                转发
+                                                <span>(1人)</span>
+                                            </a>
+                                            <a  href="javascript:void(0)" onclick="del({{$v->res_id}})">删除</a>
+                                        </div>
+                                    </div>
+                                    <div class="contactInfo">
+                                        <span class="c9">电话：</span>{{$v->r_phone}} 		  &nbsp;&nbsp;&nbsp;
+                                        <span class="c9">邮箱：</span><a href="mailto:888888888@qq.com">{{$v->r_email}}</a>
+                                    </div>
+                                </li>
+                           <!-- end .resumeLists -->
+                        @endforeach </ul>
                     </dd>
                 </dl><!-- end .company_center_content -->
             </div><!-- end .content -->
@@ -401,48 +438,25 @@ var youdao_conv_id = 271546;
 
 <!--  -->
 
-<script type="text/javascript">
-$(function(){
-	$('#noticeDot-1').hide();
-	$('#noticeTip a.closeNT').click(function(){
-		$(this).parent().hide();
-	});
-});
-var index = Math.floor(Math.random() * 2);
-var ipArray = new Array('42.62.79.226','42.62.79.227');
-var url = "ws://" + ipArray[index] + ":18080/wsServlet?code=314873";
-var CallCenter = {
-		init:function(url){
-			var _websocket = new WebSocket(url);
-			_websocket.onopen = function(evt) {
-				console.log("Connected to WebSocket server.");
-			};
-			_websocket.onclose = function(evt) {
-				console.log("Disconnected");
-			};
-			_websocket.onmessage = function(evt) {
-				//alert(evt.data);
-				var notice = jQuery.parseJSON(evt.data);
-				if(notice.status[0] == 0){
-					$('#noticeDot-0').hide();
-					$('#noticeTip').hide();
-					$('#noticeNo').text('').show().parent('a').attr('href',ctx+'/mycenter/delivery');
-					$('#noticeNoPage').text('').show().parent('a').attr('href',ctx+'/mycenter/delivery');
-				}else{
-					$('#noticeDot-0').show();
-					$('#noticeTip strong').text(notice.status[0]);
-					$('#noticeTip').show();
-					$('#noticeNo').text('('+notice.status[0]+')').show().parent('a').attr('href',ctx+'/mycenter/delivery');
-					$('#noticeNoPage').text(' ('+notice.status[0]+')').show().parent('a').attr('href',ctx+'/mycenter/delivery');
-				}
-				$('#noticeDot-1').hide();
-			};
-			_websocket.onerror = function(evt) {
-				console.log('Error occured: ' + evt);
-			};
-		}
-};
-CallCenter.init(url);
-</script>
 
 <div id="cboxOverlay" style="display: none;"></div><div id="colorbox" class="" role="dialog" tabindex="-1" style="display: none;"><div id="cboxWrapper"><div><div id="cboxTopLeft" style="float: left;"></div><div id="cboxTopCenter" style="float: left;"></div><div id="cboxTopRight" style="float: left;"></div></div><div style="clear: left;"><div id="cboxMiddleLeft" style="float: left;"></div><div id="cboxContent" style="float: left;"><div id="cboxTitle" style="float: left;"></div><div id="cboxCurrent" style="float: left;"></div><button type="button" id="cboxPrevious"></button><button type="button" id="cboxNext"></button><button id="cboxSlideshow"></button><div id="cboxLoadingOverlay" style="float: left;"></div><div id="cboxLoadingGraphic" style="float: left;"></div></div><div id="cboxMiddleRight" style="float: left;"></div></div><div style="clear: left;"><div id="cboxBottomLeft" style="float: left;"></div><div id="cboxBottomCenter" style="float: left;"></div><div id="cboxBottomRight" style="float: left;"></div></div></div><div style="position: absolute; width: 9999px; visibility: hidden; display: none;"></div></div><div class="ui-datepicker ui-widget ui-widget-content ui-helper-clearfix ui-corner-all" id="ui-datepicker-div"></div></body></html>
+<script>
+    function  del(id){
+      // alert(id)
+        $.ajax({
+            type: "get",
+            url: "{{url('del')}}",
+            data: "id="+id,
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            },
+
+            success: function(msg) {
+            //  alert(msg)
+                if (msg == 1) {
+                    $("#so"+id).remove();
+                }
+            }
+        });
+    }
+</script>

@@ -77,7 +77,7 @@ var youdao_conv_id = 271546;
 <script type="text/javascript" src="style/js/search.min.js"></script>
 <dl class="hotSearch">
 	<dt>热门搜索：</dt>
-	<dd><a href="list.htmlJava?labelWords=label&city=">Java</a></dd>
+	<dd><a href="">Java</a></dd>
 	<dd><a href="list.htmlPHP?labelWords=label&city=">PHP</a></dd>
 	<dd><a href="list.htmlAndroid?labelWords=label&city=">Android</a></dd>
 	<dd><a href="list.htmliOS?labelWords=label&city=">iOS</a></dd>
