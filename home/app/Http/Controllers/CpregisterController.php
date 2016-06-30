@@ -62,6 +62,7 @@ class CpregisterController extends Controller{
 	 */
 	public function index01_pro(Request $request)
 	{
+		//$data['m_logo']=$this->imgUpload('m_logo');
 		$data['m_name']=$request->input('m_name');//公司名称
 		$data['m_url']=$request->input('m_url');//公司地址
 		$data['m_place']=$request->input('m_place');//公司地址
@@ -268,6 +269,7 @@ class CpregisterController extends Controller{
 			//print_r($request->all());die;
 
 			$data['m_desc']=$request->input('m_desc');
+			$data['m_logo']=$this->imgUpload('m_logo');//公司logo
 			
     		
     		$mes_id=$request->input('mes_id');

@@ -60,7 +60,7 @@ var youdao_conv_id = 271546;
                 <dd class="c_notice"> 
                 	<h4>恭喜你，公司信息已填写完善，你可以发布职位啦！</h4>
                     <a class="greylink" href="create">发布新职位</a>
-                    <a class="greylink" href="myhome"> 进入我的公司主页</a>
+                    <a class="greylink" href="{{url('index04')}}"> 进入我的公司主页</a>
                 </dd>
             </dl>
        	</div>

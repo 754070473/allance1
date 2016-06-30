@@ -5,7 +5,7 @@
 <link  media="handheld" rel="alternate">
 <!-- end 云适配 -->
 <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-<title>我发布的职位-招聘服务-拉勾网-最专业的互联网招聘平台</title>
+<title>我发布的职位-招聘服务-强强联合-最专业的互联网招聘平台</title>
 <meta content="23635710066417756375" property="qc:admins">
 <meta name="description" content="拉勾网是3W旗下的互联网领域垂直招聘网站,互联网职业机会尽在拉勾网">
 <meta name="keywords" content="拉勾,拉勾网,拉勾招聘,拉钩, 拉钩网 ,互联网招聘,拉勾互联网招聘, 移动互联网招聘, 垂直互联网招聘, 微信招聘, 微博招聘, 拉勾官网, 拉勾百科,跳槽, 高薪职位, 互联网圈子, IT招聘, 职场招聘, 猎头招聘,O2O招聘, LBS招聘, 社交招聘, 校园招聘, 校招,社会招聘,社招">
@@ -78,7 +78,7 @@ var youdao_conv_id = 271546;
 		<a href="positions">有效职位</a>
 	</dd>
 	<dd>
-		<a href="positions">已下线职位</a>
+		<a href="aaaa">已下线职位</a>
 	</dd>
 	</dl>
             </div><!-- end .sidebar -->
@@ -87,32 +87,123 @@ var youdao_conv_id = 271546;
                     <dt>
                         <h1>
                             <em></em>
-                           有效职位 <span>（共<i style="color:#fff;font-style:normal" id="positionNumber">1</i>个）</span>                        </h1>
+                           有效职位 <span>（共<i style="color:#fff;font-style:normal" id="positionNumber">{{$num}}</i>个）</span>                        </h1>
                     </dt>
+                    
                     <dd>
+                    @foreach($res as $v)	
                     		                    	<form id="searchForm">
 	                    		<input type="hidden" value="Publish" name="type">
 			                	<ul class="reset my_jobs">
 				                			                            	<li data-id="149594">
 		                                    <h3>
-		                                        <a target="_blank" title="随便写" href="http://www.lagou.com/jobs/149594">随便写</a> 
-		                                        <span>[上海]</span>
+		                                        <a target="_blank" title="随便写" href="">{{$v->r_major}}</a> 
+		                                        <span>[{{$v->r_place}}]</span>
 		                                        						                        		                                    </h3>
-		                                    		                                  		<span class="receivedResumeNo"><a href="unHandleResumes?positionId=149594">应聘简历（1）</a></span>
-		                                  			                                    <div>兼职 / 1k-2k / 1-3年 / 硕士及以上</div>
-		                                    		                                    				                                    <div class="c9">发布时间： 2014-07-01 17:07:01</div>
+		                                    		                                  		<span class="receivedResumeNo"><a href="">应聘简历（{{$v->rec_id}}）</a></span>
+		                                  			                                    <div>
+		                                  			                                    	@if($v->r_iflogbook == 0)
+		                                  			                                    	
+                                                                                                非全日制                                                                 
+		                                  			                                        
+		                                  			                                        @else
+		                                  			                                        
+                                                                                                全日制                        
+		                                  			                                        
+		                                  			                                        @endif
+		                                  			                                    	/
+		                                  			                                    	{{$v->r_pay}}k
+		                                  			                                    	/
+		                                  			                                    	@if($v->r_suffer == 0)
+		                                  			                                    	
+                                                                                                应届生   
+		                                  			                                        
+		                                  			                                        @elseif($v->r_suffer == 1)
+		                                  			                                        
+                                                                                                无经验
+		                                  			                                        
+		                                  			                                        @elseif($v->r_suffer == 2)
+		                                  			                                        
+                                                                                                1年以下
+		                                  			                                        
+		                                  			                                        @elseif($v->r_suffer == 3)
+		                                  			                                        
+                                                                                                1-3年
+		                                  			                                        
+		                                  			                                        @elseif($v->r_suffer == 4)
+		                                  			                                        
+                                                                                                3-5年
+		                                  			                                        
+		                                  			                                        @elseif($v->r_suffer == 5)
+		                                  			                                        
+                                                                                                5-10年
+		                                  			                                        
+		                                  			                                        @elseif($v->r_suffer == 6)
+		                                  			                                        
+                                                                                                10年以上
+		                                  			                                        
+		                                  			                                        @endif
+		                                  			                                        / 
+		                                  			                                    	@if($v->r_edu == 0)
+		                                  			                                    	
+                                                                                                初中 
+		                                  			                                        
+		                                  			                                        @elseif($v->r_edu == 1)
+		                                  			                                        
+                                                                                                高中
+		                                  			                                        
+		                                  			                                        @elseif($v->r_edu == 2)
+		                                  			                                        
+                                                                                                中技
+		                                  			                                        
+		                                  			                                        @elseif($v->r_edu == 3)
+		                                  			                                        
+                                                                                                中专
+		                                  			                                        
+		                                  			                                        @elseif($v->r_edu == 4)
+		                                  			                                       
+                                                                                                大专
+		                                  			                                        
+		                                  			                                        @elseif($v->r_edu == 5)
+		                                  			                                        
+                                                                                                本科
+		                                  			                                        
+		                                  			                                        @elseif($v->r_edu == 6)
+		                                  			                                        
+                                                                                                硕士
+		                                  			                                        
+		                                  			                                        @elseif($v->r_edu == 7)
+		                                  			                                        
+                                                                                                博士
+		                                  			                                        
+		                                  			                                        @elseif($v->r_edu == 8)
+		                                  			                                        
+                                                                                                博后
+		                                  			                                        
+		                                  			                                        @endif
+
+
+		                                  			                                    </div>
+		                                    		                                    				                                    <div class="c9">发布时间：{{$v->r_addtime}}</div>
 			                                    		                                    		                                    		                                    <div class="links">
-		                                    			                                       	<a class="job_refresh" href="javascript:void(0)">刷新<span>每个职位7天内只能刷新一次</span></a>
-		                                       			                                       	<a target="_blank" class="job_edit" href="create?positionId=149594">编辑</a>
-		                                       	<a class="job_offline" href="javascript:void(0)">下线</a>                      
-		                                        <a class="job_del" href="javascript:void(0)">删除</a>
+		                                    			                                       	
+		                                       			                                       	<a class="job_edit" href="{{url('ptedit')}}?id={{$v->rec_id}}">编辑</a>
+		                                       	<a href="{{url('ptup')}}?id={{$v->rec_id}}">上线</a>                      
+		                                        <a class="job_del" href="{{url('ptdel')}}?id={{$v->rec_id}}">删除</a>
+
 		                                    </div>
 		                                    		                                </li>
 	                                	                           	</ul>
 			                    			                </form>
+			                    			@endforeach 
 		                                    </dd>
+		                                    {!! $res->render() !!}
+		                                    <div class="Pagination">{!! $res->render() !!}</div>
+		            
                 </dl>
-            </div><!-- end .content -->
+            </div>
+
+            <!-- end .content -->
 <script src="style/js/job_list.min.js" type="text/javascript"></script> 
 			<div class="clear"></div>
 			<input type="hidden" value="74fb1ce14ebf4e2495270b0fbad64704" id="resubmitToken">
@@ -140,6 +231,14 @@ $(function(){
 	$('#noticeTip a.closeNT').click(function(){
 		$(this).parent().hide();
 	});
+
+	$('.Pagination').pager({
+		      currPage: 1,
+		      pageNOName: "page",
+		      form: "searchForm",
+		      pageCount: 30,
+		      pageSize:  5 
+		});
 });
 var index = Math.floor(Math.random() * 2);
 var ipArray = new Array('42.62.79.226','42.62.79.227');

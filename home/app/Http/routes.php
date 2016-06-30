@@ -20,7 +20,7 @@ Route::any('/top', 'PublicController@top');
 Route::any('/left', 'PublicController@left');
 Route::any('/main', 'PublicController@main');
 
-//职位详情
+//展示招聘信息详情
 Route::get('/jobdetail', 'IndexController@jobdetail');
 //验证登录(email)
 Route::get('/jobdetail_login', 'IndexController@jobdetail_login');
@@ -46,11 +46,14 @@ Route::get('/toudi', 'IndexController@toudi');
 
 //个人找职位
 Route::get('/companylist', 'ReController@companylist');
-
 //公司找简历
 Route::get('/company', 'IndexController@company');
-//公司查询
-Route::any('/hang', 'IndexController@hang');
+//查找详细信息
+Route::get('/select_all', 'IndexController@select_all');
+//查找详细信息
+Route::get('/select_al', 'IndexController@select_al');
+//查找个人简历详细信息
+Route::get('/gerenlist', 'IndexController@gerenlist');
 //展示关于 联系我们
 Route::get('/about', 'IndexController@about');	
 
@@ -62,15 +65,17 @@ Route::get('/reset', 'AccountsetController@reset');
    
 //修改密码
 Route::get('/updatePwd', 'AccountsetController@updatePwd'); 
-//修改密码
-Route::get('/pass', 'AccountsetController@pass');
 
 
+//找回企业密码
+Route::get('/companypwdl', 'AccountsetController@companypwdl');    
+
+//企业密码
+Route::get('/companypwd', 'AccountsetController@companypwd'); 
+//修改企业密码
+Route::get('/companyupdate', 'AccountsetController@companyupdate'); 
 //我收藏的职位
 Route::get('/collections', 'CollectionsController@collections');
-//取消收藏
-Route::get('/cancel_collections', 'CollectionsController@ceancel');
-
 
 //公司详情
 Route::get('index04', 'CompanyglController@index04');
@@ -89,10 +94,6 @@ Route::get('save_company_course', 'CompanyglController@save_company_course');
 //公司详情 编辑创始人
 Route::get('save_company_founder', 'CompanyglController@save_company_founder');
 
-
-
-
-
 //申请公司认证
 Route::get('/auth', 'CompanyglController@auth');	
     
@@ -108,23 +109,25 @@ Route::get('/bindStep2', 'CompanyglController@bindStep2');
 //开通招聘服务（3）
 Route::get('/bindStep3', 'CompanyglController@bindStep3');
    
-//填写公司信息
-Route::get('/founder', 'CpregisterController@founder');
+//填写公司信息第3步
+Route::any('/founder', 'CpregisterController@founder');
 	
-//填写公司信息
-Route::get('/index01', 'CpregisterController@index01');	
+//填写公司信息第一步
+Route::any('/index01', 'CpregisterController@index01');	
+Route::any('/index01_pro', 'CpregisterController@index01_pro');	
 	
-//填写公司信息
-Route::get('/index02', 'CpregisterController@index02');		
+//填写公司信息第4步
+Route::any('/index02', 'CpregisterController@index02');		
 
-//填写公司信息
-Route::get('/index03', 'CpregisterController@index03');		
+//填写公司信息第5步
+Route::any('/index03', 'CpregisterController@index03');		
 	
 //填写公司信息  发布职位
-Route::get('/success', 'CpregisterController@success');	
+Route::any('/success', 'CpregisterController@success');	
 
-//填写公司信息
-Route::get('/tag', 'CpregisterController@tag');		 
+//填写公司信息第2步
+Route::any('/tag', 'CpregisterController@tag');		 
+Route::any('/tag_pro', 'CpregisterController@tag_pro');		 
 	 
 //展示个人登录界面
 Route::any('/login', 'LoginController@login');	
@@ -142,31 +145,60 @@ Route::get('/company_login_pro', 'LoginController@company_login_pro');
 
 //我的简历
 Route::get('/jianli', 'PersonalController@jianli');
+
 //个人简历信息
-Route::any('/preview', 'PersonalController@preview');
+Route::any('/previews', 'PersonalController@previews');
 Route::any('/basic', 'PersonalController@basic');//基本 信息 修改
 Route::any('/uploadPhoto', 'PersonalController@uploadPhoto');//上传头像
 Route::any('/postcheck', 'PersonalController@postcheck');//职位检测
 Route::any('/expectedwork', 'PersonalController@expectedwork');//修改期望工作
+Route::any('/workexperience', 'PersonalController@workexperience');//修改工作经历
+Route::any('/projectexperience', 'PersonalController@projectexperience');//修改项目经验
+Route::any('/educational', 'PersonalController@educational');//修改教育背景
+Route::any('/majorcheck', 'PersonalController@majorcheck');//检查是否有该专业
+Route::any('/description', 'PersonalController@description');//自我描述
+Route::any('/per_i_name', 'PersonalController@per_i_name');//修改用户名称
 
     
 //发布新职位
 Route::get('/create', 'PostofficeController@create');
-Route::post('/postAdd','PostofficeController@postAdd');
-Route::get('/jobyl','PostofficeController@jobyl');
-
+Route::post('/postAdd', 'PostofficeController@postAdd');
+	
 //职位发布成功
 Route::get('/index06', 'PostofficeController@index06');	
 
 //有效职位
-Route::get('/positions', 'RecresumeController@positions');	
+Route::get('/positions', 'CpzwglController@positions');
+//有效职位删除	
+Route::get('/ptdel','CpzwglController@ptdel');
+//有效职位下线
+Route::get('/ptdown','CpzwglController@ptdown');
+//有效职位编辑
+Route::get('/ptedit','CpzwglController@ptedit');
+//有效职位编辑2
+Route::any('/ptedit2','CpzwglController@ptedit2');
+
+//已下线职位
+Route::any('/unpositions', 'CpzwglController@unpositions');	
+//职位上线
+Route::any('/ptup', 'CpzwglController@ptup');	
 	
 //不合适简历
-Route::get('/haveRefuseResumes', 'RecresumeController@haveRefuseResumes');	
-	
+Route::get('/haveRefuseResumes', 'RecresumeController@haveRefuseResumes');
+//通知面试
+Route::get('/haveNotice', 'RecresumeController@mian');
 //待定简历
-Route::get('/canInterviewResumes', 'RecresumeController@canInterviewResumes');	
-	
+Route::get('/canInterviewResumes', 'RecresumeController@canInterviewResumes');
+//待定修改
+Route::get('/can', 'RecresumeController@can');
+//通知面试
+Route::get('/tong', 'RecresumeController@tong');
+//删除简历
+Route::get('/del', 'RecresumeController@del');
+//待定成功
+Route::get('tiao', 'RecresumeController@canInterviewResumes');
+//待定成功
+Route::get('zhi', 'RecresumeController@canInterviewResumes');
 //自动过滤简历
 Route::get('/autoFilterResumes', 'RecresumeController@autoFilterResumes');	
 
@@ -175,7 +207,8 @@ Route::get('/register/', 'RegisterController@register');
 
 //简历
 Route::get('/preview', 'ResumeglController@preview');
-   
+//查看简历
+Route::get('/pre', 'ResumeglController@pre');
 //已投递简历状态
 Route::get('/delivery', 'ResumetdController@delivery');
 
@@ -183,7 +216,21 @@ Route::get('/delivery', 'ResumetdController@delivery');
 Route::get('/subscribe', 'SubscribeController@subscribe');
   
 //我的职位订阅1
-Route::get('/subscribe01', 'SubscribeController@subscribe01');    
+Route::get('/subscribe01', 'SubscribeController@subscribe01');
 
-//职位订阅入库
+//职位订阅删除
+Route::get('/subdel','SubscribeController@subdel');
+
+//职位订阅添加
 Route::get('/subinfo','SubscribeController@subinfo');
+
+//发送邮件测试
+Route::get('/send','SubscribeController@send');
+
+// //公司找个人地址	
+// Route::get('/select_all', 'IndexController@select_all');
+//个人找职位地点
+Route::get('/place_list', 'ReController@place_list');
+Route::get('/type', 'ReController@type');
+Route::get('/hang', 'ReController@hang');
+Route::get('/geren', 'ReController@geren');

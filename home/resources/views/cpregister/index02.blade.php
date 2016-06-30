@@ -105,7 +105,7 @@ var youdao_conv_id = 271546;
 
 
                     	<input type="submit" value="保存，下一步" id="step4Submit" class="btn_big fr">
-                    	<a class="btn_cancel fr" href="http://www.lagou.com/c/intro">跳过</a>
+                    	<a class="btn_cancel fr" href="{{url('index03')}}">跳过</a>
                     </form>
                 </dd>
             </dl>
