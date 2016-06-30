@@ -93,6 +93,9 @@ function shoucang(rec_id)
                         @if($aa==0)
                               <span id='shoucang' ><img onclick="shoucang({{$row->rec_id}})" class="jd_collection" src="style/images/3.jpg" alt=""></span>                   
                         @endif
+                        @if($aa==2)
+                              <span id='shoucang' ><img onclick="shoucang({{$row->rec_id}})" class="jd_collection" src="style/images/3.jpg" alt=""></span>                   
+                        @endif
                     </dt>
                     <dd class="job_request">
                     	<span class="red">{{$row->r_pay}}</span>
