@@ -195,8 +195,9 @@ var youdao_conv_id = 271546;
 	                                	                           	</ul>
 			                    			                </form>
 			                    			@endforeach 
+			                    			<div class="Pagination">{!! $res->render() !!}</div>
 		                                    </dd>
-		                                    <div class="Pagination">{!! $res->render() !!}</div>
+		                                    
 		            
                 </dl>
             </div>
@@ -234,8 +235,8 @@ $(function(){
 		      currPage: {{$page}},
 		      pageNOName: "page",
 		      form: "searchForm",
-		      pageCount: 5,
-		      pageSize: {{$pagesize}} 
+		      pageCount: {{$pageCount}},
+		      pageSize:  {{$pageCount}}
 		});
 });
 var index = Math.floor(Math.random() * 2);
