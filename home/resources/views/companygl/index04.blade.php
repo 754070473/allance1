@@ -54,12 +54,12 @@ var youdao_conv_id = 271546;
             		<span class="red dn" id="noticeDot-1"></span>
             		<i></i>
             	</dt>
-                                	<dd><a href="positions">我发布的职位</a></dd>
+                    <dd><a href="positions">我发布的职位</a></dd>
                 	<dd><a href="positions">我收到的简历</a></dd>
                 	<dd class="btm"><a href="myhome">我的公司主页</a></dd>
                 	<dd><a href="jianli">我要找工作</a></dd>
-                                                <dd><a href="accountBind">帐号设置</a></dd>
-                                <dd class="logout"><a rel="nofollow" href="login">退出</a></dd>
+                    <dd><a href="accountBind">帐号设置</a></dd>
+                    <dd class="logout"><a rel="nofollow" href="login">退出</a></dd>
             </dl>
                                 </div>
     </div><!-- end #header -->
@@ -95,7 +95,7 @@ var youdao_conv_id = 271546;
 	                    		                   			<h2 title="公司名称">公司名称</h2>
 	                   			                        
 	                        	                        	<em class="unvalid"></em>
-                        		<span class="va dn" style="display: none;">拉勾未认证企业</span>
+                        		<span class="va dn" style="display: none;">强强联合未认证企业</span>
 	                        	<a target="_blank" class="applyC" href="http://www.lagou.com/c/auth">申请认证</a>
 	                        	                        <div class="clear"></div>
 	                       	
@@ -384,7 +384,7 @@ var youdao_conv_id = 271546;
             <div class="content_r">
             	<div id="Tags">
 	            	<div id="c_tags_show" class="c_tags solveWrap" style="display: block;">
-	                    <table><tbody><tr><td>地点</td><td>{{$arr->i_name}}</td></tr><tr><td>领域</td><td>移动互联网</td></tr><tr><td>规模</td><td>150-500人</td></tr><tr><td>主页</td><td><a target="_blank" href="{{$arr->m_url}}">{{$arr->m_url}}</a></td></tr></tbody></table>
+	                    <table><tbody><tr><td>地点</td><td>{{$arr->m_place}}</td></tr><tr><td>主页</td><td><a target="_blank" href="{{$arr->m_url}}">{{$arr->m_url}}</a></td></tr></tbody></table>
 	                    <a id="editTags" class="c_edit" href="javascript:void(0)"></a>
 	                </div>
 	                <div id="c_tags_edit" class="c_tags editTags dn" style="display: none;">
@@ -394,33 +394,10 @@ var youdao_conv_id = 271546;
 		                        <tbody><tr>
 		                            <td>地点</td>
 		                            <td>
-		                            	<input type="text" placeholder="请输入地点(城市名)" value="{{$arr->i_name}}" name="city" id="city" class="valid">	
+		                            	<input type="text" placeholder="请输入地点(城市名)" value="{{$arr->m_place}}" name="city" id="city" class="valid">	
 		                            </td>
 		                        </tr>
-		                        <tr>
-		                            <td>领域</td><!-- 支持多选 -->
-		                            <td>
-		                            	<input type="hidden" value="移动互联网" id="industryField" name="industryField" class="valid">
-		                            	<input type="button" style="background:none;cursor:default;border:none !important;" disable="disable" value="移动互联网" id="select_ind" class="select_tags">
-		                                <!-- <div id="box_ind" class="selectBox dn">
-		                                    <ul class="reset">
-			                                    				                        							                            			<li class="current">移动互联网</li>
-				                            							                            		                                    </ul>
-		                                </div>	 -->
-		                            </td>
-		                        </tr>
-		                        <tr>
-		                            <td>规模</td>
-		                            <td>
-		                            	<input type="hidden" value="150-500人" id="companySize" name="companySize" class="valid">
-		                            	<input type="button" value="150-500人" id="select_sca" class="select_tags">
-		                                <div class="selectBox dn" id="box_sca" style="display: none;">
-		                                    <ul class="reset">
-			                                        		                                    						                            			<li>2000人以上</li>
-				                            				                                        		                                    </ul>
-		                                </div>	
-		                            </td>
-		                        </tr>
+		                        
 		                        <tr>
 		                            <td>主页</td>
 		                            <td>
@@ -465,12 +442,12 @@ var youdao_conv_id = 271546;
 
        			<dl class="c_section c_stages">
                 	<dt>
-                    	<h2><em></em>融资阶段</h2>
+                    	<h2><em></em>公司阶段</h2>
                     	<a title="编辑融资阶段" class="c_edit" href="javascript:void(0)"></a>
                     </dt>
                     <dd>
                     	<ul class="reset stageshow">
-                    		<li>目前阶段：<span class="c5">天使轮</span></li>
+                    		<li>目前阶段：<span class="c5">{{$arr->m_type}}</span></li>
                     		                    	</ul>
                     	<form class="dn" id="stageform">
                     		<div class="stageSelect">
@@ -552,9 +529,9 @@ var youdao_conv_id = 271546;
 		       			       		<!--有创始团队-->
 		                <dl class="c_section c_member">
 		                	<dt>
-		                    	<h2><em></em>公司位置</h2>
-		                    		                    		<a title="添加创始人" class="c_add" href="javascript:void(0)"></a>
-	                    				                    </dt>
+		                    	<h2><em></em>公司创始人</h2>
+	                    		<a title="添加创始人" class="c_add" href="javascript:void(0)"></a>
+		                    </dt>
 		                    <dd> 
 		                    			                    				                    
 			       					<div class="member_wrap">
@@ -567,7 +544,7 @@ var youdao_conv_id = 271546;
 				                        
 				                        <!-- 编辑创始人 -->
 		                        		<div class="member_info newMember dn">
-			                        		<form class="memberForm">
+			                        		<form method='get' action='save_company_founder'>
 					                            <div class="new_portrait">
 						                            <div class="portrait_upload dn portraitNo">
 						                                <span>上传创始人头像</span>
@@ -584,13 +561,13 @@ var youdao_conv_id = 271546;
 												                                大小：小于5M
 						                            </em>
 						                        </div>
-						                        <input type="text" placeholder="请输入创始人姓名" value="孙泰英" name="name" class="valid">	
-					                            <input type="text" placeholder="请输入创始人当前职位" value="ceo" name="position">	
-					                            <input type="text" placeholder="请输入创始人新浪微博地址" value="http://weimob.weibo.com" name="weibo" class="valid">	
-					                            <textarea placeholder="请输入创始人个人简介" maxlength="500" class="s_textarea valid" name="remark">发放的发达范德萨范德萨范德萨发的复大发大水发生的</textarea>	
+						                        <input type="text" placeholder="请输入创始人姓名" value="{{$arr->leadername}}" id="name" name="name" class="valid">	
+					                            <input type="text" placeholder="请输入创始人当前职位" value="{{$arr->position}}" id="position" name="position">	
+					                            <textarea placeholder="请输入创始人个人简介" maxlength="500" class="s_textarea valid" id="remark" name="remark">{{$arr->remark}}</textarea>	
 					                            <div class="word_count fr">你还可以输入 <span>476</span> 字</div>
 					                            <div class="clear"></div>
-					                            <input type="submit" value="保存" class="btn_small">
+					                            <input type="hidden" id='me_id' value="{{$arr->mes_id}}">
+					                            <input type="submit" value="保存" id="chuang" class="btn_small">
 				                                <a class="btn_cancel_s member_delete" href="javascript:void(0)">删除</a>
 				                        		<input type="hidden" value="11493" class="leader_id">
 				                        	</form>
@@ -603,13 +580,13 @@ var youdao_conv_id = 271546;
 				                            	<div></div>
 				                            	<img width="120" height="120" alt="孙泰英" src="style/images/leader_default.png">
 					                        </div>
-				                            <div class="m_name">随便写<a target="_blank" class="weibo" href="http://www.zmtpost.com"></a></div>
-				                            <div class="m_position">ceo</div>
-				                    		<div class="m_intro">随便写随便写随便写随便写随便写随便写随便写随便写</div>
+				                            <div class="m_name">{{$arr->leadername}}</div>
+				                            <div class="m_position">{{$arr->position}}</div>
+				                    		<div class="m_intro">{{$arr->remark}}</div>
 				                        </div>
 				                        
 				                     </div><!-- end .member_wrap -->
-				                     				                 		                    </dd>
+				                     </dd>
 		                </dl>
 		       			       	</div> <!-- end #Member -->
 	       	
@@ -617,7 +594,14 @@ var youdao_conv_id = 271546;
 	       <!--公司深度报道-->
        
    	</div>
-
+<script>
+	$('#chuang').click(function(){
+		var name = $('#name').val();
+		var position = $('position').val();
+		var remark = $('#remark').val();
+		alert(name);
+	})
+</script>
 <!-------------------------------------弹窗lightbox  ----------------------------------------->
 <div style="display:none;">
 	<div style="width:650px;height:470px;" class="popup" id="logoUploader">

@@ -61,7 +61,6 @@
                             </div>
                             <div class="ibox-content">
                                 <div class="">
-                                    <a onclick="fnClickAddRow();" href="index.php?r=commessage/add" class="btn btn-primary ">企业信息添加</a>
                                 <a onclick="delAll();" href="javascript:void(0)" class="btn btn-primary ">批量删除</a>
                                 </div>
                                <!--  <table class="table table-striped table-bordered table-hover " id="editable"> -->
@@ -79,7 +78,7 @@
                                             <th>企业文化</th>
                                             <th>联系QQ号</th>
                                             <th>企业网址</th>
-                                            <th>操作</th>
+                                            <th>审核</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -99,12 +98,16 @@
                                             <td class="up" ziduan="m_qq"><?php echo $val['m_qq']; ?></td>
                                             <td class="up" ziduan="m_url"><?php echo $val['m_url']; ?></td>
                                             <td class="center">
+                                                <?php if($val['m_state'] == 0){?>
                                             <a href="index.php?r=commessage/update&mes_id=<?php echo $val['mes_id']; ?>">
-                                                <img class="operation" src="img/update.png">
-                                            </a> 
+                                                通过
+                                            </a>&nbsp;&nbsp;
                                             <a href="index.php?r=commessage/delete&mes_id=<?php echo $val['mes_id']; ?>">
-                                                <img class="operation delban" src="img/delete.png">
+                                                不通过
                                             </a>
+                                                <?php }else{?>
+                                                <font color="aqua">已通过</font>
+                                                <?php }?>
                                             </td>
                                         </tr>
                                         <?php endforeach ?>
@@ -127,9 +130,6 @@
 
     <!-- Mainly scripts -->
     <script src="js/jquery-2.1.1.min.js"></script>
-    <script src="js/bootstrap.min.js?v=3.4.0"></script>
-    <script src="js/plugins/metisMenu/jquery.metisMenu.js"></script>
-    <script src="js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
 
     <script src="js/plugins/jeditable/jquery.jeditable.js"></script>
 
@@ -138,8 +138,6 @@
     <script src="js/plugins/dataTables/dataTables.bootstrap.js"></script>
 
     <!-- Custom and plugin javascript -->
-    <script src="js/hplus.js?v=2.2.0"></script>
-    <script src="js/plugins/pace/pace.min.js"></script>
 
     <!-- Page-Level Scripts -->
     <script>
