@@ -93,7 +93,6 @@ var youdao_conv_id = 271546;
                     <dd>
                     @foreach($res as $v)	
                     		                    	<form id="searchForm">
-	                    		<input type="hidden" value="Publish" name="type">
 			                	<ul class="reset my_jobs">
 				                			                            	<li data-id="149594">
 		                                    <h3>
@@ -197,7 +196,6 @@ var youdao_conv_id = 271546;
 			                    			                </form>
 			                    			@endforeach 
 		                                    </dd>
-		                                    {!! $res->render() !!}
 		                                    <div class="Pagination">{!! $res->render() !!}</div>
 		            
                 </dl>
@@ -233,11 +231,11 @@ $(function(){
 	});
 
 	$('.Pagination').pager({
-		      currPage: 1,
+		      currPage: {{$page}},
 		      pageNOName: "page",
 		      form: "searchForm",
-		      pageCount: 30,
-		      pageSize:  5 
+		      pageCount: 5,
+		      pageSize: {{$pagesize}} 
 		});
 });
 var index = Math.floor(Math.random() * 2);

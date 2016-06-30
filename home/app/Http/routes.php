@@ -149,6 +149,7 @@ Route::get('/index06', 'PostofficeController@index06');
 
 //有效职位
 Route::get('/positions', 'CpzwglController@positions');
+
 //有效职位删除	
 Route::get('/ptdel','CpzwglController@ptdel');
 //有效职位下线
