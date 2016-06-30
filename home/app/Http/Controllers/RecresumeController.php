@@ -2,6 +2,8 @@
 namespace App\Http\Controllers;
 
 use   DB;
+use Mail;
+use Session;
 use Illuminate\Http\Request;
 
 /**
@@ -13,11 +15,17 @@ class RecresumeController extends Controller{
 	//不合适简历
 	public function haveRefuseResumes()
 	{
-        $users = DB::table('al_resume')
-            ->where("status",1)
-            ->get();
-        // print_r($users);die;
+      // $re= Session::get('com_id');
+      //        $users = DB::table('al_resume')
+      //            ->where("status",1)
+      //            ->get();
 
+        $users = DB::table('al_resume')
+            ->join('al_deliver', 'al_resume.res_id', '=', 'al_deliver.res_id')
+            ->select('*')
+            ->where("al_deliver.status",1)
+            ->get();
+       // print_r($users);die;
        // return view("recresume.canInterviewResumes");
 		return view("recresume.haveRefuseResumes",['users' => $users]);
 	}
@@ -25,7 +33,9 @@ class RecresumeController extends Controller{
     public function mian()
     {
         $users = DB::table('al_resume')
-            ->where("status",2)
+            ->join('al_deliver', 'al_resume.res_id', '=', 'al_deliver.res_id')
+            ->select('*')
+            ->where("al_deliver.status",2)
             ->get();
         // print_r($users);die;
 
@@ -36,48 +46,83 @@ class RecresumeController extends Controller{
 	//待定简历
 	public function canInterviewResumes()
 	{
-        $users = DB::table('al_resume')
-            ->where("status",0)
-            ->get();
-   // print_r($users);die;
+       $re= Session::get('com_id');
 
+        $users = DB::table('al_resume')
+            ->join('al_deliver', 'al_resume.res_id', '=', 'al_deliver.res_id')
+            ->select('*')
+            ->where("al_deliver.status",0)
+            ->where("al_deliver.com_id",$re)
+            ->get();
+
+       // print_r($users);die;
 		return view("recresume.canInterviewResumes",['users' => $users]);
 	}
     //待定简历
     public function zhi()
     {
         $users = DB::table('al_resume')
-            ->where("status",2)
+            ->where("status",1)
             ->get();
         // print_r($users);die;
 
         return view("recresume.canInterviewResumes",['users' => $users]);
     }
+    //不合适修改
     public function can(Request $request)
     {
         $id=$request->input('id');
-        $re=DB::table('al_resume')
-            ->where('res_id', $id)
-            ->update(['status' => 1]);
-        if($re){
-            echo 1;
+        $content=$request->input('content')?$request->input('content'):"";
+        global $email;
+        $email = DB::table('al_resume')->where('res_id', $id)->value('r_email');
+        $imgPath = 'http://www.xiayu.com/allance1/home/public/style/images/logo.png';
+        $flag = Mail::send('recresume.mail',['content'=>$content,'imgPath'=>$imgPath],function($message){
+        $to = $GLOBALS['email'];
+        $message ->to($to)->subject('面试通知--强强联合网站');
+        });
+        if($flag){
+            $re= DB::table('al_deliver')
+               ->where('res_id',$id)
+                ->update(['status' => 1]);
+            if($re){
+                echo 1;
+            }else{
+                echo  0;
+            }
         }else{
-            echo  0;
+            echo 2;
         }
-
     }
+    //面试通知
     public function tong(Request $request)
     {
         $id=$request->input('id');
-        $re=DB::table('al_resume')
-            ->where('res_id', $id)
-            ->update(['status' => 2]);
-        if($re){
-            echo 1;
+        $subject=$request->input('subject')?$request->input('subject'):"";
+        $date=$request->input('date')?$request->input('date'):"";
+        $place=$request->input('place')?$request->input('place'):"";
+        $man=$request->input('man')?$request->input('man'):"";
+        $phone=$request->input('phone')?$request->input('phone'):"";
+        $content=$request->input('content')?$request->input('content'):"";
+        global $email;
+        $email = DB::table('al_resume')->where('res_id', $id)->value('r_email');
+        $name = DB::table('al_resume')->where('res_id', $id)->value('r_name');
+        $imgPath = 'http://www.xiayu.com/allance1/home/public/style/images/logo.png';
+        $flag = Mail::send('recresume.email',['subject'=>$subject,'name'=>$name,'date'=>$date,'place'=>$place,'man'=>$man,'phone'=>$phone,'content'=>$content,'imgPath'=>$imgPath],function($message){
+            $to = $GLOBALS['email'];
+            $message ->to($to)->subject('面试通知--强强联合网站');
+        });
+        if($flag){
+            $re=DB::table('al_deliver')
+                ->where('res_id', $id)
+                ->update(['status' => 2]);
+            if($re){
+                echo 1;
+            }else{
+                echo  0;
+            }
         }else{
-            echo  0;
+            echo 2;
         }
-
     }
       // 建立删除
     public function del(Request $request)

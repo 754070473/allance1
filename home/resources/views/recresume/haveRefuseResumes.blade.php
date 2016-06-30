@@ -56,7 +56,7 @@ var youdao_conv_id = 271546;
             	                <dl class="company_center_aside">
 		<dt>我收到的简历</dt>
 		<dd>
-		<a href="">待处理简历</a> 
+		<a href="canInterviewResumes">待处理简历</a>
 			</dd>
 	<dd>
 		<a href="canInterviewResumes">待定简历</a>
@@ -77,7 +77,7 @@ var youdao_conv_id = 271546;
 		<a href="positions">有效职位</a>
 	</dd>
 	<dd>
-		<a href="positions">已下线职位</a>
+		<a href="unpositions">已下线职位</a>
 	</dd>
 	</dl>
             </div><!-- end .sidebar -->
@@ -199,8 +199,7 @@ var youdao_conv_id = 271546;
                                                                 @elseif($v->post_id==17) 测试经理
                                                                 @elseif($v->post_id==6)构架师
                                                             @endif
-
-				                                       						                                        </span>
+                                                        </span>
                                             </div>
 
                                         </div>
@@ -439,49 +438,6 @@ var youdao_conv_id = 271546;
 
 <!--  -->
 
-<script type="text/javascript">
-$(function(){
-	$('#noticeDot-1').hide();
-	$('#noticeTip a.closeNT').click(function(){
-		$(this).parent().hide();
-	});
-});
-var index = Math.floor(Math.random() * 2);
-var ipArray = new Array('42.62.79.226','42.62.79.227');
-var url = "ws://" + ipArray[index] + ":18080/wsServlet?code=314873";
-var CallCenter = {
-		init:function(url){
-			var _websocket = new WebSocket(url);
-			_websocket.onopen = function(evt) {
-				console.log("Connected to WebSocket server.");
-			};
-			_websocket.onclose = function(evt) {
-				console.log("Disconnected");
-			};
-			_websocket.onmessage = function(evt) {
-				//alert(evt.data);
-				var notice = jQuery.parseJSON(evt.data);
-				if(notice.status[0] == 0){
-					$('#noticeDot-0').hide();
-					$('#noticeTip').hide();
-					$('#noticeNo').text('').show().parent('a').attr('href',ctx+'/mycenter/delivery');
-					$('#noticeNoPage').text('').show().parent('a').attr('href',ctx+'/mycenter/delivery');
-				}else{
-					$('#noticeDot-0').show();
-					$('#noticeTip strong').text(notice.status[0]);
-					$('#noticeTip').show();
-					$('#noticeNo').text('('+notice.status[0]+')').show().parent('a').attr('href',ctx+'/mycenter/delivery');
-					$('#noticeNoPage').text(' ('+notice.status[0]+')').show().parent('a').attr('href',ctx+'/mycenter/delivery');
-				}
-				$('#noticeDot-1').hide();
-			};
-			_websocket.onerror = function(evt) {
-				console.log('Error occured: ' + evt);
-			};
-		}
-};
-CallCenter.init(url);
-</script>
 
 <div id="cboxOverlay" style="display: none;"></div><div id="colorbox" class="" role="dialog" tabindex="-1" style="display: none;"><div id="cboxWrapper"><div><div id="cboxTopLeft" style="float: left;"></div><div id="cboxTopCenter" style="float: left;"></div><div id="cboxTopRight" style="float: left;"></div></div><div style="clear: left;"><div id="cboxMiddleLeft" style="float: left;"></div><div id="cboxContent" style="float: left;"><div id="cboxTitle" style="float: left;"></div><div id="cboxCurrent" style="float: left;"></div><button type="button" id="cboxPrevious"></button><button type="button" id="cboxNext"></button><button id="cboxSlideshow"></button><div id="cboxLoadingOverlay" style="float: left;"></div><div id="cboxLoadingGraphic" style="float: left;"></div></div><div id="cboxMiddleRight" style="float: left;"></div></div><div style="clear: left;"><div id="cboxBottomLeft" style="float: left;"></div><div id="cboxBottomCenter" style="float: left;"></div><div id="cboxBottomRight" style="float: left;"></div></div></div><div style="position: absolute; width: 9999px; visibility: hidden; display: none;"></div></div><div class="ui-datepicker ui-widget ui-widget-content ui-helper-clearfix ui-corner-all" id="ui-datepicker-div"></div></body></html>
 <script>
