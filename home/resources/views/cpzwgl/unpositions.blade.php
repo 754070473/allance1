@@ -93,7 +93,6 @@ var youdao_conv_id = 271546;
                     <dd>
                     @foreach($res as $v)	
                     		                    	<form id="searchForm">
-	                    		<input type="hidden" value="Publish" name="type">
 			                	<ul class="reset my_jobs">
 				                			                            	<li data-id="149594">
 		                                    <h3>
@@ -188,7 +187,7 @@ var youdao_conv_id = 271546;
 			                                    		                                    		                                    		                                    <div class="links">
 		                                    			                                       	
 		                                       			                               <a class="job_edit" href="{{url('ptedit')}}?id={{$v->rec_id}}">编辑</a>        
-		                                       	<a href="{{url('ptdown')}}?id={{$v->rec_id}}">上线</a>                      
+		                                       	<a href="{{url('ptup')}}?id={{$v->rec_id}}">上线</a>                      
 		                                        <a class="job_del" href="{{url('ptdel')}}?id={{$v->rec_id}}">删除</a>
 
 		                                    </div>
@@ -196,9 +195,9 @@ var youdao_conv_id = 271546;
 	                                	                           	</ul>
 			                    			                </form>
 			                    			@endforeach 
+			                    			<div class="Pagination">{!! $res->render() !!}</div>
 		                                    </dd>
-		                                    {!! $res->render() !!}
-		                                    <div class="Pagination">{!! $res->render() !!}</div>
+		                                    
 		            
                 </dl>
             </div>
@@ -233,11 +232,11 @@ $(function(){
 	});
 
 	$('.Pagination').pager({
-		      currPage: 1,
+		      currPage: {{$page}},
 		      pageNOName: "page",
 		      form: "searchForm",
-		      pageCount: 30,
-		      pageSize:  5 
+		      pageCount:{{$pageCount}},
+		      pageSize:{{$pageCount}}
 		});
 });
 var index = Math.floor(Math.random() * 2);

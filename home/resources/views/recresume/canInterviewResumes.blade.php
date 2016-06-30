@@ -195,7 +195,6 @@ var youdao_conv_id = 271546;
                                                                 @elseif($v->post_id==17) 测试经理
                                                                 @elseif($v->post_id==6)构架师
                                                             @endif
-
 				                                       						                                        </span>
                                         </div>
 
@@ -305,7 +304,7 @@ var youdao_conv_id = 271546;
                     </tr>
                     <tr>
                         <td align="center">
-                            <input type="button" value="确认" class="btn">
+                            <input type="button" value="确认" class="btn_s" onclick="ck_url()">
                         </td>
                     </tr>
                     </tbody></table>
@@ -357,7 +356,7 @@ var youdao_conv_id = 271546;
                     </tr>
                     <tr>
                         <td align="center">
-                            <input type="button" value="确认" class="btn">
+                            <input type="button" value="确认" class="btn_s">
                         </td>
                     </tr>
                     </tbody></table>
@@ -386,7 +385,7 @@ var youdao_conv_id = 271546;
                         </tr>
                         <tr>
                             <td>
-                                <input type="submit" value="确认不合适" class="btn" onclick="ck_del()">
+                                <input type="submit" value="确认不合适" class="btn_s" onclick="ck_del()">
                                 <a class="emial_cancel" href="javascript:;">取消</a>
                             </td>
                         </tr>
@@ -406,7 +405,7 @@ var youdao_conv_id = 271546;
                     </tr>
                     <tr>
                         <td align="center">
-                            <input type="button" value="确认" class="btn">
+                            <input type="button" value="确认" class="btn" onclick="ck_url()">
                         </td>
                     </tr>
                     </tbody></table>
@@ -488,7 +487,7 @@ var youdao_conv_id = 271546;
 		//面试时间
 		var date = $('#datetimepicker').val();
 		//面试地点
-		var interAdd = $('#interAdd').val()
+		var interAdd = $('#interAdd').val();
 		//联系人
 		var linkMan = $('#linkMan').val();
 		//联系电话
@@ -515,4 +514,7 @@ var youdao_conv_id = 271546;
              }
          });
 	}
+    function ck_url(){
+        window.location.href = '{{url("canInterviewResumes")}}';
+    }
 </script>
