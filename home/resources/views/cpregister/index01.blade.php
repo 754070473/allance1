@@ -64,16 +64,13 @@ var youdao_conv_id = 271546;
 	                	<div class="c_text_1">基本信息为必填项，是求职者加速了解公司的窗口，认真填写吧！</div>
 	                 	<img width="668" height="56" class="c_steps" alt="第一步" src="style/images/step1.png">
 	                    
-	                    <h3>公司全称 <span>
+	                    <h3>公司全称 </h3>
 	                    	@if($arr->m_name=="")
 								<input type="text" placeholder="请输入公司名称，如:福建平潭协创进出口有限公司 " value="" name="name" id="name" class="valid">
 							@else
-								{{$arr->m_name}}
+                                <span>{{$arr->m_name}}</span>
 							@endif
-	                    </span></h3> 
-							<input type="text" placeholder="请输入公司名称，如:福建平潭协创进出口有限公司 " value="" name="name" id="name" class="valid">
-	                   
-	                    
+
 	                    <!-- <h3>公司简称</h3> 非必填
 	                    	<input type="text" placeholder="请输入公司简称，如:拉勾" value="" name="m_course" id="name" class="valid"> -->	
 	                    <!--非必填改必填-->

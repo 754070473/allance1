@@ -13,19 +13,17 @@ class CompanyglController extends Controller {
     public function index04()
     {
         $com_id = session::get('com_id');
-        $com_id = 1;    //测试数据
         $name = DB::table('al_company')
         ->where('com_id',$com_id)
         ->first();
-        // print_r($name);die;
+//         print_r($name);die;
         $mes_id = $name->mes_id;
         // echo $mes_id;die;
         $data['arr'] = DB::table('al_com_message')
-        ->join('al_recruit', 'al_recruit.mes_id', '=', 'al_com_message.mes_id')
-        ->join('al_place','al_place.pla_id','=','al_com_message.m_place')
+        ->leftjoin('al_recruit', 'al_recruit.mes_id', '=', 'al_com_message.mes_id')
         ->where('al_com_message.mes_id',$mes_id)
         ->first();
-        // print_r($data['arr']);
+//         print_r($data['arr']);die;
         $m_welfare= $data['arr']->m_welfare;
         $data['welfare'] = explode(',',$m_welfare);
 
