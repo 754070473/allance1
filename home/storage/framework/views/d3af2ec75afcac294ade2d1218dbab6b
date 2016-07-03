@@ -6,11 +6,11 @@
                                 <h2><?php echo e($val['i_name']); ?><span></span></h2>
                                         <?php foreach($val['son'] as $ke=>$va): ?>
                                         <?php if($va['num'] == 1): ?>
-                                        <a href="<?php echo e(url('/list')); ?>?i_name=<?php echo e($va['i_name']); ?>"><?php echo e($va['i_name']); ?></a>
+                                        <a href="<?php echo e(url('search')); ?>?name=<?php echo e($va['i_name']); ?>"><?php echo e($va['i_name']); ?></a>
                                         <?php endif; ?>
                                             <?php foreach($va['son'] as $k=>$v): ?>
                                                 <?php if($v['num'] == 1): ?>
-                                        <a href="<?php echo e(url('/list')); ?>?i_name=<?php echo e($v['i_name']); ?>"><?php echo e($v['i_name']); ?></a>
+                                        <a href="<?php echo e(url('search')); ?>?name=<?php echo e($v['i_name']); ?>"><?php echo e($v['i_name']); ?></a>
                                             <?php endif; ?>
                                             <?php endforeach; ?>
                                             <?php endforeach; ?>
@@ -19,7 +19,7 @@
                             <?php foreach($val['son'] as $ke=>$va): ?>
 					   		<dl class="reset">
 					        		<dt>
-					        			<a href="<?php echo e(url('/list')); ?>?i_name=<?php echo e($va['i_name']); ?>">
+					        			<a href="<?php echo e(url('search')); ?>?name=<?php echo e($va['i_name']); ?>">
 					        				<?php echo e($va['i_name']); ?>
 
 					        			</a>
@@ -27,9 +27,9 @@
 						        	<dd>
                                         <?php foreach($va['son'] as $k=>$v): ?>
                                             <?php if($v['num'] == 1): ?>
-                                         <a href="<?php echo e(url('/list')); ?>?i_name=<?php echo e($v['i_name']); ?>" class="curr" ><?php echo e($v['i_name']); ?></a>
+                                         <a href="<?php echo e(url('search')); ?>?name=<?php echo e($v['i_name']); ?>" class="curr" ><?php echo e($v['i_name']); ?></a>
                                         <?php else: ?>
-                                         <a href="<?php echo e(url('/list')); ?>?i_name=<?php echo e($v['i_name']); ?>" ><?php echo e($v['i_name']); ?></a>
+                                         <a href="<?php echo e(url('search')); ?>?name=<?php echo e($v['i_name']); ?>" ><?php echo e($v['i_name']); ?></a>
                                             <?php endif; ?>
                                         <?php endforeach; ?>
 							         </dd>

@@ -241,8 +241,8 @@ var youdao_conv_id = 271546;
 	                    		<li class="odd clearfix">
 			                	<div class="hot_pos_l">
 			                        <div class="mb10">
-
-			                           <a href="{{url('jobdetail')}}?rec_id={{$v->rec_id}}" target="_blank">{{$v->r_name}}</a>
+										
+			                           	<a href="{{url('jobdetail')}}?rec_id={{$v->rec_id}}" target="_blank">{{$v->r_name}}</a>
 			                           
 			                            &nbsp;
 			                            <span class="c9">[{{$v->i_name}}]</span>

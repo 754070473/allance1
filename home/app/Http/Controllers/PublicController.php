@@ -173,6 +173,7 @@ class PublicController extends Controller {
          //echo $pla_id;
         // echo $r_suffer;//经验
         // echo $r_edu;//学历
+        
         if(!empty($r_suffer)){
             $key="1";
         }else if(!empty($r_edu)){
