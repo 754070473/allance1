@@ -33,35 +33,21 @@ console.log(1);
 var youdao_conv_id = 271546; 
 </script> 
 <script src="style/js/conv.js" type="text/javascript"></script>
-<script src="style/js/ajaxCross.json" charset="UTF-8"></script></head>
+<script src="style/js/ajaxCross.json" charset="UTF-8"></script>
+<script type="text/javascript">
+    $(function(){
+     $.get("{{url('top')}}",function(m){
+         $('#cache').html(m);
+        
+     })
+    })
+
+</script>
+</head>
 <body>
 <div id="body">
-	<div id="header">
-    	<div class="wrapper">
-    		<a class="logo" href="index">
-    			<img width="229" height="43" alt="拉勾招聘-专注互联网招聘" src="style/images/logo.png">
-    		</a>
-    		<ul id="navheader" class="reset">
-    			<li><a href="index">首页</a></li>
-    			<li class="current"><a href="companylist">公司</a></li>
-    			<li><a target="_blank" href="">论坛</a></li>
-    			<li><a rel="nofollow" href="">个人中心</a></li>
-	    		<li><a rel="nofollow" href="create">发布职位</a></li>
-	    		    		</ul>
-        	        	<dl class="collapsible_menu">
-            	<dt>
-           			<span>jason&nbsp;</span> 
-            		<span class="red dn" id="noticeDot-1"></span>
-            		<i></i>
-            	</dt>
-                    <dd><a href="positions">我发布的职位</a></dd>
-                	<dd><a href="positions">我收到的简历</a></dd>
-                	<dd class="btm"><a href="myhome">我的公司主页</a></dd>
-                	<dd><a href="jianli">我要找工作</a></dd>
-                    <dd><a href="accountBind">帐号设置</a></dd>
-                    <dd class="logout"><a rel="nofollow" href="login">退出</a></dd>
-            </dl>
-                                </div>
+<div id="cache" style="padding-bottom:20px;">
+</div>
     </div><!-- end #header -->
     <div id="container">
         <!-- <script src="style/js/swfobject_modified.js" type="text/javascript"></script> -->
@@ -96,7 +82,7 @@ var youdao_conv_id = 271546;
 	                   			                        
 	                        	                        	<em class="unvalid"></em>
                         		<span class="va dn" style="display: none;">强强联合未认证企业</span>
-	                        	<a target="_blank" class="applyC" href="http://www.lagou.com/c/auth">申请认证</a>
+	                        	<a  class="applyC" href="authSuccess">申请认证</a>
 	                        	                        <div class="clear"></div>
 	                       	
 	                       		                   			<h1 title="{{$arr->m_name}}" id='bb' class="fullname">{{$arr->m_name}}</h1>
@@ -233,8 +219,9 @@ var youdao_conv_id = 271546;
 					                    	<h2><em></em>公司产品</h2>
 					                    </dt>
 					                    <dd>
-					                        <form method="post" class="productForm"  enctype="multipart/form-data" >
+					                        <form method="post"  action="save_company_save"  enctype="multipart/form-data" >
 					                            <div class="new_product">
+					                            	<input type="hidden" name='mes_id' value="{{$arr->mes_id}}">
 					                            	<input type="hidden" name="_token" value="{{csrf_token()}}">
 							                            <div class="product_upload dn productNo">
 							                                <div style="background-color: rgb(147, 183, 187);">
@@ -252,25 +239,24 @@ var youdao_conv_id = 271546;
 							                    	<input type="hidden" value="3" name="type" class="type"> 
 							                    	<input type="hidden" value="images/product_default.png" name="productPicUrl" class="productInfos">   
 							                    </div>
-					                            
 					                            <div class="cp_intro">
-					                               	<input type="text" placeholder="请输入产品名称" value="发大发" name="product" class="valid">	
-					                                <input type="text" placeholder="请输入产品网址" value="http://www.weimob.com" name="productUrl" class="valid">	
-					                                <textarea placeholder="请简短描述该产品定位、产品特色、用户群体等" maxlength="500" value="发达发生的faf发达发生的faf发达发生的faf发达发生的faf发达发生的faf发达发生的faf发达发生的faf发达发生的faf发达发生的faf发达发生的faf发达发生的faf发达发生的faf发达发生的faf" class="s_textarea valid" name="productProfile">随便写随便写随便写随便写随便写随便写随便写随便写随便写随便写随便写随便写随便写随便写随便写随便写随便写随便写随便写随便写随便写</textarea>	
+					                               	<input type="text" placeholder="请输入产品名称" value="{{$arr->product}}" name="product" class="valid">	
+					                                <input type="text" placeholder="请输入产品网址" value="{{$arr->productUrl}}" name="productUrl" class="valid">	
+					                                <textarea placeholder="请简短描述该产品定位、产品特色、用户群体等" maxlength="500" value="{{$arr->productProfile}}" class="s_textarea valid" name="productProfile">{{$arr->productProfile}}</textarea>	
 					                                <div class="word_count fr">你还可以输入 <span>437</span> 字</div>
 					                                <div class="clear"></div>
-					                                <input type="submit" value="保存" class="btn_small">
+					                                <input type="submit" id='cpmc' value="保存" class="btn_small">
 					                                <a class="btn_cancel_s product_delete" href="javascript:void(0)">删除</a>
 					                        		<input type="hidden" value="11867" class="product_id">
 					                            </div>
 											</form>
 					                    </dd>
 					                </dl>
-					                <script>
-					                	$('#cpmc').click(function(){
-					                		alert(1);
-					                	})
-					                </script>
+					                // <script>
+					                // 	$('#cpmc').click(function(){
+					                // 		alert(1);
+					                // 	})
+					                // </script>
 					                <!--有产品-->
 					                <dl class="c_product">
 					                	<dt>
@@ -279,13 +265,14 @@ var youdao_conv_id = 271546;
 					                    <dd>
 					                    	<img width="380" height="220" alt="发大发" src="style/images/product_default.png">
 				                        	<div class="cp_intro">
-        						               <h3><a target="_blank" href="http://www.zmtpost.com">随便写</a></h3>
+        						               <h3><a target="_blank" href="{{$arr->productUrl}}">{{$arr->product}}</a></h3>
 					                            <div class="scroll-pane" style="overflow: hidden; padding: 0px; width: 260px;">
 					                            	
-					                            <div class="jspContainer" style="width: 260px; height: 140px;"><div class="jspPane" style="padding: 0px; top: 0px; width: 260px;"><div>随便写随便写随便写随便写随便写随便写随便写随便写随便写随便写随便写随便写随便写随便写随便写随便写随便写随便写随便写随便写随便写</div></div></div></div>
+					                            <div class="jspContainer" style="width: 260px; height: 140px;"><div class="jspPane" style="padding: 0px; top: 0px; width: 260px;">
+					                            	<div>{{$arr->productProfile}}</div></div></div></div>
 					                        </div>
 					                        <a title="编辑公司产品" class="c_edit product_edit" href="javascript:void(0)"></a>
-					            			<a title="新增公司产品" class="c_add product_add" href="javascript:void(0)"></a>
+					            			<!-- <a title="新增公司产品" class="c_add product_add" href="javascript:void(0)"></a> -->
 					                    </dd>
 					                </dl>
 	            
@@ -370,6 +357,9 @@ var youdao_conv_id = 271546;
 		                    <dd>
 		                    	<div class="addnew">
 		                        	发布需要的人才信息，让伯乐和千里马尽快相遇……<br>
+		                        	@foreach($aa as $key=>$val)
+		                        	<span>{{$val->r_major}}</span><br>
+		                        	@endforeach
 		                            <a href="create">+添加招聘职位</a>
 		                        </div>
 		                    </dd>
@@ -530,7 +520,7 @@ var youdao_conv_id = 271546;
 		                <dl class="c_section c_member">
 		                	<dt>
 		                    	<h2><em></em>公司创始人</h2>
-	                    		<a title="添加创始人" class="c_add" href="javascript:void(0)"></a>
+	                    		<!-- <a title="添加创始人" class="c_add" href="javascript:void(0)"></a> -->
 		                    </dt>
 		                    <dd> 
 		                    			                    				                    
@@ -566,7 +556,7 @@ var youdao_conv_id = 271546;
 					                            <textarea placeholder="请输入创始人个人简介" maxlength="500" class="s_textarea valid" id="remark" name="remark">{{$arr->remark}}</textarea>	
 					                            <div class="word_count fr">你还可以输入 <span>476</span> 字</div>
 					                            <div class="clear"></div>
-					                            <input type="hidden" id='me_id' value="{{$arr->mes_id}}">
+					                            <input type="hidden" name='me_id' value="{{$arr->mes_id}}">
 					                            <input type="submit" value="保存" id="chuang" class="btn_small">
 				                                <a class="btn_cancel_s member_delete" href="javascript:void(0)">删除</a>
 				                        		<input type="hidden" value="11493" class="leader_id">
@@ -595,12 +585,12 @@ var youdao_conv_id = 271546;
        
    	</div>
 <script>
-	$('#chuang').click(function(){
-		var name = $('#name').val();
-		var position = $('position').val();
-		var remark = $('#remark').val();
-		alert(name);
-	})
+// 	$('#chuang').click(function(){
+// 		var name = $('#name').val();
+// 		var position = $('position').val();
+// 		var remark = $('#remark').val();
+// 		alert(name);
+// 	})
 </script>
 <!-------------------------------------弹窗lightbox  ----------------------------------------->
 <div style="display:none;">

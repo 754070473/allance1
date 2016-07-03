@@ -22,7 +22,59 @@ class PublicController extends Controller {
 		if(!empty($per_id)){
 			$query['key']="1";//判断是否是个人登录
 		}else if(!empty($com_id)){
-			$query['key']="2";//企业登录
+			
+            //根据企业id查询在企业表中是否有企业id(mes_id)
+            $user = DB::table('al_company')->where('com_id', $com_id)->first();
+            $mes_id = $user->mes_id;
+            if(empty($mes_id))
+            {
+                $query['dz'] = 'index01';
+            }
+            else
+            {
+                $mes = DB::table('al_com_message')->where('mes_id', $mes_id)->first();
+                $m_name = $mes->m_name;
+                $m_url = $mes->m_url;
+                $m_place = $mes->m_place;
+                $m_type = $mes->m_type;
+                $me_id = $mes->me_id;
+                $welfare = $mes->m_welfare;
+                $leadername = $mes->leadername;  //创始人姓名
+                $position = $mes->position;  //创始人 职位
+                $weibo = $mes->weibo;  //创始人微博
+                $remark = $mes->remark;  //创始人介绍
+                $product = $mes->product;  //产品名称
+                $productUrl = $mes->productUrl;  //产品地址
+                $productProfile = $mes->productProfile;  //产品地址
+                $m_logo = $mes->m_logo;  //公司logo
+                $m_desc = $mes->m_desc;  //产品介绍
+                if(empty($m_name)||empty($m_url)||empty($m_place)||empty($m_type)||empty($me_id))
+                {
+                    $query['dz'] = 'index01';  //添加企业信息1
+                }
+                elseif(isset($m_name)&&isset($m_url)&&isset($m_place)&&isset($m_type)&&isset($me_id)||empty($welfare))
+                {
+                    $query['dz'] = 'tag';       //添加企业信息2
+                }
+                elseif(isset($m_name)&&isset($m_url)&&isset($m_place)&&isset($m_type)&&isset($me_id)&&isset($welfare)||empty($leadername)||empty($position)||empty($weibo)||empty($remark))
+                {
+                    $query['dz'] = 'founder';   //添加企业信息3
+                }
+                elseif(isset($m_name)&&isset($m_url)&&isset($m_place)&&isset($m_type)&&isset($me_id)&&isset($welfare)&&isset($leadername)&&isset($position)&&isset($weibo)&&isset($remark)||empty($product)||empty($productProfile)||empty($productUrl))
+                {
+                    $query['dz'] = 'index02';   //添加企业信息4
+                }
+                elseif(isset($m_name)&&isset($m_url)&&isset($m_place)&&isset($m_type)&&isset($me_id)&&isset($welfare)&&isset($leadername)&&isset($position)&&isset($weibo)&&isset($remark)&&isset($product)&&isset($productProfile)&&isset($productUrl)||empty($m_logo)||empty($m_desc))
+                {
+                    $query['dz'] = 'index03';   //添加企业信息5
+                }
+                else
+                {
+                    $query['dz'] = 'index03';   //企业信息
+                }
+                $query['key']="2";//企业登录
+            }
+
 		}else{
 			$query['key']="0";//没登录
 		}
@@ -35,7 +87,7 @@ class PublicController extends Controller {
             //     is_file($cacheFile); 
             // if (!is_file($cacheFile) || time() - filemtime($cacheFile) > $cacheTime) {  
             //<!--页面输出部分内容。也是ob_get_contents()函数取得的全部内容-->
-            
+                // print_r($query);
                  return view("public.top",$query);
 
             // $content = ob_get_contents(); //取得php页面输出的全部内容   
@@ -68,7 +120,6 @@ class PublicController extends Controller {
                 ->where('r_status',1)
                 ->get();
             foreach ($data[$key]->son as $k => $v) {
-
                 $time = $this->time($v->r_addtime, $now_time);
                 if ($time['d'] > 0) {
                     $data[$key]->son[$k]->r_addtime = $time['d'] . '天前发布';
@@ -81,8 +132,12 @@ class PublicController extends Controller {
                 }
             }
         }
+        $key = DB::table('al_keyword')
+            ->orderBy('k_num', 'desc')
+            ->limit(10)
+            ->get();
         //print_r($data);die;
-		return view("public.main",['arr'=>$arr,'data'=>$data]);
+		return view("public.main",['arr'=>$arr,'data'=>$data,'key'=>$key]);
 	}
 
     /**
@@ -112,11 +167,24 @@ class PublicController extends Controller {
     // 搜索
     public function search(Request $request)
     {
-        $query['name']=$request->input('name');
+        $query['name']=$request->input('name')?$request->input('name'):"";
 
-        $name=$request->input('name');
+        $name=$request->input('name')?$request->input('name'):"";
 
-
+        if($name != "")
+        {
+            $key = DB::table('al_keyword')->where('k_name', $name)->first();
+            if(empty($key))
+            {
+                $time = date('Y-m-d H:i:s',time());
+                DB::table('al_keyword')->insert(
+                    ['k_name' => $name, 'k_addtime' => $time]);
+            }
+            else
+            {
+                DB::table('al_keyword')->where('key_id',$key->key_id)->increment('k_num', 1);
+            }
+        }
         $now_time = date('Y-m-d H:i:s',time());
         $query['arr']=DB::table('al_recruit')
             ->leftjoin('al_com_message', 'al_recruit.mes_id', '=', 'al_com_message.mes_id')
@@ -124,6 +192,7 @@ class PublicController extends Controller {
             ->leftjoin('al_place', 'al_recruit.pla_id', '=', 'al_place.pla_id')
             ->where('r_name','like',"%$name%")
             ->where('r_status',1)
+            ->orderBy('r_addtime','desc')
             ->paginate(5);
             foreach ($query['arr'] as $k => $v) {
 
@@ -156,6 +225,10 @@ class PublicController extends Controller {
          $query['WXYZ']=DB::table('al_place')->select(['*'])->where('i_level','like',"%W%")->orwhere('i_level','like',"%X%")->orwhere('i_level','like',"%Y%")->orwhere('i_level','like',"%Z%")->get();
           //期望城市
           //print_r($query);die;
+        $query['key'] = DB::table('al_keyword')
+            ->orderBy('k_num', 'desc')
+            ->limit(10)
+            ->get();
         return view('index.search',$query);
     }
 
@@ -226,12 +299,11 @@ class PublicController extends Controller {
                 ->leftjoin('al_com_message', 'al_recruit.mes_id', '=', 'al_com_message.mes_id')
                 ->leftjoin('al_hang', 'al_com_message.me_id', '=', 'al_hang.me_id')
                 ->leftjoin('al_place', 'al_recruit.pla_id', '=', 'al_place.pla_id')
-
                 ->where('r_status',1)
                 ->where('r_suffer','=',"$r_suffer")
+                ->orderBy('r_addtime','desc')
                 ->paginate(20);
                 foreach ($query['arr'] as $k => $v) {
-
                     $time = $this->time($v->r_addtime, $now_time);
                     if ($time['d'] > 0) {
                         $query['arr'][$k]->r_addtime = $time['d'] . '天前发布';
@@ -251,10 +323,10 @@ class PublicController extends Controller {
             $query['arr']=DB::table('al_recruit')
                 ->leftjoin('al_com_message', 'al_recruit.mes_id', '=', 'al_com_message.mes_id')
                 ->leftjoin('al_hang', 'al_com_message.me_id', '=', 'al_hang.me_id')
-            ->leftjoin('al_place', 'al_recruit.pla_id', '=', 'al_place.pla_id')
-
+                ->leftjoin('al_place', 'al_recruit.pla_id', '=', 'al_place.pla_id')
                 ->where('r_status',1)
                 ->where('r_edu','=',"$r_edu")
+                ->orderBy('r_addtime','desc')
                 ->paginate(20);
                 foreach ($query['arr'] as $k => $v) {
 
@@ -281,6 +353,7 @@ class PublicController extends Controller {
 
                 ->where('r_status',1)
                 ->where('i_name','=',"$pla_id")
+                ->orderBy('r_addtime','desc')
                 ->paginate(20);
                 foreach ($query['arr'] as $k => $v) {
 
@@ -307,6 +380,7 @@ class PublicController extends Controller {
 
                 ->where('r_status',1)
                 ->where('r_pay','=',"$r_pay")
+                ->orderBy('r_addtime','desc')
                 ->paginate(20);
                 foreach ($query['arr'] as $k => $v) {
 
@@ -333,6 +407,7 @@ class PublicController extends Controller {
 
                 ->where('r_status',1)
                  ->where('r_name','like',"%$r_name%")
+                ->orderBy('r_addtime','desc')
                 ->paginate(20);
                 foreach ($query['arr'] as $k => $v) {
 
@@ -360,6 +435,7 @@ class PublicController extends Controller {
                 ->where('r_status',1)
                 ->where('r_name','like',"%$r_name%")
                 ->where('i_name','=',"$pla_id")
+                ->orderBy('r_addtime','desc')
                 ->paginate(20);
                 foreach ($query['arr'] as $k => $v) {
 
@@ -387,6 +463,7 @@ class PublicController extends Controller {
                 ->where('r_status',1)
                 ->where('r_name','like',"%$r_name%")
                 ->where('r_pay','like',"%r_pay%")
+                ->orderBy('r_addtime','desc')
                 ->paginate(20);
                 foreach ($query['arr'] as $k => $v) {
 
@@ -414,6 +491,7 @@ class PublicController extends Controller {
                 ->where('r_status',1)
                 ->where('r_name','like',"%$r_name%")
                 ->where('r_edu','like',"%r_edu%")
+                ->orderBy('r_addtime','desc')
                 ->paginate(20);
                 foreach ($query['arr'] as $k => $v) {
 
@@ -441,6 +519,7 @@ class PublicController extends Controller {
                 ->where('r_status',1)
                 ->where('r_name','like',"%$r_name%")
                 ->where('r_suffer','like',"%r_suffer%")
+                ->orderBy('r_addtime','desc')
                 ->paginate(20);
                 foreach ($query['arr'] as $k => $v) {
 
@@ -469,6 +548,7 @@ class PublicController extends Controller {
                 ->where('r_name','like',"%$r_name%")
                 ->where('r_pay','like',"%r_pay%")
                 ->where('i_name','like',"%pla_id%")
+                ->orderBy('r_addtime','desc')
                 ->paginate(20);
                 foreach ($query['arr'] as $k => $v) {
 
@@ -497,6 +577,7 @@ class PublicController extends Controller {
                 ->where('r_name','like',"%$r_name%")
                 ->where('r_edu','like',"%r_edu%")
                 ->where('i_name','like',"%pla_id%")
+                ->orderBy('r_addtime','desc')
                 ->paginate(20);
                 foreach ($query['arr'] as $k => $v) {
 
@@ -525,6 +606,7 @@ class PublicController extends Controller {
                 ->where('r_name','like',"%$r_name%")
                 ->where('r_suffer','like',"%r_suffer%")
                 ->where('i_name','like',"%pla_id%")
+                ->orderBy('r_addtime','desc')
                 ->paginate(20);
                 foreach ($query['arr'] as $k => $v) {
 
@@ -553,6 +635,7 @@ class PublicController extends Controller {
                 ->where('r_name','like',"%$r_name%")
                 ->where('r_pay','like',"%r_pay%")
                 ->where('r_edu','like',"%r_edu%")
+                ->orderBy('r_addtime','desc')
                 ->paginate(20);
                 foreach ($query['arr'] as $k => $v) {
 
@@ -581,6 +664,7 @@ class PublicController extends Controller {
                 ->where('r_name','like',"%$r_name%")
                 ->where('r_pay','like',"%r_pay%")
                 ->where('r_suffer','like',"%r_suffer%")
+                ->orderBy('r_addtime','desc')
                 ->paginate(20);
                 foreach ($query['arr'] as $k => $v) {
 
@@ -609,6 +693,7 @@ class PublicController extends Controller {
                 ->where('i_name','like',"%$pla_id%")
                 ->where('r_pay','like',"%r_pay%")
                 ->where('r_edu','like',"%r_edu%")
+                ->orderBy('r_addtime','desc')
                 ->paginate(20);
                 foreach ($query['arr'] as $k => $v) {
 
@@ -637,6 +722,7 @@ class PublicController extends Controller {
                 ->where('i_name','like',"%$pla_id%")
                 ->where('r_pay','like',"%r_pay%")
                 ->where('r_suffer','like',"%r_suffer%")
+                ->orderBy('r_addtime','desc')
                 ->paginate(20);
                 foreach ($query['arr'] as $k => $v) {
 
@@ -664,6 +750,7 @@ class PublicController extends Controller {
                 ->where('r_edu','like',"%$r_edu%")
                 ->where('r_pay','like',"%r_pay%")
                 ->where('r_suffer','like',"%r_suffer%")
+                ->orderBy('r_addtime','desc')
                 ->paginate(20);
                 foreach ($query['arr'] as $k => $v) {
 
@@ -692,9 +779,9 @@ class PublicController extends Controller {
                 ->where('r_pay','like',"%r_pay%")
                 ->where('r_name','like',"%r_name%")
                 ->where('i_name','like',"%pla_id%")
+                ->orderBy('r_addtime','desc')
                 ->paginate(20);
                 foreach ($query['arr'] as $k => $v) {
-
                     $time = $this->time($v->r_addtime, $now_time);
                     if ($time['d'] > 0) {
                         $query['arr'][$k]->r_addtime = $time['d'] . '天前发布';
@@ -720,6 +807,7 @@ class PublicController extends Controller {
                 ->where('r_pay','like',"%r_pay%")
                 ->where('r_name','like',"%r_name%")
                 ->where('i_name','like',"%pla_id%")
+                ->orderBy('r_addtime','desc')
                 ->paginate(20);
                 foreach ($query['arr'] as $k => $v) {
 
@@ -748,6 +836,7 @@ class PublicController extends Controller {
                 ->where('r_pay','like',"%r_pay%")
                 ->where('r_name','like',"%r_name%")
                 ->where('r_edu','like',"%r_edu%")
+                ->orderBy('r_addtime','desc')
                 ->paginate(20);
                 foreach ($query['arr'] as $k => $v) {
 
@@ -777,6 +866,7 @@ class PublicController extends Controller {
                 ->where('r_name','like',"%r_name%")
                 ->where('r_edu','like',"%r_edu%")
                 ->where('i_name','like',"%pla_id%")
+                ->orderBy('r_addtime','desc')
                 ->paginate(20);
                 foreach ($query['arr'] as $k => $v) {
 
@@ -801,6 +891,7 @@ class PublicController extends Controller {
                 ->leftjoin('al_hang', 'al_com_message.me_id', '=', 'al_hang.me_id')
                 ->leftjoin('al_place', 'al_recruit.pla_id', '=', 'al_place.pla_id')
                 ->where('r_status',1)
+                ->orderBy('r_addtime','desc')
                 ->paginate(20);
                 foreach ($query['arr'] as $k => $v) {
 
@@ -819,17 +910,7 @@ class PublicController extends Controller {
                 //print_r($query['arr']);die;
                 echo json_encode($query['arr']);die; 
         }
-                
-
-
     }
-
-
-
-
-
-
-
 }	
 
 ?>
