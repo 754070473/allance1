@@ -77,16 +77,9 @@ var youdao_conv_id = 271546;
 <script type="text/javascript" src="style/js/search.min.js"></script>
 <dl class="hotSearch">
 	<dt>热门搜索：</dt>
-	<dd><a href="">Java</a></dd>
-	<dd><a href="list.htmlPHP?labelWords=label&city=">PHP</a></dd>
-	<dd><a href="list.htmlAndroid?labelWords=label&city=">Android</a></dd>
-	<dd><a href="list.htmliOS?labelWords=label&city=">iOS</a></dd>
-	<dd><a href="list.html前端?labelWords=label&city=">前端</a></dd>
-	<dd><a href="list.html产品经理?labelWords=label&city=">产品经理</a></dd>
-	<dd><a href="list.htmlUI?labelWords=label&city=">UI</a></dd>
-	<dd><a href="list.html运营?labelWords=label&city=">运营</a></dd>
-	<dd><a href="list.htmlBD?labelWords=label&city=">BD</a></dd>
-	<dd><a href="list.html?gx=实习&city=">实习</a></dd>
+    <?php foreach($key as $val): ?>
+	<dd><a href="search?name=<?php echo e($val->k_name); ?>"><?php echo e($val->k_name); ?></a></dd>
+    <?php endforeach; ?>
 </dl>			
 			<div id="home_banner">
 	            <ul class="banner_bg">

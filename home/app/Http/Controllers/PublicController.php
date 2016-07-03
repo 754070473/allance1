@@ -15,6 +15,15 @@ class PublicController extends Controller {
 		//个人
 		$per_id=Session::get('per_id');//用户id
 		$query['i_name']=Session::get('i_name');//用户id
+        if($query['i_name']==""){
+            $p_photo=Session::get('p_phone');
+            $p_email=Session::get('p_email');
+            if(!empty($p_photo)){
+                $query['i_name']=$p_photo;
+            }else{
+                $query['i_name']=$p_email;
+            }
+        }
 		//企业
 		$com_id=Session::get('com_id');//企业id
 		$query['c_phone']=Session::get('c_phone');
