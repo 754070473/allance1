@@ -239,7 +239,7 @@ var youdao_conv_id = 271546;
 			                        <!-- <a  class="wb">分享到微博</a> -->
 			                    </div>
 			                	<div class="hot_pos_r">
-			                    	<div class="mb10 recompany"><a href="<?php echo e($v->m_url); ?>" target="_blank"><?php echo e($v->m_name); ?></a></div>
+			                    	<div class="mb10 recompany"><a href="<?php echo e(url('jobdetail')); ?>?rec_id=<?php echo e($v->rec_id); ?>" target="_blank"><?php echo e($v->m_name); ?></a></div>
 			                        <span><em class="c7">领域：</em> <?php echo e($v->h_name); ?></span>
                                     <span><em class="c7">创始人：</em><?php echo e($v->leadername); ?></span>
                                     <br />

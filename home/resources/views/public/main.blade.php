@@ -239,7 +239,7 @@ var youdao_conv_id = 271546;
 			                        <!-- <a  class="wb">分享到微博</a> -->
 			                    </div>
 			                	<div class="hot_pos_r">
-			                    	<div class="mb10 recompany"><a href="{{$v->m_url}}" target="_blank">{{$v->m_name}}</a></div>
+			                    	<div class="mb10 recompany"><a href="{{url('jobdetail')}}?rec_id={{$v->rec_id}}" target="_blank">{{$v->m_name}}</a></div>
 			                        <span><em class="c7">领域：</em> {{$v->h_name}}</span>
                                     <span><em class="c7">创始人：</em>{{$v->leadername}}</span>
                                     <br />

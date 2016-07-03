@@ -280,7 +280,7 @@ var youdao_conv_id = 271546;
 			                        <div class="apply">
 			                        <a href="toudi.html" target="_blank">投个简历</a>
 			                        				                        </div>
-			                        <div class="mb10"><a href="{{$v->m_url}}" title="紫色医疗" target="_blank">{{$v->m_name}}</a></div>
+			                        <div class="mb10"><a href="{{url('jobdetail')}}?rec_id={{$v->rec_id}}" title="紫色医疗" target="_blank">{{$v->m_name}}</a></div>
 			                        <span><em class="c7">领域： </em>{{$v->h_name}}</span>
 			                        			                        <span><em class="c7">创始人：</em> {{$v->leadername}}</span>
 			                        			                        <br />
@@ -488,7 +488,8 @@ $(document).on('click','#xuan',function(){
                 		str+="<li class='odd clearfix'>";
                 			str+="<div class='hot_pos_l'>";
                 				str+="<div class='mb10'>";
-	            					str+="<a href='' target='_blank'>"+data[i].r_name+"</a>&nbsp;";
+                					
+	            					str+="<a href='jobdetail?rec_id="+data[i].rec_id+"' target='_blank'>"+data[i].r_name+"</a>&nbsp;";
 	            					str+="<span class='c9'>["+data[i].i_name+"]</span><br>";
 	            					str+=" <span><em class='c7'>月薪：</em>"+data[i].r_pay+"</span>";
 	            					str+="  <span><em class='c7'>经验：</em> ";
@@ -543,7 +544,7 @@ $(document).on('click','#xuan',function(){
 			                        "<a href='toudi.html' target='_blank'>投个简历</a>"
 			                        +"</div>";
 
-        						str+="<div class='mb10'>"+"<a href='' title='紫色医疗' target='_blank'>"+data[i].m_name+"</a>"+"</div>";
+        						str+="<div class='mb10'>"+"<a href='jobdetail?rec_id="+data[i].rec_id+"' title='紫色医疗' target='_blank'>"+data[i].m_name+"</a>"+"</div>";
 
         						str+="<span><em class='c7'>领域： </em>"+data[i].h_name+"</span><span><em class='c7'>创始人：</em>"+data[i].leadername+"</span><br /><span><em class='c7'>阶段： </em>"+data[i].m_type+"</span>";
         						str+="<ul class='companyTags reset'>";
