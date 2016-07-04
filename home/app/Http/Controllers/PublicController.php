@@ -196,13 +196,16 @@ class PublicController extends Controller {
         }
         $now_time = date('Y-m-d H:i:s',time());
         $query['arr']=DB::table('al_recruit')
+            ->select('*','al_post.i_name as post_name','al_place.i_name as place_name')
             ->leftjoin('al_com_message', 'al_recruit.mes_id', '=', 'al_com_message.mes_id')
             ->leftjoin('al_hang', 'al_com_message.me_id', '=', 'al_hang.me_id')
+            ->leftjoin('al_post', 'al_recruit.post_id', '=', 'al_post.post_id')
             ->leftjoin('al_place', 'al_recruit.pla_id', '=', 'al_place.pla_id')
-            ->where('r_name','like',"%$name%")
+            ->where('al_post.i_name','like',"%$name%")
             ->where('r_status',1)
             ->orderBy('r_addtime','desc')
             ->paginate(5);
+           // print_r($query['arr']);die;
             foreach ($query['arr'] as $k => $v) {
 
                 $time = $this->time($v->r_addtime, $now_time);
@@ -250,7 +253,7 @@ class PublicController extends Controller {
         $r_pay=$request->input('r_pay');//薪资
         if($r_pay=='不限'){ $r_pay="";}
 
-        $r_name=$request->input('r_name');//职位名称
+        $name=$request->input('r_name');//职位名称
         $pla_id=$request->input('pla_id');//地区
          //echo $pla_id;
         // echo $r_suffer;//经验
@@ -305,8 +308,10 @@ class PublicController extends Controller {
        if($key=="1"){
             $now_time = date('Y-m-d H:i:s',time());
             $query['arr']=DB::table('al_recruit')
+                ->select('*','al_post.i_name as post_name','al_place.i_name as place_name')
                 ->leftjoin('al_com_message', 'al_recruit.mes_id', '=', 'al_com_message.mes_id')
                 ->leftjoin('al_hang', 'al_com_message.me_id', '=', 'al_hang.me_id')
+                ->leftjoin('al_post', 'al_recruit.post_id', '=', 'al_post.post_id')
                 ->leftjoin('al_place', 'al_recruit.pla_id', '=', 'al_place.pla_id')
                 ->where('r_status',1)
                 ->where('r_suffer','=',"$r_suffer")
@@ -330,8 +335,10 @@ class PublicController extends Controller {
         }else if($key=="2"){
             $now_time = date('Y-m-d H:i:s',time());
             $query['arr']=DB::table('al_recruit')
+                ->select('*','al_post.i_name as post_name','al_place.i_name as place_name')
                 ->leftjoin('al_com_message', 'al_recruit.mes_id', '=', 'al_com_message.mes_id')
                 ->leftjoin('al_hang', 'al_com_message.me_id', '=', 'al_hang.me_id')
+                ->leftjoin('al_post', 'al_recruit.post_id', '=', 'al_post.post_id')
                 ->leftjoin('al_place', 'al_recruit.pla_id', '=', 'al_place.pla_id')
                 ->where('r_status',1)
                 ->where('r_edu','=',"$r_edu")
@@ -356,12 +363,14 @@ class PublicController extends Controller {
         }else if($key=="3"){
             $now_time = date('Y-m-d H:i:s',time());
             $query['arr']=DB::table('al_recruit')
+                ->select('*','al_post.i_name as post_name','al_place.i_name as place_name')
                 ->leftjoin('al_com_message', 'al_recruit.mes_id', '=', 'al_com_message.mes_id')
                 ->leftjoin('al_hang', 'al_com_message.me_id', '=', 'al_hang.me_id')
+                ->leftjoin('al_post', 'al_recruit.post_id', '=', 'al_post.post_id')
                 ->leftjoin('al_place', 'al_recruit.pla_id', '=', 'al_place.pla_id')
 
                 ->where('r_status',1)
-                ->where('i_name','=',"$pla_id")
+                ->where('al_place.i_name','=',"$pla_id")
                 ->orderBy('r_addtime','desc')
                 ->paginate(20);
                 foreach ($query['arr'] as $k => $v) {
@@ -383,8 +392,10 @@ class PublicController extends Controller {
         }else if($key=="4"){
             $now_time = date('Y-m-d H:i:s',time());
             $query['arr']=DB::table('al_recruit')
+                ->select('*','al_post.i_name as post_name','al_place.i_name as place_name')
                 ->leftjoin('al_com_message', 'al_recruit.mes_id', '=', 'al_com_message.mes_id')
                 ->leftjoin('al_hang', 'al_com_message.me_id', '=', 'al_hang.me_id')
+                ->leftjoin('al_post', 'al_recruit.post_id', '=', 'al_post.post_id')
                 ->leftjoin('al_place', 'al_recruit.pla_id', '=', 'al_place.pla_id')
 
                 ->where('r_status',1)
@@ -410,12 +421,14 @@ class PublicController extends Controller {
         }else if($key=="5"){
             $now_time = date('Y-m-d H:i:s',time());
             $query['arr']=DB::table('al_recruit')
+                ->select('*','al_post.i_name as post_name','al_place.i_name as place_name')
                 ->leftjoin('al_com_message', 'al_recruit.mes_id', '=', 'al_com_message.mes_id')
                 ->leftjoin('al_hang', 'al_com_message.me_id', '=', 'al_hang.me_id')
+                ->leftjoin('al_post', 'al_recruit.post_id', '=', 'al_post.post_id')
                 ->leftjoin('al_place', 'al_recruit.pla_id', '=', 'al_place.pla_id')
 
                 ->where('r_status',1)
-                 ->where('r_name','like',"%$r_name%")
+                 ->where('al_post.i_name','like',"%$name%")
                 ->orderBy('r_addtime','desc')
                 ->paginate(20);
                 foreach ($query['arr'] as $k => $v) {
@@ -437,13 +450,15 @@ class PublicController extends Controller {
         }else if($key=="6"){
             $now_time = date('Y-m-d H:i:s',time());
             $query['arr']=DB::table('al_recruit')
+                ->select('*','al_post.i_name as post_name','al_place.i_name as place_name')
                 ->leftjoin('al_com_message', 'al_recruit.mes_id', '=', 'al_com_message.mes_id')
                 ->leftjoin('al_hang', 'al_com_message.me_id', '=', 'al_hang.me_id')
+                ->leftjoin('al_post', 'al_recruit.post_id', '=', 'al_post.post_id')
                 ->leftjoin('al_place', 'al_recruit.pla_id', '=', 'al_place.pla_id')
 
                 ->where('r_status',1)
-                ->where('r_name','like',"%$r_name%")
-                ->where('i_name','=',"$pla_id")
+                ->where('al_post.i_name','like',"%$name%")
+                ->where('al_place.i_name','=',"$pla_id")
                 ->orderBy('r_addtime','desc')
                 ->paginate(20);
                 foreach ($query['arr'] as $k => $v) {
@@ -465,12 +480,14 @@ class PublicController extends Controller {
         }else if($key=="7"){
             $now_time = date('Y-m-d H:i:s',time());
             $query['arr']=DB::table('al_recruit')
+                ->select('*','al_post.i_name as post_name','al_place.i_name as place_name')
                 ->leftjoin('al_com_message', 'al_recruit.mes_id', '=', 'al_com_message.mes_id')
                 ->leftjoin('al_hang', 'al_com_message.me_id', '=', 'al_hang.me_id')
+                ->leftjoin('al_post', 'al_recruit.post_id', '=', 'al_post.post_id')
                 ->leftjoin('al_place', 'al_recruit.pla_id', '=', 'al_place.pla_id')
 
                 ->where('r_status',1)
-                ->where('r_name','like',"%$r_name%")
+                ->where('al_post.i_name','like',"%$name%")
                 ->where('r_pay','like',"%r_pay%")
                 ->orderBy('r_addtime','desc')
                 ->paginate(20);
@@ -493,12 +510,14 @@ class PublicController extends Controller {
         }else if($key=="8"){
             $now_time = date('Y-m-d H:i:s',time());
             $query['arr']=DB::table('al_recruit')
+                ->select('*','al_post.i_name as post_name','al_place.i_name as place_name')
                 ->leftjoin('al_com_message', 'al_recruit.mes_id', '=', 'al_com_message.mes_id')
                 ->leftjoin('al_hang', 'al_com_message.me_id', '=', 'al_hang.me_id')
+                ->leftjoin('al_post', 'al_recruit.post_id', '=', 'al_post.post_id')
                 ->leftjoin('al_place', 'al_recruit.pla_id', '=', 'al_place.pla_id')
 
                 ->where('r_status',1)
-                ->where('r_name','like',"%$r_name%")
+                ->where('al_post.i_name','like',"%$name%")
                 ->where('r_edu','like',"%r_edu%")
                 ->orderBy('r_addtime','desc')
                 ->paginate(20);
@@ -521,12 +540,14 @@ class PublicController extends Controller {
         }else if($key=="9"){
             $now_time = date('Y-m-d H:i:s',time());
             $query['arr']=DB::table('al_recruit')
+                ->select('*','al_post.i_name as post_name','al_place.i_name as place_name')
                 ->leftjoin('al_com_message', 'al_recruit.mes_id', '=', 'al_com_message.mes_id')
                 ->leftjoin('al_hang', 'al_com_message.me_id', '=', 'al_hang.me_id')
+                ->leftjoin('al_post', 'al_recruit.post_id', '=', 'al_post.post_id')
                 ->leftjoin('al_place', 'al_recruit.pla_id', '=', 'al_place.pla_id')
 
                 ->where('r_status',1)
-                ->where('r_name','like',"%$r_name%")
+                ->where('al_post.i_name','like',"%$name%")
                 ->where('r_suffer','like',"%r_suffer%")
                 ->orderBy('r_addtime','desc')
                 ->paginate(20);
@@ -549,14 +570,16 @@ class PublicController extends Controller {
         }else if($key=="10"){
             $now_time = date('Y-m-d H:i:s',time());
             $query['arr']=DB::table('al_recruit')
+                ->select('*','al_post.i_name as post_name','al_place.i_name as place_name')
                 ->leftjoin('al_com_message', 'al_recruit.mes_id', '=', 'al_com_message.mes_id')
                 ->leftjoin('al_hang', 'al_com_message.me_id', '=', 'al_hang.me_id')
+                ->leftjoin('al_post', 'al_recruit.post_id', '=', 'al_post.post_id')
                 ->leftjoin('al_place', 'al_recruit.pla_id', '=', 'al_place.pla_id')
 
                 ->where('r_status',1)
-                ->where('r_name','like',"%$r_name%")
+                ->where('al_post.i_name','like',"%$name%")
                 ->where('r_pay','like',"%r_pay%")
-                ->where('i_name','like',"%pla_id%")
+                ->where('al_place.i_name','like',"%pla_id%")
                 ->orderBy('r_addtime','desc')
                 ->paginate(20);
                 foreach ($query['arr'] as $k => $v) {
@@ -578,14 +601,16 @@ class PublicController extends Controller {
         }else if($key=="11"){
             $now_time = date('Y-m-d H:i:s',time());
             $query['arr']=DB::table('al_recruit')
+                ->select('*','al_post.i_name as post_name','al_place.i_name as place_name')
                 ->leftjoin('al_com_message', 'al_recruit.mes_id', '=', 'al_com_message.mes_id')
                 ->leftjoin('al_hang', 'al_com_message.me_id', '=', 'al_hang.me_id')
+                ->leftjoin('al_post', 'al_recruit.post_id', '=', 'al_post.post_id')
                 ->leftjoin('al_place', 'al_recruit.pla_id', '=', 'al_place.pla_id')
 
                 ->where('r_status',1)
-                ->where('r_name','like',"%$r_name%")
+                ->where('al_post.i_name','like',"%$name%")
                 ->where('r_edu','like',"%r_edu%")
-                ->where('i_name','like',"%pla_id%")
+                ->where('al_place.i_name','like',"%pla_id%")
                 ->orderBy('r_addtime','desc')
                 ->paginate(20);
                 foreach ($query['arr'] as $k => $v) {
@@ -607,14 +632,16 @@ class PublicController extends Controller {
         }else if($key=="12"){
             $now_time = date('Y-m-d H:i:s',time());
             $query['arr']=DB::table('al_recruit')
+                ->select('*','al_post.i_name as post_name','al_place.i_name as place_name')
                 ->leftjoin('al_com_message', 'al_recruit.mes_id', '=', 'al_com_message.mes_id')
                 ->leftjoin('al_hang', 'al_com_message.me_id', '=', 'al_hang.me_id')
+                ->leftjoin('al_post', 'al_recruit.post_id', '=', 'al_post.post_id')
                 ->leftjoin('al_place', 'al_recruit.pla_id', '=', 'al_place.pla_id')
 
                 ->where('r_status',1)
-                ->where('r_name','like',"%$r_name%")
+                ->where('al_post.i_name','like',"%$name%")
                 ->where('r_suffer','like',"%r_suffer%")
-                ->where('i_name','like',"%pla_id%")
+                ->where('al_place.i_name','like',"%pla_id%")
                 ->orderBy('r_addtime','desc')
                 ->paginate(20);
                 foreach ($query['arr'] as $k => $v) {
@@ -636,12 +663,14 @@ class PublicController extends Controller {
         }else if($key=="13"){
             $now_time = date('Y-m-d H:i:s',time());
             $query['arr']=DB::table('al_recruit')
+                ->select('*','al_post.i_name as post_name','al_place.i_name as place_name')
                 ->leftjoin('al_com_message', 'al_recruit.mes_id', '=', 'al_com_message.mes_id')
                 ->leftjoin('al_hang', 'al_com_message.me_id', '=', 'al_hang.me_id')
+                ->leftjoin('al_post', 'al_recruit.post_id', '=', 'al_post.post_id')
                 ->leftjoin('al_place', 'al_recruit.pla_id', '=', 'al_place.pla_id')
 
                 ->where('r_status',1)
-                ->where('r_name','like',"%$r_name%")
+                ->where('al_post.i_name','like',"%$name%")
                 ->where('r_pay','like',"%r_pay%")
                 ->where('r_edu','like',"%r_edu%")
                 ->orderBy('r_addtime','desc')
@@ -665,12 +694,14 @@ class PublicController extends Controller {
         }else if($key=="14"){
             $now_time = date('Y-m-d H:i:s',time());
             $query['arr']=DB::table('al_recruit')
+                ->select('*','al_post.i_name as post_name','al_place.i_name as place_name')
                 ->leftjoin('al_com_message', 'al_recruit.mes_id', '=', 'al_com_message.mes_id')
                 ->leftjoin('al_hang', 'al_com_message.me_id', '=', 'al_hang.me_id')
+                ->leftjoin('al_post', 'al_recruit.post_id', '=', 'al_post.post_id')
                 ->leftjoin('al_place', 'al_recruit.pla_id', '=', 'al_place.pla_id')
 
                 ->where('r_status',1)
-                ->where('r_name','like',"%$r_name%")
+                ->where('al_post.i_name','like',"%$name%")
                 ->where('r_pay','like',"%r_pay%")
                 ->where('r_suffer','like',"%r_suffer%")
                 ->orderBy('r_addtime','desc')
@@ -694,8 +725,10 @@ class PublicController extends Controller {
         }else if($key=="15"){
             $now_time = date('Y-m-d H:i:s',time());
             $query['arr']=DB::table('al_recruit')
+                ->select('*','al_post.i_name as post_name','al_place.i_name as place_name')
                 ->leftjoin('al_com_message', 'al_recruit.mes_id', '=', 'al_com_message.mes_id')
                 ->leftjoin('al_hang', 'al_com_message.me_id', '=', 'al_hang.me_id')
+                ->leftjoin('al_post', 'al_recruit.post_id', '=', 'al_post.post_id')
                 ->leftjoin('al_place', 'al_recruit.pla_id', '=', 'al_place.pla_id')
 
                 ->where('r_status',1)
@@ -723,8 +756,10 @@ class PublicController extends Controller {
         }else if($key=="16"){
             $now_time = date('Y-m-d H:i:s',time());
             $query['arr']=DB::table('al_recruit')
+                ->select('*','al_post.i_name as post_name','al_place.i_name as place_name')
                 ->leftjoin('al_com_message', 'al_recruit.mes_id', '=', 'al_com_message.mes_id')
                 ->leftjoin('al_hang', 'al_com_message.me_id', '=', 'al_hang.me_id')
+                ->leftjoin('al_post', 'al_recruit.post_id', '=', 'al_post.post_id')
                 ->leftjoin('al_place', 'al_recruit.pla_id', '=', 'al_place.pla_id')
 
                 ->where('r_status',1)
@@ -752,8 +787,10 @@ class PublicController extends Controller {
         }else if($key=="17"){
             $now_time = date('Y-m-d H:i:s',time());
             $query['arr']=DB::table('al_recruit')
+                ->select('*','al_post.i_name as post_name','al_place.i_name as place_name')
                 ->leftjoin('al_com_message', 'al_recruit.mes_id', '=', 'al_com_message.mes_id')
                 ->leftjoin('al_hang', 'al_com_message.me_id', '=', 'al_hang.me_id')
+                ->leftjoin('al_post', 'al_recruit.post_id', '=', 'al_post.post_id')
                 ->leftjoin('al_place', 'al_recruit.pla_id', '=', 'al_place.pla_id')
                 ->where('r_status',1)
                 ->where('r_edu','like',"%$r_edu%")
@@ -780,14 +817,16 @@ class PublicController extends Controller {
         }else if($key=="18"){
             $now_time = date('Y-m-d H:i:s',time());
             $query['arr']=DB::table('al_recruit')
+                ->select('*','al_post.i_name as post_name','al_place.i_name as place_name')
                 ->leftjoin('al_com_message', 'al_recruit.mes_id', '=', 'al_com_message.mes_id')
                 ->leftjoin('al_hang', 'al_com_message.me_id', '=', 'al_hang.me_id')
+                ->leftjoin('al_post', 'al_recruit.post_id', '=', 'al_post.post_id')
                 ->leftjoin('al_place', 'al_recruit.pla_id', '=', 'al_place.pla_id')
                 ->where('r_status',1)
                 ->where('r_edu','like',"%$r_edu%")
                 ->where('r_pay','like',"%r_pay%")
                 ->where('r_name','like',"%r_name%")
-                ->where('i_name','like',"%pla_id%")
+                ->where('al_place.i_name','like',"%pla_id%")
                 ->orderBy('r_addtime','desc')
                 ->paginate(20);
                 foreach ($query['arr'] as $k => $v) {
@@ -808,14 +847,16 @@ class PublicController extends Controller {
         }else if($key=="19"){
             $now_time = date('Y-m-d H:i:s',time());
             $query['arr']=DB::table('al_recruit')
+                ->select('*','al_post.i_name as post_name','al_place.i_name as place_name')
                 ->leftjoin('al_com_message', 'al_recruit.mes_id', '=', 'al_com_message.mes_id')
                 ->leftjoin('al_hang', 'al_com_message.me_id', '=', 'al_hang.me_id')
+                ->leftjoin('al_post', 'al_recruit.post_id', '=', 'al_post.post_id')
                 ->leftjoin('al_place', 'al_recruit.pla_id', '=', 'al_place.pla_id')
                 ->where('r_status',1)
                 ->where('r_suffer','like',"%$r_suffer%")
                 ->where('r_pay','like',"%r_pay%")
                 ->where('r_name','like',"%r_name%")
-                ->where('i_name','like',"%pla_id%")
+                ->where('al_place.i_name','like',"%pla_id%")
                 ->orderBy('r_addtime','desc')
                 ->paginate(20);
                 foreach ($query['arr'] as $k => $v) {
@@ -837,8 +878,10 @@ class PublicController extends Controller {
         }else if($key=="20"){
             $now_time = date('Y-m-d H:i:s',time());
             $query['arr']=DB::table('al_recruit')
+                ->select('*','al_post.i_name as post_name','al_place.i_name as place_name')
                 ->leftjoin('al_com_message', 'al_recruit.mes_id', '=', 'al_com_message.mes_id')
                 ->leftjoin('al_hang', 'al_com_message.me_id', '=', 'al_hang.me_id')
+                ->leftjoin('al_post', 'al_recruit.post_id', '=', 'al_post.post_id')
                 ->leftjoin('al_place', 'al_recruit.pla_id', '=', 'al_place.pla_id')
                 ->where('r_status',1)
                 ->where('r_suffer','like',"%$r_suffer%")
@@ -866,15 +909,17 @@ class PublicController extends Controller {
         }else if($key=="21"){
             $now_time = date('Y-m-d H:i:s',time());
             $query['arr']=DB::table('al_recruit')
+                ->select('*','al_post.i_name as post_name','al_place.i_name as place_name')
                 ->leftjoin('al_com_message', 'al_recruit.mes_id', '=', 'al_com_message.mes_id')
                 ->leftjoin('al_hang', 'al_com_message.me_id', '=', 'al_hang.me_id')
+                ->leftjoin('al_post', 'al_recruit.post_id', '=', 'al_post.post_id')
                 ->leftjoin('al_place', 'al_recruit.pla_id', '=', 'al_place.pla_id')
                 ->where('r_status',1)
                 ->where('r_suffer','like',"%$r_suffer%")
                 ->where('r_pay','like',"%r_pay%")
                 ->where('r_name','like',"%r_name%")
                 ->where('r_edu','like',"%r_edu%")
-                ->where('i_name','like',"%pla_id%")
+                ->where('al_place.i_name','like',"%pla_id%")
                 ->orderBy('r_addtime','desc')
                 ->paginate(20);
                 foreach ($query['arr'] as $k => $v) {
@@ -896,8 +941,10 @@ class PublicController extends Controller {
         }else{
             $now_time = date('Y-m-d H:i:s',time());
             $query['arr']=DB::table('al_recruit')
+                ->select('*','al_post.i_name as post_name','al_place.i_name as place_name')
                 ->leftjoin('al_com_message', 'al_recruit.mes_id', '=', 'al_com_message.mes_id')
                 ->leftjoin('al_hang', 'al_com_message.me_id', '=', 'al_hang.me_id')
+                ->leftjoin('al_post', 'al_recruit.post_id', '=', 'al_post.post_id')
                 ->leftjoin('al_place', 'al_recruit.pla_id', '=', 'al_place.pla_id')
                 ->where('r_status',1)
                 ->orderBy('r_addtime','desc')

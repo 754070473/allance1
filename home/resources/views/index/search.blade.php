@@ -243,10 +243,10 @@ var youdao_conv_id = 271546;
 			                	<div class="hot_pos_l">
 			                        <div class="mb10">
 										
-			                           	<a href="{{url('jobdetail')}}?rec_id={{$v->rec_id}}" target="_blank">{{$v->r_name}}</a>
+			                           	<a href="{{url('jobdetail')}}?rec_id={{$v->rec_id}}" target="_blank">{{$v->post_name}}</a>
 			                           
 			                            &nbsp;
-			                            <span class="c9">[{{$v->m_place}}]</span>
+			                            <span class="c9">[{{$v->place_name}}]</span>
 			                            			                        </div>
 			                        <span><em class="c7">月薪：</em>{{$v->r_pay}}</span>
 			                        <span><em class="c7">经验：</em> 
@@ -489,8 +489,8 @@ $(document).on('click','#xuan',function(){
                 			str+="<div class='hot_pos_l'>";
                 				str+="<div class='mb10'>";
                 					
-	            					str+="<a href='jobdetail?rec_id="+data[i].rec_id+"' target='_blank'>"+data[i].r_name+"</a>&nbsp;";
-	            					str+="<span class='c9'>["+data[i].i_name+"]</span><br>";
+	            					str+="<a href='jobdetail?rec_id="+data[i].rec_id+"' target='_blank'>"+data[i].post_name+"</a>&nbsp;";
+	            					str+="<span class='c9'>["+data[i].place_name+"]</span><br>";
 	            					str+=" <span><em class='c7'>月薪：</em>"+data[i].r_pay+"</span>";
 	            					str+="  <span><em class='c7'>经验：</em> ";
 	                					if(data[i].r_suffer=='0'){
