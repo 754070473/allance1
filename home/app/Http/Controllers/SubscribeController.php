@@ -100,6 +100,7 @@ class SubscribeController extends Controller{
         ignore_user_abort(); //即使Client断开(如关掉浏览器)，PHP脚本也可以继续执行.
         set_time_limit(0); // 执行时间为无限制，php默认的执行时间是30秒，通过set_time_limit(0)可以让程序无限制的执行下去
         $interval=60*60*24; // 每隔一天运行
+//        $interval=60*5; // 每隔5分钟运行
         do{
             $time = date('Y-m-d',time());
             $sub = DB::table('al_subscrip')->where('next_time', '=', $time)->get();
@@ -107,10 +108,11 @@ class SubscribeController extends Controller{
                 foreach($sub as $val)
                 {
                     $user = DB::table('al_personal')->where('per_id', $val->per_id)->first();
-                    $name = $user->i_name;
                     if($user->i_name=="")
                     {
                         $name = $user->p_email;
+                    }else{
+                        $name = $user->i_name;
                     }
                     $arr = DB::table('al_recruit')
                         ->join('al_com_message', 'al_recruit.mes_id', '=', 'al_com_message.mes_id')
