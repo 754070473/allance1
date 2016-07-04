@@ -61,6 +61,7 @@ class CompanyglController extends Controller {
     //编辑 公司福利
     public function save_company_welfare()
     {
+
         $mes_id = Request::input('m_id');
         $abc = Request::input('abc');
         // echo $abc;
