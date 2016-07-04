@@ -100,9 +100,9 @@ class LoginController extends Controller
                         ->from('al_admin')
                         ->where(['a_account' =>$name,'a_pwd' =>$pwd])  
                        ->all();
-                       // print_r($row);die;
-                       $id=$row['0']['adm_id'];
-                        $name=$row['0']['a_name'];
+//                        print_r($row);die;
+                       $id=$row[0]['adm_id'];
+                        $name=$row[0]['a_name'];
                        //print_r($row['0']['adm_id']);die;
 
                        //打开session

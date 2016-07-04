@@ -47,7 +47,6 @@ var youdao_conv_id = 271546;
 <body>
 <div id="body">
 <div id="cache" style="padding-bottom:20px;">
-</div>
     </div><!-- end #header -->
     <div id="container">
         <!-- <script src="style/js/swfobject_modified.js" type="text/javascript"></script> -->
@@ -252,11 +251,6 @@ var youdao_conv_id = 271546;
 											</form>
 					                    </dd>
 					                </dl>
-					                // <script>
-					                // 	$('#cpmc').click(function(){
-					                // 		alert(1);
-					                // 	})
-					                // </script>
 					                <!--有产品-->
 					                <dl class="c_product">
 					                	<dt>
@@ -356,10 +350,19 @@ var youdao_conv_id = 271546;
 		                    </dt>
 		                    <dd>
 		                    	<div class="addnew">
+                                    <?php if(empty($aa)){?>
 		                        	发布需要的人才信息，让伯乐和千里马尽快相遇……<br>
+                                        <?php }?>
 		                        	@foreach($aa as $key=>$val)
+                                        @if($key < 3)
 		                        	<span>{{$val->r_major}}</span><br>
+                                            @else
+                                    <span style="display: none" class="r_major">{{$val->r_major}}<br /></span>
+                                            @endif
 		                        	@endforeach
+                                        <?php if(count($aa) > 2){?>
+                                        <a href="javascript:void(0)" onclick="ck_show()" id="ck_show">显示所有</a><br>
+                                        <?php }?>
 		                            <a href="create">+添加招聘职位</a>
 		                        </div>
 		                    </dd>
@@ -406,6 +409,15 @@ var youdao_conv_id = 271546;
 	                </div>
        			</div><!-- end #Tags -->
        			 <script>
+                     function ck_show(){
+                         if($('#ck_show').html() == '显示所有') {
+                             $('.r_major').show();
+                             $('#ck_show').html('收起');
+                         }else{
+                             $('.r_major').hide();
+                             $('#ck_show').html('显示所有');
+                         }
+                     }
                 	$('#tagForms').submit(function(){
                 		
                 		var data=$(this).serialize();
@@ -655,4 +667,4 @@ avatar.uploadComplate = function( data ){
 <!--  -->
 
 
-<div id="cboxOverlay" style="display: none;"></div><div id="colorbox" class="" role="dialog" tabindex="-1" style="display: none;"><div id="cboxWrapper"><div><div id="cboxTopLeft" style="float: left;"></div><div id="cboxTopCenter" style="float: left;"></div><div id="cboxTopRight" style="float: left;"></div></div><div style="clear: left;"><div id="cboxMiddleLeft" style="float: left;"></div><div id="cboxContent" style="float: left;"><div id="cboxTitle" style="float: left;"></div><div id="cboxCurrent" style="float: left;"></div><button type="button" id="cboxPrevious"></button><button type="button" id="cboxNext"></button><button id="cboxSlideshow"></button><div id="cboxLoadingOverlay" style="float: left;"></div><div id="cboxLoadingGraphic" style="float: left;"></div></div><div id="cboxMiddleRight" style="float: left;"></div></div><div style="clear: left;"><div id="cboxBottomLeft" style="float: left;"></div><div id="cboxBottomCenter" style="float: left;"></div><div id="cboxBottomRight" style="float: left;"></div></div></div><div style="position: absolute; width: 9999px; visibility: hidden; display: none;"></div></div></body></html>
+<div id="cboxOverlay" style="display: none;"></div><div id="colorbox" class="" role="dialog" tabindex="-1" style="display: none;"><div id="cboxWrapper"><div><div id="cboxTopLeft" style="float: left;"></div><div id="cboxTopCenter" style="float: left;"></div><div id="cboxTopRight" style="float: left;"></div></div><div style="clear: left;"><div id="cboxMiddleLeft" style="float: left;"></div><div id="cboxContent" style="float: left;"><div id="cboxTitle" style="float: left;"></div><div id="cboxCurrent" style="float: left;"></div><button type="button" id="cboxPrevious"></button><button type="button" id="cboxNext"></button><button id="cboxSlideshow"></button><div id="cboxLoadingOverlay" style="float: left;"></div><div id="cboxLoadingGraphic" style="float: left;"></div></div><div id="cboxMiddleRight" style="float: left;"></div></div><div style="clear: left;"><div id="cboxBottomLeft" style="float: left;"></div><div id="cboxBottomCenter" style="float: left;"></div><div id="cboxBottomRight" style="float: left;"></div></div></div><div style="position: absolute; width: 9999px; visibility: hidden; display: none;"></div></div></div></body></html>

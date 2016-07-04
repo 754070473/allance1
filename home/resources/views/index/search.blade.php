@@ -547,9 +547,21 @@ $(document).on('click','#xuan',function(){
 
         						str+="<span><em class='c7'>领域： </em>"+data[i].h_name+"</span><span><em class='c7'>创始人：</em>"+data[i].leadername+"</span><br /><span><em class='c7'>阶段： </em>"+data[i].m_type+"</span>";
         						str+="<ul class='companyTags reset'>";
-        							str+="<?php if(strpos("+data[i].m_welfare+",',')){ $m_welfare = explode(',',"+data[i].m_welfare+"); foreach($m_welfare as $vv){ ?>  <li><?php echo $vv; ?></li> <?php }}else{?> <li>"+data[i].m_welfare+"</li> <?php }?>";
-        					
-
+                                if(data[i].m_welfare) {
+                                    if (data[i].m_welfare.indexOf(',') < 0)
+                                    {
+                                        str += "<li>" + data[i].m_welfare + "</li>";
+                                    }
+                                    else
+                                    {
+                                        var strs = new Array();
+                                        strs = data[i].m_welfare.split(","); //字符分割
+                                        for (var j = 0; j < strs.length; j++)
+                                        {
+                                            str += "<li>" + strs[j] + "</li>";
+                                        }
+                                    }
+                                }
         						str+="</ul>";
 
 

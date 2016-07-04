@@ -62,6 +62,14 @@ function shoucang(rec_id)
           alert('no')
           //收藏失败
         }
+        else if(e == 3)
+        {
+            $.colorbox({
+                inline: !0,
+                href: "#loginPop",
+                title: "登录"
+            });
+        }
         else
         {
           //收藏成功
@@ -69,6 +77,27 @@ function shoucang(rec_id)
           $('#shoucang').html(str);
         }
       }
+    })
+}
+function ck_login(rec_id)
+{
+    var email = $('#email').val();
+    var password = $('#password').val();
+    $.ajax({
+        type : 'GET',
+        url : 'login_pro',
+        data : 'name='+email+'&pwd='+password,
+        success:function(msg)
+        {
+            if(msg == 4)
+            {
+                window.location.href='jobdetail?rec_id='+rec_id;
+            }
+            else
+            {
+                $('#beError').show();
+            }
+        }
     })
 }
 </script>
@@ -88,18 +117,18 @@ function shoucang(rec_id)
                            	{{$row->m_name}}
                         </h1> 
                         @if($aa==1)
-                              <span id='shoucang'><img onclick="shoucang({{$row->rec_id}})" class="jd_collection" src="style/images/2.jpg" alt=""></span>                 	
+                              <span id='shoucang'><img onclick="shoucang({{$row->rec_id}})" class="jd_collection" src="style/images/2.jpg" alt=""></span>
                         @endif
                         @if($aa==0)
-                              <span id='shoucang' ><img onclick="shoucang({{$row->rec_id}})" class="jd_collection" src="style/images/3.jpg" alt=""></span>                   
+                              <span id='shoucang' ><img onclick="shoucang({{$row->rec_id}})" class="jd_collection" src="style/images/3.jpg" alt=""></span>
                         @endif
                         @if($aa==2)
-                              <span id='shoucang' ><img onclick="shoucang({{$row->rec_id}})" class="jd_collection" src="style/images/3.jpg" alt=""></span>                   
+                              <span id='shoucang' ><img onclick="shoucang({{$row->rec_id}})" class="jd_collection" src="style/images/3.jpg" alt=""></span>
                         @endif
                     </dt>
                     <dd class="job_request">
                     	<span class="red">{{$row->r_pay}}</span>
-                       	<span>{{$row->i_name}}</span> 
+                       	<span>{{$row->r_place}}</span>
                        	<span>{{$row->r_suffer}}年</span>
                        	<span>{{$row->r_edu}}</span> 
                        	<span>{{$row->m_type}}</span><br />
@@ -112,11 +141,7 @@ function shoucang(rec_id)
 
                     </dd>
                      
-                    	<dd class="unresume">
-	                        <div>
-	                        	你在拉勾还没有简历呢，你可以<a href="login" target="_blank" title="完善在线简历">完善在线简历</a>，也可<a class="inline" href="#loginPop" title="登录">上传附件简历</a>直接投递
-	                       	</div>
-	                    </dd>
+
                         <div class="saoma saoma_btm">
                       	<div class="dropdown_menu">
 							<div class="drop_l">
@@ -167,8 +192,8 @@ function shoucang(rec_id)
             <div class="content_r">
                 <dl class="job_company">
                     <dt>
-                    	<a href="h/c/683" target="_blank">
-                            <img class="b2" src="{{$row->m_logo}}" width="80" height="80" alt="北京立方网信息技术有限公司" />
+                    	<a href="{{$row->m_url}}" target="_blank">
+                            <img class="b2" src="style/images/{{$row->m_logo}}" width="80" height="80" alt="{{$row->m_name}}" />
                             <div>
                                 <h2 class="fl">
                                 		{{$row->m_name}}
@@ -218,7 +243,7 @@ function shoucang(rec_id)
                         </div> -->
                        	
                        	                       	<h4>工作地址</h4>
-                       	<div>武汉市武昌区螃蟹岬凤凰大厦A1-1301</div>
+                       	<div>{{$row->r_place}}</div>
                        	<div id="smallmap"></div>
                        	<a href="javascript:;" id="mapPreview">查看完整地图</a>
                        	                    </dd>
@@ -264,6 +289,7 @@ function shoucang(rec_id)
                   <form  class="resumeSetForm" method='get' action='jobdetail_tou'>
 	            		<label class="radio">
                     <input type="hidden" name='mes_id' value="{{$row->mes_id}}">
+                    <input type="hidden" name='rec_id' value="{{$row->rec_id}}">
                     <!-- <input type="radio" name="resumeName" class="resume1" value="1"  /> -->
                     @foreach($data as $key=>$val)
                     <input type="hidden" name='res_id' value="{{$val->res_id}}">
@@ -398,7 +424,7 @@ function shoucang(rec_id)
 			<span class="error" style="display:none;" id="beError"></span>
 		    <label class="fl" for="remember"><input type="checkbox" id="remember" value="" checked="checked" name="autoLogin" /> 记住我</label>
 		    <a href="h/reset" class="fr">忘记密码？</a>
-		    <input type="submit" id="submitLogin" value="登 &nbsp; &nbsp; 录" />
+		    <input type="button" id="submitLogin" value="登 &nbsp; &nbsp; 录" onclick="ck_login({{$row->rec_id}})"/>
 		</form>
 		<div class="login_right">
 			<div>还没有拉勾帐号？</div>

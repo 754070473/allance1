@@ -155,7 +155,7 @@ console.log(1);
             			</span>
             			<div class="m_portrait">
 	                    	<div></div>
-	                    	<img width="120" height="120" alt="jason" src="{{$arr->r_photo}}">
+	                    	<img width="120" height="120" alt="jason" src="style/images/{{$arr->r_photo}}">
 	                    </div>
             		</div><!--end .basicShow-->
 

@@ -52528,3 +52528,824 @@ $_SERVER = [
     'REQUEST_TIME_FLOAT' => 1467170678.231
     'REQUEST_TIME' => 1467170678
 ]
+2016-07-03 18:32:26 [::1][-][-][error][yii\db\Exception] exception 'PDOException' with message 'SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)' in F:\phpStudy\WWW\php_9\allance1\admin\vendor\yiisoft\yii2\db\Connection.php:579
+Stack trace:
+#0 F:\phpStudy\WWW\php_9\allance1\admin\vendor\yiisoft\yii2\db\Connection.php(579): PDO->__construct('mysql:host=127....', 'root', '147542', NULL)
+#1 F:\phpStudy\WWW\php_9\allance1\admin\vendor\yiisoft\yii2\db\Connection.php(529): yii\db\Connection->createPdoInstance()
+#2 F:\phpStudy\WWW\php_9\allance1\admin\vendor\yiisoft\yii2\db\Connection.php(836): yii\db\Connection->open()
+#3 F:\phpStudy\WWW\php_9\allance1\admin\vendor\yiisoft\yii2\db\Connection.php(823): yii\db\Connection->getMasterPdo()
+#4 F:\phpStudy\WWW\php_9\allance1\admin\vendor\yiisoft\yii2\db\Schema.php(477): yii\db\Connection->getSlavePdo()
+#5 F:\phpStudy\WWW\php_9\allance1\admin\vendor\yiisoft\yii2\db\Connection.php(732): yii\db\Schema->quoteValue('111111')
+#6 F:\phpStudy\WWW\php_9\allance1\admin\vendor\yiisoft\yii2\db\Command.php(172): yii\db\Connection->quoteValue('111111')
+#7 F:\phpStudy\WWW\php_9\allance1\admin\vendor\yiisoft\yii2\db\Command.php(806): yii\db\Command->getRawSql()
+#8 F:\phpStudy\WWW\php_9\allance1\admin\vendor\yiisoft\yii2\db\Command.php(359): yii\db\Command->queryInternal('fetchAll', NULL)
+#9 F:\phpStudy\WWW\php_9\allance1\admin\vendor\yiisoft\yii2\db\Query.php(206): yii\db\Command->queryAll()
+#10 F:\phpStudy\WWW\php_9\allance1\admin\frontend\controllers\LoginController.php(82): yii\db\Query->all()
+#11 [internal function]: frontend\controllers\LoginController->actionSelect1()
+#12 F:\phpStudy\WWW\php_9\allance1\admin\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#13 F:\phpStudy\WWW\php_9\allance1\admin\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#14 F:\phpStudy\WWW\php_9\allance1\admin\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('select1', Array)
+#15 F:\phpStudy\WWW\php_9\allance1\admin\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('login/select1', Array)
+#16 F:\phpStudy\WWW\php_9\allance1\admin\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#17 F:\phpStudy\WWW\php_9\allance1\admin\frontend\web\index.php(18): yii\base\Application->run()
+#18 {main}
+
+Next exception 'yii\db\Exception' with message 'SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)' in F:\phpStudy\WWW\php_9\allance1\admin\vendor\yiisoft\yii2\db\Connection.php:534
+Stack trace:
+#0 F:\phpStudy\WWW\php_9\allance1\admin\vendor\yiisoft\yii2\db\Connection.php(836): yii\db\Connection->open()
+#1 F:\phpStudy\WWW\php_9\allance1\admin\vendor\yiisoft\yii2\db\Connection.php(823): yii\db\Connection->getMasterPdo()
+#2 F:\phpStudy\WWW\php_9\allance1\admin\vendor\yiisoft\yii2\db\Schema.php(477): yii\db\Connection->getSlavePdo()
+#3 F:\phpStudy\WWW\php_9\allance1\admin\vendor\yiisoft\yii2\db\Connection.php(732): yii\db\Schema->quoteValue('111111')
+#4 F:\phpStudy\WWW\php_9\allance1\admin\vendor\yiisoft\yii2\db\Command.php(172): yii\db\Connection->quoteValue('111111')
+#5 F:\phpStudy\WWW\php_9\allance1\admin\vendor\yiisoft\yii2\db\Command.php(806): yii\db\Command->getRawSql()
+#6 F:\phpStudy\WWW\php_9\allance1\admin\vendor\yiisoft\yii2\db\Command.php(359): yii\db\Command->queryInternal('fetchAll', NULL)
+#7 F:\phpStudy\WWW\php_9\allance1\admin\vendor\yiisoft\yii2\db\Query.php(206): yii\db\Command->queryAll()
+#8 F:\phpStudy\WWW\php_9\allance1\admin\frontend\controllers\LoginController.php(82): yii\db\Query->all()
+#9 [internal function]: frontend\controllers\LoginController->actionSelect1()
+#10 F:\phpStudy\WWW\php_9\allance1\admin\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#11 F:\phpStudy\WWW\php_9\allance1\admin\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#12 F:\phpStudy\WWW\php_9\allance1\admin\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('select1', Array)
+#13 F:\phpStudy\WWW\php_9\allance1\admin\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('login/select1', Array)
+#14 F:\phpStudy\WWW\php_9\allance1\admin\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#15 F:\phpStudy\WWW\php_9\allance1\admin\frontend\web\index.php(18): yii\base\Application->run()
+#16 {main}
+Additional Information:
+
+2016-07-03 18:32:25 [::1][-][-][info][application] $_GET = [
+    'r' => 'login/select1'
+]
+
+$_POST = [
+    'name' => '111111'
+    'pwd' => '111111'
+]
+
+$_COOKIE = [
+    '_pk_ysp_id_' => [
+        'object Object' => 'f485f547ddfc8e70.1467541857.1.1467541857.1467541857.'
+    ]
+    'pgv_pvi' => '1951702016'
+    'Hm_lvt_4233e74dff0ae5bd0a3d81c6ccf756e6' => '1467256168'
+    'XSRF-TOKEN' => 'eyJpdiI6IjJ6N2dSeWx4Y0l5RDR3Y1JBMDFtTFE9PSIsInZhbHVlIjoiYVlKUmhXRXBZQnZkaGUyNEpFN0M2WjNGK1R2UXBEdUUyRHd5Z3NFWDVKUUNyTlRONEY1cVlVa0YrNTFQekpcL2xXVFhvcWFtSEszV0d0YVF4M2VRVjN3PT0iLCJtYWMiOiI0MmU2OTU4MTkyMzkzNzY5MTE1ZTk3MmY4YjI0NDU0N2Y1YWVkY2Q4Y2QxNjRkMDE1NGRmODBkZDZmYTQ3YjE1In0='
+    'laravel_session' => 'eyJpdiI6Ik8xY1BCb1hXN0xsOG9nXC9SeHUxTVhRPT0iLCJ2YWx1ZSI6Im5WdmsyNTZzbHJDYk5JZE1cLzdOS2djRTdUNjJSZTFJRGlJUUQ5THhlaE9YUHZBZVFUTk1SR2ZUd2ZWcTIwcDRGTFBlVHB2cFpjWElYTFg2eG5TdXN4dz09IiwibWFjIjoiOGMxZWE3ZjFkZWY5Yzk0NmQzNTA3MGI1MDE3MDY0ZTY0OTlhNTU2YmFhOWNkZDlmODBhZmVkODJiNDNiZjU5YSJ9'
+    '_pk_ysp_ses_' => [
+        'object Object' => '*'
+    ]
+    'PHPSESSID' => '6v2q6d11hulaou990ea2fmifp5'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:47.0) Gecko/20100101 Firefox/47.0'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded; charset=UTF-8'
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest'
+    'HTTP_REFERER' => 'http://localhost/php_9/allance1/admin/frontend/web/index.php?r=login/login'
+    'CONTENT_LENGTH' => '22'
+    'HTTP_COOKIE' => '_pk_ysp_id.[object Object].1fff=f485f547ddfc8e70.1467541857.1.1467541857.1467541857.; pgv_pvi=1951702016; Hm_lvt_4233e74dff0ae5bd0a3d81c6ccf756e6=1467256168; XSRF-TOKEN=eyJpdiI6IjJ6N2dSeWx4Y0l5RDR3Y1JBMDFtTFE9PSIsInZhbHVlIjoiYVlKUmhXRXBZQnZkaGUyNEpFN0M2WjNGK1R2UXBEdUUyRHd5Z3NFWDVKUUNyTlRONEY1cVlVa0YrNTFQekpcL2xXVFhvcWFtSEszV0d0YVF4M2VRVjN3PT0iLCJtYWMiOiI0MmU2OTU4MTkyMzkzNzY5MTE1ZTk3MmY4YjI0NDU0N2Y1YWVkY2Q4Y2QxNjRkMDE1NGRmODBkZDZmYTQ3YjE1In0%3D; laravel_session=eyJpdiI6Ik8xY1BCb1hXN0xsOG9nXC9SeHUxTVhRPT0iLCJ2YWx1ZSI6Im5WdmsyNTZzbHJDYk5JZE1cLzdOS2djRTdUNjJSZTFJRGlJUUQ5THhlaE9YUHZBZVFUTk1SR2ZUd2ZWcTIwcDRGTFBlVHB2cFpjWElYTFg2eG5TdXN4dz09IiwibWFjIjoiOGMxZWE3ZjFkZWY5Yzk0NmQzNTA3MGI1MDE3MDY0ZTY0OTlhNTU2YmFhOWNkZDlmODBhZmVkODJiNDNiZjU5YSJ9; _pk_ysp_ses.[object Object].1fff=*; PHPSESSID=6v2q6d11hulaou990ea2fmifp5'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'PATH' => 'F:\\phpStudy\\php55;D:\\Program Files\\Git\\cmd;C:\\Program Files\\TortoiseGit\\bin;'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e PHP/5.5.30'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'F:/phpStudy/WWW'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'F:/phpStudy/WWW'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'SCRIPT_FILENAME' => 'F:/phpStudy/WWW/php_9/allance1/admin/frontend/web/index.php'
+    'REMOTE_PORT' => '49476'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => 'r=login/select1'
+    'REQUEST_URI' => '/php_9/allance1/admin/frontend/web/index.php?r=login/select1'
+    'SCRIPT_NAME' => '/php_9/allance1/admin/frontend/web/index.php'
+    'PHP_SELF' => '/php_9/allance1/admin/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1467541945.788
+    'REQUEST_TIME' => 1467541945
+]
+2016-07-03 18:32:26 [::1][-][-][error][yii\db\Exception] exception 'PDOException' with message 'SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)' in F:\phpStudy\WWW\php_9\allance1\admin\vendor\yiisoft\yii2\db\Connection.php:579
+Stack trace:
+#0 F:\phpStudy\WWW\php_9\allance1\admin\vendor\yiisoft\yii2\db\Connection.php(579): PDO->__construct('mysql:host=127....', 'root', '147542', NULL)
+#1 F:\phpStudy\WWW\php_9\allance1\admin\vendor\yiisoft\yii2\db\Connection.php(529): yii\db\Connection->createPdoInstance()
+#2 F:\phpStudy\WWW\php_9\allance1\admin\vendor\yiisoft\yii2\db\Connection.php(836): yii\db\Connection->open()
+#3 F:\phpStudy\WWW\php_9\allance1\admin\vendor\yiisoft\yii2\db\Connection.php(823): yii\db\Connection->getMasterPdo()
+#4 F:\phpStudy\WWW\php_9\allance1\admin\vendor\yiisoft\yii2\db\Schema.php(477): yii\db\Connection->getSlavePdo()
+#5 F:\phpStudy\WWW\php_9\allance1\admin\vendor\yiisoft\yii2\db\Connection.php(732): yii\db\Schema->quoteValue('<span class="st...')
+#6 F:\phpStudy\WWW\php_9\allance1\admin\vendor\yiisoft\yii2\db\Command.php(172): yii\db\Connection->quoteValue('<span class="st...')
+#7 F:\phpStudy\WWW\php_9\allance1\admin\vendor\yiisoft\yii2\db\Command.php(806): yii\db\Command->getRawSql()
+#8 F:\phpStudy\WWW\php_9\allance1\admin\vendor\yiisoft\yii2\db\Command.php(359): yii\db\Command->queryInternal('<span class="st...', '<span class="ke...')
+#9 F:\phpStudy\WWW\php_9\allance1\admin\vendor\yiisoft\yii2\db\Query.php(206): yii\db\Command->queryAll()
+#10 F:\phpStudy\WWW\php_9\allance1\admin\frontend\controllers\LoginController.php(102): yii\db\Query->all()
+#11 [internal function]: frontend\controllers\LoginController->actionLogin1()
+#12 F:\phpStudy\WWW\php_9\allance1\admin\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array('[<span class="t...', '[]')
+#13 F:\phpStudy\WWW\php_9\allance1\admin\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams('[<span class="s...')
+#14 F:\phpStudy\WWW\php_9\allance1\admin\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('<span class="st...', '[<span class="s...')
+#15 F:\phpStudy\WWW\php_9\allance1\admin\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('<span class="st...', '[<span class="s...')
+#16 F:\phpStudy\WWW\php_9\allance1\admin\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#17 F:\phpStudy\WWW\php_9\allance1\admin\frontend\web\index.php(18): yii\base\Application->run()
+#18 {main}
+
+Next exception 'yii\db\Exception' with message 'SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)' in F:\phpStudy\WWW\php_9\allance1\admin\vendor\yiisoft\yii2\db\Connection.php:534
+Stack trace:
+#0 F:\phpStudy\WWW\php_9\allance1\admin\vendor\yiisoft\yii2\db\Connection.php(836): yii\db\Connection->open()
+#1 F:\phpStudy\WWW\php_9\allance1\admin\vendor\yiisoft\yii2\db\Connection.php(823): yii\db\Connection->getMasterPdo()
+#2 F:\phpStudy\WWW\php_9\allance1\admin\vendor\yiisoft\yii2\db\Schema.php(477): yii\db\Connection->getSlavePdo()
+#3 F:\phpStudy\WWW\php_9\allance1\admin\vendor\yiisoft\yii2\db\Connection.php(732): yii\db\Schema->quoteValue('<span class="st...')
+#4 F:\phpStudy\WWW\php_9\allance1\admin\vendor\yiisoft\yii2\db\Command.php(172): yii\db\Connection->quoteValue('<span class="st...')
+#5 F:\phpStudy\WWW\php_9\allance1\admin\vendor\yiisoft\yii2\db\Command.php(806): yii\db\Command->getRawSql()
+#6 F:\phpStudy\WWW\php_9\allance1\admin\vendor\yiisoft\yii2\db\Command.php(359): yii\db\Command->queryInternal('<span class="st...', '<span class="ke...')
+#7 F:\phpStudy\WWW\php_9\allance1\admin\vendor\yiisoft\yii2\db\Query.php(206): yii\db\Command->queryAll()
+#8 F:\phpStudy\WWW\php_9\allance1\admin\frontend\controllers\LoginController.php(102): yii\db\Query->all()
+#9 [internal function]: frontend\controllers\LoginController->actionLogin1()
+#10 F:\phpStudy\WWW\php_9\allance1\admin\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array('[<span class="t...', '[]')
+#11 F:\phpStudy\WWW\php_9\allance1\admin\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams('[<span class="s...')
+#12 F:\phpStudy\WWW\php_9\allance1\admin\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('<span class="st...', '[<span class="s...')
+#13 F:\phpStudy\WWW\php_9\allance1\admin\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('<span class="st...', '[<span class="s...')
+#14 F:\phpStudy\WWW\php_9\allance1\admin\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#15 F:\phpStudy\WWW\php_9\allance1\admin\frontend\web\index.php(18): yii\base\Application->run()
+#16 {main}
+Additional Information:
+
+2016-07-03 18:32:26 [::1][-][-][info][application] $_GET = [
+    'r' => 'login/login1'
+]
+
+$_POST = [
+    'name1' => '111111'
+    'pwd1' => '111111'
+]
+
+$_COOKIE = [
+    '_pk_ysp_id_' => [
+        'object Object' => 'f485f547ddfc8e70.1467541857.1.1467541857.1467541857.'
+    ]
+    'pgv_pvi' => '1951702016'
+    'Hm_lvt_4233e74dff0ae5bd0a3d81c6ccf756e6' => '1467256168'
+    'XSRF-TOKEN' => 'eyJpdiI6IjJ6N2dSeWx4Y0l5RDR3Y1JBMDFtTFE9PSIsInZhbHVlIjoiYVlKUmhXRXBZQnZkaGUyNEpFN0M2WjNGK1R2UXBEdUUyRHd5Z3NFWDVKUUNyTlRONEY1cVlVa0YrNTFQekpcL2xXVFhvcWFtSEszV0d0YVF4M2VRVjN3PT0iLCJtYWMiOiI0MmU2OTU4MTkyMzkzNzY5MTE1ZTk3MmY4YjI0NDU0N2Y1YWVkY2Q4Y2QxNjRkMDE1NGRmODBkZDZmYTQ3YjE1In0='
+    'laravel_session' => 'eyJpdiI6Ik8xY1BCb1hXN0xsOG9nXC9SeHUxTVhRPT0iLCJ2YWx1ZSI6Im5WdmsyNTZzbHJDYk5JZE1cLzdOS2djRTdUNjJSZTFJRGlJUUQ5THhlaE9YUHZBZVFUTk1SR2ZUd2ZWcTIwcDRGTFBlVHB2cFpjWElYTFg2eG5TdXN4dz09IiwibWFjIjoiOGMxZWE3ZjFkZWY5Yzk0NmQzNTA3MGI1MDE3MDY0ZTY0OTlhNTU2YmFhOWNkZDlmODBhZmVkODJiNDNiZjU5YSJ9'
+    '_pk_ysp_ses_' => [
+        'object Object' => '*'
+    ]
+    'PHPSESSID' => '6v2q6d11hulaou990ea2fmifp5'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:47.0) Gecko/20100101 Firefox/47.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://localhost/php_9/allance1/admin/frontend/web/index.php?r=login/login'
+    'HTTP_COOKIE' => '_pk_ysp_id.[object Object].1fff=f485f547ddfc8e70.1467541857.1.1467541857.1467541857.; pgv_pvi=1951702016; Hm_lvt_4233e74dff0ae5bd0a3d81c6ccf756e6=1467256168; XSRF-TOKEN=eyJpdiI6IjJ6N2dSeWx4Y0l5RDR3Y1JBMDFtTFE9PSIsInZhbHVlIjoiYVlKUmhXRXBZQnZkaGUyNEpFN0M2WjNGK1R2UXBEdUUyRHd5Z3NFWDVKUUNyTlRONEY1cVlVa0YrNTFQekpcL2xXVFhvcWFtSEszV0d0YVF4M2VRVjN3PT0iLCJtYWMiOiI0MmU2OTU4MTkyMzkzNzY5MTE1ZTk3MmY4YjI0NDU0N2Y1YWVkY2Q4Y2QxNjRkMDE1NGRmODBkZDZmYTQ3YjE1In0%3D; laravel_session=eyJpdiI6Ik8xY1BCb1hXN0xsOG9nXC9SeHUxTVhRPT0iLCJ2YWx1ZSI6Im5WdmsyNTZzbHJDYk5JZE1cLzdOS2djRTdUNjJSZTFJRGlJUUQ5THhlaE9YUHZBZVFUTk1SR2ZUd2ZWcTIwcDRGTFBlVHB2cFpjWElYTFg2eG5TdXN4dz09IiwibWFjIjoiOGMxZWE3ZjFkZWY5Yzk0NmQzNTA3MGI1MDE3MDY0ZTY0OTlhNTU2YmFhOWNkZDlmODBhZmVkODJiNDNiZjU5YSJ9; _pk_ysp_ses.[object Object].1fff=*; PHPSESSID=6v2q6d11hulaou990ea2fmifp5'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'CONTENT_LENGTH' => '24'
+    'PATH' => 'F:\\phpStudy\\php55;D:\\Program Files\\Git\\cmd;C:\\Program Files\\TortoiseGit\\bin;'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e PHP/5.5.30'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'F:/phpStudy/WWW'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'F:/phpStudy/WWW'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'SCRIPT_FILENAME' => 'F:/phpStudy/WWW/php_9/allance1/admin/frontend/web/index.php'
+    'REMOTE_PORT' => '49477'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => 'r=login/login1'
+    'REQUEST_URI' => '/php_9/allance1/admin/frontend/web/index.php?r=login/login1'
+    'SCRIPT_NAME' => '/php_9/allance1/admin/frontend/web/index.php'
+    'PHP_SELF' => '/php_9/allance1/admin/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1467541946.012
+    'REQUEST_TIME' => 1467541946
+]
+2016-07-03 18:32:26 [::1][-][-][warning][yii\log\Dispatcher::dispatch] Unable to send log via yii\debug\LogTarget: Exception 'Exception' with message 'Serialization of 'Closure' is not allowed' 
+
+in F:\phpStudy\WWW\php_9\allance1\admin\vendor\yiisoft\yii2-debug\LogTarget.php:58
+
+Stack trace:
+#0 F:\phpStudy\WWW\php_9\allance1\admin\vendor\yiisoft\yii2-debug\LogTarget.php(58): serialize(Array)
+#1 F:\phpStudy\WWW\php_9\allance1\admin\vendor\yiisoft\yii2-debug\LogTarget.php(112): yii\debug\LogTarget->export(Array)
+#2 F:\phpStudy\WWW\php_9\allance1\admin\vendor\yiisoft\yii2\log\Dispatcher.php(183): yii\debug\LogTarget->collect(Array, true)
+#3 F:\phpStudy\WWW\php_9\allance1\admin\vendor\yiisoft\yii2\log\Logger.php(173): yii\log\Dispatcher->dispatch(Array, true)
+#4 F:\phpStudy\WWW\php_9\allance1\admin\vendor\yiisoft\yii2\base\ErrorHandler.php(111): yii\log\Logger->flush(true)
+#5 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\db\Exception))
+#6 {main}
+2016-07-03 18:32:25 [::1][-][-][info][application] $_GET = [
+    'r' => 'login/select1'
+]
+
+$_POST = [
+    'name' => '111111'
+    'pwd' => '111111'
+]
+
+$_COOKIE = [
+    '_pk_ysp_id_' => [
+        'object Object' => 'f485f547ddfc8e70.1467541857.1.1467541857.1467541857.'
+    ]
+    'pgv_pvi' => '1951702016'
+    'Hm_lvt_4233e74dff0ae5bd0a3d81c6ccf756e6' => '1467256168'
+    'XSRF-TOKEN' => 'eyJpdiI6IjJ6N2dSeWx4Y0l5RDR3Y1JBMDFtTFE9PSIsInZhbHVlIjoiYVlKUmhXRXBZQnZkaGUyNEpFN0M2WjNGK1R2UXBEdUUyRHd5Z3NFWDVKUUNyTlRONEY1cVlVa0YrNTFQekpcL2xXVFhvcWFtSEszV0d0YVF4M2VRVjN3PT0iLCJtYWMiOiI0MmU2OTU4MTkyMzkzNzY5MTE1ZTk3MmY4YjI0NDU0N2Y1YWVkY2Q4Y2QxNjRkMDE1NGRmODBkZDZmYTQ3YjE1In0='
+    'laravel_session' => 'eyJpdiI6Ik8xY1BCb1hXN0xsOG9nXC9SeHUxTVhRPT0iLCJ2YWx1ZSI6Im5WdmsyNTZzbHJDYk5JZE1cLzdOS2djRTdUNjJSZTFJRGlJUUQ5THhlaE9YUHZBZVFUTk1SR2ZUd2ZWcTIwcDRGTFBlVHB2cFpjWElYTFg2eG5TdXN4dz09IiwibWFjIjoiOGMxZWE3ZjFkZWY5Yzk0NmQzNTA3MGI1MDE3MDY0ZTY0OTlhNTU2YmFhOWNkZDlmODBhZmVkODJiNDNiZjU5YSJ9'
+    '_pk_ysp_ses_' => [
+        'object Object' => '*'
+    ]
+    'PHPSESSID' => '6v2q6d11hulaou990ea2fmifp5'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:47.0) Gecko/20100101 Firefox/47.0'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded; charset=UTF-8'
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest'
+    'HTTP_REFERER' => 'http://localhost/php_9/allance1/admin/frontend/web/index.php?r=login/login'
+    'CONTENT_LENGTH' => '22'
+    'HTTP_COOKIE' => '_pk_ysp_id.[object Object].1fff=f485f547ddfc8e70.1467541857.1.1467541857.1467541857.; pgv_pvi=1951702016; Hm_lvt_4233e74dff0ae5bd0a3d81c6ccf756e6=1467256168; XSRF-TOKEN=eyJpdiI6IjJ6N2dSeWx4Y0l5RDR3Y1JBMDFtTFE9PSIsInZhbHVlIjoiYVlKUmhXRXBZQnZkaGUyNEpFN0M2WjNGK1R2UXBEdUUyRHd5Z3NFWDVKUUNyTlRONEY1cVlVa0YrNTFQekpcL2xXVFhvcWFtSEszV0d0YVF4M2VRVjN3PT0iLCJtYWMiOiI0MmU2OTU4MTkyMzkzNzY5MTE1ZTk3MmY4YjI0NDU0N2Y1YWVkY2Q4Y2QxNjRkMDE1NGRmODBkZDZmYTQ3YjE1In0%3D; laravel_session=eyJpdiI6Ik8xY1BCb1hXN0xsOG9nXC9SeHUxTVhRPT0iLCJ2YWx1ZSI6Im5WdmsyNTZzbHJDYk5JZE1cLzdOS2djRTdUNjJSZTFJRGlJUUQ5THhlaE9YUHZBZVFUTk1SR2ZUd2ZWcTIwcDRGTFBlVHB2cFpjWElYTFg2eG5TdXN4dz09IiwibWFjIjoiOGMxZWE3ZjFkZWY5Yzk0NmQzNTA3MGI1MDE3MDY0ZTY0OTlhNTU2YmFhOWNkZDlmODBhZmVkODJiNDNiZjU5YSJ9; _pk_ysp_ses.[object Object].1fff=*; PHPSESSID=6v2q6d11hulaou990ea2fmifp5'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'PATH' => 'F:\\phpStudy\\php55;D:\\Program Files\\Git\\cmd;C:\\Program Files\\TortoiseGit\\bin;'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e PHP/5.5.30'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'F:/phpStudy/WWW'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'F:/phpStudy/WWW'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'SCRIPT_FILENAME' => 'F:/phpStudy/WWW/php_9/allance1/admin/frontend/web/index.php'
+    'REMOTE_PORT' => '49476'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => 'r=login/select1'
+    'REQUEST_URI' => '/php_9/allance1/admin/frontend/web/index.php?r=login/select1'
+    'SCRIPT_NAME' => '/php_9/allance1/admin/frontend/web/index.php'
+    'PHP_SELF' => '/php_9/allance1/admin/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1467541945.788
+    'REQUEST_TIME' => 1467541945
+]
+2016-07-03 18:32:57 [::1][-][-][error][yii\base\ErrorException:8] exception 'yii\base\ErrorException' with message 'Undefined offset: 0' in F:\phpStudy\WWW\php_9\allance1\admin\frontend\controllers\LoginController.php:104
+Stack trace:
+#0 F:\phpStudy\WWW\php_9\allance1\admin\frontend\controllers\LoginController.php(104): yii\base\ErrorHandler->handleError(8, 'Undefined offse...', 'F:\\phpStudy\\WWW...', 104, Array)
+#1 [internal function]: frontend\controllers\LoginController->actionLogin1()
+#2 F:\phpStudy\WWW\php_9\allance1\admin\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#3 F:\phpStudy\WWW\php_9\allance1\admin\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#4 F:\phpStudy\WWW\php_9\allance1\admin\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('login1', Array)
+#5 F:\phpStudy\WWW\php_9\allance1\admin\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('login/login1', Array)
+#6 F:\phpStudy\WWW\php_9\allance1\admin\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#7 F:\phpStudy\WWW\php_9\allance1\admin\frontend\web\index.php(18): yii\base\Application->run()
+#8 {main}
+2016-07-03 18:32:57 [::1][-][-][info][application] $_GET = [
+    'r' => 'login/login1'
+]
+
+$_COOKIE = [
+    '_pk_ysp_id_' => [
+        'object Object' => 'f485f547ddfc8e70.1467541857.1.1467541857.1467541857.'
+    ]
+    'pgv_pvi' => '1951702016'
+    'Hm_lvt_4233e74dff0ae5bd0a3d81c6ccf756e6' => '1467256168'
+    'XSRF-TOKEN' => 'eyJpdiI6IjJ6N2dSeWx4Y0l5RDR3Y1JBMDFtTFE9PSIsInZhbHVlIjoiYVlKUmhXRXBZQnZkaGUyNEpFN0M2WjNGK1R2UXBEdUUyRHd5Z3NFWDVKUUNyTlRONEY1cVlVa0YrNTFQekpcL2xXVFhvcWFtSEszV0d0YVF4M2VRVjN3PT0iLCJtYWMiOiI0MmU2OTU4MTkyMzkzNzY5MTE1ZTk3MmY4YjI0NDU0N2Y1YWVkY2Q4Y2QxNjRkMDE1NGRmODBkZDZmYTQ3YjE1In0='
+    'laravel_session' => 'eyJpdiI6Ik8xY1BCb1hXN0xsOG9nXC9SeHUxTVhRPT0iLCJ2YWx1ZSI6Im5WdmsyNTZzbHJDYk5JZE1cLzdOS2djRTdUNjJSZTFJRGlJUUQ5THhlaE9YUHZBZVFUTk1SR2ZUd2ZWcTIwcDRGTFBlVHB2cFpjWElYTFg2eG5TdXN4dz09IiwibWFjIjoiOGMxZWE3ZjFkZWY5Yzk0NmQzNTA3MGI1MDE3MDY0ZTY0OTlhNTU2YmFhOWNkZDlmODBhZmVkODJiNDNiZjU5YSJ9'
+    '_pk_ysp_ses_' => [
+        'object Object' => '*'
+    ]
+    'PHPSESSID' => '6v2q6d11hulaou990ea2fmifp5'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:47.0) Gecko/20100101 Firefox/47.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_COOKIE' => '_pk_ysp_id.[object Object].1fff=f485f547ddfc8e70.1467541857.1.1467541857.1467541857.; pgv_pvi=1951702016; Hm_lvt_4233e74dff0ae5bd0a3d81c6ccf756e6=1467256168; XSRF-TOKEN=eyJpdiI6IjJ6N2dSeWx4Y0l5RDR3Y1JBMDFtTFE9PSIsInZhbHVlIjoiYVlKUmhXRXBZQnZkaGUyNEpFN0M2WjNGK1R2UXBEdUUyRHd5Z3NFWDVKUUNyTlRONEY1cVlVa0YrNTFQekpcL2xXVFhvcWFtSEszV0d0YVF4M2VRVjN3PT0iLCJtYWMiOiI0MmU2OTU4MTkyMzkzNzY5MTE1ZTk3MmY4YjI0NDU0N2Y1YWVkY2Q4Y2QxNjRkMDE1NGRmODBkZDZmYTQ3YjE1In0%3D; laravel_session=eyJpdiI6Ik8xY1BCb1hXN0xsOG9nXC9SeHUxTVhRPT0iLCJ2YWx1ZSI6Im5WdmsyNTZzbHJDYk5JZE1cLzdOS2djRTdUNjJSZTFJRGlJUUQ5THhlaE9YUHZBZVFUTk1SR2ZUd2ZWcTIwcDRGTFBlVHB2cFpjWElYTFg2eG5TdXN4dz09IiwibWFjIjoiOGMxZWE3ZjFkZWY5Yzk0NmQzNTA3MGI1MDE3MDY0ZTY0OTlhNTU2YmFhOWNkZDlmODBhZmVkODJiNDNiZjU5YSJ9; _pk_ysp_ses.[object Object].1fff=*; PHPSESSID=6v2q6d11hulaou990ea2fmifp5'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'PATH' => 'F:\\phpStudy\\php55;D:\\Program Files\\Git\\cmd;C:\\Program Files\\TortoiseGit\\bin;'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e PHP/5.5.30'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'F:/phpStudy/WWW'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'F:/phpStudy/WWW'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'SCRIPT_FILENAME' => 'F:/phpStudy/WWW/php_9/allance1/admin/frontend/web/index.php'
+    'REMOTE_PORT' => '49505'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=login/login1'
+    'REQUEST_URI' => '/php_9/allance1/admin/frontend/web/index.php?r=login/login1'
+    'SCRIPT_NAME' => '/php_9/allance1/admin/frontend/web/index.php'
+    'PHP_SELF' => '/php_9/allance1/admin/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1467541977.304
+    'REQUEST_TIME' => 1467541977
+]
+2016-07-03 18:32:57 [::1][-][-][warning][yii\log\Dispatcher::dispatch] Unable to send log via yii\debug\LogTarget: Exception 'PDOException' with message 'You cannot serialize or unserialize PDO instances' 
+
+in F:\phpStudy\WWW\php_9\allance1\admin\vendor\yiisoft\yii2-debug\LogTarget.php:58
+
+Stack trace:
+#0 [internal function]: PDO->__sleep()
+#1 F:\phpStudy\WWW\php_9\allance1\admin\vendor\yiisoft\yii2-debug\LogTarget.php(58): serialize(Array)
+#2 F:\phpStudy\WWW\php_9\allance1\admin\vendor\yiisoft\yii2-debug\LogTarget.php(112): yii\debug\LogTarget->export(Array)
+#3 F:\phpStudy\WWW\php_9\allance1\admin\vendor\yiisoft\yii2\log\Dispatcher.php(183): yii\debug\LogTarget->collect(Array, true)
+#4 F:\phpStudy\WWW\php_9\allance1\admin\vendor\yiisoft\yii2\log\Logger.php(173): yii\log\Dispatcher->dispatch(Array, true)
+#5 F:\phpStudy\WWW\php_9\allance1\admin\vendor\yiisoft\yii2\base\ErrorHandler.php(111): yii\log\Logger->flush(true)
+#6 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\base\ErrorException))
+#7 {main}
+2016-07-03 18:32:57 [::1][-][-][info][application] $_GET = [
+    'r' => 'login/login1'
+]
+
+$_COOKIE = [
+    '_pk_ysp_id_' => [
+        'object Object' => 'f485f547ddfc8e70.1467541857.1.1467541857.1467541857.'
+    ]
+    'pgv_pvi' => '1951702016'
+    'Hm_lvt_4233e74dff0ae5bd0a3d81c6ccf756e6' => '1467256168'
+    'XSRF-TOKEN' => 'eyJpdiI6IjJ6N2dSeWx4Y0l5RDR3Y1JBMDFtTFE9PSIsInZhbHVlIjoiYVlKUmhXRXBZQnZkaGUyNEpFN0M2WjNGK1R2UXBEdUUyRHd5Z3NFWDVKUUNyTlRONEY1cVlVa0YrNTFQekpcL2xXVFhvcWFtSEszV0d0YVF4M2VRVjN3PT0iLCJtYWMiOiI0MmU2OTU4MTkyMzkzNzY5MTE1ZTk3MmY4YjI0NDU0N2Y1YWVkY2Q4Y2QxNjRkMDE1NGRmODBkZDZmYTQ3YjE1In0='
+    'laravel_session' => 'eyJpdiI6Ik8xY1BCb1hXN0xsOG9nXC9SeHUxTVhRPT0iLCJ2YWx1ZSI6Im5WdmsyNTZzbHJDYk5JZE1cLzdOS2djRTdUNjJSZTFJRGlJUUQ5THhlaE9YUHZBZVFUTk1SR2ZUd2ZWcTIwcDRGTFBlVHB2cFpjWElYTFg2eG5TdXN4dz09IiwibWFjIjoiOGMxZWE3ZjFkZWY5Yzk0NmQzNTA3MGI1MDE3MDY0ZTY0OTlhNTU2YmFhOWNkZDlmODBhZmVkODJiNDNiZjU5YSJ9'
+    '_pk_ysp_ses_' => [
+        'object Object' => '*'
+    ]
+    'PHPSESSID' => '6v2q6d11hulaou990ea2fmifp5'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:47.0) Gecko/20100101 Firefox/47.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_COOKIE' => '_pk_ysp_id.[object Object].1fff=f485f547ddfc8e70.1467541857.1.1467541857.1467541857.; pgv_pvi=1951702016; Hm_lvt_4233e74dff0ae5bd0a3d81c6ccf756e6=1467256168; XSRF-TOKEN=eyJpdiI6IjJ6N2dSeWx4Y0l5RDR3Y1JBMDFtTFE9PSIsInZhbHVlIjoiYVlKUmhXRXBZQnZkaGUyNEpFN0M2WjNGK1R2UXBEdUUyRHd5Z3NFWDVKUUNyTlRONEY1cVlVa0YrNTFQekpcL2xXVFhvcWFtSEszV0d0YVF4M2VRVjN3PT0iLCJtYWMiOiI0MmU2OTU4MTkyMzkzNzY5MTE1ZTk3MmY4YjI0NDU0N2Y1YWVkY2Q4Y2QxNjRkMDE1NGRmODBkZDZmYTQ3YjE1In0%3D; laravel_session=eyJpdiI6Ik8xY1BCb1hXN0xsOG9nXC9SeHUxTVhRPT0iLCJ2YWx1ZSI6Im5WdmsyNTZzbHJDYk5JZE1cLzdOS2djRTdUNjJSZTFJRGlJUUQ5THhlaE9YUHZBZVFUTk1SR2ZUd2ZWcTIwcDRGTFBlVHB2cFpjWElYTFg2eG5TdXN4dz09IiwibWFjIjoiOGMxZWE3ZjFkZWY5Yzk0NmQzNTA3MGI1MDE3MDY0ZTY0OTlhNTU2YmFhOWNkZDlmODBhZmVkODJiNDNiZjU5YSJ9; _pk_ysp_ses.[object Object].1fff=*; PHPSESSID=6v2q6d11hulaou990ea2fmifp5'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'PATH' => 'F:\\phpStudy\\php55;D:\\Program Files\\Git\\cmd;C:\\Program Files\\TortoiseGit\\bin;'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e PHP/5.5.30'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'F:/phpStudy/WWW'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'F:/phpStudy/WWW'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'SCRIPT_FILENAME' => 'F:/phpStudy/WWW/php_9/allance1/admin/frontend/web/index.php'
+    'REMOTE_PORT' => '49505'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=login/login1'
+    'REQUEST_URI' => '/php_9/allance1/admin/frontend/web/index.php?r=login/login1'
+    'SCRIPT_NAME' => '/php_9/allance1/admin/frontend/web/index.php'
+    'PHP_SELF' => '/php_9/allance1/admin/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1467541977.304
+    'REQUEST_TIME' => 1467541977
+]
+2016-07-03 18:35:17 [::1][-][-][error][yii\base\ErrorException:8] exception 'yii\base\ErrorException' with message 'Undefined offset: 0' in F:\phpStudy\WWW\php_9\allance1\admin\frontend\controllers\LoginController.php:104
+Stack trace:
+#0 F:\phpStudy\WWW\php_9\allance1\admin\frontend\controllers\LoginController.php(104): yii\base\ErrorHandler->handleError(8, 'Undefined offse...', 'F:\\phpStudy\\WWW...', 104, Array)
+#1 [internal function]: frontend\controllers\LoginController->actionLogin1()
+#2 F:\phpStudy\WWW\php_9\allance1\admin\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#3 F:\phpStudy\WWW\php_9\allance1\admin\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#4 F:\phpStudy\WWW\php_9\allance1\admin\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('login1', Array)
+#5 F:\phpStudy\WWW\php_9\allance1\admin\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('login/login1', Array)
+#6 F:\phpStudy\WWW\php_9\allance1\admin\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#7 F:\phpStudy\WWW\php_9\allance1\admin\frontend\web\index.php(18): yii\base\Application->run()
+#8 {main}
+2016-07-03 18:35:17 [::1][-][-][info][application] $_GET = [
+    'r' => 'login/login1'
+]
+
+$_COOKIE = [
+    '_pk_ysp_id_' => [
+        'object Object' => 'f485f547ddfc8e70.1467541857.1.1467541857.1467541857.'
+    ]
+    'pgv_pvi' => '1951702016'
+    'Hm_lvt_4233e74dff0ae5bd0a3d81c6ccf756e6' => '1467256168'
+    'XSRF-TOKEN' => 'eyJpdiI6IjJ6N2dSeWx4Y0l5RDR3Y1JBMDFtTFE9PSIsInZhbHVlIjoiYVlKUmhXRXBZQnZkaGUyNEpFN0M2WjNGK1R2UXBEdUUyRHd5Z3NFWDVKUUNyTlRONEY1cVlVa0YrNTFQekpcL2xXVFhvcWFtSEszV0d0YVF4M2VRVjN3PT0iLCJtYWMiOiI0MmU2OTU4MTkyMzkzNzY5MTE1ZTk3MmY4YjI0NDU0N2Y1YWVkY2Q4Y2QxNjRkMDE1NGRmODBkZDZmYTQ3YjE1In0='
+    'laravel_session' => 'eyJpdiI6Ik8xY1BCb1hXN0xsOG9nXC9SeHUxTVhRPT0iLCJ2YWx1ZSI6Im5WdmsyNTZzbHJDYk5JZE1cLzdOS2djRTdUNjJSZTFJRGlJUUQ5THhlaE9YUHZBZVFUTk1SR2ZUd2ZWcTIwcDRGTFBlVHB2cFpjWElYTFg2eG5TdXN4dz09IiwibWFjIjoiOGMxZWE3ZjFkZWY5Yzk0NmQzNTA3MGI1MDE3MDY0ZTY0OTlhNTU2YmFhOWNkZDlmODBhZmVkODJiNDNiZjU5YSJ9'
+    '_pk_ysp_ses_' => [
+        'object Object' => '*'
+    ]
+    'PHPSESSID' => '6v2q6d11hulaou990ea2fmifp5'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:47.0) Gecko/20100101 Firefox/47.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_COOKIE' => '_pk_ysp_id.[object Object].1fff=f485f547ddfc8e70.1467541857.1.1467541857.1467541857.; pgv_pvi=1951702016; Hm_lvt_4233e74dff0ae5bd0a3d81c6ccf756e6=1467256168; XSRF-TOKEN=eyJpdiI6IjJ6N2dSeWx4Y0l5RDR3Y1JBMDFtTFE9PSIsInZhbHVlIjoiYVlKUmhXRXBZQnZkaGUyNEpFN0M2WjNGK1R2UXBEdUUyRHd5Z3NFWDVKUUNyTlRONEY1cVlVa0YrNTFQekpcL2xXVFhvcWFtSEszV0d0YVF4M2VRVjN3PT0iLCJtYWMiOiI0MmU2OTU4MTkyMzkzNzY5MTE1ZTk3MmY4YjI0NDU0N2Y1YWVkY2Q4Y2QxNjRkMDE1NGRmODBkZDZmYTQ3YjE1In0%3D; laravel_session=eyJpdiI6Ik8xY1BCb1hXN0xsOG9nXC9SeHUxTVhRPT0iLCJ2YWx1ZSI6Im5WdmsyNTZzbHJDYk5JZE1cLzdOS2djRTdUNjJSZTFJRGlJUUQ5THhlaE9YUHZBZVFUTk1SR2ZUd2ZWcTIwcDRGTFBlVHB2cFpjWElYTFg2eG5TdXN4dz09IiwibWFjIjoiOGMxZWE3ZjFkZWY5Yzk0NmQzNTA3MGI1MDE3MDY0ZTY0OTlhNTU2YmFhOWNkZDlmODBhZmVkODJiNDNiZjU5YSJ9; _pk_ysp_ses.[object Object].1fff=*; PHPSESSID=6v2q6d11hulaou990ea2fmifp5'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'PATH' => 'F:\\phpStudy\\php55;D:\\Program Files\\Git\\cmd;C:\\Program Files\\TortoiseGit\\bin;'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e PHP/5.5.30'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'F:/phpStudy/WWW'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'F:/phpStudy/WWW'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'SCRIPT_FILENAME' => 'F:/phpStudy/WWW/php_9/allance1/admin/frontend/web/index.php'
+    'REMOTE_PORT' => '49584'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=login/login1'
+    'REQUEST_URI' => '/php_9/allance1/admin/frontend/web/index.php?r=login/login1'
+    'SCRIPT_NAME' => '/php_9/allance1/admin/frontend/web/index.php'
+    'PHP_SELF' => '/php_9/allance1/admin/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1467542117.378
+    'REQUEST_TIME' => 1467542117
+]
+2016-07-03 18:35:17 [::1][-][-][warning][yii\log\Dispatcher::dispatch] Unable to send log via yii\debug\LogTarget: Exception 'PDOException' with message 'You cannot serialize or unserialize PDO instances' 
+
+in F:\phpStudy\WWW\php_9\allance1\admin\vendor\yiisoft\yii2-debug\LogTarget.php:58
+
+Stack trace:
+#0 [internal function]: PDO->__sleep()
+#1 F:\phpStudy\WWW\php_9\allance1\admin\vendor\yiisoft\yii2-debug\LogTarget.php(58): serialize(Array)
+#2 F:\phpStudy\WWW\php_9\allance1\admin\vendor\yiisoft\yii2-debug\LogTarget.php(112): yii\debug\LogTarget->export(Array)
+#3 F:\phpStudy\WWW\php_9\allance1\admin\vendor\yiisoft\yii2\log\Dispatcher.php(183): yii\debug\LogTarget->collect(Array, true)
+#4 F:\phpStudy\WWW\php_9\allance1\admin\vendor\yiisoft\yii2\log\Logger.php(173): yii\log\Dispatcher->dispatch(Array, true)
+#5 F:\phpStudy\WWW\php_9\allance1\admin\vendor\yiisoft\yii2\base\ErrorHandler.php(111): yii\log\Logger->flush(true)
+#6 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\base\ErrorException))
+#7 {main}
+2016-07-03 18:35:17 [::1][-][-][info][application] $_GET = [
+    'r' => 'login/login1'
+]
+
+$_COOKIE = [
+    '_pk_ysp_id_' => [
+        'object Object' => 'f485f547ddfc8e70.1467541857.1.1467541857.1467541857.'
+    ]
+    'pgv_pvi' => '1951702016'
+    'Hm_lvt_4233e74dff0ae5bd0a3d81c6ccf756e6' => '1467256168'
+    'XSRF-TOKEN' => 'eyJpdiI6IjJ6N2dSeWx4Y0l5RDR3Y1JBMDFtTFE9PSIsInZhbHVlIjoiYVlKUmhXRXBZQnZkaGUyNEpFN0M2WjNGK1R2UXBEdUUyRHd5Z3NFWDVKUUNyTlRONEY1cVlVa0YrNTFQekpcL2xXVFhvcWFtSEszV0d0YVF4M2VRVjN3PT0iLCJtYWMiOiI0MmU2OTU4MTkyMzkzNzY5MTE1ZTk3MmY4YjI0NDU0N2Y1YWVkY2Q4Y2QxNjRkMDE1NGRmODBkZDZmYTQ3YjE1In0='
+    'laravel_session' => 'eyJpdiI6Ik8xY1BCb1hXN0xsOG9nXC9SeHUxTVhRPT0iLCJ2YWx1ZSI6Im5WdmsyNTZzbHJDYk5JZE1cLzdOS2djRTdUNjJSZTFJRGlJUUQ5THhlaE9YUHZBZVFUTk1SR2ZUd2ZWcTIwcDRGTFBlVHB2cFpjWElYTFg2eG5TdXN4dz09IiwibWFjIjoiOGMxZWE3ZjFkZWY5Yzk0NmQzNTA3MGI1MDE3MDY0ZTY0OTlhNTU2YmFhOWNkZDlmODBhZmVkODJiNDNiZjU5YSJ9'
+    '_pk_ysp_ses_' => [
+        'object Object' => '*'
+    ]
+    'PHPSESSID' => '6v2q6d11hulaou990ea2fmifp5'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:47.0) Gecko/20100101 Firefox/47.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_COOKIE' => '_pk_ysp_id.[object Object].1fff=f485f547ddfc8e70.1467541857.1.1467541857.1467541857.; pgv_pvi=1951702016; Hm_lvt_4233e74dff0ae5bd0a3d81c6ccf756e6=1467256168; XSRF-TOKEN=eyJpdiI6IjJ6N2dSeWx4Y0l5RDR3Y1JBMDFtTFE9PSIsInZhbHVlIjoiYVlKUmhXRXBZQnZkaGUyNEpFN0M2WjNGK1R2UXBEdUUyRHd5Z3NFWDVKUUNyTlRONEY1cVlVa0YrNTFQekpcL2xXVFhvcWFtSEszV0d0YVF4M2VRVjN3PT0iLCJtYWMiOiI0MmU2OTU4MTkyMzkzNzY5MTE1ZTk3MmY4YjI0NDU0N2Y1YWVkY2Q4Y2QxNjRkMDE1NGRmODBkZDZmYTQ3YjE1In0%3D; laravel_session=eyJpdiI6Ik8xY1BCb1hXN0xsOG9nXC9SeHUxTVhRPT0iLCJ2YWx1ZSI6Im5WdmsyNTZzbHJDYk5JZE1cLzdOS2djRTdUNjJSZTFJRGlJUUQ5THhlaE9YUHZBZVFUTk1SR2ZUd2ZWcTIwcDRGTFBlVHB2cFpjWElYTFg2eG5TdXN4dz09IiwibWFjIjoiOGMxZWE3ZjFkZWY5Yzk0NmQzNTA3MGI1MDE3MDY0ZTY0OTlhNTU2YmFhOWNkZDlmODBhZmVkODJiNDNiZjU5YSJ9; _pk_ysp_ses.[object Object].1fff=*; PHPSESSID=6v2q6d11hulaou990ea2fmifp5'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'PATH' => 'F:\\phpStudy\\php55;D:\\Program Files\\Git\\cmd;C:\\Program Files\\TortoiseGit\\bin;'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e PHP/5.5.30'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'F:/phpStudy/WWW'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'F:/phpStudy/WWW'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'SCRIPT_FILENAME' => 'F:/phpStudy/WWW/php_9/allance1/admin/frontend/web/index.php'
+    'REMOTE_PORT' => '49584'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=login/login1'
+    'REQUEST_URI' => '/php_9/allance1/admin/frontend/web/index.php?r=login/login1'
+    'SCRIPT_NAME' => '/php_9/allance1/admin/frontend/web/index.php'
+    'PHP_SELF' => '/php_9/allance1/admin/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1467542117.378
+    'REQUEST_TIME' => 1467542117
+]
+2016-07-03 18:36:07 [::1][-][-][error][yii\base\ErrorException:8] exception 'yii\base\ErrorException' with message 'Undefined offset: 0' in F:\phpStudy\WWW\php_9\allance1\admin\frontend\controllers\LoginController.php:104
+Stack trace:
+#0 F:\phpStudy\WWW\php_9\allance1\admin\frontend\controllers\LoginController.php(104): yii\base\ErrorHandler->handleError(8, 'Undefined offse...', 'F:\\phpStudy\\WWW...', 104, Array)
+#1 [internal function]: frontend\controllers\LoginController->actionLogin1()
+#2 F:\phpStudy\WWW\php_9\allance1\admin\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#3 F:\phpStudy\WWW\php_9\allance1\admin\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#4 F:\phpStudy\WWW\php_9\allance1\admin\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('login1', Array)
+#5 F:\phpStudy\WWW\php_9\allance1\admin\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('login/login1', Array)
+#6 F:\phpStudy\WWW\php_9\allance1\admin\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#7 F:\phpStudy\WWW\php_9\allance1\admin\frontend\web\index.php(18): yii\base\Application->run()
+#8 {main}
+2016-07-03 18:36:07 [::1][-][-][info][application] $_GET = [
+    'r' => 'login/login1'
+]
+
+$_COOKIE = [
+    '_pk_ysp_id_' => [
+        'object Object' => 'f485f547ddfc8e70.1467541857.1.1467541857.1467541857.'
+    ]
+    'pgv_pvi' => '1951702016'
+    'Hm_lvt_4233e74dff0ae5bd0a3d81c6ccf756e6' => '1467256168'
+    'XSRF-TOKEN' => 'eyJpdiI6IjJ6N2dSeWx4Y0l5RDR3Y1JBMDFtTFE9PSIsInZhbHVlIjoiYVlKUmhXRXBZQnZkaGUyNEpFN0M2WjNGK1R2UXBEdUUyRHd5Z3NFWDVKUUNyTlRONEY1cVlVa0YrNTFQekpcL2xXVFhvcWFtSEszV0d0YVF4M2VRVjN3PT0iLCJtYWMiOiI0MmU2OTU4MTkyMzkzNzY5MTE1ZTk3MmY4YjI0NDU0N2Y1YWVkY2Q4Y2QxNjRkMDE1NGRmODBkZDZmYTQ3YjE1In0='
+    'laravel_session' => 'eyJpdiI6Ik8xY1BCb1hXN0xsOG9nXC9SeHUxTVhRPT0iLCJ2YWx1ZSI6Im5WdmsyNTZzbHJDYk5JZE1cLzdOS2djRTdUNjJSZTFJRGlJUUQ5THhlaE9YUHZBZVFUTk1SR2ZUd2ZWcTIwcDRGTFBlVHB2cFpjWElYTFg2eG5TdXN4dz09IiwibWFjIjoiOGMxZWE3ZjFkZWY5Yzk0NmQzNTA3MGI1MDE3MDY0ZTY0OTlhNTU2YmFhOWNkZDlmODBhZmVkODJiNDNiZjU5YSJ9'
+    '_pk_ysp_ses_' => [
+        'object Object' => '*'
+    ]
+    'PHPSESSID' => '6v2q6d11hulaou990ea2fmifp5'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:47.0) Gecko/20100101 Firefox/47.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_COOKIE' => '_pk_ysp_id.[object Object].1fff=f485f547ddfc8e70.1467541857.1.1467541857.1467541857.; pgv_pvi=1951702016; Hm_lvt_4233e74dff0ae5bd0a3d81c6ccf756e6=1467256168; XSRF-TOKEN=eyJpdiI6IjJ6N2dSeWx4Y0l5RDR3Y1JBMDFtTFE9PSIsInZhbHVlIjoiYVlKUmhXRXBZQnZkaGUyNEpFN0M2WjNGK1R2UXBEdUUyRHd5Z3NFWDVKUUNyTlRONEY1cVlVa0YrNTFQekpcL2xXVFhvcWFtSEszV0d0YVF4M2VRVjN3PT0iLCJtYWMiOiI0MmU2OTU4MTkyMzkzNzY5MTE1ZTk3MmY4YjI0NDU0N2Y1YWVkY2Q4Y2QxNjRkMDE1NGRmODBkZDZmYTQ3YjE1In0%3D; laravel_session=eyJpdiI6Ik8xY1BCb1hXN0xsOG9nXC9SeHUxTVhRPT0iLCJ2YWx1ZSI6Im5WdmsyNTZzbHJDYk5JZE1cLzdOS2djRTdUNjJSZTFJRGlJUUQ5THhlaE9YUHZBZVFUTk1SR2ZUd2ZWcTIwcDRGTFBlVHB2cFpjWElYTFg2eG5TdXN4dz09IiwibWFjIjoiOGMxZWE3ZjFkZWY5Yzk0NmQzNTA3MGI1MDE3MDY0ZTY0OTlhNTU2YmFhOWNkZDlmODBhZmVkODJiNDNiZjU5YSJ9; _pk_ysp_ses.[object Object].1fff=*; PHPSESSID=6v2q6d11hulaou990ea2fmifp5'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'PATH' => 'F:\\phpStudy\\php55;D:\\Program Files\\Git\\cmd;C:\\Program Files\\TortoiseGit\\bin;'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e PHP/5.5.30'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'F:/phpStudy/WWW'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'F:/phpStudy/WWW'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'SCRIPT_FILENAME' => 'F:/phpStudy/WWW/php_9/allance1/admin/frontend/web/index.php'
+    'REMOTE_PORT' => '49641'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=login/login1'
+    'REQUEST_URI' => '/php_9/allance1/admin/frontend/web/index.php?r=login/login1'
+    'SCRIPT_NAME' => '/php_9/allance1/admin/frontend/web/index.php'
+    'PHP_SELF' => '/php_9/allance1/admin/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1467542167.539
+    'REQUEST_TIME' => 1467542167
+]
+2016-07-03 18:36:07 [::1][-][-][warning][yii\log\Dispatcher::dispatch] Unable to send log via yii\debug\LogTarget: Exception 'PDOException' with message 'You cannot serialize or unserialize PDO instances' 
+
+in F:\phpStudy\WWW\php_9\allance1\admin\vendor\yiisoft\yii2-debug\LogTarget.php:58
+
+Stack trace:
+#0 [internal function]: PDO->__sleep()
+#1 F:\phpStudy\WWW\php_9\allance1\admin\vendor\yiisoft\yii2-debug\LogTarget.php(58): serialize(Array)
+#2 F:\phpStudy\WWW\php_9\allance1\admin\vendor\yiisoft\yii2-debug\LogTarget.php(112): yii\debug\LogTarget->export(Array)
+#3 F:\phpStudy\WWW\php_9\allance1\admin\vendor\yiisoft\yii2\log\Dispatcher.php(183): yii\debug\LogTarget->collect(Array, true)
+#4 F:\phpStudy\WWW\php_9\allance1\admin\vendor\yiisoft\yii2\log\Logger.php(173): yii\log\Dispatcher->dispatch(Array, true)
+#5 F:\phpStudy\WWW\php_9\allance1\admin\vendor\yiisoft\yii2\base\ErrorHandler.php(111): yii\log\Logger->flush(true)
+#6 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\base\ErrorException))
+#7 {main}
+2016-07-03 18:36:07 [::1][-][-][info][application] $_GET = [
+    'r' => 'login/login1'
+]
+
+$_COOKIE = [
+    '_pk_ysp_id_' => [
+        'object Object' => 'f485f547ddfc8e70.1467541857.1.1467541857.1467541857.'
+    ]
+    'pgv_pvi' => '1951702016'
+    'Hm_lvt_4233e74dff0ae5bd0a3d81c6ccf756e6' => '1467256168'
+    'XSRF-TOKEN' => 'eyJpdiI6IjJ6N2dSeWx4Y0l5RDR3Y1JBMDFtTFE9PSIsInZhbHVlIjoiYVlKUmhXRXBZQnZkaGUyNEpFN0M2WjNGK1R2UXBEdUUyRHd5Z3NFWDVKUUNyTlRONEY1cVlVa0YrNTFQekpcL2xXVFhvcWFtSEszV0d0YVF4M2VRVjN3PT0iLCJtYWMiOiI0MmU2OTU4MTkyMzkzNzY5MTE1ZTk3MmY4YjI0NDU0N2Y1YWVkY2Q4Y2QxNjRkMDE1NGRmODBkZDZmYTQ3YjE1In0='
+    'laravel_session' => 'eyJpdiI6Ik8xY1BCb1hXN0xsOG9nXC9SeHUxTVhRPT0iLCJ2YWx1ZSI6Im5WdmsyNTZzbHJDYk5JZE1cLzdOS2djRTdUNjJSZTFJRGlJUUQ5THhlaE9YUHZBZVFUTk1SR2ZUd2ZWcTIwcDRGTFBlVHB2cFpjWElYTFg2eG5TdXN4dz09IiwibWFjIjoiOGMxZWE3ZjFkZWY5Yzk0NmQzNTA3MGI1MDE3MDY0ZTY0OTlhNTU2YmFhOWNkZDlmODBhZmVkODJiNDNiZjU5YSJ9'
+    '_pk_ysp_ses_' => [
+        'object Object' => '*'
+    ]
+    'PHPSESSID' => '6v2q6d11hulaou990ea2fmifp5'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:47.0) Gecko/20100101 Firefox/47.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_COOKIE' => '_pk_ysp_id.[object Object].1fff=f485f547ddfc8e70.1467541857.1.1467541857.1467541857.; pgv_pvi=1951702016; Hm_lvt_4233e74dff0ae5bd0a3d81c6ccf756e6=1467256168; XSRF-TOKEN=eyJpdiI6IjJ6N2dSeWx4Y0l5RDR3Y1JBMDFtTFE9PSIsInZhbHVlIjoiYVlKUmhXRXBZQnZkaGUyNEpFN0M2WjNGK1R2UXBEdUUyRHd5Z3NFWDVKUUNyTlRONEY1cVlVa0YrNTFQekpcL2xXVFhvcWFtSEszV0d0YVF4M2VRVjN3PT0iLCJtYWMiOiI0MmU2OTU4MTkyMzkzNzY5MTE1ZTk3MmY4YjI0NDU0N2Y1YWVkY2Q4Y2QxNjRkMDE1NGRmODBkZDZmYTQ3YjE1In0%3D; laravel_session=eyJpdiI6Ik8xY1BCb1hXN0xsOG9nXC9SeHUxTVhRPT0iLCJ2YWx1ZSI6Im5WdmsyNTZzbHJDYk5JZE1cLzdOS2djRTdUNjJSZTFJRGlJUUQ5THhlaE9YUHZBZVFUTk1SR2ZUd2ZWcTIwcDRGTFBlVHB2cFpjWElYTFg2eG5TdXN4dz09IiwibWFjIjoiOGMxZWE3ZjFkZWY5Yzk0NmQzNTA3MGI1MDE3MDY0ZTY0OTlhNTU2YmFhOWNkZDlmODBhZmVkODJiNDNiZjU5YSJ9; _pk_ysp_ses.[object Object].1fff=*; PHPSESSID=6v2q6d11hulaou990ea2fmifp5'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'PATH' => 'F:\\phpStudy\\php55;D:\\Program Files\\Git\\cmd;C:\\Program Files\\TortoiseGit\\bin;'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e PHP/5.5.30'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'F:/phpStudy/WWW'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'F:/phpStudy/WWW'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'SCRIPT_FILENAME' => 'F:/phpStudy/WWW/php_9/allance1/admin/frontend/web/index.php'
+    'REMOTE_PORT' => '49641'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=login/login1'
+    'REQUEST_URI' => '/php_9/allance1/admin/frontend/web/index.php?r=login/login1'
+    'SCRIPT_NAME' => '/php_9/allance1/admin/frontend/web/index.php'
+    'PHP_SELF' => '/php_9/allance1/admin/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1467542167.539
+    'REQUEST_TIME' => 1467542167
+]
+2016-07-03 18:37:17 [::1][-][-][error][yii\base\ErrorException:8] exception 'yii\base\ErrorException' with message 'Undefined index: c_integarl' in F:\phpStudy\WWW\php_9\allance1\admin\frontend\views\company\show.html:91
+Stack trace:
+#0 F:\phpStudy\WWW\php_9\allance1\admin\frontend\views\company\show.html(91): yii\base\ErrorHandler->handleError(8, 'Undefined index...', 'F:\\phpStudy\\WWW...', 91, Array)
+#1 F:\phpStudy\WWW\php_9\allance1\admin\vendor\yiisoft\yii2\base\View.php(325): require('F:\\phpStudy\\WWW...')
+#2 F:\phpStudy\WWW\php_9\allance1\admin\vendor\yiisoft\yii2\base\View.php(247): yii\base\View->renderPhpFile('F:\\phpStudy\\WWW...', Array)
+#3 F:\phpStudy\WWW\php_9\allance1\admin\vendor\yiisoft\yii2\base\View.php(149): yii\base\View->renderFile('F:\\phpStudy\\WWW...', Array, Object(frontend\controllers\CompanyController))
+#4 F:\phpStudy\WWW\php_9\allance1\admin\vendor\yiisoft\yii2\base\Controller.php(371): yii\base\View->render('show.html', Array, Object(frontend\controllers\CompanyController))
+#5 F:\phpStudy\WWW\php_9\allance1\admin\frontend\controllers\CompanyController.php(59): yii\base\Controller->render('show.html', Array)
+#6 [internal function]: frontend\controllers\CompanyController->actionShow()
+#7 F:\phpStudy\WWW\php_9\allance1\admin\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#8 F:\phpStudy\WWW\php_9\allance1\admin\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#9 F:\phpStudy\WWW\php_9\allance1\admin\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('show', Array)
+#10 F:\phpStudy\WWW\php_9\allance1\admin\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('company/show', Array)
+#11 F:\phpStudy\WWW\php_9\allance1\admin\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#12 F:\phpStudy\WWW\php_9\allance1\admin\frontend\web\index.php(18): yii\base\Application->run()
+#13 {main}
+2016-07-03 18:37:16 [::1][-][-][info][application] $_GET = [
+    'r' => 'company/show'
+]
+
+$_COOKIE = [
+    '_pk_ysp_id_' => [
+        'object Object' => 'f485f547ddfc8e70.1467541857.1.1467541857.1467541857.'
+    ]
+    'pgv_pvi' => '1951702016'
+    'Hm_lvt_4233e74dff0ae5bd0a3d81c6ccf756e6' => '1467256168'
+    'XSRF-TOKEN' => 'eyJpdiI6IjJ6N2dSeWx4Y0l5RDR3Y1JBMDFtTFE9PSIsInZhbHVlIjoiYVlKUmhXRXBZQnZkaGUyNEpFN0M2WjNGK1R2UXBEdUUyRHd5Z3NFWDVKUUNyTlRONEY1cVlVa0YrNTFQekpcL2xXVFhvcWFtSEszV0d0YVF4M2VRVjN3PT0iLCJtYWMiOiI0MmU2OTU4MTkyMzkzNzY5MTE1ZTk3MmY4YjI0NDU0N2Y1YWVkY2Q4Y2QxNjRkMDE1NGRmODBkZDZmYTQ3YjE1In0='
+    'laravel_session' => 'eyJpdiI6Ik8xY1BCb1hXN0xsOG9nXC9SeHUxTVhRPT0iLCJ2YWx1ZSI6Im5WdmsyNTZzbHJDYk5JZE1cLzdOS2djRTdUNjJSZTFJRGlJUUQ5THhlaE9YUHZBZVFUTk1SR2ZUd2ZWcTIwcDRGTFBlVHB2cFpjWElYTFg2eG5TdXN4dz09IiwibWFjIjoiOGMxZWE3ZjFkZWY5Yzk0NmQzNTA3MGI1MDE3MDY0ZTY0OTlhNTU2YmFhOWNkZDlmODBhZmVkODJiNDNiZjU5YSJ9'
+    '_pk_ysp_ses_' => [
+        'object Object' => '*'
+    ]
+    'PHPSESSID' => '6v2q6d11hulaou990ea2fmifp5'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:47.0) Gecko/20100101 Firefox/47.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://localhost/php_9/allance1/admin/frontend/web/index.php?r=public/left'
+    'HTTP_COOKIE' => '_pk_ysp_id.[object Object].1fff=f485f547ddfc8e70.1467541857.1.1467541857.1467541857.; pgv_pvi=1951702016; Hm_lvt_4233e74dff0ae5bd0a3d81c6ccf756e6=1467256168; XSRF-TOKEN=eyJpdiI6IjJ6N2dSeWx4Y0l5RDR3Y1JBMDFtTFE9PSIsInZhbHVlIjoiYVlKUmhXRXBZQnZkaGUyNEpFN0M2WjNGK1R2UXBEdUUyRHd5Z3NFWDVKUUNyTlRONEY1cVlVa0YrNTFQekpcL2xXVFhvcWFtSEszV0d0YVF4M2VRVjN3PT0iLCJtYWMiOiI0MmU2OTU4MTkyMzkzNzY5MTE1ZTk3MmY4YjI0NDU0N2Y1YWVkY2Q4Y2QxNjRkMDE1NGRmODBkZDZmYTQ3YjE1In0%3D; laravel_session=eyJpdiI6Ik8xY1BCb1hXN0xsOG9nXC9SeHUxTVhRPT0iLCJ2YWx1ZSI6Im5WdmsyNTZzbHJDYk5JZE1cLzdOS2djRTdUNjJSZTFJRGlJUUQ5THhlaE9YUHZBZVFUTk1SR2ZUd2ZWcTIwcDRGTFBlVHB2cFpjWElYTFg2eG5TdXN4dz09IiwibWFjIjoiOGMxZWE3ZjFkZWY5Yzk0NmQzNTA3MGI1MDE3MDY0ZTY0OTlhNTU2YmFhOWNkZDlmODBhZmVkODJiNDNiZjU5YSJ9; _pk_ysp_ses.[object Object].1fff=*; PHPSESSID=6v2q6d11hulaou990ea2fmifp5'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'PATH' => 'F:\\phpStudy\\php55;D:\\Program Files\\Git\\cmd;C:\\Program Files\\TortoiseGit\\bin;'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e PHP/5.5.30'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'F:/phpStudy/WWW'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'F:/phpStudy/WWW'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'SCRIPT_FILENAME' => 'F:/phpStudy/WWW/php_9/allance1/admin/frontend/web/index.php'
+    'REMOTE_PORT' => '49783'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=company/show'
+    'REQUEST_URI' => '/php_9/allance1/admin/frontend/web/index.php?r=company/show'
+    'SCRIPT_NAME' => '/php_9/allance1/admin/frontend/web/index.php'
+    'PHP_SELF' => '/php_9/allance1/admin/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1467542236.984
+    'REQUEST_TIME' => 1467542236
+]
+2016-07-03 18:37:17 [::1][-][-][warning][yii\log\Dispatcher::dispatch] Unable to send log via yii\debug\LogTarget: Exception 'PDOException' with message 'You cannot serialize or unserialize PDO instances' 
+
+in F:\phpStudy\WWW\php_9\allance1\admin\vendor\yiisoft\yii2-debug\LogTarget.php:58
+
+Stack trace:
+#0 [internal function]: PDO->__sleep()
+#1 F:\phpStudy\WWW\php_9\allance1\admin\vendor\yiisoft\yii2-debug\LogTarget.php(58): serialize(Array)
+#2 F:\phpStudy\WWW\php_9\allance1\admin\vendor\yiisoft\yii2-debug\LogTarget.php(112): yii\debug\LogTarget->export(Array)
+#3 F:\phpStudy\WWW\php_9\allance1\admin\vendor\yiisoft\yii2\log\Dispatcher.php(183): yii\debug\LogTarget->collect(Array, true)
+#4 F:\phpStudy\WWW\php_9\allance1\admin\vendor\yiisoft\yii2\log\Logger.php(173): yii\log\Dispatcher->dispatch(Array, true)
+#5 F:\phpStudy\WWW\php_9\allance1\admin\vendor\yiisoft\yii2\base\ErrorHandler.php(111): yii\log\Logger->flush(true)
+#6 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\base\ErrorException))
+#7 {main}
+2016-07-03 18:37:16 [::1][-][-][info][application] $_GET = [
+    'r' => 'company/show'
+]
+
+$_COOKIE = [
+    '_pk_ysp_id_' => [
+        'object Object' => 'f485f547ddfc8e70.1467541857.1.1467541857.1467541857.'
+    ]
+    'pgv_pvi' => '1951702016'
+    'Hm_lvt_4233e74dff0ae5bd0a3d81c6ccf756e6' => '1467256168'
+    'XSRF-TOKEN' => 'eyJpdiI6IjJ6N2dSeWx4Y0l5RDR3Y1JBMDFtTFE9PSIsInZhbHVlIjoiYVlKUmhXRXBZQnZkaGUyNEpFN0M2WjNGK1R2UXBEdUUyRHd5Z3NFWDVKUUNyTlRONEY1cVlVa0YrNTFQekpcL2xXVFhvcWFtSEszV0d0YVF4M2VRVjN3PT0iLCJtYWMiOiI0MmU2OTU4MTkyMzkzNzY5MTE1ZTk3MmY4YjI0NDU0N2Y1YWVkY2Q4Y2QxNjRkMDE1NGRmODBkZDZmYTQ3YjE1In0='
+    'laravel_session' => 'eyJpdiI6Ik8xY1BCb1hXN0xsOG9nXC9SeHUxTVhRPT0iLCJ2YWx1ZSI6Im5WdmsyNTZzbHJDYk5JZE1cLzdOS2djRTdUNjJSZTFJRGlJUUQ5THhlaE9YUHZBZVFUTk1SR2ZUd2ZWcTIwcDRGTFBlVHB2cFpjWElYTFg2eG5TdXN4dz09IiwibWFjIjoiOGMxZWE3ZjFkZWY5Yzk0NmQzNTA3MGI1MDE3MDY0ZTY0OTlhNTU2YmFhOWNkZDlmODBhZmVkODJiNDNiZjU5YSJ9'
+    '_pk_ysp_ses_' => [
+        'object Object' => '*'
+    ]
+    'PHPSESSID' => '6v2q6d11hulaou990ea2fmifp5'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:47.0) Gecko/20100101 Firefox/47.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://localhost/php_9/allance1/admin/frontend/web/index.php?r=public/left'
+    'HTTP_COOKIE' => '_pk_ysp_id.[object Object].1fff=f485f547ddfc8e70.1467541857.1.1467541857.1467541857.; pgv_pvi=1951702016; Hm_lvt_4233e74dff0ae5bd0a3d81c6ccf756e6=1467256168; XSRF-TOKEN=eyJpdiI6IjJ6N2dSeWx4Y0l5RDR3Y1JBMDFtTFE9PSIsInZhbHVlIjoiYVlKUmhXRXBZQnZkaGUyNEpFN0M2WjNGK1R2UXBEdUUyRHd5Z3NFWDVKUUNyTlRONEY1cVlVa0YrNTFQekpcL2xXVFhvcWFtSEszV0d0YVF4M2VRVjN3PT0iLCJtYWMiOiI0MmU2OTU4MTkyMzkzNzY5MTE1ZTk3MmY4YjI0NDU0N2Y1YWVkY2Q4Y2QxNjRkMDE1NGRmODBkZDZmYTQ3YjE1In0%3D; laravel_session=eyJpdiI6Ik8xY1BCb1hXN0xsOG9nXC9SeHUxTVhRPT0iLCJ2YWx1ZSI6Im5WdmsyNTZzbHJDYk5JZE1cLzdOS2djRTdUNjJSZTFJRGlJUUQ5THhlaE9YUHZBZVFUTk1SR2ZUd2ZWcTIwcDRGTFBlVHB2cFpjWElYTFg2eG5TdXN4dz09IiwibWFjIjoiOGMxZWE3ZjFkZWY5Yzk0NmQzNTA3MGI1MDE3MDY0ZTY0OTlhNTU2YmFhOWNkZDlmODBhZmVkODJiNDNiZjU5YSJ9; _pk_ysp_ses.[object Object].1fff=*; PHPSESSID=6v2q6d11hulaou990ea2fmifp5'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'PATH' => 'F:\\phpStudy\\php55;D:\\Program Files\\Git\\cmd;C:\\Program Files\\TortoiseGit\\bin;'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e PHP/5.5.30'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'F:/phpStudy/WWW'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'F:/phpStudy/WWW'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'SCRIPT_FILENAME' => 'F:/phpStudy/WWW/php_9/allance1/admin/frontend/web/index.php'
+    'REMOTE_PORT' => '49783'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=company/show'
+    'REQUEST_URI' => '/php_9/allance1/admin/frontend/web/index.php?r=company/show'
+    'SCRIPT_NAME' => '/php_9/allance1/admin/frontend/web/index.php'
+    'PHP_SELF' => '/php_9/allance1/admin/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1467542236.984
+    'REQUEST_TIME' => 1467542236
+]

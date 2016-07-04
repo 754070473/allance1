@@ -52,7 +52,7 @@ class IndexController extends Controller {
                         ->join('al_resume', 'al_resume.per_id', '=', 'al_personal.per_id')
                         ->where('al_personal.per_id',$per_id)
                         ->get();
-                $user = DB::table('al_collect')->where('per_id', $per_id)->first();
+                $user = DB::table('al_collect')->where('per_id', $per_id)->where('rec_id',$rec_id)->first();
                   if(empty($user))
                     {
                         $arr['aa'] = 0; 
@@ -62,7 +62,7 @@ class IndexController extends Controller {
                         $r_id = $user->rec_id;
                         if($r_id==$rec_id)
                         {
-                           $arr['aa'] = 1; 
+                           $arr['aa'] = 1;
                         }
                         else
                         {
@@ -78,11 +78,9 @@ class IndexController extends Controller {
                 $arr['aa'] = 0;
                 // $per_id = 1;                     //测试用户id
                 $arr['row'] = DB::table('al_recruit')
-                            ->join('al_place', 'al_place.pla_id', '=', 'al_recruit.pla_id')
                             ->join('al_com_message', 'al_com_message.mes_id', '=', 'al_recruit.mes_id')
                             ->where('rec_id', $rec_id)->first();
                             $arr['per_id'] = $per_id ?$per_id : '' ;
-                            // print_r($arr);
                             // echo $arr['per_id'];die();
             	return view("index.jobdetail",$arr);
             
@@ -94,11 +92,10 @@ class IndexController extends Controller {
                         ->get();
             
             $arr['row'] = DB::table('al_recruit')
-                        ->join('al_place', 'al_place.pla_id', '=', 'al_recruit.pla_id')
                         ->join('al_com_message', 'al_com_message.mes_id', '=', 'al_recruit.mes_id')
                         ->where('rec_id', $rec_id)->first();
                         $arr['per_id'] = $per_id ?$per_id : '' ;
-                $user = DB::table('al_collect')->where('per_id', $per_id)->first();
+                $user = DB::table('al_collect')->where('per_id', $per_id)->where('rec_id', $rec_id)->first();
                 if(empty($user))
                 {
                     $arr['aa'] = 0; 
@@ -116,7 +113,8 @@ class IndexController extends Controller {
                     }
                     
                 }
-                 $arr['aa'] = 0;
+//                 $arr['aa'] = 0;
+//            print_r($arr);die;
             return view("index.jobdetail",$arr);
         }
         // echo $per_id;
@@ -146,11 +144,16 @@ class IndexController extends Controller {
         $row = DB::table('al_company')->where('mes_id', $mes_id)->first();
         $com_id = $row->com_id;                //企业账号id
         $res_id = Request::input('res_id');  //简历表id
+        $rec_id = Request::input('rec_id');  //简历表id
 
         // 先查询是不是有这条数据有的话就把时间更新一下
         $user = DB::table('al_deliver')->where('com_id',$com_id)->first();
-        $r_id = $user->res_id;
-        $del_id = $user->del_id;
+        if(!empty($user)){
+            $r_id = $user->res_id;
+            $del_id = $user->del_id;
+        }else{
+            $r_id=0;
+        }
         if($r_id==$res_id)
         {
             $res = DB::table('al_deliver')
@@ -166,7 +169,7 @@ class IndexController extends Controller {
         }
             if($res)
             {
-                return redirect('jobdetail');
+                return redirect('jobdetail?rec_id='.$rec_id);
             }
             else
             {
@@ -177,32 +180,28 @@ class IndexController extends Controller {
     public function collections_shoucang()
     {
         $per_id = session::get('per_id');
-        $rec_id = Request::input('rec_id');
-        $user = DB::table('al_collect')->where('per_id', $per_id)->first();
-        if(empty($user))
-        {
-            //添加到收藏表中
-            $res = DB::table('al_collect')->insert(
-                ['per_id' => $per_id, 'rec_id' => $rec_id ,'c_time'=> date('Y-m-d H:i:s',time())]);
-            if($res)
-            {
-                echo $rec_id;   //成功收藏
-            }
-            else{
-                echo 2;     //收藏失败
-            }
-        }
-        else
-        {
-             $r_id = $user->rec_id;
-                if($r_id==$rec_id)
-                {
-                    echo 0;  //已收藏
+        if($per_id == ""){
+            echo 3;
+        }else {
+            $rec_id = Request::input('rec_id');
+            $user = DB::table('al_collect')->where('per_id', $per_id)->where('rec_id', $rec_id)->first();
+            if (empty($user)) {
+                //添加到收藏表中
+                $res = DB::table('al_collect')->insert(
+                    ['per_id' => $per_id, 'rec_id' => $rec_id, 'c_time' => date('Y-m-d H:i:s', time())]);
+                if ($res) {
+                    echo $rec_id;   //成功收藏
+                } else {
+                    echo 2;     //收藏失败
                 }
-                else
-                {
+            } else {
+                $r_id = $user->rec_id;
+                if ($r_id == $rec_id) {
+                    echo 0;  //已收藏
+                } else {
                     echo 1;  //没有收藏
-                }       
+                }
+            }
         }
     }
 

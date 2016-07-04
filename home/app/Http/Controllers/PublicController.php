@@ -52,29 +52,28 @@ class PublicController extends Controller {
                 {
                     $query['dz'] = 'index01';  //添加企业信息1
                 }
-                elseif(isset($m_name)&&isset($m_url)&&isset($m_place)&&isset($m_type)&&isset($me_id)||empty($welfare))
+                elseif($welfare == "")
                 {
                     $query['dz'] = 'tag';       //添加企业信息2
                 }
-                elseif(isset($m_name)&&isset($m_url)&&isset($m_place)&&isset($m_type)&&isset($me_id)&&isset($welfare)||empty($leadername)||empty($position)||empty($weibo)||empty($remark))
+                elseif(empty($leadername)||empty($position)||empty($weibo)||empty($remark))
                 {
                     $query['dz'] = 'founder';   //添加企业信息3
                 }
-                elseif(isset($m_name)&&isset($m_url)&&isset($m_place)&&isset($m_type)&&isset($me_id)&&isset($welfare)&&isset($leadername)&&isset($position)&&isset($weibo)&&isset($remark)||empty($product)||empty($productProfile)||empty($productUrl))
+                elseif(empty($product)||empty($productProfile)||empty($productUrl))
                 {
                     $query['dz'] = 'index02';   //添加企业信息4
                 }
-                elseif(isset($m_name)&&isset($m_url)&&isset($m_place)&&isset($m_type)&&isset($me_id)&&isset($welfare)&&isset($leadername)&&isset($position)&&isset($weibo)&&isset($remark)&&isset($product)&&isset($productProfile)&&isset($productUrl)||empty($m_logo)||empty($m_desc))
+                elseif(empty($m_logo)||empty($m_desc))
                 {
                     $query['dz'] = 'index03';   //添加企业信息5
                 }
                 else
                 {
-                    $query['dz'] = 'index03';   //企业信息
+                    $query['dz'] = 'index04';   //企业信息
                 }
                 $query['key']="2";//企业登录
             }
-
 		}else{
 			$query['key']="0";//没登录
 		}
@@ -87,7 +86,7 @@ class PublicController extends Controller {
             //     is_file($cacheFile); 
             // if (!is_file($cacheFile) || time() - filemtime($cacheFile) > $cacheTime) {  
             //<!--页面输出部分内容。也是ob_get_contents()函数取得的全部内容-->
-                // print_r($query);
+//                 print_r($query);die;
                  return view("public.top",$query);
 
             // $content = ob_get_contents(); //取得php页面输出的全部内容   
