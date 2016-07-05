@@ -32,7 +32,13 @@ var youdao_conv_id = 271546;
 </script> 
 <script type="text/javascript" src="style/js/conv.js"></script>
 </head>
-
+@include( 'weibo.config' );
+@include( 'weibo.saetv2' );
+<?php
+session_start();
+$o = new SaeTOAuthV2( WB_AKEY , WB_SKEY );
+$code_url = $o->getAuthorizeURL( WB_CALLBACK_URL );
+?>
 <body id="login_bg">
 	<div class="login_wrapper">
 		<div class="login_header">
@@ -66,13 +72,24 @@ var youdao_conv_id = 271546;
 				<div>还没有拉勾帐号？</div>
 				<a  href="register"  class="registor_now">立即注册</a>
 			    <div class="login_others">使用以下帐号直接登录:</div>
-			    <a  href="h/ologin/auth/sina"  target="_blank" class="icon_wb" title="使用新浪微博帐号登录"></a>
-			    <a  href="h/ologin/auth/qq"  class="icon_qq" target="_blank" title="使用腾讯QQ帐号登录"></a>
+			    <a  href="<?=$code_url?>"  target="_blank" class="icon_wb" title="使用新浪微博帐号登录"></a>
+			    <a  href="javascript:void(0)"  class="icon_qq" target="_blank" title="使用腾讯QQ帐号登录" onclick='toQzoneLogin()'></a>
 			</div>
         </div>
         <div class="login_box_btm"></div>
     </div>
+    <script type="text/javascript">
+        var childWindow;
+        function toQzoneLogin()
+        {
+            childWindow = window.open("oauth/index.php","TencentLogin","width=450,height=320,menubar=0,scrollbars=1, resizable=1,status=1,titlebar=0,toolbar=0,location=1");
+        }
 
+        function closeChildWindow()
+        {
+            childWindow.close();
+        }
+    </script>
 <script type="text/javascript">
 var kaiguan = null;
 var num = 20;
