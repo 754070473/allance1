@@ -280,14 +280,61 @@ class LoginController extends Controller {
 		return redirect('index');
 
 	}
-	/*微博登录*/
-	public function weibo()
-    {
-        return view('weibo.callback');
+
+    public function weibo(){
+        return view("weibo.callback");
     }
 
+    //个人用户绑定
+    public function bound(Request $request) {
+        $p_identifier      = $request->input('identifier');
+        $p_identifier_type = $request->input('identifier_type');
+        $user = DB::table('al_personal')->where('p_identifier' , $p_identifier)->where('p_identifier_type' , $p_identifier_type)->first();
+        if(empty($user)) {
+            return view('login.bound', ['p_identifier' => $p_identifier, 'p_identifier_type' => $p_identifier_type]);
+        } else {
+            if($p_identifier_type == 0) {
+                Session::put('per_id', $user->per_id);
+                Session::put('p_phone', $user->p_phone);
+                Session::put('i_name', $user->i_name);
+                $this->userlog('新浪微博登录');
+                return redirect('index');
+            } else {
+                Session::put('per_id', $user->per_id);
+                Session::put('p_phone', $user->p_phone);
+                Session::put('i_name', $user->i_name);
+                $this->userlog('QQ登录');
+                return redirect('index');
+            }
+        }
+    }
 
-
+    //绑定注册
+    public function bound_info(Request $request){
+        $p_identifier      = $request->input('p_identifier');
+        $p_identifier_type = $request->input('p_identifier_type');
+        $p_phone           = $request->input('p_phone') ? $request->input('p_phone') : "";
+        $p_email           = $request->input('p_email') ? $request->input('p_email') : "";
+        $pwd               = md5($request->input('pwd'));
+        if($p_phone == ""){
+            $i_name = $p_email;
+        }else{
+            $i_name = $p_phone;
+        }
+        $arr=DB::table('al_personal')->insert(
+            array(
+                'p_identifier' =>$p_identifier,
+                'p_identifier_type' =>$p_identifier_type,
+                'p_phone' =>$p_phone,
+                'i_name' =>$i_name,
+                'p_email' =>$p_email,
+                'p_pwd' =>$pwd
+            )
+        );
+        if($arr){
+            return redirect('login');
+        }
+    }
 
 
 
