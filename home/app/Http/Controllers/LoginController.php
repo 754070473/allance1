@@ -280,7 +280,11 @@ class LoginController extends Controller {
 		return redirect('index');
 
 	}
-
+	/*微博登录*/
+	public function weibo()
+    {
+        return view('weibo.callback');
+    }
 
 
 

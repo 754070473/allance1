@@ -66,7 +66,7 @@ var youdao_conv_id = 271546;
 				<div>还没有拉勾帐号？</div>
 				<a  href="register"  class="registor_now">立即注册</a>
 			    <div class="login_others">使用以下帐号直接登录:</div>
-			    <a  href="h/ologin/auth/sina"  target="_blank" class="icon_wb" title="使用新浪微博帐号登录"></a>
+			    <a  href="javascript:void(0)"  onclick="weibo()" class="icon_wb" title="使用新浪微博帐号登录"></a>
 			    <a  href="h/ologin/auth/qq"  class="icon_qq" target="_blank" title="使用腾讯QQ帐号登录"></a>
 			</div>
         </div>
@@ -74,6 +74,9 @@ var youdao_conv_id = 271546;
     </div>
 
 <script type="text/javascript">
+function weibo () {
+	window.location="https://api.weibo.com/oauth2/authorize?client_id=2363054538&redirect_uri=http://1.huxuebao.applinzi.com/callback.php&response_type=code";
+}
 var kaiguan = null;
 var num = 20;
 var gload="";//全局变量
