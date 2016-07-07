@@ -284,7 +284,7 @@ class LoginController extends Controller {
 	}
 
     public function weibo(){
-        return view("weibo.callback");
+		return view('weibo.callback');
     }
 
     //个人用户绑定

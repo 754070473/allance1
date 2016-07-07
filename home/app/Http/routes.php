@@ -25,6 +25,8 @@ Route::get('/jobdetail', 'IndexController@jobdetail');
 //验证登录(email)
 Route::get('/jobdetail_login', 'IndexController@jobdetail_login');
 Route::get('/jobdetail_tou', 'IndexController@jobdetail_tou');
+
+
 //收藏职位
 Route::get('/collections_shoucang', 'IndexController@collections_shoucang');
 
@@ -133,6 +135,8 @@ Route::any('/tag_pro', 'CpregisterController@tag_pro');
 	 
 //展示个人登录界面
 Route::any('/login', 'LoginController@login');	
+
+
 //个人与企业注册
 Route::any('/login_register', 'LoginController@login_register');	
 //执行个人登录
@@ -242,7 +246,7 @@ Route::get('/geren', 'ReController@geren');
 Route::any('/search', 'PublicController@search');//职位搜索
 Route::any('/searchajax', 'PublicController@searchajax');//ajax职位搜索
 //微博登录
-Route::any('/weibo', 'LoginController@weibo');
+Route::get('/weibo', 'LoginController@weibo');
 //第三方登录个人账号绑定
 Route::any('/bound', 'LoginController@bound');
 //第三方登录个人账号注册绑定

@@ -32,8 +32,8 @@ var youdao_conv_id = 271546;
 </script> 
 <script type="text/javascript" src="style/js/conv.js"></script>
 </head>
-@include( 'weibo.config' );
-@include( 'weibo.saetv2' );
+@include( 'weibo.config' )
+@include( 'weibo.saetv2' )
 <?php
 session_start();
 $o = new SaeTOAuthV2( WB_AKEY , WB_SKEY );
