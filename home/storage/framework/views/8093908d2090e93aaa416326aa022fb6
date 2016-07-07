@@ -32,8 +32,8 @@ var youdao_conv_id = 271546;
 </script> 
 <script type="text/javascript" src="style/js/conv.js"></script>
 </head>
-@include( 'weibo.config' )
-@include( 'weibo.saetv2' )
+<?php echo $__env->make( 'weibo.config' , array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+<?php echo $__env->make( 'weibo.saetv2' , array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
 <?php
 session_start();
 $o = new SaeTOAuthV2( WB_AKEY , WB_SKEY );
@@ -51,7 +51,7 @@ $code_url = $o->getAuthorizeURL( WB_CALLBACK_URL );
 		 <div class="login_box">
         	<form id="loginForm" action="index">
 
-				<input type="text" id="email" name="name" value="{{$phone}}" tabindex="1" placeholder="请输入登录邮箱或手机号" />
+				<input type="text" id="email" name="name" value="<?php echo e($phone); ?>" tabindex="1" placeholder="请输入登录邮箱或手机号" />
 			  	<input type="password" id="password" name="pwd" tabindex="2" placeholder="请输入密码" />
 				<span class="error" style="display:none;" id="beError"></span>
 
@@ -73,11 +73,23 @@ $code_url = $o->getAuthorizeURL( WB_CALLBACK_URL );
 				<a  href="register"  class="registor_now">立即注册</a>
 			    <div class="login_others">使用以下帐号直接登录:</div>
 			    <a  href="<?=$code_url?>"  target="_blank" class="icon_wb" title="使用新浪微博帐号登录"></a>
-			    <a  href="{{url('qqlogin')}}"  class="icon_qq" target="_blank" title="使用腾讯QQ帐号登录"></a>
+			    <a  href="javascript:void(0)"  class="icon_qq" target="_blank" title="使用腾讯QQ帐号登录" onclick='toQzoneLogin()'></a>
 			</div>
         </div>
         <div class="login_box_btm"></div>
     </div>
+    <script type="text/javascript">
+        var childWindow;
+        function toQzoneLogin()
+        {
+            childWindow = window.open("oauth/index.php","TencentLogin","width=450,height=320,menubar=0,scrollbars=1, resizable=1,status=1,titlebar=0,toolbar=0,location=1");
+        }
+
+        function closeChildWindow()
+        {
+            childWindow.close();
+        }
+    </script>
 <script type="text/javascript">
 var kaiguan = null;
 var num = 20;
@@ -97,7 +109,7 @@ $(".submitLogin").click(function(){
 		}else{
 			$.ajax({
 			   type: "get",
-			   url: "{{url('login_pro')}}",
+			   url: "<?php echo e(url('login_pro')); ?>",
 			   data: "name="+name+'&pwd='+pwd,
 			   success: function(msg){
 			   	if (msg=="1") {
