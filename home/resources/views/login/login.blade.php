@@ -73,23 +73,11 @@ $code_url = $o->getAuthorizeURL( WB_CALLBACK_URL );
 				<a  href="register"  class="registor_now">立即注册</a>
 			    <div class="login_others">使用以下帐号直接登录:</div>
 			    <a  href="<?=$code_url?>"  target="_blank" class="icon_wb" title="使用新浪微博帐号登录"></a>
-			    <a  href="javascript:void(0)"  class="icon_qq" target="_blank" title="使用腾讯QQ帐号登录" onclick='toQzoneLogin()'></a>
+			    <a  href="{{url('qqlogin')}}"  class="icon_qq" target="_blank" title="使用腾讯QQ帐号登录"></a>
 			</div>
         </div>
         <div class="login_box_btm"></div>
     </div>
-    <script type="text/javascript">
-        var childWindow;
-        function toQzoneLogin()
-        {
-            childWindow = window.open("oauth/index.php","TencentLogin","width=450,height=320,menubar=0,scrollbars=1, resizable=1,status=1,titlebar=0,toolbar=0,location=1");
-        }
-
-        function closeChildWindow()
-        {
-            childWindow.close();
-        }
-    </script>
 <script type="text/javascript">
 var kaiguan = null;
 var num = 20;

@@ -1,6 +1,6 @@
 <?php
 header('Content-Type: text/html; charset=UTF-8');
 
-define( "WB_AKEY" , '2465300444' );
-define( "WB_SKEY" , 'f00255f4f7b7d1db99a1c9602e60c9f5' );
-define( "WB_CALLBACK_URL" , 'http://www.mbaodian.com/weibo' );
+define( "WB_AKEY" , '1232142849' );
+define( "WB_SKEY" , '38a00ebc2b66bb349a5a1702b360b213' );
+define( "WB_CALLBACK_URL" , 'http://1.754070473.applinzi.com/weibo' );

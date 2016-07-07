@@ -247,3 +247,8 @@ Route::any('/weibo', 'LoginController@weibo');
 Route::any('/bound', 'LoginController@bound');
 //第三方登录个人账号注册绑定
 Route::any('/bound_info', 'LoginController@bound_info');
+//第三方登录QQ登录
+Route::any('/qqlogin', 'LoginController@qqLogin');
+//第三方登录QQ登录返回信息
+Route::any('/qqCallback', 'LoginController@qqCallback');
+

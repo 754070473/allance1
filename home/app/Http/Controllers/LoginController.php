@@ -3,6 +3,8 @@ namespace App\Http\Controllers;
 use DB;
 use Session;
 use Illuminate\Http\Request;
+use App\libraries\qq\connect;
+use App\libraries\qq\cla\QC;
 /**
  *   LoginController  账号登录
  */
@@ -336,8 +338,19 @@ class LoginController extends Controller {
         }
     }
 
-
-
+	//QQ第三方登录
+	public function qqLogin(){
+		connect::display();
+	}
+	//QQ返回用户信息
+	public function qqCallback(Request $request) {
+		$code      = $request->input('code');
+		$state      = $request->input('state');
+		$qc = new connect();
+		$open_id = $qc->callback($code,$state);
+		$type = 1;
+		return redirect('bound?identifier='.$open_id.'&identifier_type='.$type);
+	}
 }	
 
 ?>
