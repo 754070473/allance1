@@ -246,7 +246,7 @@ Route::get('/geren', 'ReController@geren');
 Route::any('/search', 'PublicController@search');//职位搜索
 Route::any('/searchajax', 'PublicController@searchajax');//ajax职位搜索
 //微博登录
-Route::any('/weibo', 'LoginController@weibo');
+Route::get('/weibo', 'LoginController@weibo');
 //第三方登录个人账号绑定
 Route::any('/bound', 'LoginController@bound');
 //第三方登录个人账号注册绑定
