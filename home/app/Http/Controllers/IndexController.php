@@ -4,6 +4,7 @@ use DB;
 use Session;
 
 use Request;
+//use Illuminate\Http\Request;
 
 
 /**
@@ -82,6 +83,7 @@ class IndexController extends Controller {
                             ->where('rec_id', $rec_id)->first();
                             $arr['per_id'] = $per_id ?$per_id : '' ;
                             // echo $arr['per_id'];die();
+                            //print_r($arr);die;
             	return view("index.jobdetail",$arr);
             
         }
@@ -114,11 +116,14 @@ class IndexController extends Controller {
                     
                 }
 //                 $arr['aa'] = 0;
-//            print_r($arr);die;
+         // print_r($arr);die;
             return view("index.jobdetail",$arr);
         }
         // echo $per_id;
     }
+
+
+    
     public function jobdetail_login()
     {
 
@@ -269,7 +274,7 @@ class IndexController extends Controller {
     public function select_all(Request $request)
     {
 
-        $id=$request->input('id');
+        $id=Request::input('id');
       //echo ($id);die;
 
 //        $acc = DB::table('al_place')
@@ -299,7 +304,7 @@ class IndexController extends Controller {
     {
 
         $post_id=$request->input('id');
-      //echo ($post_id);die;
+      //echo $post_id;die;
 
        // $acc = DB::table('al_place')
        //           ->where('p_pid',0)
@@ -309,28 +314,28 @@ class IndexController extends Controller {
                 // $ar = $this->classify('al_post','p_pid');
                 if(empty(session('pla_id'))){
 
-             $users = DB::table('al_resume')
-            ->join('al_post', 'al_resume.post_id', '=', 'al_post.post_id')
-            ->join('al_place', 'al_resume.pla_id', '=', 'al_place.pla_id')
-            ->select('al_resume.*', 'al_post.i_name as p_name', 'al_place.i_name')
-             ->where('al_post.post_id',"$post_id")
-             ->where('r_show',0)
-             ->where('r_type',0)
-             ->where('if_img',0)
-            ->paginate(15);
+                 $users = DB::table('al_resume')
+                    ->join('al_post', 'al_resume.post_id', '=', 'al_post.post_id')
+                    ->join('al_place', 'al_resume.pla_id', '=', 'al_place.pla_id')
+                    ->select('al_resume.*', 'al_post.i_name as p_name', 'al_place.i_name')
+                     ->where('al_post.post_id',"$post_id")
+                     ->where('r_show',0)
+                     ->where('r_type',0)
+                     ->where('if_img',0)
+                    ->paginate(15);
                 }else{
                     // 从session中获取数据...
              $pla_id = session('pla_id');
                     $users = DB::table('al_resume')
-            ->join('al_post', 'al_resume.post_id', '=', 'al_post.post_id')
-            ->join('al_place', 'al_resume.pla_id', '=', 'al_place.pla_id')
-            ->select('al_resume.*', 'al_post.i_name as p_name', 'al_place.i_name')
-             ->where('al_post.post_id',"$post_id")
-             ->where('al_place.pla_id',"$pla_id")
-             ->where('r_show',0)
-             ->where('r_type',0)
-             ->where('if_img',0)
-            ->paginate(15);
+                    ->join('al_post', 'al_resume.post_id', '=', 'al_post.post_id')
+                    ->join('al_place', 'al_resume.pla_id', '=', 'al_place.pla_id')
+                    ->select('al_resume.*', 'al_post.i_name as p_name', 'al_place.i_name')
+                     ->where('al_post.post_id',"$post_id")
+                     ->where('al_place.pla_id',"$pla_id")
+                     ->where('r_show',0)
+                     ->where('r_type',0)
+                     ->where('if_img',0)
+                    ->paginate(15);
                 }
        
       
@@ -341,7 +346,8 @@ class IndexController extends Controller {
 }
 //简历详情
 public  function gerenlist(Request $request){
-     $res_id=$request->input('id');
+     $res_id=Request::input('id');
+     //print_r($res_id);die;
      $users = DB::table('al_resume')
             ->join('al_post', 'al_resume.post_id', '=', 'al_post.post_id')
             ->join('al_place', 'al_resume.pla_id', '=', 'al_place.pla_id')

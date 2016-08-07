@@ -159,7 +159,7 @@ function ck_login(rec_id)
             </div>
                 <dd>
                     <input type="hidden" id='per_id' name='per_id' value="{{$per_id}}">
-                  	 <a  id='tou' class=" btn fr btn_apply">投个简历</a>
+                  	 <a id='tou' class=" btn fr btn_apply">投个简历</a>
                 </dd>
               </dl>
           <div id="weibolist"></div>
